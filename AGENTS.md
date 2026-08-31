@@ -77,7 +77,7 @@ Date segment must match `DATE_RE`:
 
 Use Europe/Berlin for “today”. Other notes (`research/random-thoughts/`, knowledge journal stub) are not the live handoff. Chat history is not the handoff. **Uncommitted files are not shared memory.**
 
-## Skills (2–4, not 14 hats)
+## Skills (2–4 hats; PR procedure is not a hat)
 
 Portable seeds only, in `.cursor/skills/`:
 
@@ -85,6 +85,8 @@ Portable seeds only, in `.cursor/skills/`:
 - `coherence-guardian` — IDs, probes, DATE_RE, PR loop, memory
 - `product-owner` — MVP vs Future, team ownership
 - `engineer` — later React/Flask/Postgres and GitHub Actions; not this cut’s app
+
+**Not a fifth hat:** `pr-coordinator` is GitHub PR procedure memory (MRC analog, not GitLab). Use when opening, checking CI, handling Bugbot, or merging. See `.cursor/skills/pr-coordinator/SKILL.md`.
 
 Do not grow this into a 14-hat library.
 
@@ -109,8 +111,9 @@ For this repo **now**:
 ## GitHub issues and PRs
 
 - Tracker: GitHub issues in this repo.
-- Change: one branch, one PR against `main`.
-- **Author does not merge their own PR.**
+- Change: one branch, one PR against `main`. Procedure: `.cursor/skills/pr-coordinator/SKILL.md`.
+- **Author does not merge their own PR.** Probe CI this session; do not merge red or unreviewed PRs.
+- Cursor Bugbot comments are a review signal (resolve or explicitly decline). Autofix = new branch/PR, not a silent merge.
 - Do not use GitLab issues, merge requests, or GitLab CI.
 - The assignment requires collaborator `quantic-grader`. **The owner must add that collaborator.** An agent must not add it.
 
@@ -120,4 +123,4 @@ For this repo **now**:
 - AWS / re-auth / `cafe.artof.link` hosting (future).
 - Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
 - Declaring Pages or `cafe.artof.link` live without a GET **this session**.
-- A skill library larger than the four seeds above.
+- A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.

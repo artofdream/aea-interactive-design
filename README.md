@@ -53,4 +53,4 @@ Assignment requires GitHub collaborator **`quantic-grader`**. The **owner** must
 
 A status word is a claim. Probe **this session** or write Unknown. Uncommitted files are not shared memory. Do not claim this harness is antifragile.
 
-Read `AGENTS.md` at session start. Skills (not 14 hats): `knowledge-guardian`, `coherence-guardian`, `product-owner`, `engineer`.
+Read `AGENTS.md` at session start. Hats (not 14): `knowledge-guardian`, `coherence-guardian`, `product-owner`, `engineer`. PR procedure (not a hat): `pr-coordinator`.
