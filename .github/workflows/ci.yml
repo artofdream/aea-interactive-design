@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  srs-present:
+    name: SRS freeze present (fail-closed)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fail closed if docs/srs.md is missing
+        run: |
+          set -euo pipefail
+          if [ ! -f docs/srs.md ]; then
+            echo "docs/srs.md is missing. Fail closed: no invented FR/NFR IDs, no silent skip."
+            exit 1
+          fi
+          grep -q 'FR-1' docs/srs.md
+          grep -q 'FR-18' docs/srs.md
+          grep -q 'NFR-1' docs/srs.md
+          grep -q 'NFR-9' docs/srs.md
+          echo "docs/srs.md present with FR-1..FR-18 and NFR-1..NFR-9 citations."

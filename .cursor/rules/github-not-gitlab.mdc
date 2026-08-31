@@ -1,0 +1,14 @@
+---
+description: Tracker and CI are GitHub only. No GitLab.
+alwaysApply: true
+---
+
+# GitHub, not GitLab
+
+This repo uses GitHub issues, pull requests, and GitHub Actions only.
+
+Do not add GitLab CI, GitLab Pages, `.gitlab-ci.yml`, or `glab` workflows.
+
+One finding → one GitHub issue → one branch → one PR against `main`.
+
+Knowledge publish path: GitHub Actions → GitHub Pages (intended hostname `knowledge.cafe.artof.link`, live URL Unknown until probed). Restaurant hostname is `cafe.artof.link` (later; Unknown).

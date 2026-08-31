@@ -1,0 +1,17 @@
+---
+description: Status words need a probe. Unknown until probed.
+alwaysApply: true
+---
+
+# Honesty
+
+Status words (live, working, fixed, deployed, complete, green) are claims. They need a probe: a command, HTTP GET, CI log, or file that exists now.
+
+If evidence is missing, write **Unknown**. Do not infer liveness from a hostname.
+
+This repo’s intended hostnames (do not invent others):
+
+- `knowledge.cafe.artof.link` — knowledge site (GitHub Pages). Live URL: Unknown until GET after owner enables Pages + DNS.
+- `cafe.artof.link` — restaurant implementation. Live URL: Unknown until built and GET-probed.
+
+A previous session is not a probe. Closing a task is not a probe.

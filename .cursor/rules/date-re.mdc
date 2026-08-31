@@ -1,0 +1,14 @@
+---
+description: Live handoff is research/daily-briefs/YYYY-MM-DD.md only.
+alwaysApply: true
+---
+
+# DATE_RE live handoff
+
+The only live handoff path is `research/daily-briefs/YYYY-MM-DD.md`.
+
+The date segment must match `DATE_RE`: `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`.
+
+Use Europe/Berlin for “today”. Create today’s brief if it is missing before other work.
+
+`research/random-thoughts/`, knowledge pages, and chat history are not the live handoff.
