@@ -12,4 +12,4 @@ If evidence is missing, write **Unknown**. Do not infer liveness from a hostname
 This repo’s intended hostnames (do not invent others):
 
 - `knowledge.cafe.artof.link` — Café Fausse Knowledge; GitHub Pages. Live URL: Unknown until GET this session after owner enables Pages + DNS.
-- `cafe.artof.link` — Café Fausse App restaurant MVP. Live URL: Unknown (not built; hosting future).
+- `cafe.artof.link` — Café Fausse App restaurant MVP. Live URL: Unknown (hosting future).

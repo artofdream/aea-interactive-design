@@ -2,18 +2,18 @@
 
 This is a student / GitHub E2E repo for **Café Fausse** (Quantic MSAIE) and a transfer of the AEA **outer harness** onto a different stack. Read this file before writing code.
 
-**MVP = official SRS freeze** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`). Everything else is future or refined — not the first restaurant cut, and not a second product on the knowledge site.
+**MVP = official SRS freeze** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`). Everything else is future or refined — not a second product on the knowledge site.
 
-Do not claim this system is antifragile. AWS is **not** in this foundation PR. Knowledge site = GitHub Pages. `cafe.artof.link` hosting remains future.
+Do not claim this system is antifragile. AWS is **not** in the restaurant MVP PR. Knowledge site = GitHub Pages. `cafe.artof.link` hosting remains future.
 
 ## Teams and two public surfaces
 
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
 | Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | **Unknown** until a GET probe **this session** after Pages + DNS |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Unknown** — not built; hosting future; no GET this session |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Unknown** — local app in-repo; hosting future; no GET this session |
 
-This PR stays foundation + thin knowledge site. Do not invent other domains. Do not configure DNS from an agent. Owner step: enable GitHub Pages (Actions), then DNS.
+Do not invent other domains. Do not configure DNS from an agent. Owner step: enable GitHub Pages (Actions), then DNS.
 
 Tracker and CI are **GitHub only**. No GitLab, no `glab`, no GitLab Pages, no GitLab CI.
 
@@ -38,7 +38,7 @@ Examples that stay **Unknown** until probed this session:
 
 - GitHub Pages URL for `knowledge.cafe.artof.link`
 - Restaurant at `cafe.artof.link`
-- “Reservations work”
+- “Reservations work” on a public host
 - “CI is green on main” without a run this session
 
 If a probe fails or times out, report the failure. Do not retry-until-yes as a substitute for a sensor.
@@ -47,12 +47,12 @@ If a probe fails or times out, report the failure. Do not retry-until-yes as a s
 
 The knowledge site is a **thin map** (home, stack, SRS, honesty, plus a clearly labeled Future page). It is not the restaurant. Café Fausse Knowledge owns it.
 
-When Café Fausse App implements the restaurant later:
+When Café Fausse App implements the restaurant:
 
 - Implement the SRS only as MVP.
 - Extra features go in the Future plan (`knowledge/future.md`), not in the first app cut.
 - Do not copy other students’ application code.
-- Do not add AWS in the foundation cut; hosting of `cafe.artof.link` is future.
+- Do not add AWS in this restaurant cut; hosting of `cafe.artof.link` is future.
 
 ## ID freeze
 
@@ -84,7 +84,7 @@ Portable seeds only, in `.cursor/skills/`:
 - `knowledge-guardian` — knowledge site stays a thin map; not the restaurant
 - `coherence-guardian` — IDs, probes, DATE_RE, PR loop, memory
 - `product-owner` — MVP vs Future, team ownership
-- `engineer` — later React/Flask/Postgres and GitHub Actions; not this cut’s app
+- `engineer` — React/Flask/Postgres and GitHub Actions
 
 **Not a fifth hat:** `pr-coordinator` is GitHub PR procedure memory (MRC analog, not GitLab). Use when opening, checking CI, handling Bugbot, or merging. See `.cursor/skills/pr-coordinator/SKILL.md`.
 
@@ -98,7 +98,7 @@ This is **antifragility-as-ratchet**, not a claim that the system is antifragile
 
 ## Fail closed
 
-For later reservation/newsletter work (not this foundation PR):
+For reservation/newsletter work:
 
 - Missing PostgreSQL / no connection → do not accept a booking; return an honest error.
 - Time slot at 30 tables → do not assign a table; **FR-9** error path.
@@ -117,10 +117,10 @@ For this repo **now**:
 - Do not use GitLab issues, merge requests, or GitLab CI.
 - The assignment requires collaborator `quantic-grader`. **The owner must add that collaborator.** An agent must not add it.
 
-## Out of scope for the foundation / first app cut
+## Out of scope for the restaurant MVP cut
 
-- Restaurant React/Flask/PostgreSQL implementation (later; SRS only; Café Fausse App).
 - AWS / re-auth / `cafe.artof.link` hosting (future).
 - Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
 - Declaring Pages or `cafe.artof.link` live without a GET **this session**.
 - A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.
+- Knowledge-site depth beyond the thin map; GitHub E2E beyond the assignment floor.
