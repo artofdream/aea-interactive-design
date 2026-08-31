@@ -22,7 +22,7 @@ export default function Gallery() {
             key={item.src}
             onClick={() => setActive(item)}
           >
-            <img src={item.src} alt={item.alt} />
+            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
             {item.official ? null : <span className="badge">Not official</span>}
             <span className="tile-caption">{item.caption}</span>
           </button>

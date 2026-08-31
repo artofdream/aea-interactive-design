@@ -20,10 +20,12 @@ export default function Reservations() {
   const [service, setService] = useState({ ok: true, message: "" });
   const [status, setStatus] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [loadingSlots, setLoadingSlots] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
+      setLoadingSlots(true);
       const health = await getHealth();
       if (cancelled) return;
       if (!health.ok) {
@@ -34,6 +36,7 @@ export default function Reservations() {
             "Online reservations are closed. Please call (202) 555-4567.",
         });
         setSlots([]);
+        setLoadingSlots(false);
         return;
       }
       setService({ ok: true, message: "" });
@@ -53,6 +56,8 @@ export default function Reservations() {
           });
           setSlots([]);
         }
+      } finally {
+        if (!cancelled) setLoadingSlots(false);
       }
     })();
     return () => {
@@ -92,6 +97,12 @@ export default function Reservations() {
         phone: phone.trim(),
       });
       setStatus({ kind: "ok", text: result.message });
+      try {
+        const list = await getSlots(date);
+        setSlots(list);
+      } catch {
+        // Booking already succeeded; a stale remaining-count is not a failure.
+      }
     } catch (err) {
       setStatus({
         kind: "error",
@@ -133,10 +144,13 @@ export default function Reservations() {
             id="res-slot"
             value={timeslot}
             onChange={(e) => setTimeslot(e.target.value)}
-            disabled={!service.ok || openSlots.length === 0}
+            disabled={!service.ok || loadingSlots || openSlots.length === 0}
             required
           >
-            {openSlots.length === 0 ? <option value="">No open seatings</option> : null}
+            {loadingSlots ? <option value="">Loading available times…</option> : null}
+            {!loadingSlots && openSlots.length === 0 ? (
+              <option value="">No open seatings</option>
+            ) : null}
             {openSlots.map((slot) => (
               <option key={slot.timeslot} value={slot.timeslot}>
                 {new Date(slot.timeslot).toLocaleTimeString("en-US", {
@@ -199,7 +213,7 @@ export default function Reservations() {
             onChange={(e) => setPhone(e.target.value)}
           />
         </label>
-        <button className="btn" type="submit" disabled={busy || !service.ok || !timeslot}>
+        <button className="btn" type="submit" disabled={busy || !service.ok || loadingSlots || !timeslot}>
           {busy ? "Booking…" : "Book this table"}
         </button>
         {selected && service.ok ? (
