@@ -34,6 +34,158 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
+_LIST_ITEM_RE = re.compile(r"^([ \t]*)([-*]|\d+\.)[ \t]+(.*)$")
+
+
+def _indent_width(ws: str) -> int:
+    n = 0
+    for ch in ws:
+        n += 4 - (n % 4) if ch == "\t" else 1
+    return n
+
+
+def _line_indent(line: str) -> int:
+    i = 0
+    n = 0
+    while i < len(line):
+        if line[i] == " ":
+            n += 1
+        elif line[i] == "\t":
+            n += 4 - (n % 4)
+        else:
+            break
+        i += 1
+    return n
+
+
+def _is_blank(line: str) -> bool:
+    return not line.strip()
+
+
+def _parse_list_item(line: str) -> tuple[int, str, str] | None:
+    m = _LIST_ITEM_RE.match(line)
+    if not m:
+        return None
+    kind = "ul" if m.group(2) in "-*" else "ol"
+    return _indent_width(m.group(1)), kind, m.group(3)
+
+
+def _peek_nonblank(lines: list[str], i: int) -> int | None:
+    while i < len(lines) and _is_blank(lines[i]):
+        i += 1
+    return i if i < len(lines) else None
+
+
+def _is_interrupting_block(line: str) -> bool:
+    s = line.lstrip()
+    if s.startswith("```"):
+        return True
+    if re.match(r"^#{1,6}\s+", s):
+        return True
+    if re.match(r"^---+\s*$", s):
+        return True
+    if s.startswith("> "):
+        return True
+    return False
+
+
+def _belongs_to_list(lines: list[str], i: int, base_indent: int) -> bool:
+    """True if content at/after i still belongs to a list at base_indent.
+
+    Blank lines do not end a list when the next non-blank line is a sibling
+    item, a nested item, or an indented continuation of the current item.
+    """
+    j = _peek_nonblank(lines, i)
+    if j is None:
+        return False
+    line = lines[j]
+    if _is_interrupting_block(line) and _line_indent(line) <= base_indent:
+        return False
+    item = _parse_list_item(line)
+    if item is not None:
+        return item[0] >= base_indent
+    return _line_indent(line) > base_indent
+
+
+def _consume_indented_para(lines: list[str], i: int, min_indent: int) -> tuple[str, int]:
+    buf: list[str] = []
+    while i < len(lines):
+        if _is_blank(lines[i]):
+            break
+        if _parse_list_item(lines[i]) is not None:
+            break
+        if _line_indent(lines[i]) < min_indent:
+            break
+        if _is_interrupting_block(lines[i]):
+            break
+        buf.append(lines[i].strip())
+        i += 1
+    text = " ".join(x for x in buf if x)
+    return (f"<p>{inline(text)}</p>" if text else ""), i
+
+
+def _consume_list(lines: list[str], i: int) -> tuple[str, int]:
+    """Consume a markdown list, including nested lists and blank-line gaps."""
+    first = _parse_list_item(lines[i])
+    if first is None:
+        raise ValueError("expected a list item")
+    base_indent, kind, _ = first
+    items: list[list[str]] = []
+
+    while i < len(lines) and _belongs_to_list(lines, i, base_indent):
+        if _is_blank(lines[i]):
+            i += 1
+            continue
+
+        parsed = _parse_list_item(lines[i])
+        if parsed is None:
+            break
+
+        indent, item_kind, text = parsed
+        if indent < base_indent:
+            break
+        if indent > base_indent:
+            nested, i = _consume_list(lines, i)
+            if items:
+                items[-1].append(nested)
+            else:
+                items.append([nested])
+            continue
+        if item_kind != kind:
+            break
+
+        i += 1
+        parts: list[str] = [inline(text)] if text else []
+        while i < len(lines):
+            if _is_blank(lines[i]):
+                # Stay in this item only for nested lists / indented continuations.
+                if not _belongs_to_list(lines, i + 1, indent + 1):
+                    break
+                i += 1
+                continue
+
+            nested_item = _parse_list_item(lines[i])
+            if nested_item is not None:
+                nindent, _, _ = nested_item
+                if nindent > indent:
+                    nested, i = _consume_list(lines, i)
+                    parts.append(nested)
+                    continue
+                break
+
+            if _line_indent(lines[i]) > indent and not _is_interrupting_block(lines[i]):
+                para, i = _consume_indented_para(lines, i, indent + 1)
+                if para:
+                    parts.append(para)
+                continue
+            break
+
+        items.append(parts)
+
+    lis = "".join(f"<li>{''.join(parts)}</li>" for parts in items)
+    return f"<{kind}>{lis}</{kind}>", i
+
+
 def md_to_html(src: str) -> str:
     lines = src.replace("\r\n", "\n").split("\n")
     out: list[str] = []
@@ -104,38 +256,10 @@ def md_to_html(src: str) -> str:
             out.append(table_html)
             continue
 
-        ul = re.match(r"^[-*]\s+(.*)$", line)
-        if ul:
+        if _parse_list_item(line) is not None:
             flush_para(para)
-            out.append("<ul>")
-            while i < len(lines):
-                m = re.match(r"^[-*]\s+(.*)$", lines[i])
-                if not m:
-                    if lines[i].strip() == "":
-                        break
-                    if re.match(r"^\s{2,}[-*]\s+(.*)$", lines[i]):
-                        # flatten nested bullets rather than invent hierarchy
-                        nested = re.match(r"^\s{2,}[-*]\s+(.*)$", lines[i])
-                        out.append(f"<li>{inline(nested.group(1))}</li>")
-                        i += 1
-                        continue
-                    break
-                out.append(f"<li>{inline(m.group(1))}</li>")
-                i += 1
-            out.append("</ul>")
-            continue
-
-        ol = re.match(r"^\d+\.\s+(.*)$", line)
-        if ol:
-            flush_para(para)
-            out.append("<ol>")
-            while i < len(lines):
-                m = re.match(r"^\d+\.\s+(.*)$", lines[i])
-                if not m:
-                    break
-                out.append(f"<li>{inline(m.group(1))}</li>")
-                i += 1
-            out.append("</ol>")
+            list_html, i = _consume_list(lines, i)
+            out.append(list_html)
             continue
 
         if line.strip() == "":
