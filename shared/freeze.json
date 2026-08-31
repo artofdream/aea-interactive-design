@@ -1,0 +1,151 @@
+{
+  "provenance": "Working freeze of docs/srs.md (official PDF SoT). Do not invent IDs or improve prices, address, hours, owners, awards, or reviews.",
+  "name": "Café Fausse",
+  "address": "1234 Culinary Ave, Suite 100, Washington, DC 20002",
+  "phone": "(202) 555-4567",
+  "hoursDisplay": "Monday–Saturday: 5:00PM – 11:00 PM; Sunday: 5:00 PM – 9:00 PM",
+  "timezone": "America/New_York",
+  "slotIntervalMinutes": 60,
+  "tableCount": 30,
+  "hoursByWeekday": {
+    "monday": { "open": "17:00", "lastSeating": "22:00" },
+    "tuesday": { "open": "17:00", "lastSeating": "22:00" },
+    "wednesday": { "open": "17:00", "lastSeating": "22:00" },
+    "thursday": { "open": "17:00", "lastSeating": "22:00" },
+    "friday": { "open": "17:00", "lastSeating": "22:00" },
+    "saturday": { "open": "17:00", "lastSeating": "22:00" },
+    "sunday": { "open": "17:00", "lastSeating": "20:00" }
+  },
+  "history": "Founded in 2010 by Chef Antonio Rossi and restaurateur Maria Lopez, Café Fausse blends traditional Italian flavors with modern culinary innovation. Our mission is to provide an unforgettable dining experience that reflects both quality and creativity.",
+  "locallySourced": "Café Fausse is committed to unforgettable dining, excellent food and locally sourced ingredients.",
+  "founders": [
+    {
+      "name": "Chef Antonio Rossi",
+      "role": "Founding chef",
+      "bio": "Chef Antonio Rossi co-founded Café Fausse in 2010. He leads the kitchen in blending traditional Italian flavors with modern culinary innovation, with a commitment to excellent food and locally sourced ingredients."
+    },
+    {
+      "name": "Maria Lopez",
+      "role": "Founding restaurateur",
+      "bio": "Restaurateur Maria Lopez co-founded Café Fausse in 2010. She shapes the dining room around the restaurant’s mission: an unforgettable dining experience that reflects both quality and creativity."
+    }
+  ],
+  "menu": [
+    {
+      "category": "Starters",
+      "items": [
+        {
+          "name": "Bruschetta",
+          "description": "Fresh tomatoes, basil, olive oil, and toasted baguette slices",
+          "price": "8.50"
+        },
+        {
+          "name": "Caesar Salad",
+          "description": "Crisp romaine with homemade Caesar dressing",
+          "price": "9.00"
+        }
+      ]
+    },
+    {
+      "category": "Main Courses",
+      "items": [
+        {
+          "name": "Grilled Salmon",
+          "description": "Served with lemon butter sauce and seasonal vegetables",
+          "price": "22.00"
+        },
+        {
+          "name": "Ribeye Steak",
+          "description": "12 oz prime cut with garlic mashed potatoes",
+          "price": "28.00"
+        },
+        {
+          "name": "Vegetable Risotto",
+          "description": "Creamy Arborio rice with wild mushrooms",
+          "price": "18.00"
+        }
+      ]
+    },
+    {
+      "category": "Desserts",
+      "items": [
+        {
+          "name": "Tiramisu",
+          "description": "Classic Italian dessert with mascarpone",
+          "price": "7.50"
+        },
+        {
+          "name": "Cheesecake",
+          "description": "Creamy cheesecake with berry compote",
+          "price": "7.00"
+        }
+      ]
+    },
+    {
+      "category": "Beverages",
+      "items": [
+        {
+          "name": "Red Wine (Glass)",
+          "description": "A selection of Italian reds",
+          "price": "10.00"
+        },
+        {
+          "name": "White Wine (Glass)",
+          "description": "Crisp and refreshing",
+          "price": "9.00"
+        },
+        {
+          "name": "Craft Beer",
+          "description": "Local artisan brews",
+          "price": "6.00"
+        },
+        {
+          "name": "Espresso",
+          "description": "Strong and aromatic",
+          "price": "3.00"
+        }
+      ]
+    }
+  ],
+  "awards": [
+    "Culinary Excellence Award – 2022",
+    "Restaurant of the Year – 2023",
+    "Best Fine Dining Experience – Foodie Magazine, 2023"
+  ],
+  "reviews": [
+    {
+      "quote": "Exceptional ambiance and unforgettable flavors.",
+      "attribution": "Gourmet Review"
+    },
+    {
+      "quote": "A must-visit restaurant for food enthusiasts.",
+      "attribution": "The Daily Bite"
+    }
+  ],
+  "officialImages": [
+    {
+      "file": "home-cafe-fausse.webp",
+      "alt": "Café Fausse",
+      "caption": "Café Fausse",
+      "kind": "home"
+    },
+    {
+      "file": "gallery-cafe-interior.webp",
+      "alt": "Interior ambiance of Café Fausse",
+      "caption": "Interior ambiance",
+      "kind": "interior"
+    },
+    {
+      "file": "gallery-ribeye-steak.webp",
+      "alt": "Ribeye Steak from the menu",
+      "caption": "Ribeye Steak",
+      "kind": "dish"
+    },
+    {
+      "file": "gallery-special-event.webp",
+      "alt": "Special event at Café Fausse",
+      "caption": "Special event",
+      "kind": "event"
+    }
+  ]
+}

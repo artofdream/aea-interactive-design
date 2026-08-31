@@ -62,3 +62,69 @@ jobs:
           fi
           echo "59730ee04e5d74fa524122f220122a7db1964cf9163cd4e7daa704d440db2437  $ZIP" | sha256sum -c
           echo "Official SRS PDF and images.zip present with freeze SHA256."
+
+  github-only:
+    name: GitHub only (no GitLab CI files)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fail if GitLab CI files are present
+        run: |
+          set -euo pipefail
+          if [ -f .gitlab-ci.yml ] || [ -d .gitlab ]; then
+            echo "GitLab CI files are not allowed. Tracker and CI are GitHub Actions only."
+            exit 1
+          fi
+          echo "No GitLab CI files."
+
+  restaurant-api:
+    name: Restaurant API tests (FR-6..FR-9, FR-15..FR-18)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: cafe
+          POSTGRES_PASSWORD: cafe
+          POSTGRES_DB: cafe_fausse_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U cafe -d cafe_fausse_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://cafe:cafe@127.0.0.1:5432/cafe_fausse_test
+      DB_CONNECT_TIMEOUT: "2"
+      DB_STATEMENT_TIMEOUT_MS: "2000"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install API dependencies
+        run: pip install -r backend/requirements.txt
+      - name: Run pytest
+        run: pytest
+
+  restaurant-frontend:
+    name: Restaurant frontend build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install and build
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
