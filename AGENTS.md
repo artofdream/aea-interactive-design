@@ -11,9 +11,9 @@ Do not claim this system is antifragile. AWS is **not** in this foundation PR. K
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
 | Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | **Unknown** until a GET probe **this session** after Pages + DNS |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Unknown** — not built; hosting future; no GET this session |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Unknown** — app is in-repo for local run; hosting future; no public GET this session |
 
-This PR stays foundation + thin knowledge site. Do not invent other domains. Do not configure DNS from an agent. Owner step: enable GitHub Pages (Actions), then DNS.
+Knowledge site stays a thin map (do not grow it from an app PR). Do not invent other domains. Do not configure DNS from an agent. Owner step: enable GitHub Pages (Actions), then DNS. `cafe.artof.link` hosting remains future.
 
 Tracker and CI are **GitHub only**. No GitLab, no `glab`, no GitLab Pages, no GitLab CI.
 
@@ -37,7 +37,7 @@ Not a probe: hoping, a previous session, uncommitted working tree, “should be 
 Examples that stay **Unknown** until probed this session:
 
 - GitHub Pages URL for `knowledge.cafe.artof.link`
-- Restaurant at `cafe.artof.link`
+- Restaurant at `cafe.artof.link` (in-repo local app is not a public probe)
 - “Reservations work”
 - “CI is green on main” without a run this session
 
@@ -84,7 +84,7 @@ Portable seeds only, in `.cursor/skills/`:
 - `knowledge-guardian` — knowledge site stays a thin map; not the restaurant
 - `coherence-guardian` — IDs, probes, DATE_RE, PR loop, memory
 - `product-owner` — MVP vs Future, team ownership
-- `engineer` — later React/Flask/Postgres and GitHub Actions; not this cut’s app
+- `engineer` — React/Flask/Postgres restaurant and GitHub Actions app CI
 
 **Not a fifth hat:** `pr-coordinator` is GitHub PR procedure memory (MRC analog, not GitLab). Use when opening, checking CI, handling Bugbot, or merging. See `.cursor/skills/pr-coordinator/SKILL.md`.
 
@@ -98,7 +98,7 @@ This is **antifragility-as-ratchet**, not a claim that the system is antifragile
 
 ## Fail closed
 
-For later reservation/newsletter work (not this foundation PR):
+For reservation/newsletter work:
 
 - Missing PostgreSQL / no connection → do not accept a booking; return an honest error.
 - Time slot at 30 tables → do not assign a table; **FR-9** error path.
@@ -117,10 +117,11 @@ For this repo **now**:
 - Do not use GitLab issues, merge requests, or GitLab CI.
 - The assignment requires collaborator `quantic-grader`. **The owner must add that collaborator.** An agent must not add it.
 
-## Out of scope for the foundation / first app cut
+## Out of scope for the restaurant app cut
 
-- Restaurant React/Flask/PostgreSQL implementation (later; SRS only; Café Fausse App).
-- AWS / re-auth / `cafe.artof.link` hosting (future).
+- Knowledge-site rewrites; GitHub issues #2, #3, #4.
+- AWS / re-auth / claiming `cafe.artof.link` is live.
 - Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
 - Declaring Pages or `cafe.artof.link` live without a GET **this session**.
 - A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.
+- Invented FR/NFR IDs. Extra restaurant features belong in Future, not this cut.
