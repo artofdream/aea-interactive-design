@@ -1,19 +1,24 @@
 # Course image pack — provenance
 
-These 21 files were downloaded **by filename only** from:
+## Official (SoT)
 
-`https://raw.githubusercontent.com/Mihai-Codes/cafe-fausse/main/frontend/public/images/<file>`
+Fetched this session (2026-08-31, HTTP 200):
 
-They are treated as **course-material filenames recovered** from a public student mirror of the assignment image pack.
+https://uploads.smart.ly/emails/Projects/MSSE/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip
 
-This repository does **not** copy that student’s application code (React, Flask, schema, CSS, or docs). The source repository was not cloned.
+Local zip: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip`.
 
-Filenames (kept as published, even when the bytes are PNG under a `.jpg` name):
+Official zip contents (4 files). Byte-identical to the same names in this directory:
 
 - `gallery-cafe-interior.webp`
 - `home-cafe-fausse.webp`
 - `gallery-ribeye-steak.webp`
 - `gallery-special-event.webp`
+
+## Not in the official zip
+
+These 17 filenames were recovered earlier from a public student mirror (`Mihai-Codes/cafe-fausse` `frontend/public/images/<file>` only — the student app was not cloned). They are **not** source of truth:
+
 - `salmon-dish.jpg`
 - `caprese-salad.jpg`
 - `tiramisu.jpg`
@@ -32,4 +37,4 @@ Filenames (kept as published, even when the bytes are PNG under a `.jpg` name):
 - `white-wine.png`
 - `craft-beer.png`
 
-If an official Quantic image pack arrives, it wins.
+Student application code was not copied.

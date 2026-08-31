@@ -4,14 +4,18 @@ Project: Café Fausse Website Development
 
 ## Provenance (read first)
 
-This file is **not** the official Quantic PDF.
+**Source of truth:** the official Quantic / Smartly PDF. Fetched this session (2026-08-31, HTTP 200) from:
 
-It is reconstructed from two independent public student transcripts that match on **FR-1..FR-18** and **NFR-1..NFR-9**:
+https://uploads.smart.ly/emails/Projects/MSSE/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf
+
+Local copy: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf` (PDF 1.4, 7 pages). Official image pack (4 files): `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip`. See `docs/official/PROVENANCE.md`.
+
+This markdown file is the **working ID freeze** of that PDF. **FR-1..FR-18** and **NFR-1..NFR-9** were extracted from the PDF this session and match. Cite IDs from here. Do not invent new requirement IDs. If a later official PDF differs, the PDF wins.
+
+**Corroboration (not SoT):** two independent public student transcripts that already matched the same IDs:
 
 - [sethmcknight/quantic-msse-cafe-fausse](https://github.com/sethmcknight/quantic-msse-cafe-fausse) — `project-docs/cafe-fausse-requirements.md`
 - [Wendyshiro/Cafe-Fausse-Website](https://github.com/Wendyshiro/Cafe-Fausse-Website) — `srs.MD`
-
-**If an official PDF arrives, it wins.** Until then, this file is the ID freeze. Cite `FR-*` and `NFR-*` from here. Do not invent new requirement IDs.
 
 **MVP for the restaurant implementation is this SRS.** Extra features belong in a future plan, not in the first app cut.
 

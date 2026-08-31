@@ -27,3 +27,14 @@ jobs:
           grep -q 'NFR-1' docs/srs.md
           grep -q 'NFR-9' docs/srs.md
           echo "docs/srs.md present with FR-1..FR-18 and NFR-1..NFR-9 citations."
+      - name: Fail closed if official SRS PDF is missing
+        run: |
+          set -euo pipefail
+          PDF="docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf"
+          if [ ! -f "$PDF" ]; then
+            echo "Official SRS PDF missing. Fail closed: PDF is SoT; do not skip."
+            exit 1
+          fi
+          # PDF header probe (this-session-style file check)
+          python3 -c "import pathlib,sys; p=pathlib.Path('$PDF'); b=p.read_bytes()[:8]; sys.exit(0 if b.startswith(b'%PDF') else 1)"
+          echo "Official SRS PDF present."

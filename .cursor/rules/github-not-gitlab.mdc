@@ -9,6 +9,6 @@ This repo uses GitHub issues, pull requests, and GitHub Actions only.
 
 Do not add GitLab CI, GitLab Pages, `.gitlab-ci.yml`, or `glab` workflows.
 
-One finding → one GitHub issue → one branch → one PR against `main`.
+One finding → one GitHub issue → one branch → one PR against `main`. **The author does not merge their own PR.**
 
-Knowledge publish path: GitHub Actions → GitHub Pages (intended hostname `knowledge.cafe.artof.link`, live URL Unknown until probed). Restaurant hostname is `cafe.artof.link` (later; Unknown).
+Knowledge publish path: GitHub Actions → GitHub Pages (Café Fausse Knowledge; intended hostname `knowledge.cafe.artof.link`, live URL Unknown until probed this session). Restaurant hostname is `cafe.artof.link` (Café Fausse App; later; Unknown). AWS is not in this foundation PR.

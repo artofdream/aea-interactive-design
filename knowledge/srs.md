@@ -2,9 +2,9 @@
 
 The restaurant **MVP is this freeze**. Do not invent IDs. Do not grow the first app cut past these requirements.
 
-**Canonical file:** [docs/srs.md](srs-full.html) (same content as `docs/srs.md` in git).
+**Source of truth:** official PDF (GET 200 this session), local `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. Working freeze: [docs/srs.md](srs-full.html).
 
-This reconstruction is **not** the official Quantic PDF. It was aligned from two independent public student transcripts that match on FR-1..FR-18 and NFR-1..NFR-9. If an official PDF arrives, it wins.
+Two public student transcripts **corroborate** FR-1..FR-18 and NFR-1..NFR-9; they are not SoT. If a later official PDF differs, the PDF wins.
 
 ## Functional requirements
 
