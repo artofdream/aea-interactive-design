@@ -22,11 +22,27 @@ jobs:
             echo "docs/srs.md is missing. Fail closed: no invented FR/NFR IDs, no silent skip."
             exit 1
           fi
-          grep -q 'FR-1' docs/srs.md
-          grep -q 'FR-18' docs/srs.md
-          grep -q 'NFR-1' docs/srs.md
-          grep -q 'NFR-9' docs/srs.md
-          echo "docs/srs.md present with FR-1..FR-18 and NFR-1..NFR-9 citations."
+          # Require actual freeze entries (**FR-n:** / **NFR-n:**).
+          # Substring grep -q 'FR-1' matches the provenance range FR-1..FR-18
+          # and also FR-10..FR-18, so deleting real entries can still leave CI green.
+          missing=0
+          for n in $(seq 1 18); do
+            if ! grep -qF -- "**FR-${n}:**" docs/srs.md; then
+              echo "Missing freeze entry **FR-${n}:**"
+              missing=1
+            fi
+          done
+          for n in $(seq 1 9); do
+            if ! grep -qF -- "**NFR-${n}:**" docs/srs.md; then
+              echo "Missing freeze entry **NFR-${n}:**"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "docs/srs.md is missing required FR-1..FR-18 / NFR-1..NFR-9 freeze entries. Fail closed."
+            exit 1
+          fi
+          echo "docs/srs.md present with **FR-1:**..**FR-18:** and **NFR-1:**..**NFR-9:** freeze entries."
       - name: Fail closed if official SRS PDF is missing
         run: |
           set -euo pipefail
