@@ -1,21 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
+import freeze from "@shared/freeze.json";
 import { apiFetch } from "../api.js";
-
-function todayISODate() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
-
-function formatSlot(iso) {
-  const dt = new Date(iso);
-  return dt.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
-}
+import { formatSlot, todayISODate } from "../restaurantTime.js";
 
 export default function Reservations() {
-  const minDate = useMemo(() => todayISODate(), []);
+  const minDate = useMemo(() => todayISODate(new Date(), freeze.timezone), []);
   const [date, setDate] = useState(minDate);
   const [slots, setSlots] = useState([]);
   const [slotError, setSlotError] = useState("");
@@ -104,7 +93,7 @@ export default function Reservations() {
             <option value="">{slots.length ? "Select a time" : "No times available"}</option>
             {slots.map((slot) => (
               <option key={slot} value={slot}>
-                {formatSlot(slot)}
+                {formatSlot(slot, freeze.timezone)}
               </option>
             ))}
           </select>
