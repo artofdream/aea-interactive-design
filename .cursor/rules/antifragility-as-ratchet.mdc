@@ -1,0 +1,12 @@
+---
+description: Failures add tighter guides/sensors. Do not claim antifragility.
+alwaysApply: true
+---
+
+# Antifragility as ratchet
+
+When a failure class appears (guessed status, missing freeze file, invented ID, GitLab habit, silent skip), add a tighter guide or sensor. Keep existing guards.
+
+Do not delete a check to make CI green. Do not claim this repository or harness is antifragile.
+
+MVP remains the reconstructed SRS. Extra scope goes to Future, not into the first restaurant cut.

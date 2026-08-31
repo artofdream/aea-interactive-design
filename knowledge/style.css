@@ -1,0 +1,107 @@
+:root {
+  --ink: #1c1915;
+  --paper: #f6f1e8;
+  --muted: #5e574d;
+  --rule: #d4cbb8;
+  --accent: #7a2e1f;
+  --banner: #efe4c8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+
+header, main, footer {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem;
+}
+
+header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.25rem;
+}
+
+.sub {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+nav a:hover, nav a.is-current {
+  border-bottom-color: var(--accent);
+}
+
+main h1 { font-size: 2rem; line-height: 1.2; }
+main h2 { font-size: 1.35rem; margin-top: 2rem; }
+main h3 { font-size: 1.1rem; }
+
+a { color: var(--accent); }
+
+code, pre {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+pre {
+  background: #efeae1;
+  padding: 0.9rem 1rem;
+  overflow: auto;
+  border: 1px solid var(--rule);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: #efeae1; }
+
+.future-banner {
+  background: var(--banner);
+  border: 1px solid var(--rule);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer code { font-size: 0.85em; }
