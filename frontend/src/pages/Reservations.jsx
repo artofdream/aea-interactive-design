@@ -100,6 +100,11 @@ export default function Reservations() {
       try {
         const list = await getSlots(date);
         setSlots(list);
+        setTimeslot((current) =>
+          list.some((s) => s.timeslot === current && s.tables_remaining > 0)
+            ? current
+            : list.find((s) => s.tables_remaining > 0)?.timeslot || "",
+        );
       } catch {
         // Booking already succeeded; a stale remaining-count is not a failure.
       }
