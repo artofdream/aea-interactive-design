@@ -1,6 +1,6 @@
 # aea-interactive-design
 
-Quantic MSAIE **Café Fausse** project, and a transfer of the AEA outer harness onto GitHub (issues, PRs, Actions, knowledge site). Private repository.
+Quantic MSAIE **Café Fausse** project, and a transfer of the AEA outer harness onto GitHub (issues, PRs, Actions, knowledge site). Public repository.
 
 **MVP = official SRS** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`).  
 **Future** = knowledge-site depth, GitHub E2E beyond the assignment, AEA prove / disprove / adjust. Extra restaurant features go in that future plan, not in the first app cut.
