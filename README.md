@@ -28,7 +28,7 @@ python3 knowledge/build.py
 
 Output: `knowledge/_site/`. Open `knowledge/_site/index.html`. GitHub Actions runs the same command and, on `main`, deploys GitHub Pages **after the owner sets Pages source to GitHub Actions**. Until that probe, the public URL stays Unknown.
 
-CI **fails closed** if `docs/srs.md` or the official PDF is missing. Tracker and CI are GitHub only (no GitLab). **Author does not merge their own PR.**
+CI **fails closed** if `docs/srs.md` is missing or if the official PDF/zip SHA256 does not match the freeze. Tracker and CI are GitHub only (no GitLab). **Author does not merge their own PR.**
 
 ## Restaurant app (later — Café Fausse App)
 
@@ -39,7 +39,7 @@ Not in this cut. When it is implemented:
 - Fail closed: missing DB / full book (30 tables) / timeout = honest no.
 - Intended hostname: `cafe.artof.link` (Unknown until probed). Hosting is future (not AWS in this PR).
 
-Course images: official pack is four webps (see `docs/official/` and `assets/images/PROVENANCE.md`). Student application code was not copied.
+Course images: Quantic-official pack is **four** webps only (`assets/images/`, zip SHA256 in `docs/official/PROVENANCE.md`). Seventeen student-recovered files are in `assets/images/supplemental-not-official/` and are **not** official. Student application code was not copied.
 
 ## Required later file
 

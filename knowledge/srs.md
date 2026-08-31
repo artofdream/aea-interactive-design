@@ -2,7 +2,7 @@
 
 The restaurant **MVP is this freeze**. Do not invent IDs. Do not grow the first app cut past these requirements.
 
-**Source of truth:** official PDF (GET 200 this session), local `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. Working freeze: [docs/srs.md](srs-full.html).
+**Source of truth:** official PDF (GET 200 this session; SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`), local `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. Working freeze: [docs/srs.md](srs-full.html).
 
 Two public student transcripts **corroborate** FR-1..FR-18 and NFR-1..NFR-9; they are not SoT. If a later official PDF differs, the PDF wins.
 

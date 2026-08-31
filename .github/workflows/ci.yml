@@ -37,4 +37,12 @@ jobs:
           fi
           # PDF header probe (this-session-style file check)
           python3 -c "import pathlib,sys; p=pathlib.Path('$PDF'); b=p.read_bytes()[:8]; sys.exit(0 if b.startswith(b'%PDF') else 1)"
-          echo "Official SRS PDF present."
+          echo "$PDF  SHA256 expected"
+          echo "6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82  $PDF" | sha256sum -c
+          ZIP="docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip"
+          if [ ! -f "$ZIP" ]; then
+            echo "Official images.zip missing. Fail closed."
+            exit 1
+          fi
+          echo "59730ee04e5d74fa524122f220122a7db1964cf9163cd4e7daa704d440db2437  $ZIP" | sha256sum -c
+          echo "Official SRS PDF and images.zip present with freeze SHA256."

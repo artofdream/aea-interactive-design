@@ -8,7 +8,7 @@ Project: Café Fausse Website Development
 
 https://uploads.smart.ly/emails/Projects/MSSE/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf
 
-Local copy: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf` (PDF 1.4, 7 pages). Official image pack (4 files): `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip`. See `docs/official/PROVENANCE.md`.
+Local copy: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf` (97636 bytes, 7 pages, PDF 1.4). SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`. Official image pack (4 files only): `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip` SHA256 `59730ee04e5d74fa524122f220122a7db1964cf9163cd4e7daa704d440db2437`. See `docs/official/PROVENANCE.md`.
 
 This markdown file is the **working ID freeze** of that PDF. **FR-1..FR-18** and **NFR-1..NFR-9** were extracted from the PDF this session and match. Cite IDs from here. Do not invent new requirement IDs. If a later official PDF differs, the PDF wins.
 

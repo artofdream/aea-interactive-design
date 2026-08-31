@@ -1,40 +1,23 @@
-# Course image pack — provenance
+# Image provenance
 
-## Official (SoT)
+## Quantic-official (4 files)
 
-Fetched this session (2026-08-31, HTTP 200):
+Official zip (GET 200 this session):
 
 https://uploads.smart.ly/emails/Projects/MSSE/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip
 
-Local zip: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip`.
+- Local zip: `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_Images.zip`
+- SHA256: `59730ee04e5d74fa524122f220122a7db1964cf9163cd4e7daa704d440db2437`
 
-Official zip contents (4 files). Byte-identical to the same names in this directory:
+The zip contains **only** these four files. They sit in this directory and are byte-identical to the zip members:
 
 - `gallery-cafe-interior.webp`
-- `home-cafe-fausse.webp`
 - `gallery-ribeye-steak.webp`
 - `gallery-special-event.webp`
+- `home-cafe-fausse.webp`
 
-## Not in the official zip
+Do not treat any other image in this repository as Quantic-official.
 
-These 17 filenames were recovered earlier from a public student mirror (`Mihai-Codes/cafe-fausse` `frontend/public/images/<file>` only — the student app was not cloned). They are **not** source of truth:
+## Supplemental, not official (17 files)
 
-- `salmon-dish.jpg`
-- `caprese-salad.jpg`
-- `tiramisu.jpg`
-- `dessert-closeup.jpg`
-- `cocktail-bar.jpg`
-- `espresso-coffee.jpg`
-- `wine-cellar.jpg`
-- `bar-interior.jpg`
-- `elegant-table.jpg`
-- `chef-hands.jpg`
-- `elegant-desserts.jpg`
-- `cheesecake.png`
-- `vegetable-risotto.png`
-- `caesar-salad.png`
-- `red-wine.png`
-- `white-wine.png`
-- `craft-beer.png`
-
-Student application code was not copied.
+Student-recovered extras are in `supplemental-not-official/`. They are **not** in the official zip and are **not** Quantic-official. See `supplemental-not-official/PROVENANCE.md`.
