@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -483,11 +484,28 @@ def assert_coverage_freeze_ids(src: str) -> None:
             fail(f"coverage.md missing table row for NFR-{n}")
 
 
+def assert_svg_well_formed() -> None:
+    assets = ROOT / "assets"
+    if not assets.is_dir():
+        return
+    for path in sorted(assets.glob("*.svg")):
+        raw = path.read_bytes()
+        try:
+            raw.decode("utf-8")
+        except UnicodeDecodeError as exc:
+            fail(f"{path.relative_to(REPO)} is not UTF-8: {exc}")
+        try:
+            ET.fromstring(raw)
+        except ET.ParseError as exc:
+            fail(f"{path.relative_to(REPO)} is not well-formed SVG/XML: {exc}")
+
+
 def main() -> None:
     for required in REQUIRED:
         if not required.is_file():
             fail(f"missing required knowledge page {required.relative_to(REPO)}")
     assert_coverage_freeze_ids((ROOT / "coverage.md").read_text(encoding="utf-8"))
+    assert_svg_well_formed()
     srs = REPO / "docs" / "srs.md"
     if not srs.is_file():
         fail("missing docs/srs.md")

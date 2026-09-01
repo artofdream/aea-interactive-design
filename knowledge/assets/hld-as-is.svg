@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 540" role="img" aria-labelledby="t1 d1">
-  <title id="t1">Café Fausse as-is high-level design</title>
+  <title id="t1">Cafe Fausse as-is high-level design</title>
   <desc id="d1">Knowledge site is live on GitHub Pages. cafe.artof.link is an AWS ELB, not our restaurant. Local MVP is Vite, Flask, and Postgres on main.</desc>
   <rect width="980" height="540" fill="#f6f1e8"/>
-  <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Café Fausse as-is  probed 2026-09-01 Europe/Berlin</text>
+  <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse as-is - probed 2026-09-01 Europe/Berlin</text>
   <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Two hostnames, two jobs. This knowledge site is not the shop. No florist Path B / Kafka / 14 hats.</text>
 
   <rect x="20" y="72" width="300" height="440" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
-  <text x="36" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">Knowledge  live this session</text>
+  <text x="36" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">Knowledge - live this session</text>
   <rect x="40" y="116" width="260" height="36" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="170" y="139" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">knowledge/*.md</text>
   <line x1="170" y1="152" x2="170" y2="168" stroke="#7a2e1f"/>
@@ -15,12 +16,12 @@
   <line x1="170" y1="204" x2="170" y2="220" stroke="#7a2e1f"/>
   <rect x="40" y="220" width="260" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="170" y="241" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">GitHub Actions</text>
-  <text x="170" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#5e574d">’ GitHub Pages</text>
+  <text x="170" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#5e574d">to GitHub Pages</text>
   <line x1="170" y1="268" x2="170" y2="284" stroke="#7a2e1f"/>
   <rect x="40" y="284" width="260" height="56" rx="4" fill="#7a2e1f"/>
   <text x="170" y="308" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#f6f1e8">knowledge.cafe.artof.link</text>
-  <text x="170" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">GET 200 · TLS VERIFY_OK</text>
-  <text x="50" y="364" font-family="Georgia, serif" font-size="11" fill="#5e574d">CN/SAN match · Lets Encrypt</text>
+  <text x="170" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">GET 200, TLS VERIFY_OK</text>
+  <text x="50" y="364" font-family="Georgia, serif" font-size="11" fill="#5e574d">CN/SAN match, Let's Encrypt</text>
   <text x="50" y="382" font-family="Georgia, serif" font-size="11" fill="#5e574d">expires 2026-11-30</text>
   <text x="50" y="408" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">https_enforced=false</text>
   <text x="50" y="426" font-family="Georgia, serif" font-size="11" fill="#5e574d">Owner: tick Enforce HTTPS</text>
@@ -35,17 +36,17 @@
   <line x1="490" y1="186" x2="490" y2="214" stroke="#5e574d" stroke-dasharray="5 4"/>
   <rect x="360" y="214" width="260" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
   <text x="490" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">AWS ELB eu-north-1</text>
-  <text x="490" y="262" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#5e574d">aaafeaf0&elb.eu-north-1</text>
+  <text x="490" y="262" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#5e574d">aaafeaf0...elb.eu-north-1</text>
   <text x="360" y="320" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Do not claim this hostname</text>
-  <text x="360" y="338" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">is live Café Fausse.</text>
-  <text x="360" y="370" font-family="Georgia, serif" font-size="11" fill="#5e574d">Wildcard/ELB leftover  not</text>
+  <text x="360" y="338" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">is live Cafe Fausse.</text>
+  <text x="360" y="370" font-family="Georgia, serif" font-size="11" fill="#5e574d">Wildcard/ELB leftover - not</text>
   <text x="360" y="386" font-family="Georgia, serif" font-size="11" fill="#5e574d">the in-repo React/Flask app.</text>
   <text x="360" y="418" font-family="Georgia, serif" font-size="11" fill="#5e574d">Hosting of cafe.artof.link</text>
   <text x="360" y="434" font-family="Georgia, serif" font-size="11" fill="#5e574d">remains future.</text>
 
   <rect x="660" y="72" width="300" height="440" rx="8" fill="#fffdf8" stroke="#d4cbb8" stroke-width="2"/>
   <text x="676" y="98" font-family="Georgia, serif" font-size="14" fill="#1c1915">Local MVP on main</text>
-  <text x="676" y="118" font-family="Georgia, serif" font-size="11" fill="#5e574d">PRs #9 + timezone #12 · not a public host</text>
+  <text x="676" y="118" font-family="Georgia, serif" font-size="11" fill="#5e574d">PRs #9 + timezone #12 - not a public host</text>
   <rect x="680" y="140" width="260" height="36" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="810" y="163" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">Vite :5173</text>
   <line x1="810" y1="176" x2="810" y2="192" stroke="#7a2e1f"/>
@@ -54,9 +55,9 @@
   <line x1="810" y1="228" x2="810" y2="244" stroke="#7a2e1f"/>
   <rect x="680" y="244" width="260" height="36" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="810" y="267" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">cafe-pg PostgreSQL</text>
-  <text x="676" y="320" font-family="Georgia, serif" font-size="11" fill="#5e574d">React + JSX · Flask · Postgres</text>
+  <text x="676" y="320" font-family="Georgia, serif" font-size="11" fill="#5e574d">React + JSX, Flask, Postgres</text>
   <text x="676" y="338" font-family="Georgia, serif" font-size="11" fill="#5e574d">MVP = official SRS only.</text>
-  <text x="676" y="368" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Journey 19 pass/fail: Unknown</text>
+  <text x="676" y="368" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Journey 1-9 pass/fail: Unknown</text>
   <text x="676" y="386" font-family="Georgia, serif" font-size="11" fill="#5e574d">(not probed this session; cts-ai</text>
   <text x="676" y="402" font-family="Georgia, serif" font-size="11" fill="#5e574d">not reachable from this VM)</text>
   <text x="676" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">Fail closed: missing DB, full</text>
