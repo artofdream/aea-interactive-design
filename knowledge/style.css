@@ -18,9 +18,13 @@ html, body {
 }
 
 header, main, footer {
-  max-width: 46rem;
+  max-width: 54rem;
   margin: 0 auto;
   padding: 1.25rem 1.25rem;
+}
+
+main {
+  overflow-x: auto;
 }
 
 header {
@@ -78,7 +82,7 @@ pre {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   margin: 1rem 0;
 }
 
@@ -87,6 +91,7 @@ th, td {
   padding: 0.4rem 0.55rem;
   text-align: left;
   vertical-align: top;
+  word-break: break-word;
 }
 
 th { background: #efeae1; }

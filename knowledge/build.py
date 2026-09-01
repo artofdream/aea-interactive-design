@@ -16,6 +16,8 @@ NAV = [
     ("index.html", "Home"),
     ("stack.html", "Stack"),
     ("srs.html", "SRS freeze"),
+    ("coverage.html", "Coverage"),
+    ("teammate-brief.html", "Teammate brief"),
     ("honesty.html", "Honesty"),
     ("future.html", "Future"),
 ]
@@ -24,6 +26,8 @@ REQUIRED = [
     ROOT / "index.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
+    ROOT / "coverage.md",
+    ROOT / "teammate-brief.md",
     ROOT / "honesty.md",
     ROOT / "future.md",
 ]
@@ -421,9 +425,10 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     {body}
   </main>
   <footer>
-    <p>Intended hostnames: <code>knowledge.cafe.artof.link</code> (this surface),
-    <code>cafe.artof.link</code> (restaurant, later). Live URLs: <strong>Unknown</strong>
-    until a GET probe after Pages/DNS enablement (owner step).</p>
+    <p>Knowledge host <code>knowledge.cafe.artof.link</code>: HTTPS GET 200 this session
+    (TLS CN match). Pages <code>https_enforced</code> is false (HTTP also 200).
+    Restaurant hostname <code>cafe.artof.link</code> is not our live app
+    (CNAME to AWS ELB; GET did not resolve). Local MVP is in-repo.</p>
     <p>GitHub Actions → GitHub Pages. No GitLab. Do not invent other domains.</p>
   </footer>
 </body>

@@ -2,9 +2,11 @@
 
 The restaurant **MVP is this freeze**. Do not invent IDs. Do not grow the first app cut past these requirements.
 
-**Source of truth:** official PDF (GET 200 this session; SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`), local `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. Working freeze: [docs/srs.md](srs-full.html).
+**Source of truth:** official PDF (SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`), local `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. Working freeze: [docs/srs.md](srs-full.html).
 
 Two public student transcripts **corroborate** FR-1..FR-18 and NFR-1..NFR-9; they are not SoT. If a later official PDF differs, the PDF wins.
+
+The restaurant MVP is implemented **in-repo** (`frontend/`, `backend/`, `shared/freeze.json`) on `main` (merged PRs #9, #12). This knowledge site is **not** the restaurant. Public `cafe.artof.link` is **not** our live app (see [Honesty](honesty.md)). Presentation map: [FR/NFR coverage](coverage.md).
 
 ## Functional requirements
 
@@ -45,4 +47,4 @@ Two public student transcripts **corroborate** FR-1..FR-18 and NFR-1..NFR-9; the
 
 ## Not in the MVP
 
-Anything not listed above is [Future / not-MVP](future.md). The restaurant app is **not implemented** on this knowledge site.
+Anything not listed above is [Future / not-MVP](future.md).
