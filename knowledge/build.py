@@ -409,14 +409,25 @@ def collect_pages() -> list[Path]:
     return pages
 
 
-def rel_css(from_html: Path) -> str:
+def rel_from_out(from_html: Path, name: str) -> str:
     depth = len(from_html.parent.relative_to(OUT).parts)
-    return "/".join([".."] * depth + ["style.css"]) if depth else "style.css"
+    return "/".join([".."] * depth + [name]) if depth else name
+
+
+def rel_css(from_html: Path) -> str:
+    return rel_from_out(from_html, "style.css")
 
 
 def rel_nav_prefix(from_html: Path) -> str:
     depth = len(from_html.parent.relative_to(OUT).parts)
     return "/".join([".."] * depth) + "/" if depth else ""
+
+
+FAVICON_FILES = (
+    "favicon.ico",
+    "favicon-32.png",
+    "apple-touch-icon.png",
+)
 
 
 def copy_static_dir(name: str) -> None:
@@ -435,6 +446,36 @@ def copy_static_dir(name: str) -> None:
 def copy_static_assets() -> None:
     copy_static_dir("assets")
     copy_static_dir("clips")
+
+
+def copy_favicons() -> None:
+    for name in FAVICON_FILES:
+        src = ROOT / name
+        if not src.is_file():
+            fail(f"missing knowledge/{name}")
+        (OUT / name).write_bytes(src.read_bytes())
+
+
+def assert_favicons_built() -> None:
+    for name in FAVICON_FILES:
+        path = OUT / name
+        if not path.is_file() or path.stat().st_size < 32:
+            fail(f"built site missing favicon {name}")
+    index = (OUT / "index.html").read_text(encoding="utf-8")
+    for needle in (
+        'rel="icon"',
+        "favicon.ico",
+        "favicon-32.png",
+        'rel="apple-touch-icon"',
+        "apple-touch-icon.png",
+    ):
+        if needle not in index:
+            fail(f"index.html missing favicon wiring ({needle})")
+    nested = OUT / "future" / "schema.html"
+    if nested.is_file():
+        nested_html = nested.read_text(encoding="utf-8")
+        if 'href="../favicon.ico"' not in nested_html:
+            fail("nested page missing relative favicon path")
 
 
 def assert_clip_refs() -> None:
@@ -491,6 +532,9 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
         nav_bits.append(f'<a href="{prefix}{href}"{cls}>{html.escape(label)}</a>')
     nav = "\n        ".join(nav_bits)
     css = rel_css(out_file)
+    icon_ico = rel_from_out(out_file, "favicon.ico")
+    icon_png = rel_from_out(out_file, "favicon-32.png")
+    icon_apple = rel_from_out(out_file, "apple-touch-icon.png")
     future_note = ""
     if extra_class == "is-future" or current.startswith("future"):
         future_note = (
@@ -513,6 +557,9 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)} — Café Fausse knowledge</title>
+  <link rel="icon" href="{html.escape(icon_ico, quote=True)}" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="{html.escape(icon_png, quote=True)}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{html.escape(icon_apple, quote=True)}">
   <link rel="stylesheet" href="{css}">
 </head>
 <body class="{classes}">
@@ -587,6 +634,7 @@ def main() -> None:
     (OUT / "style.css").write_text(css_src.read_text(encoding="utf-8"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     copy_static_assets()
+    copy_favicons()
     clips_src = ROOT / "clips"
     if clips_src.is_dir():
         for clip in sorted(clips_src.glob("*.mp4")):
@@ -620,6 +668,7 @@ def main() -> None:
             "",
         ),
     )
+    assert_favicons_built()
     print(f"built {OUT}")
 
 
