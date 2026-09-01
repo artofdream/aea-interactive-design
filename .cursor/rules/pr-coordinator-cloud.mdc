@@ -20,8 +20,8 @@ Repo: `artofdream/aea-interactive-design`. Base branch: `main`.
    - Read Bugbot and review threads. Resolve or **explicitly decline**. Do not ignore.
    - Autofix = new branch/PR, not a squash into this one.
 4. Post MRC **COMMENT** with merge / wait / block and the CI evidence.
-5. If this run's GitHub identity is `cursor` / `cursor[bot]` (not the PR author), you may `APPROVE` when checks are green and Bugbot is clear or declined. Same login as the author **cannot** `APPROVE`.
-6. **Do not merge** PRs this agent authored. Owner or `cursor[bot]` merges only after review + green checks. Solo human is not an excuse to self-merge.
+5. Distinct reviewer is **`cursor[bot]`** (Cursor GitHub App). Owner PAT / `artofdream` cannot `APPROVE` its own PR. If this run is `cursor[bot]` and is **not** the PR author, you may `APPROVE` when checks are green and Bugbot is clear or declined.
+6. **Do not merge** PRs this agent authored. `cursor[bot]` merges only after review + green checks. Solo human is not an excuse to self-merge. Do not install a second GitHub App for this.
 
 ## Fail closed
 
