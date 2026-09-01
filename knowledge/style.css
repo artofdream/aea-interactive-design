@@ -108,6 +108,25 @@ main img {
   margin: 0.5rem 0 1.25rem;
 }
 
+main figure.clip {
+  margin: 0.75rem 0 1.5rem;
+  padding: 0;
+}
+
+main video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ink);
+  border: 1px solid var(--rule);
+}
+
+main figure.clip figcaption,
+main figure.clip a {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 th, td {
   border: 1px solid var(--rule);
   padding: 0.4rem 0.55rem;

@@ -4,6 +4,26 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Probe date for live claims on this page:** 2026-09-01 Europe/Berlin (this session).
 
+## Demo clips
+
+Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local stack may be offline; these files are the shareable look. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`.
+
+**Home → Menu (~32s)**
+
+<video controls src="clips/01-home-menu.mp4"></video>
+
+**Happy reservation (~33s)**
+
+<video controls src="clips/02-happy-book.mp4"></video>
+
+## Course grade 5 — covered vs decide
+
+1. **What a grade of 5 needs.** Official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). PDF in `docs/official/` is SoT; working freeze `docs/srs.md`. Do not invent FR-19 / NFR-10. Freeze data is not to be “improved.” Extra ideas are Future, not extra credit.
+
+2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
+
+3. **Still decide / focus.** GitHub Pages **Enforce HTTPS** still **`https_enforced=false`** (Pages API this session) — owner tick. Journey 1–9 pass/fail: **Unknown** until probed. `cafe.artof.link` hosting is **Future** (issue #22); that hostname is an AWS ELB, not our restaurant. Owner adds `quantic-grader` (agents must not). **NFR-1** / **NFR-2** timing claims stay **Unknown** without a measured probe this session.
+
 ## Where we are
 
 - Public GitHub repo `artofdream/aea-interactive-design`. Tracker and CI are **GitHub only**. No GitLab.
@@ -35,11 +55,11 @@ Assignment collaborator `quantic-grader` must be added by the **owner**. Agents 
 
 ## What to decide tomorrow
 
-1. **Enforce HTTPS** on GitHub Pages (owner tick). Probe shows `https_enforced=false`.
-2. **Presentation honesty:** use [Coverage](coverage.md). NFR load/submit timings without a measured probe stay **Unknown**. Journey 1–9 results stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant.
-3. **Owner-only:** add `quantic-grader`. Do not ask an agent to add collaborators.
-4. **Scope ratchet:** any extra feature idea goes to Future, not a new FR. Do not batch unrelated findings into one PR.
-5. **Local demo path** if needed: Vite `:5173` + Flask `:5000` + `cafe-pg` — not the AWS ELB behind `cafe.artof.link`.
+1. **Owner:** tick Enforce HTTPS (`https_enforced=false` this session).
+2. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
+3. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
+4. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
+5. **Scope:** extra ideas go to Future, not a new FR. PORT is not filed; do not batch it here.
 
 ## Read next
 
