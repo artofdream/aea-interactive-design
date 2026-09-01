@@ -3,7 +3,7 @@
   <title id="t1">Cafe Fausse as-is high-level design</title>
   <desc id="d1">Knowledge site is live on GitHub Pages. cafe.artof.link is an AWS ELB, not our restaurant. Local MVP is Vite, Flask, and Postgres on main.</desc>
   <rect width="980" height="540" fill="#f6f1e8"/>
-  <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse as-is - probed 2026-09-01 Europe/Berlin</text>
+  <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse as-is - probed 2026-09-02 Europe/Berlin</text>
   <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Two hostnames, two jobs. This knowledge site is not the shop. No florist Path B / Kafka / 14 hats.</text>
 
   <rect x="20" y="72" width="300" height="440" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
@@ -20,11 +20,11 @@
   <line x1="170" y1="268" x2="170" y2="284" stroke="#7a2e1f"/>
   <rect x="40" y="284" width="260" height="56" rx="4" fill="#7a2e1f"/>
   <text x="170" y="308" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#f6f1e8">knowledge.cafe.artof.link</text>
-  <text x="170" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">GET 200, TLS VERIFY_OK</text>
+  <text x="170" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">HTTPS GET 200, TLS VERIFY_OK</text>
   <text x="50" y="364" font-family="Georgia, serif" font-size="11" fill="#5e574d">CN/SAN match, Let's Encrypt</text>
   <text x="50" y="382" font-family="Georgia, serif" font-size="11" fill="#5e574d">expires 2026-11-30</text>
-  <text x="50" y="408" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">https_enforced=false</text>
-  <text x="50" y="426" font-family="Georgia, serif" font-size="11" fill="#5e574d">Owner: tick Enforce HTTPS</text>
+  <text x="50" y="408" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">https_enforced=true</text>
+  <text x="50" y="426" font-family="Georgia, serif" font-size="11" fill="#5e574d">HTTP 301 to HTTPS</text>
   <text x="50" y="452" font-family="Georgia, serif" font-size="11" fill="#5e574d">CNAME artofdream.github.io</text>
   <text x="50" y="490" font-family="Georgia, serif" font-size="11" fill="#5e574d">Not a CMS. Not the restaurant.</text>
 

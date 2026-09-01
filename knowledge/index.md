@@ -8,9 +8,9 @@ Teammate meeting **Wed 2026-09-02 19:00 CET**: start with the [Brief](brief.md) 
 
 ## Teams
 
-| Team | Owns | Intended hostname | Live URL (probe 2026-09-01 Europe/Berlin) |
+| Team | Owns | Intended hostname | Live URL (probe 2026-09-02 Europe/Berlin) |
 |---|---|---|---|
-| Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | **GET 200** this session; TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`. Pages `https_enforced=false` — owner still needs to tick Enforce HTTPS. |
+| Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session; HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`. Pages **`https_enforced=true`**; cert **approved**. |
 | Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Not Café Fausse.** DNS CNAME → AWS ELB `eu-north-1`. Do not claim this hostname is the restaurant. App is **in-repo on `main`** (PRs #9 + timezone #12). Public hosting remains future. |
 
 AWS is not in the restaurant MVP cut. Local validate (cts-ai, not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. Journey 1–9 pass/fail: **Unknown** (not probed this session).
@@ -29,7 +29,7 @@ AI may interpret. Domain services decide. Status words are claims; they need a p
 
 | Surface | Team | Hostname | Publish path | This session |
 |---|---|---|---|---|
-| Knowledge (this site) | Café Fausse Knowledge | `knowledge.cafe.artof.link` | GitHub Actions → GitHub Pages | GET 200; CNAME `artofdream.github.io`; Let’s Encrypt, expires 2026-11-30 |
+| Knowledge (this site) | Café Fausse Knowledge | `knowledge.cafe.artof.link` | GitHub Actions → GitHub Pages | HTTPS GET 200; HTTP 301 to HTTPS; `https_enforced=true`; CNAME `artofdream.github.io`; Let’s Encrypt, expires 2026-11-30 |
 | Implementation (restaurant) | Café Fausse App | `cafe.artof.link` | Local React + Flask + PostgreSQL. Hosting future. | CNAME is an AWS ELB, **not** our app. No claim that the restaurant is live there. |
 
 Do not invent other domains. Do not treat a hostname as a live Café Fausse restaurant.

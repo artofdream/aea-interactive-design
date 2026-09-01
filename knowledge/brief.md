@@ -2,7 +2,7 @@
 
 Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
-**Probe date for live claims on this page:** 2026-09-01 Europe/Berlin (this session).
+**Probe date for live claims on this page:** 2026-09-02 Europe/Berlin (this session).
 
 ## Demo clips
 
@@ -20,9 +20,9 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 1. **What a grade of 5 needs.** Official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). PDF in `docs/official/` is SoT; working freeze `docs/srs.md`. Do not invent FR-19 / NFR-10. Freeze data is not to be “improved.” Extra ideas are Future, not extra credit.
 
-2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
+2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. Pages **`https_enforced=true`**; cert **approved**. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
 
-3. **Still decide / focus.** GitHub Pages **Enforce HTTPS** still **`https_enforced=false`** (Pages API this session) — owner tick. Journey 1–9 pass/fail: **Unknown** until probed. `cafe.artof.link` hosting is **Future** (issue #22); that hostname is an AWS ELB, not our restaurant. Owner adds `quantic-grader` (agents must not). **NFR-1** / **NFR-2** timing claims stay **Unknown** without a measured probe this session.
+3. **Still decide / focus.** Journey 1–9 pass/fail: **Unknown** until probed. `cafe.artof.link` hosting is **Future** (issue #22); that hostname is an AWS ELB, not our restaurant. Owner adds `quantic-grader` (agents must not). **NFR-1** / **NFR-2** timing claims stay **Unknown** without a measured probe this session.
 
 ## Where we are
 
@@ -35,7 +35,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 | Surface | Hostname | This session |
 |---|---|---|
-| Café Fausse Knowledge | `knowledge.cafe.artof.link` | GET **200**; TLS VERIFY_OK; CN/SAN match; Let’s Encrypt, expires 2026-11-30. Pages API: `cname=knowledge.cafe.artof.link`, **`https_enforced=false`** — owner still needs to tick Enforce HTTPS. |
+| Café Fausse Knowledge | `knowledge.cafe.artof.link` | HTTPS GET **200**; HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN match; Let’s Encrypt, expires 2026-11-30. Pages API: `cname=knowledge.cafe.artof.link`, cert **approved**, **`https_enforced=true`**. |
 | Café Fausse App | `cafe.artof.link` | DNS CNAME → `aaafeaf0606ec43f5ad23cfe94d6273e-1de430975830beed.elb.eu-north-1.amazonaws.com.` **Not our restaurant.** Do not claim this hostname is live Café Fausse. Hosting is future. |
 
 Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. A Journey 1–9 UX checklist is described for that machine. **Pass/fail = Unknown** unless someone probes those journeys this session. This agent did not.
@@ -55,11 +55,10 @@ Assignment collaborator `quantic-grader` must be added by the **owner**. Agents 
 
 ## What to decide tomorrow
 
-1. **Owner:** tick Enforce HTTPS (`https_enforced=false` this session).
-2. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
-3. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
-4. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
-5. **Scope:** extra ideas go to Future, not a new FR. PORT is not filed; do not batch it here.
+1. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
+2. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
+3. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
+4. **Scope:** extra ideas go to Future, not a new FR. PORT is not filed; do not batch it here.
 
 ## Read next
 

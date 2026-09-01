@@ -575,9 +575,9 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     {body}
   </main>
   <footer>
-    <p>Knowledge host <code>knowledge.cafe.artof.link</code>: GET 200 this session
-    (2026-09-01 Europe/Berlin); TLS VERIFY_OK, CN/SAN match. Pages
-    <code>https_enforced=false</code> — owner still needs to tick Enforce HTTPS.</p>
+    <p>Knowledge host <code>knowledge.cafe.artof.link</code>: HTTPS GET 200 this session
+    (2026-09-02 Europe/Berlin); HTTP 301 to HTTPS. TLS VERIFY_OK, CN/SAN match. Pages
+    <code>https_enforced=true</code>; cert approved for <code>knowledge.cafe.artof.link</code>.</p>
     <p>Restaurant hostname <code>cafe.artof.link</code> is <strong>not</strong> Café Fausse App
     (CNAME to an AWS ELB). Local MVP is in-repo. GitHub Actions → GitHub Pages. No GitLab.</p>
   </footer>{mermaid_script}
