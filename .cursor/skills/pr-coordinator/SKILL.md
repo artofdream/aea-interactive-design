@@ -15,7 +15,7 @@ One finding → one GitHub issue → one branch → one PR against `main`. Do no
 
 The authoring agent does **not** merge its own PR. Unreviewed PRs are not mergeable. Red CI is not mergeable.
 
-`cursor[bot]` reviews and may merge after a this-run CI probe. The author still does not merge.
+`cursor[bot]` is the distinct reviewer for **`artofdream`-authored** PRs: it may submit GitHub review `APPROVE` and merge after a this-run CI probe. The author still does not merge.
 
 ## Review identity (GitHub self-APPROVE)
 
@@ -25,9 +25,10 @@ Owner PAT / GitHub MCP / `gh` as `artofdream` is **not** a distinct reviewer. A 
 
 **Chosen distinct identity: `cursor[bot]`** (Cursor GitHub App, already installed). Probe: it merged PR #16. Do **not** install a second GitHub App, mint an app private key, or use a second personal account for this.
 
-- `cursor[bot]` may `APPROVE` an `artofdream`-authored PR after Actions are probed green this run and Bugbot is clear or explicitly declined.
-- `cursor[bot]` must **not** `APPROVE` or merge a PR it authored.
-- Owner PAT stays for issues/comments/CI read. It is not the approver.
+Merge gate is a submitted GitHub review **`APPROVE` from a login that is not the PR author**. Bugbot posts as `cursor[bot]` too; those inline comments and `COMMENTED` reviews are a **signal**, not the gate.
+
+- Author `artofdream` → `cursor[bot]` coordinator `APPROVE`, then `cursor[bot]` may merge. Owner PAT / `artofdream` cannot `APPROVE` or merge that PR.
+- Author `cursor[bot]` → owner `artofdream` may `APPROVE` and merge (different login). `cursor[bot]` must **not** `APPROVE` or merge a PR it authored.
 
 Sweep: `.cursor/rules/pr-coordinator-cloud.mdc`.
 
@@ -40,7 +41,7 @@ Fail closed:
 - Missing required checks → do not merge
 - Failing checks → do not merge
 - Checks not probed this session → Unknown; do not merge
-- Unreviewed PR (no `cursor[bot]` COMMENT/APPROVE) → do not merge
+- Unreviewed PR (no non-author GitHub review `APPROVE`) → do not merge
 
 Fail-closed CI stays required even after review. Do not merge unreviewed or failing checks.
 
