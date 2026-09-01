@@ -29,6 +29,8 @@ Chosen distinct identity: a **GitHub App** (preferred over a second personal/mac
 
 When the App (or a machine user) is installed and reviews as a different login, that identity may `APPROVE`. Until then, do not treat same-login COMMENT as GitHub `APPROVE`, and do not try to self-APPROVE.
 
+Cloud automations comment and review as `cursor` / `cursor[bot]`. That is a distinct identity from `artofdream`. A cloud coordinator **may** `APPROVE` an `artofdream`-authored PR after a this-run CI probe. It **must not** `APPROVE` or merge a PR it authored. Sweep procedure: `.cursor/rules/pr-coordinator-cloud.mdc`.
+
 ## Probe CI this session
 
 Status words (`green`, `passing`, `ready to merge`) are claims. Probe GitHub Actions **this session** (`gh pr checks` / Actions logs) or write **Unknown**.

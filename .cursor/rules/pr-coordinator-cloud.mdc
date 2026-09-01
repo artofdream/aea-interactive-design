@@ -1,0 +1,31 @@
+---
+description: Cloud PR coordinator — walk open GitHub PRs, probe CI, MRC COMMENT or cursor APPROVE. Never GitLab.
+alwaysApply: true
+metadata:
+  environments: cloud
+---
+
+# Cloud PR coordinator
+
+When this cloud agent runs, act as GitHub PR coordinator (procedure memory, not a hat). Read `.cursor/skills/pr-coordinator/SKILL.md`. Tracker is GitHub only. Do not use GitLab, `glab`, or merge requests.
+
+Repo: `artofdream/aea-interactive-design`. Base branch: `main`.
+
+## Sweep (every run)
+
+1. List **open** pull requests (`gh pr list` or GitHub API `pulls?state=open`).
+2. If the list is empty, say so. Do not invent PRs. Do not implement the restaurant app from a sweep.
+3. For **each** open PR, independently (do not batch unrelated findings):
+   - Probe GitHub Actions **this run** (`gh pr checks` / Actions logs). Status words need a probe or **Unknown**.
+   - Read Bugbot and review threads. Resolve or **explicitly decline**. Do not ignore.
+   - Autofix = new branch/PR, not a squash into this one.
+4. Post MRC **COMMENT** with merge / wait / block and the CI evidence.
+5. If this run's GitHub identity is `cursor` / `cursor[bot]` (not the PR author), you may `APPROVE` when checks are green and Bugbot is clear or declined. Same login as the author **cannot** `APPROVE`.
+6. **Do not merge** PRs this agent authored. Owner or `cursor[bot]` merges only after review + green checks. Solo human is not an excuse to self-merge.
+
+## Fail closed
+
+- Red, missing, or unprobed checks → do not merge
+- Unreviewed → do not merge
+- Do not self-APPROVE
+- Do not invent FR/NFR IDs

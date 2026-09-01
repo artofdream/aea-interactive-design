@@ -112,7 +112,8 @@ For this repo **now**:
 
 - Tracker: GitHub issues in this repo.
 - Change: one branch, one PR against `main`. Procedure: `.cursor/skills/pr-coordinator/SKILL.md`.
-- **Author does not merge their own PR.** Probe CI this session; do not merge red or unreviewed PRs.
+- Cloud agents also follow `.cursor/CLOUD.md` and `.cursor/rules/pr-coordinator-cloud.mdc`: list open GitHub PRs, probe Actions this run, MRC COMMENT (or `cursor` APPROVE when that identity is not the author).
+- **Author does not merge their own PR.** Probe CI this session; do not merge red or unreviewed PRs. Same GitHub login cannot `APPROVE` its own PR.
 - Cursor Bugbot comments are a review signal (resolve or explicitly decline). Autofix = new branch/PR, not a silent merge.
 - Do not use GitLab issues, merge requests, or GitLab CI.
 - The assignment requires collaborator `quantic-grader`. **The owner must add that collaborator.** An agent must not add it.
