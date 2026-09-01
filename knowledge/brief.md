@@ -37,6 +37,31 @@ Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flas
 - **In MVP:** the official SRS pages and APIs (Home, Menu, Reservations, About, Gallery, newsletter, 30 tables, fail-closed DB). See [Coverage](coverage.md).
 - **Not in MVP:** AWS / `cafe.artof.link` hosting, florist Path B, 14 hats, Kafka/BFF, 3DX Lab, GitLab, invented requirement IDs, claiming the system is antifragile.
 
+## Grade of 5 (Quantic)
+
+A top mark maps to the **official SRS freeze only** (**FR-1..FR-18**, **NFR-1..NFR-9**). No invented IDs. No florist Path B, extra pages, or AWS as “extra credit.” Row-by-row map: [Coverage](coverage.md).
+
+**What the assignment requires**
+
+- Product: Home (**FR-1..FR-4**), Menu (**FR-5**), Reservations (**FR-6..FR-9**), About (**FR-10..FR-11**), Gallery (**FR-12..FR-14**), newsletter (**FR-15..FR-16**), PostgreSQL Customers/Reservations + Flask book/confirm (**FR-17..FR-18**). Freeze data (prices, address, hours, owners, awards, reviews) is SoT.
+- Quality: 3s load (**NFR-1**), 2s submits (**NFR-2**), navigable UX (**NFR-3**), brand (**NFR-4**), no double-book (**NFR-5**), honest failures (**NFR-6**), Chrome/Firefox/Safari/Edge (**NFR-7**), responsive (**NFR-8**), modular + documented (**NFR-9**). Stack: React + JSX, Flask, PostgreSQL, Flexbox/Grid. README deploy. `docs/ai-tooling.md`. Public repo. Owner adds `quantic-grader`.
+
+**Already covered**
+
+- Café Fausse App **on `main`** (PRs #9 + timezone #12): every FR row in [Coverage](coverage.md) is `code` / `CI`. **NFR-5**, **NFR-6**, **NFR-8**, **NFR-9** same. Local path (cts-ai, not this VM): Vite `:5173`, Flask `:5000`, `cafe-pg`.
+- Café Fausse Knowledge: `GET https://knowledge.cafe.artof.link/` **200** this session; TLS VERIFY_OK; CN/SAN match. This brief and Coverage are the presentation surfaces.
+- Clips on this page: silent ~30s shareable look of the local MVP. Not a live restaurant host.
+
+**Still decide / honest Unknowns**
+
+- Journey 1–9 pass/fail: **Unknown** (this VM did not reach cts-ai).
+- **NFR-1** / **NFR-2** timings and **NFR-7** browser matrix: **Unknown** (no stopwatch / no four-browser probe this session).
+- GitHub Pages **Enforce HTTPS:** Pages API this session still **`https_enforced=false`**. Owner tick.
+- `cafe.artof.link` hosting is **Future** (issue #22). That hostname is an AWS ELB, not Café Fausse App.
+- `quantic-grader`: collaborator check **404** this session. Owner must add; agents must not.
+- PORT / `__main__.py`: **no GitHub issue filed**. Do not invent one in this PR.
+- Clips above are the shareable demo, not evidence that a public restaurant host works.
+
 ## GitHub loop (do not skip)
 
 One finding → one issue → one branch → one PR against `main`. **The author does not merge their own PR.** Lesson: PR #14 / issue #13.
@@ -47,11 +72,11 @@ Assignment collaborator `quantic-grader` must be added by the **owner**. Agents 
 
 ## What to decide tomorrow
 
-1. **Enforce HTTPS** on GitHub Pages (owner tick). Probe shows `https_enforced=false`.
-2. **Presentation honesty:** use [Coverage](coverage.md). NFR load/submit timings without a measured probe stay **Unknown**. Journey 1–9 results stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant.
-3. **Owner-only:** add `quantic-grader`. Do not ask an agent to add collaborators.
-4. **Scope ratchet:** any extra feature idea goes to Future, not a new FR. Do not batch unrelated findings into one PR.
-5. **Local demo path** if needed: Vite `:5173` + Flask `:5000` + `cafe-pg` — not the AWS ELB behind `cafe.artof.link`.
+1. **Owner:** tick Enforce HTTPS (`https_enforced=false` this session).
+2. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
+3. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
+4. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
+5. **Scope:** extra ideas go to Future, not a new FR. PORT is not filed; do not batch it here.
 
 ## Read next
 
