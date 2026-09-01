@@ -4,12 +4,15 @@ This page is **not** required for the assignment MVP. The MVP is the official SR
 
 When the restaurant is implemented, implement **the SRS only** as the first app cut. Extra product ideas go here (or under `knowledge/future/`), not into that cut.
 
-## Planned later (not this foundation)
+Meeting prep that **is** now on the thin map (once this ships): [Brief](brief.md) (Wed 2026-09-02 19:00 CET) and [Coverage](coverage.md) (FR-1..FR-18 / NFR-1..NFR-9). Those pages are knowledge, not extra restaurant features.
 
-- Restaurant runtime on intended hostname `cafe.artof.link` (React + JSX, Flask, PostgreSQL), owned by Café Fausse App. Live URL remains **Unknown** until a GET this session. **Hosting is future. AWS is not in this PR.**
-- Knowledge-site depth beyond this thin map (more essays, more diagrams), owned by Café Fausse Knowledge.
+## Planned later (not the SRS cut)
+
+- Public restaurant on intended hostname `cafe.artof.link` (React + JSX, Flask, PostgreSQL), owned by Café Fausse App. **That hostname is not Café Fausse today** (CNAME to an AWS ELB, probed 2026-09-01). Hosting is future. **AWS is not in the restaurant MVP PR.**
+- Owner tick: GitHub Pages **Enforce HTTPS** (`https_enforced=false` this session).
+- Knowledge-site depth beyond this thin map (more essays), owned by Café Fausse Knowledge.
 - GitHub E2E beyond the assignment floor (issues, PR discipline, Actions sensors) used to prove, disprove, and **adjust** the outer harness.
-- `docs/ai-tooling.md` filled in during implementation (stub exists).
+- `docs/ai-tooling.md` kept current during implementation.
 
 ## Notes parked here (useful, not required)
 
@@ -17,4 +20,4 @@ When the restaurant is implemented, implement **the SRS only** as the first app 
 - [Glossary](future/glossary.md)
 - [Journal stub](future/journal.md)
 
-Do not read these as a second product. They are transfer notes for this repo.
+Do not read these as a second product. They are transfer notes for this repo. No florist Path B, 14 hats, or GitLab on this map.

@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -14,19 +15,26 @@ OUT = ROOT / "_site"
 
 NAV = [
     ("index.html", "Home"),
+    ("brief.html", "Brief"),
     ("stack.html", "Stack"),
     ("srs.html", "SRS freeze"),
+    ("coverage.html", "Coverage"),
     ("honesty.html", "Honesty"),
     ("future.html", "Future"),
 ]
 
 REQUIRED = [
     ROOT / "index.md",
+    ROOT / "brief.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
+    ROOT / "coverage.md",
     ROOT / "honesty.md",
     ROOT / "future.md",
 ]
+
+MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
+WIDE_PAGES = {"stack.html", "coverage.html"}
 
 
 def fail(message: str) -> None:
@@ -208,10 +216,13 @@ def md_to_html(src: str) -> str:
         line = lines[i]
         if in_code:
             if line.strip().startswith("```"):
-                body = html.escape("\n".join(code_lines))
-                lang = html.escape(code_lang)
-                cls = f' class="language-{lang}"' if lang else ""
-                out.append(f"<pre><code{cls}>{body}</code></pre>")
+                body = "\n".join(code_lines)
+                if code_lang.lower() == "mermaid":
+                    out.append(f'<pre class="mermaid">{html.escape(body)}</pre>')
+                else:
+                    lang = html.escape(code_lang)
+                    cls = f' class="language-{lang}"' if lang else ""
+                    out.append(f"<pre><code{cls}>{html.escape(body)}</code></pre>")
                 in_code = False
                 code_lines = []
                 code_lang = ""
@@ -312,6 +323,7 @@ def _consume_table(lines: list[str], i: int) -> tuple[str, int]:
 
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 CODE_RE = re.compile(r"`([^`]+)`")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 EM_RE = re.compile(r"(?<!\*)\*([^*]+)\*(?!\*)")
@@ -334,6 +346,13 @@ def inline(text: str) -> str:
         placeholders.append(fragment)
         return f"\x00{len(placeholders) - 1}\x00"
 
+    def images(match: re.Match[str]) -> str:
+        alt, href = match.group(1), match.group(2)
+        href = rewrite_href(href)
+        return hold(
+            f'<img src="{html.escape(href, quote=True)}" alt="{html.escape(alt, quote=True)}">'
+        )
+
     def links(match: re.Match[str]) -> str:
         label, href = match.group(1), match.group(2)
         if href == "../docs/srs.md" or href == "docs/srs.md":
@@ -343,6 +362,7 @@ def inline(text: str) -> str:
             f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
         )
 
+    text = IMAGE_RE.sub(images, text)
     text = LINK_RE.sub(links, text)
 
     def codes(match: re.Match[str]) -> str:
@@ -386,6 +406,19 @@ def rel_nav_prefix(from_html: Path) -> str:
     return "/".join([".."] * depth) + "/" if depth else ""
 
 
+def copy_static_assets() -> None:
+    src = ROOT / "assets"
+    if not src.is_dir():
+        return
+    dest = OUT / "assets"
+    for path in src.rglob("*"):
+        if not path.is_file():
+            continue
+        target = dest / path.relative_to(src)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(path.read_bytes())
+
+
 def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_class: str) -> str:
     prefix = rel_nav_prefix(out_file)
     nav_bits = []
@@ -400,6 +433,16 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
             '<p class="future-banner">Future / not-MVP — the assignment floor is the '
             "SRS freeze, not this page.</p>"
         )
+    classes = extra_class.strip()
+    if current in WIDE_PAGES:
+        classes = f"{classes} is-wide".strip()
+    mermaid_script = ""
+    if 'class="mermaid"' in body:
+        mermaid_script = f"""
+  <script type="module">
+    import mermaid from "{html.escape(MERMAID_CDN, quote=True)}";
+    mermaid.initialize({{ startOnLoad: true, theme: "neutral", securityLevel: "strict" }});
+  </script>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -408,10 +451,10 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
   <title>{html.escape(title)} — Café Fausse knowledge</title>
   <link rel="stylesheet" href="{css}">
 </head>
-<body class="{extra_class}">
+<body class="{classes}">
   <header>
     <p class="eyebrow">Café Fausse knowledge map</p>
-    <p class="sub">Not the restaurant. MVP = reconstructed SRS.</p>
+    <p class="sub">Not the restaurant. MVP = official SRS freeze.</p>
     <nav>
         {nav}
     </nav>
@@ -421,20 +464,48 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     {body}
   </main>
   <footer>
-    <p>Intended hostnames: <code>knowledge.cafe.artof.link</code> (this surface),
-    <code>cafe.artof.link</code> (restaurant, later). Live URLs: <strong>Unknown</strong>
-    until a GET probe after Pages/DNS enablement (owner step).</p>
-    <p>GitHub Actions → GitHub Pages. No GitLab. Do not invent other domains.</p>
-  </footer>
+    <p>Knowledge host <code>knowledge.cafe.artof.link</code>: GET 200 this session
+    (2026-09-01 Europe/Berlin); TLS VERIFY_OK, CN/SAN match. Pages
+    <code>https_enforced=false</code> — owner still needs to tick Enforce HTTPS.</p>
+    <p>Restaurant hostname <code>cafe.artof.link</code> is <strong>not</strong> Café Fausse App
+    (CNAME to an AWS ELB). Local MVP is in-repo. GitHub Actions → GitHub Pages. No GitLab.</p>
+  </footer>{mermaid_script}
 </body>
 </html>
 """
+
+
+def assert_coverage_freeze_ids(src: str) -> None:
+    for n in range(1, 19):
+        if f"| FR-{n} |" not in src:
+            fail(f"coverage.md missing table row for FR-{n}")
+    for n in range(1, 10):
+        if f"| NFR-{n} |" not in src:
+            fail(f"coverage.md missing table row for NFR-{n}")
+
+
+def assert_svg_well_formed() -> None:
+    assets = ROOT / "assets"
+    if not assets.is_dir():
+        return
+    for path in sorted(assets.glob("*.svg")):
+        raw = path.read_bytes()
+        try:
+            raw.decode("utf-8")
+        except UnicodeDecodeError as exc:
+            fail(f"{path.relative_to(REPO)} is not UTF-8: {exc}")
+        try:
+            ET.fromstring(raw)
+        except ET.ParseError as exc:
+            fail(f"{path.relative_to(REPO)} is not well-formed SVG/XML: {exc}")
 
 
 def main() -> None:
     for required in REQUIRED:
         if not required.is_file():
             fail(f"missing required knowledge page {required.relative_to(REPO)}")
+    assert_coverage_freeze_ids((ROOT / "coverage.md").read_text(encoding="utf-8"))
+    assert_svg_well_formed()
     srs = REPO / "docs" / "srs.md"
     if not srs.is_file():
         fail("missing docs/srs.md")
@@ -450,6 +521,7 @@ def main() -> None:
         fail("missing knowledge/style.css")
     (OUT / "style.css").write_text(css_src.read_text(encoding="utf-8"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+    copy_static_assets()
 
     for md_path in collect_pages():
         rel = md_path.relative_to(ROOT)

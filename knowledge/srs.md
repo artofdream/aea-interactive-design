@@ -43,6 +43,8 @@ Two public student transcripts **corroborate** FR-1..FR-18 and NFR-1..NFR-9; the
 | NFR-8 | Responsive: desktop, tablet, smartphone |
 | NFR-9 | Modular, documented code |
 
+Where each ID shows up in the in-repo app (and what evidence class we have) is the [Coverage](coverage.md) page. This knowledge site is still not the restaurant.
+
 ## Not in the MVP
 
-Anything not listed above is [Future / not-MVP](future.md). The restaurant app is **not implemented** on this knowledge site.
+Anything not listed above is [Future / not-MVP](future.md). Do not invent FR-19 / NFR-10.

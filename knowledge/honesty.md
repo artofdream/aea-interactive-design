@@ -6,17 +6,24 @@ A probe is a command, an HTTP GET, a CI log, or a **committed** file that exists
 
 If evidence is missing, write **Unknown**.
 
-## This repo, today
+**Probe date for the live rows below:** 2026-09-01 Europe/Berlin (this session).
+
+## This repo, this session
 
 | Claim | Status |
 |---|---|
-| Knowledge site intended hostname `knowledge.cafe.artof.link` (Café Fausse Knowledge) | Documented. **Live URL Unknown** (no GET this session after Pages/DNS) |
-| Restaurant intended hostname `cafe.artof.link` (Café Fausse App) | Documented. **Live URL Unknown** (app not built; hosting future; no GET this session) |
-| Official SRS PDF at `docs/official/…SRS.pdf` | GET 200 this session; working freeze `docs/srs.md`; CI fails closed if missing |
-| AWS / `cafe.artof.link` hosting | **Not in this PR.** Owner skipped AWS re-auth. Hosting remains future |
-| Restaurant reservations work | **Unknown** — not implemented in the foundation cut |
-| System is antifragile | **Do not claim this.** Use ratchet: failures add guides/sensors |
+| Knowledge site `knowledge.cafe.artof.link` | **GET 200** (`curl` this session). TLS VERIFY_OK. Certificate CN/SAN `knowledge.cafe.artof.link`, Let’s Encrypt YR1, `notAfter=2026-11-30`. DNS CNAME `artofdream.github.io`. Pages API: `cname=knowledge.cafe.artof.link`, cert state **approved**, **`https_enforced=false`** — owner still needs to tick Enforce HTTPS. |
+| Restaurant hostname `cafe.artof.link` | **Not Café Fausse App.** `dig` CNAME → AWS ELB `aaafeaf0606ec43f5ad23cfe94d6273e-1de430975830beed.elb.eu-north-1.amazonaws.com.` (`eu-north-1`). Do not claim this hostname is live Café Fausse. Hosting remains future. |
+| Restaurant MVP in-repo | **On `main`** (PRs #9 + timezone #12). React + JSX, Flask, PostgreSQL. Local path: Vite `127.0.0.1:5173`, Flask `:5000`, `cafe-pg`. Journey 1–9 pass/fail: **Unknown** (not probed this session; this agent cannot reach cts-ai). |
+| Official SRS PDF at `docs/official/…SRS.pdf` | Committed freeze file; working copy `docs/srs.md`; CI fails closed if missing or SHA256 mismatches. |
+| AWS / `cafe.artof.link` hosting | **Not in the restaurant MVP cut.** Owner skipped AWS re-auth. Hosting remains future. |
+| NFR-1 / NFR-2 timings (3s page load, 2s form submit) | **Unknown** — no measured timing probe this session. |
+| System is antifragile | **Do not claim this.** Use ratchet: failures add guides/sensors. |
 
-## Fail closed (later restaurant MVP)
+## Fail closed (restaurant MVP)
 
-When Flask/PostgreSQL exist: missing database, a full book (30 tables, FR-9), or a timeout is an honest **no**, not a guessed **yes**.
+Missing PostgreSQL / no connection / timeout → honest **no** on reservation and newsletter writes. Time slot at 30 tables → **FR-9**; no table assigned. Red CI, missing checks, or checks not probed this session → do not merge. Unreviewed PR (no GitHub `APPROVE` from a login other than the author) → do not merge.
+
+## What this site is not
+
+Florist Path B, Lily’s Florist, 14 hats, Kafka, BFF, 3DX Lab, GitLab Pages/CI. Public repo. GitHub only.
