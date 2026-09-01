@@ -16,6 +16,14 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 <video controls src="clips/02-happy-book.mp4"></video>
 
+## Course grade 5 — covered vs decide
+
+1. **What a grade of 5 needs.** Official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). PDF in `docs/official/` is SoT; working freeze `docs/srs.md`. Do not invent FR-19 / NFR-10. Freeze data is not to be “improved.” Extra ideas are Future, not extra credit.
+
+2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
+
+3. **Still decide / focus.** GitHub Pages **Enforce HTTPS** still **`https_enforced=false`** (Pages API this session) — owner tick. Journey 1–9 pass/fail: **Unknown** until probed. `cafe.artof.link` hosting is **Future** (issue #22); that hostname is an AWS ELB, not our restaurant. Owner adds `quantic-grader` (agents must not). **NFR-1** / **NFR-2** timing claims stay **Unknown** without a measured probe this session.
+
 ## Where we are
 
 - Public GitHub repo `artofdream/aea-interactive-design`. Tracker and CI are **GitHub only**. No GitLab.
@@ -36,31 +44,6 @@ Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flas
 
 - **In MVP:** the official SRS pages and APIs (Home, Menu, Reservations, About, Gallery, newsletter, 30 tables, fail-closed DB). See [Coverage](coverage.md).
 - **Not in MVP:** AWS / `cafe.artof.link` hosting, florist Path B, 14 hats, Kafka/BFF, 3DX Lab, GitLab, invented requirement IDs, claiming the system is antifragile.
-
-## Grade of 5 (Quantic)
-
-A top mark maps to the **official SRS freeze only** (**FR-1..FR-18**, **NFR-1..NFR-9**). No invented IDs. No florist Path B, extra pages, or AWS as “extra credit.” Row-by-row map: [Coverage](coverage.md).
-
-**What the assignment requires**
-
-- Product: Home (**FR-1..FR-4**), Menu (**FR-5**), Reservations (**FR-6..FR-9**), About (**FR-10..FR-11**), Gallery (**FR-12..FR-14**), newsletter (**FR-15..FR-16**), PostgreSQL Customers/Reservations + Flask book/confirm (**FR-17..FR-18**). Freeze data (prices, address, hours, owners, awards, reviews) is SoT.
-- Quality: 3s load (**NFR-1**), 2s submits (**NFR-2**), navigable UX (**NFR-3**), brand (**NFR-4**), no double-book (**NFR-5**), honest failures (**NFR-6**), Chrome/Firefox/Safari/Edge (**NFR-7**), responsive (**NFR-8**), modular + documented (**NFR-9**). Stack: React + JSX, Flask, PostgreSQL, Flexbox/Grid. README deploy. `docs/ai-tooling.md`. Public repo. Owner adds `quantic-grader`.
-
-**Already covered**
-
-- Café Fausse App **on `main`** (PRs #9 + timezone #12): every FR row in [Coverage](coverage.md) is `code` / `CI`. **NFR-5**, **NFR-6**, **NFR-8**, **NFR-9** same. Local path (cts-ai, not this VM): Vite `:5173`, Flask `:5000`, `cafe-pg`.
-- Café Fausse Knowledge: `GET https://knowledge.cafe.artof.link/` **200** this session; TLS VERIFY_OK; CN/SAN match. This brief and Coverage are the presentation surfaces.
-- Clips on this page: silent ~30s shareable look of the local MVP. Not a live restaurant host.
-
-**Still decide / honest Unknowns**
-
-- Journey 1–9 pass/fail: **Unknown** (this VM did not reach cts-ai).
-- **NFR-1** / **NFR-2** timings and **NFR-7** browser matrix: **Unknown** (no stopwatch / no four-browser probe this session).
-- GitHub Pages **Enforce HTTPS:** Pages API this session still **`https_enforced=false`**. Owner tick.
-- `cafe.artof.link` hosting is **Future** (issue #22). That hostname is an AWS ELB, not Café Fausse App.
-- `quantic-grader`: collaborator check **404** this session. Owner must add; agents must not.
-- PORT / `__main__.py`: **no GitHub issue filed**. Do not invent one in this PR.
-- Clips above are the shareable demo, not evidence that a public restaurant host works.
 
 ## GitHub loop (do not skip)
 
