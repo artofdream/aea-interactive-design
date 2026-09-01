@@ -15,21 +15,22 @@ One finding → one GitHub issue → one branch → one PR against `main`. Do no
 
 The authoring agent does **not** merge its own PR. Unreviewed PRs are not mergeable. Red CI is not mergeable.
 
-Owner or `app/cursor` merges after MRC **COMMENT** (see review identity below). The author still does not merge.
+`cursor[bot]` is the distinct reviewer for **`artofdream`-authored** PRs: it may submit GitHub review `APPROVE` and merge after a this-run CI probe. The author still does not merge.
 
 ## Review identity (GitHub self-APPROVE)
 
-Same GitHub login **cannot** `APPROVE` its own PR. That is GitHub's self-APPROVE rule, not a repo setting we can relax. Changing branch protection does not lift it.
+Same GitHub login **cannot** `APPROVE` its own PR. That is GitHub's self-APPROVE rule, not a repo setting we can relax.
 
-Another chat agent (Cursor / Claude / Gemini / OpenAI) still posts as `artofdream` if that is the connected `gh` identity. Same login is **not** a distinct reviewer. A COMMENT from that login is still self-review.
+Owner PAT / GitHub MCP / `gh` as `artofdream` is **not** a distinct reviewer. A COMMENT from that login is still self-review. Do not self-APPROVE.
 
-Until a distinct GitHub identity exists, MRC **COMMENT** is the role approve. Owner or `app/cursor` merges after that COMMENT. Author does not merge own PR.
+**Chosen distinct identity: `cursor[bot]`** (Cursor GitHub App, already installed). Probe: it merged PR #16. Do **not** install a second GitHub App, mint an app private key, or use a second personal account for this.
 
-Chosen distinct identity: a **GitHub App** (preferred over a second personal/machine user). A GitHub App does **not** use a PAT. It uses an app private key + installation on `artofdream/aea-interactive-design`. Never paste the private key or a PAT into chat.
+Merge gate is a submitted GitHub review **`APPROVE` from a login that is not the PR author**. Bugbot posts as `cursor[bot]` too; those inline comments and `COMMENTED` reviews are a **signal**, not the gate.
 
-When the App (or a machine user) is installed and reviews as a different login, that identity may `APPROVE`. Until then, do not treat same-login COMMENT as GitHub `APPROVE`, and do not try to self-APPROVE.
+- Author `artofdream` → `cursor[bot]` coordinator `APPROVE`, then `cursor[bot]` may merge. Owner PAT / `artofdream` cannot `APPROVE` or merge that PR.
+- Author `cursor[bot]` → owner `artofdream` may `APPROVE` and merge (different login). `cursor[bot]` must **not** `APPROVE` or merge a PR it authored.
 
-Cloud automations comment and review as `cursor` / `cursor[bot]`. That is a distinct identity from `artofdream`. A cloud coordinator **may** `APPROVE` an `artofdream`-authored PR after a this-run CI probe. It **must not** `APPROVE` or merge a PR it authored. Sweep procedure: `.cursor/rules/pr-coordinator-cloud.mdc`.
+Sweep: `.cursor/rules/pr-coordinator-cloud.mdc`.
 
 ## Probe CI this session
 
@@ -40,9 +41,9 @@ Fail closed:
 - Missing required checks → do not merge
 - Failing checks → do not merge
 - Checks not probed this session → Unknown; do not merge
-- Unreviewed PR (no MRC COMMENT from the review role, and no distinct-identity APPROVE) → do not merge
+- Unreviewed PR (no non-author GitHub review `APPROVE`) → do not merge
 
-Fail-closed CI stays required even after MRC COMMENT. Do not merge unreviewed or failing checks.
+Fail-closed CI stays required even after review. Do not merge unreviewed or failing checks.
 
 ## Cursor Bugbot
 

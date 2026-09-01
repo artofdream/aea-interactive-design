@@ -9,6 +9,6 @@ This repo uses GitHub issues, pull requests, and GitHub Actions only.
 
 Do not add GitLab CI, GitLab Pages, `.gitlab-ci.yml`, or `glab` workflows.
 
-One finding → one GitHub issue → one branch → one PR against `main`. **The author does not merge their own PR.** Procedure memory: `.cursor/skills/pr-coordinator/SKILL.md` (not a hat). Cloud sweep: `.cursor/rules/pr-coordinator-cloud.mdc`. Probe CI this session; do not merge red or unreviewed PRs. Same login cannot `APPROVE` its own PR. Bugbot comments are a review signal; autofix opens a new branch/PR.
+One finding → one GitHub issue → one branch → one PR against `main`. **The author does not merge their own PR.** Procedure memory: `.cursor/skills/pr-coordinator/SKILL.md` (not a hat). Cloud sweep: `.cursor/rules/pr-coordinator-cloud.mdc`. Merge gate: GitHub `APPROVE` from a non-author (`cursor[bot]` vs `artofdream` by who authored). Bugbot comments are a review signal, not the gate; autofix opens a new branch/PR.
 
 Knowledge publish path: GitHub Actions → GitHub Pages (Café Fausse Knowledge; intended hostname `knowledge.cafe.artof.link`, live URL Unknown until probed this session). Restaurant hostname is `cafe.artof.link` (Café Fausse App; local MVP in-repo; hosting future; Unknown). AWS is not in the restaurant MVP PR.
