@@ -4,6 +4,18 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Probe date for live claims on this page:** 2026-09-01 Europe/Berlin (this session).
 
+## Demo clips
+
+Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local stack may be offline; these files are the shareable look. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`.
+
+**Home → Menu (~32s)**
+
+<video controls src="clips/01-home-menu.mp4"></video>
+
+**Happy reservation (~33s)**
+
+<video controls src="clips/02-happy-book.mp4"></video>
+
 ## Where we are
 
 - Public GitHub repo `artofdream/aea-interactive-design`. Tracker and CI are **GitHub only**. No GitLab.

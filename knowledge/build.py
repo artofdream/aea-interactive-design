@@ -35,6 +35,10 @@ REQUIRED = [
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
 WIDE_PAGES = {"stack.html", "coverage.html"}
+SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
+VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
+VIDEO_SRC_RE = re.compile(r"""\bsrc\s*=\s*(['"])([^'"]+)\1""", re.IGNORECASE)
+CLIP_REF_RE = re.compile(r"clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4")
 
 
 def fail(message: str) -> None:
@@ -261,6 +265,12 @@ def md_to_html(src: str) -> str:
             out.append(f"<blockquote><p>{inline(' '.join(quote))}</p></blockquote>")
             continue
 
+        if line.lstrip().lower().startswith("<video"):
+            flush_para(para)
+            video_html, i = _consume_video_html(lines, i)
+            out.append(video_html)
+            continue
+
         if _is_table_start(lines, i):
             flush_para(para)
             table_html, i = _consume_table(lines, i)
@@ -349,6 +359,9 @@ def inline(text: str) -> str:
     def images(match: re.Match[str]) -> str:
         alt, href = match.group(1), match.group(2)
         href = rewrite_href(href)
+        path_only = href.split("?", 1)[0].split("#", 1)[0]
+        if path_only.lower().endswith(".mp4"):
+            return hold(_video_html(href, wrap=False))
         return hold(
             f'<img src="{html.escape(href, quote=True)}" alt="{html.escape(alt, quote=True)}">'
         )
@@ -406,17 +419,68 @@ def rel_nav_prefix(from_html: Path) -> str:
     return "/".join([".."] * depth) + "/" if depth else ""
 
 
-def copy_static_assets() -> None:
-    src = ROOT / "assets"
+def copy_static_dir(name: str) -> None:
+    src = ROOT / name
     if not src.is_dir():
         return
-    dest = OUT / "assets"
+    dest = OUT / name
     for path in src.rglob("*"):
         if not path.is_file():
             continue
         target = dest / path.relative_to(src)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(path.read_bytes())
+
+
+def copy_static_assets() -> None:
+    copy_static_dir("assets")
+    copy_static_dir("clips")
+
+
+def assert_clip_refs() -> None:
+    for md_path in sorted(ROOT.rglob("*.md")):
+        text = md_path.read_text(encoding="utf-8")
+        for rel in CLIP_REF_RE.findall(text):
+            src = ROOT / rel
+            if not src.is_file():
+                fail(f"{md_path.relative_to(REPO)} references missing {rel}")
+
+
+def _video_html(src: str, wrap: bool = True) -> str:
+    if not SAFE_CLIP_RE.match(src):
+        fail(f"video src must be clips/<file>.mp4, got {src!r}")
+    esc = html.escape(src, quote=True)
+    inner = (
+        f'<video controls playsinline preload="metadata" src="{esc}">'
+        f"Your browser does not play MP4. "
+        f'<a href="{esc}">Download the clip</a>.'
+        f"</video>"
+    )
+    if wrap:
+        return f'<figure class="clip">{inner}</figure>'
+    return inner
+
+
+def _consume_video_html(lines: list[str], i: int) -> tuple[str, int]:
+    buf: list[str] = []
+    found_close = False
+    while i < len(lines):
+        buf.append(lines[i])
+        if "</video>" in lines[i].lower():
+            found_close = True
+            i += 1
+            break
+        i += 1
+    if not found_close:
+        fail("unclosed video tag")
+    raw = "\n".join(buf)
+    open_m = VIDEO_OPEN_RE.search(raw)
+    if open_m is None:
+        fail("malformed video tag")
+    src_m = VIDEO_SRC_RE.search(open_m.group(1))
+    if src_m is None:
+        fail("video tag missing src")
+    return _video_html(src_m.group(2)), i
 
 
 def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_class: str) -> str:
@@ -506,6 +570,7 @@ def main() -> None:
             fail(f"missing required knowledge page {required.relative_to(REPO)}")
     assert_coverage_freeze_ids((ROOT / "coverage.md").read_text(encoding="utf-8"))
     assert_svg_well_formed()
+    assert_clip_refs()
     srs = REPO / "docs" / "srs.md"
     if not srs.is_file():
         fail("missing docs/srs.md")
@@ -522,6 +587,12 @@ def main() -> None:
     (OUT / "style.css").write_text(css_src.read_text(encoding="utf-8"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     copy_static_assets()
+    clips_src = ROOT / "clips"
+    if clips_src.is_dir():
+        for clip in sorted(clips_src.glob("*.mp4")):
+            dest = OUT / "clips" / clip.name
+            if not dest.is_file() or dest.stat().st_size != clip.stat().st_size:
+                fail(f"clip not copied to _site/clips/{clip.name}")
 
     for md_path in collect_pages():
         rel = md_path.relative_to(ROOT)
