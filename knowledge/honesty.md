@@ -6,13 +6,13 @@ A probe is a command, an HTTP GET, a CI log, or a **committed** file that exists
 
 If evidence is missing, write **Unknown**.
 
-**Probe date for the live rows below:** 2026-09-01 Europe/Berlin (this session).
+**Probe date for the live rows below:** 2026-09-02 Europe/Berlin (this session).
 
 ## This repo, this session
 
 | Claim | Status |
 |---|---|
-| Knowledge site `knowledge.cafe.artof.link` | **GET 200** (`curl` this session). TLS VERIFY_OK. Certificate CN/SAN `knowledge.cafe.artof.link`, Let’s Encrypt YR1, `notAfter=2026-11-30`. DNS CNAME `artofdream.github.io`. Pages API: `cname=knowledge.cafe.artof.link`, cert state **approved**, **`https_enforced=false`** — owner still needs to tick Enforce HTTPS. |
+| Knowledge site `knowledge.cafe.artof.link` | HTTPS **GET 200** (`curl` this session). HTTP `http://knowledge.cafe.artof.link/` → **301** `Location: https://knowledge.cafe.artof.link/`. TLS VERIFY_OK. Certificate CN/SAN `knowledge.cafe.artof.link`, Let’s Encrypt YR1, `notAfter=2026-11-30`. DNS CNAME `artofdream.github.io`. Pages API: `cname=knowledge.cafe.artof.link`, cert state **approved**, **`https_enforced=true`**. |
 | Restaurant hostname `cafe.artof.link` | **Not Café Fausse App.** `dig` CNAME → AWS ELB `aaafeaf0606ec43f5ad23cfe94d6273e-1de430975830beed.elb.eu-north-1.amazonaws.com.` (`eu-north-1`). Do not claim this hostname is live Café Fausse. Hosting remains future. |
 | Restaurant MVP in-repo | **On `main`** (PRs #9 + timezone #12). React + JSX, Flask, PostgreSQL. Local path: Vite `127.0.0.1:5173`, Flask `:5000`, `cafe-pg`. Journey 1–9 pass/fail: **Unknown** (not probed this session; this agent cannot reach cts-ai). |
 | Official SRS PDF at `docs/official/…SRS.pdf` | Committed freeze file; working copy `docs/srs.md`; CI fails closed if missing or SHA256 mismatches. |

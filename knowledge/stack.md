@@ -2,13 +2,13 @@
 
 Two surfaces, two teams, two hostnames. GitHub only. This page is Café Fausse as used so far, plus an intended restaurant to-be. It is **not** florist Path B, not 14 hats, not Kafka/BFF, not 3DX Lab.
 
-**Probe date:** 2026-09-01 Europe/Berlin (this session).
+**Probe date:** 2026-09-02 Europe/Berlin (this session).
 
 ## Two hostnames
 
 | Hostname | Job | This session |
 |---|---|---|
-| `knowledge.cafe.artof.link` | This knowledge map | GET **200**. TLS VERIFY_OK. CN/SAN match. Let’s Encrypt, expires 2026-11-30. Pages `cname` matches. **`https_enforced=false`** — owner still needs to tick Enforce HTTPS. |
+| `knowledge.cafe.artof.link` | This knowledge map | HTTPS GET **200**. HTTP **301** to HTTPS. TLS VERIFY_OK. CN/SAN match. Let’s Encrypt, expires 2026-11-30. Pages `cname` matches. **`https_enforced=true`**. Cert **approved**. |
 | `cafe.artof.link` | Intended restaurant | DNS CNAME → AWS ELB `eu-north-1`. **Not our restaurant.** Do not claim Café Fausse App is live there. |
 
 They do not share a load balancer. This site is not the shop.
@@ -36,7 +36,7 @@ flowchart TB
     PY --> GHA["GitHub Actions → GitHub Pages"]
     GHA --> KH["knowledge.cafe.artof.link"]
   end
-  KH -.-> P["GET 200 · TLS VERIFY_OK · CN/SAN match · Let’s Encrypt exp 2026-11-30 · https_enforced=false"]
+  KH -.-> P["HTTPS GET 200 · HTTP 301 to HTTPS · TLS VERIFY_OK · CN/SAN match · Let’s Encrypt exp 2026-11-30 · https_enforced=true"]
   subgraph N["Not our restaurant"]
     CAFE["cafe.artof.link"] --> ELB["CNAME → AWS ELB eu-north-1"]
   end
@@ -81,7 +81,7 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 
 ## Honesty
 
-- `knowledge.cafe.artof.link` was GET 200 this session. Enforce HTTPS is still off.
+- `knowledge.cafe.artof.link` was HTTPS GET 200 this session. HTTP GET returned 301 to HTTPS. Pages `https_enforced=true`.
 - `cafe.artof.link` is not Café Fausse App.
 - Journey 1–9 pass/fail remains **Unknown**.
 - NFR timings without a measured probe remain **Unknown**.

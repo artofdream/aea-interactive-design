@@ -18,7 +18,7 @@
   <text x="40" y="280" font-family="Georgia, serif" font-size="12" fill="#5e574d">Thin map: home, brief, stack,</text>
   <text x="40" y="298" font-family="Georgia, serif" font-size="12" fill="#5e574d">SRS freeze, coverage, honesty,</text>
   <text x="40" y="316" font-family="Georgia, serif" font-size="12" fill="#5e574d">Future. Not a CMS.</text>
-  <text x="40" y="350" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Owner still: Enforce HTTPS</text>
+  <text x="40" y="350" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">https_enforced=true (probed)</text>
   <text x="40" y="390" font-family="Georgia, serif" font-size="11" fill="#5e574d">Same path as as-is. Keep it.</text>
 
   <rect x="360" y="72" width="600" height="360" rx="8" fill="#fffdf8" stroke="#5e574d" stroke-width="2" stroke-dasharray="7 5"/>
