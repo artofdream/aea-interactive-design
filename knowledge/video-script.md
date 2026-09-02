@@ -13,7 +13,7 @@ Play or talk over the committed clips when the local stack is down. The clips ar
 
 <video controls src="clips/02-happy-book.mp4"></video>
 
-Lock scenarios with the menu at the bottom (A–F). Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40): J1–J8 **PASS** (cts-ai, DB up); **J9 Unknown**. Do not film J9 or **NFR-1** / **NFR-2** / **NFR-7** as met.
+Lock scenarios with the menu at the bottom (A–F). Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
 
 ## Timed beats
 
@@ -25,7 +25,7 @@ Lock scenarios with the menu at the bottom (A–F). Coverage / [#40](https://git
 | 2:45–5:00 | **FR coverage + clips** | Open [Coverage](coverage.md). Walk Home / Menu / nav (**FR-1..FR-5**). Play **clip 01** (Home → Menu). Point at About / Gallery rows (**FR-10..FR-14**) on the table if time is tight. |
 | 5:00–6:30 | **Reservations + newsletter** | Form fields **FR-6**; slot check **FR-7**; random table 1–30 **FR-8**; success or full-book **FR-9**. Flask + Customers / Reservations **FR-17..FR-18**. Newsletter **FR-15..FR-16**. Play **clip 02** (happy book). Say: missing database → honest no, not a fake yes. |
 | 6:30–7:30 | **Live or fallback** | **Live:** Knowledge HTTPS. **Local/tunnel:** App if the room can reach it. **Fallback:** these two clips. Never call `cafe.artof.link` a live Café Fausse demo. |
-| 7:30–8:30 | **NFR honesty** | **NFR-5** / **NFR-6**: unique slot+table index, 30-table cap, fail-closed tests — **code + CI**; local J6/J8 PASS. **NFR-3**: J1–J8 local UX PASS supports nav; J9 / device lab **Unknown**. **NFR-1** / **NFR-2** / **NFR-7**: **Unknown** as SRS-budget / browser-matrix claims (local Vite 56 ms / 32 ms are notes only). Do not say they are met. |
+| 7:30–8:30 | **NFR honesty** | **NFR-5** / **NFR-6**: unique slot+table index, 30-table cap, fail-closed tests — **code + CI**; local J6/J8 PASS. **NFR-3** / **NFR-8**: J1–J8 local UX PASS + J9 **PASS** Vite-only viewports/theme. **NFR-7** **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown). **NFR-1** / **NFR-2**: **Unknown** as SRS-budget claims (local Vite 56 ms / 32 ms are notes only). Do not say they are met. |
 | 8:30–9:15 | **AI tooling** | Point at `docs/ai-tooling.md`: Cursor cloud agent, GitHub issues/PRs/Actions, pytest, Vite/React JSX, Flask, PostgreSQL. AI drafted from the freeze. Student app repos were not copied. Author does not merge their own PR. |
 | 9:15–10:00 | **Future close** | [#22](https://github.com/artofdream/aea-interactive-design/issues/22) and [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are **Future**, not missing grade rows. Friday locked tech access + this script. Questions. |
 
@@ -33,7 +33,7 @@ If you run long, cut About/Gallery talk (they stay on Coverage) and keep reserva
 
 ## Scenario menu A–F
 
-Working menu for Friday. These are **demo scenes**. J1–J8 PASS is local cts-ai UX while the DB was up — not a claim that J9 passed or that a public host works.
+Working menu for Friday. These are **demo scenes**. J1–J8 PASS is local cts-ai UX while the DB was up. J9 **PASS** is Vite-only. Neither is a public-host probe.
 
 | ID | Scene | Freeze IDs | How to show |
 |---|---|---|---|
@@ -44,7 +44,7 @@ Working menu for Friday. These are **demo scenes**. J1–J8 PASS is local cts-ai
 | **E** | About history + Gallery awards / lightbox | FR-10..FR-14 | Live pages. No clip yet — do not invent one. |
 | **F** | Full slot or fail-closed | FR-9, NFR-5, NFR-6 | Fill 30 tables on demo data, **or** stop PostgreSQL and show the error. Do not invent a success. |
 
-**Do not film as “passed”:** Journey **J9**, **NFR-1**, **NFR-2**, **NFR-7**, or “live at `cafe.artof.link`.” J1–J8 was local cts-ai while the DB was up; after that, App reported `cafe-pg` down.
+**Do not film as “passed”:** **NFR-1**, **NFR-2**, a full **NFR-7** four-browser matrix, or “live at `cafe.artof.link`.” J9 **PASS** is Vite-only viewports + theme. J1–J8 was local cts-ai while the DB was up; after that, App reported `cafe-pg` down.
 
 ## If the stack is down
 

@@ -4,17 +4,21 @@ Presentation map for the Quantic course. Every freeze ID from `docs/srs.md` (off
 
 This page is not the restaurant. Paths are the in-repo Café Fausse App on `main` (PRs #9 + timezone #12) plus knowledge/CI where that is the evidence.
 
-**Evidence classes:** `code` = committed file this session; `CI` = GitHub Actions job in `.github/workflows/`; `local GET / UX this session (cts-ai)` = Café Fausse App probe on Vite + Flask + `cafe-pg` while the DB was up (2026-09-02 Europe/Berlin); `Unknown` = no probe this session, or a measured number that is **not** an SRS-budget claim.
+**Evidence classes:** `code` = committed file this session; `CI` = GitHub Actions job in `.github/workflows/`; `local GET / UX this session (cts-ai)` = Café Fausse App probe (J1–J8: Vite + Flask + `cafe-pg` while the DB was up; J9 / NFR-7: **Vite-only** `:5173`); `Unknown` = no probe this session, or a measured number that is **not** an SRS-budget claim.
 
-[Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) is the recording of App’s Journey 1–9 and NFR notes. This Knowledge VM did not reach cts-ai Vite `:5173` / Flask `:5000`. The Journey table below is App’s this-session handoff, not a probe from this VM.
+[Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) recorded J1–J8 (PR #43). [Issue #44](https://github.com/artofdream/aea-interactive-design/issues/44) records J9 + partial NFR-7. This Knowledge VM did not reach cts-ai Vite `:5173` / Flask `:5000`. The Journey table below is App’s this-session handoff, not a probe from this VM.
 
 In plain language: the FR/NFR tables are “where the freeze shows up in the repo.” **Code** and **CI** are not the same as “we timed broadband” or “we checked four browsers.” Friday score-5 talk track: [Friday plan](friday-plan.md).
 
 ## Journey 1–9 (App naming this run)
 
-Recorded from Café Fausse App (cts-ai) **2026-09-02 Europe/Berlin**. Local UX / GET on Vite + Flask + `cafe-pg` **while the database was up** (seeded `friday.demo@example.com` and `newsletter.friday@example.com`). After that handoff, App reported `cafe-pg` unreachable and cts-ai dropped. Those later drops do **not** erase the J1–J8 PASS numbers from while the DB was up.
+Recorded from Café Fausse App (cts-ai) **2026-09-02 Europe/Berlin**.
 
-Tunnel mentioned that session: `https://nine-teams-try.loca.lt/` — ephemeral; **do not** treat it as a lasting public host. This Knowledge VM `GET` of that URL **this session timed out** (curl 28, 12s). No `cafe.artof.link` DNS for the restaurant.
+**J1–J8** ([#40](https://github.com/artofdream/aea-interactive-design/issues/40) / PR #43): local UX / GET on Vite + Flask + `cafe-pg` **while the database was up** (seeded `friday.demo@example.com` and `newsletter.friday@example.com`). After that handoff, App reported `cafe-pg` unreachable and cts-ai dropped. Those later drops do **not** erase the J1–J8 PASS numbers from while the DB was up.
+
+**J9 + NFR-3 / NFR-8 + NFR-7** ([#44](https://github.com/artofdream/aea-interactive-design/issues/44)): later **Vite-only** local UX on `:5173` this session. Edge headless screenshots + theme.css (viewports); partial browser matrix. **Do not** claim Flask + PostgreSQL for this probe. **Do not** claim `cafe.artof.link`.
+
+Tunnel / Flask: App reports Docker Engine still coming up. Mentioned tunnel `https://nine-teams-try.loca.lt/` is ephemeral. This Knowledge VM `GET` of that URL **this session timed out** (curl 28, 12s). **Do not** claim the tunnel or Flask is live. No `cafe.artof.link` DNS for the restaurant.
 
 | Journey | App name | Result | Notes (this session) | Freeze IDs (cite only) |
 |---|---|---|---|---|
@@ -26,7 +30,7 @@ Tunnel mentioned that session: `https://nine-teams-try.loca.lt/` — ephemeral; 
 | J6 | Full book | **PASS** | 30 tables then HTTP 409 | FR-9, NFR-5 |
 | J7 | Newsletter | **PASS** | Sample `newsletter.friday@example.com` | FR-15, FR-16 |
 | J8 | DB down | **PASS** | HTTP 503 fail-closed | NFR-6 |
-| J9 | Responsive | **Unknown** | MANUAL until a browser viewport check. No viewport probe in the App handoff. | NFR-8 |
+| J9 | Responsive | **PASS** | Vite-only `:5173` this session (cts-ai). Edge headless screenshots under `probe-nfr/` (375×812 home, 768×1024 menu, 1280×800 reservations; App reported valid PNG signatures). Viewport meta + `@media (max-width: 800px)` + Flex/Grid `auto-fit` in `theme.css`. **Not** Flask+Postgres. **Not** `cafe.artof.link`. | NFR-8 |
 
 Vite routes `/`, `/menu`, `/about`, `/gallery`, `/reservations` all returned **200** on that local stack (App this session). That is local UX evidence, not a public-host probe.
 
@@ -59,12 +63,12 @@ Vite routes `/`, `/menu`, `/about`, `/gallery`, `/reservations` all returned **2
 |---|---|---|---|---|
 | NFR-1 | Page load within 3 seconds on standard broadband | Intended SPA + static assets under `frontend/` and `theme.css`. | **Unknown** — local Vite home **56 ms** recorded on cts-ai this session. That is **not** an SRS broadband stopwatch. Do not say NFR-1 is **met**. | The SRS states a 3s budget on standard broadband. A single local Vite sample is an evidence note only. |
 | NFR-2 | Form submissions processed within 2 seconds | `DB_STATEMENT_TIMEOUT_MS=2000` / `DB_CONNECT_TIMEOUT` in `db.py` (fail-closed timeout, **not** a UX stopwatch). | **Unknown** — local Vite `GET /api/site` **32 ms** recorded on cts-ai this session. That is not a reservation/newsletter submit stopwatch. Do not say NFR-2 is **met**. | A 2s **timeout** plus a local GET sample are not evidence that happy-path submits finish in 2s on broadband. |
-| NFR-3 | Interface intuitive and easy to navigate | `Layout.jsx` primary nav; `App.jsx` routes matching SRS pages | code; local UX J1–J8 **PASS** (cts-ai) supports navigation. J9 responsive stays **Unknown**. | Course UX is the five SRS pages plus newsletter. J1–J8 is local Journey UX, not a device lab. |
+| NFR-3 | Interface intuitive and easy to navigate | `Layout.jsx` primary nav; `App.jsx` routes matching SRS pages | code; local UX J1–J8 **PASS** (cts-ai, DB up) supports navigation. J9 / NFR-3 **PASS** this session: Edge headless screenshots (home 375×812, menu 768×1024, reservations 1280×800) under `probe-nfr/` (App: valid PNG signatures). Vite-only. | Course UX is the five SRS pages plus newsletter. J1–J8 is local Journey UX with Flask+DB. Screenshot PASS is Vite-only, not a public device lab. |
 | NFR-4 | Consistent, visually appealing brand | `theme.css` (burgundy/cream, Flexbox/Grid); Layout chrome on every page | code | SRS asks for brand consistency. Aesthetic judgment beyond the committed theme is Unknown. |
 | NFR-5 | No double or over-bookings | Unique index `reservations_slot_table`; 30-table cap; `test_fail_closed.py` 31st table | code; CI; local UX J6 PASS (30 then 409) | Integrity is the reservation NFR. A race that assigns table 31 fails the assignment. |
 | NFR-6 | User-friendly failure handling | `test_fail_closed.py` (missing DB, unreachable DB, timeout, full slot); frontend error banners | code; CI; local UX J8 PASS (503 fail-closed) | Fail closed: honest **no**, not a cached yes. Maps to FR-9 when the slot is full. |
-| NFR-7 | Chrome, Firefox, Safari, Edge | Standard React SPA + CSS. **No browser matrix** in the App handoff this session. | **Unknown** | Compatibility is an SRS NFR. Claiming four browsers without a probe is a status-word miss. |
-| NFR-8 | Responsive desktop, tablet, smartphone | `theme.css` Grid/Flexbox + `@media (max-width: 800px)` | code; J9 viewport check **Unknown**; device lab **Unknown** | SRS requires Flexbox or Grid and responsive layout. J1–J8 does not stand in for J9. |
+| NFR-7 | Chrome, Firefox, Safari, Edge | Standard React SPA + CSS. Partial browser matrix, **Vite-only** `:5173` this session (cts-ai). | **Partial** — Edge **PASS** all routes with screenshots (Home, Menu, About, Gallery, Reservations); Firefox **PASS** home; Chrome **Unknown** (not installed on cts-ai); Safari **Unknown** (not reported). Not a four-browser claim. | Compatibility is an SRS NFR. Two browsers probed is not Chrome + Firefox + Safari + Edge. |
+| NFR-8 | Responsive desktop, tablet, smartphone | `frontend/index.html` viewport meta; `theme.css` Flex/Grid `repeat(auto-fit, minmax(…))` + `@media (max-width: 800px)` | code; J9 / NFR-8 **PASS** (Vite-only). Edge headless: 375×812 home, 768×1024 menu, 1280×800 reservations under `probe-nfr/` (App: valid PNG signatures). Public host **Unknown**. | SRS requires Flexbox or Grid and responsive layout. Screenshot PASS is local Vite UX, not Flask+Postgres or a public-host claim. |
 | NFR-9 | Modular, documented code | `backend/cafe_fausse/` packages; page components; `README.md`; this knowledge map | code | Maintainability is in the freeze. A single script dump would miss the NFR. |
 
 ### NFR-1 / NFR-2 timing notes (not a “met” claim)
@@ -76,6 +80,18 @@ App local Vite samples this session (cts-ai, while the stack was up):
 
 These numbers stay in the evidence note. The SRS broadband claims (**NFR-1** 3s, **NFR-2** 2s form submit) stay **Unknown**. Timing probe recorded; not claiming the SRS budget is met.
 
+### J9 / NFR-3 / NFR-8 viewport notes (Vite-only)
+
+App Edge headless screenshots this session (cts-ai, Vite `:5173`). Files under `probe-nfr/` **on that machine**. App reported valid PNG signatures. **Not** committed in this repo. This Knowledge VM did not open those files.
+
+- 375×812 home
+- 768×1024 menu
+- 1280×800 reservations
+
+Committed theme (code this session): `frontend/index.html` `<meta name="viewport" content="width=device-width, initial-scale=1.0" />`; `frontend/src/styles/theme.css` `@media (max-width: 800px)` and `grid-template-columns: repeat(auto-fit, minmax(…))`.
+
+Tunnel / Flask still wait on Docker Engine. Do **not** claim a tunnel is live.
+
 ## Knowledge-site rows (not extra FRs)
 
 These are harness surfaces, not new requirement IDs.
@@ -86,7 +102,7 @@ These are harness surfaces, not new requirement IDs.
 | Honesty vocabulary | `knowledge/honesty.md` | code; local GET 200 on `https://knowledge.cafe.artof.link/honesty.html` this session | Stops claiming `cafe.artof.link` is live Café Fausse. |
 | Teammate brief | `knowledge/brief.md` | code | Meeting 2026-09-02 19:00 CET; Friday score-5 section. |
 | Friday plan + video/slides | `knowledge/friday-plan.md`, `video-script.md`, `presentation-sample.md` | code | Working references for 2026-09-04 19:00 Europe/Berlin. Not a substitute for the Journey table above. |
-| Journey / NFR recording | this page; [issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) | App local UX / GET this session (cts-ai); Knowledge GET of mentioned tunnel timed out | J1–J8 PASS while DB was up; J9 / NFR-1 / NFR-2 / NFR-7 not claimed met. |
+| Journey / NFR recording | this page; [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) | App local UX / GET this session (cts-ai); J9 / NFR-3 / NFR-8 / NFR-7 **Vite-only**; `probe-nfr/` PNGs on cts-ai (not in this repo); Knowledge GET of mentioned tunnel timed out | J1–J8 PASS while DB was up; J9 / NFR-3 / NFR-8 PASS (Edge screenshots + theme.css); NFR-7 partial (Edge + Firefox home; Chrome not installed; Safari Unknown); NFR-1 / NFR-2 not claimed met. Tunnel / Flask not live (Docker Engine still coming). |
 
 ## Out of this table
 

@@ -21,7 +21,7 @@ Allowlisted markdown under `knowledge/` is built to static HTML (`knowledge/buil
 
 - **Runtime in-repo on `main` (PRs #9 + timezone #12):** React + JSX (`frontend/`), Flask (`backend/cafe_fausse/`), PostgreSQL (`backend/schema.sql`).
 - **MVP:** official SRS only (`docs/srs.md`, FR-1..FR-18, NFR-1..NFR-9; PDF SoT).
-- **Local path (cts-ai; this VM did not reach it):** Vite `http://127.0.0.1:5173`, Flask `:5000`, Docker `cafe-pg`. App this session (DB up): Journey **J1–J8 PASS**; **J9 Unknown**. After the handoff, App reported `cafe-pg` unreachable. See [Coverage](coverage.md).
+- **Local path (cts-ai; this VM did not reach it):** Vite `http://127.0.0.1:5173`, Flask `:5000`, Docker `cafe-pg`. App this session: Journey **J1–J8 PASS** (DB up); **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). After the J1–J8 handoff, App reported `cafe-pg` unreachable. See [Coverage](coverage.md).
 - **Hosting of `cafe.artof.link`:** future. Not AWS in the restaurant MVP PR.
 - Extra features after the SRS belong in [Future](future.md).
 
@@ -83,7 +83,7 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 
 - `knowledge.cafe.artof.link` was HTTPS GET 200 this session. HTTP GET returned 301 to HTTPS. Pages `https_enforced=true`.
 - `cafe.artof.link` is not Café Fausse App.
-- Journey **J1–J8 PASS** (cts-ai, DB up); **J9 Unknown**. This VM did not reach Vite.
-- **NFR-1** / **NFR-2** local Vite notes (56 ms / 32 ms) are **not** an SRS-budget “met.” **NFR-7** remains **Unknown**.
+- Journey **J1–J8 PASS** (cts-ai, DB up); **J9 PASS** (Vite-only viewports + theme). This VM did not reach Vite.
+- **NFR-1** / **NFR-2** local Vite notes (56 ms / 32 ms) are **not** an SRS-budget “met.” **NFR-7** is **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown).
 - Mentioned tunnel `https://nine-teams-try.loca.lt/` — GET **timed out** this session.
 - Do not claim this system is antifragile.
