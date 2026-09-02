@@ -4,6 +4,8 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Probe date for live claims on this page:** 2026-09-02 Europe/Berlin (this session).
 
+**Tonight:** see **Compare: team Functional Spec v0.1 vs SRS MVP on main** below. FS is Future/hardening, not a new freeze.
+
 ## Demo clips
 
 Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local stack may be offline; these files are the shareable look. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`.
@@ -40,10 +42,40 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. A Journey 1–9 UX checklist is described for that machine. **Pass/fail = Unknown** unless someone probes those journeys this session. This agent did not.
 
+## Compare: team Functional Spec v0.1 vs SRS MVP on main
+
+Team FS v0.1 (2026-09-02) — Customer, Newsletter, Reservation, Menu flows (FS-01..FS-05). **Not a new freeze.** FS labels are the team’s; official IDs stay **FR-1..FR-18** / **NFR-1..NFR-9**. Do not mint FR-19+.
+
+### Already on `main` / aligns with official SRS
+
+Evidence is committed files this session (PRs #9 + #12 on `main`). Not a live-host probe.
+
+- **Newsletter** → `customers.newsletter_signup` (**FR-15**, **FR-16**): `backend/cafe_fausse/newsletter.py`, `backend/schema.sql`.
+- **Reservations** **FR-6..FR-9**, **FR-17..FR-18**: form fields, slot check, random table 1–30, full-book error, Customers + Reservations, Flask assign. `guest_count` is already in `schema.sql` (supports **FR-6**; not a new ID).
+- **NFR-5:** unique index `reservations_slot_table` on `(time_slot, table_number)`.
+- **Menu FR-5:** `shared/freeze.json` + `GET /api/menu` — **read-only display**, not a staff CMS.
+- **No payment** (out of scope in both the official SRS and FS v0.1).
+
+### In FS v0.1 but not in MVP (Future / beyond assignment floor)
+
+Park these as Future. Do not treat them as missing grade items.
+
+- **PENDING / ASSIGNED / RELEASED** lifecycle; `release_reason` / `released_at`; customer cancel, restaurant checkout, admin release (**FS-04**). On main, a reservation is an inserted row; no status column.
+- **Menu DB tables + staff CRUD + `is_available` (FS-05).** On main, menu is freeze JSON, not persistent items.
+- **Concurrency retry beyond the unique index.** On main: slot `FOR UPDATE` + unique `(time_slot, table_number)`; `UniqueViolation` asks the client to resubmit. No automatic retry loop.
+- **Verbatim case-sensitive email as an explicit FS product rule.** On main: `email_address TEXT NOT NULL UNIQUE`; `validate_email` **lowercases** before store (`backend/cafe_fausse/validate.py`, committed this session). That is not verbatim case. Raw SQL that bypasses the app vs TEXT `UNIQUE` case: **Unknown** (no live Postgres probe this session).
+- **QCFA `run-sql.sh` / migration packaging** vs our path: `backend/schema.sql` + `backend/cafe_fausse/init_db.py`.
+
+### Discussion frame
+
+- FS v0.1 = proposed **Future / hardening** baseline, not a replacement for the official PDF.
+- **Grade floor** = official **FR-1..FR-18** / **NFR-1..NFR-9** only.
+- Park FS extras as [Future](future.md). Do not invent FR-19 / NFR-10.
+
 ## Freeze vs Future
 
 - **In MVP:** the official SRS pages and APIs (Home, Menu, Reservations, About, Gallery, newsletter, 30 tables, fail-closed DB). See [Coverage](coverage.md).
-- **Not in MVP:** AWS / `cafe.artof.link` hosting, florist Path B, 14 hats, Kafka/BFF, 3DX Lab, GitLab, invented requirement IDs, claiming the system is antifragile.
+- **Not in MVP:** FS v0.1 extras above; AWS / `cafe.artof.link` hosting; florist Path B; 14 hats; Kafka/BFF; 3DX Lab; GitLab; invented requirement IDs; claiming the system is antifragile.
 
 ## GitHub loop (do not skip)
 
@@ -58,10 +90,11 @@ Assignment collaborator `quantic-grader` must be added by the **owner**. Agents 
 1. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
 2. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
 3. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
-4. **Scope:** extra ideas go to Future, not a new FR. PORT is not filed; do not batch it here.
+4. **Scope:** extra ideas go to Future, not a new FR. FS v0.1 extras stay Future (compare above). PORT is not filed; do not batch it here.
 
 ## Read next
 
 - [Stack](stack.md) — as-is vs intended HLD
 - [Coverage](coverage.md) — every FR/NFR
 - [Honesty](honesty.md) — what we will not claim
+- [Future](future.md) — parked FS extras; not a second freeze

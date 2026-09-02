@@ -9,6 +9,7 @@ Meeting prep that **is** now on the thin map (once this ships): [Brief](brief.md
 ## Planned later (not the SRS cut)
 
 - Public restaurant on intended hostname `cafe.artof.link` (React + JSX, Flask, PostgreSQL), owned by Café Fausse App. **That hostname is not Café Fausse today** (CNAME to an AWS ELB, probed 2026-09-02). Hosting is future. **AWS is not in the restaurant MVP PR.**
+- Team Functional Spec v0.1 extras (reservation lifecycle, menu CRUD, and related hardening) stay here — see the [Brief compare](brief.md). Not new FR/NFR IDs.
 - Knowledge-site depth beyond this thin map (more essays), owned by Café Fausse Knowledge.
 - GitHub E2E beyond the assignment floor (issues, PR discipline, Actions sensors) used to prove, disprove, and **adjust** the outer harness.
 - `docs/ai-tooling.md` kept current during implementation.
