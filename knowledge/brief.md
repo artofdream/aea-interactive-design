@@ -16,7 +16,7 @@ Next room: **tech access** + **lock video and scenarios**. Working references (n
 
 **Ready (do not over-claim):** restaurant MVP on `main`; Coverage maps every freeze ID; Knowledge HTTPS GET **200** this session; two silent clips (a look, not a public restaurant host).
 
-**[#40](https://github.com/artofdream/aea-interactive-design/issues/40) recorded on [Coverage](coverage.md):** Journey **J1–J8 PASS** (cts-ai local UX, DB up, 2026-09-02). **J9 Unknown.** **NFR-1** / **NFR-2** local Vite timings noted (56 ms / 32 ms) — **not** claimed met. **NFR-7** still **Unknown**.
+**[#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md):** Journey **J1–J8 PASS** (cts-ai local UX, DB up, 2026-09-02). **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). **NFR-1** / **NFR-2** local Vite timings noted (56 ms / 32 ms) — **not** claimed met. **NFR-7** **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown).
 
 **Not grade work:** Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) (hosting) and [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Missing them is not a missing FR/NFR.
 
@@ -38,7 +38,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. Pages **`https_enforced=true`**; cert **approved**. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
 
-3. **Tonight’s focus (1, 3, 4).** Demo this brief + clips and/or local Vite/Flask — not `cafe.artof.link`. FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md). J1–J8 PASS is local cts-ai UX while DB was up; J9 / **NFR-1** / **NFR-2** / **NFR-7** stay **Unknown** or not-claimed-met. `cafe.artof.link` hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
+3. **Tonight’s focus (1, 3, 4).** Demo this brief + clips and/or local Vite/Flask — not `cafe.artof.link`. FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md). J1–J8 PASS is local cts-ai UX while DB was up; J9 **PASS** is Vite-only; **NFR-7** is **partial**; **NFR-1** / **NFR-2** stay not-claimed-met. `cafe.artof.link` hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
 
 ## Where we are
 
@@ -54,7 +54,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 | Café Fausse Knowledge | `knowledge.cafe.artof.link` | HTTPS GET **200**; HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN match; Let’s Encrypt, expires 2026-11-30. Pages API: `cname=knowledge.cafe.artof.link`, cert **approved**, **`https_enforced=true`**. |
 | Café Fausse App | `cafe.artof.link` | DNS CNAME → `aaafeaf0606ec43f5ad23cfe94d6273e-1de430975830beed.elb.eu-north-1.amazonaws.com.` **Not our restaurant.** Do not claim this hostname is live Café Fausse. Hosting is future. |
 
-Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. App probed Journey **J1–J8 PASS** this session while the DB was up; **J9 Unknown**. After the handoff, App reported `cafe-pg` unreachable. This Knowledge VM did not reach Vite. Mentioned tunnel `https://nine-teams-try.loca.lt/` **GET timed out** this session.
+Local validate on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. App probed Journey **J1–J8 PASS** this session while the DB was up; **J9 PASS** later on Vite-only `:5173` (viewports + theme; not Flask+Postgres). **NFR-7** **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown). After the J1–J8 handoff, App reported `cafe-pg` unreachable. This Knowledge VM did not reach Vite. Mentioned tunnel `https://nine-teams-try.loca.lt/` **GET timed out** this session.
 
 ## Compare: team Functional Spec v0.1 vs SRS MVP on main
 
@@ -107,7 +107,7 @@ Not **2:** `quantic-grader` stays an owner step. Not on tonight’s agenda.
 
 1. **Demo:** this Knowledge brief + clips, and/or local Vite/Flask/`cafe-pg`. **Not** `cafe.artof.link` (AWS ELB, not our restaurant; hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22)).
 3. **Scope:** FS v0.1 extras = Future/hardening, not new FR/NFR IDs (compare above; [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38)). Grade floor = official **FR-1..FR-18** / **NFR-1..NFR-9**.
-4. **Presentation:** [Coverage](coverage.md) freeze map + Journey table. J1–J8 PASS (cts-ai, DB up). J9 / **NFR-1** / **NFR-2** / **NFR-7** stay **Unknown** or not-claimed-met.
+4. **Presentation:** [Coverage](coverage.md) freeze map + Journey table. J1–J8 PASS (cts-ai, DB up). J9 **PASS** (Vite-only viewports + theme). **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown). **NFR-1** / **NFR-2** stay not-claimed-met.
 
 ## Read next
 

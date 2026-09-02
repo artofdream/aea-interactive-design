@@ -6,7 +6,7 @@ This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a 
 
 Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
 
-Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). Working drafts: [video script](video-script.md), [slides](presentation-sample.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 / **NFR-1** / **NFR-2** / **NFR-7** stay **Unknown** or not-claimed-met.
+Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). Working drafts: [video script](video-script.md), [slides](presentation-sample.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
 
 ## Teams
 
@@ -15,7 +15,7 @@ Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.m
 | Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session; HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`. Pages **`https_enforced=true`**; cert **approved**. |
 | Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Not Café Fausse.** DNS CNAME → AWS ELB `eu-north-1`. Do not claim this hostname is the restaurant. App is **in-repo on `main`** (PRs #9 + timezone #12). Public hosting remains future. |
 
-AWS is not in the restaurant MVP cut. Local validate (cts-ai, not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. App this session: Journey **J1–J8 PASS** while DB was up; **J9 Unknown**. This VM did not reach Vite. Mentioned tunnel GET **timed out**.
+AWS is not in the restaurant MVP cut. Local validate (cts-ai, not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. App this session: Journey **J1–J8 PASS** while DB was up; **J9 PASS** Vite-only (viewports + theme). This VM did not reach Vite. Mentioned tunnel GET **timed out**.
 
 ## Formula (pattern, scaled here)
 
