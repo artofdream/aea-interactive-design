@@ -4,7 +4,7 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Probe date for live claims on this page:** 2026-09-02 Europe/Berlin (this session).
 
-**Tonight:** see **Compare: team Functional Spec v0.1 vs SRS MVP on main** below. FS is Future/hardening, not a new freeze.
+**Tonight (owner locked 1, 3, 4 — not 2):** demo this brief + clips and/or local Vite/Flask; FS v0.1 extras = Future; presentation = [Coverage](coverage.md). See compare below. Not 2: `quantic-grader` is an owner step, not tonight.
 
 ## Demo clips
 
@@ -24,7 +24,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local 
 
 2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. Pages **`https_enforced=true`**; cert **approved**. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
 
-3. **Still decide / focus.** Journey 1–9 pass/fail: **Unknown** until probed. `cafe.artof.link` hosting is **Future** (issue #22); that hostname is an AWS ELB, not our restaurant. Owner adds `quantic-grader` (agents must not). **NFR-1** / **NFR-2** timing claims stay **Unknown** without a measured probe this session.
+3. **Tonight’s focus (1, 3, 4).** Demo this brief + clips and/or local Vite/Flask — not `cafe.artof.link`. FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md); **Unknown** where not probed. Journey 1–9, **NFR-1** / **NFR-2** stay **Unknown** without a measured probe this session. `cafe.artof.link` hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
 
 ## Where we are
 
@@ -58,13 +58,15 @@ Evidence is committed files this session (PRs #9 + #12 on `main`). Not a live-ho
 
 ### In FS v0.1 but not in MVP (Future / beyond assignment floor)
 
-Park these as Future. Do not treat them as missing grade items.
+Park these as Future issues (already filed). Do not treat them as missing grade items. Do not invent FR-19+.
 
-- **PENDING / ASSIGNED / RELEASED** lifecycle; `release_reason` / `released_at`; customer cancel, restaurant checkout, admin release (**FS-04**). On main, a reservation is an inserted row; no status column.
-- **Menu DB tables + staff CRUD + `is_available` (FS-05).** On main, menu is freeze JSON, not persistent items.
-- **Concurrency retry beyond the unique index.** On main: slot `FOR UPDATE` + unique `(time_slot, table_number)`; `UniqueViolation` asks the client to resubmit. No automatic retry loop.
-- **Verbatim case-sensitive email as an explicit FS product rule.** On main: `email_address TEXT NOT NULL UNIQUE`; `validate_email` **lowercases** before store (`backend/cafe_fausse/validate.py`, committed this session). That is not verbatim case. Raw SQL that bypasses the app vs TEXT `UNIQUE` case: **Unknown** (no live Postgres probe this session).
-- **QCFA `run-sql.sh` / migration packaging** vs our path: `backend/schema.sql` + `backend/cafe_fausse/init_db.py`.
+- **PENDING → ASSIGNED → RELEASED** lifecycle; `release_reason`; `released_at` ([#34](https://github.com/artofdream/aea-interactive-design/issues/34), FS-03/04). On main, a reservation is an inserted row; no status column.
+- Customer cancel / restaurant checkout / admin release APIs ([#35](https://github.com/artofdream/aea-interactive-design/issues/35), FS-04).
+- **Menu** categories/items as persistent tables + staff CRUD + `is_available` ([#36](https://github.com/artofdream/aea-interactive-design/issues/36), FS-05). On main, menu is freeze JSON, not persistent items.
+- **Concurrency retry** beyond the unique index ([#38](https://github.com/artofdream/aea-interactive-design/issues/38), FS-03). On main: slot `FOR UPDATE` + unique `(time_slot, table_number)`; `UniqueViolation` asks the client to resubmit. No automatic retry loop.
+- **Verbatim case-sensitive email** as an explicit FS product rule ([#37](https://github.com/artofdream/aea-interactive-design/issues/37), FS-01). On main: `email_address TEXT NOT NULL UNIQUE`; `validate_email` **lowercases** before store (`backend/cafe_fausse/validate.py`, committed this session). That is not verbatim case. Raw SQL that bypasses the app vs TEXT `UNIQUE` case: **Unknown** (no live Postgres probe this session).
+- **QCFA `run-sql.sh` / migration packaging** vs our path: `backend/schema.sql` + `backend/cafe_fausse/init_db.py`. No GitHub issue filed for this packaging difference.
+- Hosting `cafe.artof.link` remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) (not an FS flow extra; not tonight’s demo target).
 
 ### Discussion frame
 
@@ -83,14 +85,15 @@ One finding → one issue → one branch → one PR against `main`. **The author
 
 MRC: a COMMENT is role-approve until a distinct GitHub App identity. Merge gate is GitHub review **`APPROVE` from a login that is not the PR author**. Bugbot comments are a signal, not the gate. `cursor[bot]` may `APPROVE` `artofdream`-authored PRs after a this-run CI probe; `artofdream` may `APPROVE` `cursor[bot]`-authored PRs. Same login cannot self-APPROVE.
 
-Assignment collaborator `quantic-grader` must be added by the **owner**. Agents must not.
+Assignment collaborator `quantic-grader` must be added by the **owner**. Agents must not. **Not tonight** (decision 2 parked).
 
-## What to decide tomorrow
+## Tonight — owner locked (1, 3, 4)
 
-1. **Owner:** add `quantic-grader` (collaborator GET 404 this session).
-2. **Presentation:** [Coverage](coverage.md). Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** until probed. Do not say `cafe.artof.link` is the restaurant (Future, issue #22).
-3. **Demo:** the clips on this page, or local Vite/Flask/`cafe-pg` — not the AWS ELB. Clips are shareable look, not a live host.
-4. **Scope:** extra ideas go to Future, not a new FR. FS v0.1 extras stay Future (compare above). PORT is not filed; do not batch it here.
+Not **2:** `quantic-grader` stays an owner step. Not on tonight’s agenda.
+
+1. **Demo:** this Knowledge brief + clips, and/or local Vite/Flask/`cafe-pg`. **Not** `cafe.artof.link` (AWS ELB, not our restaurant; hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22)).
+3. **Scope:** FS v0.1 extras = Future/hardening, not new FR/NFR IDs (compare above; [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38)). Grade floor = official **FR-1..FR-18** / **NFR-1..NFR-9**.
+4. **Presentation:** [Coverage](coverage.md) freeze map. Journey 1–9, **NFR-1** / **NFR-2**, **NFR-7** stay **Unknown** where not probed this session.
 
 ## Read next
 
