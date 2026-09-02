@@ -18,8 +18,8 @@ If evidence is missing, write **Unknown**.
 | Official SRS PDF at `docs/official/…SRS.pdf` | Committed freeze file; working copy `docs/srs.md`; CI fails closed if missing or SHA256 mismatches. |
 | AWS / `cafe.artof.link` hosting | **Not in the restaurant MVP cut.** Owner skipped AWS re-auth. Hosting remains future. |
 | NFR-1 / NFR-2 timings (3s page load, 2s form submit) | **Unknown** as an SRS-budget claim. Local Vite notes on [Coverage](coverage.md) / [#40](https://github.com/artofdream/aea-interactive-design/issues/40): home **56 ms**, `GET /api/site` **32 ms**. Do not say NFR-1 / NFR-2 **met**. |
-| NFR-7 (Chrome, Firefox, Safari, Edge) | **Partial** — Edge **PASS** all routes; Firefox **PASS** home; Chrome **Unknown** (not on cts-ai); Safari **Unknown** (not reported). Vite-only `:5173`. Not a four-browser claim. [#44](https://github.com/artofdream/aea-interactive-design/issues/44). |
-| Journey 1–9 pass/fail | **J1–J8 PASS** (cts-ai local UX, DB up). **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). Recorded on [Coverage](coverage.md). Do not treat J1–J8 as a public-host probe. |
+| NFR-7 (Chrome, Firefox, Safari, Edge) | **Partial** — Edge **PASS** all routes with screenshots; Firefox **PASS** home; Chrome **Unknown** (not installed on cts-ai); Safari **Unknown** (not reported). Vite-only `:5173`. Not a four-browser claim. [#44](https://github.com/artofdream/aea-interactive-design/issues/44). |
+| Journey 1–9 pass/fail | **J1–J8 PASS** (cts-ai local UX, DB up). **J9 / NFR-3 / NFR-8 PASS** (Vite-only Edge `probe-nfr/` screenshots + theme.css; not Flask+Postgres). Recorded on [Coverage](coverage.md). Tunnel / Flask not live (Docker Engine still coming). Do not treat J1–J8 as a public-host probe. |
 | System is antifragile | **Do not claim this.** Use ratchet: failures add guides/sensors. |
 
 ## Live vs local vs Future
