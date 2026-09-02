@@ -19,7 +19,7 @@ Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-
 | 7 | **Reservations** | FR-6..FR-9, FR-17..FR-18. Play `clips/02-happy-book.mp4`. 30 tables. Full slot = FR-9 error. | Fail closed if DB is missing. |
 | 8 | **Newsletter + About / Gallery** | FR-15..FR-16; FR-10..FR-14 (history, founders, awards, lightbox). | Awards and reviews are freeze quotes. |
 | 9 | **Live or fallback** | HTTPS Knowledge. Local or tunnel App. Clips if the stack is down. | Never demo `cafe.artof.link` as Café Fausse. |
-| 10 | **NFR honesty** | NFR-5 / NFR-6: code + CI. NFR-1 / NFR-2 / NFR-7: **Unknown** until [#40](https://github.com/artofdream/aea-interactive-design/issues/40). | Do not say “NFR met” without a this-session probe. |
+| 10 | **NFR honesty** | NFR-5 / NFR-6: code + CI + local J6/J8. NFR-1 / NFR-2 / NFR-7: **Unknown** as SRS-budget / browser-matrix claims ([#40](https://github.com/artofdream/aea-interactive-design/issues/40) notes only). | Do not say “NFR-1/2/7 met.” J9 stays Unknown. |
 | 11 | **AI tooling** | `docs/ai-tooling.md`. Cursor + GitHub Actions. Author does not merge. | MRC **COMMENT** is role-approve; then `cursor[bot]` merge after green + Bugbot. |
 | 12 | **Future close** | #22, #34–#38 = Future / hardening. **Not grade gaps.** Friday locked access + video/scenarios. | Questions. Stay on the freeze. |
 
@@ -33,12 +33,12 @@ Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-
 | 4 | **FR coverage + clips** | Slides 5–6. Coverage table + clip 01 (Home → Menu). |
 | 5 | **Reservations + newsletter** | Slides 7–8. Clip 02. Mention About/Gallery IDs in one sentence. |
 | 6 | **Live or fallback** | Slide 9. HTTPS / local / clips. |
-| 7 | **NFR honesty** | Slide 10. Unknown until #40 for Journey / NFR-1 / NFR-2 / NFR-7. |
+| 7 | **NFR honesty** | Slide 10. J1–J8 local PASS; J9 / NFR-1 / NFR-2 / NFR-7 Unknown or not-claimed-met. |
 | 8 | **AI tooling + Future close** | Slides 11–12. Tooling log. #22 / #34–#38 ≠ missing SRS. |
 
 ## What not to put on a slide
 
-- “Journey 1–9 passed” or any NFR-1 / NFR-2 / NFR-7 pass mark (that is **#40**, still Unknown).
+- “Journey 1–9 passed” as a single stamp, or any NFR-1 / NFR-2 / NFR-7 **met** mark. Coverage / #40: J1–J8 local PASS; J9 Unknown.
 - “Live restaurant at `cafe.artof.link`.”
 - FS extras (#34–#38) as if they were official requirements.
 - A fifth team, GitLab, AWS in the MVP cut, or invented IDs.
