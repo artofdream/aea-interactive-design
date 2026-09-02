@@ -77,7 +77,7 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 - Knowledge: build on pull requests; deploy Pages from `main`.
 - App CI (`.github/workflows/ci.yml`): fail closed if `docs/srs.md` / official PDF SHA256 missing; Flask tests against PostgreSQL; frontend test + build.
 - Public repository. Assignment collaborator `quantic-grader` is required; **the owner must add that person** — agents must not.
-- **Author does not merge their own PR.** MRC COMMENT is role-approve until a distinct GitHub App identity (see PR #14 / issue #13). Merge gate: GitHub `APPROVE` from a non-author.
+- **Author does not merge their own PR.** MRC **COMMENT** is the role-approve signal (see PR #14 / issue #13). For `artofdream`-authored PRs, `cursor[bot]` may merge after this-run green checks and Bugbot resolve-or-decline.
 
 ## Honesty
 

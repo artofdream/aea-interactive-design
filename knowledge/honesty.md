@@ -17,12 +17,26 @@ If evidence is missing, write **Unknown**.
 | Restaurant MVP in-repo | **On `main`** (PRs #9 + timezone #12). React + JSX, Flask, PostgreSQL. Local path: Vite `127.0.0.1:5173`, Flask `:5000`, `cafe-pg`. Journey 1–9 pass/fail: **Unknown** (not probed this session; this agent cannot reach cts-ai). |
 | Official SRS PDF at `docs/official/…SRS.pdf` | Committed freeze file; working copy `docs/srs.md`; CI fails closed if missing or SHA256 mismatches. |
 | AWS / `cafe.artof.link` hosting | **Not in the restaurant MVP cut.** Owner skipped AWS re-auth. Hosting remains future. |
-| NFR-1 / NFR-2 timings (3s page load, 2s form submit) | **Unknown** — no measured timing probe this session. |
+| NFR-1 / NFR-2 timings (3s page load, 2s form submit) | **Unknown** — no measured timing probe this session. Issue [#40](https://github.com/artofdream/aea-interactive-design/issues/40) records them later — or they stay Unknown. |
+| NFR-7 (Chrome, Firefox, Safari, Edge) | **Unknown** — no browser matrix this session. Same #40. |
+| Journey 1–9 pass/fail | **Unknown** until #40. Do not treat a checklist description as a pass. |
 | System is antifragile | **Do not claim this.** Use ratchet: failures add guides/sensors. |
+
+## Live vs local vs Future
+
+Three labels. Mixing them is a false claim.
+
+| Label | What it is | What it is not |
+|---|---|---|
+| **Live** | This knowledge map at `knowledge.cafe.artof.link` (HTTPS GET **200** this session; HTTP **301** to HTTPS). | Not the restaurant. Not a reservation host. |
+| **Local / tunnel** | Café Fausse App on `main` (Vite / Flask / `cafe-pg`). Demo on localhost or a tunnel after a GET this session. Silent clips are a **look**. | Not proof that a public restaurant host works. |
+| **Future** | Intended restaurant hostname `cafe.artof.link` ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)); FS extras [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). | Not missing grade rows. That hostname is an AWS ELB today, **not** Café Fausse App. |
+
+Picture: [Friday plan](friday-plan.md) mermaid. Same rule on the [Brief](brief.md) Friday section.
 
 ## Fail closed (restaurant MVP)
 
-Missing PostgreSQL / no connection / timeout → honest **no** on reservation and newsletter writes. Time slot at 30 tables → **FR-9**; no table assigned. Red CI, missing checks, or checks not probed this session → do not merge. Unreviewed PR (no GitHub `APPROVE` from a login other than the author) → do not merge.
+Missing PostgreSQL / no connection / timeout → honest **no** on reservation and newsletter writes. Time slot at 30 tables → **FR-9**; no table assigned. Red CI, missing checks, or checks not probed this session → do not merge. Unreviewed PR (no MRC **COMMENT** role-approve, and no non-author merge path) → do not merge. Author does not merge.
 
 ## What this site is not
 
