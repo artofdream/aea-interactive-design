@@ -6,7 +6,9 @@ This page is not the restaurant. Paths are the in-repo Café Fausse App on `main
 
 **Evidence classes:** `code` = committed file this session; `CI` = GitHub Actions job in `.github/workflows/`; `local GET this session` = HTTP GET from this agent VM; `Unknown` = no probe this session.
 
-**This agent VM** did not reach cts-ai Vite `:5173` / Flask `:5000`. Journey 1–9 pass/fail stays **Unknown**. NFR load and submit timings stay **Unknown** (no stopwatch this session).
+**This agent VM** did not reach cts-ai Vite `:5173` / Flask `:5000`. Journey 1–9 pass/fail stays **Unknown**. NFR load and submit timings stay **Unknown** (no stopwatch this session). Recording those results is [issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) — not this page’s Friday plan.
+
+In plain language: the table below is “where the freeze shows up in the repo.” **Code** and **CI** are not the same as “we timed it” or “we clicked Journey 1–9.” Friday score-5 talk track: [Friday plan](friday-plan.md).
 
 ## Functional requirements
 
@@ -53,7 +55,8 @@ These are harness surfaces, not new requirement IDs.
 |---|---|---|---|
 | SRS freeze on this map | `knowledge/srs.md`, built `srs-full.html` from `docs/srs.md` | code; CI (knowledge-site + srs-present) | Graders can see the ID freeze without opening the PDF first. |
 | Honesty vocabulary | `knowledge/honesty.md` | code; local GET 200 on `https://knowledge.cafe.artof.link/honesty.html` this session | Stops claiming `cafe.artof.link` is live Café Fausse. |
-| Teammate brief | `knowledge/brief.md` | code | Meeting 2026-09-02 19:00 CET. |
+| Teammate brief | `knowledge/brief.md` | code | Meeting 2026-09-02 19:00 CET; Friday score-5 section. |
+| Friday plan + video/slides | `knowledge/friday-plan.md`, `video-script.md`, `presentation-sample.md` | code | Working references for 2026-09-04 19:00 Europe/Berlin. Not Journey/NFR evidence. |
 
 ## Out of this table
 

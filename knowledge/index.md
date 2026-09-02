@@ -6,6 +6,8 @@ This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a 
 
 Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
 
+Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). Working drafts: [video script](video-script.md), [slides](presentation-sample.md). Journey / NFR-1 / NFR-2 / NFR-7 stay **Unknown** until [issue #40](https://github.com/artofdream/aea-interactive-design/issues/40).
+
 ## Teams
 
 | Team | Owns | Intended hostname | Live URL (probe 2026-09-02 Europe/Berlin) |
@@ -40,9 +42,12 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 
 ## On this map (thin)
 
-- [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare
+- [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
+- [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
+- [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
+- [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut
 - [Stack](stack.md) — HLD as-is / intended-to-be; GitHub-only CI
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
-- [Honesty](honesty.md) — probes, Unknown
+- [Honesty](honesty.md) — probes, Unknown; live vs local vs Future
 - [Future / not-MVP](future.md) — schema notes, glossary, journal stub, E2E beyond assignment

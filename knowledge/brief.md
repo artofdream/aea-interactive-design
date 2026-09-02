@@ -6,6 +6,20 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Tonight (owner locked 1, 3, 4 — not 2):** demo this brief + clips and/or local Vite/Flask; FS v0.1 extras = Future; presentation = [Coverage](coverage.md). See compare below. Not 2: `quantic-grader` is an owner step, not tonight.
 
+## Friday 2026-09-04 19:00 Europe/Berlin (score 5)
+
+Next room: **tech access** + **lock video and scenarios**. Working references (not official Quantic dashboard text):
+
+- [Friday plan](friday-plan.md) — P0 / P1 / P2 in plain language; live Knowledge HTTPS vs App local/tunnel vs Future `cafe.artof.link`
+- [Video script](video-script.md) — ~10 minute beats + scenario menu A–F; clips `clips/01-home-menu.mp4` and `clips/02-happy-book.mp4`
+- [Slide outline](presentation-sample.md) — 12-slide outline and the **8-slide cut**
+
+**Ready (do not over-claim):** restaurant MVP on `main`; Coverage maps every freeze ID; Knowledge HTTPS GET **200** this session; two silent clips (a look, not a public restaurant host).
+
+**Unknown until [issue #40](https://github.com/artofdream/aea-interactive-design/issues/40):** Journey 1–9, **NFR-1**, **NFR-2**, **NFR-7**. This brief does not record those numbers.
+
+**Not grade work:** Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) (hosting) and [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Missing them is not a missing FR/NFR.
+
 ## Demo clips
 
 Silent ~30s demos of the restaurant MVP (Café Fausse App). The tunnel or local stack may be offline; these files are the shareable look. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`.
@@ -83,7 +97,7 @@ Park these as Future issues (already filed). Do not treat them as missing grade 
 
 One finding → one issue → one branch → one PR against `main`. **The author does not merge their own PR.** Lesson: PR #14 / issue #13.
 
-MRC: a COMMENT is role-approve until a distinct GitHub App identity. Merge gate is GitHub review **`APPROVE` from a login that is not the PR author**. Bugbot comments are a signal, not the gate. `cursor[bot]` may `APPROVE` `artofdream`-authored PRs after a this-run CI probe; `artofdream` may `APPROVE` `cursor[bot]`-authored PRs. Same login cannot self-APPROVE.
+MRC **COMMENT** is the role-approve signal. For `artofdream`-authored PRs, `cursor[bot]` may merge after this-run green checks and Bugbot resolve-or-decline. Bugbot comments are a signal, not the merge. Same login cannot review-approve its own PR. Owner `artofdream` may review-approve only `cursor[bot]`-authored PRs.
 
 Assignment collaborator `quantic-grader` must be added by the **owner**. Agents must not. **Not tonight** (decision 2 parked).
 
@@ -97,6 +111,9 @@ Not **2:** `quantic-grader` stays an owner step. Not on tonight’s agenda.
 
 ## Read next
 
+- [Friday plan](friday-plan.md) — score-5 P0/P1/P2; live vs local vs Future
+- [Video script](video-script.md) — ~10 min beats; scenarios A–F
+- [Slide outline](presentation-sample.md) — 8-slide cut
 - [Stack](stack.md) — as-is vs intended HLD
 - [Coverage](coverage.md) — every FR/NFR
 - [Honesty](honesty.md) — what we will not claim
