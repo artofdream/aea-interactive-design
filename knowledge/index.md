@@ -4,7 +4,7 @@ This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a 
 
 **MVP = official SRS** ([SRS freeze](srs.md), working copy `docs/srs.md`; SoT = official PDF). Everything else is [Future / not-MVP](future.md).
 
-Teammate meeting **Wed 2026-09-02 19:00 CET**: start with the [Brief](brief.md) (silent ~30s restaurant MVP clips). Course presentation map: [FR/NFR coverage](coverage.md).
+Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
 
 ## Teams
 
@@ -40,7 +40,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 
 ## On this map (thin)
 
-- [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; silent demo clips on that page
+- [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare
 - [Stack](stack.md) — HLD as-is / intended-to-be; GitHub-only CI
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
