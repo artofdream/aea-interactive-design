@@ -8,7 +8,7 @@ Pick **one** cut (~10 minutes). Every cut uses the same open and the same close.
 
 **Honesty (do not skip):** **NFR-1** / **NFR-2** stay **Unknown** as SRS-budget claims — do not say they are met. **NFR-7** is **partial** (Edge + Firefox home; Chrome / Safari **Unknown**). Journey **J1–J8 PASS** (cts-ai, DB up). **J9 PASS** is Vite-only. Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are parked, not grade gaps. Never call `cafe.artof.link` Café Fausse.
 
-**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. Friday tunnel `https://tender-rings-kick.loca.lt/` **timed out** (curl 28). Saturday: re-probe that URL, or play clips. Do not claim writes from an old health GET.
+**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. App tunnel `https://real-goats-shop.loca.lt/` GET **200** (SPA + `/api/health`). Knowledge GET: root **200** ~15s; `/api/health` **200** ~15s. **Slow (~10–20s)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Clips stay fallback. Old `https://tender-rings-kick.loca.lt/` is stale — do not keep as the live share URL. **Not** `cafe.artof.link`. Do not claim writes from the health GET.
 
 ## Shared open (~1:00)
 
