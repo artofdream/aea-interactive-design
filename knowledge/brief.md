@@ -4,15 +4,15 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Probe date for live claims on this page:** 2026-09-04 Europe/Berlin (this session).
 
-**Until a probed tunnel URL this session:** live share = Knowledge HTTPS + committed clips. Owner plans a fresh tunnel 10–15 min before 19:00 CET — write the live URL only after GET **200**. Do **not** claim App tunnel, Vite, Flask, or `cafe-pg` live **right now** (cts-ai was going offline; old loca.lt GET **503** this session). Never claim `cafe.artof.link` is Café Fausse. FS v0.1 extras = Future; presentation = [Coverage](coverage.md). `quantic-grader` remains an owner step.
+**App tunnel this session:** `https://tender-rings-kick.loca.lt/` — GET **200** (SPA HTML). `https://tender-rings-kick.loca.lt/api/health` — GET **200** `{"ok":true}`. Temporary localtunnel to Flask on cts-ai. **Not** `cafe.artof.link`. Clips stay the fallback if the tunnel drops. Old `https://nine-teams-try.loca.lt/` GET **503** — do not reuse it. Never claim `cafe.artof.link` is Café Fausse. FS v0.1 extras = Future; presentation = [Coverage](coverage.md). `quantic-grader` remains an owner step.
 
 ## Friday 2026-09-04 19:00 Europe/Berlin (score 5)
 
-**Until a probed tunnel URL this session:** Knowledge + clips. Owner plans tunnel 10–15 min before 19:00 CET — write the live URL only after GET **200**.
+**App tunnel this session:** `https://tender-rings-kick.loca.lt/` GET **200** (SPA HTML). `/api/health` GET **200** `{"ok":true}`. Temporary localtunnel to Flask on cts-ai. Clips stay fallback. **Not** `cafe.artof.link`.
 
 - **Primary live surface:** `https://knowledge.cafe.artof.link/` (HTTPS GET **200** this session).
-- **Fallback:** committed clips below.
-- **App local / tunnel:** not claimed live **right now**. Fresh tunnel expected ~10–15 min before the call. Paste the URL here only after GET **200**. Old `https://nine-teams-try.loca.lt/` GET **503** this session — do not reuse it.
+- **App tunnel (share this tab):** `https://tender-rings-kick.loca.lt/` — GET **200** this session (SPA HTML, title Café Fausse). Health `https://tender-rings-kick.loca.lt/api/health` — GET **200** `{"ok":true}`. Temporary; not a permanent host. Old `https://nine-teams-try.loca.lt/` GET **503** — do not reuse it.
+- **Fallback:** committed clips below (if the tunnel drops).
 - **Never** `cafe.artof.link` (AWS ELB, not our restaurant).
 
 Room job: **tech access** + **lock video and scenarios**. Working references (not official Quantic dashboard text):
@@ -21,7 +21,7 @@ Room job: **tech access** + **lock video and scenarios**. Working references (no
 - [Video script](video-script.md) — ~10 minute beats + scenario menu A–F; clips `clips/01-home-menu.mp4` and `clips/02-happy-book.mp4`
 - [Slide outline](presentation-sample.md) — 12-slide outline and the **8-slide cut**
 
-**Ready (do not over-claim):** restaurant MVP on `main`; Coverage maps every freeze ID; Knowledge HTTPS GET **200** this session; two silent clips (a look, not a public restaurant host). No App tunnel URL written yet.
+**Ready (do not over-claim):** restaurant MVP on `main`; Coverage maps every freeze ID; Knowledge HTTPS GET **200** this session; App tunnel `https://tender-rings-kick.loca.lt/` GET **200** this session (SPA + `/api/health`); two silent clips as fallback (a look, not a public restaurant host). Temporary tunnel — not `cafe.artof.link`.
 
 **[#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md):** Journey **J1–J8 PASS** (cts-ai local UX, DB up, 2026-09-02). **J9 / NFR-3 / NFR-8 PASS** (Vite-only; Edge `probe-nfr/` 375×812 home, 768×1024 menu, 1280×800 reservations + theme.css; not Flask+Postgres). **NFR-1** / **NFR-2** local Vite timings noted (56 ms / 32 ms) — **not** claimed met. **NFR-7** **partial** (Edge all routes with screenshots + Firefox home; Chrome not installed on cts-ai; Safari Unknown).
 
@@ -29,7 +29,7 @@ Room job: **tech access** + **lock video and scenarios**. Working references (no
 
 ## Demo clips
 
-Silent ~30s demos of the restaurant MVP (Café Fausse App). **Until a probed tunnel URL this session**, these files plus Knowledge HTTPS are the shareable look. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`. If the owner posts a fresh tunnel after GET **200**, that URL can join the live share — not the old loca.lt host.
+Silent ~30s demos of the restaurant MVP (Café Fausse App). **Fallback** if `https://tender-rings-kick.loca.lt/` drops. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`. The live tunnel this session is `https://tender-rings-kick.loca.lt/` (GET **200** SPA + `/api/health`) — temporary localtunnel to Flask on cts-ai, not the old loca.lt host.
 
 **Home → Menu (~32s)**
 
@@ -45,7 +45,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). **Until a probed tun
 
 2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
 
-3. **Wed 2026-09-02 focus (1, 3, 4).** That night: this brief + clips and/or local Vite/Flask — not `cafe.artof.link`. **Friday 2026-09-04:** until a probed tunnel URL this session, Knowledge + clips; owner plans a fresh tunnel 10–15 min before 19:00 CET (write URL only after GET **200**). FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md). J1–J8 PASS is local cts-ai UX while DB was up; J9 **PASS** is Vite-only; **NFR-7** is **partial**; **NFR-1** / **NFR-2** stay not-claimed-met. `cafe.artof.link` hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
+3. **Wed 2026-09-02 focus (1, 3, 4).** That night: this brief + clips and/or local Vite/Flask — not `cafe.artof.link`. **Friday 2026-09-04:** Knowledge + clips; App tunnel `https://tender-rings-kick.loca.lt/` GET **200** this session (SPA + `/api/health`). Temporary localtunnel to Flask on cts-ai — **not** `cafe.artof.link`. FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md). J1–J8 PASS is local cts-ai UX while DB was up; J9 **PASS** is Vite-only; **NFR-7** is **partial**; **NFR-1** / **NFR-2** stay not-claimed-met. `cafe.artof.link` hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
 
 ## Where we are
 
@@ -61,7 +61,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). **Until a probed tun
 | Café Fausse Knowledge | `knowledge.cafe.artof.link` | HTTPS GET **200** this session (2026-09-04); HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN match; Let’s Encrypt, expires 2026-11-30. |
 | Café Fausse App | `cafe.artof.link` | DNS CNAME → `aaafeaf0606ec43f5ad23cfe94d6273e-1de430975830beed.elb.eu-north-1.amazonaws.com.` **Not our restaurant.** Do not claim this hostname is live Café Fausse. Hosting is future. |
 
-App on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres — **not claimed live right now** (cts-ai was going offline). Journey **J1–J8 PASS** recorded 2026-09-02 while the DB was up; **J9 / NFR-3 / NFR-8 PASS** later on Vite-only `:5173` (Edge `probe-nfr/` screenshots + theme.css; not Flask+Postgres). **NFR-7** **partial** (Edge all routes with screenshots; Firefox home; Chrome not installed; Safari Unknown). After the J1–J8 handoff, App reported `cafe-pg` unreachable. Old tunnel `https://nine-teams-try.loca.lt/` GET **503** this session (2026-09-04). Owner plans a **fresh** tunnel 10–15 min before 19:00 CET — write that URL only after GET **200**. This Knowledge VM did not reach Vite. Do **not** claim `cafe.artof.link` is the restaurant.
+App on cts-ai (not this agent VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. **Tunnel this session:** `https://tender-rings-kick.loca.lt/` GET **200** (SPA HTML); `/api/health` GET **200** `{"ok":true}`. Temporary localtunnel to Flask on cts-ai. **Not** `cafe.artof.link`. This Knowledge VM did not reach Vite on `:5173`. Journey **J1–J8 PASS** recorded 2026-09-02 while the DB was up; **J9 / NFR-3 / NFR-8 PASS** later on Vite-only `:5173` (Edge `probe-nfr/` screenshots + theme.css; not Flask+Postgres). **NFR-7** **partial** (Edge all routes with screenshots; Firefox home; Chrome not installed; Safari Unknown). After the J1–J8 handoff, App reported `cafe-pg` unreachable — do not claim reservations on the tunnel without a write probe. Old tunnel `https://nine-teams-try.loca.lt/` GET **503** this session — do not reuse it. Do **not** claim `cafe.artof.link` is the restaurant.
 
 ## Compare: team Functional Spec v0.1 vs SRS MVP on main
 
@@ -112,13 +112,13 @@ Assignment collaborator `quantic-grader` must be added by the **owner**. Agents 
 
 Not **2:** `quantic-grader` stays an owner step.
 
-**Until a probed tunnel URL this session:** Knowledge HTTPS + clips. Owner plans tunnel 10–15 min before 19:00 CET — write the live URL only after GET **200**. Do not claim Vite / Flask / `cafe-pg` / the old loca.lt live **right now**. **Not** `cafe.artof.link`.
+**App tunnel this session:** `https://tender-rings-kick.loca.lt/` GET **200** (SPA + `/api/health`). Temporary localtunnel to Flask on cts-ai. Clips stay fallback. **Not** `cafe.artof.link`. Do not reuse old `https://nine-teams-try.loca.lt/` (GET **503**).
 
 Wed 2026-09-02 locked **1, 3, 4** (not 2). Those decisions still hold:
 
-1. **Demo:** Knowledge brief + clips; App local/tunnel only after a this-session GET **200**. **Not** `cafe.artof.link` (AWS ELB, not our restaurant; hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22)).
+1. **Demo:** Knowledge brief + clips; App tunnel `https://tender-rings-kick.loca.lt/` GET **200** this session (SPA + `/api/health`). **Not** `cafe.artof.link` (AWS ELB, not our restaurant; hosting is [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22)).
 3. **Scope:** FS v0.1 extras = Future/hardening, not new FR/NFR IDs (compare above; [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38)). Grade floor = official **FR-1..FR-18** / **NFR-1..NFR-9**.
-4. **Presentation:** [Coverage](coverage.md) freeze map + Journey table. J1–J8 PASS (cts-ai, DB up). J9 / NFR-3 / NFR-8 **PASS** (Vite-only Edge screenshots + theme.css). **NFR-7** **partial** (Edge + Firefox home; Chrome not installed; Safari Unknown). **NFR-1** / **NFR-2** stay not-claimed-met. Do not claim an unprobed tunnel.
+4. **Presentation:** [Coverage](coverage.md) freeze map + Journey table. J1–J8 PASS (cts-ai, DB up). J9 / NFR-3 / NFR-8 **PASS** (Vite-only Edge screenshots + theme.css). **NFR-7** **partial** (Edge + Firefox home; Chrome not installed; Safari Unknown). **NFR-1** / **NFR-2** stay not-claimed-met. Tunnel URL written after GET **200** this session.
 
 ## Read next
 
