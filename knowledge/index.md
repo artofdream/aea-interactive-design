@@ -50,4 +50,4 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
 - [Honesty](honesty.md) — probes, Unknown; live vs local vs Future
-- [Future / not-MVP](future.md) — schema notes, glossary, journal stub, E2E beyond assignment
+- [Future / not-MVP](future.md) — schema notes (including [AWS `cafe_fausse_db` map](future/aws-schema-map.md)), glossary, journal stub, E2E beyond assignment

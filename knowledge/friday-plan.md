@@ -57,7 +57,7 @@ These issues are **Future / hardening**. Missing them is **not** a missing grade
 | [#37](https://github.com/artofdream/aea-interactive-design/issues/37) | Verbatim case-sensitive email as an FS rule |
 | [#38](https://github.com/artofdream/aea-interactive-design/issues/38) | Automatic concurrency retry beyond the unique index |
 
-Park them on [Future](future.md). Grade floor stays the official PDF.
+Park them on [Future](future.md). Grade floor stays the official PDF. Teammate RDS dump vs local schema (readable without cts-ai): [AWS `cafe_fausse_db` map](future/aws-schema-map.md) / [#46](https://github.com/artofdream/aea-interactive-design/issues/46). Do not apply that DDL to MVP.
 
 ## Live vs local vs Future
 

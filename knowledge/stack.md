@@ -23,7 +23,7 @@ Allowlisted markdown under `knowledge/` is built to static HTML (`knowledge/buil
 - **MVP:** official SRS only (`docs/srs.md`, FR-1..FR-18, NFR-1..NFR-9; PDF SoT).
 - **Local path (cts-ai; this VM did not reach it):** Vite `http://127.0.0.1:5173`, Flask `:5000`, Docker `cafe-pg`. App this session: Journey **J1–J8 PASS** (DB up); **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). After the J1–J8 handoff, App reported `cafe-pg` unreachable. See [Coverage](coverage.md).
 - **Hosting of `cafe.artof.link`:** future. Not AWS in the restaurant MVP PR.
-- Extra features after the SRS belong in [Future](future.md).
+- Extra features after the SRS belong in [Future](future.md). AWS RDS column dump vs local schema: [map + rationale](future/aws-schema-map.md) (no cts-ai required).
 
 ## As-is HLD
 
