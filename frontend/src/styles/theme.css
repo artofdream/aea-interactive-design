@@ -315,6 +315,45 @@ blockquote {
   color: var(--muted);
 }
 
+.footer-operator {
+  max-width: var(--max);
+  margin: 1.5rem auto 0;
+  font-size: 0.85rem;
+}
+
+.footer-operator a {
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-operator a:hover,
+.footer-operator a[aria-current="page"] {
+  border-bottom-color: var(--gold);
+}
+
+.data-table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.data-table th {
+  color: var(--burgundy);
+  font-weight: 600;
+}
+
 @media (max-width: 800px) {
   .hero {
     grid-template-columns: 1fr;
