@@ -18,6 +18,7 @@ NAV = [
     ("brief.html", "Brief"),
     ("friday-plan.html", "Friday"),
     ("video-script.html", "Video"),
+    ("presentation.html", "Talk"),
     ("presentation-sample.html", "Slides"),
     ("stack.html", "Stack"),
     ("srs.html", "SRS freeze"),
@@ -31,6 +32,7 @@ REQUIRED = [
     ROOT / "brief.md",
     ROOT / "friday-plan.md",
     ROOT / "video-script.md",
+    ROOT / "presentation.md",
     ROOT / "presentation-sample.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
@@ -40,7 +42,7 @@ REQUIRED = [
 ]
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
-WIDE_PAGES = {"stack.html", "coverage.html", "friday-plan.html", "aws-schema-map.html"}
+WIDE_PAGES = {"stack.html", "coverage.html", "friday-plan.html", "aws-schema-map.html", "presentation.html"}
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
 VIDEO_SRC_RE = re.compile(r"""\bsrc\s*=\s*(['"])([^'"]+)\1""", re.IGNORECASE)

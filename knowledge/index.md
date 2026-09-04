@@ -6,7 +6,7 @@ This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a 
 
 Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
 
-Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). App tunnel this session: `https://tender-rings-kick.loca.lt/` GET **200** (SPA + `/api/health`) — temporary localtunnel to Flask on cts-ai, **not** `cafe.artof.link`. Knowledge HTTPS + [clips on the Brief](brief.md) stay fallback. Working drafts: [video script](video-script.md), [slides](presentation-sample.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
+Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). App tunnel this session: `https://tender-rings-kick.loca.lt/` GET **200** (SPA + `/api/health`) — temporary localtunnel to Flask on cts-ai, **not** `cafe.artof.link`. Knowledge HTTPS + [clips on the Brief](brief.md) stay fallback. Working drafts: [video script](video-script.md), [slides](presentation-sample.md), Saturday [talk cuts](presentation.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
 
 ## Teams
 
@@ -45,6 +45,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 - [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
 - [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
 - [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
+- [Talk cuts](presentation.md) — Saturday recording: three ~10 min variants + shared close
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut
 - [Stack](stack.md) — HLD as-is / intended-to-be; GitHub-only CI
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
