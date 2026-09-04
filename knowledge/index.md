@@ -6,16 +6,16 @@ This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a 
 
 Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
 
-Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). Working drafts: [video script](video-script.md), [slides](presentation-sample.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
+Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). **Until a probed tunnel URL this session:** Knowledge HTTPS + [clips on the Brief](brief.md). Owner plans a fresh tunnel 10–15 min before 19:00 CET — write the URL only after GET **200**. Working drafts: [video script](video-script.md), [slides](presentation-sample.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
 
 ## Teams
 
 | Team | Owns | Intended hostname | Live URL (probe 2026-09-02 Europe/Berlin) |
 |---|---|---|---|
-| Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session; HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`. Pages **`https_enforced=true`**; cert **approved**. |
+| Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-04); HTTP **301** to HTTPS; TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`. |
 | Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Not Café Fausse.** DNS CNAME → AWS ELB `eu-north-1`. Do not claim this hostname is the restaurant. App is **in-repo on `main`** (PRs #9 + timezone #12). Public hosting remains future. |
 
-AWS is not in the restaurant MVP cut. Local validate (cts-ai, not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` Postgres. App this session: Journey **J1–J8 PASS** while DB was up; **J9 PASS** Vite-only (viewports + theme). This VM did not reach Vite. Mentioned tunnel GET **timed out**.
+AWS is not in the restaurant MVP cut. App on cts-ai (not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg` — **not claimed live right now**. Journey **J1–J8 PASS** (2026-09-02, DB up); **J9 PASS** Vite-only (viewports + theme). This VM did not reach Vite. Old loca.lt GET **503** this session. Fresh tunnel **Unknown** until GET **200**.
 
 ## Formula (pattern, scaled here)
 
@@ -31,7 +31,7 @@ AI may interpret. Domain services decide. Status words are claims; they need a p
 
 | Surface | Team | Hostname | Publish path | This session |
 |---|---|---|---|---|
-| Knowledge (this site) | Café Fausse Knowledge | `knowledge.cafe.artof.link` | GitHub Actions → GitHub Pages | HTTPS GET 200; HTTP 301 to HTTPS; `https_enforced=true`; CNAME `artofdream.github.io`; Let’s Encrypt, expires 2026-11-30 |
+| Knowledge (this site) | Café Fausse Knowledge | `knowledge.cafe.artof.link` | GitHub Actions → GitHub Pages | HTTPS GET 200 this session (2026-09-04); HTTP 301 to HTTPS; CNAME `artofdream.github.io`; Let’s Encrypt, expires 2026-11-30 |
 | Implementation (restaurant) | Café Fausse App | `cafe.artof.link` | Local React + Flask + PostgreSQL. Hosting future. | CNAME is an AWS ELB, **not** our app. No claim that the restaurant is live there. |
 
 Do not invent other domains. Do not treat a hostname as a live Café Fausse restaurant.
