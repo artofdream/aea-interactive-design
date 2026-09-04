@@ -8,7 +8,7 @@ Pick **one** cut (~10 minutes). Every cut uses the same open and the same close.
 
 **Honesty (do not skip):** **NFR-1** / **NFR-2** stay **Unknown** as SRS-budget claims — do not say they are met. **NFR-7** is **partial** (Edge + Firefox home; Chrome / Safari **Unknown**). Journey **J1–J8 PASS** (cts-ai, DB up). **J9 PASS** is Vite-only. Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are parked, not grade gaps. Never call `cafe.artof.link` Café Fausse.
 
-**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. App tunnel `https://happy-glasses-film.loca.lt/` earlier probe GET **200** (SPA + `/operator` + `/api/health`). Knowledge GET: root **200** (~13.5s); `/operator` **200** (~16s); `/api/operator` **200** (~11s); `/api/health` **200** `{"ok":true}` (~12s). **Slow (~10–20s)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Clips stay fallback. Old `https://real-goats-shop.loca.lt/` is **stale** — do not keep as the live share URL. **Not** `cafe.artof.link`. Do not claim writes from the health GET. Read-only `/operator` is on the tunnel ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**. This-session re-probe: root GET **503** (~15s); `/api/health` GET **503** Tunnel Unavailable (~12s). **Not** the live share. Earlier Knowledge probe was GET **200** (**slow (~10–20s)**; **interstitial-possible**). Wait for App to post a new URL and a GET **200**. Clips stay fallback.
+**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. App tunnel `https://shaky-deer-drive.loca.lt/` GET **200** (SPA + `/operator` + `/api/health`). Knowledge GET: root **200** (~24s); `/operator` **200** (~14s); `/api/operator` **200** (~11s); `/api/health` **200** `{"ok":true}` (~12s). **Slow (~10–20s+)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Clips stay fallback. Old `https://happy-glasses-film.loca.lt/` and `https://real-goats-shop.loca.lt/` are **stale** — do not keep as the live share URL. **Not** `cafe.artof.link`. Do not claim writes from the health GET. Read-only `/operator` is on the tunnel ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**. 
 
 ## Shared open (~1:00)
 
@@ -38,18 +38,18 @@ Then jump to the cut you chose.
 
 ```mermaid
 flowchart TB
-  subgraph UX["Presentation / UX"]
-    PAGES["Home Menu About Gallery + theme"]
-  end
-  subgraph API["Forms + API"]
-    FORMS["Reservations + newsletter → Flask"]
-  end
-  subgraph DATA["Data"]
-    PG["PostgreSQL Customers + Reservations"]
-  end
-  PAGES --> IDS1["FR-1..5 · FR-10..14 · NFR-3 / 4 / 8"]
-  FORMS --> IDS2["FR-6..9 · FR-15..18 · NFR-5 / 6"]
-  PG --> IDS3["FR-17 · NFR-5 / 6"]
+ subgraph UX["Presentation / UX"]
+ PAGES["Home Menu About Gallery + theme"]
+ end
+ subgraph API["Forms + API"]
+ FORMS["Reservations + newsletter → Flask"]
+ end
+ subgraph DATA["Data"]
+ PG["PostgreSQL Customers + Reservations"]
+ end
+ PAGES --> IDS1["FR-1..5 · FR-10..14 · NFR-3 / 4 / 8"]
+ FORMS --> IDS2["FR-6..9 · FR-15..18 · NFR-5 / 6"]
+ PG --> IDS3["FR-17 · NFR-5 / 6"]
 ```
 
 ---
@@ -68,21 +68,21 @@ Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the H
 
 ```mermaid
 flowchart TB
-  subgraph K["Café Fausse Knowledge — live this session"]
-    MD["knowledge/*.md"] --> BUILD["GitHub Actions → GitHub Pages"]
-    BUILD --> KH["knowledge.cafe.artof.link"]
-  end
-  subgraph L["Café Fausse App — in-repo on main"]
-    RE["React + JSX / Vite"] --> FL["Flask"]
-    FL --> DB["PostgreSQL"]
-  end
-  subgraph N["Not our restaurant"]
-    CAFE["cafe.artof.link"] --> ELB["CNAME → AWS ELB"]
-  end
-  KH -.-> OK["HTTPS GET 200 · HTTP 301 to HTTPS"]
-  RE -.-> FRUX["FR-1..5 · FR-10..14 · NFR-3/4/8"]
-  FL -.-> FRAPI["FR-6..9 · FR-15..18 · NFR-5/6"]
-  DB -.-> FRDB["FR-17 · NFR-5"]
+ subgraph K["Café Fausse Knowledge — live this session"]
+ MD["knowledge/*.md"] --> BUILD["GitHub Actions → GitHub Pages"]
+ BUILD --> KH["knowledge.cafe.artof.link"]
+ end
+ subgraph L["Café Fausse App — in-repo on main"]
+ RE["React + JSX / Vite"] --> FL["Flask"]
+ FL --> DB["PostgreSQL"]
+ end
+ subgraph N["Not our restaurant"]
+ CAFE["cafe.artof.link"] --> ELB["CNAME → AWS ELB"]
+ end
+ KH -.-> OK["HTTPS GET 200 · HTTP 301 to HTTPS"]
+ RE -.-> FRUX["FR-1..5 · FR-10..14 · NFR-3/4/8"]
+ FL -.-> FRAPI["FR-6..9 · FR-15..18 · NFR-5/6"]
+ DB -.-> FRDB["FR-17 · NFR-5"]
 ```
 
 ---
@@ -109,9 +109,9 @@ One picture. Use it at 8:30–10:00 (cut A) or 9:00–10:00 (cuts B and C).
 
 ```mermaid
 flowchart LR
-  SRS["Official SRS\nFR-1..18 · NFR-1..9"] --> MAIN["main\nReact + Flask + Postgres\ncode + CI"]
-  MAIN --> COV["Knowledge coverage\nevidence classes"]
-  COV --> DEMO["Demo surface\ntunnel after GET 200\nor clips"]
+ SRS["Official SRS\nFR-1..18 · NFR-1..9"] --> MAIN["main\nReact + Flask + Postgres\ncode + CI"]
+ MAIN --> COV["Knowledge coverage\nevidence classes"]
+ COV --> DEMO["Demo surface\ntunnel after GET 200\nor clips"]
 ```
 
 Say out loud before you stop:
