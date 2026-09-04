@@ -101,7 +101,7 @@ These are harness surfaces, not new requirement IDs.
 | SRS freeze on this map | `knowledge/srs.md`, built `srs-full.html` from `docs/srs.md` | code; CI (knowledge-site + srs-present) | Graders can see the ID freeze without opening the PDF first. |
 | Honesty vocabulary | `knowledge/honesty.md` | code; local GET 200 on `https://knowledge.cafe.artof.link/honesty.html` this session | Stops claiming `cafe.artof.link` is live Café Fausse. |
 | Teammate brief | `knowledge/brief.md` | code | Meeting 2026-09-02 19:00 CET; Friday score-5 section. |
-| Friday plan + video/slides | `knowledge/friday-plan.md`, `video-script.md`, `presentation-sample.md` | code | Working references for 2026-09-04 19:00 Europe/Berlin. Not a substitute for the Journey table above. |
+| Friday plan + video/slides | `knowledge/friday-plan.md`, `video-script.md`, `presentation.md`, `presentation-sample.md` | code | Working references for Friday 2026-09-04 and Saturday recording cuts. Not a substitute for the Journey table above. |
 | Journey / NFR recording | this page; [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) | App local UX / GET this session (cts-ai); J9 / NFR-3 / NFR-8 / NFR-7 **Vite-only**; `probe-nfr/` PNGs on cts-ai (not in this repo); Knowledge GET of mentioned tunnel timed out | J1–J8 PASS while DB was up; J9 / NFR-3 / NFR-8 PASS (Edge screenshots + theme.css); NFR-7 partial (Edge + Firefox home; Chrome not installed; Safari Unknown); NFR-1 / NFR-2 not claimed met. Tunnel / Flask not live (Docker Engine still coming). |
 
 ## Out of this table

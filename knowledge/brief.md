@@ -19,6 +19,7 @@ Room job: **tech access** + **lock video and scenarios**. Working references (no
 
 - [Friday plan](friday-plan.md) — P0 / P1 / P2; live Knowledge HTTPS vs App after a this-session GET vs Future `cafe.artof.link`
 - [Video script](video-script.md) — ~10 minute beats + scenario menu A–F; clips `clips/01-home-menu.mp4` and `clips/02-happy-book.mp4`
+- [Talk cuts](presentation.md) — Saturday recording: three ~10 min variants + shared close
 - [Slide outline](presentation-sample.md) — 12-slide outline and the **8-slide cut**
 
 **Ready (do not over-claim):** restaurant MVP on `main`; Coverage maps every freeze ID; Knowledge HTTPS GET **200** this session; App tunnel `https://tender-rings-kick.loca.lt/` GET **200** this session (SPA + `/api/health`); two silent clips as fallback (a look, not a public restaurant host). Temporary tunnel — not `cafe.artof.link`.
@@ -124,6 +125,7 @@ Wed 2026-09-02 locked **1, 3, 4** (not 2). Those decisions still hold:
 
 - [Friday plan](friday-plan.md) — score-5 P0/P1/P2; live vs local vs Future
 - [Video script](video-script.md) — ~10 min beats; scenarios A–F
+- [Talk cuts](presentation.md) — Saturday three-cut recording
 - [Slide outline](presentation-sample.md) — 8-slide cut
 - [Stack](stack.md) — as-is vs intended HLD
 - [Coverage](coverage.md) — every FR/NFR

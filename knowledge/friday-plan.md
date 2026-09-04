@@ -8,7 +8,7 @@ Friday’s job is **tech access** plus **lock the video and scenarios**. It is n
 
 **App tunnel this session:** `https://tender-rings-kick.loca.lt/` — GET **200** (SPA HTML). `https://tender-rings-kick.loca.lt/api/health` — GET **200** `{"ok":true}`. Temporary localtunnel to Flask on cts-ai. **Not** `cafe.artof.link`. Clips stay the fallback if the tunnel drops. Never claim `cafe.artof.link` is Café Fausse.
 
-Drafts that belong with this page: [10-minute video script](video-script.md), [slide outline](presentation-sample.md). Meeting notes stay on the [Brief](brief.md).
+Drafts that belong with this page: [10-minute video script](video-script.md), [slide outline](presentation-sample.md), Saturday [talk cuts](presentation.md). Meeting notes stay on the [Brief](brief.md).
 
 ## Ready vs Unknown (plain language)
 
@@ -43,7 +43,7 @@ Plain language: show the assignment, not extras. Prove what is live. Stay honest
 Do these only after P0 access works. They do not add requirement IDs.
 
 - Record or rehearse the ~10 minute video against the script (clips already on this site).
-- Walk the [8-slide cut](presentation-sample.md) with [Coverage](coverage.md) as the FR/NFR map.
+- Walk the [8-slide cut](presentation-sample.md) with [Coverage](coverage.md) as the FR/NFR map. Saturday recording: pick one [talk cut](presentation.md).
 - Tunnel URL written on the [Brief](brief.md): `https://tender-rings-kick.loca.lt/` GET **200** this session (SPA + `/api/health`). Temporary. The old loca.lt URL is not that probe.
 - Keep one happy reservation and one newsletter write on demo data. Fail closed if PostgreSQL is missing.
 

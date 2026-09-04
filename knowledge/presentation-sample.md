@@ -2,7 +2,7 @@
 
 Working slide outline for Friday **2026-09-04 19:00 Europe/Berlin**. Not official Quantic dashboard text. Not a claim that NFR-1 / NFR-2 timings or a four-browser NFR-7 matrix are met.
 
-Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-plan.md) diagram. Spoken timing lives in the [video script](video-script.md).
+Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-plan.md) diagram. Spoken timing lives in the [video script](video-script.md). Saturday recording cuts (three ~10 min variants): [Presentation](presentation.md). This file stays the 8/12-slide outline.
 
 **Default for the room:** the **8-slide cut**. The 12-slide outline is if someone asks for more FR walkthrough.
 

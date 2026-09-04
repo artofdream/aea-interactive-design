@@ -13,7 +13,7 @@ Play or talk over the committed clips when the local stack is down. The clips ar
 
 <video controls src="clips/02-happy-book.mp4"></video>
 
-Lock scenarios with the menu at the bottom (A–F). Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
+Lock scenarios with the menu at the bottom (A–F). Saturday recording variants (layers / architecture / coding): [Presentation](presentation.md). Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
 
 ## Timed beats
 
