@@ -6,7 +6,7 @@ Working reference for **Friday 2026-09-04 19:00 Europe/Berlin**. Not official Qu
 
 Friday’s job is **tech access** plus **lock the video and scenarios**. It is not a night to implement Future extras.
 
-**App tunnel this session:** `https://real-goats-shop.loca.lt/` — GET **200** (SPA HTML). `https://real-goats-shop.loca.lt/api/health` — GET **200** `{"ok":true}`. Knowledge GET **200** this session (SPA + `/api/health`). **Can be slow** (~11–18s); localtunnel **interstitial possible**. Agent VMs with short timeouts can see 000/TLS fail even when App sees 200. Temporary localtunnel to Flask on cts-ai. **Not** an instant public host. **Not** `cafe.artof.link`. Clips stay the fallback. Old `https://tender-rings-kick.loca.lt/` is stale — do not keep as the live share URL. Never claim `cafe.artof.link` is Café Fausse.
+**App tunnel this session:** `https://real-goats-shop.loca.lt/` — GET **200** (SPA HTML). `https://real-goats-shop.loca.lt/api/health` — GET **200** `{"ok":true}`. Knowledge GET: root **200** ~15s; `/api/health` **200** ~15s. **Slow (~10–20s)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Temporary localtunnel to Flask on cts-ai. **Not** `cafe.artof.link`. Clips stay the fallback. Old `https://tender-rings-kick.loca.lt/` is stale — do not keep as the live share URL. Never claim `cafe.artof.link` is Café Fausse.
 
 Drafts that belong with this page: [10-minute video script](video-script.md), [slide outline](presentation-sample.md), Saturday [talk cuts](presentation.md). Meeting notes stay on the [Brief](brief.md).
 
@@ -19,7 +19,7 @@ Drafts that belong with this page: [10-minute video script](video-script.md), [s
 | Knowledge host HTTPS **GET 200** (2026-09-04 Europe/Berlin): `knowledge.cafe.artof.link` | **NFR-7** four-browser claim — Chrome / Safari **Unknown**. Partial only: Edge all routes + Firefox home (Vite-only) |
 | HTTP `knowledge.cafe.artof.link` → **301** to HTTPS (this session) | `cafe.artof.link` as Café Fausse App — **not our restaurant** (CNAME to an AWS ELB) |
 | Journey **J1–J8 PASS** (cts-ai, DB up) + **J9 / NFR-3 / NFR-8 PASS** (Vite-only; Edge `probe-nfr/` 375×812 home, 768×1024 menu, 1280×800 reservations) — [Coverage](coverage.md) / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) | Reservations / `cafe-pg` on the tunnel — **not** claimed (no write probe this session). Old `https://tender-rings-kick.loca.lt/` is stale. Vite `:5173` from this Knowledge VM **Unknown** |
-| App tunnel `https://real-goats-shop.loca.lt/` GET **200** this session (SPA HTML) + `/api/health` GET **200** `{"ok":true}` | **Can be slow** (~11–18s); interstitial possible. Temporary localtunnel to Flask on cts-ai — **not** an instant public host, **not** `cafe.artof.link` |
+| App tunnel `https://real-goats-shop.loca.lt/` GET **200** this session (SPA HTML) + `/api/health` GET **200** `{"ok":true}` | **Slow (~10–20s)**; **interstitial-possible** in browsers. Knowledge GET: root **200** ~15s; `/api/health` **200** ~15s. Short timeouts can look like failure. Not snappy. Not always-on. Temporary localtunnel to Flask on cts-ai — **not** `cafe.artof.link` |
 | Silent clips on the brief (look, not a live restaurant host) | Do not claim Flask+Postgres or `cafe.artof.link` from the Vite-only J9 / NFR-7 probe |
 
 Coverage records the Journey / NFR numbers. This page does **not** claim **NFR-1** / **NFR-2** met, and does **not** claim a full **NFR-7** four-browser matrix. J9 **PASS** is Vite-only.
@@ -30,12 +30,12 @@ Plain language: show the assignment, not extras. Prove what is live. Stay honest
 
 1. **Freeze only.** Talk FR-1..FR-18 / NFR-1..NFR-9. Freeze data (prices, address, hours, owners, awards, reviews) is not “improved.”
 2. **Primary live surface — Knowledge.** Open `https://knowledge.cafe.artof.link/` (HTTPS). This knowledge map is the public surface. Probe this session (2026-09-04): GET **200**.
-3. **App tunnel to share.** `https://real-goats-shop.loca.lt/` GET **200** this session (SPA HTML). Health `https://real-goats-shop.loca.lt/api/health` GET **200** `{"ok":true}`. Knowledge GET **200** this session (SPA + `/api/health`). **Can be slow** / interstitial-possible — not an instant public host. Temporary localtunnel to Flask on cts-ai. Written on the [Brief](brief.md). Clips stay fallback. **Do not** open `cafe.artof.link` and call it Café Fausse.
+3. **App tunnel to share.** `https://real-goats-shop.loca.lt/` GET **200** this session (SPA HTML). Health `https://real-goats-shop.loca.lt/api/health` GET **200** `{"ok":true}`. Knowledge GET: root **200** ~15s; `/api/health` **200** ~15s. **Slow (~10–20s)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Temporary localtunnel to Flask on cts-ai. Written on the [Brief](brief.md). Clips stay fallback. **Do not** open `cafe.artof.link` and call it Café Fausse.
 4. **P0 live-proof path**
    - [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) — **recorded** on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 / NFR-3 / NFR-8 **PASS** (Vite-only Edge screenshots + theme.css); **NFR-1** / **NFR-2** timings noted, **not** claimed met; **NFR-7** **partial** (Edge all routes with screenshots + Firefox home; Chrome not installed; Safari Unknown).
-   - **Tunnel:** `https://real-goats-shop.loca.lt/` GET **200** this session (SPA + `/api/health`). **Can be slow** / interstitial-possible. Temporary. **Fallback:** committed clips. Old `https://tender-rings-kick.loca.lt/` is stale — do not keep as the live share URL.
+   - **Tunnel:** `https://real-goats-shop.loca.lt/` GET **200** this session (SPA + `/api/health`). **Slow (~10–20s)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Temporary. **Fallback:** committed clips. Old `https://tender-rings-kick.loca.lt/` is stale — do not keep as the live share URL.
    - Demo data / happy book / full slot (**FR-9**) only after a this-session write probe. After the App handoff, `cafe-pg` was reported unreachable; do not claim reservations on the tunnel without that probe.
-5. **Lock video + scenarios.** Use the [script](video-script.md) and scenario menu A–F. Share Knowledge + `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow** / interstitial-possible). Clips stay fallback. Still a look at the in-repo App, not `cafe.artof.link`.
+5. **Lock video + scenarios.** Use the [script](video-script.md) and scenario menu A–F. Share Knowledge + `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow (~10–20s)**; **interstitial-possible** in browsers). Clips stay fallback. Still a look at the in-repo App, not `cafe.artof.link`.
 6. **Honesty line.** J1–J8 PASS is local cts-ai UX while the DB was up. J9 / NFR-3 / NFR-8 **PASS** is Vite-only (Edge `probe-nfr/` screenshots + theme.css) — not Flask+Postgres. **NFR-7** is **partial** (Edge + Firefox home; Chrome not installed; Safari Unknown). **NFR-1** / **NFR-2** stay not-claimed-met. Do not say the SRS broadband budgets are met. Tunnel URL written after GET **200** this session; do not claim `cafe-pg` writes from that GET.
 
 ## P1 — Friday polish (same grade floor)
@@ -44,7 +44,7 @@ Do these only after P0 access works. They do not add requirement IDs.
 
 - Record or rehearse the ~10 minute video against the script (clips already on this site).
 - Walk the [8-slide cut](presentation-sample.md) with [Coverage](coverage.md) as the FR/NFR map. Saturday recording: pick one [talk cut](presentation.md).
-- Tunnel URL written on the [Brief](brief.md): `https://real-goats-shop.loca.lt/` GET **200** this session (SPA + `/api/health`; **slow** / interstitial-possible — not an instant public host). Temporary. Old `https://tender-rings-kick.loca.lt/` is not that probe.
+- Tunnel URL written on the [Brief](brief.md): `https://real-goats-shop.loca.lt/` GET **200** this session (SPA + `/api/health`; **slow (~10–20s)**; **interstitial-possible** in browsers — not snappy, not always-on). Temporary. Old `https://tender-rings-kick.loca.lt/` is not that probe.
 - Keep one happy reservation and one newsletter write on demo data. Fail closed if PostgreSQL is missing.
 
 ## P2 — not Friday, not grade gaps
@@ -77,7 +77,7 @@ flowchart TB
   subgraph APP["Café Fausse App — after GET 200 this session, not a public host"]
     VITE["Vite :5173"] --> FLASK["Flask :5000"]
     FLASK --> PG["cafe-pg PostgreSQL"]
-    TUN["real-goats-shop.loca.lt GET 200 this session · can be slow"] -.-> FLASK
+    TUN["real-goats-shop.loca.lt GET 200 · slow ~10-20s · interstitial-possible"] -.-> FLASK
   end
   subgraph FUT["Future — not grade work"]
     CAFE["cafe.artof.link"] --> ELB["CNAME → AWS ELB eu-north-1 · not our restaurant"]
@@ -86,15 +86,15 @@ flowchart TB
 ```
 
 - **Live Knowledge** is this site over HTTPS (primary Friday share).
-- **App** is the in-repo restaurant. Tunnel this session: `https://real-goats-shop.loca.lt/` GET **200** (SPA + `/api/health`; **can be slow** / interstitial-possible — not an instant public host). Temporary localtunnel to Flask on cts-ai — not a public host, not `cafe.artof.link`. Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look.
+- **App** is the in-repo restaurant. Tunnel this session: `https://real-goats-shop.loca.lt/` GET **200** (SPA + `/api/health`; **slow (~10–20s)**; **interstitial-possible** in browsers — not snappy, not always-on). Temporary localtunnel to Flask on cts-ai — not a public host, not `cafe.artof.link`. Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look.
 - **Future `cafe.artof.link`** is the *intended* restaurant hostname. It is **not** Café Fausse App today. Hosting is #22.
 
 Same picture in words: [Honesty](honesty.md). Stack diagrams: [Stack](stack.md).
 
 ## Friday room checklist
 
-1. Knowledge HTTPS tab open. App tunnel tab: `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow** / interstitial-possible). Clips ready as fallback. Not the stale `tender-rings-kick` URL.
+1. Knowledge HTTPS tab open. App tunnel tab: `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow (~10–20s)**; **interstitial-possible** in browsers). Clips ready as fallback. Not the stale `tender-rings-kick` URL.
 2. Script + scenario A–F locked. Slides = 8-slide cut unless the room wants the long outline.
-3. Say J1–J8 **PASS** (cts-ai, DB up) and J9 / NFR-3 / NFR-8 **PASS** (Vite-only Edge screenshots + theme.css) from [Coverage](coverage.md) / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44). Say **NFR-7** is **partial** (Edge + Firefox home; Chrome not installed; Safari Unknown). Say not-claimed-met for **NFR-1** / **NFR-2**. Share Knowledge + `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow** / interstitial-possible). Clips stay fallback. Do not claim `cafe-pg` writes from the health GET.
+3. Say J1–J8 **PASS** (cts-ai, DB up) and J9 / NFR-3 / NFR-8 **PASS** (Vite-only Edge screenshots + theme.css) from [Coverage](coverage.md) / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44). Say **NFR-7** is **partial** (Edge + Firefox home; Chrome not installed; Safari Unknown). Say not-claimed-met for **NFR-1** / **NFR-2**. Share Knowledge + `https://real-goats-shop.loca.lt/` (GET **200** this session; **slow (~10–20s)**; **interstitial-possible** in browsers). Clips stay fallback. Do not claim `cafe-pg` writes from the health GET.
 4. Say Future #22 / #34–#38 are parked, not missing SRS rows.
 5. Author does not merge their own PR. MRC **COMMENT** is the role-approve signal; then `cursor[bot]` may merge after this-run green checks and Bugbot resolve-or-decline.
