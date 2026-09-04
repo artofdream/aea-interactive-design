@@ -13,7 +13,7 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 - **Primary live surface:** `https://knowledge.cafe.artof.link/` (HTTPS GET **200** this session).
 - **App tunnel (share this tab):** `https://shaky-deer-drive.loca.lt/` — GET **200** this session (SPA HTML, title Café Fausse). Health `https://shaky-deer-drive.loca.lt/api/health` — GET **200** `{"ok":true}`. Knowledge GET: root **200** (~24s); `/operator` **200** (~14s); `/api/operator` **200** (~11s); `/api/health` **200** `{"ok":true}` (~12s). **Slow (~10–20s+)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Temporary; not snappy, not always-on. Old `https://happy-glasses-film.loca.lt/` and `https://real-goats-shop.loca.lt/` are **stale** — do not keep as the live share URL.
 - **Fallback:** committed clips below (if the tunnel is **slow (~10–20s+)**, shows an interstitial, or drops).
-- **Operator view (recording helper):** `https://shaky-deer-drive.loca.lt/operator` — Knowledge GET **200** (~14s). Read-only customers + reservations so you can see the DB after a booking. **Not** an admin console (no CRUD / cancel). **Not FR-19.** Landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) (closes [#54](https://github.com/artofdream/aea-interactive-design/issues/54)). **Slow (~10–20s+)**; **interstitial-possible**. Temporary tunnel; **not** `cafe.artof.link`.
+- **Operator view (recording helper):** `https://shaky-deer-drive.loca.lt/operator` — Knowledge GET **200** (~14s). Read-only customers + reservations so you can see the DB after a booking. **Not** an admin console (no CRUD / cancel). **Not FR-19.** Landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [issue 54](https://github.com/artofdream/aea-interactive-design/issues/54). **Slow (~10–20s+)**; **interstitial-possible**. Temporary tunnel; **not** `cafe.artof.link`.
 - **Never** `cafe.artof.link` (AWS ELB, not our restaurant).
 
 ## Operator view (recording helper — not FR-19)
@@ -22,7 +22,7 @@ Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
 
 **Where (live share this session):** `https://shaky-deer-drive.loca.lt/operator` — Knowledge GET **200** this session (~14s). **Slow (~10–20s+)**; **interstitial-possible** in browsers. Temporary localtunnel to Flask on cts-ai; **not** `cafe.artof.link`.
 
-**Ship:** landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) (closes [#54](https://github.com/artofdream/aea-interactive-design/issues/54)). Footer `Operator` link only — not in the primary SRS nav.
+**Ship:** landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [issue 54](https://github.com/artofdream/aea-interactive-design/issues/54). Footer `Operator` link only — not in the primary SRS nav.
 
 ## Friday room
 
