@@ -11,6 +11,7 @@ from flask_cors import CORS
 from cafe_fausse.content import OFFICIAL_IMAGE_FILES, REPO_ROOT, freeze
 from cafe_fausse.db import DatabaseUnavailable, ping
 from cafe_fausse.newsletter import subscribe as subscribe_newsletter
+from cafe_fausse.operator import list_operator_snapshot
 from cafe_fausse.reservations import (
     ReservationError,
     create_reservation,
@@ -113,6 +114,12 @@ def create_app() -> Flask:
         except ReservationError as exc:
             return jsonify({"ok": False, "error": str(exc), "code": exc.code}), exc.status
         return jsonify({"ok": True, **result}), 201
+
+    @app.get("/api/operator")
+    def operator_snapshot():
+        # Recording demo only. Not FR-19. GET only; writes are not registered.
+        snapshot = list_operator_snapshot()
+        return jsonify({"ok": True, **snapshot})
 
     @app.get("/images/<path:filename>")
     def official_image(filename: str):

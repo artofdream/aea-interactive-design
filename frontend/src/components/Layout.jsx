@@ -42,6 +42,9 @@ export default function Layout() {
             <NewsletterForm />
           </section>
         </div>
+        <p className="footer-operator">
+          <Link to="/operator">Operator</Link>
+        </p>
       </footer>
     </>
   );
