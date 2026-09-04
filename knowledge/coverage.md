@@ -57,6 +57,8 @@ Vite routes `/`, `/menu`, `/about`, `/gallery`, `/reservations` all returned **2
 | FR-17 | PostgreSQL Customers + Reservations tables | `backend/schema.sql`; `backend/cafe_fausse/init_db.py`; `db.py` | code; CI (restaurant-api job); local UX J5/J8 (write while up; 503 when down) | SRS names the tables and columns. No database → no booking. |
 | FR-18 | Flask: insert customer, check availability, random table, confirm or error | `backend/cafe_fausse/__init__.py` (`POST /api/reservations`); `reservations.py` | code; CI; local UX J5/J6 PASS (cts-ai) | Back-end reservation system is an SRS product function, not a static form. |
 
+**Recording helper (not a freeze ID):** read-only `/operator` shows customers + reservations so a recording can see the DB after a booking. **Not** an admin console (no CRUD / cancel). **Not FR-19.** Landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) (closes [#54](https://github.com/artofdream/aea-interactive-design/issues/54)). Live share this session: `https://shaky-deer-drive.loca.lt/operator` — Knowledge GET **200** (~14s). **Slow (~10–20s+)**; **interstitial-possible**. Temporary tunnel; **not** `cafe.artof.link`. See the [Brief](brief.md).
+
 ## Non-functional requirements
 
 | ID | Summary | In-repo | Evidence | Why it matters for the course |
@@ -103,6 +105,7 @@ These are harness surfaces, not new requirement IDs.
 | Teammate brief | `knowledge/brief.md` | code | Meeting 2026-09-02 19:00 CET; Friday score-5 section. |
 | Friday plan + video/slides | `knowledge/friday-plan.md`, `video-script.md`, `presentation.md`, `presentation-sample.md` | code | Working references for Friday 2026-09-04 and Saturday recording cuts. Not a substitute for the Journey table above. |
 | Journey / NFR recording | this page; [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) | App local UX / GET this session (cts-ai); J9 / NFR-3 / NFR-8 / NFR-7 **Vite-only**; `probe-nfr/` PNGs on cts-ai (not in this repo); Knowledge GET of mentioned tunnel timed out | J1–J8 PASS while DB was up; J9 / NFR-3 / NFR-8 PASS (Edge screenshots + theme.css); NFR-7 partial (Edge + Firefox home; Chrome not installed; Safari Unknown); NFR-1 / NFR-2 not claimed met. Tunnel / Flask not live (Docker Engine still coming). |
+| Operator view `/operator` | App on `main` ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)); brief note above | Knowledge GET `https://shaky-deer-drive.loca.lt/operator` **200** this session (~14s). **Slow (~10–20s+)**; **interstitial-possible**. | Read-only recording helper (customers + reservations). **Not** an admin console. **Not FR-19.** Temporary tunnel; **not** `cafe.artof.link`. |
 
 ## Out of this table
 

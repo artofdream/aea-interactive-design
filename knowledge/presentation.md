@@ -8,7 +8,9 @@ Pick **one** cut (~10 minutes). Every cut uses the same open and the same close.
 
 **Honesty (do not skip):** **NFR-1** / **NFR-2** stay **Unknown** as SRS-budget claims — do not say they are met. **NFR-7** is **partial** (Edge + Firefox home; Chrome / Safari **Unknown**). Journey **J1–J8 PASS** (cts-ai, DB up). **J9 PASS** is Vite-only. Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are parked, not grade gaps. Never call `cafe.artof.link` Café Fausse.
 
-**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. App tunnel `https://shaky-deer-drive.loca.lt/` GET **200** (SPA + `/operator` + `/api/health`). Knowledge GET: root **200** (~24s); `/operator` **200** (~14s); `/api/operator` **200** (~11s); `/api/health` **200** `{"ok":true}` (~12s). **Slow (~10–20s+)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Clips stay fallback. Old `https://happy-glasses-film.loca.lt/` and `https://real-goats-shop.loca.lt/` are **stale** — do not keep as the live share URL. **Not** `cafe.artof.link`. Do not claim writes from the health GET. Read-only `/operator` is on the tunnel ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**. 
+**Demo this session (2026-09-04 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. App tunnel `https://shaky-deer-drive.loca.lt/` GET **200** (SPA + `/operator` + `/api/health`). Knowledge GET: root **200** (~24s); `/operator` **200** (~14s); `/api/operator` **200** (~11s); `/api/health` **200** `{"ok":true}` (~12s). **Slow (~10–20s+)**; **interstitial-possible** in browsers. Short timeouts can look like failure. Not snappy. Not always-on. Clips stay fallback. Old `https://happy-glasses-film.loca.lt/` and `https://real-goats-shop.loca.lt/` are **stale** — do not keep as the live share URL. **Not** `cafe.artof.link`. Do not claim writes from the health GET.
+
+**Operator view (recording helper — not FR-19):** read-only `/operator` shows customers + reservations so you can see the DB after a booking. **Not** an admin console (no CRUD / cancel). Live share this session: `https://shaky-deer-drive.loca.lt/operator` — Knowledge GET **200** (~14s). **Slow (~10–20s+)**; **interstitial-possible**. Temporary tunnel; **not** `cafe.artof.link`. Landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) (closes [#54](https://github.com/artofdream/aea-interactive-design/issues/54)). 
 
 ## Shared open (~1:00)
 
@@ -33,7 +35,7 @@ Then jump to the cut you chose.
 | 0:00–1:00 | **Open** | Shared open above. | — |
 | 1:00–3:30 | **Presentation / UX** | Five SRS pages + theme. Home name, contact, hours, nav (**FR-1..FR-4**). Menu categories from freeze (**FR-5**). About history and founders (**FR-10**, **FR-11**). Gallery images, lightbox, awards, reviews (**FR-12..FR-14**). Theme + Flex/Grid (**NFR-3**, **NFR-4**, **NFR-8**). Clip **01** if you need a look. | FR-1..FR-5, FR-10..FR-14, NFR-3, NFR-4, NFR-8 |
 | 3:30–6:30 | **Forms + API** | Reservation form fields (**FR-6**). Slot check (**FR-7**). Random table 1–30 (**FR-8**). Success or full-book (**FR-9**). Flask insert / confirm (**FR-18**). Newsletter validate + store (**FR-15**, **FR-16**). Clip **02** for a happy book. Missing DB → honest no (**NFR-6**). Unique slot+table (**NFR-5**). | FR-6..FR-9, FR-15..FR-18, NFR-5, NFR-6 |
-| 6:30–8:30 | **Data** | PostgreSQL **Customers** and **Reservations** (**FR-17**). Cap of 30 tables. Unique `(time_slot, table_number)`. Fail-closed tests: missing DB, timeout, 31st table. A write is only a write if Postgres accepts it. | FR-17, NFR-5, NFR-6 |
+| 6:30–8:30 | **Data** | PostgreSQL **Customers** and **Reservations** (**FR-17**). Cap of 30 tables. Unique `(time_slot, table_number)`. Fail-closed tests: missing DB, timeout, 31st table. A write is only a write if Postgres accepts it. After a booking, open read-only `/operator` (`https://shaky-deer-drive.loca.lt/operator`) to show the DB effect — **not** an admin console, **not FR-19** (PR #58 / #54). | FR-17, NFR-5, NFR-6 |
 | 8:30–10:00 | **Close** | Three layers → freeze IDs (diagram below). Then the [shared close](#shared-close). Say the Unknowns out loud. | NFR-1 / NFR-2 not claimed met; NFR-7 partial |
 
 ```mermaid
@@ -141,6 +143,7 @@ If time is tight, one starter + one main is enough. Read the price from the page
 
 - “NFR-1 / NFR-2 met” or “four browsers.”
 - “Live restaurant at `cafe.artof.link`.”
+- “`/operator` is FR-19” or “admin console” (it is a read-only recording helper; no CRUD / cancel).
 - Future #22 / #34–#38 as missing official requirements.
 - A fifth team, GitLab, AWS in the MVP cut, or invented IDs.
 
