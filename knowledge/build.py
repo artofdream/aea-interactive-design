@@ -40,7 +40,7 @@ REQUIRED = [
 ]
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
-WIDE_PAGES = {"stack.html", "coverage.html", "friday-plan.html"}
+WIDE_PAGES = {"stack.html", "coverage.html", "friday-plan.html", "aws-schema-map.html"}
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
 VIDEO_SRC_RE = re.compile(r"""\bsrc\s*=\s*(['"])([^'"]+)\1""", re.IGNORECASE)
@@ -548,7 +548,7 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
             "SRS freeze, not this page.</p>"
         )
     classes = extra_class.strip()
-    if current in WIDE_PAGES:
+    if current in WIDE_PAGES or out_file.name in WIDE_PAGES:
         classes = f"{classes} is-wide".strip()
     mermaid_script = ""
     if 'class="mermaid"' in body:

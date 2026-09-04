@@ -17,7 +17,7 @@ Meeting prep that **is** now on the thin map (once this ships): [Brief](brief.md
 ## Notes parked here (useful, not required)
 
 - [Schema / outer harness layers](future/schema.md) — six layers scaled to this project
-- [AWS `cafe_fausse_db` vs local schema](future/aws-schema-map.md) — teammate RDS dump map; do not apply to MVP `schema.sql`
+- [AWS `cafe_fausse_db` vs local schema](future/aws-schema-map.md) — teammate RDS dump map, rationale, diagrams; do not apply to MVP `schema.sql`
 - [Glossary](future/glossary.md)
 - [Journal stub](future/journal.md)
 
