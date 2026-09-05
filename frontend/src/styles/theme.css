@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 html,
 body {
   margin: 0;
@@ -34,6 +38,7 @@ body {
 
 #root {
   min-height: 100vh;
+  min-width: 0;
 }
 
 img {
@@ -136,6 +141,7 @@ h3 {
   max-width: var(--max);
   margin: 0 auto;
   padding: 1.5rem;
+  min-width: 0;
 }
 
 .site-footer {
@@ -149,7 +155,7 @@ h3 {
   max-width: var(--max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -183,8 +189,29 @@ h3 {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 1rem;
+}
+
+.hero-actions,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+  align-items: center;
+}
+
+.hero-actions a,
+.card-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--burgundy);
+  color: var(--burgundy);
+  text-decoration: none;
 }
 
 .card {
@@ -271,7 +298,9 @@ h3 {
 .form {
   display: grid;
   gap: 0.85rem;
+  width: 100%;
   max-width: 32rem;
+  min-width: 0;
   background: var(--paper);
   padding: 1.25rem;
   border: 1px solid var(--cream-dark);
@@ -281,6 +310,7 @@ h3 {
   display: grid;
   gap: 0.3rem;
   font-size: 1rem;
+  min-width: 0;
 }
 
 .form input,
@@ -290,6 +320,8 @@ h3 {
 .newsletter-form button {
   font: inherit;
   font-size: 1rem;
+  width: 100%;
+  min-width: 0;
   min-height: 44px;
   padding: 0.45rem 0.7rem;
   max-width: 100%;
@@ -299,6 +331,7 @@ h3 {
   display: grid;
   gap: 0.5rem;
   margin-top: 0.5rem;
+  min-width: 0;
 }
 
 .form button,
@@ -307,6 +340,17 @@ h3 {
   color: var(--cream);
   border: 0;
   cursor: pointer;
+}
+
+.site-footer .newsletter-form input {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--gold);
+}
+
+.site-footer .newsletter-form button {
+  background: var(--gold);
+  color: var(--burgundy-deep);
 }
 
 .form button:disabled,
@@ -318,6 +362,8 @@ h3 {
 .banner {
   padding: 0.85rem 1rem;
   border: 1px solid currentColor;
+  overflow-wrap: anywhere;
+  scroll-margin-top: 5rem;
 }
 
 .banner.is-ok {
@@ -332,8 +378,13 @@ h3 {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  min-width: 0;
 }
 
 .gallery-grid button {
@@ -347,7 +398,9 @@ h3 {
 
 .gallery-grid img {
   width: 100%;
-  height: 220px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 220px;
   object-fit: cover;
 }
 
@@ -387,7 +440,7 @@ h3 {
 
 .founders {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -412,26 +465,35 @@ blockquote {
 .footer-operator {
   max-width: var(--max);
   margin: 1.5rem auto 0;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .footer-operator a {
   color: var(--cream);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--gold);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.35rem 0;
 }
 
 .footer-operator a:hover,
 .footer-operator a[aria-current="page"] {
-  border-bottom-color: var(--gold);
+  color: #fff;
 }
 
 .data-table-wrap {
   overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .data-table {
   width: 100%;
+  min-width: 0;
   border-collapse: collapse;
   background: var(--paper);
 }
@@ -441,6 +503,7 @@ blockquote {
   text-align: left;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--cream-dark);
+  overflow-wrap: anywhere;
 }
 
 .data-table th {
@@ -459,6 +522,34 @@ blockquote {
 }
 
 @media (max-width: 767px) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .site-header,
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-main {
+    padding: 1.15rem 1rem;
+  }
+
+  .wordmark {
+    max-width: calc(100% - 9rem);
+    overflow-wrap: break-word;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.85rem, 9vw, 2.6rem);
+  }
+
+  .lede {
+    font-size: 1.05rem;
+  }
+
   html.js-nav .nav-toggle {
     display: inline-flex;
     margin-left: auto;
@@ -468,6 +559,7 @@ blockquote {
     display: none;
     width: 100%;
     flex-direction: column;
+    gap: 0.35rem;
   }
 
   html.js-nav .site-nav.is-open {
@@ -476,10 +568,13 @@ blockquote {
 
   html.js-nav .site-nav a {
     width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(176, 137, 58, 0.4);
   }
 
   .menu-item {
     grid-template-columns: 1fr auto;
+    min-width: 0;
   }
 
   .menu-item-photo,
@@ -494,11 +589,86 @@ blockquote {
   .menu-item-caption {
     grid-column: 1 / -1;
   }
+
+  .form,
+  .card,
+  .menu-item {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .lightbox {
+    padding: 3.5rem 0.75rem 0.75rem;
+  }
+
+  .lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  /* Stack operator tables as cards so body overflow-x: clip cannot hide columns. */
+  .data-table-wrap {
+    overflow: visible;
+  }
+
+  .data-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+  }
+
+  .data-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .data-table tbody {
+    display: block;
+  }
+
+  .data-table tr {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.85rem;
+    padding: 0.1rem 0;
+    border: 1px solid var(--cream-dark);
+    background: var(--paper);
+  }
+
+  .data-table td {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 0.55rem 0.75rem;
+  }
+
+  .data-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .data-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.2rem;
+  }
 }
 
 @media (max-width: 400px) {
   .site-main {
-    padding: 1.15rem;
+    padding: 1.05rem 0.85rem;
   }
 
   .wordmark {
