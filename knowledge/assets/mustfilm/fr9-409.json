@@ -1,0 +1,26 @@
+{
+  "chosen_slot": "2026-09-09T20:00:00-04:00",
+  "date": "2026-09-09",
+  "table_count": 30,
+  "timestamp": 1788626865,
+  "fill_201_count": 30,
+  "fill_failures": [],
+  "overflow": {
+    "status": 409,
+    "body": {
+      "code": "fully_booked",
+      "error": "This time slot is fully booked. No table was assigned.",
+      "ok": false
+    }
+  },
+  "operator": {
+    "status": 200,
+    "total_reservations": 36,
+    "slot_reservation_count": 30,
+    "our_slot_reservation_count": 30,
+    "slot_stored_as_utc": "2026-09-10T00:00:00+00:00",
+    "ok": true
+  },
+  "fr9_verified": true,
+  "notes": "Operator API returns time_slot in UTC (+00:00); booked as 2026-09-09T20:00:00-04:00 == 2026-09-10T00:00:00+00:00"
+}
