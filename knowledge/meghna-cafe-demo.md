@@ -117,10 +117,12 @@ Other freeze talk picks (prices from page only): Caesar Salad $9.00 · Ribeye St
 
 Mark these **OPTIONAL**. Core pack stops at Reservations look + handoff. Full click paths: [Must-film shots](must-film-shots.md) · live `https://knowledge.cafe.artof.link/must-film-shots.html` (Pages **Unknown** until after merge / deploy).
 
+Do **not** start an extra unless remaining time covers its budget. If not, skip and hand off at **~2:50** — do not cut Architecture.
+
 | Extra | When | What (plain) | Map | Time |
 | --- | --- | --- | --- | ---: |
-| **Happy book → operator** | ≥45s left | Unique email → Reserve → green table N → open `/operator` → new row. Say: “read-only helper, not an admin console.” | FR-6..9, FR-17..18 | ~70–90s |
-| **Newsletter** | ≥40s left | Footer subscribe → `/operator` newsletter-only | FR-15, FR-16 | ~45–60s |
+| **Happy book → operator** | ≥90s left | Unique email → Reserve → green table N → open `/operator` → new row. Say: “read-only helper, not an admin console.” | FR-6..9, FR-17..18 | ~70–90s |
+| **Newsletter** | ≥60s left | Footer subscribe → `/operator` newsletter-only | FR-15, FR-16 | ~45–60s |
 | **Full-book** | Pre-staged 30 tables off-mic | 31st attempt → “fully booked” / Network **409** | FR-9, NFR-5 | ~40–60s |
 
 If staging is slow or a write fails: **do not invent success**. Fall back to Coverage or the happy-book clip as a **look only**.

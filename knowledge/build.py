@@ -991,6 +991,11 @@ def assert_ux_wiring() -> None:
         fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
+    meghna_md = (ROOT / "meghna-cafe-demo.md").read_text(encoding="utf-8")
+    if "≥90s left" not in meghna_md:
+        fail("meghna-cafe-demo.md happy-book extra must gate on ≥90s (do not start on 45s)")
+    if "≥60s left" not in meghna_md:
+        fail("meghna-cafe-demo.md newsletter extra must gate on ≥60s")
 
 
 def assert_svg_well_formed() -> None:
