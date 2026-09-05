@@ -811,6 +811,7 @@ def assert_ux_wiring() -> None:
         fail("missing built quantic.html")
     qhtml = quantic.read_text(encoding="utf-8")
     for needle in (
+        "Navigation hub only",
         "Delivery / MSAIE",
         "not the Quantic pack",
         'href="brief.html"',
@@ -830,8 +831,19 @@ def assert_ux_wiring() -> None:
             fail(f"quantic.html missing hub wiring ({needle})")
     if "<table" in qhtml:
         fail("quantic.html must stay table-light (issue #73 is a separate PR)")
+    if "<video" in qhtml or 'class="mermaid"' in qhtml:
+        fail("quantic.html must not embed clips or diagrams (nav hub only)")
     if 'href="quantic.html"' not in index:
         fail("index.html missing Quantic nav link")
+    brief_md = (ROOT / "brief.md").read_text(encoding="utf-8")
+    video_md = (ROOT / "video-script.md").read_text(encoding="utf-8")
+    stack_md = (ROOT / "stack.md").read_text(encoding="utf-8")
+    if "clips/01-home-menu.mp4" not in brief_md or "clips/02-happy-book.mp4" not in brief_md:
+        fail("brief.md must keep clip embeds (hub is nav-only; do not hollow source pages)")
+    if "clips/01-home-menu.mp4" not in video_md or "clips/02-happy-book.mp4" not in video_md:
+        fail("video-script.md must keep clip embeds (hub is nav-only; do not hollow source pages)")
+    if "hld-aws-staging.svg" not in stack_md:
+        fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
 
 
 def assert_svg_well_formed() -> None:

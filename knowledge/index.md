@@ -1,6 +1,6 @@
 # Café Fausse — knowledge map
 
-This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a transfer of the AEA outer harness onto GitHub. It is **not** the restaurant and **not** a CMS. Course delivery is grouped on [Quantic / MSAIE](quantic.md) (delivery pack vs implementation).
+This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a transfer of the AEA outer harness onto GitHub. It is **not** the restaurant and **not** a CMS. A [Quantic / MSAIE](quantic.md) page is a **navigation hub only** (delivery vs implementation). Source pages stay complete.
 
 **MVP = official SRS** ([SRS freeze](srs.md), working copy `docs/srs.md`; SoT = official PDF). Everything else is [Future / not-MVP](future.md).
 
@@ -44,7 +44,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 
 Nav icons match the links below. That is a map affordance — not an **NFR-1** / **NFR-2** claim.
 
-- [Quantic / MSAIE](quantic.md) — delivery pack vs implementation (implementation is labeled **not the Quantic pack**)
+- [Quantic / MSAIE](quantic.md) — navigation hub only (delivery vs implementation). Source pages stay complete.
 - [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
 - [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
 - [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
