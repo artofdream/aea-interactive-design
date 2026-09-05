@@ -24,6 +24,9 @@ Film **four** live shots on `cafe.artof.link`: (1) happy book → `/operator`, (
 
 ## Honesty (say once; do not walk back)
 
+> **PROTOTYPE / recording-helper evidence** — staging UI+API thumbs from `cafe.artof.link` (Lightsail #57). Not the Quantic submission video. `/operator` is **not FR-19**. Shot 4 stays Coverage/CI (no live 503 claim from these thumbs).
+
+
 - **`/operator` is not FR-19.** Read-only recording helper (PR #58 / issue #54). No CRUD, no cancel, not an admin console.
 - **`cafe.artof.link` is Lightsail staging** for this session / weekend share — **not** production forever. Tear-down only on owner request.
 - **NFR-1 / NFR-2:** do **not** claim met (local Vite timings are notes only).
@@ -57,6 +60,14 @@ Prove a live reservation write: form fields → valid slot → random table **1�
    - **Phone (optional):** `(202) 555-0100` or leave blank.
 5. Click **Reserve a table**.
 6. On green success banner, open **`https://cafe.artof.link/operator`** (or type `/operator` in the address bar — not in primary nav). Hard-refresh if the prior snapshot is cached.
+
+### Staging evidence thumbs (PROTOTYPE)
+
+![Reservation form](assets/mustfilm/01-reservation-form.png)
+
+![Reservation success](assets/mustfilm/02-reservation-success.png)
+
+![Operator reservation row — not FR-19](assets/mustfilm/03-operator-reservation.png)
 
 ### What success looks like on screen
 
@@ -97,6 +108,12 @@ Prove newsletter email validation + store, then show a **newsletter-only** custo
    - Optional talk: strip + lower happens server-side before store (Future #37 parked — not a new FR).
 4. Click **Subscribe**.
 5. Open **`https://cafe.artof.link/operator`** → scroll to section **Newsletter only**.
+
+### Staging evidence thumbs (PROTOTYPE)
+
+![Newsletter success](assets/mustfilm/05-newsletter-success.png)
+
+![Operator newsletter-only — not FR-19](assets/mustfilm/06-operator-newsletter-only.png)
 
 ### What success looks like on screen
 
@@ -154,6 +171,12 @@ done
    - **Guests** `2`; **Name** `Late Guest`; **Email** `late.fullbook.<timestamp>@example.com`.
    - Click **Reserve a table**.
 4. Optional Network panel: `POST /api/reservations` → status **409**, body `code: "fully_booked"`.
+
+### Staging evidence thumbs (PROTOTYPE)
+
+![Full-slot HTTP 409](assets/mustfilm/04-full-slot-error.png)
+
+API overflow probe: [`assets/mustfilm/fr9-409.json`](assets/mustfilm/fr9-409.json) (`status` 409, `code` `fully_booked`, `fr9_verified` true).
 
 ### What success looks like on screen
 
