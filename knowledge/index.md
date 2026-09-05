@@ -1,59 +1,73 @@
-# Café Fausse — knowledge map
+# Café Fausse Knowledge
 
-This is the **knowledge site** for the Quantic MSAIE Café Fausse project and a transfer of the AEA outer harness onto GitHub. It is **not** the restaurant and **not** a CMS. A [Quantic / MSAIE](quantic.md) page is a **navigation hub only** (delivery vs implementation). Source pages stay complete.
+This GitHub repo is the student Café Fausse project for Quantic **MSAIE**. It holds the official assignment freeze, a small restaurant website, and this map. You are on the map. You cannot book a table here.
 
-**MVP = official SRS** ([SRS freeze](srs.md), working copy `docs/srs.md`; SoT = official PDF). Everything else is [Future / not-MVP](future.md).
+## Executive summary
 
-Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md) (clips; FS v0.1 vs SRS MVP compare). Course presentation map: [FR/NFR coverage](coverage.md).
+Two public surfaces. This site (`knowledge.cafe.artof.link`) explains the work. The restaurant (`cafe.artof.link`) is the product: React + JSX, Flask, PostgreSQL.
 
-Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md) (P0/P1/P2; live vs local vs Future). Saturday 2026-09-05 prefer live share: `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`; Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — weekend recording window, not production forever). Interim backup: `https://54-165-102-60.sslip.io/`. Clips stay fallback. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**. Read-only `/operator` is on the share ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**. Knowledge HTTPS + [clips on the Brief](brief.md) stay fallback. Working drafts: [video script](video-script.md), [slides](presentation-sample.md), Saturday [talk cuts](presentation.md). [Issue #40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44) recorded on [Coverage](coverage.md): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme); **NFR-7** **partial** (Edge + Firefox home; Chrome/Safari Unknown); **NFR-1** / **NFR-2** stay not-claimed-met.
+**Grade floor** = official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). Extra ideas are [Future](future.md), not missing grade rows.
 
-## Teams
+This session: Knowledge home HTTPS **GET 200**. Restaurant root and `/api/health` HTTPS **GET 200** on weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) — not production forever. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). **NFR-1** / **NFR-2** stay **Unknown**. `/operator` is a recording helper — **not FR-19**.
 
-| Team | Owns | Intended hostname | Live URL (probe 2026-09-05 Europe/Berlin) |
+## Mission
+
+Ship an honest Café Fausse restaurant that matches the official SRS, and keep a thin Knowledge map so the team can say what is live, what is local, and what is Future.
+
+## Vision
+
+A visitor can use the restaurant. A teammate can find the freeze, the evidence, and the next decision without a second product on this map.
+
+## Tactical split
+
+**MSAIE / Quantic (must deliver).** Official SRS PDF is source of truth. Working freeze: [SRS](srs.md) and [Coverage](coverage.md). Course handouts live under [Quantic / MSAIE](quantic.md) (hub only — those pages stay complete). Do not invent **FR-19** or **NFR-10**.
+
+**The product (high level).** Café Fausse App is the restaurant. Café Fausse Knowledge is this map (GitHub Pages). AWS is not in the restaurant MVP *code* PR. Staging is not forever.
+
+| Team | Owns | Hostname | This session |
 |---|---|---|---|
-| Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05); HTTP **301** to HTTPS. |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | Prefer live share this session: HTTPS **GET 200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` us-east-1, Route53 A `54.165.102.60` (TTL 60), Caddy + LE, Postgres **on the instance**. AEA RDS untouched. Weekend #57 — not production forever. Staging kept until owner decision. Monday **2026-09-08 16:00 Europe/Berlin** evaluate-only (not auto tear-down). Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. App is **in-repo on `main`** (PRs #9 + timezone #12). Longer-term hosting stays [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| Café Fausse Knowledge | This map (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** |
+| Café Fausse App | Restaurant MVP | `cafe.artof.link` | HTTPS **GET 200** (Lightsail #57, not forever). Permanent host stays #22. |
 
-AWS is not in the restaurant MVP cut. App on cts-ai (not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg`. Prefer live share this session: `https://cafe.artof.link/` GET **200** (SPA HTML); `/api/health` GET **200** `{"ok":true}`. Knowledge GET: root **200** (~0.5s); `/operator` **200** (~0.6s); `/api/operator` **200** (~0.5s); `/api/health` **200** `{"ok":true}` (~0.6s). Lightsail staging (#57) — weekend recording window, not production forever. Fast this session; still staging. Interim backup: `https://54-165-102-60.sslip.io/`. Journey **J1–J8 PASS** (2026-09-02, DB up); **J9 PASS** Vite-only (viewports + theme). This VM did not reach Vite on `:5173`. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**. Read-only `/operator` is on the share ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**.
+Deep FR tables and CI jargon stay on Coverage, Stack, and Honesty — not here.
 
-## Formula (pattern, scaled here)
+## High-level diagram
 
-**Adaptive Experience = Shared Understanding + Domain Services + Outer Harness.**
+As-is this weekend vs planned Future. Detail and HLD SVGs stay on [Stack](stack.md). The labeled Future / to-be page is [Future](future.md) (a dedicated Quantic to-be page is [#98](https://github.com/artofdream/aea-interactive-design/issues/98) / open [#89](https://github.com/artofdream/aea-interactive-design/pull/89) — live `/to-be.html` stays **Unknown** until that lands).
 
-- **Shared Understanding** — the reviewable freeze: official SRS (PDF SoT), today’s daily brief, honesty vocabulary.
-- **Domain Services** — restaurant runtime in-repo (React + JSX, Flask, PostgreSQL). Authoritative for reservations and newsletter when PostgreSQL accepts the write. Not this knowledge site.
-- **Outer Harness** — guides (`AGENTS.md`, Cursor rules), sensors (GitHub Actions fail-closed), loop (issue → branch → PR), memory (daily briefs), permissions (owner adds collaborators), observability (status words need a probe).
+```mermaid
+flowchart TB
+  visitor[A visitor]
+  map[This Knowledge map\nknowledge.cafe.artof.link]
+  app[Restaurant App\ncafe.artof.link staging]
+  forever[Permanent hosting\nFuture 22]
+  visitor --> map
+  visitor --> app
+  map -.->|explains the project\ndoes not take bookings| app
+  app -.->|not this weekend cut| forever
+```
 
-AI may interpret. Domain services decide. Status words are claims; they need a probe.
+## Feedback
 
-## Two public surfaces
+Teammates and the owner report problems in **Slack**. Claude opens or updates a **GitHub issue**, then a branch and PR. Do not batch unrelated findings. The author does not merge their own PR. GitHub only — no GitLab.
 
-| Surface | Team | Hostname | Publish path | This session |
-|---|---|---|---|---|
-| Knowledge (this site) | Café Fausse Knowledge | `knowledge.cafe.artof.link` | GitHub Actions → GitHub Pages | HTTPS GET 200 this session (2026-09-05); HTTP 301 to HTTPS |
-| Implementation (restaurant) | Café Fausse App | `cafe.artof.link` | Local React + Flask + PostgreSQL. Prefer this hostname as the weekend staging share. | HTTPS GET **200** this session (Lightsail #57). Not a permanent hosting claim. Longer-term hosting stays #22. |
+## Top 5 lessons learned
 
-Do not invent other domains. Prefer `https://cafe.artof.link/` as the weekend staging share. Do not treat it as production forever.
+Longer write-up: [Journal](journal.md) (merged [#103](https://github.com/artofdream/aea-interactive-design/pull/103) / [#100](https://github.com/artofdream/aea-interactive-design/issues/100)). Short labels: [Glossary](glossary.md) (merged [#105](https://github.com/artofdream/aea-interactive-design/pull/105) / [#101](https://github.com/artofdream/aea-interactive-design/issues/101)). This session: `/journal.html` and `/glossary.html` HTTPS **GET 200**.
 
-## Honesty
+1. A status word is a claim. Probe **this session** or write **Unknown**.
+2. Grade floor is the official SRS IDs only. Functional Spec extras are Future.
+3. This map and the restaurant are different sites with different jobs.
+4. One finding → one issue → one branch → one PR. The author does not merge.
+5. Fail closed: missing database, a full 30-table slot (**FR-9**), a timeout, or a missing freeze file → honest **no**.
 
-If evidence is missing, write **Unknown**. Closing a task is not a probe. See [Honesty](honesty.md). Do not claim this harness is antifragile.
+## Where to go next
 
-## On this map (thin)
-
-Nav icons match the links below. That is a map affordance — not an **NFR-1** / **NFR-2** claim.
-
-- [Quantic / MSAIE](quantic.md) — navigation hub only (delivery vs implementation). Source pages stay complete.
-- [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
-- [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
-- [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
-- [Talk cuts](presentation.md) — Saturday recording: three ~10 min variants + shared close
-- [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut
-- [Stack](stack.md) — AWS staging HLD + as-is / to-be (weekend #57 vs permanent #22); GitHub-only CI
-- [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
-- [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
-- [Honesty](honesty.md) — probes, Unknown; live vs local vs Future
-- [Glossary](glossary.md) — terms and the sources / links this repo uses
-- [Journal](journal.md) — principles, lessons, meeting MoM overview (delivery-only)
-- [Future / not-MVP](future.md) — schema notes (including [AWS `cafe_fausse_db` map](future/aws-schema-map.md)), glossary stub, journal stub, E2E beyond assignment
+- [Quantic / MSAIE](quantic.md) — course delivery hub
+- [SRS freeze](srs.md) — FR-1..FR-18 / NFR-1..NFR-9
+- [Coverage](coverage.md) — each ID, evidence class
+- [Honesty](honesty.md) — probes and Unknown
+- [Stack](stack.md) — how the two sites are hosted
+- [Journal](journal.md) — principles, lessons, meeting MoM
+- [Glossary](glossary.md) — terms and sources
+- [Future / not-MVP](future.md) — hosting #22 and FS extras #34–#38
