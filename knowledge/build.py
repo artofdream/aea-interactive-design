@@ -729,6 +729,12 @@ def assert_ux_wiring() -> None:
     ):
         if needle not in css:
             fail(f"style.css missing readability rule ({needle})")
+    phone_at = css.find("@media (max-width: 40rem)")
+    wide_min = css.find(".table-wide table")
+    if phone_at == -1 or wide_min == -1 or wide_min < phone_at:
+        fail("table-wide min-width must be phone-only (default column is 46rem)")
+    if "min-width: 44rem" not in css[phone_at:]:
+        fail("phone media query missing table-wide min-width")
     index = (OUT / "index.html").read_text(encoding="utf-8")
     for needle in (
         'class="nav-icon"',

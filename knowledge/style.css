@@ -203,10 +203,6 @@ pre {
   margin: 0;
 }
 
-.table-wide table {
-  min-width: 44rem;
-}
-
 .table-wide th:first-child,
 .table-wide td:first-child {
   position: sticky;
@@ -310,6 +306,12 @@ footer code { font-size: 0.85em; }
   nav a.is-current {
     border-color: var(--accent);
     background: var(--chip-hot);
+  }
+
+  /* Phone only: default column is ~43rem (46rem minus padding).
+     Do not set this min-width on desktop — index is not is-wide. */
+  .table-wide table {
+    min-width: 44rem;
   }
 
   .table-wide::before {
