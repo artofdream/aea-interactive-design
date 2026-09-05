@@ -1,7 +1,7 @@
-# Journal stub (Future)
+# Journal (moved)
 
-**Future / not-MVP.** Curated challenge → solve → ship → lesson entries belong here later.
+**Future stub — not a second journal.**
 
-No florist session logs. First foundation note lives in the live handoff `research/daily-briefs/2026-08-31.md`, not on this page.
+The first-class page is now [Journal](../journal.md) (also in the global top nav). Open that page for principles, lessons, and the meeting MoM overview.
 
-Live URLs need a GET **this session** or they stay **Unknown**. Last probe (2026-09-05 Europe/Berlin): `https://knowledge.cafe.artof.link/` HTTPS **GET 200**; `https://cafe.artof.link/` HTTPS **GET 200** (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57), not forever production). Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Live handoff: `research/daily-briefs/2026-09-05.md`.
+This file stays so older `future/journal.html` links do not 404. The live handoff is still `research/daily-briefs/YYYY-MM-DD.md`, not this stub.

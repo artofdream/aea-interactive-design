@@ -18,7 +18,7 @@ Meeting prep that **is** now on the thin map (once this ships): [Brief](brief.md
 
 - [Schema / outer harness layers](future/schema.md) — six layers scaled to this project
 - [AWS `cafe_fausse_db` vs local schema](future/aws-schema-map.md) — teammate RDS dump map, rationale, diagrams; do not apply to MVP `schema.sql`
-- [Glossary](future/glossary.md)
-- [Journal stub](future/journal.md)
+- [Glossary](glossary.md) — first-class page (also in the top nav). Old stub: [future/glossary](future/glossary.md)
+- [Journal](journal.md) — principles, lessons, meeting MoM. Old stub: [future/journal](future/journal.md)
 
 Do not read these as a second product. They are transfer notes for this repo. No florist Path B, 14 hats, or GitLab on this map.

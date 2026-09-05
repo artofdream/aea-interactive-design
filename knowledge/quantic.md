@@ -26,6 +26,8 @@ Link out to the Quantic pack. Open the page itself for the full brief, tables, t
 > **Not the Quantic pack.** These pages stay the restaurant / harness map. Stack HLD, Future notes, and the formula home are not relocated onto this hub.
 
 - [Stack](stack.md)
+- [Glossary](glossary.md)
+- [Journal](journal.md) — principles, lessons, meeting MoM overview
 - [Future / not-MVP](future.md)
 - [Knowledge home](index.md)
 
