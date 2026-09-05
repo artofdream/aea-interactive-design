@@ -4,7 +4,15 @@ Working reference for Friday **2026-09-04 19:00 Europe/Berlin**. Not official Qu
 
 Play or talk over the committed clips when staging drops. The clips are a **look**. They are not a this-session write probe, and they are not a permanent hosting claim. Prefer live share `https://cafe.artof.link/` (Lightsail #57 — weekend window, not production forever).
 
-**Clips on this site**
+## Zoom dry-run v2 — **PROTOTYPE**
+
+> **PROTOTYPE** — Zoom dry-run visual. This is **not** the Quantic submission.
+
+**Cut:** Variant A (~10 min) from live `https://cafe.artof.link/` + Knowledge. Clip 02 is fallback only for happy-book motion. Do not claim **NFR-1** / **NFR-2** met. Do not invent **FR-19**.
+
+<video controls src="clips/zoom-dryrun-v2.mp4"></video>
+
+**Short fallback clips on this site** (not the dry-run)
 
 - Home → Menu: `knowledge/clips/01-home-menu.mp4`
 - Happy reservation: `knowledge/clips/02-happy-book.mp4`
