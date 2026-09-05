@@ -16,17 +16,30 @@ OUT = ROOT / "_site"
 NAV = [
     ("index.html", "Home", "home"),
     ("quantic.html", "Quantic", "quantic"),
-    ("brief.html", "Brief", "brief"),
-    ("friday-plan.html", "Friday", "friday"),
-    ("video-script.html", "Video", "video"),
-    ("presentation.html", "Talk", "talk"),
-    ("presentation-sample.html", "Slides", "slides"),
     ("stack.html", "Stack", "stack"),
     ("srs.html", "SRS freeze", "srs"),
     ("coverage.html", "Coverage", "coverage"),
     ("honesty.html", "Honesty", "honesty"),
     ("future.html", "Future", "future"),
 ]
+
+# Quantic delivery pages stay complete (#74 hub-only). They are not global nav (#79).
+DELIVERY_ONLY_HREFS = (
+    "brief.html",
+    "friday-plan.html",
+    "video-script.html",
+    "presentation.html",
+    "presentation-sample.html",
+)
+
+# Stroke icons for in-page links and the page brand when the href is off NAV.
+PAGE_ICONS = {
+    "brief.html": "brief",
+    "friday-plan.html": "friday",
+    "video-script.html": "video",
+    "presentation.html": "talk",
+    "presentation-sample.html": "slides",
+}
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
 ICONS = {
@@ -460,12 +473,21 @@ def svg_icon(name: str, extra_class: str = "nav-icon") -> str:
     )
 
 
-def icon_for_page_href(href: str) -> str:
+def icon_name_for_href(href: str) -> str | None:
     path = href.split("#", 1)[0].split("?", 1)[0]
+    if path in PAGE_ICONS:
+        return PAGE_ICONS[path]
     for nav_href, _label, icon in NAV:
         if path == nav_href:
-            return svg_icon(icon, "inline-icon")
-    return ""
+            return icon
+    return None
+
+
+def icon_for_page_href(href: str) -> str:
+    name = icon_name_for_href(href)
+    if name is None:
+        return ""
+    return svg_icon(name, "inline-icon")
 
 
 def rewrite_href(href: str) -> str:
@@ -656,9 +678,9 @@ def _consume_video_html(lines: list[str], i: int) -> tuple[str, int]:
 
 
 def page_icon_name(current: str) -> str:
-    for href, _label, icon in NAV:
-        if href == current:
-            return icon
+    name = icon_name_for_href(current)
+    if name is not None:
+        return name
     if current.startswith("future"):
         return "future"
     return "home"
@@ -737,6 +759,13 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
 </body>
 </html>
 """
+
+
+def _nav_block(html_text: str) -> str:
+    match = re.search(r'<nav aria-label="Knowledge pages">(.*?)</nav>', html_text, re.S)
+    if match is None:
+        fail("missing Knowledge pages nav")
+    return match.group(1)
 
 
 def assert_coverage_freeze_ids(src: str) -> None:
@@ -835,6 +864,27 @@ def assert_ux_wiring() -> None:
         fail("quantic.html must not embed clips or diagrams (nav hub only)")
     if 'href="quantic.html"' not in index:
         fail("index.html missing Quantic nav link")
+    if "inline-icon" not in qhtml:
+        fail("quantic.html delivery links must keep page icons")
+    for page in (
+        "index.html",
+        "stack.html",
+        "srs.html",
+        "coverage.html",
+        "honesty.html",
+        "future.html",
+        "quantic.html",
+        *DELIVERY_ONLY_HREFS,
+    ):
+        built = OUT / page
+        if not built.is_file():
+            fail(f"missing built {page}")
+        nav = _nav_block(built.read_text(encoding="utf-8"))
+        if 'href="quantic.html"' not in nav:
+            fail(f"{page} global nav must keep Quantic hub")
+        for name in DELIVERY_ONLY_HREFS:
+            if re.search(rf'href="(?:\.\./)*{re.escape(name)}"', nav):
+                fail(f"{page} global nav must not include Quantic delivery {name}")
     brief_md = (ROOT / "brief.md").read_text(encoding="utf-8")
     video_md = (ROOT / "video-script.md").read_text(encoding="utf-8")
     stack_md = (ROOT / "stack.md").read_text(encoding="utf-8")
