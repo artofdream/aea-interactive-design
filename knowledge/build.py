@@ -38,6 +38,9 @@ DELIVERY_ONLY_HREFS = (
     "meeting-saturday.html",
     "meeting-sunday.html",
     "quantic-handoff.html",
+    "meghna-cafe-demo.html",
+    "meghna-materials.html",
+    "meghna-voiceover.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -55,6 +58,9 @@ PAGE_ICONS = {
     "meeting-saturday.html": "talk",
     "meeting-sunday.html": "slides",
     "quantic-handoff.html": "quantic",
+    "meghna-cafe-demo.html": "video",
+    "meghna-materials.html": "video",
+    "meghna-voiceover.html": "talk",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -985,6 +991,11 @@ def assert_ux_wiring() -> None:
         fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
+    meghna_md = (ROOT / "meghna-cafe-demo.md").read_text(encoding="utf-8")
+    if "≥90s left" not in meghna_md:
+        fail("meghna-cafe-demo.md happy-book extra must gate on ≥90s (do not start on 45s)")
+    if "≥60s left" not in meghna_md:
+        fail("meghna-cafe-demo.md newsletter extra must gate on ≥60s")
 
 
 def assert_svg_well_formed() -> None:

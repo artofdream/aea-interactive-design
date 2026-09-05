@@ -6,6 +6,8 @@ Play or talk over the committed clips when staging drops. The clips are a **look
 
 > **Must-film camera list:** App filming shots 1–3 on `https://cafe.artof.link/`; shot 4 is Coverage/CI. Exact click paths live on [Must-film shots](must-film-shots.md). The Zoom dry-run video below remains **PROTOTYPE** only — not the Quantic submission.
 
+> **Saturday lock (#97):** the live submit cut is the five-part VIDEO (team IDs → **Meghna** demo → Variant B → Variant C → close) on [Talk cuts](presentation.md) and [Meghna materials](meghna-materials.md). This page’s Zoom dry-run is still **PROTOTYPE** (Variant A). Voice-over is **TBD**. Final Quantic submit video is **Unknown** until live must-film **plus** voice.
+
 ## Zoom dry-run v2 — **PROTOTYPE**
 
 > **PROTOTYPE** — Zoom dry-run visual. This is **not** the Quantic submission.
@@ -24,7 +26,7 @@ Play or talk over the committed clips when staging drops. The clips are a **look
 
 <video controls src="clips/02-happy-book.mp4"></video>
 
-Lock scenarios with the menu at the bottom (A–F). Saturday recording variants (layers / architecture / coding): [Presentation](presentation.md). Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
+Lock scenarios with the menu at the bottom (A–F). Saturday **locked** cut (Meghna demo + Variant B + Variant C): [Talk cuts](presentation.md) / [Meghna materials](meghna-materials.md). Standalone A/B/C drafts remain on Presentation. Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
 
 ## Timed beats
 

@@ -18,6 +18,10 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Sunday meeting](meeting-sunday.md) — 2026-09-06; ends with a recording; docs target **9:00 America/New_York**; remaining gaps **Unknown**
 
 - [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
+- [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English.
+- [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
+- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
+
 - [Brief](brief.md)
 - [Coverage](coverage.md)
 - [Talk cuts](presentation.md)
@@ -29,7 +33,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Honesty](honesty.md)
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
 - [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
-- Clips stay on the [Brief](brief.md) and [Video script](video-script.md) (not a separate page; not moved here)
+- Clips stay on the [Brief](brief.md), [Video script](video-script.md), and [Meghna materials](meghna-materials.md) (not moved onto this hub)
 
 ## Implementation (not the Quantic pack)
 
