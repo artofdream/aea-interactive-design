@@ -15,6 +15,7 @@ Link out to the Quantic pack. Open the page itself for the full brief, tables, t
 - [Talk cuts](presentation.md)
 - [Slide outline](presentation-sample.md)
 - [Video script](video-script.md)
+- Zoom dry-run v2 (**PROTOTYPE**, not the Quantic submission): on the [Video script](video-script.md)
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)
 - Clips stay on the [Brief](brief.md) and [Video script](video-script.md) (not a separate page; not moved here)
