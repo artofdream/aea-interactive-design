@@ -8,7 +8,7 @@ Two public surfaces. This site (`knowledge.cafe.artof.link`) explains the work. 
 
 **Grade floor** = official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). Extra ideas are [Future](future.md), not missing grade rows.
 
-This session: Knowledge home HTTPS **GET 200**. Restaurant root and `/api/health` HTTPS **GET 200** on weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) — not production forever. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). **NFR-1** / **NFR-2** stay **Unknown**. `/operator` is a recording helper — **not FR-19**.
+This session: Knowledge home HTTPS **GET 200**. Restaurant root and `/api/health` HTTPS **GET 200** on weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) — not production forever. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). **NFR-1** is honest **met** / **PASS** on the A36 Brave owner-claimed-broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123)). **NFR-2** is honest **met** / **PASS** on the A36 Brave owner-claimed-broadband reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125)). That is not a four-browser claim. `/operator` is a recording helper — **not FR-19**.
 
 ## Mission
 

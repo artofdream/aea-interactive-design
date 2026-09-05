@@ -980,6 +980,14 @@ def assert_ux_wiring() -> None:
         fail("coverage.md must say NFR-1 met is owner-claimed broadband + measured cold Home")
     if "Reservation confirmed. Table 27" not in coverage_md:
         fail("coverage.md lost the A36 NFR-2 success-frame cite")
+    # Ratchet #127: home must not keep NFR-1 / NFR-2 stay Unknown after the A36 mets.
+    index_md = (ROOT / "index.md").read_text(encoding="utf-8")
+    if "NFR-1** / **NFR-2** stay **Unknown**" in index_md:
+        fail("index.md must not say NFR-1 / NFR-2 stay Unknown after #123/#125")
+    if "466 ms" not in index_md:
+        fail("index.md lost the home NFR-1 466 ms cite")
+    if "233 ms" not in index_md:
+        fail("index.md lost the home NFR-2 233 ms cite")
     quantic = OUT / "quantic.html"
     if not quantic.is_file():
         fail("missing built quantic.html")
