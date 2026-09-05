@@ -14,6 +14,7 @@ Every section below is filled with what is known **now**. Rows that are not done
 | Restaurant app | [https://cafe.artof.link/](https://cafe.artof.link/) | Prefer this share. Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — **not** forever production. Health: `/api/health`. Operator: `/operator`. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 | Knowledge map | [https://knowledge.cafe.artof.link/](https://knowledge.cafe.artof.link/) | GitHub Pages. This session HTTPS **GET 200**. |
 | Quantic hub | [https://knowledge.cafe.artof.link/quantic.html](https://knowledge.cafe.artof.link/quantic.html) | Delivery / MSAIE navigation only (#74 / #79). |
+| To-be (beyond MVP) | [To-be](to-be.md) | **Not the grade floor.** Parked Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Sister page [Future](future.md) stays complete. |
 
 Interim App backup (same host, not the primary paste): `https://54-165-102-60.sslip.io/`. Old tunnels (`shaky-deer-drive`, `happy-glasses-film`, `real-goats-shop`) are **stale**.
 

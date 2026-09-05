@@ -14,6 +14,7 @@ Link out to the Quantic pack. Open the page itself for the full brief, tables, t
 - [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — spoken walk of `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations). FR/NFR map is supporting notes only.
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
 - [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
+- [To-be (beyond the MVP)](to-be.md) — **not the grade floor.** As-is = SRS **FR-1..FR-18** / **NFR-1..NFR-9**. To-be = parked Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Do not invent **FR-19** / **NFR-10**.
 
 Team-meeting packs (delivery-only — not in the global top nav):
 

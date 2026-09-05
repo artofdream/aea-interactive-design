@@ -40,6 +40,7 @@ DELIVERY_ONLY_HREFS = (
     "meghna-cafe-demo.html",
     "meghna-materials.html",
     "meghna-voiceover.html",
+    "to-be.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -59,6 +60,7 @@ PAGE_ICONS = {
     "meghna-cafe-demo.html": "video",
     "meghna-materials.html": "video",
     "meghna-voiceover.html": "talk",
+    "to-be.html": "future",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -148,6 +150,7 @@ REQUIRED = [
     ROOT / "meghna-cafe-demo.md",
     ROOT / "meghna-materials.md",
     ROOT / "meghna-voiceover.md",
+    ROOT / "to-be.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
     ROOT / "coverage.md",
@@ -176,6 +179,7 @@ WIDE_PAGES = {
     "meghna-cafe-demo.html",
     "meghna-materials.html",
     "meghna-voiceover.html",
+    "to-be.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -951,6 +955,7 @@ def assert_ux_wiring() -> None:
         'href="meghna-cafe-demo.html"',
         'href="meghna-materials.html"',
         'href="meghna-voiceover.html"',
+        'href="to-be.html"',
         'href="honesty.html"',
         'href="glossary.html"',
         'href="stack.html"',
@@ -1049,6 +1054,8 @@ def assert_ux_wiring() -> None:
         fail("meeting-sunday.md must link the Meghna 3-min cafe demo pack")
     if "meghna-materials.md" not in sun_md:
         fail("meeting-sunday.md must link the Meghna materials index")
+    if "to-be.md" not in sun_md:
+        fail("meeting-sunday.md must link the Quantic to-be page (#98)")
     handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
     for needle in (
         "https://github.com/artofdream/aea-interactive-design",
@@ -1070,6 +1077,7 @@ def assert_ux_wiring() -> None:
         "Voice-over",
         "meghna-cafe-demo.md",
         "meghna-materials.md",
+        "to-be.md",
         "9:00",
     ):
         if needle not in handoff_md:
@@ -1155,6 +1163,32 @@ def assert_ux_wiring() -> None:
         fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
+    if "hld-to-be.svg" not in stack_md:
+        fail("stack.md must keep the to-be HLD SVG (do not hollow it onto to-be.md)")
+    future_md = (ROOT / "future.md").read_text(encoding="utf-8")
+    for needle in ("#22", "#34", "#38", "to-be.md"):
+        if needle not in future_md:
+            fail(f"future.md must stay complete and point at to-be.md ({needle})")
+    tobe_md = (ROOT / "to-be.md").read_text(encoding="utf-8")
+    for needle in (
+        "future.md",
+        "hld-to-be.svg",
+        "FR-1",
+        "NFR-1",
+        "FR-19",
+        "NFR-10",
+        "not the grade floor",
+        "#22",
+        "#34",
+        "#38",
+        "not FR-19",
+    ):
+        if needle not in tobe_md:
+            fail(f"to-be.md missing required to-be fact ({needle})")
+    if "<video" in tobe_md:
+        fail("to-be.md must not embed clips")
+    if "to-be.md" not in quantic_md:
+        fail("quantic.md must link the Quantic to-be page (#98)")
 
 
 def assert_svg_well_formed() -> None:

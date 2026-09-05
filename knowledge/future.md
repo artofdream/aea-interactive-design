@@ -2,6 +2,8 @@
 
 This page is **not** required for the assignment MVP. The MVP is the official SRS freeze ([SRS freeze](srs.md)).
 
+Quantic-facing short map: [To-be (beyond the MVP)](to-be.md) — Delivery entry only; this page stays the full Future list.
+
 When the restaurant is implemented, implement **the SRS only** as the first app cut. Extra product ideas go here (or under `knowledge/future/`), not into that cut.
 
 Meeting prep that **is** now on the thin map (once this ships): [Brief](brief.md) (Wed 2026-09-02 19:00 CET; owner locked 1, 3, 4), [Coverage](coverage.md) (FR-1..FR-18 / NFR-1..NFR-9), Friday **2026-09-04** working references — [Friday plan](friday-plan.md), [video script](video-script.md), [slides](presentation-sample.md) — and Saturday [talk cuts](presentation.md). Those delivery pages stay complete here and are also listed on the [Quantic / MSAIE](quantic.md) navigation hub (hub does not replace them). Those pages are knowledge, not extra restaurant features. **#22 / #34–#38 stay Future**; they are not grade gaps.

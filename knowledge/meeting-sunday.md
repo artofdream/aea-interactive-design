@@ -11,7 +11,7 @@
 **Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only** (no FR/NFR on camera). Recorded teammate VO is **Unknown**.
 
 1. **End with a recording** of the locked ~10 minute VIDEO (five parts on [Saturday](meeting-saturday.md)): team IDs → Meghna demo → Variant B → Variant C → shared close.
-2. **Supporting docs** in place by **9:00 America/New_York** on 2026-09-06 — [Handoff](quantic-handoff.md) PDF refs (GitHub + cafe + Knowledge + official SRS PDF). The site may still evolve after that clock.
+2. **Supporting docs** in place by **9:00 America/New_York** on 2026-09-06 — [Handoff](quantic-handoff.md) PDF refs (GitHub + cafe + Knowledge + official SRS PDF). If someone asks about extras after the MVP, open [To-be](to-be.md) (not the grade floor). The site may still evolve after that clock.
 
 Use the Saturday pack until the recording exists: [Meghna materials](meghna-materials.md), [Meghna demo](meghna-cafe-demo.md), [talk cuts](presentation.md), [video script](video-script.md), [must-film shots](must-film-shots.md).
 
