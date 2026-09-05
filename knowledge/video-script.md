@@ -10,10 +10,11 @@ Play or talk over the committed clips when staging drops. The clips are a **look
 
 **Cut:** Variant A (~10 min) from live `https://cafe.artof.link/` + Knowledge. Clip 02 is fallback only for happy-book motion. Do not claim **NFR-1** / **NFR-2** met. Do not invent **FR-19**.
 
-<video controls src="clips/zoom-dryrun-v2.mp4"></video>
+<video controls src="clips/03-zoom-dryrun-v2.mp4"></video>
 
-**Short fallback clips on this site** (not the dry-run)
+**Clips on this site**
 
+- Zoom dry-run v2 (**PROTOTYPE**): `knowledge/clips/03-zoom-dryrun-v2.mp4`
 - Home → Menu: `knowledge/clips/01-home-menu.mp4`
 - Happy reservation: `knowledge/clips/02-happy-book.mp4`
 

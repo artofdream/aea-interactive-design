@@ -892,7 +892,7 @@ def assert_ux_wiring() -> None:
         fail("brief.md must keep clip embeds (hub is nav-only; do not hollow source pages)")
     if "clips/01-home-menu.mp4" not in video_md or "clips/02-happy-book.mp4" not in video_md:
         fail("video-script.md must keep clip embeds (hub is nav-only; do not hollow source pages)")
-    if "clips/zoom-dryrun-v2.mp4" not in video_md:
+    if "clips/03-zoom-dryrun-v2.mp4" not in video_md:
         fail("video-script.md must embed Zoom dry-run v2 prototype (issue #81)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
