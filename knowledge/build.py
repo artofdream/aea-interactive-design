@@ -142,6 +142,7 @@ SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
 VIDEO_SRC_RE = re.compile(r"""\bsrc\s*=\s*(['"])([^'"]+)\1""", re.IGNORECASE)
 CLIP_REF_RE = re.compile(r"clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4")
+DIAGRAM_WRAP_RE = re.compile(r'(<div class="diagram-wrap"[^>]*>.*?</div>)', re.S)
 
 
 def fail(message: str) -> None:
@@ -313,9 +314,21 @@ def md_to_html(src: str) -> str:
         if not buf:
             return
         text = " ".join(x.strip() for x in buf if x.strip())
-        if text:
-            out.append(f"<p>{inline(text)}</p>")
         buf.clear()
+        if not text:
+            return
+        # SVG figures emit a block .diagram-wrap; do not wrap that div in <p>
+        # (browsers close the p and leave empty paragraphs on Stack HLD images).
+        rendered = inline(text)
+        for part in DIAGRAM_WRAP_RE.split(rendered):
+            if not part:
+                continue
+            if DIAGRAM_WRAP_RE.fullmatch(part):
+                out.append(part)
+                continue
+            leftover = part.strip()
+            if leftover:
+                out.append(f"<p>{leftover}</p>")
 
     para: list[str] = []
 
@@ -865,6 +878,8 @@ def assert_ux_wiring() -> None:
         fail("stack.html missing swipeable HLD diagram images")
     if stack_html.count('class="diagram-wrap"') < 4:
         fail("stack.html must wrap mermaid and HLD SVGs in diagram-wrap")
+    if re.search(r"<p>\s*<div class=\"diagram-wrap\"", stack_html):
+        fail("stack.html must not wrap HLD diagram-wrap inside <p>")
     if "useMaxWidth: true" not in stack_html:
         fail("stack.html mermaid init must set useMaxWidth")
     for mermaid_page in ("friday-plan.html", "presentation.html"):
