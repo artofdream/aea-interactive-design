@@ -1025,6 +1025,8 @@ def assert_ux_wiring() -> None:
         "NFR-1",
         "NFR-7",
         "to-be-filled",
+        "must-film-shots.md",
+        "speaker",
     ):
         if needle not in handoff_md:
             fail(f"quantic-handoff.md missing required handoff fact ({needle})")
