@@ -368,11 +368,20 @@ def md_to_html(src: str) -> str:
         if in_code:
             if line.strip().startswith("```"):
                 body = "\n".join(code_lines)
-                if code_lang.lower() == "mermaid":
+                lang_tokens = code_lang.split()
+                lang_name = lang_tokens[0].lower() if lang_tokens else ""
+                lang_flags = {t.lower() for t in lang_tokens[1:]}
+                if lang_name == "mermaid":
+                    fit = "fit" in lang_flags
+                    wrap_cls = "diagram-wrap diagram-fit" if fit else "diagram-wrap"
+                    aria = "Stacked diagram" if fit else "Diagram"
+                    safe = html.escape(body)
+                    # Mermaid htmlLabels need a real <br>; keep the rest escaped.
+                    safe = safe.replace("&lt;br/&gt;", "<br/>").replace("&lt;br&gt;", "<br>")
                     out.append(
-                        '<div class="diagram-wrap" tabindex="0" role="region" '
-                        'aria-label="Diagram">'
-                        f'<pre class="mermaid">{html.escape(body)}</pre>'
+                        f'<div class="{wrap_cls}" tabindex="0" role="region" '
+                        f'aria-label="{html.escape(aria, quote=True)}">'
+                        f'<pre class="mermaid">{safe}</pre>'
                         "</div>"
                     )
                 else:
@@ -778,7 +787,7 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
         mermaid_script = f"""
   <script type="module">
     import mermaid from "{html.escape(MERMAID_CDN, quote=True)}";
-    mermaid.initialize({{ startOnLoad: true, theme: "neutral", securityLevel: "strict", flowchart: {{ useMaxWidth: true }} }});
+    mermaid.initialize({{ startOnLoad: true, theme: "neutral", securityLevel: "strict", flowchart: {{ useMaxWidth: true, wrappingWidth: 220, htmlLabels: true }} }});
   </script>"""
     brand_icon = svg_icon(page_icon_name(current), "page-icon")
     return f"""<!DOCTYPE html>
@@ -854,6 +863,7 @@ def assert_ux_wiring() -> None:
         "attr(data-label)",
         "overflow-y: hidden",
         ".diagram-wrap",
+        ".diagram-fit",
         "grid-template-columns: repeat(2",
         "Swipe sideways for the full diagram",
     ):
@@ -871,8 +881,14 @@ def assert_ux_wiring() -> None:
         fail("767px query must use a two-column nav grid")
     if stack_at == -1 or ".diagram-wrap .diagram-img" not in css[stack_at:]:
         fail("767px query must keep HLD SVGs swipeable at a readable min-width")
-    if stack_at == -1 or ".diagram-wrap .mermaid svg" not in css[stack_at:]:
-        fail("767px query must keep mermaid diagrams swipeable at a readable min-width")
+    if stack_at == -1 or ".diagram-wrap:not(.diagram-fit) .mermaid svg" not in css[stack_at:]:
+        fail("767px query must keep wide mermaid swipeable at a readable min-width")
+    if stack_at == -1 or ".diagram-wrap.diagram-fit .mermaid svg" not in css[stack_at:]:
+        fail("767px query must fit compact mermaid at max-width 100%")
+    mermaid_fit = css[stack_at:]
+    fit_svg = mermaid_fit.find(".diagram-wrap.diagram-fit .mermaid svg")
+    if fit_svg == -1 or "max-width: 100%" not in mermaid_fit[fit_svg : fit_svg + 180]:
+        fail("compact mermaid svg must set max-width: 100% in the 767px query")
     if re.search(r"(html|body|header|main|footer)\s*\{[^}]*overflow:\s*hidden", css, re.S):
         fail("html/body/header/main/footer must not overflow:hidden (clips tables)")
     index = (OUT / "index.html").read_text(encoding="utf-8")
@@ -913,10 +929,30 @@ def assert_ux_wiring() -> None:
         fail("stack.html must not wrap HLD diagram-wrap inside <p>")
     if "useMaxWidth: true" not in stack_html:
         fail("stack.html mermaid init must set useMaxWidth")
+    if "wrappingWidth: 220" not in stack_html:
+        fail("stack.html mermaid init must set wrappingWidth so labels wrap on phone")
     for mermaid_page in ("friday-plan.html", "presentation.html"):
         built = (OUT / mermaid_page).read_text(encoding="utf-8")
         if 'class="diagram-wrap"' not in built or 'class="mermaid"' not in built:
             fail(f"{mermaid_page} missing wrapped mermaid diagram")
+    glossary = (OUT / "glossary.html").read_text(encoding="utf-8")
+    if 'class="diagram-wrap diagram-fit"' not in glossary:
+        fail("glossary.html status-word mermaid must use diagram-fit")
+    if 'class="mermaid"' not in glossary:
+        fail("glossary.html missing status-word mermaid")
+    if "Yes: a command, HTTP GET, CI log, or committed file" in glossary:
+        fail("glossary mermaid must not keep the long Yes edge label (clips on phone)")
+    if "<br/>" not in glossary and "<br>" not in glossary:
+        fail("glossary mermaid must use <br> so the status-word diamond wraps on phone")
+    if '{"Checked this' not in glossary and "{Checked this" not in glossary:
+        fail("glossary mermaid must keep the status-word diamond")
+    if 'class="diagram-wrap diagram-fit"' not in index:
+        fail("index.html home mermaid must use diagram-fit")
+    honesty_html = (OUT / "honesty.html").read_text(encoding="utf-8")
+    if 'class="diagram-wrap diagram-fit"' not in honesty_html:
+        fail("honesty.html status-word mermaid must use diagram-fit")
+    if '{"Checked this' not in honesty_html and "{Checked this" not in honesty_html:
+        fail("honesty.html mermaid must keep the status-word diamond")
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
         fail("honesty.md lost the NFR-1 / NFR-2 not-met line")

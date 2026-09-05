@@ -6,14 +6,18 @@ This site is a **map** of the Café Fausse student project. It is **not** the re
 
 ## How to read a status word
 
-```mermaid
+```mermaid fit
 flowchart TD
-  Claim["Someone writes live, working, green, or complete"] --> Q{"Did we check it this session?"}
-  Q -->|"Yes: a command, HTTP GET, CI log, or committed file"| Result["Write the measured result"]
-  Q -->|No| Unknown["Write Unknown"]
+  Claim["Someone writes a status word"]
+  Q{"Checked this<br/>session?"}
+  Result["Write the<br/>measured result"]
+  Unknown["Write Unknown"]
+  Claim --> Q
+  Q -->|Yes| Result
+  Q -->|No| Unknown
 ```
 
-A previous session is not a check. Closing a pull request is not a check. Publishing a hostname is not a check.
+**Yes** means a command, an HTTP GET, a CI log, or a committed file — this session. A previous session is not a check. Closing a pull request is not a check. Publishing a hostname is not a check.
 
 ## Everyday terms
 

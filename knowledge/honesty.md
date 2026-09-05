@@ -4,11 +4,15 @@
 
 A **probe** is a command, an HTTP GET, a CI log, or a **committed** file that exists **now**, **this session**. Remembering a previous session, uncommitted files, publishing a hostname, or closing a pull request is not a probe.
 
-```mermaid
+```mermaid fit
 flowchart TD
-  Word["Someone writes live, working, green, or complete"] --> Q{"Checked this session?"}
-  Q -->|"Yes: GET, command, CI log, or committed file"| Result["Write the measured result"]
-  Q -->|No| Unknown["Write Unknown"]
+  Word["Someone writes a status word"]
+  Q{"Checked this<br/>session?"}
+  Result["Write the<br/>measured result"]
+  Unknown["Write Unknown"]
+  Word --> Q
+  Q -->|Yes| Result
+  Q -->|No| Unknown
 ```
 
 Short labels: [Glossary](glossary.md). Do not say **NFR-1** / **NFR-2** are met from a fast staging GET. `/operator` is **not FR-19**.
