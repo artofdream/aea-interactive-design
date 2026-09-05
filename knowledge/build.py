@@ -33,6 +33,10 @@ DELIVERY_ONLY_HREFS = (
     "presentation.html",
     "presentation-sample.html",
     "journal.html",
+    "meeting-wednesday.html",
+    "meeting-friday.html",
+    "meeting-saturday.html",
+    "meeting-sunday.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -45,6 +49,10 @@ PAGE_ICONS = {
     "presentation-sample.html": "slides",
     "glossary.html": "glossary",
     "journal.html": "brief",
+    "meeting-wednesday.html": "brief",
+    "meeting-friday.html": "friday",
+    "meeting-saturday.html": "talk",
+    "meeting-sunday.html": "slides",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
