@@ -2,14 +2,14 @@
 
 Two surfaces, two teams, two hostnames. GitHub only. This page is Café Fausse as used so far, plus an intended restaurant to-be. It is **not** florist Path B, not 14 hats, not Kafka/BFF, not 3DX Lab.
 
-**Probe date:** 2026-09-02 Europe/Berlin (this session).
+**Probe date:** 2026-09-05 Europe/Berlin (this session) for hostname rows. Journey / NFR evidence stays the 2026-09-02 records on [Coverage](coverage.md).
 
 ## Two hostnames
 
 | Hostname | Job | This session |
 |---|---|---|
 | `knowledge.cafe.artof.link` | This knowledge map | HTTPS GET **200**. HTTP **301** to HTTPS. TLS VERIFY_OK. CN/SAN match. Let’s Encrypt, expires 2026-11-30. Pages `cname` matches. **`https_enforced=true`**. Cert **approved**. |
-| `cafe.artof.link` | Intended restaurant | DNS CNAME → AWS ELB `eu-north-1`. **Not our restaurant.** Do not claim Café Fausse App is live there. |
+| `cafe.artof.link` | Prefer live share this session (Lightsail staging) | HTTPS GET **200** (SPA + `/operator` + `/api/health`). TLS CN/SAN `cafe.artof.link`. DNS A `54.165.102.60`. [#57](https://github.com/artofdream/aea-interactive-design/issues/57) weekend window — **not** production forever. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 They do not share a load balancer. This site is not the shop.
 
@@ -22,12 +22,12 @@ Allowlisted markdown under `knowledge/` is built to static HTML (`knowledge/buil
 - **Runtime in-repo on `main` (PRs #9 + timezone #12):** React + JSX (`frontend/`), Flask (`backend/cafe_fausse/`), PostgreSQL (`backend/schema.sql`).
 - **MVP:** official SRS only (`docs/srs.md`, FR-1..FR-18, NFR-1..NFR-9; PDF SoT).
 - **Local path (cts-ai; this VM did not reach it):** Vite `http://127.0.0.1:5173`, Flask `:5000`, Docker `cafe-pg`. App this session: Journey **J1–J8 PASS** (DB up); **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). After the J1–J8 handoff, App reported `cafe-pg` unreachable. See [Coverage](coverage.md).
-- **Hosting of `cafe.artof.link`:** future. Not AWS in the restaurant MVP PR.
+- **Hosting of `cafe.artof.link`:** Lightsail staging this weekend ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). Not a permanent claim. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AWS is not in the restaurant MVP PR.
 - Extra features after the SRS belong in [Future](future.md). AWS RDS column dump vs local schema: [map + rationale](future/aws-schema-map.md) (no cts-ai required).
 
 ## As-is HLD
 
-What is true now: knowledge Pages is live; the restaurant runs locally from `main`; `cafe.artof.link` points at someone else’s ELB.
+What is true now: knowledge Pages is live; the restaurant runs locally from `main`; prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57) — not production forever. The static SVG below still shows the older ELB picture; use the mermaid for this session.
 
 ```mermaid
 flowchart TB
@@ -36,11 +36,11 @@ flowchart TB
     PY --> GHA["GitHub Actions → GitHub Pages"]
     GHA --> KH["knowledge.cafe.artof.link"]
   end
-  KH -.-> P["HTTPS GET 200 · HTTP 301 to HTTPS · TLS VERIFY_OK · CN/SAN match · Let’s Encrypt exp 2026-11-30 · https_enforced=true"]
-  subgraph N["Not our restaurant"]
-    CAFE["cafe.artof.link"] --> ELB["CNAME → AWS ELB eu-north-1"]
+  KH -.-> P["HTTPS GET 200 · HTTP 301 to HTTPS"]
+  subgraph N["Staging share this session — not production forever"]
+    CAFE["cafe.artof.link"] --> LS["Lightsail #57 GET 200 · A 54.165.102.60"]
   end
-  subgraph L["Local MVP on main — not a public host"]
+  subgraph L["Local MVP on main"]
     VITE["Vite :5173"] --> FLASK["Flask :5000"]
     FLASK --> PG["cafe-pg PostgreSQL"]
   end
@@ -48,7 +48,7 @@ flowchart TB
 
 Static copy (renders if Mermaid JS is blocked): [as-is SVG](assets/hld-as-is.svg).
 
-![Café Fausse as-is: knowledge Pages live, cafe.artof.link is an AWS ELB not our app, local Vite/Flask/Postgres](assets/hld-as-is.svg)
+![Café Fausse as-is SVG (older ELB picture; mermaid above is this-session)](assets/hld-as-is.svg)
 
 ## Intended to-be HLD
 
@@ -82,7 +82,7 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 ## Honesty
 
 - `knowledge.cafe.artof.link` was HTTPS GET 200 this session. HTTP GET returned 301 to HTTPS. Pages `https_enforced=true`.
-- `cafe.artof.link` is not Café Fausse App.
+- Prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57). Not production forever. Longer-term hosting stays #22.
 - Journey **J1–J8 PASS** (cts-ai, DB up); **J9 PASS** (Vite-only viewports + theme). This VM did not reach Vite.
 - **NFR-1** / **NFR-2** local Vite notes (56 ms / 32 ms) are **not** an SRS-budget “met.” **NFR-7** is **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown).
 - Mentioned tunnel `https://nine-teams-try.loca.lt/` — GET **timed out** this session.
