@@ -952,8 +952,8 @@ def assert_ux_wiring() -> None:
         fail("meeting-saturday.md must link the must-film shot list")
     if "America/New_York" not in sat_md or "Europe/Berlin" not in sat_md:
         fail("meeting-saturday.md must note America/New_York and Europe/Berlin")
-    if "Unknown" not in sun_md:
-        fail("meeting-sunday.md must stay Unknown until notes exist")
+    if "Unknown" not in sun_md or "to-be-filled" not in sun_md:
+        fail("meeting-sunday.md must stay Unknown / to-be-filled until notes exist")
     for name, text in (
         ("meeting-wednesday.md", wed_md),
         ("meeting-friday.md", fri_md),
