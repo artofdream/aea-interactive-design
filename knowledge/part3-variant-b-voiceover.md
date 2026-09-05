@@ -1,15 +1,16 @@
 # Part 3 — Variant B voice-over (ready to record)
 
 **Length:** ~3 minutes  
-**Picture:** silent `part3-variant-b-prototype-silent.mp4` or live diagrams  
+**Picture:** silent [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) or live diagrams  
 **IDs:** OK in technical take · plain twin below  
-**Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.
+**Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.  
+**Sister pages:** [Part 3 script](part3-variant-b-script.md) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
 
 ---
 
 ## How to use
 
-1. Open the silent prototype (or Stack + staging SVG tabs).
+1. Open the silent prototype on [Parts 3–5 materials](parts-345-materials.md) (or Stack + staging SVG tabs).
 2. Read timed lines; ~1s breath between beats.
 3. Stop at the Coding handoff — do not start Variant C.
 

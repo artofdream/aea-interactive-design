@@ -1,9 +1,10 @@
 # Part 5 — Shared close voice-over (ready to record)
 
 **Length:** ~45–60 seconds (tight cut ~30s)  
-**Picture:** silent `part5-shared-close-prototype-silent.mp4`  
+**Picture:** silent [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4)  
 **Status:** draft — **PROTOTYPE**, not Quantic submit.  
-**Honesty:** UPDATED 2026-09-06 — NFR-1/2 **met**; NFR-7 Partial.
+**Honesty:** UPDATED 2026-09-06 — NFR-1/2 **met**; NFR-7 Partial.  
+**Sister pages:** [Part 5 script](part5-shared-close-script.md) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
 
 ---
 

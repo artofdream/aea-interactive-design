@@ -1,8 +1,9 @@
-# Parts 3–5 — build notes
+# Parts 3–5 — build notes (secondary)
 
-**Built:** 2026-09-06 Europe/Berlin (box UTC morning of Sep 6).  
-**Output root:** `/workspace/cafe-fausse-prototype/parts-345/`  
-**Do not push to GitHub.** **Not Quantic submit** — labeled PROTOTYPE throughout.
+Public index for teammates: [Parts 3–5 materials](parts-345-materials.md).  
+This page is **build notes only**. Silent clips live under `knowledge/clips/`. **PROTOTYPE** / rehearsal — not Quantic submit.
+
+**Built:** 2026-09-06 Europe/Berlin.
 
 ---
 
@@ -10,22 +11,20 @@
 
 | File | Duration | Size (approx) |
 | --- | --- | --- |
-| `part3-variant-b-prototype-silent.mp4` | **180.02 s** | ~1.8 MB |
-| `part4-variant-c-prototype-silent.mp4` | **180.02 s** | ~1.4 MB |
-| `part5-shared-close-prototype-silent.mp4` | **60.02 s** | ~0.5 MB |
+| [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) | **180.02 s** | ~1.8 MB |
+| [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4) | **180.02 s** | ~1.4 MB |
+| [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4) | **60.02 s** | ~0.5 MB |
 
-Codec: H.264 `yuv420p` 1280×720 @ 30 fps + AAC stereo silent (anullsrc). Concat demuxer (same pattern as `meghna-proto-tmp`).
+Codec: H.264 `yuv420p` 1280×720 @ 30 fps + AAC stereo silent (anullsrc). Same concat pattern as the Meghna silent prototype.
 
 ---
 
 ## How video was built
 
-1. Downloaded HLD SVGs from `artofdream/aea-interactive-design` `knowledge/assets/` via `gh api`.
-2. Converted SVG → PNG with **cairosvg** in a local venv (`parts-345/.venv`).
-3. Generated title/coverage/honesty cards with **Pillow**.
-4. Extracted / letterboxed reservation still from `/workspace/cafe-fausse-prototype/assets/02-happy-book.mp4`; short 12s silent clip for Part 3 open.
-5. Reused existing slides `02`, `08`, `11`, `13`, `15`, `17` fitted to 1280×720 with PROTOTYPE badge.
-6. `ffmpeg` still→segment (`libx264 -tune stillimage` + silent AAC) → concat demuxer → final mp4s.
+1. HLD SVGs from `knowledge/assets/` (`hld-aws-staging.svg`, `hld-as-is.svg`, `hld-to-be.svg`).
+2. SVG → PNG (cairosvg). Title / coverage / honesty cards (Pillow).
+3. Reservation still from the existing happy-book clip; reused fitted slides with a **PROTOTYPE** badge.
+4. `ffmpeg` still→segment (`libx264 -tune stillimage` + silent AAC) → concat → final mp4s.
 
 Segment timeline (approx):
 
@@ -37,87 +36,27 @@ Segment timeline (approx):
 
 ---
 
-## Honesty (must match scripts)
+## Honesty (must match [Coverage](coverage.md) / scripts)
 
 | Item | Status in this pack |
 | --- | --- |
-| **NFR-1** | **Met** — A36 Brave broadband cold Home **466 ms** (#124) |
-| **NFR-2** | **Met** — reservation submit **233 ms** (#126) |
+| **NFR-1** | **met** — A36 Brave broadband cold Home **466 ms** ([#124](https://github.com/artofdream/aea-interactive-design/pull/124)) |
+| **NFR-2** | **met** — reservation submit **233 ms** ([#126](https://github.com/artofdream/aea-interactive-design/pull/126)) |
 | **NFR-7** | **Partial** — do not claim four browsers |
 | Host | `cafe.artof.link` = Lightsail staging **#57** — not forever |
 | FR-19 | **None** — `/operator` read-only helper only |
 | Future #22 / #34–#38 | **Parked** — not grade gaps |
+| Recorded VO | **Unknown** |
 
-Old presentation.html wording (“NFR-1 / NFR-2 not claimed met”) is **superseded for this pack** by the 2026-09-06 owner update. Scripts and Part 5 cards use the new line.
-
----
-
-## What this is
-
-- Spoken scripts + ready-to-record VO for Parts 3–5
-- Silent **PROTOTYPE** sample videos for rehearsal / timing
-- Materials index mirroring Meghna pack shape
-
-## What this is not
-
-- Not the Quantic submission video
-- Not recorded teammate voice
-- Not a live browser capture of `cafe.artof.link` (reservation open uses existing clip/still + cards)
-- Not a GitHub push / Knowledge Pages publish
-- Not a claim that Hiren has picked B vs C
+Old Talk-cuts wording (“NFR-1 / NFR-2 not claimed met”) is **superseded** by the 2026-09-06 update.
 
 ---
 
-## Sources used
+## What this is / is not
 
-- https://knowledge.cafe.artof.link/presentation.html (Variant B, C, Shared close)
-- https://knowledge.cafe.artof.link/stack.html
-- GitHub `knowledge/assets/hld-*.svg`
-- `/workspace/cafe-fausse-prototype/slides/*.png`
-- `/workspace/cafe-fausse-prototype/assets/02-happy-book.mp4`
-- Meghna pack pattern: `MEGHNA-MATERIALS.md` / VO / concat tmp
-- Owner honesty UPDATE 2026-09-06 (NFR-1/2 met)
+- Spoken scripts + ready-to-record VO for Parts 3–5, plus silent **PROTOTYPE** samples for rehearsal / timing.
+- **Not** the Quantic submission, not recorded teammate voice, not a live browser capture of `cafe.artof.link`, and not a Hiren B vs C pick.
 
 ---
 
-## Blockers
-
-None for pack delivery. Optional later: live reservation screenshot from staging if preferred over clip still; recorded VO; Hiren B/C assignment.
-
----
-
-*End notes.*
-
-## ffprobe raw
-```
-# part3-variant-b-prototype-silent.mp4
-codec_name=h264
-codec_type=video
-width=1280
-height=720
-codec_name=aac
-codec_type=audio
-duration=180.023220
-size=1877914
-
-# part4-variant-c-prototype-silent.mp4
-codec_name=h264
-codec_type=video
-width=1280
-height=720
-codec_name=aac
-codec_type=audio
-duration=180.023220
-size=1432534
-
-# part5-shared-close-prototype-silent.mp4
-codec_name=h264
-codec_type=video
-width=1280
-height=720
-codec_name=aac
-codec_type=audio
-duration=60.023220
-size=522484
-
-```
+*End notes · talk #97 · PROTOTYPE only.*

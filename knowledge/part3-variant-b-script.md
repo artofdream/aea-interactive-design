@@ -6,7 +6,7 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97 five-part VIDEO. Room clock ≈ **3:30–6:30**.
 
-Spoken scripts for this technical part **may use FR/NFR IDs**. A plain-English VO twin is in `PART3-VARIANT-B-VOICEOVER.md`.
+Spoken scripts for this technical part **may use FR/NFR IDs**. A plain-English VO twin is in [Part 3 VO](part3-variant-b-voiceover.md). Pack index: [Parts 3–5 materials](parts-345-materials.md). Talk cuts: [Presentation](presentation.md).
 
 ---
 
@@ -34,7 +34,7 @@ Spoken scripts for this technical part **may use FR/NFR IDs**. A plain-English V
 | Boxes card | Three FR/NFR clusters | “Coverage is the grade map — not a second product.” |
 | Sensors card | freeze / fail-closed / no self-merge | “Harness proves the freeze; not new FR rows.” |
 
-Static assets in this pack: `hld-aws-staging-720.png`, `hld-as-is-720.png`, `fit-02-stack.png`, cards under `card-p3-*.png`.
+Live visuals for the real take: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [Stack](stack.md), [Coverage](coverage.md). Silent rehearsal clip: [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) (**PROTOTYPE**).
 
 ---
 

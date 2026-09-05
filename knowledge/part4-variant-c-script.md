@@ -6,7 +6,7 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **6:30–9:30**.
 
-FR/NFR IDs OK in speech. Plain-English VO twin: `PART4-VARIANT-C-VOICEOVER.md`.
+FR/NFR IDs OK in speech. Plain-English VO twin: [Part 4 VO](part4-variant-c-voiceover.md). Pack index: [Parts 3–5 materials](parts-345-materials.md). Talk cuts: [Presentation](presentation.md). Silent rehearsal clip: [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4) (**PROTOTYPE**).
 
 ---
 

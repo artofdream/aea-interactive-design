@@ -5,6 +5,8 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **9:30–10:00** (pad to ~60s if needed).
 
+Pack index: [Parts 3–5 materials](parts-345-materials.md). VO twin: [Part 5 VO](part5-shared-close-voiceover.md). Talk cuts: [Presentation](presentation.md). Silent rehearsal clip: [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4) (**PROTOTYPE**).
+
 **Honesty UPDATE (2026-09-06) — mandatory:**
 
 | Claim | Status | Probe |

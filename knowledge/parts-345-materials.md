@@ -1,41 +1,67 @@
 # Parts 3–5 — materials pack (Quantic VIDEO Architecture / Coding / Close)
 
-Everything for the locked five-part talk (#97) after Meghna’s cafe demo:
+Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
-| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | scripts + silent ~180s |
-| ~6:30–9:30 | **4 Coding** (Variant C) | the other | scripts + silent ~180s |
-| ~9:30–10:00 | **5 Shared close** | Shared | scripts + silent ~60s |
+| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | [script](part3-variant-b-script.md) + [VO](part3-variant-b-voiceover.md) + silent ~180s |
+| ~6:30–9:30 | **4 Coding** (Variant C) | the other | [script](part4-variant-c-script.md) + [VO](part4-variant-c-voiceover.md) + silent ~180s |
+| ~9:30–10:00 | **5 Shared close** | Shared | [script](part5-shared-close-script.md) + [VO](part5-shared-close-voiceover.md) + silent ~60s |
 
-**Label:** all videos are **PROTOTYPE** — not Quantic submission.  
+**Label:** all videos are **PROTOTYPE** / samples / rehearsal — **not** Quantic submission.  
 **Owner rule:** technical spoken scripts **may use FR/NFR IDs**; plain-English VO twins included.  
-**Honesty UPDATE (2026-09-06):** NFR-1/2 **met** (probes #124 / #126); NFR-7 **Partial**; staging #57 not forever; no FR-19; Futures parked.
+**Hiren B vs C pick:** **Unknown** — do not invent it.
 
 ---
 
-## 1. Scripts + talking points
+## Honesty (must match [Coverage](coverage.md))
+
+| Item | Status | Probe / cite |
+| --- | --- | --- |
+| **NFR-1** | **met** | A36 Brave broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123) / [PR #124](https://github.com/artofdream/aea-interactive-design/pull/124)) |
+| **NFR-2** | **met** | Reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125) / [PR #126](https://github.com/artofdream/aea-interactive-design/pull/126)) |
+| **NFR-7** | **Partial** | Do **not** claim four browsers |
+| Host | Lightsail staging **#57** | `https://cafe.artof.link/` — **not forever** |
+| FR-19 | **None** | `/operator` is a read-only helper |
+| Future #22 / #34–#38 | **Parked** | Not grade gaps |
+| Recorded teammate VO | **Unknown** | Until Claude / Hiren / shared records |
+
+Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
+
+---
+
+## 1. Script + talking points
 
 | File | What |
 | --- | --- |
-| [`PART3-VARIANT-B-SCRIPT.md`](PART3-VARIANT-B-SCRIPT.md) | Timed ~3 min Architecture beats, diagram callouts, ID map |
-| [`PART4-VARIANT-C-SCRIPT.md`](PART4-VARIANT-C-SCRIPT.md) | Timed ~3 min Coding beats (freeze/CI, table/fail-closed, TZ/modules) |
-| [`PART5-SHARED-CLOSE-SCRIPT.md`](PART5-SHARED-CLOSE-SCRIPT.md) | Timed ~30–60s close with **updated** honesty |
+| [Part 3 — Variant B script](part3-variant-b-script.md) | Timed ~3 min Architecture beats, diagram callouts, ID map |
+| [Part 4 — Variant C script](part4-variant-c-script.md) | Timed ~3 min Coding beats (freeze/CI, table/fail-closed, TZ/modules) |
+| [Part 5 — Shared close script](part5-shared-close-script.md) | Timed ~30–60s close with **updated** honesty |
+| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Meghna materials](meghna-materials.md) (Part 2) |
 
-Knowledge talk cuts: https://knowledge.cafe.artof.link/presentation.html  
-Stack / HLD: https://knowledge.cafe.artof.link/stack.html
+Live site to rehearse after the cafe demo: **https://cafe.artof.link/**
 
 ---
 
 ## 2. Prototype videos (silent)
 
-| Asset | Path | Duration |
+| Asset | Path / URL | Note |
 | --- | --- | --- |
-| Part 3 Architecture | `/workspace/cafe-fausse-prototype/parts-345/part3-variant-b-prototype-silent.mp4` | ~180s |
-| Part 4 Coding | `/workspace/cafe-fausse-prototype/parts-345/part4-variant-c-prototype-silent.mp4` | ~180s |
-| Part 5 Shared close | `/workspace/cafe-fausse-prototype/parts-345/part5-shared-close-prototype-silent.mp4` | ~60s |
+| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) (~180s) | Silent Variant B rehearsal. Reservations → staging HLD → Coverage boxes → sensors. **PROTOTYPE**, not Quantic submit. |
+| **Part 4 Coding** | [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4) (~180s) | Silent Variant C rehearsal. Freeze/CI → table/fail-closed → timezone/modules. **PROTOTYPE**. |
+| **Part 5 Shared close** | [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4) (~60s) | Silent shared-close rehearsal with updated honesty card. **PROTOTYPE**. |
 
-Format: 1280×720 H.264 + silent AAC. Prefer live diagrams / Coverage for the real recording; use silent prototypes for rehearsal / VO timing.
+Prefer **live diagrams / Coverage** for the real recording; use the silent prototypes only for rehearsal / VO timing.
+
+> **PROTOTYPE** — silent Parts 3–5 samples. Not the Quantic submission. Voice-over recorded take **Unknown**.
+
+<video controls src="clips/part3-variant-b-prototype-silent.mp4"></video>
+
+<video controls src="clips/part4-variant-c-prototype-silent.mp4"></video>
+
+<video controls src="clips/part5-shared-close-prototype-silent.mp4"></video>
+
+**Recorded teammate VO:** **Unknown** until Claude, Hiren, or a shared speaker records.
 
 ---
 
@@ -43,43 +69,43 @@ Format: 1280×720 H.264 + silent AAC. Prefer live diagrams / Coverage for the re
 
 | Asset | Path | Status |
 | --- | --- | --- |
-| Part 3 VO | [`PART3-VARIANT-B-VOICEOVER.md`](PART3-VARIANT-B-VOICEOVER.md) | Ready to record (technical + plain twin) |
-| Part 4 VO | [`PART4-VARIANT-C-VOICEOVER.md`](PART4-VARIANT-C-VOICEOVER.md) | Ready to record (technical + plain twin) |
-| Part 5 VO | [`PART5-SHARED-CLOSE-VOICEOVER.md`](PART5-SHARED-CLOSE-VOICEOVER.md) | Ready to record (updated honesty) |
-| Recorded teammate VO | — | **Unknown** until Claude/Hiren/shared records |
+| Part 3 VO | [Part 3 Variant B VO](part3-variant-b-voiceover.md) | Ready to record (technical + plain twin) |
+| Part 4 VO | [Part 4 Variant C VO](part4-variant-c-voiceover.md) | Ready to record (technical + plain twin) |
+| Part 5 VO | [Part 5 Shared close VO](part5-shared-close-voiceover.md) | Ready to record (updated honesty) |
+| Recorded teammate VO | — | **Unknown** until Claude / Hiren / shared records |
 
 ---
 
-## 4. Supporting visuals in this folder
+## 4. Supporting docs (IDs OK here)
 
-| What | Files |
+| What | Link |
 | --- | --- |
-| HLD PNGs (from GitHub SVGs) | `hld-aws-staging-720.png`, `hld-as-is-720.png`, `hld-to-be-720.png` (+ raw `.svg`) |
-| Cards | `card-p3-*.png`, `card-p4-*.png`, `card-p5-*.png` |
-| Reservation look | `still-reservation-720.png` (from `assets/02-happy-book.mp4`) |
-| Reused slides (fitted) | `fit-02-stack.png`, `fit-08-forms.png`, `fit-11-nfr56.png`, `fit-13-index.png`, `fit-15-layers.png`, `fit-17-future.png` |
+| Coverage (grade map) | https://knowledge.cafe.artof.link/coverage.html · [Coverage](coverage.md) |
+| Talk cuts (Architecture after Meghna handoff) | https://knowledge.cafe.artof.link/presentation.html · [Talk cuts](presentation.md) |
+| Stack / HLD | https://knowledge.cafe.artof.link/stack.html · [Stack](stack.md) |
+| Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
+| Meghna materials (Part 2) | [Meghna materials](meghna-materials.md) |
+| Build notes (secondary) | [Parts 3–5 notes](parts-345-notes.md) |
 
 ---
 
-## 5. Sister packs / docs
+## 5. App / staging
 
-| What | Link / path |
-| --- | --- |
-| Meghna materials (Part 2) | `/workspace/cafe-fausse-prototype/MEGHNA-MATERIALS.md` |
-| Coverage | https://knowledge.cafe.artof.link/coverage.html |
-| Presentation | https://knowledge.cafe.artof.link/presentation.html |
-| Stack | https://knowledge.cafe.artof.link/stack.html |
-| Live staging | https://cafe.artof.link/ (Lightsail #57 — not forever) |
-| Build notes | [`PARTS-345-NOTES.md`](PARTS-345-NOTES.md) |
+- Host: https://cafe.artof.link/ (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever)
+- Health: https://cafe.artof.link/api/health
+- Operator (optional after a live book only): https://cafe.artof.link/operator — read-only helper, not an admin console, **not FR-19**
+- Backup: https://54-165-102-60.sslip.io/
+- Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22)
 
 ---
 
 ## 6. Still open (not pack-blocking)
 
-- Hiren Architecture vs Coding pick (B vs C)
-- Final Quantic submit = live must-film + recorded voice (this silent pack ≠ submit)
-- Recorded VO takes
+- Hiren Architecture vs Coding pick (B vs C) — **Unknown**; do not invent it
+- Final Quantic submit video = live must-film + voice (dry-run / silent prototype ≠ submit)
+- Recorded VO takes stay **Unknown**
+- Live Pages GET of these Parts 3–5 URLs stays **Unknown** until merge + Pages deploy
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE only.*
+*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE / samples / rehearsal only.*

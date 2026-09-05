@@ -1,9 +1,10 @@
 # Part 4 — Variant C voice-over (ready to record)
 
 **Length:** ~3 minutes  
-**Picture:** silent `part4-variant-c-prototype-silent.mp4`  
+**Picture:** silent [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4)  
 **IDs:** OK in technical take · plain twin below  
-**Status:** draft — **PROTOTYPE**, not Quantic submit.
+**Status:** draft — **PROTOTYPE**, not Quantic submit.  
+**Sister pages:** [Part 4 script](part4-variant-c-script.md) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
 
 ---
 
