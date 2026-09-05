@@ -18,7 +18,7 @@ OFFICIAL_IMAGE_FILES = {img["file"] for img in freeze["officialImages"]}
 SUPPLEMENTAL_MENU_IMAGE_FILES = {
     item["file"]
     for item in menu_presentation["items"].values()
-    if item.get("kind") == "supplemental-not-official" and item.get("file")
+        if item.get("kind") == "student-recovered" and item.get("file")
 }
 SERVED_IMAGE_FILES = OFFICIAL_IMAGE_FILES | SUPPLEMENTAL_MENU_IMAGE_FILES
 TABLE_COUNT = int(freeze["tableCount"])

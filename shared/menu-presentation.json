@@ -10,13 +10,13 @@
     },
     "Caesar Salad": {
       "file": "caesar-salad.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Caesar salad with romaine",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Grilled Salmon": {
       "file": "salmon-dish.jpg",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Grilled salmon dish",
       "caption": "Student-recovered photo — not Quantic-official"
     },
@@ -28,43 +28,43 @@
     },
     "Vegetable Risotto": {
       "file": "vegetable-risotto.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Vegetable risotto with mushrooms",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Tiramisu": {
       "file": "tiramisu.jpg",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Tiramisu",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Cheesecake": {
       "file": "cheesecake.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Cheesecake with berry compote",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Red Wine (Glass)": {
       "file": "red-wine.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Glass of red wine",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "White Wine (Glass)": {
       "file": "white-wine.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Glass of white wine",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Craft Beer": {
       "file": "craft-beer.png",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Craft beer",
       "caption": "Student-recovered photo — not Quantic-official"
     },
     "Espresso": {
       "file": "espresso-coffee.jpg",
-      "kind": "supplemental-not-official",
+      "kind": "student-recovered",
       "alt": "Espresso",
       "caption": "Student-recovered photo — not Quantic-official"
     }

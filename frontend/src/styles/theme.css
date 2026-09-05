@@ -91,12 +91,17 @@ h3 {
 }
 
 .nav-toggle-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.15rem;
+  height: 0.8rem;
+}
+
+.nav-toggle-bars span {
   display: block;
-  width: 1.1rem;
-  height: 0.75rem;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  box-shadow: 0 -5px 0 currentColor inset;
+  height: 2px;
+  background: currentColor;
 }
 
 .site-nav {

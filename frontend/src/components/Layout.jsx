@@ -38,7 +38,11 @@ export default function Layout() {
           aria-controls="primary-nav"
           onClick={() => setNavOpen((open) => !open)}
         >
-          <span className="nav-toggle-bars" aria-hidden="true" />
+          <span className="nav-toggle-bars" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
           {navOpen ? "Close" : "Site menu"}
         </button>
         <nav

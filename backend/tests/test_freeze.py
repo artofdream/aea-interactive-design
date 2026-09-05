@@ -71,7 +71,7 @@ def test_menu_presentation_maps_freeze_names_without_prices():
     assert set(menu_presentation["items"]) == freeze_names
     for visual in menu_presentation["items"].values():
         assert "price" not in visual
-        assert visual["kind"] in {"official", "supplemental-not-official", "placeholder"}
+        assert visual["kind"] in {"official", "student-recovered", "placeholder"}
     assert menu_presentation["items"]["Ribeye Steak"]["kind"] == "official"
     assert menu_presentation["items"]["Ribeye Steak"]["file"] == "gallery-ribeye-steak.webp"
     assert menu_presentation["items"]["Bruschetta"]["kind"] == "placeholder"
@@ -106,7 +106,10 @@ def test_frontend_does_not_reference_unmapped_supplemental_files():
         "wine-cellar.jpg",
     ]
     blob = []
+    skip_parts = {"dist", "node_modules"}
     for path in FRONTEND.rglob("*"):
+        if any(part in skip_parts for part in path.parts):
+            continue
         if path.suffix.lower() in {".js", ".jsx", ".css", ".html", ".json", ".md"}:
             blob.append(path.read_text(encoding="utf-8"))
     text = "\n".join(blob)
