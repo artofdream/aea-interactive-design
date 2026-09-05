@@ -14,18 +14,77 @@ REPO = ROOT.parent
 OUT = ROOT / "_site"
 
 NAV = [
-    ("index.html", "Home"),
-    ("brief.html", "Brief"),
-    ("friday-plan.html", "Friday"),
-    ("video-script.html", "Video"),
-    ("presentation.html", "Talk"),
-    ("presentation-sample.html", "Slides"),
-    ("stack.html", "Stack"),
-    ("srs.html", "SRS freeze"),
-    ("coverage.html", "Coverage"),
-    ("honesty.html", "Honesty"),
-    ("future.html", "Future"),
+    ("index.html", "Home", "home"),
+    ("brief.html", "Brief", "brief"),
+    ("friday-plan.html", "Friday", "friday"),
+    ("video-script.html", "Video", "video"),
+    ("presentation.html", "Talk", "talk"),
+    ("presentation-sample.html", "Slides", "slides"),
+    ("stack.html", "Stack", "stack"),
+    ("srs.html", "SRS freeze", "srs"),
+    ("coverage.html", "Coverage", "coverage"),
+    ("honesty.html", "Honesty", "honesty"),
+    ("future.html", "Future", "future"),
 ]
+
+# Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
+ICONS = {
+    "home": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M4 11.2 12 4l8 7.2V20h-5.2v-5.6H9.2V20H4z"/>'
+    ),
+    "brief": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M7 3.6h7.2L19 8.4V20.4H7zM14.2 3.6V8.4H19M9.2 12.2h5.6M9.2 15.6h5.6"/>'
+    ),
+    "friday": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M5 6.4h14v13.2H5zM5 10.6h14M9 4.2v4.2M15 4.2v4.2M8.2 14.2h1.8M12.1 14.2h1.8M16 14.2h.2"/>'
+    ),
+    "video": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M12 20.2a8.2 8.2 0 1 0 0-16.4 8.2 8.2 0 0 0 0 16.4zM10 8.8l5.4 3.2L10 15.2z"/>'
+    ),
+    "talk": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M5 5.6h13.2v8.4H9.4L5 17.8z"/>'
+    ),
+    "slides": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M4.4 7.2h12.4v10.4H4.4zM7.4 4.8h12.2v9.6"/>'
+    ),
+    "stack": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M4.4 15.8 12 19l7.6-3.2M4.4 12 12 15.2 19.6 12M12 5 4.4 8.2 12 11.4l7.6-3.2z"/>'
+    ),
+    "srs": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M12 5.2H6.2A2.2 2.2 0 0 0 4 7.4v11.2c.8-.8 1.9-1.2 3.2-1.2H12M12 5.2h5.8A2.2 2.2 0 0 1 20 7.4v11.2c-.8-.8-1.9-1.2-3.2-1.2H12V5.2z"/>'
+    ),
+    "coverage": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M4.6 6.2h14.8v12H4.6zM4.6 10.4h14.8M10.4 6.2v12"/>'
+    ),
+    "honesty": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M12 3.6 19.2 6.8v5.4c0 4.4-3.1 6.7-7.2 8.2-4.1-1.5-7.2-3.8-7.2-8.2V6.8zM8.8 12.2l2.3 2.3 4.2-4.4"/>'
+    ),
+    "future": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M12 20.2a8.2 8.2 0 1 0 0-16.4 8.2 8.2 0 0 0 0 16.4zM12 7.6l2.4 6.2L12 12l-2.4 1.8z"/>'
+    ),
+}
 
 REQUIRED = [
     ROOT / "index.md",
@@ -260,7 +319,13 @@ def md_to_html(src: str) -> str:
         if heading:
             flush_para(para)
             level = len(heading.group(1))
-            out.append(f"<h{level}>{inline(heading.group(2).strip())}</h{level}>")
+            inner = inline(heading.group(2).strip())
+            if level == 2:
+                inner = (
+                    '<span class="section-mark" aria-hidden="true"></span>'
+                    f"{inner}"
+                )
+            out.append(f"<h{level}>{inner}</h{level}>")
             i += 1
             continue
 
@@ -329,14 +394,20 @@ def _consume_table(lines: list[str], i: int) -> tuple[str, int]:
     while i < len(lines) and "|" in lines[i] and lines[i].strip():
         rows.append(_split_row(lines[i]))
         i += 1
-    parts = ["<table>", "<thead><tr>"]
+    wide = " table-wide" if len(header) >= 4 else ""
+    parts = [
+        f'<div class="table-wrap{wide}" tabindex="0" role="region" '
+        'aria-label="Scrollable table">',
+        "<table>",
+        "<thead><tr>",
+    ]
     parts.extend(f"<th>{inline(c)}</th>" for c in header)
     parts.append("</tr></thead><tbody>")
     for row in rows:
         parts.append("<tr>")
         parts.extend(f"<td>{inline(c)}</td>" for c in row)
         parts.append("</tr>")
-    parts.append("</tbody></table>")
+    parts.append("</tbody></table></div>")
     return "".join(parts), i
 
 
@@ -345,6 +416,24 @@ IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 CODE_RE = re.compile(r"`([^`]+)`")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 EM_RE = re.compile(r"(?<!\*)\*([^*]+)\*(?!\*)")
+
+
+def svg_icon(name: str, extra_class: str = "nav-icon") -> str:
+    inner = ICONS.get(name)
+    if inner is None:
+        fail(f"missing icon {name}")
+    return (
+        f'<svg class="{html.escape(extra_class, quote=True)}" viewBox="0 0 24 24" '
+        f'aria-hidden="true" focusable="false">{inner}</svg>'
+    )
+
+
+def icon_for_page_href(href: str) -> str:
+    path = href.split("#", 1)[0].split("?", 1)[0]
+    for nav_href, _label, icon in NAV:
+        if path == nav_href:
+            return svg_icon(icon, "inline-icon")
+    return ""
 
 
 def rewrite_href(href: str) -> str:
@@ -379,8 +468,10 @@ def inline(text: str) -> str:
         if href == "../docs/srs.md" or href == "docs/srs.md":
             href = "srs-full.html"
         href = rewrite_href(href)
+        icon = icon_for_page_href(href)
+        cls = ' class="page-link"' if icon else ""
         return hold(
-            f'<a href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
+            f'<a href="{html.escape(href, quote=True)}"{cls}>{icon}{html.escape(label)}</a>'
         )
 
     text = IMAGE_RE.sub(images, text)
@@ -532,12 +623,24 @@ def _consume_video_html(lines: list[str], i: int) -> tuple[str, int]:
     return _video_html(src_m.group(2)), i
 
 
+def page_icon_name(current: str) -> str:
+    for href, _label, icon in NAV:
+        if href == current:
+            return icon
+    if current.startswith("future"):
+        return "future"
+    return "home"
+
+
 def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_class: str) -> str:
     prefix = rel_nav_prefix(out_file)
     nav_bits = []
-    for href, label in NAV:
+    for href, label, icon in NAV:
         cls = ' class="is-current"' if href == current else ""
-        nav_bits.append(f'<a href="{prefix}{href}"{cls}>{html.escape(label)}</a>')
+        nav_bits.append(
+            f'<a href="{prefix}{href}"{cls}>{svg_icon(icon)}'
+            f'<span>{html.escape(label)}</span></a>'
+        )
     nav = "\n        ".join(nav_bits)
     css = rel_css(out_file)
     icon_ico = rel_from_out(out_file, "favicon.ico")
@@ -552,6 +655,8 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     classes = extra_class.strip()
     if current in WIDE_PAGES or out_file.name in WIDE_PAGES:
         classes = f"{classes} is-wide".strip()
+    page_slug = current.replace(".html", "").replace("/", "-")
+    classes = f"{classes} page-{page_slug}".strip()
     mermaid_script = ""
     if 'class="mermaid"' in body:
         mermaid_script = f"""
@@ -559,6 +664,7 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     import mermaid from "{html.escape(MERMAID_CDN, quote=True)}";
     mermaid.initialize({{ startOnLoad: true, theme: "neutral", securityLevel: "strict" }});
   </script>"""
+    brand_icon = svg_icon(page_icon_name(current), "page-icon")
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -571,14 +677,20 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
   <link rel="stylesheet" href="{css}">
 </head>
 <body class="{classes}">
+  <a class="skip-link" href="#content">Skip to content</a>
   <header>
-    <p class="eyebrow">Café Fausse knowledge map</p>
-    <p class="sub">Not the restaurant. MVP = official SRS freeze.</p>
-    <nav>
+    <div class="brand">
+      {brand_icon}
+      <div>
+        <p class="eyebrow">Café Fausse knowledge map</p>
+        <p class="sub">Not the restaurant. MVP = official SRS freeze.</p>
+      </div>
+    </div>
+    <nav aria-label="Knowledge pages">
         {nav}
     </nav>
   </header>
-  <main>
+  <main id="content">
     {future_note}
     {body}
   </main>
@@ -602,6 +714,46 @@ def assert_coverage_freeze_ids(src: str) -> None:
     for n in range(1, 10):
         if f"| NFR-{n} |" not in src:
             fail(f"coverage.md missing table row for NFR-{n}")
+
+
+def assert_ux_wiring() -> None:
+    css = (OUT / "style.css").read_text(encoding="utf-8")
+    for needle in (
+        "@media",
+        ".table-wrap",
+        ".table-wide",
+        ".nav-icon",
+        ".section-mark",
+        "max-width: 40rem",
+        "min-width: 64rem",
+    ):
+        if needle not in css:
+            fail(f"style.css missing readability rule ({needle})")
+    phone_at = css.find("@media (max-width: 40rem)")
+    wide_min = css.find(".table-wide table")
+    if phone_at == -1 or wide_min == -1 or wide_min < phone_at:
+        fail("table-wide min-width must be phone-only (default column is 46rem)")
+    if "min-width: 44rem" not in css[phone_at:]:
+        fail("phone media query missing table-wide min-width")
+    index = (OUT / "index.html").read_text(encoding="utf-8")
+    for needle in (
+        'class="nav-icon"',
+        'aria-label="Knowledge pages"',
+        'class="skip-link"',
+        'id="content"',
+        'class="section-mark"',
+        'class="page-link"',
+    ):
+        if needle not in index:
+            fail(f"index.html missing UX wiring ({needle})")
+    coverage = (OUT / "coverage.html").read_text(encoding="utf-8")
+    if "table-wide" not in coverage:
+        fail("coverage.html missing wide table wrap")
+    if 'class="nav-icon"' not in coverage:
+        fail("coverage.html missing nav icons")
+    honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
+    if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
+        fail("honesty.md lost the NFR-1 / NFR-2 not-met line")
 
 
 def assert_svg_well_formed() -> None:
@@ -678,6 +830,7 @@ def main() -> None:
         ),
     )
     assert_favicons_built()
+    assert_ux_wiring()
     print(f"built {OUT}")
 
 
