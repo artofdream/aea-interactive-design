@@ -956,6 +956,23 @@ def assert_ux_wiring() -> None:
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
         fail("honesty.md lost the NFR-1 / NFR-2 not-met line")
+    # Ratchet #123: NFR-1 met is the cited A36 Brave broadband cold Home; NFR-2 stays Unknown.
+    coverage_md = (ROOT / "coverage.md").read_text(encoding="utf-8")
+    for label, text in (("honesty.md", honesty_md), ("coverage.md", coverage_md)):
+        if "Samsung A36" not in text:
+            fail(f"{label} lost the Samsung A36 NFR-1 probe")
+        if "Brave (not Chrome)" not in text:
+            fail(f"{label} must name Brave (not Chrome) for the A36 NFR-1 take")
+        if "466 ms" not in text:
+            fail(f"{label} lost the A36 cold Home 466 ms")
+        if "phonelink-a36-stopwatch.json" not in text:
+            fail(f"{label} lost the cts-ai A36 report path (cite only)")
+        if "NFR-2 stays **Unknown**" not in text:
+            fail(f"{label} must keep NFR-2 Unknown (do not invent submit timing)")
+        if "rog-device-stopwatch-issue-119.json" not in text:
+            fail(f"{label} lost the separate ROG Wi-Fi evidence-note path")
+    if "owner-claimed broadband" not in coverage_md:
+        fail("coverage.md must say NFR-1 met is owner-claimed broadband + measured cold Home")
     quantic = OUT / "quantic.html"
     if not quantic.is_file():
         fail("missing built quantic.html")
