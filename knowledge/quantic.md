@@ -21,6 +21,10 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English.
 - [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs**. **PROTOTYPE** / rehearsal — not Quantic submit. Recorded VO **Unknown**.
+- [Part 3 — Variant B script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
+- [Part 4 — Variant C script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
+- [Part 5 — Shared close script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
 - [To-be (beyond the MVP)](to-be.md) — **not the grade floor.** As-is = SRS **FR-1..FR-18** / **NFR-1..NFR-9**. To-be = parked Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Do not invent **FR-19** / **NFR-10**.
 
 
@@ -35,7 +39,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Honesty](honesty.md)
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
 - [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
-- Clips stay on the [Brief](brief.md), [Video script](video-script.md), and [Meghna materials](meghna-materials.md) (not moved onto this hub)
+- Clips stay on the [Brief](brief.md), [Video script](video-script.md), [Meghna materials](meghna-materials.md), and [Parts 3–5 materials](parts-345-materials.md) (not moved onto this hub)
 
 ## Implementation (not the Quantic pack)
 

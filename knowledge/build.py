@@ -41,6 +41,14 @@ DELIVERY_ONLY_HREFS = (
     "meghna-cafe-demo.html",
     "meghna-materials.html",
     "meghna-voiceover.html",
+    "parts-345-materials.html",
+    "parts-345-notes.html",
+    "part3-variant-b-script.html",
+    "part3-variant-b-voiceover.html",
+    "part4-variant-c-script.html",
+    "part4-variant-c-voiceover.html",
+    "part5-shared-close-script.html",
+    "part5-shared-close-voiceover.html",
     "to-be.html",
 )
 
@@ -62,6 +70,14 @@ PAGE_ICONS = {
     "meghna-cafe-demo.html": "video",
     "meghna-materials.html": "video",
     "meghna-voiceover.html": "talk",
+    "parts-345-materials.html": "video",
+    "parts-345-notes.html": "brief",
+    "part3-variant-b-script.html": "talk",
+    "part3-variant-b-voiceover.html": "talk",
+    "part4-variant-c-script.html": "talk",
+    "part4-variant-c-voiceover.html": "talk",
+    "part5-shared-close-script.html": "talk",
+    "part5-shared-close-voiceover.html": "talk",
     "to-be.html": "future",
 }
 
@@ -1067,6 +1083,16 @@ def assert_ux_wiring() -> None:
         fail("meghna-cafe-demo.md happy-book extra must gate on ≥90s (do not start on 45s)")
     if "≥60s left" not in meghna_md:
         fail("meghna-cafe-demo.md newsletter extra must gate on ≥60s")
+    # Ratchet #129: Talk cuts must not keep NFR-1 / NFR-2 Unknown after Coverage mets.
+    presentation_md = (ROOT / "presentation.md").read_text(encoding="utf-8")
+    if "NFR-1** / **NFR-2** stay **Unknown**" in presentation_md:
+        fail("presentation.md must not say NFR-1 / NFR-2 stay Unknown after #123/#125")
+    if "not claimed met" in presentation_md:
+        fail("presentation.md must not keep NFR-1 / NFR-2 not-claimed-met after #123/#125")
+    if "466 ms" not in presentation_md:
+        fail("presentation.md lost the NFR-1 466 ms cite")
+    if "233 ms" not in presentation_md:
+        fail("presentation.md lost the NFR-2 233 ms cite")
 
 
 def assert_svg_well_formed() -> None:
