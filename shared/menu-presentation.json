@@ -1,0 +1,72 @@
+{
+  "provenance": "Presentation aids only. Not the SRS freeze. FR-5 names, descriptions, and prices stay in shared/freeze.json. Do not invent menu items or prices.",
+  "honesty": "Official Quantic zip is four webps. Ribeye reuses gallery-ribeye-steak.webp (official). Other mapped files are student-recovered extras under assets/images/supplemental-not-official/ and are not Quantic-official. Bruschetta has no clear filename match — placeholder only. Unused supplemental files stay unserved.",
+  "items": {
+    "Bruschetta": {
+      "file": null,
+      "kind": "placeholder",
+      "alt": "",
+      "caption": "No matching photo in the official pack or recovered extras."
+    },
+    "Caesar Salad": {
+      "file": "caesar-salad.png",
+      "kind": "student-recovered",
+      "alt": "Caesar salad with romaine",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Grilled Salmon": {
+      "file": "salmon-dish.jpg",
+      "kind": "student-recovered",
+      "alt": "Grilled salmon dish",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Ribeye Steak": {
+      "file": "gallery-ribeye-steak.webp",
+      "kind": "official",
+      "alt": "Ribeye Steak from the menu",
+      "caption": "Quantic-official gallery dish"
+    },
+    "Vegetable Risotto": {
+      "file": "vegetable-risotto.png",
+      "kind": "student-recovered",
+      "alt": "Vegetable risotto with mushrooms",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Tiramisu": {
+      "file": "tiramisu.jpg",
+      "kind": "student-recovered",
+      "alt": "Tiramisu",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Cheesecake": {
+      "file": "cheesecake.png",
+      "kind": "student-recovered",
+      "alt": "Cheesecake with berry compote",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Red Wine (Glass)": {
+      "file": "red-wine.png",
+      "kind": "student-recovered",
+      "alt": "Glass of red wine",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "White Wine (Glass)": {
+      "file": "white-wine.png",
+      "kind": "student-recovered",
+      "alt": "Glass of white wine",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Craft Beer": {
+      "file": "craft-beer.png",
+      "kind": "student-recovered",
+      "alt": "Craft beer",
+      "caption": "Student-recovered photo — not Quantic-official"
+    },
+    "Espresso": {
+      "file": "espresso-coffee.jpg",
+      "kind": "student-recovered",
+      "alt": "Espresso",
+      "caption": "Student-recovered photo — not Quantic-official"
+    }
+  }
+}

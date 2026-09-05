@@ -19,7 +19,7 @@ Required for the Quantic assignment. Record of tools used for the Café Fausse r
 - Working freeze: `docs/srs.md` (SoT = official PDF in `docs/official/`)
 - Engineer / PR procedure: `.cursor/skills/engineer/SKILL.md`, `.cursor/skills/pr-coordinator/SKILL.md`
 - Constraint: MVP is FR-1..FR-18 and NFR-1..NFR-9 only; extra ideas stay in `knowledge/future.md`
-- Constraint: official images are the four webps in `assets/images/` only
+- Constraint: official images are the four webps in `assets/images/` only; Menu may serve an allowlisted subset of student-recovered extras as labeled presentation aids (not Quantic-official)
 - Constraint: author does not merge their own PR
 
 ## Usage notes

@@ -126,7 +126,7 @@ CI **fails closed** if `docs/srs.md` is missing or if the official PDF/zip SHA25
 - Random table from 30; fully booked slot returns an error, not a table (FR-6..FR-9, FR-18).
 - Freeze data (menu prices, address, hours, owners, awards, reviews) from `docs/srs.md` / `shared/freeze.json`. Do not invent FR-19 / NFR-10.
 
-Course images: Quantic-official pack is **four** webps only (`assets/images/`, zip SHA256 in `docs/official/PROVENANCE.md`). Seventeen student-recovered files are in `assets/images/supplemental-not-official/` and are **not** official. The app serves only the official four. Student application code was not copied.
+Course images: Quantic-official pack is **four** webps only (`assets/images/`, zip SHA256 in `docs/official/PROVENANCE.md`). Seventeen student-recovered files are in `assets/images/supplemental-not-official/` and are **not** official. Flask `/images/` serves the official four plus an allowlisted subset mapped for Menu presentation (`shared/menu-presentation.json`). Unused supplemental files stay unserved. Student application code was not copied.
 
 ## Required assignment file
 

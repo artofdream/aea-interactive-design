@@ -8,7 +8,12 @@ from pathlib import Path
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-from cafe_fausse.content import OFFICIAL_IMAGE_FILES, REPO_ROOT, freeze
+from cafe_fausse.content import (
+    OFFICIAL_IMAGE_FILES,
+    REPO_ROOT,
+    SUPPLEMENTAL_MENU_IMAGE_FILES,
+    freeze,
+)
 from cafe_fausse.db import DatabaseUnavailable, ping
 from cafe_fausse.newsletter import subscribe as subscribe_newsletter
 from cafe_fausse.operator import list_operator_snapshot
@@ -21,6 +26,7 @@ from cafe_fausse.slots import list_slots_for_date, parse_time_slot
 
 DIST_DIR = REPO_ROOT / "frontend" / "dist"
 IMAGE_DIR = REPO_ROOT / "assets" / "images"
+SUPPLEMENTAL_IMAGE_DIR = IMAGE_DIR / "supplemental-not-official"
 
 
 def create_app() -> Flask:
@@ -122,11 +128,16 @@ def create_app() -> Flask:
         return jsonify({"ok": True, **snapshot})
 
     @app.get("/images/<path:filename>")
-    def official_image(filename: str):
+    def served_image(filename: str):
+        # Basename allowlist only. Nested paths and unused supplemental files stay 404.
         name = Path(filename).name
-        if name not in OFFICIAL_IMAGE_FILES:
+        if filename != name:
             return jsonify({"ok": False, "error": "Unknown image."}), 404
-        return send_from_directory(IMAGE_DIR, name)
+        if name in OFFICIAL_IMAGE_FILES:
+            return send_from_directory(IMAGE_DIR, name)
+        if name in SUPPLEMENTAL_MENU_IMAGE_FILES:
+            return send_from_directory(SUPPLEMENTAL_IMAGE_DIR, name)
+        return jsonify({"ok": False, "error": "Unknown image."}), 404
 
     @app.route("/", defaults={"path": ""})
     @app.route("/<path:path>")

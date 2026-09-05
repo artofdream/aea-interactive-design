@@ -3,7 +3,12 @@ from __future__ import annotations
 from pathlib import Path
 
 from cafe_fausse import create_app
-from cafe_fausse.content import freeze
+from cafe_fausse.content import (
+    OFFICIAL_IMAGE_FILES,
+    SUPPLEMENTAL_MENU_IMAGE_FILES,
+    freeze,
+    menu_presentation,
+)
 
 REPO = Path(__file__).resolve().parents[2]
 SRS = (REPO / "docs" / "srs.md").read_text(encoding="utf-8")
@@ -59,40 +64,55 @@ def test_menu_endpoint(client, require_db):
     ]
 
 
-def test_official_image_served_and_supplemental_is_not():
+def test_menu_presentation_maps_freeze_names_without_prices():
+    freeze_names = {
+        item["name"] for category in freeze["menu"] for item in category["items"]
+    }
+    assert set(menu_presentation["items"]) == freeze_names
+    for visual in menu_presentation["items"].values():
+        assert "price" not in visual
+        assert visual["kind"] in {"official", "student-recovered", "placeholder"}
+    assert menu_presentation["items"]["Ribeye Steak"]["kind"] == "official"
+    assert menu_presentation["items"]["Ribeye Steak"]["file"] == "gallery-ribeye-steak.webp"
+    assert menu_presentation["items"]["Bruschetta"]["kind"] == "placeholder"
+    assert menu_presentation["items"]["Bruschetta"]["file"] is None
+
+
+def test_official_and_allowlisted_menu_images_served_unused_supplemental_blocked():
     client = create_app().test_client()
     ok = client.get("/images/home-cafe-fausse.webp")
     assert ok.status_code == 200
     assert ok.data[:4] == b"RIFF" or ok.mimetype in {"image/webp", "application/octet-stream"}
+    salmon = client.get("/images/salmon-dish.jpg")
+    assert salmon.status_code == 200
+    assert salmon.data[:3] == b"\xff\xd8\xff" or salmon.mimetype.startswith("image/")
     blocked = client.get("/images/bar-interior.jpg")
     assert blocked.status_code == 404
+    nested = client.get("/images/supplemental-not-official/salmon-dish.jpg")
+    assert nested.status_code == 404
+    assert "bar-interior.jpg" not in SUPPLEMENTAL_MENU_IMAGE_FILES
+    assert SUPPLEMENTAL_MENU_IMAGE_FILES.isdisjoint(OFFICIAL_IMAGE_FILES)
 
 
-def test_frontend_does_not_reference_supplemental_files():
-    needles = [
-        "supplemental-not-official",
+def test_frontend_does_not_reference_unmapped_supplemental_files():
+    unused = [
         "bar-interior.jpg",
-        "caesar-salad.png",
         "caprese-salad.jpg",
-        "cheesecake.png",
         "chef-hands.jpg",
         "cocktail-bar.jpg",
-        "craft-beer.png",
         "dessert-closeup.jpg",
         "elegant-desserts.jpg",
         "elegant-table.jpg",
-        "espresso-coffee.jpg",
-        "red-wine.png",
-        "salmon-dish.jpg",
-        "tiramisu.jpg",
-        "vegetable-risotto.png",
-        "white-wine.png",
         "wine-cellar.jpg",
     ]
     blob = []
+    skip_parts = {"dist", "node_modules"}
     for path in FRONTEND.rglob("*"):
+        if any(part in skip_parts for part in path.parts):
+            continue
         if path.suffix.lower() in {".js", ".jsx", ".css", ".html", ".json", ".md"}:
             blob.append(path.read_text(encoding="utf-8"))
     text = "\n".join(blob)
-    for needle in needles:
+    assert "supplemental-not-official" not in text
+    for needle in unused:
         assert needle not in text, needle
