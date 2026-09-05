@@ -33,7 +33,7 @@ Deep FR tables and CI jargon stay on Coverage, Stack, and Honesty — not here.
 
 ## High-level diagram
 
-As-is this weekend vs planned Future. Detail and HLD SVGs stay on [Stack](stack.md). The labeled Future / to-be page is [Future](future.md) (a dedicated Quantic to-be page is [#98](https://github.com/artofdream/aea-interactive-design/issues/98) / open [#89](https://github.com/artofdream/aea-interactive-design/pull/89) — live `/to-be.html` stays **Unknown** until that lands).
+As-is this weekend vs planned Future. Detail and HLD SVGs stay on [Stack](stack.md). The labeled Future page is [Future](future.md). The dedicated Quantic to-be page is [To-be](to-be.md) ([#98](https://github.com/artofdream/aea-interactive-design/issues/98) / [PR #111](https://github.com/artofdream/aea-interactive-design/pull/111)) — this session HTTPS **GET 200** on `/to-be.html`. [#89](https://github.com/artofdream/aea-interactive-design/pull/89) stays **CLOSED** (not merged).
 
 ```mermaid fit
 flowchart TB

@@ -1004,6 +1004,13 @@ def assert_ux_wiring() -> None:
         fail("index.md lost the home NFR-1 466 ms cite")
     if "233 ms" not in index_md:
         fail("index.md lost the home NFR-2 233 ms cite")
+    # Ratchet #131: home must not keep open #89 / Unknown to-be after #111.
+    if "open [#89]" in index_md:
+        fail("index.md must not call #89 open after that batch stayed CLOSED")
+    if "/to-be.html` stays **Unknown**" in index_md:
+        fail("index.md must not leave /to-be.html Unknown after #98/#111")
+    if "to-be.md" not in index_md:
+        fail("index.md lost the landed to-be page cite")
     quantic = OUT / "quantic.html"
     if not quantic.is_file():
         fail("missing built quantic.html")
