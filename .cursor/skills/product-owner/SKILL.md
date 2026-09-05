@@ -10,6 +10,6 @@ description: Guard MVP vs Future and team ownership. Use when scoping features, 
 | Team | Owns |
 |---|---|
 | Café Fausse Knowledge | `knowledge.cafe.artof.link` (GitHub Pages knowledge map) |
-| Café Fausse App | `cafe.artof.link` restaurant MVP (React + JSX, Flask, PostgreSQL; hosting future) |
+| Café Fausse App | `cafe.artof.link` restaurant MVP (React + JSX, Flask, PostgreSQL; weekend Lightsail staging #57; permanent hosting #22) |
 
-No AWS in the restaurant MVP PR. `cafe.artof.link` hosting remains future. Do not invent domains or requirement IDs.
+No AWS in the restaurant MVP *code* PR. Weekend staging (#57) is not forever production. Permanent hosting stays #22. Future is not “AWS does not exist.” Do not invent domains or requirement IDs.

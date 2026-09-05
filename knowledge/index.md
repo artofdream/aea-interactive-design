@@ -10,7 +10,7 @@ Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.m
 
 ## Teams
 
-| Team | Owns | Intended hostname | Live URL (probe 2026-09-02 Europe/Berlin) |
+| Team | Owns | Intended hostname | Live URL (probe 2026-09-05 Europe/Berlin) |
 |---|---|---|---|
 | Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05); HTTP **301** to HTTPS. |
 | Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | Prefer live share this session: HTTPS **GET 200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` us-east-1, Route53 A `54.165.102.60` (TTL 60), Caddy + LE, Postgres **on the instance**. AEA RDS untouched. Weekend #57 — not production forever. App is **in-repo on `main`** (PRs #9 + timezone #12). Longer-term hosting stays [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). |

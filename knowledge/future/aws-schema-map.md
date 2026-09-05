@@ -4,7 +4,7 @@
 
 Do **not** apply the AWS DDL onto local `backend/schema.sql`. The restaurant MVP stays the in-repo schema (FR-17 customers + reservations; FR-5 menu from freeze). Menu persistence is Future [#36](https://github.com/artofdream/aea-interactive-design/issues/36). Hosting / IAM tunnel is Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Lifecycle extras [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) stay parked.
 
-Portable copy (repo memory, not the live handoff): `research/random-thoughts/aws-schema-reuse.md`. Live handoff: `research/daily-briefs/2026-09-04.md`.
+Portable copy (repo memory, not the live handoff): `research/random-thoughts/aws-schema-reuse.md`. Live handoff: `research/daily-briefs/2026-09-05.md`.
 
 ## Source of this dump (honesty)
 
@@ -130,6 +130,6 @@ Do **not** put these into `backend/schema.sql` for the score-5 cut.
 
 - IAM token + `run-sql.sh` + port `15433` stay on the AWS/infra tree.
 - Do not add a permanent DB password.
-- Do not point `cafe.artof.link` at RDS from this cut ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)). Live restaurant URL: **Unknown**.
+- Do not point `cafe.artof.link` at AEA RDS from this cut. Weekend staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) uses Postgres **on the Lightsail instance**. Last restaurant probe this session (2026-09-05): `https://cafe.artof.link/` HTTPS **GET 200**. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AEA RDS liveness stays **Unknown** (no `psql` / IAM token this session).
 - This page is readable without cts-ai.
 - Do not invent FR-19 / NFR-10.

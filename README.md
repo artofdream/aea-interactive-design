@@ -3,18 +3,20 @@
 Quantic MSAIE **Café Fausse** project, and a transfer of the AEA outer harness onto GitHub (issues, PRs, Actions, knowledge site). Public repository.
 
 **MVP = official SRS** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`).  
-**Future** = AWS, `cafe.artof.link` hosting/DNS, knowledge-site depth, GitHub E2E beyond the assignment, AEA prove / disprove / adjust. Extra restaurant features go in that future plan, not in this app cut.
+**Future** = permanent restaurant hosting ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)), knowledge-site depth, GitHub E2E beyond the assignment, AEA prove / disprove / adjust, and beyond-SRS extras ([#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38)). Extra restaurant features go in that future plan, not in this app cut. Future is **not** “AWS does not exist”: weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) is already a probed share.
 
-The restaurant app lives in this repo (`frontend/` React + JSX, `backend/` Flask, PostgreSQL). **AWS is not in this PR.** `cafe.artof.link` live URL: **Unknown** (no GET this session). Knowledge site = GitHub Pages (live URL **Unknown** until a GET this session after Pages + DNS).
+The restaurant app lives in this repo (`frontend/` React + JSX, `backend/` Flask, PostgreSQL). AWS is **not** in the restaurant MVP code cut (no AWS in the first app PR). Weekend staging is a separate infra issue ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)), not forever production. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22).
+
+**Probe 2026-09-05 Europe/Berlin (this session):** `GET https://cafe.artof.link/` **200** (title Café Fausse; remote IP `54.165.102.60`); `/api/health` **200** `{"ok":true}`; `/operator` **200**; `/api/operator` **200**. TLS VERIFY_OK, CN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`. DNS **A** `54.165.102.60` (Route53 TTL 60; Lightsail `cafe-fausse-staging` us-east-1; Caddy LE). HTTP → **308** HTTPS. Interim backup: `GET https://54-165-102-60.sslip.io/` **200**; `/api/health` **200** `{"ok":true}`. Knowledge: `GET https://knowledge.cafe.artof.link/` **200** (GitHub Pages; CNAME `artofdream.github.io`); HTTP → **301** HTTPS; TLS CN/SAN match, Let’s Encrypt `notAfter=2026-11-30`. Tunnel `https://shaky-deer-drive.loca.lt/` **timeout** (curl 28, 15s) — demoted; not live share. AEA RDS untouched. Newsletter = store only (**FR-15** / **FR-16**); no outbound mailer. Tear-down after the Sunday recording window unless the owner extends.
 
 ## Teams and two public surfaces
 
-Documented names only. DNS and Pages enablement are **owner steps**. Do not invent other domains.
+Documented names only. Do not invent other domains. A status word needs a GET **this session** or it stays **Unknown**.
 
-| Team | Intended hostname | What | Live URL |
+| Team | Intended hostname | What | Live URL (probe 2026-09-05 Europe/Berlin) |
 |---|---|---|---|
-| Café Fausse Knowledge | `knowledge.cafe.artof.link` | Thin map (formula, stack, SRS freeze, honesty, Future). GitHub Actions → GitHub Pages. | **Unknown** until a GET **this session** after Pages + DNS |
-| Café Fausse App | `cafe.artof.link` | Restaurant (React + JSX, Flask, PostgreSQL). MVP = SRS. | **Unknown** — hosting future; no GET this session |
+| Café Fausse Knowledge | `knowledge.cafe.artof.link` | Thin map (formula, stack, SRS freeze, honesty, Future). GitHub Actions → GitHub Pages. | HTTPS **GET 200** this session. HTTP **301** to HTTPS. TLS VERIFY_OK; CN/SAN `knowledge.cafe.artof.link`; Let’s Encrypt `notAfter=2026-11-30`. CNAME `artofdream.github.io`. |
+| Café Fausse App | `cafe.artof.link` | Restaurant (React + JSX, Flask, PostgreSQL). MVP = SRS. | HTTPS **GET 200** this session (`/`, `/api/health` `{"ok":true}`, `/operator`). Lightsail `cafe-fausse-staging` us-east-1, IP `54.165.102.60`, Route53 **A** TTL 60, Caddy LE. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — **not** forever production. Interim backup `https://54-165-102-60.sslip.io/`. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 This knowledge site is not the restaurant and not a CMS.
 
@@ -115,7 +117,7 @@ From the repo root (Python 3 stdlib; no pip packages):
 python3 knowledge/build.py
 ```
 
-Output: `knowledge/_site/`. Open `knowledge/_site/index.html`. GitHub Actions runs the same command and, on `main`, deploys GitHub Pages **after the owner sets Pages source to GitHub Actions**. Until that probe, the public URL stays Unknown.
+Output: `knowledge/_site/`. Open `knowledge/_site/index.html`. GitHub Actions runs the same command and, on `main`, deploys GitHub Pages. Public URL this session: `https://knowledge.cafe.artof.link/` HTTPS **GET 200** (2026-09-05). Re-probe next session or write **Unknown**.
 
 CI **fails closed** if `docs/srs.md` is missing or if the official PDF/zip SHA256 does not match the freeze. App CI runs Flask tests against PostgreSQL and builds the React frontend. Tracker and CI are GitHub only (no GitLab). **Author does not merge their own PR.**
 
@@ -138,6 +140,6 @@ Assignment requires GitHub collaborator **`quantic-grader`**. The **owner** must
 
 ## Honesty
 
-A status word is a claim. Probe **this session** or write Unknown. Uncommitted files are not shared memory. Do not claim this harness is antifragile. Do not claim `cafe.artof.link` or Pages is live without a GET this session.
+A status word is a claim. Probe **this session** or write Unknown. Uncommitted files are not shared memory. Do not claim this harness is antifragile. Do not claim `cafe.artof.link` is forever production. Weekend staging (#57) and Pages were GET **200** this session (2026-09-05); a previous session is not a probe.
 
 Read `AGENTS.md` at session start. Hats (not 14): `knowledge-guardian`, `coherence-guardian`, `product-owner`, `engineer`. PR procedure (not a hat): `pr-coordinator`.
