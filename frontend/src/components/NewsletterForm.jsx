@@ -1,10 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { apiFetch } from "../api.js";
 
+/** Auto-dismiss polish; route change is the primary clear. */
+export const NEWSLETTER_STATUS_DISMISS_MS = 5000;
+
 export default function NewsletterForm() {
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState(null);
   const [pending, setPending] = useState(false);
+
+  useEffect(() => {
+    setStatus(null);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!status) {
+      return undefined;
+    }
+    const timer = window.setTimeout(() => {
+      setStatus(null);
+    }, NEWSLETTER_STATUS_DISMISS_MS);
+    return () => window.clearTimeout(timer);
+  }, [status]);
 
   async function onSubmit(event) {
     event.preventDefault();
