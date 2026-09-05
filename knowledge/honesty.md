@@ -1,10 +1,17 @@
 # Honesty
 
-Status words are claims. They need a **probe**.
+**In plain English:** A status word is a claim. If we have not just checked it, we write **Unknown**. A green light from last week does not count today.
 
-A probe is a command, an HTTP GET, a CI log, or a **committed** file that exists **now**, **this session**. Remembering a previous session, uncommitted files, publishing a hostname, or closing a PR is not a probe.
+A **probe** is a command, an HTTP GET, a CI log, or a **committed** file that exists **now**, **this session**. Remembering a previous session, uncommitted files, publishing a hostname, or closing a pull request is not a probe.
 
-If evidence is missing, write **Unknown**.
+```mermaid
+flowchart TD
+  Word["Someone writes live, working, green, or complete"] --> Q{"Checked this session?"}
+  Q -->|"Yes: GET, command, CI log, or committed file"| Result["Write the measured result"]
+  Q -->|No| Unknown["Write Unknown"]
+```
+
+Short labels: [Glossary](glossary.md). Do not say **NFR-1** / **NFR-2** are met from a fast staging GET. `/operator` is **not FR-19**.
 
 **Probe date for the live rows below:** 2026-09-05 Europe/Berlin (this session). Journey / NFR evidence rows stay the 2026-09-02 records on [Coverage](coverage.md) — not re-probed tonight.
 

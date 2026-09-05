@@ -1,6 +1,26 @@
 # Stack
 
-Two surfaces, two teams, two hostnames. GitHub only. This page is Café Fausse as used so far, plus an intended restaurant to-be. It is **not** florist Path B, not 14 hats, not Kafka/BFF, not 3DX Lab.
+**In plain English:** There are two public websites with two jobs. This page is the picture of how they are built and hosted. It is not a florist architecture essay, not Path B, not 14 hats, not Kafka/BFF, and not 3DX Lab.
+
+1. **This knowledge map** at `knowledge.cafe.artof.link` — GitHub Pages. Explains the project. Does not take reservations.
+2. **The restaurant app** at `cafe.artof.link` — React + Flask + PostgreSQL. Weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)), not forever production. Permanent hosting is still [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
+
+They do not share a load balancer. GitHub only. Short labels: [Glossary](glossary.md).
+
+```mermaid
+flowchart TB
+  subgraph Map["This map — GitHub Pages"]
+    K["knowledge.cafe.artof.link"]
+  end
+  subgraph App["Restaurant — weekend staging #57"]
+    C["cafe.artof.link"]
+  end
+  subgraph Later["Not yet — Future #22"]
+    P["Permanent hosting"]
+  end
+  Map --- App
+  App -.-> Later
+```
 
 **Probe date:** 2026-09-05 Europe/Berlin (this session) for hostname rows. Journey / NFR evidence stays the 2026-09-02 records on [Coverage](coverage.md).
 
