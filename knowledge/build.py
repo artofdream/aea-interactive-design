@@ -101,7 +101,18 @@ REQUIRED = [
 ]
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
-WIDE_PAGES = {"stack.html", "coverage.html", "friday-plan.html", "aws-schema-map.html", "presentation.html"}
+WIDE_PAGES = {
+    "stack.html",
+    "coverage.html",
+    "friday-plan.html",
+    "aws-schema-map.html",
+    "presentation.html",
+    "presentation-sample.html",
+    "honesty.html",
+    "index.html",
+    "brief.html",
+    "video-script.html",
+}
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
 VIDEO_SRC_RE = re.compile(r"""\bsrc\s*=\s*(['"])([^'"]+)\1""", re.IGNORECASE)
@@ -387,6 +398,14 @@ def _split_row(row: str) -> list[str]:
     return [c.strip() for c in row.split("|")]
 
 
+_MD_DECOR_RE = re.compile(r"[*_`]")
+
+
+def _cell_label(text: str) -> str:
+    """Plain header text for mobile card data-label (no markdown markers)."""
+    return _MD_DECOR_RE.sub("", text).strip()
+
+
 def _consume_table(lines: list[str], i: int) -> tuple[str, int]:
     header = _split_row(lines[i])
     i += 2
@@ -394,10 +413,12 @@ def _consume_table(lines: list[str], i: int) -> tuple[str, int]:
     while i < len(lines) and "|" in lines[i] and lines[i].strip():
         rows.append(_split_row(lines[i]))
         i += 1
-    wide = " table-wide" if len(header) >= 4 else ""
+    labels = [_cell_label(c) for c in header]
+    # 3+ columns overflow a phone column (12-slide outline is 4; 8-slide is 3).
+    wide = " table-wide" if len(header) >= 3 else ""
     parts = [
         f'<div class="table-wrap{wide}" tabindex="0" role="region" '
-        'aria-label="Scrollable table">',
+        'aria-label="Data table">',
         "<table>",
         "<thead><tr>",
     ]
@@ -405,7 +426,10 @@ def _consume_table(lines: list[str], i: int) -> tuple[str, int]:
     parts.append("</tr></thead><tbody>")
     for row in rows:
         parts.append("<tr>")
-        parts.extend(f"<td>{inline(c)}</td>" for c in row)
+        for j, cell in enumerate(row):
+            label = labels[j] if j < len(labels) else ""
+            attr = f' data-label="{html.escape(label, quote=True)}"' if label else ""
+            parts.append(f"<td{attr}>{inline(cell)}</td>")
         parts.append("</tr>")
     parts.append("</tbody></table></div>")
     return "".join(parts), i
@@ -726,15 +750,22 @@ def assert_ux_wiring() -> None:
         ".section-mark",
         "max-width: 40rem",
         "min-width: 64rem",
+        "max-width: 767px",
+        "attr(data-label)",
+        "overflow-y: hidden",
     ):
         if needle not in css:
             fail(f"style.css missing readability rule ({needle})")
-    phone_at = css.find("@media (max-width: 40rem)")
-    wide_min = css.find(".table-wide table")
-    if phone_at == -1 or wide_min == -1 or wide_min < phone_at:
-        fail("table-wide min-width must be phone-only (default column is 46rem)")
-    if "min-width: 44rem" not in css[phone_at:]:
-        fail("phone media query missing table-wide min-width")
+    if "min-width: 44rem" in css:
+        fail("do not force table min-width 44rem — it clips when overflow-x fails")
+    wrap_at = css.find(".table-wrap {")
+    stack_at = css.find("@media (max-width: 767px)")
+    if wrap_at == -1 or "overflow-y: hidden" not in css[wrap_at : wrap_at + 500]:
+        fail("table-wrap must set overflow-y: hidden so overflow-x scrolls (WebKit)")
+    if stack_at == -1 or "attr(data-label)" not in css[stack_at:]:
+        fail("767px query must stack tables as cards via data-label")
+    if re.search(r"(html|body|header|main|footer)\s*\{[^}]*overflow:\s*hidden", css, re.S):
+        fail("html/body/header/main/footer must not overflow:hidden (clips tables)")
     index = (OUT / "index.html").read_text(encoding="utf-8")
     for needle in (
         'class="nav-icon"',
@@ -743,6 +774,8 @@ def assert_ux_wiring() -> None:
         'id="content"',
         'class="section-mark"',
         'class="page-link"',
+        'data-label="Team"',
+        "table-wide",
     ):
         if needle not in index:
             fail(f"index.html missing UX wiring ({needle})")
@@ -751,6 +784,17 @@ def assert_ux_wiring() -> None:
         fail("coverage.html missing wide table wrap")
     if 'class="nav-icon"' not in coverage:
         fail("coverage.html missing nav icons")
+    if 'data-label="Summary"' not in coverage:
+        fail("coverage.html missing mobile card data-label")
+    sample = (OUT / "presentation-sample.html").read_text(encoding="utf-8")
+    if "table-wide" not in sample:
+        fail("presentation-sample.html missing wide table wrap")
+    if 'data-label="Say / show"' not in sample:
+        fail("presentation-sample 12-slide table missing Say / show data-label")
+    if 'data-label="Merge from the long outline"' not in sample:
+        fail("presentation-sample 8-slide (3-col) table must also stack")
+    if 'aria-label="Scrollable table"' in sample:
+        fail("do not keep swipe-only aria on stacked tables")
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
         fail("honesty.md lost the NFR-1 / NFR-2 not-met line")

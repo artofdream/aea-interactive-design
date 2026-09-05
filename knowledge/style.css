@@ -31,6 +31,8 @@ body {
 
 header, main, footer {
   max-width: 46rem;
+  width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: 1.25rem 1.25rem;
 }
@@ -188,9 +190,16 @@ pre {
 }
 
 .table-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  /* overflow-y must not stay visible: WebKit then treats overflow-x as
+     visible too, so wide tables clip at the card edge and swipe fails. */
+  display: block;
+  width: 100%;
   max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   margin: 1.1rem 0;
   border: 1px solid var(--rule);
   background: var(--chip);
@@ -308,24 +317,90 @@ footer code { font-size: 0.85em; }
     background: var(--chip-hot);
   }
 
-  /* Phone only: default column is ~43rem (46rem minus padding).
-     Do not set this min-width on desktop — index is not is-wide. */
-  .table-wide table {
-    min-width: 44rem;
-  }
-
-  .table-wide::before {
-    content: "Swipe sideways to read the full table.";
-    display: block;
-    font-size: 0.85rem;
-    color: var(--muted);
-    padding: 0.45rem 0.65rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
   th, td {
     padding: 0.45rem 0.55rem;
     font-size: 0.95rem;
+  }
+}
+
+/* Phone / small tablet: stack every table as cards. Do not force a
+   44rem min-width — that plus a clipped overflow is what cut “Say / show”. */
+@media (max-width: 767px) {
+  .table-wrap {
+    position: relative;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .table-wrap table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+  }
+
+  .table-wrap thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .table-wrap tbody {
+    display: block;
+  }
+
+  .table-wrap tr {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.85rem;
+    padding: 0.1rem 0;
+    border: 1px solid var(--rule);
+    background: var(--chip);
+  }
+
+  .table-wrap td {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.75rem;
+  }
+
+  .table-wrap td:last-child {
+    border-bottom: 0;
+  }
+
+  .table-wrap td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.2rem;
+  }
+
+  .table-wide::before {
+    content: none;
+    display: none;
+  }
+
+  .table-wide th:first-child,
+  .table-wide td:first-child {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .table-wide td:first-child {
+    background: transparent;
   }
 }
 
