@@ -524,11 +524,11 @@ def inline(text: str) -> str:
             return hold(_video_html(href, wrap=False))
         if path_only.lower().endswith(".svg"):
             return hold(
-                '<div class="diagram-wrap" tabindex="0" role="region" '
+                '<span class="diagram-wrap" tabindex="0" role="region" '
                 'aria-label="Diagram">'
                 f'<img class="diagram-img" src="{html.escape(href, quote=True)}" '
                 f'alt="{html.escape(alt, quote=True)}">'
-                "</div>"
+                "</span>"
             )
         return hold(
             f'<img src="{html.escape(href, quote=True)}" '
