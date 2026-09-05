@@ -1,7 +1,7 @@
 # Meghna — draft voice-over (plain English)
 
 **Length:** ~3 minutes  
-**Picture:** live `https://cafe.artof.link/` (preferred) or silent prototype `meghna-3min-prototype-silent.mp4`  
+**Picture:** live `https://cafe.artof.link/` (preferred) or silent prototype [`clips/meghna-3min-prototype-silent.mp4`](clips/meghna-3min-prototype-silent.mp4)  
 **Rule:** no FR/NFR codes in speech.  
 **Status:** draft script for Meghna to record — **not** a finished teammate VO take yet.
 
