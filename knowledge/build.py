@@ -944,14 +944,14 @@ def assert_ux_wiring() -> None:
         fail("glossary mermaid must not keep the long Yes edge label (clips on phone)")
     if "<br/>" not in glossary and "<br>" not in glossary:
         fail("glossary mermaid must use <br> so the status-word diamond wraps on phone")
-    if '{"Checked this' not in glossary and "{Checked this" not in glossary:
+    if "{&quot;Checked this" not in glossary and '{"Checked this' not in glossary:
         fail("glossary mermaid must keep the status-word diamond")
     if 'class="diagram-wrap diagram-fit"' not in index:
         fail("index.html home mermaid must use diagram-fit")
     honesty_html = (OUT / "honesty.html").read_text(encoding="utf-8")
     if 'class="diagram-wrap diagram-fit"' not in honesty_html:
         fail("honesty.html status-word mermaid must use diagram-fit")
-    if '{"Checked this' not in honesty_html and "{Checked this" not in honesty_html:
+    if "{&quot;Checked this" not in honesty_html and '{"Checked this' not in honesty_html:
         fail("honesty.html mermaid must keep the status-word diamond")
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
