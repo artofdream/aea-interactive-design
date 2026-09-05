@@ -40,7 +40,7 @@ Owner-probed implementation, not a second product. This session this agent also 
 | Interim backup | `https://54-165-102-60.sslip.io/` (same IP; not the primary paste) |
 | Stale tunnels | `shaky-deer-drive.loca.lt`, `happy-glasses-film`, `real-goats-shop` |
 | IAM | `cts` account `737290977112` |
-| Window | Weekend / Sunday recording. Tear-down after Sunday unless the owner extends ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). |
+| Window | Staging stays **up** until the owner explicitly requests tear-down. Monday **16:00 CET** is evaluate-only (not automatic tear-down). Quantic grader host need remains **Unknown** until their email ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). |
 | `/operator` | Read-only recording helper. **Not FR-19.** Not an admin console. |
 | Newsletter | Store/register **FR-15** / **FR-16** only. No outbound mailer in the SRS MVP. |
 | Permanent hosting | Still [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). #57 does not close it. |
@@ -77,16 +77,16 @@ Static copy (renders if Mermaid JS is blocked): [as-is SVG](assets/hld-as-is.svg
 
 ![Café Fausse as-is: knowledge Pages live, cafe.artof.link is weekend Lightsail staging, local Vite/Flask/Postgres still on main](assets/hld-as-is.svg)
 
-## To-be HLD (permanent vs tear-down)
+## To-be HLD (permanent vs staging keep-up)
 
-Knowledge stays GitHub Pages. Weekend staging is **live this session** and may be torn down after Sunday. Permanent restaurant hosting remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) and stays dashed.
+Knowledge stays GitHub Pages. Weekend staging is **live this session** and stays **up** until the owner explicitly requests tear-down. Monday **16:00 CET** is evaluate-only (not automatic tear-down). Quantic grader host need remains **Unknown** until their email. Permanent restaurant hosting remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) and stays dashed.
 
 ```mermaid
 flowchart LR
   subgraph K2["Knowledge — already published"]
     PAGES["GitHub Pages"] --> KH2["knowledge.cafe.artof.link"]
   end
-  subgraph S["Weekend staging — live now, tear-down unless extended"]
+  subgraph S["Weekend staging — kept until owner decision"]
     B["Browser"] --> HOST["cafe.artof.link Lightsail #57"]
     HOST --> RE["React SPA"]
     RE --> API["Flask"]

@@ -4,14 +4,14 @@ This is a student / GitHub E2E repo for **Café Fausse** (Quantic MSAIE) and a t
 
 **MVP = official SRS freeze** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`). Everything else is future or refined — not a second product on the knowledge site.
 
-Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *code* PR. Knowledge site = GitHub Pages. Weekend Lightsail staging of `cafe.artof.link` is issue [#57](https://github.com/artofdream/aea-interactive-design/issues/57) (tear-down unless the owner extends). Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Future is not “AWS does not exist.”
+Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *code* PR. Knowledge site = GitHub Pages. Weekend Lightsail staging of `cafe.artof.link` is issue [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — staging stays **up** until the owner explicitly requests tear-down. Monday **16:00 CET** is evaluate-only (not automatic tear-down). Quantic grader host need remains **Unknown** until their email. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Future is not “AWS does not exist.”
 
 ## Teams and two public surfaces
 
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
 | Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05). Re-probe next session or write **Unknown**. |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `54.165.102.60`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `54.165.102.60`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Staging kept until owner decision. Monday **16:00 CET** evaluate-only (not auto tear-down). Grader host need **Unknown** until their email. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 Do not invent other domains. Do not configure DNS from an agent.
 

@@ -79,7 +79,7 @@ flowchart TB
  FL --> DB["PostgreSQL"]
  end
  subgraph N["Staging share this session — not production forever"]
- CAFE["cafe.artof.link"] --> LS["Lightsail #57 GET 200 · tear-down after Sunday unless extended"]
+ CAFE["cafe.artof.link"] --> LS["Lightsail #57 GET 200 · kept until owner decision"]
  end
  KH -.-> OK["HTTPS GET 200 · HTTP 301 to HTTPS"]
  RE -.-> FRUX["FR-1..5 · FR-10..14 · NFR-3/4/8"]
