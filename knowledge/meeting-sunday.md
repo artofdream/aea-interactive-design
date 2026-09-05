@@ -20,4 +20,6 @@ When notes exist, put the summary here and keep the long text on the sister page
 - [Friday](meeting-friday.md)
 - [Saturday](meeting-saturday.md)
 
+[Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
+
 Back to the [Quantic / MSAIE](quantic.md) hub.
