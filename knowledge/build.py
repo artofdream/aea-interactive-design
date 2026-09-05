@@ -38,6 +38,9 @@ DELIVERY_ONLY_HREFS = (
     "meeting-saturday.html",
     "meeting-sunday.html",
     "quantic-handoff.html",
+    "meghna-cafe-demo.html",
+    "meghna-materials.html",
+    "meghna-voiceover.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -55,6 +58,9 @@ PAGE_ICONS = {
     "meeting-saturday.html": "talk",
     "meeting-sunday.html": "slides",
     "quantic-handoff.html": "quantic",
+    "meghna-cafe-demo.html": "video",
+    "meghna-materials.html": "video",
+    "meghna-voiceover.html": "talk",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
