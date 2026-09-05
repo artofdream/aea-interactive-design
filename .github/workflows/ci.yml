@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 permissions:
   contents: read
@@ -77,6 +78,21 @@ jobs:
             exit 1
           fi
           echo "No GitLab CI files."
+
+  one-issue-closer:
+    name: One issue per PR (fail-closed)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fail if PR body closes more than one issue
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          python3 scripts/ci/check_one_issue_closer.py --self-test
+          python3 scripts/ci/check_one_issue_closer.py
 
   restaurant-api:
     name: Restaurant API tests (FR-6..FR-9, FR-15..FR-18)

@@ -23,7 +23,7 @@ Tracker and CI are **GitHub only**. No GitLab, no `glab`, no GitLab Pages, no Gi
 2. Knowledge before code: Café Fausse Knowledge map first. Do not implement features that are not in the SRS freeze.
 3. Honesty: a status word is a claim. Probe **this session** or write **Unknown**. A previous session is not a probe.
 4. ID freeze: cite `FR-*` / `NFR-*` from `docs/srs.md` (official PDF SoT). Do not invent IDs.
-5. One finding → one GitHub issue → one branch → one PR. Do not batch unrelated findings. **The author does not merge their own PR.**
+5. One finding → one GitHub issue → one branch → one PR. If an issue lists multiple items, **split it into multiple issues first**, then one branch and one PR per issue. Do not implement a multi-item issue as one PR. Do not batch unrelated findings. **The author does not merge their own PR.**
 6. Ratchet-only: a failure adds a tighter guide or sensor. Do not delete a guard to go green.
 7. Fail closed: missing database, fully booked slot (30 tables), timeout, or missing freeze file = honest **no**, not a guessed **yes**.
 8. Uncommitted files are **not** shared memory. Only committed git + today’s daily brief count as handoff.
