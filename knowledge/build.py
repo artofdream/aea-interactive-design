@@ -41,6 +41,7 @@ DELIVERY_ONLY_HREFS = (
     "meghna-cafe-demo.html",
     "meghna-materials.html",
     "meghna-voiceover.html",
+    "to-be.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -61,6 +62,7 @@ PAGE_ICONS = {
     "meghna-cafe-demo.html": "video",
     "meghna-materials.html": "video",
     "meghna-voiceover.html": "talk",
+    "to-be.html": "future",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
