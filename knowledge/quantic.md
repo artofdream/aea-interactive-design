@@ -10,14 +10,14 @@ This site is a thin map. It is **not** the restaurant and **not** a CMS. **MVP =
 
 Link out to the Quantic pack. Open the page itself for the full brief, tables, talk cuts, or clips.
 
-- [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, Coverage vs talk track, honesty. Submission video still **Unknown**.
+- [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
 
 Team-meeting packs (delivery-only — not in the global top nav):
 
 - [Wednesday meeting](meeting-wednesday.md) — 2026-09-02 19:00 Europe/Berlin; owner locked 1, 3, 4
 - [Friday meeting](meeting-friday.md) — 2026-09-04 19:00 Europe/Berlin; score-5 / tech access
-- [Saturday meeting](meeting-saturday.md) — 2026-09-05 19:00 Europe/Berlin / ~13:00 America/New_York; recording
-- [Sunday meeting](meeting-sunday.md) — owner add-on placeholder; **Unknown** / to-be-filled
+- [Saturday meeting](meeting-saturday.md) — 2026-09-05 19:00 Europe/Berlin / ~13:00 America/New_York; locked five-part VIDEO (Meghna demo + Variant B + Variant C; #97)
+- [Sunday meeting](meeting-sunday.md) — 2026-09-06; ends with a recording; docs target **9:00 America/New_York**; remaining gaps **Unknown** / to-be-filled
 
 Source pages (stay complete; meeting pages link out):
 

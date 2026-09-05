@@ -21,7 +21,7 @@ The P0 / P1 / P2 list, the ready-vs-Unknown table, and the live-vs-local-vs-Futu
 
 1. **Show the assignment, not extras.** Freeze prices, address, hours, owners, awards, reviews stay as written.
 2. **Prove what is live.** Knowledge map at `knowledge.cafe.artof.link`. Prefer restaurant share `https://cafe.artof.link/` (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production).
-3. **Lock the video.** Script + scenarios A–F. Saturday recording picks one [talk cut](presentation.md).
+3. **Lock the video.** Script + scenarios A–F. Saturday later locked a five-part VIDEO (Meghna demo + Variant B + Variant C) — [Saturday](meeting-saturday.md).
 4. **Say the Unknowns out loud.** **NFR-1** / **NFR-2** stay not-claimed-met. **NFR-7** is **partial**. `/operator` is **not FR-19**.
 
 Full wording: [Friday plan](friday-plan.md).
@@ -30,7 +30,7 @@ Full wording: [Friday plan](friday-plan.md).
 
 - [Wednesday](meeting-wednesday.md) — earlier teammate meeting
 - [Saturday](meeting-saturday.md) — recording / talk cuts
-- [Sunday](meeting-sunday.md) — placeholder (notes **Unknown**)
+- [Sunday](meeting-sunday.md) — ends with a recording; docs target 9:00 America/New_York; remaining gaps **Unknown**
 
 [Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
 

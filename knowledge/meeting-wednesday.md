@@ -23,7 +23,7 @@ Owner locked items **1, 3, 4** (not 2). The compare of Team Functional Spec v0.1
 
 - [Friday](meeting-friday.md) — score-5 / tech access
 - [Saturday](meeting-saturday.md) — recording / talk cuts
-- [Sunday](meeting-sunday.md) — placeholder (notes **Unknown**)
+- [Sunday](meeting-sunday.md) — ends with a recording; docs target 9:00 America/New_York; remaining gaps **Unknown**
 
 [Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
 

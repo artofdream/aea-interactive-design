@@ -1,24 +1,36 @@
 # Sunday meeting
 
-**In plain English:** This is a placeholder for a Sunday recording / presentation window. Status is **Unknown** / to-be-filled until meeting notes exist. Do not invent an agenda.
+**In plain English:** Sunday is the recording finish. Owner notes from Saturday **2026-09-05** ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)): this meeting **ends with a recording**. Supporting documents target **9:00 America/New_York** on **2026-09-06**. Room **start** clock is still **Unknown** / to-be-filled. Do not invent a full agenda.
 
-**When:** Sunday **2026-09-06** — Europe/Berlin date. Clock and room are **Unknown** / to-be-filled until the owner writes them. If a US slot is later scheduled, write it as America/New_York **and** Europe/Berlin.
+**When:** Sunday **2026-09-06**. Supporting-docs target: **9:00 America/New_York** (**15:00 Europe/Berlin**). Meeting start time and room are **Unknown** / to-be-filled until the owner writes them. If a US slot is later scheduled, write it as America/New_York **and** Europe/Berlin.
 
-**What to use until then:** the Saturday pack still applies — [talk cuts](presentation.md), [video script](video-script.md), [must-film shots](must-film-shots.md). Grade floor stays the official SRS (**FR-1..FR-18**, **NFR-1..NFR-9**). Do not invent **FR-19**. Do not say **NFR-1** / **NFR-2** are met.
+**Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent **FR-19**. Do not say **NFR-1** / **NFR-2** are met. **NFR-7** is **partial**. `/operator` is **not FR-19**. Staging at `https://cafe.artof.link/` is **not** forever production. Zoom dry-run is **PROTOTYPE**.
 
-## Still Unknown
+## Known job (from Saturday notes)
 
-- Room time (Europe/Berlin and, if used, America/New_York)
-- Whether this is a second recording, a cut review, or a presentation pass
+1. **End with a recording** of the locked ~10 minute VIDEO (five parts on [Saturday](meeting-saturday.md)): team IDs → Meghna demo → Variant B → Variant C → shared close.
+2. **Supporting docs** in place by **9:00 America/New_York** on 2026-09-06 — [Handoff](quantic-handoff.md) PDF refs (GitHub + cafe + Knowledge + official SRS PDF). The site may still evolve after that clock.
+
+Use the Saturday pack until the recording exists: [talk cuts](presentation.md), [video script](video-script.md), [must-film shots](must-film-shots.md).
+
+## Still Unknown / to-be-filled
+
+Do not invent these.
+
+- Room **start** clock (Europe/Berlin and, if used, America/New_York)
+- **Hiren** decision: Architecture (Variant B) vs Coding (Variant C) — Claude takes the other
+- **Voice-over** — **TBD**
+- Final Quantic submit video (live must-film **plus** voice)
+- Optional Claude advance recording for evaluation
 - Whether graders need `cafe.artof.link` up for video evaluation (owner correspondence still **Unknown**)
 
-When notes exist, put the summary here and keep the long text on the sister pages. Do not hollow [Presentation](presentation.md) or [Video script](video-script.md).
+When the recording exists, put a short pointer here. Keep the long talk track on [Presentation](presentation.md) and [Video script](video-script.md). Do not hollow those pages.
 
 ## Other meetings
 
 - [Wednesday](meeting-wednesday.md)
 - [Friday](meeting-friday.md)
-- [Saturday](meeting-saturday.md)
+- [Saturday](meeting-saturday.md) — locked five-part VIDEO (#97)
 
 [Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
 

@@ -43,7 +43,7 @@ Plain language: show the assignment, not extras. Prove what is live. Stay honest
 Do these only after P0 access works. They do not add requirement IDs.
 
 - Record or rehearse the ~10 minute video against the script (clips already on this site).
-- Walk the [8-slide cut](presentation-sample.md) with [Coverage](coverage.md) as the FR/NFR map. Saturday recording: pick one [talk cut](presentation.md).
+- Walk the [8-slide cut](presentation-sample.md) with [Coverage](coverage.md) as the FR/NFR map. Saturday recording is the locked five-part VIDEO on [Saturday](meeting-saturday.md) (Meghna demo + Variant B + Variant C) — not “pick one” standalone cut.
 - Live share written on the [Brief](brief.md): prefer `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`; Lightsail staging #57 — not production forever). Interim backup `https://54-165-102-60.sslip.io/`. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**.
 - Keep one happy reservation and one newsletter write on demo data. Fail closed if PostgreSQL is missing.
 

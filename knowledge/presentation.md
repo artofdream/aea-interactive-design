@@ -1,8 +1,20 @@
-# Presentation — three recording cuts
+# Presentation — talk cuts (locked Saturday VIDEO)
 
 Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 Europe/Berlin). Café Fausse Knowledge only. Not official Quantic dashboard text. Not the restaurant.
 
-Pick **one** cut (~10 minutes). Every cut uses the same open and the same close. Spoken timing lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md).
+**Locked cut (owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97)):** one ~10 minute VIDEO. **Not** “pick Variant A or B or C.”
+
+| Clock | Part | Who | Source on this page |
+|---|---|---|---|
+| 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below |
+| 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | Beats on [Saturday](meeting-saturday.md); must-film on [Must-film shots](must-film-shots.md) |
+| 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude or Hiren** | Variant B section below, condensed to ~3 min. Take over from reservation. |
+| 6:30–9:30 | Coding rationale (**Variant C**) | **Claude or Hiren** | Variant C section below, condensed to ~3 min. |
+| 9:30–10:00 | Shared close | Shared | Shared close section below |
+
+**Hiren** chooses B vs C; **Claude** takes the other — **Unknown** until the owner decides. **Voice-over TBD.** Variant A below stays a draft / rehearsal pack. It is **not** the locked Saturday cut. Zoom dry-run on the [video script](video-script.md) is **PROTOTYPE** (Variant A).
+
+Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Per-part pack: [Saturday](meeting-saturday.md).
 
 **Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent FR-19 / NFR-10. Freeze prices, address, hours, owners, awards, and reviews stay as written.
 
@@ -22,7 +34,7 @@ Use this minute on every cut.
 | 0:20–0:40 | Stack as assigned: **React + JSX**, **Flask**, **PostgreSQL**. Grade floor = **FR-1..FR-18** / **NFR-1..NFR-9** only. |
 | 0:40–1:00 | Knowledge map is live HTTPS. Demo = prefer `https://cafe.artof.link/` GET **200** this session (Lightsail staging #57 — not production forever), or the committed clips. |
 
-Then jump to the cut you chose.
+Then, for the **locked Saturday VIDEO**, jump to Meghna’s live demo — not to a standalone Variant A/B/C. The standalone drafts below stay as talking-point sources (B and C = 3-minute segments).
 
 ---
 
@@ -149,8 +161,10 @@ If time is tight, one starter + one main is enough. Read the price from the page
 
 ## Sister pages
 
+- [Saturday meeting](meeting-saturday.md) — locked five-part VIDEO + per-part pack (#97).
+- [Sunday meeting](meeting-sunday.md) — ends with a recording; docs target 9:00 America/New_York.
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut (keep that file).
-- [Video script](video-script.md) — Friday ~10 min beats + scenarios A–F.
+- [Video script](video-script.md) — Friday ~10 min beats + scenarios A–F. Dry-run stays **PROTOTYPE**.
 - [Coverage](coverage.md) — every freeze ID.
 - [Friday plan](friday-plan.md) / [Brief](brief.md) — Friday room.
 - [Honesty](honesty.md) — probe vocabulary.

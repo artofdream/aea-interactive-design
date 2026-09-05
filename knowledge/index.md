@@ -51,7 +51,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 
 ## Course dates (delivery pages)
 
-Meeting packs (delivery-only, listed on [Quantic / MSAIE](quantic.md)): [Wednesday](meeting-wednesday.md) **2026-09-02 19:00 Europe/Berlin** (owner locked **1, 3, 4** — not 2); [Friday](meeting-friday.md) **2026-09-04 19:00 Europe/Berlin** (score 5 / tech access); [Saturday](meeting-saturday.md) **2026-09-05 19:00 Europe/Berlin** / **~13:00 America/New_York** (recording). [Sunday](meeting-sunday.md) is a placeholder (**Unknown**). One-page [Quantic deliverable handoff](quantic-handoff.md) lists repo / App / Knowledge links and Coverage vs talk track. Source pages stay complete: [Brief](brief.md), [Friday plan](friday-plan.md), [video script](video-script.md), [slides](presentation-sample.md), [talk cuts](presentation.md). They are not extra restaurant features.
+Meeting packs (delivery-only, listed on [Quantic / MSAIE](quantic.md)): [Wednesday](meeting-wednesday.md) **2026-09-02 19:00 Europe/Berlin** (owner locked **1, 3, 4** — not 2); [Friday](meeting-friday.md) **2026-09-04 19:00 Europe/Berlin** (score 5 / tech access); [Saturday](meeting-saturday.md) **2026-09-05 19:00 Europe/Berlin** / **~13:00 America/New_York** (locked five-part VIDEO, #97). [Sunday](meeting-sunday.md) **2026-09-06** ends with a recording; supporting docs target **9:00 America/New_York**; remaining gaps stay **Unknown**. One-page [Quantic deliverable handoff](quantic-handoff.md) lists repo / App / Knowledge links and Coverage vs talk track. Source pages stay complete: [Brief](brief.md), [Friday plan](friday-plan.md), [video script](video-script.md), [slides](presentation-sample.md), [talk cuts](presentation.md). They are not extra restaurant features.
 
 ## On this map (thin)
 
@@ -62,7 +62,7 @@ Nav icons match the links below. That is a map affordance — not an **NFR-1** /
 - [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
 - [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
 - [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
-- [Talk cuts](presentation.md) — Saturday recording: three ~10 min variants + shared close
+- [Talk cuts](presentation.md) — Saturday locked five-part VIDEO (Meghna + Variant B + Variant C); standalone A/B/C drafts remain
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut
 - [Stack](stack.md) — AWS staging HLD + as-is / to-be (weekend #57 vs permanent #22); GitHub-only CI
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9

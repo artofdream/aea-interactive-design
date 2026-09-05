@@ -4,13 +4,13 @@
 
 Grade floor = official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). Do not invent **FR-19**. Do not say **NFR-1** / **NFR-2** are met.
 
-Every section below is filled with what is known **now**. Rows that are not done yet stay **Unknown** / to-be-filled. Do not invent a submit video, a Sunday agenda, a speaker lock, or an outbound mailer.
+Every section below is filled with what is known **now**. Rows that are not done yet stay **Unknown** / to-be-filled. Do not invent a submit video, a Hiren B-vs-C lock, a voice-over, or an outbound mailer.
 
 ## 1. Links (known now)
 
 | What | URL | Known now |
 |---|---|---|
-| GitHub repo | [artofdream/aea-interactive-design](https://github.com/artofdream/aea-interactive-design) | Tracker + CI are GitHub only. No GitLab. Public repo. |
+| GitHub repo | [artofdream/aea-interactive-design](https://github.com/artofdream/aea-interactive-design) | Tracker + CI are GitHub only. No GitLab. Public repo. Issues → Slack; Claude addresses. |
 | Restaurant app | [https://cafe.artof.link/](https://cafe.artof.link/) | Prefer this share. Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — **not** forever production. Health: `/api/health`. Operator: `/operator`. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 | Knowledge map | [https://knowledge.cafe.artof.link/](https://knowledge.cafe.artof.link/) | GitHub Pages. This session HTTPS **GET 200**. |
 | Quantic hub | [https://knowledge.cafe.artof.link/quantic.html](https://knowledge.cafe.artof.link/quantic.html) | Delivery / MSAIE navigation only (#74 / #79). |
@@ -19,22 +19,33 @@ Interim App backup (same host, not the primary paste): `https://54-165-102-60.ss
 
 Live Pages URLs for pages that land only after this PR merges (`/glossary.html`, `/meeting-*.html`, `/quantic-handoff.html`) stay **Unknown** until a GET after deploy.
 
-## 2. Sources (known now)
+## 2. Sources / PDF refs (known now)
 
-- **Official SRS PDF (source of truth):** `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf` (SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`). Fetched 2026-08-31 HTTP 200. CI fails closed if missing or the hash mismatches.
+- **Official SRS PDF (source of truth):** [`docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`](https://github.com/artofdream/aea-interactive-design/blob/main/docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf) (SHA256 `6075e5964601aa3e3c7a3085c626eab820e3d733a396b00e20339cfdc77a9d82`). Fetched 2026-08-31 HTTP 200. CI fails closed if missing or the hash mismatches.
 - **Working freeze:** [SRS freeze](srs.md) and full copy `docs/srs.md` ([srs-full.html](srs-full.html)). **FR-1..FR-18**, **NFR-1..NFR-9** only.
 - **Evidence map:** [Coverage](coverage.md) — each freeze ID, where it lives in-repo, evidence class (code / CI / local UX / **Unknown**).
 - **Honesty ledger:** [Honesty](honesty.md) — a status word needs a probe **this session** or stays **Unknown**.
-- **Must-film page (live on the map once built):** [Must-film shots](must-film-shots.md) — four camera beats. Committed on `main` via #83 / PR #84. Live `https://knowledge.cafe.artof.link/must-film-shots.html` was **Unknown** until a GET after that deploy; re-probe next session or write **Unknown**.
+- **Must-film page:** [Must-film shots](must-film-shots.md) — four camera beats. Committed on `main` via #83 / PR #84. Live `https://knowledge.cafe.artof.link/must-film-shots.html` was **Unknown** until a GET after that deploy; re-probe next session or write **Unknown**.
 - **Short labels:** [Glossary](glossary.md).
+- **UX compliance:** Café Fausse App mobile ≤767px — [#91](https://github.com/artofdream/aea-interactive-design/issues/91) / PR #93. Knowledge mobile ≤767px — [#92](https://github.com/artofdream/aea-interactive-design/issues/92) / PR #94. Do **not** claim **NFR-1** / **NFR-2**.
 
 ## 3. Coverage vs the talk track (known now)
 
 **Coverage** is the grade-floor map. Open it when a grader asks “where is FR-9?” or “is NFR-6 tested?” It is not a slide deck.
 
-**Presentation / video-script / must-film** is the talk track (exists now as drafts):
+**Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
-- [Talk cuts](presentation.md) — three ~10 min variants (A layers, B architecture, C coding) plus a shared open and close. **Which cut is locked** is **Unknown** / to-be-filled.
+1. Team + ID verification — ~30s — shared
+2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations
+3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude or Hiren**
+4. Coding rationale (**Variant C**) — ~3 min — **Claude or Hiren**
+5. Shared close — shared
+
+Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown** / to-be-filled. Voice-over is **TBD**. Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md).
+
+Sister talk-track pages (stay complete):
+
+- [Talk cuts](presentation.md) — Variant B and Variant C as 3-min sources; Variant A remains a draft. Shared open / close stay here.
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut. Friday deck, not a second talk track.
 - [Video script](video-script.md) — timed beats + scenario menu A–F. Zoom dry-run v2 on that page is **PROTOTYPE**.
 - [Must-film shots](must-film-shots.md) — four camera beats on `cafe.artof.link`: (1) happy book → `/operator`, (2) newsletter → newsletter-only, (3) full-book **HTTP 409**, (4) NFR-6 via Coverage/CI.
@@ -44,7 +55,7 @@ The Zoom dry-run is **not** the Quantic submission. Do not submit it until a **l
 | Track | Job (known) | Not (honest) |
 |---|---|---|
 | [Coverage](coverage.md) | FR/NFR evidence map (grade floor) | A claim that every NFR is met |
-| Talk / video / must-film | What to say and film; must-film page exists; dry-run is **PROTOTYPE** | A finished Quantic upload |
+| Talk / video / must-film | Locked five-part structure; must-film page exists; dry-run is **PROTOTYPE** | A finished Quantic upload; a Hiren B-vs-C lock; a voice-over |
 
 ## 4. Honesty (known now — say out loud)
 
@@ -63,19 +74,20 @@ Do not invent these. The section exists so a grader sees the gap instead of a gu
 | Item | Status now |
 |---|---|
 | Final Quantic submission video (live must-film + voice) | **Unknown** / to-be-filled. Dry-run on the [Video script](video-script.md) is **PROTOTYPE** only. |
-| Locked talk cut (A / B / C) | **Unknown** / to-be-filled. All three drafts live on [Talk cuts](presentation.md). |
-| Speaker names / who records | **Unknown** / to-be-filled. |
-| Sunday meeting notes and clock | **Unknown** / to-be-filled. Page exists: [Sunday](meeting-sunday.md). |
+| Hiren: Variant B vs Variant C (Claude takes the other) | **Unknown** / to-be-filled. Structure is locked; **speaker** names for B/C are not. |
+| Voice-over | **TBD** on every part. |
+| Optional Claude advance recording for eval | **Unknown** until a file exists. Not the submit video. |
+| Sunday meeting **start** clock | **Unknown** / to-be-filled. Known job: ends with a recording; docs target **9:00 America/New_York** on 2026-09-06. Page: [Sunday](meeting-sunday.md). |
 | Outbound newsletter mail | **Not in the SRS MVP.** Do not claim a mailer. |
 | Permanent `cafe.artof.link` hosting | Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Staging does not close it. |
 | Collaborator `quantic-grader` | Owner step. An agent must not add that person. |
 | Live GET of this handoff page on Pages | **Unknown** until after merge / deploy. |
 
-## Meeting packs (known dates + Sunday gap)
+## Meeting packs
 
 - [Wednesday](meeting-wednesday.md) — 2026-09-02 19:00 Europe/Berlin; owner locked 1, 3, 4.
 - [Friday](meeting-friday.md) — 2026-09-04 19:00 Europe/Berlin; score-5 / tech access.
-- [Saturday](meeting-saturday.md) — 2026-09-05 19:00 Europe/Berlin / ~13:00 America/New_York; recording.
-- [Sunday](meeting-sunday.md) — **Unknown** / to-be-filled (no invented agenda).
+- [Saturday](meeting-saturday.md) — 2026-09-05 19:00 Europe/Berlin / ~13:00 America/New_York; locked five-part VIDEO (#97).
+- [Sunday](meeting-sunday.md) — 2026-09-06; ends with a recording; supporting docs target **9:00 America/New_York**; remaining gaps stay **Unknown** / to-be-filled.
 
 Back to the [Quantic / MSAIE](quantic.md) hub.

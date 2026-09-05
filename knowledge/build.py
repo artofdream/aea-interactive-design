@@ -162,6 +162,8 @@ WIDE_PAGES = {
     "video-script.html",
     "must-film-shots.html",
     "quantic-handoff.html",
+    "meeting-saturday.html",
+    "meeting-sunday.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1010,8 +1012,18 @@ def assert_ux_wiring() -> None:
         fail("meeting-saturday.md must link the must-film shot list")
     if "America/New_York" not in sat_md or "Europe/Berlin" not in sat_md:
         fail("meeting-saturday.md must note America/New_York and Europe/Berlin")
+    if "Meghna" not in sat_md:
+        fail("meeting-saturday.md must name Meghna for the website demo (#97)")
+    if "Variant B" not in sat_md or "Variant C" not in sat_md:
+        fail("meeting-saturday.md must lock Variant B and Variant C as 3-min parts (#97)")
+    if "TBD" not in sat_md:
+        fail("meeting-saturday.md must keep voice-over TBD (#97)")
     if "Unknown" not in sun_md or "to-be-filled" not in sun_md:
-        fail("meeting-sunday.md must stay Unknown / to-be-filled until notes exist")
+        fail("meeting-sunday.md must keep remaining gaps as Unknown / to-be-filled")
+    if "9:00" not in sun_md or "America/New_York" not in sun_md:
+        fail("meeting-sunday.md must record the 9:00 America/New_York supporting-docs target")
+    if "recording" not in sun_md.lower():
+        fail("meeting-sunday.md must say the meeting ends with a recording")
     handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
     for needle in (
         "https://github.com/artofdream/aea-interactive-design",
@@ -1027,6 +1039,10 @@ def assert_ux_wiring() -> None:
         "to-be-filled",
         "must-film-shots.md",
         "speaker",
+        "Meghna",
+        "Variant B",
+        "Variant C",
+        "Voice-over",
     ):
         if needle not in handoff_md:
             fail(f"quantic-handoff.md missing required handoff fact ({needle})")
