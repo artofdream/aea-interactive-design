@@ -4,16 +4,16 @@ This is a student / GitHub E2E repo for **Café Fausse** (Quantic MSAIE) and a t
 
 **MVP = official SRS freeze** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`). Everything else is future or refined — not a second product on the knowledge site.
 
-Do not claim this system is antifragile. AWS is **not** in the restaurant MVP PR. Knowledge site = GitHub Pages. `cafe.artof.link` hosting remains future.
+Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *code* PR. Knowledge site = GitHub Pages. Weekend Lightsail staging of `cafe.artof.link` is issue [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — staging stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is evaluate-only (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Future is not “AWS does not exist.”
 
 ## Teams and two public surfaces
 
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
-| Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | **Unknown** until a GET probe **this session** after Pages + DNS |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Unknown** — local app in-repo; hosting future; no GET this session |
+| Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05). Re-probe next session or write **Unknown**. |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `54.165.102.60`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Staging kept until owner decision. Monday **2026-09-08 16:00 Europe/Berlin** evaluate-only (not auto tear-down). Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
-Do not invent other domains. Do not configure DNS from an agent. Owner step: enable GitHub Pages (Actions), then DNS.
+Do not invent other domains. Do not configure DNS from an agent.
 
 Tracker and CI are **GitHub only**. No GitLab, no `glab`, no GitLab Pages, no GitLab CI.
 
@@ -34,11 +34,11 @@ Allowed when probed **this session**: a concrete command, HTTP GET, CI log, or *
 
 Not a probe: hoping, a previous session, uncommitted working tree, “should be live”, a hostname on a slide.
 
-Examples that stay **Unknown** until probed this session:
+Examples that need a this-session probe (else **Unknown**):
 
-- GitHub Pages URL for `knowledge.cafe.artof.link`
-- Restaurant at `cafe.artof.link`
-- “Reservations work” on a public host
+- GitHub Pages URL for `knowledge.cafe.artof.link` — last probe this session (2026-09-05): HTTPS **GET 200**
+- Restaurant at `cafe.artof.link` — last probe this session (2026-09-05): HTTPS **GET 200** (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57); not forever production)
+- “Reservations work” on a public host (a health GET is not a write probe)
 - “CI is green on main” without a run this session
 
 If a probe fails or times out, report the failure. Do not retry-until-yes as a substitute for a sensor.
@@ -52,7 +52,7 @@ When Café Fausse App implements the restaurant:
 - Implement the SRS only as MVP.
 - Extra features go in the Future plan (`knowledge/future.md`), not in the first app cut.
 - Do not copy other students’ application code.
-- Do not add AWS in this restaurant cut; hosting of `cafe.artof.link` is future.
+- Do not add AWS into the restaurant MVP *code* PR. Weekend staging is [#57](https://github.com/artofdream/aea-interactive-design/issues/57). Permanent hosting of `cafe.artof.link` stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22).
 
 ## ID freeze
 
@@ -120,8 +120,8 @@ For this repo **now**:
 
 ## Out of scope for the restaurant MVP cut
 
-- AWS / re-auth / `cafe.artof.link` hosting (future).
+- Permanent `cafe.artof.link` hosting / always-on productization ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)). Weekend Lightsail staging is [#57](https://github.com/artofdream/aea-interactive-design/issues/57), not that Future cut.
 - Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
-- Declaring Pages or `cafe.artof.link` live without a GET **this session**.
+- Declaring Pages or `cafe.artof.link` live without a GET **this session**. Last probe 2026-09-05: both HTTPS **GET 200**. Do not claim forever production.
 - A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.
 - Knowledge-site depth beyond the thin map; GitHub E2E beyond the assignment floor.

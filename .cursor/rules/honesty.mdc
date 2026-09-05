@@ -9,7 +9,7 @@ Status words (live, working, fixed, deployed, complete, green) are claims. They 
 
 If evidence is missing, write **Unknown**. Do not infer liveness from a hostname. A previous session is not a probe. Closing a task is not a probe. Uncommitted files are not a probe and not shared memory.
 
-This repo’s intended hostnames (do not invent others):
+This repo’s intended hostnames (do not invent others). A previous session is not a probe:
 
-- `knowledge.cafe.artof.link` — Café Fausse Knowledge; GitHub Pages. Live URL: Unknown until GET this session after owner enables Pages + DNS.
-- `cafe.artof.link` — Café Fausse App restaurant MVP. Live URL: Unknown (hosting future).
+- `knowledge.cafe.artof.link` — Café Fausse Knowledge; GitHub Pages. Last probe this session (2026-09-05): HTTPS GET 200. Re-probe or write **Unknown**.
+- `cafe.artof.link` — Café Fausse App. Last probe this session (2026-09-05): HTTPS GET 200 on `/`, `/api/health`, `/operator` (Lightsail `cafe-fausse-staging` us-east-1 IP 54.165.102.60; weekend #57 — not forever production). Permanent hosting stays #22. Re-probe or write **Unknown**.
