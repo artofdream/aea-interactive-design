@@ -584,10 +584,11 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
   </main>
   <footer>
     <p>Knowledge host <code>knowledge.cafe.artof.link</code>: HTTPS GET 200 this session
-    (2026-09-02 Europe/Berlin); HTTP 301 to HTTPS. TLS VERIFY_OK, CN/SAN match. Pages
-    <code>https_enforced=true</code>; cert approved for <code>knowledge.cafe.artof.link</code>.</p>
-    <p>Restaurant hostname <code>cafe.artof.link</code> is <strong>not</strong> Café Fausse App
-    (CNAME to an AWS ELB). Local MVP is in-repo. GitHub Actions → GitHub Pages. No GitLab.</p>
+    (2026-09-05 Europe/Berlin); HTTP 301 to HTTPS.</p>
+    <p>Prefer live share <code>https://cafe.artof.link/</code> (HTTPS GET 200 this session;
+    Lightsail staging #57 — weekend recording window, not production forever).
+    Interim backup <code>https://54-165-102-60.sslip.io/</code>. Local MVP is in-repo.
+    GitHub Actions → GitHub Pages. No GitLab.</p>
   </footer>{mermaid_script}
 </body>
 </html>
