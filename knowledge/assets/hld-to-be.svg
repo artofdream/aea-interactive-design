@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" role="img" aria-labelledby="t2 d2">
   <title id="t2">Cafe Fausse intended to-be high-level design</title>
-  <desc id="d2">Knowledge stays on GitHub Pages. Weekend Lightsail staging stays up until the owner explicitly requests tear-down. Monday 16:00 CET is evaluate-only. Permanent restaurant hosting remains Future #22 and is dashed.</desc>
+  <desc id="d2">Knowledge stays on GitHub Pages. Weekend Lightsail staging stays up until the owner explicitly requests tear-down. Monday 2026-09-08 16:00 Europe/Berlin is evaluate-only. Permanent restaurant hosting remains Future #22 and is dashed.</desc>
   <rect width="980" height="520" fill="#f6f1e8"/>
   <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse to-be — permanent vs staging keep-up</text>
   <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Solid knowledge is already published. Staging #57 is live this weekend. Dashed = permanent hosting #22, still Future.</text>
@@ -33,7 +33,7 @@
   <rect x="360" y="256" width="260" height="40" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="490" y="281" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Postgres on the instance</text>
   <text x="360" y="324" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Kept until owner decision.</text>
-  <text x="360" y="342" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Mon 16:00 CET evaluate-only.</text>
+  <text x="360" y="342" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Mon 2026-09-08 16:00 CET evaluate-only.</text>
   <text x="360" y="370" font-family="Georgia, serif" font-size="11" fill="#5e574d">Caddy + Let's Encrypt. AEA RDS out.</text>
   <text x="360" y="388" font-family="Georgia, serif" font-size="11" fill="#5e574d">sslip.io is interim backup only.</text>
   <text x="360" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">MVP = official SRS only.</text>

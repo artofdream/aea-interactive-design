@@ -40,7 +40,7 @@ Owner-probed implementation, not a second product. This session this agent also 
 | Interim backup | `https://54-165-102-60.sslip.io/` (same IP; not the primary paste) |
 | Stale tunnels | `shaky-deer-drive.loca.lt`, `happy-glasses-film`, `real-goats-shop` |
 | IAM | `cts` account `737290977112` |
-| Window | Staging stays **up** until the owner explicitly requests tear-down. Monday **16:00 CET** is evaluate-only (not automatic tear-down). Quantic grader host need remains **Unknown** until their email ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). |
+| Window | Staging stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is evaluate-only (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). |
 | `/operator` | Read-only recording helper. **Not FR-19.** Not an admin console. |
 | Newsletter | Store/register **FR-15** / **FR-16** only. No outbound mailer in the SRS MVP. |
 | Permanent hosting | Still [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). #57 does not close it. |
@@ -79,7 +79,7 @@ Static copy (renders if Mermaid JS is blocked): [as-is SVG](assets/hld-as-is.svg
 
 ## To-be HLD (permanent vs staging keep-up)
 
-Knowledge stays GitHub Pages. Weekend staging is **live this session** and stays **up** until the owner explicitly requests tear-down. Monday **16:00 CET** is evaluate-only (not automatic tear-down). Quantic grader host need remains **Unknown** until their email. Permanent restaurant hosting remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) and stays dashed.
+Knowledge stays GitHub Pages. Weekend staging is **live this session** and stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is evaluate-only (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence. Permanent restaurant hosting remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) and stays dashed.
 
 ```mermaid
 flowchart LR

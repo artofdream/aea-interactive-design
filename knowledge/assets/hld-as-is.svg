@@ -44,7 +44,7 @@
   <text x="490" y="322" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">us-east-1 · small_3_0 ~$12/mo</text>
   <text x="490" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">Caddy + LE · Flask + SPA · on-box PG</text>
   <text x="360" y="376" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Staging kept until owner decision.</text>
-  <text x="360" y="394" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Mon 16:00 CET evaluate-only. Not auto tear-down.</text>
+  <text x="360" y="394" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Mon 2026-09-08 16:00 CET evaluate-only. Not auto tear-down.</text>
   <text x="360" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">Interim: 54-165-102-60.sslip.io</text>
   <text x="360" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">AEA RDS untouched. ELB wildcard is not us.</text>
   <text x="360" y="464" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator = recording helper, not FR-19.</text>

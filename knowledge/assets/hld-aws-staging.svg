@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 640" role="img" aria-labelledby="t3 d3">
   <title id="t3">Cafe Fausse AWS staging high-level design</title>
-  <desc id="d3">Weekend Lightsail staging. Route53 A cafe.artof.link to 54.165.102.60 TTL 60. Caddy and Let's Encrypt in front of Flask plus built React SPA and PostgreSQL on the instance. Knowledge stays on GitHub Pages. AEA RDS and the artof.link ELB wildcard are out of cut. Staging stays up until the owner explicitly requests tear-down. Monday 16:00 CET is evaluate-only.</desc>
+  <desc id="d3">Weekend Lightsail staging. Route53 A cafe.artof.link to 54.165.102.60 TTL 60. Caddy and Let's Encrypt in front of Flask plus built React SPA and PostgreSQL on the instance. Knowledge stays on GitHub Pages. AEA RDS and the artof.link ELB wildcard are out of cut. Staging stays up until the owner explicitly requests tear-down. Monday 2026-09-08 16:00 Europe/Berlin is evaluate-only.</desc>
   <rect width="1180" height="640" fill="#f6f1e8"/>
   <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse AWS staging - probed 2026-09-05 Europe/Berlin</text>
   <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Weekend recording window (#57). Prefer https://cafe.artof.link/. Not production forever. AEA RDS untouched. No florist / 3DX / GitLab.</text>
@@ -57,7 +57,7 @@
   <text x="352" y="422" font-family="ui-monospace, monospace" font-size="11" fill="#5e574d">https://54-165-102-60.sslip.io/</text>
   <text x="352" y="444" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator is a read-only recording helper - not FR-19, not admin.</text>
   <text x="352" y="460" font-family="Georgia, serif" font-size="11" fill="#5e574d">Newsletter: store/register FR-15 / FR-16 only. No outbound mailer.</text>
-  <text x="336" y="492" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Staging kept until owner decision. Mon 16:00 CET evaluate-only (#57).</text>
+  <text x="336" y="492" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Staging kept until owner decision. Mon 2026-09-08 16:00 CET evaluate-only (#57).</text>
   <text x="336" y="510" font-family="Georgia, serif" font-size="11" fill="#5e574d">Longer-term hosting stays Future #22. This is not a permanent claim.</text>
   <text x="336" y="536" font-family="Georgia, serif" font-size="11" fill="#5e574d">Route53 A overrides the *.artof.link ELB wildcard for this name.</text>
   <text x="336" y="552" font-family="Georgia, serif" font-size="11" fill="#5e574d">That wildcard is not Cafe Fausse.</text>
