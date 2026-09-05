@@ -33,7 +33,7 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Coverage** is the grade-floor map. Open it when a grader asks “where is FR-9?” or “is NFR-6 tested?” It is not a slide deck.
 
-**Meghna first:** [Meghna — 3-minute cafe.artof.link demo](meghna-cafe-demo.md) — spoken lines are **plain English only**. FR/NFR IDs stay in that page’s supporting notes (and Coverage). Supporting docs target **9:00 America/New_York** on 2026-09-06.
+**Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
@@ -47,7 +47,9 @@ Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown
 
 Sister talk-track pages (stay complete):
 
+- [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE** clip.
 - [Meghna demo](meghna-cafe-demo.md) — 3-min live walk (spoken = plain English).
+- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
 - [Talk cuts](presentation.md) — Variant B and Variant C as 3-min sources; Variant A remains a draft. Shared open / close stay here.
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut. Friday deck, not a second talk track.
 - [Video script](video-script.md) — timed beats + scenario menu A–F. Zoom dry-run v2 on that page is **PROTOTYPE**.

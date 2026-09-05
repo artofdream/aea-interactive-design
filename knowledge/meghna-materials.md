@@ -22,10 +22,12 @@ Live site to rehearse: **https://cafe.artof.link/**
 | Asset | Path / URL | Note |
 | --- | --- | --- |
 | **Meghna path prototype** | [`clips/meghna-3min-prototype-silent.mp4`](clips/meghna-3min-prototype-silent.mp4) (~162s) | Silent. Open → Home → Gallery → Menu → Reservations → Architecture handoff card. Built from live staging captures. **PROTOTYPE**, not Quantic submit. |
-| Team Zoom dry-run v2 | `/workspace/cafe-fausse-prototype/cafe-fausse-zoom-dryrun-v2.mp4` · https://knowledge.cafe.artof.link/clips/03-zoom-dryrun-v2.mp4 | Full ~10 min Variant A dry-run — timing/honesty reference; path order differs from Meghna’s lock. |
-| Happy-book clip (optional) | `/workspace/cafe-fausse-prototype/v2/assets/02-happy-book.mp4` | Fallback look if she extends past nav. |
+| Team Zoom dry-run v2 | [Video script](video-script.md) · `clips/03-zoom-dryrun-v2.mp4` | Full ~10 min Variant A dry-run — timing/honesty reference; path order differs from Meghna’s lock. **PROTOTYPE**. |
+| Happy-book clip (optional) | [Video script](video-script.md) · `clips/02-happy-book.mp4` | Fallback look if she extends past nav. |
 
 Prefer **live share** for the real recording; use the silent prototype only for rehearsal / VO timing.
+
+> **PROTOTYPE** — silent Meghna path. Not the Quantic submission. Voice-over recorded take **Unknown**.
 
 <video controls src="clips/meghna-3min-prototype-silent.mp4"></video>
 

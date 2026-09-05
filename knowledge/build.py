@@ -38,6 +38,8 @@ DELIVERY_ONLY_HREFS = (
     "meeting-sunday.html",
     "quantic-handoff.html",
     "meghna-cafe-demo.html",
+    "meghna-materials.html",
+    "meghna-voiceover.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -55,6 +57,8 @@ PAGE_ICONS = {
     "meeting-sunday.html": "slides",
     "quantic-handoff.html": "quantic",
     "meghna-cafe-demo.html": "video",
+    "meghna-materials.html": "video",
+    "meghna-voiceover.html": "talk",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -142,6 +146,8 @@ REQUIRED = [
     ROOT / "meeting-sunday.md",
     ROOT / "quantic-handoff.md",
     ROOT / "meghna-cafe-demo.md",
+    ROOT / "meghna-materials.md",
+    ROOT / "meghna-voiceover.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
     ROOT / "coverage.md",
@@ -168,6 +174,8 @@ WIDE_PAGES = {
     "meeting-saturday.html",
     "meeting-sunday.html",
     "meghna-cafe-demo.html",
+    "meghna-materials.html",
+    "meghna-voiceover.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -941,6 +949,8 @@ def assert_ux_wiring() -> None:
         'href="meeting-sunday.html"',
         'href="quantic-handoff.html"',
         'href="meghna-cafe-demo.html"',
+        'href="meghna-materials.html"',
+        'href="meghna-voiceover.html"',
         'href="honesty.html"',
         'href="glossary.html"',
         'href="stack.html"',
@@ -1027,6 +1037,8 @@ def assert_ux_wiring() -> None:
         fail("meeting-saturday.md must record the 9:00 America/New_York supporting-docs target")
     if "meghna-cafe-demo.md" not in sat_md:
         fail("meeting-saturday.md must link the Meghna 3-min cafe demo pack")
+    if "meghna-materials.md" not in sat_md:
+        fail("meeting-saturday.md must link the Meghna materials index")
     if "Unknown" not in sun_md or "to-be-filled" not in sun_md:
         fail("meeting-sunday.md must keep remaining gaps as Unknown / to-be-filled")
     if "9:00" not in sun_md or "America/New_York" not in sun_md:
@@ -1035,6 +1047,8 @@ def assert_ux_wiring() -> None:
         fail("meeting-sunday.md must say the meeting ends with a recording")
     if "meghna-cafe-demo.md" not in sun_md:
         fail("meeting-sunday.md must link the Meghna 3-min cafe demo pack")
+    if "meghna-materials.md" not in sun_md:
+        fail("meeting-sunday.md must link the Meghna materials index")
     handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
     for needle in (
         "https://github.com/artofdream/aea-interactive-design",
@@ -1055,6 +1069,7 @@ def assert_ux_wiring() -> None:
         "Variant C",
         "Voice-over",
         "meghna-cafe-demo.md",
+        "meghna-materials.md",
         "9:00",
     ):
         if needle not in handoff_md:
@@ -1082,15 +1097,41 @@ def assert_ux_wiring() -> None:
             fail(f"meghna-cafe-demo.md missing required demo fact ({needle})")
     if "MUST-FILM-SHOTS.md" in meghna_md:
         fail("meghna-cafe-demo.md must link must-film-shots.md, not MUST-FILM-SHOTS.md")
-    if "<video" in meghna_md:
-        fail("meghna-cafe-demo.md must not embed clips (video-script keeps them)")
     if "Say (plain English)" not in meghna_md:
         fail("meghna-cafe-demo.md spoken script must label Say as plain English")
     if "no FR / NFR jargon" not in meghna_md:
         fail("meghna-cafe-demo.md must state spoken script has no FR/NFR jargon")
+    if "clips/meghna-3min-prototype-silent.mp4" not in meghna_md or "<video" not in meghna_md:
+        fail("meghna-cafe-demo.md must embed the silent Meghna prototype clip")
+    if "PROTOTYPE" not in meghna_md:
+        fail("meghna-cafe-demo.md must label the silent clip PROTOTYPE")
+    materials_md = (ROOT / "meghna-materials.md").read_text(encoding="utf-8")
+    for needle in (
+        "clips/meghna-3min-prototype-silent.mp4",
+        "<video",
+        "PROTOTYPE",
+        "meghna-cafe-demo.md",
+        "meghna-voiceover.md",
+        "plain English",
+        "Unknown",
+    ):
+        if needle not in materials_md:
+            fail(f"meghna-materials.md missing required pack fact ({needle})")
+    if "/workspace/" in materials_md:
+        fail("meghna-materials.md must not publish machine /workspace/ paths")
+    vo_md = (ROOT / "meghna-voiceover.md").read_text(encoding="utf-8")
+    for needle in ("plain English", "Unknown", "no FR/NFR"):
+        if needle not in vo_md:
+            fail(f"meghna-voiceover.md missing required VO fact ({needle})")
+    if "<video" in vo_md:
+        fail("meghna-voiceover.md must not embed clips (materials / cafe-demo keep them)")
+    meghna_clip = ROOT / "clips" / "meghna-3min-prototype-silent.mp4"
+    if not meghna_clip.is_file():
+        fail("missing knowledge/clips/meghna-3min-prototype-silent.mp4")
     quantic_md = (ROOT / "quantic.md").read_text(encoding="utf-8")
-    if "meghna-cafe-demo.md" not in quantic_md:
-        fail("quantic.md must link the Meghna 3-min cafe demo pack")
+    for needle in ("meghna-cafe-demo.md", "meghna-materials.md", "meghna-voiceover.md"):
+        if needle not in quantic_md:
+            fail(f"quantic.md must link {needle}")
     for name, text in (
         ("meeting-wednesday.md", wed_md),
         ("meeting-friday.md", fri_md),

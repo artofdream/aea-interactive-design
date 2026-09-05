@@ -4,7 +4,7 @@
 
 **When:** Saturday **2026-09-05 ~13:00 America/New_York** (**19:00 Europe/Berlin**). The America/New_York clock is the scheduled recording slot; Europe/Berlin is the repo’s “today” zone.
 
-**Supporting docs target:** **9:00 America/New_York** on **2026-09-06** (Sunday; **15:00 Europe/Berlin**). That clock is the docs deadline, not the Saturday recording slot. Pack: [Handoff](quantic-handoff.md) + [Meghna demo](meghna-cafe-demo.md).
+**Supporting docs target:** **9:00 America/New_York** on **2026-09-06** (Sunday; **15:00 Europe/Berlin**). That clock is the docs deadline, not the Saturday recording slot. Pack: [Handoff](quantic-handoff.md) + [Meghna materials](meghna-materials.md) + [Meghna demo](meghna-cafe-demo.md).
 
 **Source:** team meeting notes 2026-09-05 (owner paste) → GitHub [#97](https://github.com/artofdream/aea-interactive-design/issues/97).
 
@@ -78,7 +78,9 @@ Paste or open these. They are the reference pack (GitHub + cafe + Knowledge + of
 
 ## Open these
 
+- [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE** clip. Spoken / VO = plain English.
 - [Meghna demo](meghna-cafe-demo.md) — part 2 (~3 min) on `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations).
+- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
 - [Talk cuts](presentation.md) — Variant B and Variant C (3-min segments) plus shared open / close. Variant A remains a draft, not the locked Saturday cut.
 - [Video script](video-script.md) — timed beats, scenario menu A–F, committed clips. Zoom dry-run v2 is **PROTOTYPE**, not the Quantic submission.
 - [Must-film shots](must-film-shots.md) — four camera beats: happy book → `/operator`, newsletter → newsletter-only, full-book **HTTP 409**, NFR-6 via Coverage/CI.

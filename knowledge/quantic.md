@@ -10,7 +10,9 @@ This site is a thin map. It is **not** the restaurant and **not** a CMS. **MVP =
 
 Link out to the Quantic pack. Open the page itself for the full brief, tables, talk cuts, or clips.
 
-- [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — **first:** spoken walk of `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations). Plain English on camera; FR/NFR map is supporting notes only.
+- [Meghna materials](meghna-materials.md) — **first:** index + silent **PROTOTYPE** video. Spoken / VO = plain English.
+- [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — spoken walk of `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations). FR/NFR map is supporting notes only.
+- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
 - [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
 
 Team-meeting packs (delivery-only — not in the global top nav):
@@ -32,7 +34,7 @@ Source pages (stay complete; meeting pages link out):
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
-- Clips stay on the [Brief](brief.md) and [Video script](video-script.md) (not a separate page; not moved here)
+- Clips stay on the [Brief](brief.md), [Video script](video-script.md), and [Meghna materials](meghna-materials.md) (not moved onto this hub)
 
 ## Implementation (not the Quantic pack)
 
