@@ -25,6 +25,10 @@ function yesNo(flag) {
   return flag ? "yes" : "no";
 }
 
+function Cell({ label, children }) {
+  return <td data-label={label}>{children}</td>;
+}
+
 export default function Operator() {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
@@ -92,13 +96,13 @@ export default function Operator() {
                 <tbody>
                   {reservations.map((row) => (
                     <tr key={row.reservation_id}>
-                      <td>{row.customer_name}</td>
-                      <td>{row.email}</td>
-                      <td>{yesNo(row.newsletter)}</td>
-                      <td>{formatOperatorSlot(row.time_slot)}</td>
-                      <td>{row.table_number}</td>
-                      <td>{row.guest_count}</td>
-                      <td>{row.reservation_id}</td>
+                      <Cell label="Name">{row.customer_name}</Cell>
+                      <Cell label="Email">{row.email}</Cell>
+                      <Cell label="Newsletter">{yesNo(row.newsletter)}</Cell>
+                      <Cell label="Time slot">{formatOperatorSlot(row.time_slot)}</Cell>
+                      <Cell label="Table">{row.table_number}</Cell>
+                      <Cell label="Guests">{row.guest_count}</Cell>
+                      <Cell label="Reservation id">{row.reservation_id}</Cell>
                     </tr>
                   ))}
                 </tbody>
@@ -121,9 +125,9 @@ export default function Operator() {
                 <tbody>
                   {newsletterOnly.map((row) => (
                     <tr key={row.customer_id}>
-                      <td>{row.customer_name}</td>
-                      <td>{row.email}</td>
-                      <td>{yesNo(row.newsletter)}</td>
+                      <Cell label="Name">{row.customer_name}</Cell>
+                      <Cell label="Email">{row.email}</Cell>
+                      <Cell label="Newsletter">{yesNo(row.newsletter)}</Cell>
                     </tr>
                   ))}
                 </tbody>

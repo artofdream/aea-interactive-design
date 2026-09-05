@@ -10,9 +10,8 @@ export default function Home() {
         <div>
           <h1>{freeze.name}</h1>
           <p className="lede">{freeze.history}</p>
-          <p>
+          <p className="hero-actions">
             <Link to="/reservations">Reserve a table</Link>
-            {" · "}
             <Link to="/menu">View the menu</Link>
           </p>
         </div>
@@ -30,9 +29,8 @@ export default function Home() {
         </div>
         <div className="card">
           <h2>Explore</h2>
-          <p>
+          <p className="card-actions">
             <Link to="/about">About Us</Link>
-            {" · "}
             <Link to="/gallery">Gallery</Link>
           </p>
         </div>
