@@ -1,6 +1,6 @@
 # Teammate brief — Fri 2026-09-04 19:00 Europe/Berlin
 
-Thin handoff for the teammate meeting. Not the restaurant. Not a second product.
+**In plain English:** This is the teammate handoff page — clips, what to show Friday, and what is still Future. It is not the restaurant and not a second product. Course pages stay listed on [Quantic / MSAIE](quantic.md). Words like probe and Unknown are on the [Glossary](glossary.md).
 
 **Probe date for live claims on this page:** 2026-09-05 Europe/Berlin (this session).
 

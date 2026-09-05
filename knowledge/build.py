@@ -20,6 +20,7 @@ NAV = [
     ("srs.html", "SRS freeze", "srs"),
     ("coverage.html", "Coverage", "coverage"),
     ("honesty.html", "Honesty", "honesty"),
+    ("glossary.html", "Glossary", "glossary"),
     ("future.html", "Future", "future"),
 ]
 
@@ -31,6 +32,11 @@ DELIVERY_ONLY_HREFS = (
     "must-film-shots.html",
     "presentation.html",
     "presentation-sample.html",
+    "meeting-wednesday.html",
+    "meeting-friday.html",
+    "meeting-saturday.html",
+    "meeting-sunday.html",
+    "quantic-handoff.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -41,6 +47,12 @@ PAGE_ICONS = {
     "must-film-shots.html": "video",
     "presentation.html": "talk",
     "presentation-sample.html": "slides",
+    "glossary.html": "glossary",
+    "meeting-wednesday.html": "brief",
+    "meeting-friday.html": "friday",
+    "meeting-saturday.html": "talk",
+    "meeting-sunday.html": "slides",
+    "quantic-handoff.html": "quantic",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -101,6 +113,11 @@ ICONS = {
         'stroke-linecap="round" stroke-linejoin="round" '
         'd="M12 3.6 19.2 6.8v5.4c0 4.4-3.1 6.7-7.2 8.2-4.1-1.5-7.2-3.8-7.2-8.2V6.8zM8.8 12.2l2.3 2.3 4.2-4.4"/>'
     ),
+    "glossary": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M5 5.2c1.8-.8 3.6-.8 5.4 0v13.2c-1.8-.8-3.6-.8-5.4 0zM19 5.2c-1.8-.8-3.6-.8-5.4 0v13.2c1.8-.8 3.6-.8 5.4 0z"/>'
+    ),
     "future": (
         '<path fill="none" stroke="currentColor" stroke-width="1.75" '
         'stroke-linecap="round" stroke-linejoin="round" '
@@ -117,10 +134,16 @@ REQUIRED = [
     ROOT / "must-film-shots.md",
     ROOT / "presentation.md",
     ROOT / "presentation-sample.md",
+    ROOT / "meeting-wednesday.md",
+    ROOT / "meeting-friday.md",
+    ROOT / "meeting-saturday.md",
+    ROOT / "meeting-sunday.md",
+    ROOT / "quantic-handoff.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
     ROOT / "coverage.md",
     ROOT / "honesty.md",
+    ROOT / "glossary.md",
     ROOT / "future.md",
 ]
 
@@ -133,10 +156,12 @@ WIDE_PAGES = {
     "presentation.html",
     "presentation-sample.html",
     "honesty.html",
+    "glossary.html",
     "index.html",
     "brief.html",
     "video-script.html",
     "must-film-shots.html",
+    "quantic-handoff.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -854,6 +879,11 @@ def assert_ux_wiring() -> None:
         'href="video-script.html"',
         'href="must-film-shots.html"',
         'href="friday-plan.html"',
+        'href="meeting-wednesday.html"',
+        'href="meeting-friday.html"',
+        'href="meeting-saturday.html"',
+        'href="meeting-sunday.html"',
+        'href="quantic-handoff.html"',
         'href="honesty.html"',
         'href="stack.html"',
         'href="future.html"',
@@ -869,6 +899,15 @@ def assert_ux_wiring() -> None:
         fail("quantic.html must not embed clips or diagrams (nav hub only)")
     if 'href="quantic.html"' not in index:
         fail("index.html missing Quantic nav link")
+    if 'href="glossary.html"' not in index:
+        fail("index.html missing Glossary link")
+    glossary_md = (ROOT / "glossary.md").read_text(encoding="utf-8")
+    for term in ("Probe", "Unknown", "MVP"):
+        if term not in glossary_md:
+            fail(f"glossary.md missing term {term}")
+    future_glossary = (ROOT / "future" / "glossary.md").read_text(encoding="utf-8")
+    if "../glossary.md" not in future_glossary:
+        fail("future/glossary.md must point at the first-class glossary")
     if "inline-icon" not in qhtml:
         fail("quantic.html delivery links must keep page icons")
     for page in (
@@ -877,6 +916,7 @@ def assert_ux_wiring() -> None:
         "srs.html",
         "coverage.html",
         "honesty.html",
+        "glossary.html",
         "future.html",
         "quantic.html",
         *DELIVERY_ONLY_HREFS,
@@ -887,6 +927,8 @@ def assert_ux_wiring() -> None:
         nav = _nav_block(built.read_text(encoding="utf-8"))
         if 'href="quantic.html"' not in nav:
             fail(f"{page} global nav must keep Quantic hub")
+        if 'href="glossary.html"' not in nav:
+            fail(f"{page} global nav must keep first-class Glossary")
         for name in DELIVERY_ONLY_HREFS:
             if re.search(rf'href="(?:\.\./)*{re.escape(name)}"', nav):
                 fail(f"{page} global nav must not include Quantic delivery {name}")
@@ -901,6 +943,58 @@ def assert_ux_wiring() -> None:
         fail("video-script.md must embed Zoom dry-run v2 prototype (issue #81)")
     if "must-film-shots.md" not in video_md:
         fail("video-script.md must link the must-film shot list (issue #83)")
+    wed_md = (ROOT / "meeting-wednesday.md").read_text(encoding="utf-8")
+    fri_md = (ROOT / "meeting-friday.md").read_text(encoding="utf-8")
+    sat_md = (ROOT / "meeting-saturday.md").read_text(encoding="utf-8")
+    sun_md = (ROOT / "meeting-sunday.md").read_text(encoding="utf-8")
+    if "brief.md" not in wed_md:
+        fail("meeting-wednesday.md must link the Brief (do not hollow it)")
+    if "friday-plan.md" not in fri_md:
+        fail("meeting-friday.md must link the Friday plan (do not hollow it)")
+    if "presentation.md" not in sat_md or "video-script.md" not in sat_md:
+        fail("meeting-saturday.md must link talk cuts and video script")
+    if "must-film-shots.md" not in sat_md:
+        fail("meeting-saturday.md must link the must-film shot list")
+    if "America/New_York" not in sat_md or "Europe/Berlin" not in sat_md:
+        fail("meeting-saturday.md must note America/New_York and Europe/Berlin")
+    if "Unknown" not in sun_md or "to-be-filled" not in sun_md:
+        fail("meeting-sunday.md must stay Unknown / to-be-filled until notes exist")
+    handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
+    for needle in (
+        "https://github.com/artofdream/aea-interactive-design",
+        "https://cafe.artof.link/",
+        "https://knowledge.cafe.artof.link/",
+        "quantic.html",
+        "coverage.md",
+        "honesty.md",
+        "PROTOTYPE",
+        "not FR-19",
+        "NFR-1",
+        "NFR-7",
+        "to-be-filled",
+        "must-film-shots.md",
+        "speaker",
+    ):
+        if needle not in handoff_md:
+            fail(f"quantic-handoff.md missing required handoff fact ({needle})")
+    if "<video" in handoff_md or "clips/" in handoff_md:
+        fail("quantic-handoff.md must not embed clips (sister pages keep them)")
+    for name, text in (
+        ("meeting-wednesday.md", wed_md),
+        ("meeting-friday.md", fri_md),
+        ("meeting-saturday.md", sat_md),
+        ("meeting-sunday.md", sun_md),
+    ):
+        if "quantic-handoff.md" not in text:
+            fail(f"{name} must link the Quantic deliverable handoff")
+    for name, text in (
+        ("meeting-wednesday.md", wed_md),
+        ("meeting-friday.md", fri_md),
+        ("meeting-saturday.md", sat_md),
+        ("meeting-sunday.md", sun_md),
+    ):
+        if "<video" in text or "clips/" in text:
+            fail(f"{name} must not embed clips (sister pages keep them)")
     shots_md = (ROOT / "must-film-shots.md").read_text(encoding="utf-8")
     if "Do-not-say checklist" not in shots_md:
         fail("must-film-shots.md lost the do-not-say checklist")
