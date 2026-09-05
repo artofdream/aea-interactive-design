@@ -33,18 +33,21 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Coverage** is the grade-floor map. Open it when a grader asks “where is FR-9?” or “is NFR-6 tested?” It is not a slide deck.
 
+**Meghna first:** [Meghna — 3-minute cafe.artof.link demo](meghna-cafe-demo.md) — spoken lines are **plain English only**. FR/NFR IDs stay in that page’s supporting notes (and Coverage). Supporting docs target **9:00 America/New_York** on 2026-09-06.
+
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
 1. Team + ID verification — ~30s — shared
-2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations
+2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations — pack: [Meghna demo](meghna-cafe-demo.md)
 3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude or Hiren**
 4. Coding rationale (**Variant C**) — ~3 min — **Claude or Hiren**
 5. Shared close — shared
 
-Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown** / to-be-filled. Voice-over is **TBD**. Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md).
+Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown** / to-be-filled. Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](meghna-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
 Sister talk-track pages (stay complete):
 
+- [Meghna demo](meghna-cafe-demo.md) — 3-min live walk (spoken = plain English).
 - [Talk cuts](presentation.md) — Variant B and Variant C as 3-min sources; Variant A remains a draft. Shared open / close stay here.
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut. Friday deck, not a second talk track.
 - [Video script](video-script.md) — timed beats + scenario menu A–F. Zoom dry-run v2 on that page is **PROTOTYPE**.

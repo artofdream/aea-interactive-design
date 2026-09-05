@@ -4,6 +4,8 @@
 
 **When:** Saturday **2026-09-05 ~13:00 America/New_York** (**19:00 Europe/Berlin**). The America/New_York clock is the scheduled recording slot; Europe/Berlin is the repo’s “today” zone.
 
+**Supporting docs target:** **9:00 America/New_York** on **2026-09-06** (Sunday; **15:00 Europe/Berlin**). That clock is the docs deadline, not the Saturday recording slot. Pack: [Handoff](quantic-handoff.md) + [Meghna demo](meghna-cafe-demo.md).
+
 **Source:** team meeting notes 2026-09-05 (owner paste) → GitHub [#97](https://github.com/artofdream/aea-interactive-design/issues/97).
 
 **Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent **FR-19**. Do not say **NFR-1** / **NFR-2** are met. **NFR-7** is **partial**. `/operator` is a read-only recording helper — **not FR-19**. `https://cafe.artof.link/` is Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — **not** forever production. Zoom dry-run on the video-script page is **PROTOTYPE**, not the Quantic submission.
@@ -13,7 +15,7 @@
 | # | Part | Clock | Who | What |
 |---|---|---|---|---|
 | 1 | Team + ID verification | ~30s | Shared | Names / student IDs. |
-| 2 | Website demo | ~3 min | **Meghna** | Live `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations. Navigate to show FR/NFR. |
+| 2 | Website demo | ~3 min | **Meghna** | Live `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations. Full pack: [Meghna demo](meghna-cafe-demo.md). |
 | 3 | Architecture + Diagram (**Variant B**) | ~3 min | **Claude or Hiren** | Take over from reservation → architecture. |
 | 4 | Coding rationale (**Variant C**) | ~3 min | **Claude or Hiren** | Frameworks + implementation. |
 | 5 | Shared close | remainder | Shared | Honesty close on [Talk cuts](presentation.md). |
@@ -29,7 +31,7 @@ Every part must stay: plain English; supporting documents; PDF refs (GitHub + ca
 | Part | Script / talking points | Prototype video now | Voice-over |
 |---|---|---|---|
 | 1. Team + ID (~30s) | Shared open on [Talk cuts](presentation.md) (first 30s only — names / IDs). | **TBD** / none yet. | **TBD** |
-| 2. Website demo (Meghna, ~3 min) | This page (demo beats below) + [Must-film shots](must-film-shots.md) + [Coverage](coverage.md). Pages: Home, Gallery, Menu, Reservations. | Live `https://cafe.artof.link/` preferred. Fallback look: clip **01** / **02** on the [Video script](video-script.md). Zoom dry-run v2 is **PROTOTYPE** (Variant A) — **not** this cut. | **TBD** |
+| 2. Website demo (Meghna, ~3 min) | **[Meghna demo](meghna-cafe-demo.md)** (Home → Gallery → Menu → Reservations) + [Must-film shots](must-film-shots.md) + [Coverage](coverage.md). | Live `https://cafe.artof.link/` preferred. Fallback look: clip **01** / **02** on the [Video script](video-script.md). Zoom dry-run v2 is **PROTOTYPE** (Variant A) — **not** this cut. | **TBD** |
 | 3. Architecture / Variant B (~3 min) | [Talk cuts — Variant B](presentation.md) condensed to 3 min. Diagrams: [Stack](stack.md), [staging SVG](assets/hld-aws-staging.svg). Start from the reservation screen. | **Unknown** / to-be-filled. No dedicated B clip yet. HLD SVGs are the stills. | **TBD** |
 | 4. Coding / Variant C (~3 min) | [Talk cuts — Variant C](presentation.md) condensed to 3 min. Frameworks + why this implementation. | **Unknown** / to-be-filled. No dedicated C clip yet. | **TBD** |
 | 5. Shared close | [Shared close](presentation.md) on Talk cuts. | **TBD** / none yet. | **TBD** |
@@ -38,7 +40,7 @@ Optional: Claude may prepare an **advance recording** for evaluation. That file 
 
 ## Meghna demo beats (~3 min)
 
-Prefer live `https://cafe.artof.link/` (staging #57). Navigate; do not invent IDs. Point at [Coverage](coverage.md) if a grader asks “where is that FR?”
+Full talking points: **[Meghna — 3-minute cafe.artof.link demo](meghna-cafe-demo.md)**. Prefer live `https://cafe.artof.link/` (staging #57). Navigate; do not invent IDs. Point at [Coverage](coverage.md) if a grader asks “where is that FR?”
 
 | Order | Page | Show (freeze IDs) | Do not say |
 |---|---|---|---|
@@ -76,6 +78,7 @@ Paste or open these. They are the reference pack (GitHub + cafe + Knowledge + of
 
 ## Open these
 
+- [Meghna demo](meghna-cafe-demo.md) — part 2 (~3 min) on `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations).
 - [Talk cuts](presentation.md) — Variant B and Variant C (3-min segments) plus shared open / close. Variant A remains a draft, not the locked Saturday cut.
 - [Video script](video-script.md) — timed beats, scenario menu A–F, committed clips. Zoom dry-run v2 is **PROTOTYPE**, not the Quantic submission.
 - [Must-film shots](must-film-shots.md) — four camera beats: happy book → `/operator`, newsletter → newsletter-only, full-book **HTTP 409**, NFR-6 via Coverage/CI.

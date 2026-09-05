@@ -10,6 +10,7 @@ This site is a thin map. It is **not** the restaurant and **not** a CMS. **MVP =
 
 Link out to the Quantic pack. Open the page itself for the full brief, tables, talk cuts, or clips.
 
+- [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — **first:** spoken walk of `https://cafe.artof.link/` (Home → Gallery → Menu → Reservations). Plain English on camera; FR/NFR map is supporting notes only.
 - [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
 
 Team-meeting packs (delivery-only — not in the global top nav):

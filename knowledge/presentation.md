@@ -7,7 +7,7 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 | Clock | Part | Who | Source on this page |
 |---|---|---|---|
 | 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below |
-| 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | Beats on [Saturday](meeting-saturday.md); must-film on [Must-film shots](must-film-shots.md) |
+| 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | [Meghna demo](meghna-cafe-demo.md); must-film on [Must-film shots](must-film-shots.md) |
 | 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude or Hiren** | Variant B section below, condensed to ~3 min. Take over from reservation. |
 | 6:30–9:30 | Coding rationale (**Variant C**) | **Claude or Hiren** | Variant C section below, condensed to ~3 min. |
 | 9:30–10:00 | Shared close | Shared | Shared close section below |

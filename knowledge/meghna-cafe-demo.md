@@ -107,7 +107,7 @@ Other freeze talk picks (prices from page only): Caesar Salad $9.00 · Ribeye St
 
 ## 4. Optional must-film extras (only if time)
 
-Mark these **OPTIONAL**. Core pack stops at Reservations look + handoff. Full click paths: [Must-film shots](MUST-FILM-SHOTS.md) · live https://knowledge.cafe.artof.link/must-film-shots.html
+Mark these **OPTIONAL**. Core pack stops at Reservations look + handoff. Full click paths: [Must-film shots](must-film-shots.md) · live `https://knowledge.cafe.artof.link/must-film-shots.html` (Pages **Unknown** until after merge / deploy).
 
 | Extra | When | What (plain) | Map | Time |
 | --- | --- | --- | --- | ---: |
@@ -136,7 +136,8 @@ Then stop talking. Let Architecture take the screen.
 | **Live café (your surface)** | https://cafe.artof.link/ | Prefer this share. Staging — not forever. |
 | **Operator (helper)** | https://cafe.artof.link/operator | Read-only. Not an admin console. Not in primary nav. |
 | **Knowledge — Coverage** | https://knowledge.cafe.artof.link/coverage.html | Full FR/NFR + evidence (supporting doc). |
-| **Knowledge — Must-film shots** | https://knowledge.cafe.artof.link/must-film-shots.html | Happy book / newsletter / 409. |
+| **Knowledge — Must-film shots** | [must-film-shots.md](must-film-shots.md) · `https://knowledge.cafe.artof.link/must-film-shots.html` | Happy book / newsletter / 409. Live GET **Unknown** until after merge / deploy. |
+| **Knowledge — Video script** | [video-script.md](video-script.md) · `https://knowledge.cafe.artof.link/video-script.html` | Clips + Zoom dry-run (**PROTOTYPE**, not the submit). |
 | **Knowledge — Quantic hub** | https://knowledge.cafe.artof.link/quantic.html | Navigation hub. |
 | **Presentation (Architecture)** | https://knowledge.cafe.artof.link/presentation.html | After your handoff. |
 | **Health (mute pre-flight)** | https://cafe.artof.link/api/health | Expect `{"ok":true}` before you go live. |
