@@ -21,6 +21,8 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English.
 - [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
+- [To-be (beyond the MVP)](to-be.md) — **not the grade floor.** As-is = SRS **FR-1..FR-18** / **NFR-1..NFR-9**. To-be = parked Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Do not invent **FR-19** / **NFR-10**.
+
 
 - [Brief](brief.md)
 - [Coverage](coverage.md)
