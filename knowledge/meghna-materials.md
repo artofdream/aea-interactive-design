@@ -10,8 +10,8 @@ Everything for the **3-minute cafe demo** (Home → Gallery → Menu → Reserva
 
 | File | What |
 | --- | --- |
-| [`MEGHNA-3MIN-CAFE-DEMO.md`](MEGHNA-3MIN-CAFE-DEMO.md) | Full pack: timed beats, click path, supporting ID map, handoff |
-| Knowledge (after #89 lands) | `meghna-cafe-demo` under Quantic / meeting-sunday / handoff |
+| [Meghna 3-min cafe demo](meghna-cafe-demo.md) | Full pack: timed beats, click path, supporting ID map, handoff |
+| Knowledge (this site) | [Meghna cafe demo](meghna-cafe-demo.md) · [VO draft](meghna-voiceover.md) · linked from Quantic / Sunday / handoff |
 
 Live site to rehearse: **https://cafe.artof.link/**
 
@@ -21,11 +21,15 @@ Live site to rehearse: **https://cafe.artof.link/**
 
 | Asset | Path / URL | Note |
 | --- | --- | --- |
-| **Meghna path prototype** | `/workspace/cafe-fausse-prototype/meghna-3min-prototype-silent.mp4` (~162s) | Silent. Open → Home → Gallery → Menu → Reservations → Architecture handoff card. Built from live staging captures. **PROTOTYPE**, not Quantic submit. |
+| **Meghna path prototype** | [`clips/meghna-3min-prototype-silent.mp4`](clips/meghna-3min-prototype-silent.mp4) (~162s) | Silent. Open → Home → Gallery → Menu → Reservations → Architecture handoff card. Built from live staging captures. **PROTOTYPE**, not Quantic submit. |
 | Team Zoom dry-run v2 | `/workspace/cafe-fausse-prototype/cafe-fausse-zoom-dryrun-v2.mp4` · https://knowledge.cafe.artof.link/clips/03-zoom-dryrun-v2.mp4 | Full ~10 min Variant A dry-run — timing/honesty reference; path order differs from Meghna’s lock. |
 | Happy-book clip (optional) | `/workspace/cafe-fausse-prototype/v2/assets/02-happy-book.mp4` | Fallback look if she extends past nav. |
 
 Prefer **live share** for the real recording; use the silent prototype only for rehearsal / VO timing.
+
+<video controls src="clips/meghna-3min-prototype-silent.mp4"></video>
+
+**Recorded teammate VO:** **Unknown** until Meghna or Claude records.
 
 ---
 
@@ -33,7 +37,7 @@ Prefer **live share** for the real recording; use the silent prototype only for 
 
 | Asset | Path | Status |
 | --- | --- | --- |
-| Draft VO script | [`MEGHNA-VOICEOVER.md`](MEGHNA-VOICEOVER.md) | Ready to record |
+| Draft VO script | [Meghna VO draft](meghna-voiceover.md) | Ready to record |
 | Recorded teammate VO | — | **Unknown** until Meghna (or Claude optional advance take) records |
 
 ---
@@ -43,10 +47,10 @@ Prefer **live share** for the real recording; use the silent prototype only for 
 | What | Link |
 | --- | --- |
 | Coverage (grade map) | https://knowledge.cafe.artof.link/coverage.html |
-| Must-film shots | https://knowledge.cafe.artof.link/must-film-shots.html · [`MUST-FILM-SHOTS.md`](MUST-FILM-SHOTS.md) |
+| Must-film shots | https://knowledge.cafe.artof.link/must-film-shots.html · [Must-film shots](must-film-shots.md) |
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html |
 | Presentation (Architecture after handoff) | https://knowledge.cafe.artof.link/presentation.html |
-| Still captures | `/workspace/mustfilm/` · `/workspace/cafe-fausse-prototype/v2/captures/` |
+| Still captures | Staging evidence on [must-film shots](must-film-shots.md) |
 
 ---
 
