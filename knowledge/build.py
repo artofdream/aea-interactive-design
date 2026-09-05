@@ -15,6 +15,7 @@ OUT = ROOT / "_site"
 
 NAV = [
     ("index.html", "Home", "home"),
+    ("quantic.html", "Quantic", "quantic"),
     ("brief.html", "Brief", "brief"),
     ("friday-plan.html", "Friday", "friday"),
     ("video-script.html", "Video", "video"),
@@ -33,6 +34,12 @@ ICONS = {
         '<path fill="none" stroke="currentColor" stroke-width="1.75" '
         'stroke-linecap="round" stroke-linejoin="round" '
         'd="M4 11.2 12 4l8 7.2V20h-5.2v-5.6H9.2V20H4z"/>'
+    ),
+    "quantic": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M4 10.2 12 6l8 4.2-8 4.2zM7.2 11.8v3.2c0 1.3 2.1 2.4 4.8 2.4s4.8-1.1 '
+        '4.8-2.4v-3.2M19 10.8v6.4"/>'
     ),
     "brief": (
         '<path fill="none" stroke="currentColor" stroke-width="1.75" '
@@ -88,6 +95,7 @@ ICONS = {
 
 REQUIRED = [
     ROOT / "index.md",
+    ROOT / "quantic.md",
     ROOT / "brief.md",
     ROOT / "friday-plan.md",
     ROOT / "video-script.md",
@@ -798,6 +806,32 @@ def assert_ux_wiring() -> None:
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
         fail("honesty.md lost the NFR-1 / NFR-2 not-met line")
+    quantic = OUT / "quantic.html"
+    if not quantic.is_file():
+        fail("missing built quantic.html")
+    qhtml = quantic.read_text(encoding="utf-8")
+    for needle in (
+        "Delivery / MSAIE",
+        "not the Quantic pack",
+        'href="brief.html"',
+        'href="coverage.html"',
+        'href="presentation.html"',
+        'href="presentation-sample.html"',
+        'href="video-script.html"',
+        'href="friday-plan.html"',
+        'href="honesty.html"',
+        'href="stack.html"',
+        'href="future.html"',
+        'href="index.html"',
+        'class="nav-icon"',
+        'class="is-current"',
+    ):
+        if needle not in qhtml:
+            fail(f"quantic.html missing hub wiring ({needle})")
+    if "<table" in qhtml:
+        fail("quantic.html must stay table-light (issue #73 is a separate PR)")
+    if 'href="quantic.html"' not in index:
+        fail("index.html missing Quantic nav link")
 
 
 def assert_svg_well_formed() -> None:
