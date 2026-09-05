@@ -179,6 +179,7 @@ main li {
 code, pre {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.88em;
+  overflow-wrap: anywhere;
 }
 
 pre {
@@ -187,6 +188,12 @@ pre {
   overflow: auto;
   max-width: 100%;
   border: 1px solid var(--rule);
+}
+
+footer,
+main a,
+main blockquote {
+  overflow-wrap: anywhere;
 }
 
 .table-wrap {
@@ -225,13 +232,45 @@ pre {
   background: var(--chip);
 }
 
-pre.mermaid {
-  background: #efeae1;
-  padding: 0.9rem 1rem;
-  overflow: auto;
+.diagram-wrap {
+  display: block;
+  width: 100%;
   max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  margin: 1.1rem 0;
   border: 1px solid var(--rule);
+  background: #efeae1;
+}
+
+.diagram-wrap:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+pre.mermaid,
+.diagram-wrap .mermaid,
+.diagram-wrap pre.mermaid {
+  background: transparent;
+  padding: 0.9rem 1rem;
+  overflow: visible;
+  max-width: none;
+  margin: 0;
+  border: 0;
   text-align: center;
+}
+
+.diagram-wrap .diagram-img,
+.diagram-wrap img {
+  display: block;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  max-width: none;
+  height: auto;
 }
 
 main img {
@@ -337,6 +376,78 @@ footer code { font-size: 0.85em; }
 /* Phone / small tablet: stack every table as cards. Do not force a
    44rem min-width — that plus a clipped overflow is what cut “Say / show”. */
 @media (max-width: 767px) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  header, main, footer {
+    padding: 1rem 0.9rem;
+  }
+
+  main ul,
+  main ol {
+    padding-inline-start: 1.2rem;
+  }
+
+  main h2 {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  nav a {
+    width: 100%;
+    min-height: 2.75rem;
+    justify-content: flex-start;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--rule);
+    border-bottom-color: var(--rule);
+    border-radius: 0.55rem;
+    background: var(--chip);
+  }
+
+  nav a:hover,
+  nav a.is-current {
+    border-color: var(--accent);
+    background: var(--chip-hot);
+  }
+
+  nav a span {
+    overflow-wrap: anywhere;
+  }
+
+  .diagram-wrap:has(.diagram-img)::after,
+  .diagram-wrap:has(.mermaid)::after {
+    content: "Swipe sideways for the full diagram";
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.35rem 0.65rem 0.55rem;
+  }
+
+  .diagram-wrap .diagram-img,
+  .diagram-wrap .mermaid,
+  .diagram-wrap pre.mermaid {
+    min-width: 36rem;
+  }
+
+  .diagram-wrap .mermaid svg {
+    min-width: 36rem;
+    max-width: none;
+    height: auto;
+  }
+
+  main video {
+    max-width: 100%;
+  }
+
   .table-wrap {
     position: relative;
     overflow: visible;
@@ -415,7 +526,7 @@ footer code { font-size: 0.85em; }
   }
 }
 
-@media (min-width: 40.01rem) and (max-width: 63.99rem) {
+@media (min-width: 768px) and (max-width: 63.99rem) {
   header, main, footer {
     padding: 1.2rem 1.15rem;
   }
