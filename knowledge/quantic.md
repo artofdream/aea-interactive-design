@@ -17,6 +17,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Saturday meeting](meeting-saturday.md) — 2026-09-05; locked five-part VIDEO (Meghna demo + Variant B + Variant C; #97)
 - [Sunday meeting](meeting-sunday.md) — 2026-09-06; ends with a recording; docs target **9:00 America/New_York**; remaining gaps **Unknown**
 
+- [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
 - [Brief](brief.md)
 - [Coverage](coverage.md)
 - [Talk cuts](presentation.md)
