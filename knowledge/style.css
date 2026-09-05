@@ -273,6 +273,25 @@ pre.mermaid,
   height: auto;
 }
 
+/* Compact mermaid (glossary status-word, home overview): fill the
+   column instead of a 36rem swipe canvas. Wide HLD stays swipeable. */
+.diagram-wrap.diagram-fit {
+  overflow-x: hidden;
+}
+
+.diagram-wrap.diagram-fit .mermaid,
+.diagram-wrap.diagram-fit pre.mermaid {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.diagram-wrap.diagram-fit .mermaid svg {
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+
 main img {
   max-width: 100%;
   height: auto;
@@ -422,7 +441,7 @@ footer code { font-size: 0.85em; }
   }
 
   .diagram-wrap:has(.diagram-img)::after,
-  .diagram-wrap:has(.mermaid)::after {
+  .diagram-wrap:not(.diagram-fit):has(.mermaid)::after {
     content: "Swipe sideways for the full diagram";
     display: block;
     font-size: 0.78rem;
@@ -432,15 +451,31 @@ footer code { font-size: 0.85em; }
     padding: 0.35rem 0.65rem 0.55rem;
   }
 
-  .diagram-wrap .diagram-img,
-  .diagram-wrap .mermaid,
-  .diagram-wrap pre.mermaid {
+  .diagram-wrap .diagram-img {
     min-width: 36rem;
   }
 
-  .diagram-wrap .mermaid svg {
+  .diagram-wrap:not(.diagram-fit) .mermaid,
+  .diagram-wrap:not(.diagram-fit) pre.mermaid {
+    min-width: 36rem;
+  }
+
+  .diagram-wrap:not(.diagram-fit) .mermaid svg {
     min-width: 36rem;
     max-width: none;
+    height: auto;
+  }
+
+  .diagram-wrap.diagram-fit .mermaid,
+  .diagram-wrap.diagram-fit pre.mermaid {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .diagram-wrap.diagram-fit .mermaid svg {
+    min-width: 0;
+    max-width: 100%;
     height: auto;
   }
 

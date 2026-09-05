@@ -7,18 +7,12 @@
 
 They do not share a load balancer. GitHub only. Short labels: [Glossary](glossary.md).
 
-```mermaid
+```mermaid fit
 flowchart TB
-  subgraph Map["This map — GitHub Pages"]
-    K["knowledge.cafe.artof.link"]
-  end
-  subgraph App["Restaurant — weekend staging #57"]
-    C["cafe.artof.link"]
-  end
-  subgraph Later["Not yet — Future #22"]
-    P["Permanent hosting"]
-  end
-  Map --- App
+  Map["This map — GitHub Pages<br/>knowledge.cafe.artof.link"]
+  App["Restaurant — weekend staging #57<br/>cafe.artof.link"]
+  Later["Not yet — Future #22<br/>Permanent hosting"]
+  Map --> App
   App -.-> Later
 ```
 

@@ -35,16 +35,16 @@ Deep FR tables and CI jargon stay on Coverage, Stack, and Honesty — not here.
 
 As-is this weekend vs planned Future. Detail and HLD SVGs stay on [Stack](stack.md). The labeled Future / to-be page is [Future](future.md) (a dedicated Quantic to-be page is [#98](https://github.com/artofdream/aea-interactive-design/issues/98) / open [#89](https://github.com/artofdream/aea-interactive-design/pull/89) — live `/to-be.html` stays **Unknown** until that lands).
 
-```mermaid
+```mermaid fit
 flowchart TB
   visitor[A visitor]
-  map[This Knowledge map\nknowledge.cafe.artof.link]
-  app[Restaurant App\ncafe.artof.link staging]
-  forever[Permanent hosting\nFuture 22]
+  map[This Knowledge map<br/>knowledge.cafe.artof.link]
+  app[Restaurant App<br/>cafe.artof.link staging]
+  forever[Permanent hosting<br/>Future 22]
   visitor --> map
   visitor --> app
-  map -.->|explains the project\ndoes not take bookings| app
-  app -.->|not this weekend cut| forever
+  map -.->|explains<br/>does not book| app
+  app -.->|not this<br/>weekend cut| forever
 ```
 
 ## Feedback
