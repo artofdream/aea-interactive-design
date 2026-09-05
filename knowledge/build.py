@@ -956,7 +956,8 @@ def assert_ux_wiring() -> None:
     honesty_md = (ROOT / "honesty.md").read_text(encoding="utf-8")
     if "Do not say NFR-1 / NFR-2 **met**" not in honesty_md:
         fail("honesty.md lost the NFR-1 / NFR-2 not-met line")
-    # Ratchet #123: NFR-1 met is the cited A36 Brave broadband cold Home; NFR-2 stays Unknown.
+    # Ratchet #123: NFR-1 met is the cited A36 Brave broadband cold Home.
+    # Ratchet #125: NFR-2 met is the cited A36 Brave broadband reservation submit.
     coverage_md = (ROOT / "coverage.md").read_text(encoding="utf-8")
     for label, text in (("honesty.md", honesty_md), ("coverage.md", coverage_md)):
         if "Samsung A36" not in text:
@@ -966,13 +967,19 @@ def assert_ux_wiring() -> None:
         if "466 ms" not in text:
             fail(f"{label} lost the A36 cold Home 466 ms")
         if "phonelink-a36-stopwatch.json" not in text:
-            fail(f"{label} lost the cts-ai A36 report path (cite only)")
-        if "NFR-2 stays **Unknown**" not in text:
-            fail(f"{label} must keep NFR-2 Unknown (do not invent submit timing)")
+            fail(f"{label} lost the cts-ai A36 NFR-1 report path (cite only)")
+        if "233 ms" not in text:
+            fail(f"{label} lost the A36 reservation submit 233 ms")
+        if "phonelink-a36-submit2-stopwatch.json" not in text:
+            fail(f"{label} lost the cts-ai A36 NFR-2 report path (cite only)")
+        if "NFR-2 stays **Unknown**" in text:
+            fail(f"{label} must not leave NFR-2 Unknown after the A36 submit probe")
         if "rog-device-stopwatch-issue-119.json" not in text:
             fail(f"{label} lost the separate ROG Wi-Fi evidence-note path")
     if "owner-claimed broadband" not in coverage_md:
         fail("coverage.md must say NFR-1 met is owner-claimed broadband + measured cold Home")
+    if "Reservation confirmed. Table 27" not in coverage_md:
+        fail("coverage.md lost the A36 NFR-2 success-frame cite")
     quantic = OUT / "quantic.html"
     if not quantic.is_file():
         fail("missing built quantic.html")
