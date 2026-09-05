@@ -10,6 +10,13 @@ This site is a thin map. It is **not** the restaurant and **not** a CMS. **MVP =
 
 Link out to the Quantic pack. Open the page itself for the full brief, tables, talk cuts, or clips.
 
+Team-meeting packs (delivery-only — not in the global top nav):
+
+- [Wednesday meeting](meeting-wednesday.md) — 2026-09-02 19:00 Europe/Berlin
+- [Friday meeting](meeting-friday.md) — 2026-09-04 19:00 Europe/Berlin; score-5 / tech access
+- [Saturday meeting](meeting-saturday.md) — 2026-09-05; locked five-part VIDEO (Meghna demo + Variant B + Variant C; #97)
+- [Sunday meeting](meeting-sunday.md) — 2026-09-06; ends with a recording; docs target **9:00 America/New_York**; remaining gaps **Unknown**
+
 - [Brief](brief.md)
 - [Coverage](coverage.md)
 - [Talk cuts](presentation.md)
