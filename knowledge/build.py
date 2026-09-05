@@ -41,6 +41,7 @@ DELIVERY_ONLY_HREFS = (
     "meghna-materials.html",
     "meghna-voiceover.html",
     "to-be.html",
+    "journal.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -61,6 +62,7 @@ PAGE_ICONS = {
     "meghna-materials.html": "video",
     "meghna-voiceover.html": "talk",
     "to-be.html": "future",
+    "journal.html": "brief",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -157,6 +159,7 @@ REQUIRED = [
     ROOT / "honesty.md",
     ROOT / "glossary.md",
     ROOT / "future.md",
+    ROOT / "journal.md",
 ]
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
@@ -961,6 +964,7 @@ def assert_ux_wiring() -> None:
         'href="stack.html"',
         'href="future.html"',
         'href="index.html"',
+        'href="journal.html"',
         'class="nav-icon"',
         'class="is-current"',
     ):

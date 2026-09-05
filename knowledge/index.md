@@ -58,7 +58,7 @@ Meeting packs (delivery-only, listed on [Quantic / MSAIE](quantic.md)): [Wednesd
 Nav icons match the links below. That is a map affordance — not an **NFR-1** / **NFR-2** claim.
 
 - [Quantic / MSAIE](quantic.md) — navigation hub only (delivery vs implementation). Source pages stay complete.
-- [Glossary](glossary.md) — short labels in plain English (probe, Unknown, MVP, staging)
+- [Glossary](glossary.md) — short labels in plain English (probe, Unknown, MVP, staging) plus sources / links this repo uses
 - [Brief](brief.md) — teammate meeting 2026-09-02 19:00 CET; owner locked 1/3/4; silent demo clips; FS v0.1 vs SRS MVP compare; Friday score-5 section
 - [Friday plan](friday-plan.md) — 2026-09-04 19:00 Europe/Berlin; P0/P1/P2; live Knowledge HTTPS vs App local/tunnel vs Future hostname
 - [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
@@ -68,4 +68,5 @@ Nav icons match the links below. That is a map affordance — not an **NFR-1** /
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
 - [Honesty](honesty.md) — probes, Unknown; live vs local vs Future
-- [Future / not-MVP](future.md) — schema notes (including [AWS `cafe_fausse_db` map](future/aws-schema-map.md)), journal stub, E2E beyond assignment
+- [Journal](journal.md) — principles, lessons, meeting MoM overview (delivery-only)
+- [Future / not-MVP](future.md) — schema notes (including [AWS `cafe_fausse_db` map](future/aws-schema-map.md)), glossary stub, journal stub, E2E beyond assignment

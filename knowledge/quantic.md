@@ -35,6 +35,7 @@ Source pages (stay complete; meeting pages link out):
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
+- [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
 - Clips stay on the [Brief](brief.md), [Video script](video-script.md), and [Meghna materials](meghna-materials.md) (not moved onto this hub)
 
 ## Implementation (not the Quantic pack)
