@@ -13,7 +13,7 @@ Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-
 | 1 | **Title** | Café Fausse. Knowledge + App. Friday score-5 working reference. | This site is not the restaurant. |
 | 2 | **Two surfaces** | Knowledge = `knowledge.cafe.artof.link` (HTTPS live). App = prefer `https://cafe.artof.link/` this session. | Lightsail staging #57 — not production forever. #22 stays Future. |
 | 3 | **Scope / grade floor** | Official SRS only: **FR-1..FR-18**, **NFR-1..NFR-9**. | No FR-19 / NFR-10. Freeze data stays frozen. |
-| 4 | **Architecture** | Mermaid from Friday plan: Live Knowledge HTTPS vs App local/tunnel vs Future hostname. | Future #22 is hosting, not a missing FR. |
+| 4 | **Architecture** | [Stack](stack.md) staging HLD: Knowledge Pages vs Lightsail `cafe-fausse-staging` vs dashed #22. | Weekend #57 is live; #22 stays Future. |
 | 5 | **FR map** | [Coverage](coverage.md) table. Code + CI for the functional rows. | Evidence class is on the table. |
 | 6 | **Home + Menu** | FR-1..FR-5. Play `clips/01-home-menu.mp4`. | Clip = look, not a public-host probe. |
 | 7 | **Reservations** | FR-6..FR-9, FR-17..FR-18. Play `clips/02-happy-book.mp4`. 30 tables. Full slot = FR-9 error. | Fail closed if DB is missing. |
@@ -29,7 +29,7 @@ Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-
 |---|---|---|
 | 1 | **Title + two surfaces** | Slides 1–2. Knowledge HTTPS vs prefer `https://cafe.artof.link/` (staging #57, not production forever). |
 | 2 | **Scope** | Slide 3. FR-1..FR-18 / NFR-1..NFR-9 only. |
-| 3 | **Architecture** | Slide 4. Live / local-or-tunnel / Future diagram. |
+| 3 | **Architecture** | Slide 4. Knowledge / weekend staging / permanent #22. |
 | 4 | **FR coverage + clips** | Slides 5–6. Coverage table + clip 01 (Home → Menu). |
 | 5 | **Reservations + newsletter** | Slides 7–8. Clip 02. Mention About/Gallery IDs in one sentence. |
 | 6 | **Live or fallback** | Slide 9. HTTPS / local / clips. |

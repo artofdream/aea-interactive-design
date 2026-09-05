@@ -55,7 +55,7 @@ Silent ~30s demos of the restaurant MVP (Café Fausse App). **Fallback** if `htt
 
 1. **What a grade of 5 needs.** Official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). PDF in `docs/official/` is SoT; working freeze `docs/srs.md`. Do not invent FR-19 / NFR-10. Freeze data is not to be “improved.” Extra ideas are Future, not extra credit.
 
-2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD as-is vs intended-to-be.
+2. **Already covered.** Restaurant MVP **on `main`** (PRs #9 + #12). Knowledge live HTTPS: `GET https://knowledge.cafe.artof.link/` **200** this session (TLS VERIFY_OK; CN/SAN match). HTTP `http://knowledge.cafe.artof.link/` → **301** to HTTPS. [Coverage](coverage.md) maps every freeze ID. Demo clips on this brief (shareable look, not a live restaurant host). [Stack](stack.md) HLD: AWS staging + as-is vs permanent-to-be.
 
 3. **Wed 2026-09-02 focus (1, 3, 4).** That night: this brief + clips and/or local Vite/Flask. **Saturday 2026-09-05:** Knowledge + clips; prefer live share `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`; Lightsail staging #57 — not production forever). Interim backup `https://54-165-102-60.sslip.io/`. Longer-term hosting stays [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). FS v0.1 extras = Future/hardening (no new FR/NFR IDs). Presentation = [Coverage](coverage.md). J1–J8 PASS is local cts-ai UX while DB was up; J9 **PASS** is Vite-only; **NFR-7** is **partial**; **NFR-1** / **NFR-2** stay not-claimed-met.
 
@@ -99,7 +99,7 @@ Park these as Future issues (already filed). Do not treat them as missing grade 
 - **Concurrency retry** beyond the unique index ([#38](https://github.com/artofdream/aea-interactive-design/issues/38), FS-03). On main: slot `FOR UPDATE` + unique `(time_slot, table_number)`; `UniqueViolation` asks the client to resubmit. No automatic retry loop.
 - **Verbatim case-sensitive email** as an explicit FS product rule ([#37](https://github.com/artofdream/aea-interactive-design/issues/37), FS-01). On main: `email_address TEXT NOT NULL UNIQUE`; `validate_email` **lowercases** before store (`backend/cafe_fausse/validate.py`, committed this session). That is not verbatim case. Raw SQL that bypasses the app vs TEXT `UNIQUE` case: **Unknown** (no live Postgres probe this session).
 - **QCFA `run-sql.sh` / migration packaging** vs our path: `backend/schema.sql` + `backend/cafe_fausse/init_db.py`. No GitHub issue filed for this packaging difference.
-- Hosting `cafe.artof.link` remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22) (not an FS flow extra; not tonight’s demo target).
+- Longer-term hosting `cafe.artof.link` remains [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). Weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) is the live share this session and does **not** close #22.
 
 ### Discussion frame
 
@@ -110,7 +110,7 @@ Park these as Future issues (already filed). Do not treat them as missing grade 
 ## Freeze vs Future
 
 - **In MVP:** the official SRS pages and APIs (Home, Menu, Reservations, About, Gallery, newsletter, 30 tables, fail-closed DB). See [Coverage](coverage.md).
-- **Not in MVP:** FS v0.1 extras above; AWS / `cafe.artof.link` hosting; florist Path B; 14 hats; Kafka/BFF; 3DX Lab; GitLab; invented requirement IDs; claiming the system is antifragile.
+- **Not in MVP:** FS v0.1 extras above; permanent `cafe.artof.link` hosting ([#22](https://github.com/artofdream/aea-interactive-design/issues/22) — weekend Lightsail #57 does not close it); outbound newsletter mailer (SRS is **FR-15** / **FR-16** store/register only); florist Path B; 14 hats; Kafka/BFF; 3DX Lab; GitLab; invented requirement IDs; claiming the system is antifragile.
 
 ## GitHub loop (do not skip)
 
@@ -138,7 +138,7 @@ Wed 2026-09-02 locked **1, 3, 4** (not 2). Those decisions still hold:
 - [Video script](video-script.md) — ~10 min beats; scenarios A–F
 - [Talk cuts](presentation.md) — Saturday three-cut recording
 - [Slide outline](presentation-sample.md) — 8-slide cut
-- [Stack](stack.md) — as-is vs intended HLD
+- [Stack](stack.md) — AWS staging HLD + as-is / to-be
 - [Coverage](coverage.md) — every FR/NFR
 - [Honesty](honesty.md) — what we will not claim
 - [Future](future.md) — parked FS extras; not a second freeze

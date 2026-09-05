@@ -2,7 +2,7 @@
 
 Working reference for Friday **2026-09-04 19:00 Europe/Berlin**. Not official Quantic dashboard text. Times are beats, not a stopwatch claim.
 
-Play or talk over the committed clips when the local stack is down. The clips are a **look**. They are not a probe that reservations work on a public host, and they are not Café Fausse at `cafe.artof.link`.
+Play or talk over the committed clips when staging drops. The clips are a **look**. They are not a this-session write probe, and they are not a permanent hosting claim. Prefer live share `https://cafe.artof.link/` (Lightsail #57 — weekend window, not production forever).
 
 **Clips on this site**
 

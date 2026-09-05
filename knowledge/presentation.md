@@ -58,12 +58,12 @@ flowchart TB
 
 ## Variant B — Architecture + diagrams (~10 min)
 
-Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md).
+Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md).
 
 | Clock | Beat | Say / show |
 |---|---|---|
 | 0:00–1:00 | **Open** | Shared open. Two hostnames are not one shop. |
-| 1:00–4:00 | **HLD as-is** | Diagram below. React (Vite) talks to Flask talks to Postgres. Knowledge is GitHub Pages. Prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57) — not production forever. Longer-term hosting stays #22. |
+| 1:00–4:00 | **HLD as-is** | Diagram below + [staging SVG](assets/hld-aws-staging.svg). Knowledge is GitHub Pages. Prefer `https://cafe.artof.link/` (Route53 A → Lightsail `cafe-fausse-staging`, Caddy + LE, Flask + SPA, Postgres **on the instance**). AEA RDS untouched. The `*.artof.link` ELB wildcard is **not** Café Fausse. Weekend #57 — not production forever. Longer-term hosting stays #22. |
 | 4:00–7:00 | **Boxes → FR/NFR** | Walk [Coverage](coverage.md). React pages = **FR-1..FR-5**, **FR-10..FR-14**. Flask APIs = **FR-6..FR-9**, **FR-15..FR-18**. Postgres tables = **FR-17**. Integrity / fail-closed = **NFR-5**, **NFR-6**. Theme / nav / viewports = **NFR-3**, **NFR-4**, **NFR-8**. |
 | 7:00–9:00 | **Sensors** | GitHub Actions: freeze file + PDF SHA256 must exist. `test_freeze.py` locks menu copy. `test_fail_closed.py` locks missing-DB / full slot. Author does not merge. That is the outer harness, not a new FR. |
 | 9:00–10:00 | **Close** | As-is vs Future. [#22](https://github.com/artofdream/aea-interactive-design/issues/22) and [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) stay parked. Then the [shared close](#shared-close). |

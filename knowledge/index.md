@@ -13,7 +13,7 @@ Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.m
 | Team | Owns | Intended hostname | Live URL (probe 2026-09-02 Europe/Berlin) |
 |---|---|---|---|
 | Café Fausse Knowledge | This knowledge site (GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05); HTTP **301** to HTTPS. |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | Prefer live share this session: HTTPS **GET 200** (SPA + `/operator` + `/api/health`). Lightsail staging (#57) — not production forever. App is **in-repo on `main`** (PRs #9 + timezone #12). Longer-term hosting stays [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | Prefer live share this session: HTTPS **GET 200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` us-east-1, Route53 A `54.165.102.60` (TTL 60), Caddy + LE, Postgres **on the instance**. AEA RDS untouched. Weekend #57 — not production forever. App is **in-repo on `main`** (PRs #9 + timezone #12). Longer-term hosting stays [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 AWS is not in the restaurant MVP cut. App on cts-ai (not this VM): Vite `http://127.0.0.1:5173`, Flask `:5000`, `cafe-pg`. Prefer live share this session: `https://cafe.artof.link/` GET **200** (SPA HTML); `/api/health` GET **200** `{"ok":true}`. Knowledge GET: root **200** (~0.5s); `/operator` **200** (~0.6s); `/api/operator` **200** (~0.5s); `/api/health` **200** `{"ok":true}` (~0.6s). Lightsail staging (#57) — weekend recording window, not production forever. Fast this session; still staging. Interim backup: `https://54-165-102-60.sslip.io/`. Journey **J1–J8 PASS** (2026-09-02, DB up); **J9 PASS** Vite-only (viewports + theme). This VM did not reach Vite on `:5173`. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**. Read-only `/operator` is on the share ([PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [#54](https://github.com/artofdream/aea-interactive-design/issues/54)) — **not FR-19**.
 
@@ -47,7 +47,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 - [Video script](video-script.md) — ~10 minute beats; clips; scenario menu A–F
 - [Talk cuts](presentation.md) — Saturday recording: three ~10 min variants + shared close
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut
-- [Stack](stack.md) — HLD as-is / intended-to-be; GitHub-only CI
+- [Stack](stack.md) — AWS staging HLD + as-is / to-be (weekend #57 vs permanent #22); GitHub-only CI
 - [SRS freeze](srs.md) — FR-1..FR-18, NFR-1..NFR-9
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
 - [Honesty](honesty.md) — probes, Unknown; live vs local vs Future

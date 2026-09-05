@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 640" role="img" aria-labelledby="t3 d3">
+  <title id="t3">Cafe Fausse AWS staging high-level design</title>
+  <desc id="d3">Weekend Lightsail staging. Route53 A cafe.artof.link to 54.165.102.60 TTL 60. Caddy and Let's Encrypt in front of Flask plus built React SPA and PostgreSQL on the instance. Knowledge stays on GitHub Pages. AEA RDS and the artof.link ELB wildcard are out of cut. Tear-down after Sunday unless the owner extends.</desc>
+  <rect width="1180" height="640" fill="#f6f1e8"/>
+  <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse AWS staging - probed 2026-09-05 Europe/Berlin</text>
+  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Weekend recording window (#57). Prefer https://cafe.artof.link/. Not production forever. AEA RDS untouched. No florist / 3DX / GitLab.</text>
+
+  <rect x="20" y="72" width="280" height="540" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
+  <text x="36" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">Knowledge - live this session</text>
+  <rect x="36" y="116" width="248" height="36" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="160" y="139" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">knowledge/*.md</text>
+  <line x1="160" y1="152" x2="160" y2="168" stroke="#7a2e1f"/>
+  <rect x="36" y="168" width="248" height="36" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="160" y="191" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">knowledge/build.py</text>
+  <line x1="160" y1="204" x2="160" y2="220" stroke="#7a2e1f"/>
+  <rect x="36" y="220" width="248" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="160" y="241" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">GitHub Actions</text>
+  <text x="160" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#5e574d">to GitHub Pages</text>
+  <line x1="160" y1="268" x2="160" y2="284" stroke="#7a2e1f"/>
+  <rect x="36" y="284" width="248" height="56" rx="4" fill="#7a2e1f"/>
+  <text x="160" y="308" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#f6f1e8">knowledge.cafe.artof.link</text>
+  <text x="160" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">HTTPS GET 200 this session</text>
+  <text x="36" y="368" font-family="Georgia, serif" font-size="11" fill="#5e574d">Thin map. Not the restaurant.</text>
+  <text x="36" y="386" font-family="Georgia, serif" font-size="11" fill="#5e574d">Not a CMS. No GitLab Pages.</text>
+  <text x="36" y="418" font-family="Georgia, serif" font-size="11" fill="#5e574d">Separate hostname. Does not</text>
+  <text x="36" y="434" font-family="Georgia, serif" font-size="11" fill="#5e574d">share the Lightsail box.</text>
+  <text x="36" y="466" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">CNAME artofdream.github.io</text>
+
+  <rect x="320" y="72" width="520" height="540" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
+  <text x="336" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">App staging share - prefer this weekend</text>
+  <rect x="336" y="116" width="230" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="451" y="137" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Browser</text>
+  <text x="451" y="153" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">https://cafe.artof.link/</text>
+  <line x1="566" y1="140" x2="590" y2="140" stroke="#7a2e1f"/>
+  <rect x="590" y="116" width="230" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="705" y="137" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Route53 A TTL 60</text>
+  <text x="705" y="153" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#5e574d">54.165.102.60</text>
+  <line x1="705" y1="164" x2="705" y2="180" stroke="#7a2e1f"/>
+  <rect x="336" y="180" width="484" height="56" rx="4" fill="#7a2e1f"/>
+  <text x="578" y="204" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#f6f1e8">cafe.artof.link</text>
+  <text x="578" y="222" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">Caddy + Let's Encrypt HTTPS - GET 200 /operator /api/health</text>
+  <line x1="578" y1="236" x2="578" y2="252" stroke="#7a2e1f"/>
+  <rect x="336" y="252" width="484" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="578" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Lightsail cafe-fausse-staging - us-east-1</text>
+  <text x="578" y="288" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">small_3_0 ~$12/mo - IAM cts account 737290977112</text>
+  <line x1="578" y1="300" x2="578" y2="316" stroke="#7a2e1f"/>
+  <rect x="336" y="316" width="230" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="451" y="337" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Flask + built React SPA</text>
+  <text x="451" y="353" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">in-repo MVP on the instance</text>
+  <line x1="566" y1="340" x2="590" y2="340" stroke="#7a2e1f"/>
+  <rect x="590" y="316" width="230" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="705" y="337" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">PostgreSQL on the box</text>
+  <text x="705" y="353" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">not AEA RDS</text>
+  <rect x="336" y="380" width="484" height="88" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="352" y="402" font-family="Georgia, serif" font-size="12" fill="#1c1915">Interim backup (same IP, not the primary paste)</text>
+  <text x="352" y="422" font-family="ui-monospace, monospace" font-size="11" fill="#5e574d">https://54-165-102-60.sslip.io/</text>
+  <text x="352" y="444" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator is a read-only recording helper - not FR-19, not admin.</text>
+  <text x="352" y="460" font-family="Georgia, serif" font-size="11" fill="#5e574d">Newsletter: store/register FR-15 / FR-16 only. No outbound mailer.</text>
+  <text x="336" y="492" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Tear-down after Sunday unless the owner extends (#57).</text>
+  <text x="336" y="510" font-family="Georgia, serif" font-size="11" fill="#5e574d">Longer-term hosting stays Future #22. This is not a permanent claim.</text>
+  <text x="336" y="536" font-family="Georgia, serif" font-size="11" fill="#5e574d">Route53 A overrides the *.artof.link ELB wildcard for this name.</text>
+  <text x="336" y="552" font-family="Georgia, serif" font-size="11" fill="#5e574d">That wildcard is not Cafe Fausse.</text>
+  <text x="336" y="578" font-family="Georgia, serif" font-size="11" fill="#5e574d">Old tunnels (shaky-deer-drive, happy-glasses-film, real-goats-shop) are stale.</text>
+  <text x="336" y="594" font-family="Georgia, serif" font-size="11" fill="#5e574d">MVP = official SRS FR-1..FR-18 / NFR-1..NFR-9. Do not invent IDs.</text>
+
+  <rect x="860" y="72" width="300" height="540" rx="8" fill="#fffdf8" stroke="#5e574d" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="876" y="98" font-family="Georgia, serif" font-size="14" fill="#5e574d">Out of this cut</text>
+  <rect x="876" y="120" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
+  <text x="1010" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">AEA RDS</text>
+  <text x="1010" y="166" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#5e574d">aea-pilot-postgres</text>
+  <text x="1010" y="182" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">untouched</text>
+  <rect x="876" y="208" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
+  <text x="1010" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">*.artof.link ELB wildcard</text>
+  <text x="1010" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">eu-north-1 leftover</text>
+  <text x="1010" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not Cafe Fausse</text>
+  <rect x="876" y="296" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
+  <text x="1010" y="324" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Permanent hosting #22</text>
+  <text x="1010" y="342" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">still Future</text>
+  <text x="1010" y="358" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">#57 does not close it</text>
+  <text x="876" y="400" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not apply teammate RDS</text>
+  <text x="876" y="416" font-family="Georgia, serif" font-size="11" fill="#5e574d">DDL to local schema.sql.</text>
+  <text x="876" y="444" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not invent FR-19 for</text>
+  <text x="876" y="460" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator.</text>
+  <text x="876" y="488" font-family="Georgia, serif" font-size="11" fill="#5e574d">No outbound newsletter</text>
+  <text x="876" y="504" font-family="Georgia, serif" font-size="11" fill="#5e574d">mailer in the SRS MVP.</text>
+  <text x="876" y="532" font-family="Georgia, serif" font-size="11" fill="#5e574d">This PR does not touch AWS</text>
+  <text x="876" y="548" font-family="Georgia, serif" font-size="11" fill="#5e574d">infra. Knowledge + 2nd brain only.</text>
+</svg>
