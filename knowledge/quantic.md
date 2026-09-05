@@ -20,6 +20,7 @@ Link out to the Quantic pack. Open the page itself for the full brief, tables, t
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
+- [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
 - Clips stay on the [Brief](brief.md) and [Video script](video-script.md) (not a separate page; not moved here)
 
 ## Implementation (not the Quantic pack)
