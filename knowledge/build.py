@@ -141,6 +141,7 @@ WIDE_PAGES = {
     "presentation.html",
     "presentation-sample.html",
     "honesty.html",
+    "glossary.html",
     "index.html",
     "brief.html",
     "video-script.html",
@@ -931,6 +932,15 @@ def assert_ux_wiring() -> None:
         fail("index.html missing Quantic nav link")
     if 'href="glossary.html"' not in index:
         fail("index.html missing Glossary nav link")
+    glossary_md = (ROOT / "glossary.md").read_text(encoding="utf-8")
+    for term in ("Probe", "Unknown", "MVP"):
+        if term not in glossary_md:
+            fail(f"glossary.md missing term {term}")
+    if "## Sources and links" not in glossary_md:
+        fail("glossary.md must keep the #101 sources / links table")
+    future_glossary = (ROOT / "future" / "glossary.md").read_text(encoding="utf-8")
+    if "../glossary.md" not in future_glossary:
+        fail("future/glossary.md must point at the first-class glossary")
     if "inline-icon" not in qhtml:
         fail("quantic.html delivery links must keep page icons")
     for page in (
@@ -950,6 +960,8 @@ def assert_ux_wiring() -> None:
         nav = _nav_block(built.read_text(encoding="utf-8"))
         if 'href="quantic.html"' not in nav:
             fail(f"{page} global nav must keep Quantic hub")
+        if 'href="glossary.html"' not in nav:
+            fail(f"{page} global nav must keep first-class Glossary")
         for name in DELIVERY_ONLY_HREFS:
             if re.search(rf'href="(?:\.\./)*{re.escape(name)}"', nav):
                 fail(f"{page} global nav must not include Quantic delivery {name}")

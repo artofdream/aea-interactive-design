@@ -1,8 +1,10 @@
 # Glossary
 
-**In plain English:** This page explains the short labels used on this map and lists the sources those words point at. It is not a second product and not a florist glossary.
+**In plain English:** This page translates the short labels used on this map and lists the sources those words point at. It is not a second product and not a florist glossary.
 
-This site is a **map** of the Café Fausse student project. It is **not** the restaurant. You cannot book a table here.
+This site is a **map** of the Café Fausse student project. It is **not** the restaurant. You cannot book a table here. Words like **probe**, **Unknown**, and **MVP** have a fixed meaning so a status word is not a guess.
+
+The restaurant lives at [`cafe.artof.link`](https://cafe.artof.link/) (weekend Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production). Course delivery pages stay under [Quantic / MSAIE](quantic.md). Extra product ideas stay under [Future](future.md).
 
 ## How to read a status word
 
@@ -72,12 +74,10 @@ These are the sources this repo actually uses. Do not invent a second official S
 | Session SOP | Teams, ID freeze, fail closed, PR loop. | `AGENTS.md` |
 | Slack | Teammate / owner feedback. Claude opens GitHub issues. | Slack workspace (no public URL claimed here) |
 
-This-session GETs: Knowledge `/` **200**; restaurant `/` **200**; `/api/health` **200**. Live `/glossary.html` stays **Unknown** until this PR merges and Pages deploys.
+This-session GETs: Knowledge `/` **200**; restaurant `/` **200**; `/api/health` **200**. Live `/glossary.html` stays **Unknown** until #89 merges and Pages deploys.
 
 ## What this glossary is not
 
 Not Lily’s Florist, Path B, 14 hats, 3DX Lab, or another project’s product dictionary. Keep terms local to Café Fausse and this GitHub harness.
 
-If [#89](https://github.com/artofdream/aea-interactive-design/pull/89) also ships a thin glossary, **this page is the follow-up** that adds the sources index ([#101](https://github.com/artofdream/aea-interactive-design/issues/101)). Rebase rather than duplicate after #89 lands.
-
-An older stub still exists at [Future / glossary](future/glossary.md) so old links do not vanish. This page is the one in the top nav.
+An older stub still exists at [Future / glossary](future/glossary.md) so old links do not vanish. This page is the one in the top nav. The sources / links table is the #101 follow-up that landed on `main` as PR #105.
