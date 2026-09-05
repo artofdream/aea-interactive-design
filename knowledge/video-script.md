@@ -4,6 +4,8 @@ Working reference for Friday **2026-09-04 19:00 Europe/Berlin**. Not official Qu
 
 Play or talk over the committed clips when staging drops. The clips are a **look**. They are not a this-session write probe, and they are not a permanent hosting claim. Prefer live share `https://cafe.artof.link/` (Lightsail #57 — weekend window, not production forever).
 
+> **Must-film camera list:** App filming shots 1–3 on `https://cafe.artof.link/`; shot 4 is Coverage/CI. Exact click paths live on [Must-film shots](must-film-shots.md). The Zoom dry-run video below remains **PROTOTYPE** only — not the Quantic submission.
+
 ## Zoom dry-run v2 — **PROTOTYPE**
 
 > **PROTOTYPE** — Zoom dry-run visual. This is **not** the Quantic submission.

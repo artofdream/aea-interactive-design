@@ -15,6 +15,7 @@ Link out to the Quantic pack. Open the page itself for the full brief, tables, t
 - [Talk cuts](presentation.md)
 - [Slide outline](presentation-sample.md)
 - [Video script](video-script.md)
+- [Must-film shots](must-film-shots.md) — Quantic camera beats 1–4 (App on `cafe.artof.link`; dry-run stays **PROTOTYPE**)
 - Zoom dry-run v2 (**PROTOTYPE**, not the Quantic submission): on the [Video script](video-script.md)
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)

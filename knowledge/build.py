@@ -28,6 +28,7 @@ DELIVERY_ONLY_HREFS = (
     "brief.html",
     "friday-plan.html",
     "video-script.html",
+    "must-film-shots.html",
     "presentation.html",
     "presentation-sample.html",
 )
@@ -37,6 +38,7 @@ PAGE_ICONS = {
     "brief.html": "brief",
     "friday-plan.html": "friday",
     "video-script.html": "video",
+    "must-film-shots.html": "video",
     "presentation.html": "talk",
     "presentation-sample.html": "slides",
 }
@@ -112,6 +114,7 @@ REQUIRED = [
     ROOT / "brief.md",
     ROOT / "friday-plan.md",
     ROOT / "video-script.md",
+    ROOT / "must-film-shots.md",
     ROOT / "presentation.md",
     ROOT / "presentation-sample.md",
     ROOT / "stack.md",
@@ -133,6 +136,7 @@ WIDE_PAGES = {
     "index.html",
     "brief.html",
     "video-script.html",
+    "must-film-shots.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -848,6 +852,7 @@ def assert_ux_wiring() -> None:
         'href="presentation.html"',
         'href="presentation-sample.html"',
         'href="video-script.html"',
+        'href="must-film-shots.html"',
         'href="friday-plan.html"',
         'href="honesty.html"',
         'href="stack.html"',
@@ -894,6 +899,13 @@ def assert_ux_wiring() -> None:
         fail("video-script.md must keep clip embeds (hub is nav-only; do not hollow source pages)")
     if "clips/03-zoom-dryrun-v2.mp4" not in video_md:
         fail("video-script.md must embed Zoom dry-run v2 prototype (issue #81)")
+    if "must-film-shots.md" not in video_md:
+        fail("video-script.md must link the must-film shot list (issue #83)")
+    shots_md = (ROOT / "must-film-shots.md").read_text(encoding="utf-8")
+    if "Do-not-say checklist" not in shots_md:
+        fail("must-film-shots.md lost the do-not-say checklist")
+    if "<video" in shots_md:
+        fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
 
