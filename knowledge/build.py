@@ -336,6 +336,7 @@ def md_to_html(src: str) -> str:
     in_code = False
     code_lang = ""
     code_lines: list[str] = []
+    heading_ids: dict[str, int] = {}
 
     def flush_para(buf: list[str]) -> None:
         if not buf:
@@ -400,13 +401,17 @@ def md_to_html(src: str) -> str:
         if heading:
             flush_para(para)
             level = len(heading.group(1))
-            inner = inline(heading.group(2).strip())
+            raw_title = heading.group(2).strip()
+            hid = heading_slug(raw_title, heading_ids)
+            inner = inline(raw_title)
             if level == 2:
                 inner = (
                     '<span class="section-mark" aria-hidden="true"></span>'
                     f"{inner}"
                 )
-            out.append(f"<h{level}>{inner}</h{level}>")
+            out.append(
+                f'<h{level} id="{html.escape(hid, quote=True)}">{inner}</h{level}>'
+            )
             i += 1
             continue
 
@@ -539,14 +544,24 @@ def icon_for_page_href(href: str) -> str:
     return svg_icon(name, "inline-icon")
 
 
+def heading_slug(text: str, used: dict[str, int]) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", _cell_label(text).lower()).strip("-") or "section"
+    n = used.get(slug, 0)
+    used[slug] = n + 1
+    return slug if n == 0 else f"{slug}-{n}"
+
+
 def rewrite_href(href: str) -> str:
     if href.startswith(("http://", "https://", "mailto:", "#")):
         return href
-    if href.endswith(".md"):
-        href = href[:-3] + ".html"
-    if href == "docs/srs.md" or href.endswith("/docs/srs.md"):
-        return "srs-full.html"
-    return href
+    path, frag = (href.split("#", 1) + [None])[:2] if "#" in href else (href, None)
+    if path.endswith(".md"):
+        path = path[:-3] + ".html"
+    if path in {"docs/srs.md", "docs/srs.html"} or path.endswith("/docs/srs.md") or path.endswith("/docs/srs.html"):
+        path = "srs-full.html"
+    if frag is not None:
+        return f"{path}#{frag}"
+    return path
 
 
 def inline(text: str) -> str:
@@ -1038,6 +1053,17 @@ def assert_ux_wiring() -> None:
         fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
+    journal_html = (OUT / "journal.html").read_text(encoding="utf-8")
+    if "index.md#" in journal_html or 'href="index.md' in journal_html:
+        fail("journal.html section links must rewrite .md#frag to .html#frag")
+    if 'href="index.html#top-5-lessons-learned"' not in journal_html:
+        fail("journal.html must link the home top-5 fragment")
+    index_html = (OUT / "index.html").read_text(encoding="utf-8")
+    if 'id="top-5-lessons-learned"' not in index_html:
+        fail("index.html must emit heading ids for in-page links")
+    glossary_html = (OUT / "glossary.html").read_text(encoding="utf-8")
+    if "index.md#" in glossary_html or "journal.md#" in glossary_html:
+        fail("glossary.html section links must rewrite .md#frag to .html#frag")
 
 
 def assert_svg_well_formed() -> None:
