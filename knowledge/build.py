@@ -20,6 +20,7 @@ NAV = [
     ("srs.html", "SRS freeze", "srs"),
     ("coverage.html", "Coverage", "coverage"),
     ("honesty.html", "Honesty", "honesty"),
+    ("glossary.html", "Glossary", "glossary"),
     ("future.html", "Future", "future"),
 ]
 
@@ -41,6 +42,7 @@ PAGE_ICONS = {
     "must-film-shots.html": "video",
     "presentation.html": "talk",
     "presentation-sample.html": "slides",
+    "glossary.html": "glossary",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -101,6 +103,11 @@ ICONS = {
         'stroke-linecap="round" stroke-linejoin="round" '
         'd="M12 3.6 19.2 6.8v5.4c0 4.4-3.1 6.7-7.2 8.2-4.1-1.5-7.2-3.8-7.2-8.2V6.8zM8.8 12.2l2.3 2.3 4.2-4.4"/>'
     ),
+    "glossary": (
+        '<path fill="none" stroke="currentColor" stroke-width="1.75" '
+        'stroke-linecap="round" stroke-linejoin="round" '
+        'd="M5 5.2c1.8-.8 3.6-.8 5.4 0v13.2c-1.8-.8-3.6-.8-5.4 0zM19 5.2c-1.8-.8-3.6-.8-5.4 0v13.2c1.8-.8 3.6-.8 5.4 0z"/>'
+    ),
     "future": (
         '<path fill="none" stroke="currentColor" stroke-width="1.75" '
         'stroke-linecap="round" stroke-linejoin="round" '
@@ -121,6 +128,7 @@ REQUIRED = [
     ROOT / "srs.md",
     ROOT / "coverage.md",
     ROOT / "honesty.md",
+    ROOT / "glossary.md",
     ROOT / "future.md",
 ]
 
@@ -133,6 +141,7 @@ WIDE_PAGES = {
     "presentation.html",
     "presentation-sample.html",
     "honesty.html",
+    "glossary.html",
     "index.html",
     "brief.html",
     "video-script.html",
@@ -869,6 +878,15 @@ def assert_ux_wiring() -> None:
         fail("quantic.html must not embed clips or diagrams (nav hub only)")
     if 'href="quantic.html"' not in index:
         fail("index.html missing Quantic nav link")
+    if 'href="glossary.html"' not in index:
+        fail("index.html missing Glossary link")
+    glossary_md = (ROOT / "glossary.md").read_text(encoding="utf-8")
+    for term in ("Probe", "Unknown", "MVP"):
+        if term not in glossary_md:
+            fail(f"glossary.md missing term {term}")
+    future_glossary = (ROOT / "future" / "glossary.md").read_text(encoding="utf-8")
+    if "../glossary.md" not in future_glossary:
+        fail("future/glossary.md must point at the first-class glossary")
     if "inline-icon" not in qhtml:
         fail("quantic.html delivery links must keep page icons")
     for page in (
@@ -877,6 +895,7 @@ def assert_ux_wiring() -> None:
         "srs.html",
         "coverage.html",
         "honesty.html",
+        "glossary.html",
         "future.html",
         "quantic.html",
         *DELIVERY_ONLY_HREFS,
@@ -887,6 +906,8 @@ def assert_ux_wiring() -> None:
         nav = _nav_block(built.read_text(encoding="utf-8"))
         if 'href="quantic.html"' not in nav:
             fail(f"{page} global nav must keep Quantic hub")
+        if 'href="glossary.html"' not in nav:
+            fail(f"{page} global nav must keep first-class Glossary")
         for name in DELIVERY_ONLY_HREFS:
             if re.search(rf'href="(?:\.\./)*{re.escape(name)}"', nav):
                 fail(f"{page} global nav must not include Quantic delivery {name}")
