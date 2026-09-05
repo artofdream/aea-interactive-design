@@ -55,4 +55,5 @@ Nav icons match the links below. That is a map affordance — not an **NFR-1** /
 - [Coverage](coverage.md) — each freeze ID: where in-repo, evidence class, why it matters
 - [Honesty](honesty.md) — probes, Unknown; live vs local vs Future
 - [Glossary](glossary.md) — terms and the sources / links this repo uses
+- [Journal](journal.md) — principles, lessons, meeting MoM overview (delivery-only)
 - [Future / not-MVP](future.md) — schema notes (including [AWS `cafe_fausse_db` map](future/aws-schema-map.md)), glossary stub, journal stub, E2E beyond assignment
