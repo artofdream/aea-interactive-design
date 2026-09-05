@@ -25,4 +25,6 @@ Owner locked items **1, 3, 4** (not 2). The compare of Team Functional Spec v0.1
 - [Saturday](meeting-saturday.md) — recording / talk cuts
 - [Sunday](meeting-sunday.md) — placeholder (notes **Unknown**)
 
+[Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
+
 Back to the [Quantic / MSAIE](quantic.md) hub.

@@ -29,4 +29,6 @@ Exact click paths stay on [Must-film shots](must-film-shots.md). Do not move tho
 - [Friday](meeting-friday.md) — score-5 / tech access
 - [Sunday](meeting-sunday.md) — placeholder (notes **Unknown**)
 
+[Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
+
 Back to the [Quantic / MSAIE](quantic.md) hub.

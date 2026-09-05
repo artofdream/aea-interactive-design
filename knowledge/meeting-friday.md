@@ -32,4 +32,6 @@ Full wording: [Friday plan](friday-plan.md).
 - [Saturday](meeting-saturday.md) — recording / talk cuts
 - [Sunday](meeting-sunday.md) — placeholder (notes **Unknown**)
 
+[Quantic deliverable handoff](quantic-handoff.md) — links + Coverage vs talk track.
+
 Back to the [Quantic / MSAIE](quantic.md) hub.

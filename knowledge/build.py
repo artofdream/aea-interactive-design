@@ -36,6 +36,7 @@ DELIVERY_ONLY_HREFS = (
     "meeting-friday.html",
     "meeting-saturday.html",
     "meeting-sunday.html",
+    "quantic-handoff.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -51,6 +52,7 @@ PAGE_ICONS = {
     "meeting-friday.html": "friday",
     "meeting-saturday.html": "talk",
     "meeting-sunday.html": "slides",
+    "quantic-handoff.html": "quantic",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -136,6 +138,7 @@ REQUIRED = [
     ROOT / "meeting-friday.md",
     ROOT / "meeting-saturday.md",
     ROOT / "meeting-sunday.md",
+    ROOT / "quantic-handoff.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
     ROOT / "coverage.md",
@@ -158,6 +161,7 @@ WIDE_PAGES = {
     "brief.html",
     "video-script.html",
     "must-film-shots.html",
+    "quantic-handoff.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -879,6 +883,7 @@ def assert_ux_wiring() -> None:
         'href="meeting-friday.html"',
         'href="meeting-saturday.html"',
         'href="meeting-sunday.html"',
+        'href="quantic-handoff.html"',
         'href="honesty.html"',
         'href="stack.html"',
         'href="future.html"',
@@ -954,6 +959,32 @@ def assert_ux_wiring() -> None:
         fail("meeting-saturday.md must note America/New_York and Europe/Berlin")
     if "Unknown" not in sun_md or "to-be-filled" not in sun_md:
         fail("meeting-sunday.md must stay Unknown / to-be-filled until notes exist")
+    handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
+    for needle in (
+        "https://github.com/artofdream/aea-interactive-design",
+        "https://cafe.artof.link/",
+        "https://knowledge.cafe.artof.link/",
+        "quantic.html",
+        "coverage.md",
+        "honesty.md",
+        "PROTOTYPE",
+        "not FR-19",
+        "NFR-1",
+        "NFR-7",
+        "to-be-filled",
+    ):
+        if needle not in handoff_md:
+            fail(f"quantic-handoff.md missing required handoff fact ({needle})")
+    if "<video" in handoff_md or "clips/" in handoff_md:
+        fail("quantic-handoff.md must not embed clips (sister pages keep them)")
+    for name, text in (
+        ("meeting-wednesday.md", wed_md),
+        ("meeting-friday.md", fri_md),
+        ("meeting-saturday.md", sat_md),
+        ("meeting-sunday.md", sun_md),
+    ):
+        if "quantic-handoff.md" not in text:
+            fail(f"{name} must link the Quantic deliverable handoff")
     for name, text in (
         ("meeting-wednesday.md", wed_md),
         ("meeting-friday.md", fri_md),
