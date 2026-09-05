@@ -155,6 +155,7 @@ REQUIRED = [
 
 MERMAID_CDN = "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs"
 WIDE_PAGES = {
+    "to-be.html",
     "stack.html",
     "coverage.html",
     "friday-plan.html",
