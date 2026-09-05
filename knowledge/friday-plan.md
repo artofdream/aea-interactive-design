@@ -78,8 +78,8 @@ flowchart TB
   subgraph APP["Café Fausse App — prefer cafe.artof.link this session, staging"]
     VITE["Vite :5173"] --> FLASK["Flask :5000"]
     FLASK --> PG["cafe-pg PostgreSQL"]
-    SHARE["cafe.artof.link GET 200 · Lightsail #57 · not permanent"] -.-> FLASK
-    BAK["54-165-102-60.sslip.io interim backup"] -.-> FLASK
+    SHARE["cafe.artof.link GET 200 · Lightsail cafe-fausse-staging · Caddy · on-box PG"] -.-> BOX["Flask SPA + Postgres on the instance"]
+    BAK["54-165-102-60.sslip.io interim backup"] -.-> BOX
   end
   subgraph FUT["Future — not grade work"]
     HOST["#22 longer-term hosting · not production forever"]
@@ -88,7 +88,7 @@ flowchart TB
 ```
 
 - **Live Knowledge** is this site over HTTPS (primary Friday share).
-- **App** is the in-repo restaurant. Prefer `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`). Lightsail staging (#57) for the weekend recording window — not production forever. Interim backup `https://54-165-102-60.sslip.io/`. Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**.
+- **App** is the in-repo restaurant. Prefer `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` (#57): Route53 A, Caddy + LE, Postgres **on the instance**. AEA RDS untouched. Weekend recording window — not production forever. Interim backup `https://54-165-102-60.sslip.io/`. HLD: [Stack](stack.md). Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**.
 - **Future #22** is the longer-term hosting story. #57 staging does not close it.
 
 Same picture in words: [Honesty](honesty.md). Stack diagrams: [Stack](stack.md).
