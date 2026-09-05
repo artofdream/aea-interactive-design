@@ -1,19 +1,7 @@
 # Glossary (Future)
 
-**Future / not-MVP.** Short terms used in this repo. Not a florist glossary.
+The live glossary is now [Glossary](../glossary.md) (terms plus sources / links).
 
-- **MVP** — the official SRS freeze (`docs/srs.md`, FR-1..FR-18, NFR-1..NFR-9; PDF SoT). First restaurant cut implements only this.
-- **Freeze** — do not invent or rename requirement IDs; official PDF is source of truth.
-- **Café Fausse Knowledge** — team that owns `knowledge.cafe.artof.link` (GitHub Pages knowledge map).
-- **Café Fausse App** — team that owns `cafe.artof.link` restaurant MVP (in-repo; weekend Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57); permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22)).
-- **Knowledge site** — this GitHub Pages surface. Not the restaurant.
-- **Implementation site** — restaurant at `cafe.artof.link`. Weekend staging is not forever production. Permanent hosting stays #22. AWS is not in the restaurant MVP *code* PR.
-- **Unknown** — honest status when no probe has been run **this session**.
-- **Probe** — command, HTTP GET, CI log, or committed file on disk, this session.
-- **DATE_RE** — `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`; live handoff is `research/daily-briefs/YYYY-MM-DD.md` only.
-- **Shared memory** — committed git + today’s brief. Uncommitted files do not count.
-- **Ratchet** — failures add guards; deleting a guard to go green is a regression.
-- **Fail closed** — missing DB / full book / timeout / missing SRS or official PDF → honest no.
-- **Outer harness** — guides, sensors, loop, memory, permissions, observability around the freeze and (later) domain services.
+This stub stays so old Future links do not vanish. It is **not** a second glossary.
 
-Keep this glossary local to Café Fausse / this GitHub harness. Do not import another project’s product terms.
+Live URLs need a GET **this session** or they stay **Unknown**. Last probe (2026-09-05 Europe/Berlin): `https://knowledge.cafe.artof.link/` HTTPS **GET 200**. Live `/glossary.html` stays **Unknown** until this PR merges and Pages deploys. Do not invent **FR-19** / **NFR-10**.
