@@ -9,5 +9,5 @@ description: Guard ID freeze, honesty probes, DATE_RE handoff, and GitHub PR loo
 - **Status word = claim.** Probe **this session** (command, HTTP GET, CI log, committed file) or write **Unknown**. A previous session is not a probe.
 - **DATE_RE live handoff:** `research/daily-briefs/YYYY-MM-DD.md` only (`^[0-9]{4}-[0-9]{2}-[0-9]{2}$`, Europe/Berlin).
 - **Uncommitted files are not shared memory.** Handoff is committed git + today’s brief.
-- **Loop:** one finding → one GitHub issue → one branch → one PR. **Author does not merge their own PR.** GitHub only. Procedure: `pr-coordinator` (not a hat).
+- **Loop:** one finding → one GitHub issue → one branch → one PR. If an issue lists multiple items, split it into multiple issues first. **Author does not merge their own PR.** GitHub only. Procedure: `pr-coordinator` (not a hat).
 - Fail closed: missing freeze/PDF/DB, full book, timeout → honest no.

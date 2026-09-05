@@ -9,7 +9,7 @@ This is **procedure memory** for GitHub issues/PRs/Actions (`gh`). It is not a f
 
 ## Loop
 
-One finding → one GitHub issue → one branch → one PR against `main`. Do not batch unrelated findings. Do not use GitLab, `glab`, GitLab MRs, or GitLab CI.
+One finding → one GitHub issue → one branch → one PR against `main`. If a filed issue lists multiple items, split it into one issue per item **before** opening a branch. Do not implement a multi-item issue as one PR. Do not batch unrelated findings. Do not use GitLab, `glab`, GitLab MRs, or GitLab CI.
 
 ## Author does not merge
 

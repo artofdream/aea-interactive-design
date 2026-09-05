@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Antifragility as ratchet
 
-When a failure class appears (guessed status, missing freeze file, invented ID, GitLab habit, silent skip), add a tighter guide or sensor. Keep existing guards.
+When a failure class appears (guessed status, missing freeze file, invented ID, GitLab habit, silent skip, multi-item issue, multi-closer PR), add a tighter guide or sensor. Keep existing guards.
 
 Do not delete a check to make CI green. Do not claim this repository or harness is antifragile.
 

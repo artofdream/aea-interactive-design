@@ -15,7 +15,7 @@ Repo: `artofdream/aea-interactive-design`. Base branch: `main`.
 
 1. List **open** pull requests (`gh pr list` or GitHub API `pulls?state=open`).
 2. If the list is empty, say so. Do not invent PRs. Do not implement the restaurant app from a sweep.
-3. For **each** open PR, independently (do not batch unrelated findings):
+3. For **each** open PR, independently (do not batch unrelated findings). A PR that GraphQL-closes more than one issue is **WAIT** until split. If an issue itself lists multiple items, open one issue per item first:
    - Probe GitHub Actions **this run** (`gh pr checks` / Actions logs). Status words need a probe or **Unknown**.
    - Read Bugbot and review threads. Resolve or **explicitly decline**. Do not ignore.
    - Autofix = new branch/PR, not a squash into this one.
