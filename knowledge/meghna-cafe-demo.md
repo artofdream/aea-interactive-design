@@ -1,9 +1,13 @@
 # Meghna’s Café Fausse — Quantic video part pack (3 minutes)
 
-**Who this is for:** Meghna (teammate). Plain English.  
-**Job:** Live walk of the restaurant site so the room sees FR/NFR fulfillment.  
-**Then:** Hand the mic to the **Architecture (Variant B)** person at the end of Reservations.  
-**Built from:** team notes 2026-09-05 · companion maps on Knowledge.
+**Who this is for:** Meghna (teammate).  
+**Job:** Live walk of the restaurant site so the room sees the product working.  
+**Then:** Hand the mic to the **Architecture** person at the end of Reservations.  
+**Built from:** team notes 2026-09-05.
+
+**Owner rule (2026-09-05):**  
+- **Spoken script / what Meghna says on camera:** plain English only — **no FR / NFR jargon**.  
+- **Supporting notes** (this doc’s mapping tables, Coverage, slides): FR/NFR IDs are fine.
 
 ---
 
@@ -13,77 +17,75 @@ You have **3 minutes** on the live share **`https://cafe.artof.link/`**.
 
 **Click path (locked):** **Home → Gallery → Menu → Reservations**.
 
-**Say:** this is Lightsail **staging** for the weekend (#57) — **not** production forever. Point at real freeze copy and prices on screen. On Menu, if you show **Bruschetta ($8.50)**, say honestly there is **no matching photo**.
+**Say on camera:** this is a temporary staging share for the weekend — not the forever restaurant host. Point at real copy and prices on screen. On Menu, if you show **Bruschetta ($8.50)**, say honestly there is **no matching photo**.
 
-**Do not claim:** NFR-1 or NFR-2 met · NFR-7 as four browsers · `/operator` as FR-19 · inventing FR-19.
+**Do not say on camera:** requirement code names, “NFR-1 met,” “four browsers pass,” “operator is an admin feature,” or inventing extra requirements.
 
-**Optional if time left:** happy book → `/operator`, newsletter, or full-slot **409** (see §4). Otherwise stop at the form look and **hand off to Architecture**.
+**Optional if time left:** book a table → check the read-only operator page, newsletter signup, or a full-slot “sorry, fully booked” (see §4). Otherwise stop at the form look and **hand off to Architecture**.
 
 ---
 
-## 2. Timed beat sheet (~180s)
+## 2. Spoken script — timed beat sheet (~180s)
 
-| Clock | Dur | Beat | What you do |
-| ---: | ---: | --- | --- |
-| **0:00–0:20** | 20s | Open | Open `https://cafe.artof.link/`. One breath: “Café Fausse live share — Home → Gallery → Menu → Reservations. Staging for this session, not forever.” |
-| **0:20–0:55** | 35s | **Home** | Scroll Visit / Hours / Explore. Point at name, address, phone, hours. Tap nav icons once so the room sees Menu / Gallery / Reservations / About. |
-| **0:55–1:30** | 35s | **Gallery** | Nav → **Gallery**. Click one image for lightbox; scroll awards + a review quote. |
-| **1:30–2:15** | 45s | **Menu** | Nav → **Menu**. Starters → **Bruschetta $8.50** — say “no matching photo.” Point at one main (e.g. Grilled Salmon) — price from the page. |
-| **2:15–2:50** | 35s | **Reservations** | Nav → **Reservations**. Show fields (date, slot, guests, name, email, phone). Say what a happy book / full book would mean — **do not** invent a write unless you run an optional extra. |
-| **2:50–3:00** | 10s | **Handoff** | Spoken line in §5. Stop sharing the mic for Architecture (Variant B). |
+*Say only the “Say” column out loud. No requirement codes in speech.*
+
+| Clock | Dur | Beat | Do | Say (plain English) |
+| ---: | ---: | --- | --- | --- |
+| **0:00–0:20** | 20s | Open | Open `https://cafe.artof.link/` | “Here’s Café Fausse live. I’ll walk Home, Gallery, Menu, then Reservations. This host is staging for the weekend — not forever.” |
+| **0:20–0:55** | 35s | **Home** | Scroll Visit / Hours / Explore; show top nav | “Home shows the restaurant name, how to reach us, and when we’re open. Nav goes to Menu, Gallery, Reservations, and About.” |
+| **0:55–1:30** | 35s | **Gallery** | Nav → Gallery; one lightbox; awards + a review | “Gallery uses the official photos. Lightbox for a closer look. Awards and guest quotes are the freeze text — we don’t rewrite them.” |
+| **1:30–2:15** | 45s | **Menu** | Nav → Menu; Bruschetta; optional one main | “Menu categories and prices come from the freeze — we don’t invent prices. Bruschetta, eight-fifty — honestly, no matching photo. Grilled Salmon — price as printed on the page.” |
+| **2:15–2:50** | 35s | **Reservations** | Nav → Reservations; show fields; **no submit** unless optional | “Booking form: date, time slot, guests, name, email, optional phone. Only valid future slots for our hours — Sunday ends earlier. Happy path assigns a table from one through thirty. If the slot is full, we say no — we don’t invent a thirty-first table. If the database can’t take the write, we fail closed instead of faking success.” |
+| **2:50–3:00** | 10s | **Handoff** | Stay on Reservations (or honesty breath) | See §5 |
 
 **Room clock tip:** if you are already at **2:40** on Menu, skip extras and go straight to Reservations + handoff.
 
 ---
 
-## 3. Per page — click, say, FR/NFR (honest)
+## 3. Supporting notes — click checklist + FR/NFR map
 
-### Honesty lines (say once early, or at Reservations)
+*For rehearsal sheets, Coverage, slides, and graders — not for Meghna’s spoken lines.*
 
-- **NFR-1 / NFR-2:** **not claimed met** (local Vite timings are notes only).
-- **NFR-7:** **partial** — Edge + Firefox home probed; Chrome / Safari **Unknown**. Not a four-browser pass.
-- **Host:** `cafe.artof.link` = Lightsail staging share for this weekend — **not** production forever. Tear-down only if the owner asks.
-- **`/operator`:** read-only recording helper — **not FR-19**, not an admin console (no cancel / CRUD).
+### Honesty (say once early in plain English; map lives here)
 
-Grade floor = official SRS only: **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent IDs.
+| Say in plain English | Map |
+| --- | --- |
+| We are not claiming page-load or form-submit speed budgets are met | NFR-1 / NFR-2 — **not claimed met** |
+| Browser check is partial — not Chrome + Firefox + Safari + Edge | NFR-7 — **partial** |
+| This host is weekend staging, not production forever | Lightsail #57 |
+| Operator page is a read-only recording helper, not an admin console | **not FR-19** |
+
+Grade floor = official SRS only: **FR-1..FR-18**, **NFR-1..NFR-9**.
 
 ---
 
-### Home (`/` ) — ~0:20–0:55
+### Home (`/`) — ~0:20–0:55
 
-| Do | Say (plain) | Point at |
+| Do | Spoken (plain) | Map |
 | --- | --- | --- |
-| Land on Home; short scroll | “Home: restaurant name, how to reach us, when we’re open.” | Name, contact, hours cards |
-| Hover / show top nav | “Nav to Menu, Reservations, About, Gallery — same five-page floor.” | Nav links / icons |
-
-**FR:** **FR-1** name · **FR-2** contact · **FR-3** hours · **FR-4** nav  
-**NFR (light touch):** **NFR-3** theme · **NFR-4** layout (Flex/Grid) · **NFR-8** nav / viewports — “looks intentional; we are not claiming speed budgets NFR-1/2.”
+| Land on Home; short scroll | Name, contact, hours | **FR-1** name · **FR-2** contact + hours |
+| Show top nav | Menu, Reservations, About, Gallery | **FR-4** nav · **FR-3** images/theme (light) |
+| — | Theme / layout look intentional; no speed claims | **NFR-3**, **NFR-4**, **NFR-8** (light); not NFR-1/2 |
 
 ---
 
 ### Gallery (`/gallery`) — ~0:55–1:30
 
-| Do | Say (plain) | Point at |
+| Do | Spoken (plain) | Map |
 | --- | --- | --- |
-| Nav → **Gallery** | “Gallery: official photos of the place and food.” | Image grid (**FR-12**) |
-| Click one thumbnail → lightbox → close | “Lightbox for a closer look.” | Enlarged image (**FR-13**) |
-| Scroll awards + reviews | “Awards and guest quotes from the freeze — we don’t rewrite them.” | Awards / quotes (**FR-14**) |
-
-**FR:** **FR-12**, **FR-13**, **FR-14**  
-**Skip if tight:** second lightbox click. One open/close is enough.
+| Image grid | Official photos | **FR-12** |
+| One lightbox open/close | Closer look | **FR-13** |
+| Awards + review quote | Freeze text | **FR-14** |
 
 ---
 
 ### Menu (`/menu`) — ~1:30–2:15
 
-| Do | Say (plain) | Point at |
+| Do | Spoken (plain) | Map |
 | --- | --- | --- |
-| Nav → **Menu** | “Menu categories and prices come from the freeze file — we don’t invent prices.” | Categories (**FR-5**) |
-| Starters → **Bruschetta** | “Bruschetta, eight-fifty — **honestly, no matching photo** for this item.” | Name + **$8.50** on screen |
-| Optional one main | “Grilled Salmon — price as printed on the page.” | **$22.00** (or whatever the page shows) |
-
-**FR:** **FR-5**  
-**Must say if Bruschetta is on camera:** **no matching photo**. Photos are presentation aids; do not pretend every dish has a dedicated shot.
+| Categories + prices from page | Freeze menu | **FR-5** |
+| Bruschetta $8.50 | “no matching photo” | honesty (presentation aid) |
+| Optional Grilled Salmon | Price as printed | freeze talk pick |
 
 Other freeze talk picks (prices from page only): Caesar Salad $9.00 · Ribeye Steak $28.00 · Tiramisu $7.50 · Espresso $3.00.
 
@@ -91,39 +93,39 @@ Other freeze talk picks (prices from page only): Caesar Salad $9.00 · Ribeye St
 
 ### Reservations (`/reservations`) — ~2:15–2:50
 
-| Do | Say (plain) | Point at |
+| Do | Spoken (plain) | Map |
 | --- | --- | --- |
-| Nav → **Reservations** | “Booking form: date, time slot, guests, name, email, optional phone.” | Form fields (**FR-6**) |
-| Open date / slot list if needed | “Only valid future slots for DC hours — Sunday ends earlier.” | Slot picker (**FR-7**) |
-| Finger-point at Reserve button (no submit unless optional) | “Happy path: random table **1–30**, success banner. Full slot: honest **no** — no guessed 31st table.” | Button + page honesty note |
-| One line on backend (no deep dive — Architecture owns that) | “When Postgres accepts it, Customers + Reservations get the row. Fail-closed if the DB can’t take the write.” | Page note / form (**FR-8**, **FR-9**, **FR-17**, **FR-18**, **NFR-5**, **NFR-6**) |
+| Show form fields | date, slot, guests, name, email, phone | **FR-6** |
+| Slot list | valid future slots; Sunday shorter | **FR-7** |
+| Point at Reserve (default: **no submit**) | table 1–30 on success; full slot = honest no | **FR-8**, **FR-9**, **NFR-5** |
+| One line on backend | Postgres write or fail closed | **FR-17**, **FR-18**, **NFR-6** |
 
-**Default for the 3-min cut:** **show the form; do not submit** unless you have buffer for an optional extra (§4).  
+**Default for the 3-min cut:** show the form; do not submit unless you have buffer for an optional extra (§4).  
 **Do not** open `/operator` in the core path unless you just completed a happy book (optional).
 
 ---
 
 ## 4. Optional must-film extras (only if time)
 
-Mark these **OPTIONAL**. Core pack stops at Reservations look + handoff. Full click paths: [Must-film shots](MUST-FILM-SHOTS.md).
+Mark these **OPTIONAL**. Core pack stops at Reservations look + handoff. Full click paths: [Must-film shots](MUST-FILM-SHOTS.md) · live https://knowledge.cafe.artof.link/must-film-shots.html
 
-| Extra | When | What | Freeze IDs | Time |
-| --- | --- | --- | ---: |
-| **Happy book → `/operator`** | ≥45s left after form look | Unique email → Reserve → green “Table N” → open `/operator` → point at new row. Say: “**not FR-19**.” | FR-6..9, FR-17..18 | ~70–90s |
-| **Newsletter** | ≥40s left | Footer subscribe with fresh email → `/operator` **Newsletter only** | FR-15, FR-16 | ~45–60s |
-| **Full-book 409** | Pre-staged 30 tables off-mic | 31st attempt → banner “fully booked” / Network **409** | FR-9, NFR-5 | ~40–60s on cam |
+| Extra | When | What (plain) | Map | Time |
+| --- | --- | --- | --- | ---: |
+| **Happy book → operator** | ≥45s left | Unique email → Reserve → green table N → open `/operator` → new row. Say: “read-only helper, not an admin console.” | FR-6..9, FR-17..18 | ~70–90s |
+| **Newsletter** | ≥40s left | Footer subscribe → `/operator` newsletter-only | FR-15, FR-16 | ~45–60s |
+| **Full-book** | Pre-staged 30 tables off-mic | 31st attempt → “fully booked” / Network **409** | FR-9, NFR-5 | ~40–60s |
 
-If staging is slow or a write fails: **do not invent success**. Fall back to Coverage cite or committed clip **02-happy-book** as a **look only**.
+If staging is slow or a write fails: **do not invent success**. Fall back to Coverage or the happy-book clip as a **look only**.
 
 ---
 
-## 5. Spoken handoff line (Architecture / Variant B)
+## 5. Spoken handoff line (Architecture)
 
-Say this (or close) at **~2:50**, still on Reservations or after a quick honesty breath:
+Say this (or close) at **~2:50**:
 
-> “That’s the live path — Home, Gallery, Menu, Reservations — showing the freeze requirements on staging. I’m handing off to Architecture for **Variant B**: how React, Flask, and Postgres fit together, the diagrams, and how Coverage maps the boxes. Over to you.”
+> “That’s the live path — Home, Gallery, Menu, Reservations — on staging. I’m handing off to Architecture: how React, Flask, and Postgres fit together, the diagrams, and how Coverage maps the boxes. Over to you.”
 
-Then stop talking. Let Architecture take the screen (HLD / Coverage / sensors).
+Then stop talking. Let Architecture take the screen.
 
 ---
 
@@ -131,12 +133,12 @@ Then stop talking. Let Architecture take the screen (HLD / Coverage / sensors).
 
 | What | URL | Note |
 | --- | --- | --- |
-| **Live café (your surface)** | https://cafe.artof.link/ | Prefer this share. Staging #57 — not forever. |
-| **Operator (helper)** | https://cafe.artof.link/operator | Read-only. **Not FR-19.** Not in primary nav. |
-| **Knowledge — Coverage** | https://knowledge.cafe.artof.link/coverage.html | Every FR/NFR + evidence. |
-| **Knowledge — Must-film shots** | https://knowledge.cafe.artof.link/ (see must-film / video script) · local pack: `MUST-FILM-SHOTS.md` | Happy book / newsletter / 409 / NFR-6. |
-| **Knowledge — Quantic hub** | https://knowledge.cafe.artof.link/quantic.html | Navigation hub only — does not invent IDs. |
-| **Presentation (Variant B)** | https://knowledge.cafe.artof.link/presentation.html | Architecture cut after your handoff. |
+| **Live café (your surface)** | https://cafe.artof.link/ | Prefer this share. Staging — not forever. |
+| **Operator (helper)** | https://cafe.artof.link/operator | Read-only. Not an admin console. Not in primary nav. |
+| **Knowledge — Coverage** | https://knowledge.cafe.artof.link/coverage.html | Full FR/NFR + evidence (supporting doc). |
+| **Knowledge — Must-film shots** | https://knowledge.cafe.artof.link/must-film-shots.html | Happy book / newsletter / 409. |
+| **Knowledge — Quantic hub** | https://knowledge.cafe.artof.link/quantic.html | Navigation hub. |
+| **Presentation (Architecture)** | https://knowledge.cafe.artof.link/presentation.html | After your handoff. |
 | **Health (mute pre-flight)** | https://cafe.artof.link/api/health | Expect `{"ok":true}` before you go live. |
 
 Backup host (if needed): `https://54-165-102-60.sslip.io/` — same honesty (staging, not forever).
@@ -153,14 +155,14 @@ If **Menu** is on camera and you point at **Bruschetta**:
 
 ---
 
-## 8. Do-not-say checklist
+## 8. Do-not-say checklist (spoken)
 
-- “`/operator` is FR-19” / “admin console”
-- “`cafe.artof.link` is production forever” / “live Café Fausse forever”
-- “NFR-1 met” / “NFR-2 met”
-- “NFR-7 pass on Chrome, Firefox, Safari, and Edge”
+- Requirement code names on camera (save those for Coverage / supporting notes)
+- “Operator is an admin console” / inventing an admin requirement
+- “This host is production forever”
+- “We met the three-second page budget” / “two-second form budget”
+- “We passed Chrome, Firefox, Safari, and Edge”
 - Invented prices or a guessed table on a full slot
-- Any invented requirement ID (including FR-19)
 
 ---
 
@@ -168,9 +170,9 @@ If **Menu** is on camera and you point at **Bruschetta**:
 
 1. `GET https://cafe.artof.link/api/health` → `{"ok":true}`  
 2. Click through Home → Gallery → Menu → Reservations once (cold cache).  
-3. Confirm Architecture person is ready for Variant B at your handoff.  
+3. Confirm Architecture person is ready at your handoff.  
 4. Optional: warm `/operator` only if you plan a happy-book extra.
 
 ---
 
-*End of Meghna 3-min Café demo pack. Path locked 2026-09-05. No FR-19 invented.*
+*End of Meghna 3-min Café demo pack. Spoken = plain English. Mapping = supporting notes. Path locked 2026-09-05.*
