@@ -4,10 +4,9 @@ import { dirname, join } from "node:path";
 import { describe, it } from "node:test";
 import { fileURLToPath } from "node:url";
 
-const src = readFileSync(
-  join(dirname(fileURLToPath(import.meta.url)), "components/NewsletterForm.jsx"),
-  "utf8",
-);
+const here = dirname(fileURLToPath(import.meta.url));
+const src = readFileSync(join(here, "components/NewsletterForm.jsx"), "utf8");
+const layoutSrc = readFileSync(join(here, "components/Layout.jsx"), "utf8");
 
 describe("NewsletterForm status (issue #85)", () => {
   it("clears success/error status when the React Router path changes", () => {
@@ -15,6 +14,7 @@ describe("NewsletterForm status (issue #85)", () => {
     assert.match(src, /useLocation/);
     assert.match(src, /\[location\.pathname\]/);
     assert.match(src, /setStatus\(null\)/);
+    assert.match(layoutSrc, /<NewsletterForm key=\{location\.pathname\}/);
   });
 
   it("auto-dismisses the banner after a short timeout (4–6s polish)", () => {

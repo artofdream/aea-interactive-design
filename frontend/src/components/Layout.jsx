@@ -72,7 +72,7 @@ export default function Layout() {
           <section>
             <h2>Newsletter</h2>
             <p>Email signup is stored only when PostgreSQL accepts the write.</p>
-            <NewsletterForm />
+            <NewsletterForm key={location.pathname} />
           </section>
         </div>
         <p className="footer-operator">
