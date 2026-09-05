@@ -32,6 +32,10 @@ DELIVERY_ONLY_HREFS = (
     "must-film-shots.html",
     "presentation.html",
     "presentation-sample.html",
+    "meeting-wednesday.html",
+    "meeting-friday.html",
+    "meeting-saturday.html",
+    "meeting-sunday.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -43,6 +47,10 @@ PAGE_ICONS = {
     "presentation.html": "talk",
     "presentation-sample.html": "slides",
     "glossary.html": "glossary",
+    "meeting-wednesday.html": "brief",
+    "meeting-friday.html": "friday",
+    "meeting-saturday.html": "talk",
+    "meeting-sunday.html": "slides",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -124,6 +132,10 @@ REQUIRED = [
     ROOT / "must-film-shots.md",
     ROOT / "presentation.md",
     ROOT / "presentation-sample.md",
+    ROOT / "meeting-wednesday.md",
+    ROOT / "meeting-friday.md",
+    ROOT / "meeting-saturday.md",
+    ROOT / "meeting-sunday.md",
     ROOT / "stack.md",
     ROOT / "srs.md",
     ROOT / "coverage.md",
@@ -863,6 +875,10 @@ def assert_ux_wiring() -> None:
         'href="video-script.html"',
         'href="must-film-shots.html"',
         'href="friday-plan.html"',
+        'href="meeting-wednesday.html"',
+        'href="meeting-friday.html"',
+        'href="meeting-saturday.html"',
+        'href="meeting-sunday.html"',
         'href="honesty.html"',
         'href="stack.html"',
         'href="future.html"',
@@ -922,6 +938,30 @@ def assert_ux_wiring() -> None:
         fail("video-script.md must embed Zoom dry-run v2 prototype (issue #81)")
     if "must-film-shots.md" not in video_md:
         fail("video-script.md must link the must-film shot list (issue #83)")
+    wed_md = (ROOT / "meeting-wednesday.md").read_text(encoding="utf-8")
+    fri_md = (ROOT / "meeting-friday.md").read_text(encoding="utf-8")
+    sat_md = (ROOT / "meeting-saturday.md").read_text(encoding="utf-8")
+    sun_md = (ROOT / "meeting-sunday.md").read_text(encoding="utf-8")
+    if "brief.md" not in wed_md:
+        fail("meeting-wednesday.md must link the Brief (do not hollow it)")
+    if "friday-plan.md" not in fri_md:
+        fail("meeting-friday.md must link the Friday plan (do not hollow it)")
+    if "presentation.md" not in sat_md or "video-script.md" not in sat_md:
+        fail("meeting-saturday.md must link talk cuts and video script")
+    if "must-film-shots.md" not in sat_md:
+        fail("meeting-saturday.md must link the must-film shot list")
+    if "America/New_York" not in sat_md or "Europe/Berlin" not in sat_md:
+        fail("meeting-saturday.md must note America/New_York and Europe/Berlin")
+    if "Unknown" not in sun_md:
+        fail("meeting-sunday.md must stay Unknown until notes exist")
+    for name, text in (
+        ("meeting-wednesday.md", wed_md),
+        ("meeting-friday.md", fri_md),
+        ("meeting-saturday.md", sat_md),
+        ("meeting-sunday.md", sun_md),
+    ):
+        if "<video" in text or "clips/" in text:
+            fail(f"{name} must not embed clips (sister pages keep them)")
     shots_md = (ROOT / "must-film-shots.md").read_text(encoding="utf-8")
     if "Do-not-say checklist" not in shots_md:
         fail("must-film-shots.md lost the do-not-say checklist")

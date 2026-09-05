@@ -51,7 +51,7 @@ If evidence is missing, write **Unknown**. Closing a task is not a probe. See [H
 
 ## Course dates (delivery pages)
 
-Teammate meeting **Wed 2026-09-02 19:00 CET** (owner locked **1, 3, 4** — not 2): start with the [Brief](brief.md). Friday **2026-09-04 19:00 Europe/Berlin** (score 5): [Friday plan](friday-plan.md). Saturday 2026-09-05 prefer the live restaurant share above. Working drafts: [video script](video-script.md), [slides](presentation-sample.md), Saturday [talk cuts](presentation.md). Those pages stay complete on the [Quantic hub](quantic.md). They are not extra restaurant features.
+Meeting packs (delivery-only, listed on [Quantic / MSAIE](quantic.md)): [Wednesday](meeting-wednesday.md) **2026-09-02 19:00 Europe/Berlin** (owner locked **1, 3, 4** — not 2); [Friday](meeting-friday.md) **2026-09-04 19:00 Europe/Berlin** (score 5 / tech access); [Saturday](meeting-saturday.md) **2026-09-05 19:00 Europe/Berlin** / **~13:00 America/New_York** (recording). [Sunday](meeting-sunday.md) is a placeholder (**Unknown**). Source pages stay complete: [Brief](brief.md), [Friday plan](friday-plan.md), [video script](video-script.md), [slides](presentation-sample.md), [talk cuts](presentation.md). They are not extra restaurant features.
 
 ## On this map (thin)
 
