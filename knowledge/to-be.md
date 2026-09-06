@@ -28,6 +28,7 @@ These GitHub issues are **Future**. Missing them is **not** a missing FR/NFR.
 | [#36](https://github.com/artofdream/aea-interactive-design/issues/36) | Menu CRUD (edit the freeze from a console) |
 | [#37](https://github.com/artofdream/aea-interactive-design/issues/37) | Email identity / verbatim-case extras |
 | [#38](https://github.com/artofdream/aea-interactive-design/issues/38) | Concurrency retry beyond fail-closed |
+| [#135](https://github.com/artofdream/aea-interactive-design/issues/135) | Newsletter outbound via Amazon SES — after **FR-15** / **FR-16** store. Grade floor stays store-only until send is live and probed. Not **FR-19**. |
 
 Team Functional Spec v0.1 extras vs the official SRS compare stay on the [Brief](brief.md). Do not promote those extras into the first restaurant cut.
 
