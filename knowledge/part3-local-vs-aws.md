@@ -53,9 +53,12 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 
 | Asset | Role |
 | --- | --- |
-| `hld-as-is` SVG / `hld-as-is-720.png` | Local MVP vs app staging vs Knowledge Pages |
-| `hld-aws-staging` SVG / `hld-aws-staging-720.png` | AWS MSAIE staging path (speak MSAIE / cafe.artof.link; put Lightsail/Caddy/on-box PG in this table) |
-| [Stack](stack.md) | Dual-env table + HLD (same four headings) |
+| [Local HLD](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Architect cut** — Vite / Flask / local PG on cts-ai |
+| [MSAIE staging HLD](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **Architect cut** — `cafe.artof.link` · on-box PG (not AEA RDS) |
+| [Meghna FE↔BE](assets/flow-meghna-fe-be.svg) | Click path vs Flask (freeze vs `GET /api/slots` + `POST /api/reservations`) |
+| [Part 3 notes](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md) | Site pages for the four diagrams |
+| `hld-as-is` / `hld-aws-staging` | **History / probe archive** (keep; do not prefer for the architect cut) |
+| [Stack](stack.md) | Dual-env table + four new diagrams + archive HLDs |
 | Live staging | https://cafe.artof.link/ |
 
 ---

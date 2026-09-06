@@ -52,7 +52,41 @@ Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-
 | **Rationale** | Fast local iterate | Prove the **same stack** on a public HTTPS host; one URL for the talk |
 | **Implementation** | Vite + Flask + **local Postgres** | **Caddy (TLS)** → Flask → **on-box Postgres** (host tip `73d202d`; **not AEA RDS**) |
 
-Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md).
+Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md).
+
+## Architect dual-env HLD (prefer these)
+
+**On camera:** **cafe.artof.link** is **MSAIE staging** (temporary — not production forever). Same design, two deploy targets. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md). Older [as-is](assets/hld-as-is.svg) / [AWS staging](assets/hld-aws-staging.svg) SVGs stay below as **history / probe archive**.
+
+**PROTOTYPE** visuals — not Quantic submit.
+
+**Local (dev)** — Vite / Flask / local Postgres on cts-ai. Coding and iteration. Not the shared demo URL.
+
+![Local setup (dev): Vite React frontend, Flask API with key routes, local PostgreSQL, shared freeze.json. Fail-closed without DB. Not the shared demo URL.](assets/hld-local.svg)
+
+Fallback raster: [hld-local-720.png](assets/hld-local-720.png).
+
+**MSAIE staging** — browser → DNS/TLS → Flask + built SPA → **on-box Postgres (not AEA RDS)**. Knowledge Pages is a separate hostname. Newsletter **store-only**.
+
+![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. AEA RDS and ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
+
+Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
+
+## Meghna FE↔BE flow
+
+What Meghna clicks vs what hits Flask. **Home / Gallery / Menu** read the **freeze** at build — not `GET /api/menu`. **Booking** = `GET /api/slots?date=` then `POST /api/reservations`. Newsletter optional `POST /api/newsletter` **store-only**. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md).
+
+![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-meghna-fe-be.svg)
+
+Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
+
+## Part 4 coding overview
+
+Forms · functions · frontend · backend · API · DB. Static pages import `freeze.json`; booking goes through slots + reservations; newsletter is store-only. Notes: [Part 4 coding overview](part4-coding-overview.md).
+
+![Part 4 coding overview: Home Menu Gallery About import freeze.json (not /api/menu). Reservations form GET /api/slots then POST /api/reservations to Postgres. NewsletterForm POST /api/newsletter store-only. Backend modules under Flask. Fail-closed without DB.](assets/flow-coding-overview.svg)
+
+Fallback raster: [flow-coding-overview-720.png](assets/flow-coding-overview-720.png).
 
 ## AWS staging facts (this weekend)
 
@@ -74,11 +108,11 @@ Owner-probed implementation, not a second product. This session this agent also 
 | Newsletter | Store/register **FR-15** / **FR-16** only. No outbound mailer in the SRS MVP. |
 | Permanent hosting | Still [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22). #57 does not close it. |
 
-Static HLD for this cut: [AWS staging SVG](assets/hld-aws-staging.svg).
+**History / probe archive** (prefer [hld-aws-msaie](assets/hld-aws-msaie.svg) for the architect cut): [AWS staging SVG](assets/hld-aws-staging.svg).
 
-![Café Fausse AWS staging: Knowledge Pages, Route53 A to Lightsail, Caddy, Flask+SPA, on-box Postgres; AEA RDS and ELB wildcard out of cut](assets/hld-aws-staging.svg)
+![Café Fausse AWS staging (history / probe archive): Knowledge Pages, Route53 A to Lightsail, Caddy, Flask+SPA, on-box Postgres; AEA RDS and ELB wildcard out of cut](assets/hld-aws-staging.svg)
 
-## As-is HLD
+## As-is HLD (history / probe archive)
 
 What is true now: knowledge Pages is live; prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57) — not production forever; the restaurant code still lives on `main` (local Vite / Flask / `cafe-pg`).
 
@@ -102,9 +136,9 @@ flowchart TB
   end
 ```
 
-Static copy (renders if Mermaid JS is blocked): [as-is SVG](assets/hld-as-is.svg). Same facts in more detail: [AWS staging SVG](assets/hld-aws-staging.svg).
+Static copy (renders if Mermaid JS is blocked): [as-is SVG](assets/hld-as-is.svg) — **history / probe archive**. Prefer [local HLD](assets/hld-local.svg) + [MSAIE staging HLD](assets/hld-aws-msaie.svg) for the architect cut. Same probe facts in more detail: [AWS staging SVG](assets/hld-aws-staging.svg) (also archive).
 
-![Café Fausse as-is: knowledge Pages live, cafe.artof.link is weekend Lightsail staging, local Vite/Flask/Postgres still on main](assets/hld-as-is.svg)
+![Café Fausse as-is (history / probe archive): knowledge Pages live, cafe.artof.link is weekend Lightsail staging, local Vite/Flask/Postgres still on main](assets/hld-as-is.svg)
 
 ## To-be HLD (permanent vs staging keep-up)
 

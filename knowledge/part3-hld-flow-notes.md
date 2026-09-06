@@ -1,50 +1,63 @@
 # Part 3 — HLD + Meghna FE/BE flow (architect cut)
 
 **Audience:** Architecture talk (Part 3 NATURAL) · on-camera slides.  
-**Palette:** match `hld-as-is.svg` — bg `#f6f1e8`, panels `#fffdf8`, accent `#7a2e1f`, muted `#5e574d`, box `#efeae1`, Georgia + ui-monospace.  
-**Label:** PROTOTYPE visuals · not Quantic submit.  
-**Routes:** from `aea-interactive-design` `main` Flask factory (`backend/cafe_fausse/__init__.py`).
+**Label:** **PROTOTYPE** visuals · not Quantic submit. No FR/NFR IDs on the diagrams.  
+**On camera:** **cafe.artof.link** = **MSAIE staging** (temporary — not production forever). Avoid “weekend Lightsail.”  
+**Prefer these** for the architect dual-env cut. Older [as-is HLD](assets/hld-as-is.svg) / [AWS staging HLD](assets/hld-aws-staging.svg) stay on [Stack](stack.md) as **history / probe archive**.
 
-These three **replace / augment** older `hld-as-is` / `hld-aws-staging` for the architect cut (local vs MSAIE staging + Meghna FE/BE path). Older SVGs kept for probe history.
+Folded into [Stack](stack.md). Deploy table: [Local vs AWS](part3-local-vs-aws.md). Pack index: [Parts 3–5 materials](parts-345-materials.md). Part 4 companion: [Coding overview](part4-coding-overview.md). ID map: [Handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
+
+---
+
+## Honesty (diagrams)
+
+- **MSAIE staging** at `cafe.artof.link` on camera. Off-camera ops (Lightsail / Caddy / tip `73d202d`) live on [Local vs AWS](part3-local-vs-aws.md).
+- **Home / Gallery / Menu** read the **freeze** at build (`@shared/freeze.json`). They do **not** call `GET /api/menu` from the frontend.
+- **Booking** = `GET /api/slots?date=` then `POST /api/reservations`. Full book → 409. Fail-closed without Postgres.
+- **Newsletter** = `POST /api/newsletter` **store-only** (do not claim outbound SES).
+- Staging database is **on-box Postgres**, not AEA RDS.
+- These SVGs are **PROTOTYPE** visuals — not the Quantic submit film.
 
 ---
 
 ## Index
 
-| # | File | Title | Spoken cue (one line) |
+| # | Visual | Title | Spoken cue (one line) |
 | ---: | --- | --- | --- |
-| 1 | `hld-local.svg` · `hld-local-720.png` | **Local setup (dev) — HLD** | “Local on the developer machine — Vite, Flask, Postgres — iterate without touching the shared demo.” |
-| 2 | `hld-aws-msaie.svg` · `hld-aws-msaie-720.png` | **MSAIE staging — HLD** (`cafe.artof.link`) | “MSAIE staging at cafe.artof.link — same design, shared HTTPS proof. Knowledge is a separate hostname.” |
-| 3 | `flow-meghna-fe-be.svg` · `flow-meghna-fe-be-720.png` | **Meghna demo path — frontend / backend** | “What Meghna clicks vs what hits Flask — static pages from freeze; booking through slots and reservations.” |
-| 4 | `flow-coding-overview.svg` · `flow-coding-overview-720.png` | **Coding overview** (Part 4) | “Forms → API → modules → Postgres. Freeze for static pages; booking through slots + reservations.” |
+| 1 | [SVG](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Local setup (dev) — HLD** | “Local on the developer machine — Vite, Flask, Postgres — iterate without touching the shared demo.” |
+| 2 | [SVG](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **MSAIE staging — HLD** (`cafe.artof.link`) | “MSAIE staging at cafe.artof.link — same design, shared HTTPS proof. Knowledge is a separate hostname.” |
+| 3 | [SVG](assets/flow-meghna-fe-be.svg) · [720 PNG](assets/flow-meghna-fe-be-720.png) | **Meghna demo path — frontend / backend** | “What Meghna clicks vs what hits Flask — static pages from freeze; booking through slots and reservations.” |
+| 4 | [SVG](assets/flow-coding-overview.svg) · [720 PNG](assets/flow-coding-overview-720.png) | **Coding overview** (Part 4) | “Forms → API → modules → Postgres. Freeze for static pages; booking through slots + reservations.” |
 
 ---
 
-## Diagram 1 — Local (`hld-local`)
+## 1. Local (`hld-local`)
 
-- **cts-ai** box: Frontend (Vite / React+JSX) → Backend (Flask `:5000`) → Data (local PostgreSQL).
-- **freeze.json** shared config under both FE + API.
-- Backend box lists key routes: `/api/health`, `/api/menu`, `/api/site`, `/api/slots`, `/api/availability`, `POST /api/reservations`, `POST /api/newsletter`, `GET /api/operator` (helper).
-- Fail-closed without DB; full book → 409.
-- Label: coding & iteration — **not** the shared demo URL.
+cts-ai box: Frontend (Vite / React+JSX) → Backend (Flask `:5000`) → Data (local PostgreSQL). `freeze.json` sits under both FE and API. Fail-closed without DB; full book → 409. Coding and iteration — **not** the shared demo URL.
 
----
+![Local setup (dev): Vite React frontend, Flask API with key routes, local PostgreSQL, shared freeze.json. Fail-closed without DB. Not the shared demo URL.](assets/hld-local.svg)
 
-## Diagram 2 — MSAIE staging (`hld-aws-msaie`)
-
-- Speakable title: **MSAIE staging** (not “weekend Lightsail”).
-- App path: Browser → DNS/TLS → Flask+built SPA → **on-box Postgres (not AEA RDS)**.
-- Knowledge Pages column: `knowledge.cafe.artof.link` — two hostnames, two jobs.
-- Backend box lists the same key API routes as local.
-- Small ops line (off-camera-honest): DNS → TLS → Flask+SPA → on-box PG · tip `73d202d`.
-- Out of cut (dashed): AEA RDS · ELB wildcard · permanent hosting Future.
-- Newsletter: store-only.
+Fallback raster: [hld-local-720.png](assets/hld-local-720.png).
 
 ---
 
-## Diagram 3 — Meghna FE / BE (`flow-meghna-fe-be`)
+## 2. MSAIE staging (`hld-aws-msaie`)
 
-**Click path:** Home → Gallery → Menu → Reservations (+ newsletter optional).
+Speakable title: **MSAIE staging** at `cafe.artof.link`. Browser → DNS/TLS → Flask + built SPA → **on-box Postgres (not AEA RDS)**. Knowledge Pages (`knowledge.cafe.artof.link`) is a separate column — two hostnames, two jobs. Same key API routes as local. Newsletter **store-only**. Dashed / out of cut: AEA RDS · ELB wildcard · permanent hosting (Future). Off-camera ops line: tip `73d202d`.
+
+![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. AEA RDS and ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
+
+Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
+
+---
+
+## 3. Meghna FE / BE (`flow-meghna-fe-be`)
+
+**Click path:** Home → Gallery → Menu → Reservations (+ newsletter optional). Ends with a handoff to Architecture (Part 3).
+
+![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-meghna-fe-be.svg)
+
+Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
 
 | Step | Frontend | Hits Flask? | Data |
 | --- | --- | --- | --- |
@@ -53,9 +66,7 @@ These three **replace / augment** older `hld-as-is` / `hld-aws-staging` for the 
 | Newsletter (optional) | Footer form | **POST** `/api/newsletter` | Postgres store-only |
 | Operator | not Meghna path | **GET** `/api/operator` | read-only helper |
 
-**Legend on diagram:** full Flask surface (`/api/health`, `/api/menu`, `/api/site`, …) so Architecture can point at exposed routes without inventing FE arrows.
-
-Ends with **Handoff → Architecture (Part 3)**.
+The diagram also lists the full Flask surface (`/api/health`, `/api/menu`, `/api/site`, …) so Architecture can point at exposed routes without inventing FE arrows.
 
 ---
 
@@ -80,24 +91,15 @@ No FR/NFR IDs on the diagrams.
 
 ---
 
-## Related docs
+## Related
 
-- [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md) — local vs MSAIE staging table  
-- [`PART3-VARIANT-B-SCRIPT-NATURAL.md`](PART3-VARIANT-B-SCRIPT-NATURAL.md) — diagram callouts  
-- [`PARTS-345-MATERIALS.md`](PARTS-345-MATERIALS.md) — pack index  
-- Older: `hld-as-is.svg`, `hld-aws-staging.svg` (probe / history)
+- [Local vs AWS](part3-local-vs-aws.md) — local vs MSAIE staging table
+- [Part 3 natural script](part3-variant-b-script-natural.md) — diagram callouts
+- [Parts 3–5 materials](parts-345-materials.md) — pack index
+- [Part 4 coding overview](part4-coding-overview.md) — forms · functions · FE · BE · API · DB
+- [Stack](stack.md) — four new diagrams + older HLDs as history
+- History / probe archive: [as-is SVG](assets/hld-as-is.svg), [AWS staging SVG](assets/hld-aws-staging.svg)
 
 ---
 
----
-
-## Part 4 companion — coding overview
-
-| File | Title | Spoken cue |
-| --- | --- | --- |
-| `flow-coding-overview.svg` · `flow-coding-overview-720.png` | **Coding overview** — forms · functions · FE · BE · API · DB | “Pages/forms → Flask → modules → Postgres. Freeze for static pages; slots + reservations for booking.” |
-
-Detail: [`PART4-CODING-OVERVIEW.md`](PART4-CODING-OVERVIEW.md). Maps to the Architecture flow (Part 3) with coding-layer labels.
-
-
-*Packed 2026-09-06 Europe/Oslo · PROTOTYPE · architect cut HLD trio + Meghna FE/BE honesty (freeze vs API).*
+*Packed 2026-09-06 Europe/Berlin · PROTOTYPE · architect cut HLD trio + Meghna FE/BE honesty (freeze vs API).*
