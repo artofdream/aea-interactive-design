@@ -2,14 +2,14 @@
 
 Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
 
-**Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C).  
+**Casting lock (2026-09-06 owner):** Meghna = Part 2 UX · **Claude = Part 3 Architecture** · **Hiren = Part 4 Coding** · Shared close Part 5 TBD.  
 **Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.  
 **Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
-| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude Part 3 | **Camera:** [natural script](part3-variant-b-script-natural.md) + [natural VO](part3-variant-b-voiceover-natural.md) + [natural TTS](clips/part3-variant-b-prototype-vo-natural.mp4) · **Compare:** [technical script](part3-variant-b-script.md) + [technical VO](part3-variant-b-voiceover.md) + silent + [technical TTS](clips/part3-variant-b-prototype-vo.mp4) |
-| ~6:30–9:30 | **4 Coding** (Variant C) | Hiren Part 4 | **Camera:** [natural script](part4-variant-c-script-natural.md) + [natural VO](part4-variant-c-voiceover-natural.md) + [natural TTS](clips/part4-variant-c-prototype-vo-natural.mp4) · **Compare:** [technical script](part4-variant-c-script.md) + [technical VO](part4-variant-c-voiceover.md) + silent + [technical TTS](clips/part4-variant-c-prototype-vo.mp4) |
+| ~3:30–6:30 | **3 Architecture** (Variant B) | **Claude** | **Camera:** [natural script](part3-variant-b-script-natural.md) + [natural VO](part3-variant-b-voiceover-natural.md) + [natural TTS](clips/part3-variant-b-prototype-vo-natural.mp4) · **Compare:** [technical script](part3-variant-b-script.md) + [technical VO](part3-variant-b-voiceover.md) + silent + [technical TTS](clips/part3-variant-b-prototype-vo.mp4) |
+| ~6:30–9:30 | **4 Coding** (Variant C) | **Hiren** | **Camera:** [natural script](part4-variant-c-script-natural.md) + [natural VO](part4-variant-c-voiceover-natural.md) + [natural TTS](clips/part4-variant-c-prototype-vo-natural.mp4) · **Compare:** [technical script](part4-variant-c-script.md) + [technical VO](part4-variant-c-voiceover.md) + silent + [technical TTS](clips/part4-variant-c-prototype-vo.mp4) |
 | ~9:30–10:00 | **5 Shared close** | Shared | **Camera:** [natural script](part5-shared-close-script-natural.md) + [natural VO](part5-shared-close-voiceover-natural.md) + [natural TTS](clips/part5-shared-close-prototype-vo-natural.mp4) · **Compare:** [technical script](part5-shared-close-script.md) + [technical VO](part5-shared-close-voiceover.md) + silent + [technical TTS](clips/part5-shared-close-prototype-vo.mp4) |
 
 **Prefer natural for camera.** Keep technical silent + technical VO for post-mortem compare.  

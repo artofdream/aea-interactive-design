@@ -3,7 +3,7 @@
 **Length:** ~3 minutes  
 **Picture:** silent [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) or live diagrams  
 **IDs:** OK in technical take · plain twin below  
-**Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.  
+**Status:** draft for Claude (owner lock 2026-09-06 — historical update on this technical compare) — **PROTOTYPE**, not Quantic submit.  
 **Sister pages:** [Part 3 script](part3-variant-b-script.md) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
 
 ---

@@ -3,7 +3,7 @@
 # Part 4 — Coding rationale / Variant C (~3 min)
 
 **Talk spine:** Part 2 = UX/business rationale (Meghna) · Part 3 = architecture why/how · **Part 4 = coding why/how** · Part 5 = honesty/close.  
-**Who:** Claude or Hiren (the one not doing Architecture).  
+**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4.  
 **Job:** Why these implementations / how they work — freeze + CI, table + fail-closed, timezone/modules — then hand to Shared close.  
 **Picture:** freeze/CI cards → table/index/fail-closed → timezone/modules/tooling → close handoff.  
 **Label:** **PROTOTYPE** — not Quantic submit.  

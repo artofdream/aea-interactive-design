@@ -1,6 +1,6 @@
 # Part 3 — Architecture / Variant B (~3 min)
 
-**Who:** Claude or Hiren (Hiren picks B vs C; Claude takes the other).  
+**Who:** **Claude** (owner lock 2026-09-06 — historical update on this technical compare) — Architecture Part 3.  
 **Job:** Take over from Meghna’s reservation screen → diagrams → Coverage boxes → sensors → hand off to Coding.  
 **Picture:** live Reservations (or clip/still) → Stack + AWS staging SVG → coverage cards → CI sensors.  
 **Label:** **PROTOTYPE** — not Quantic submit.  
