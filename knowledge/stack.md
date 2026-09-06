@@ -54,6 +54,8 @@ Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-
 
 Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md).
 
+**Same usecase, three depths:** Part 2 = frontend/UX view · Part 3 = architecture behind it · Part 4 = how it’s implemented (forms → API → modules → DB). The new diagrams are Part 3 + Part 4 of that ladder.
+
 ## Architect dual-env HLD (prefer these)
 
 **On camera:** **cafe.artof.link** is **MSAIE staging** (temporary — not production forever). Same design, two deploy targets. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md). Older [as-is](assets/hld-as-is.svg) / [AWS staging](assets/hld-aws-staging.svg) SVGs stay below as **history / probe archive**.

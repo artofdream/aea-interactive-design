@@ -2,7 +2,8 @@
 
 Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
 
-**Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.
+**Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.  
+**Same usecase, three depths:** Part 2 = frontend/UX view · Part 3 = architecture behind it · Part 4 = how it’s implemented (forms → API → modules → DB). The new diagrams are Part 3 + Part 4 of that ladder.
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |

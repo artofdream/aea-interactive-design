@@ -1230,6 +1230,19 @@ def assert_ux_wiring() -> None:
         fail("parts-345-materials.md must keep the talk spine (architecture why/how)")
     if "UX/business" not in materials_345:
         fail("parts-345-materials.md must keep Part 2 UX/business on the talk spine")
+    # Owner lock #143: same usecase, three depths (Part 2 view · Part 3 architecture · Part 4 implementation).
+    for label, text in (
+        ("stack.md", stack_md),
+        ("parts-345-materials.md", materials_345),
+    ):
+        if "Same usecase, three depths" not in text:
+            fail(f"{label} must keep the owner-locked Part 2→3→4 depth ladder")
+        if "frontend/UX view" not in text:
+            fail(f"{label} must say Part 2 = frontend/UX view")
+        if "architecture behind it" not in text:
+            fail(f"{label} must say Part 3 = architecture behind it")
+        if "how it’s implemented" not in text and "how it's implemented" not in text:
+            fail(f"{label} must say Part 4 = how it’s implemented")
     if "UX/business" not in quantic_md:
         fail("quantic.md must cue Part 2 as UX/business why+how")
     if "part3-local-vs-aws.md" not in presentation_md:
