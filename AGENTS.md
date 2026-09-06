@@ -121,7 +121,7 @@ For this repo **now**:
 ## Out of scope for the restaurant MVP cut
 
 - Permanent `cafe.artof.link` hosting / always-on productization ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)). Weekend Lightsail staging is [#57](https://github.com/artofdream/aea-interactive-design/issues/57), not that Future cut.
-- Other student projects / florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
+- Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
 - Declaring Pages or `cafe.artof.link` live without a GET **this session**. Last probe 2026-09-05: both HTTPS **GET 200**. Do not claim forever production.
 - A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.
 - Knowledge-site depth beyond the thin map; GitHub E2E beyond the assignment floor.
