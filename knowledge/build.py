@@ -1230,19 +1230,26 @@ def assert_ux_wiring() -> None:
         fail("parts-345-materials.md must keep the talk spine (architecture why/how)")
     if "UX/business" not in materials_345:
         fail("parts-345-materials.md must keep Part 2 UX/business on the talk spine")
-    # Owner lock #143: same usecase, three depths (Part 2 view · Part 3 architecture · Part 4 implementation).
+    # Owner lock #143: same usecase, three depths (confirmed spine wording).
     for label, text in (
         ("stack.md", stack_md),
         ("parts-345-materials.md", materials_345),
+        ("quantic.md", quantic_md),
     ):
         if "Same usecase, three depths" not in text:
             fail(f"{label} must keep the owner-locked Part 2→3→4 depth ladder")
-        if "frontend/UX view" not in text:
-            fail(f"{label} must say Part 2 = frontend/UX view")
-        if "architecture behind it" not in text:
-            fail(f"{label} must say Part 3 = architecture behind it")
-        if "how it’s implemented" not in text and "how it's implemented" not in text:
-            fail(f"{label} must say Part 4 = how it’s implemented")
+        if "what Meghna shows" not in text:
+            fail(f"{label} must say Part 2 UX = frontend view (what Meghna shows)")
+        if "view behind it" not in text or "FE/BE flow" not in text:
+            fail(f"{label} must say Part 3 Architecture = view behind it (HLDs + FE/BE flow)")
+        if "how it is actually implemented" not in text:
+            fail(f"{label} must say Part 4 Coding = how it is actually implemented")
+        if "forms/functions/FE/BE/API/DB" not in text:
+            fail(f"{label} must keep Part 4 as forms/functions/FE/BE/API/DB")
+    if "behind the UX" not in stack_md:
+        fail("stack.md must title Part 3 diagrams as behind the UX")
+    if "implementation of that flow" not in stack_md:
+        fail("stack.md must title Part 4 as implementation of that flow")
     if "UX/business" not in quantic_md:
         fail("quantic.md must cue Part 2 as UX/business why+how")
     if "part3-local-vs-aws.md" not in presentation_md:

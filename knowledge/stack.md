@@ -54,9 +54,9 @@ Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-
 
 Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md).
 
-**Same usecase, three depths:** Part 2 = frontend/UX view · Part 3 = architecture behind it · Part 4 = how it’s implemented (forms → API → modules → DB). The new diagrams are Part 3 + Part 4 of that ladder.
+**Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 
-## Architect dual-env HLD (prefer these)
+## Architect dual-env HLD (behind the UX)
 
 **On camera:** **cafe.artof.link** is **MSAIE staging** (temporary — not production forever). Same design, two deploy targets. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md). Older [as-is](assets/hld-as-is.svg) / [AWS staging](assets/hld-aws-staging.svg) SVGs stay below as **history / probe archive**.
 
@@ -74,7 +74,7 @@ Fallback raster: [hld-local-720.png](assets/hld-local-720.png).
 
 Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
 
-## Meghna FE↔BE flow
+## Meghna FE↔BE flow (behind the UX)
 
 What Meghna clicks vs what hits Flask. **Home / Gallery / Menu** read the **freeze** at build — not `GET /api/menu`. **Booking** = `GET /api/slots?date=` then `POST /api/reservations`. Newsletter optional `POST /api/newsletter` **store-only**. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md).
 
@@ -82,7 +82,7 @@ What Meghna clicks vs what hits Flask. **Home / Gallery / Menu** read the **free
 
 Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
 
-## Part 4 coding overview
+## Part 4 coding overview (implementation of that flow)
 
 Forms · functions · frontend · backend · API · DB. Static pages import `freeze.json`; booking goes through slots + reservations; newsletter is store-only. Notes: [Part 4 coding overview](part4-coding-overview.md).
 
