@@ -36,15 +36,15 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
-**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO) · [VO notes](parts-345-vo-notes.md) · [Part 3 script](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4 script](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5 script](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Technical scripts may use FR/NFR IDs. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**. Do not invent the Hiren B vs C pick.
+**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural). **Prefer natural for camera:** [Part 3 natural](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) · [Part 4 natural](part4-variant-c-script-natural.md) / [VO](part4-variant-c-voiceover-natural.md) · [Part 5 natural](part5-shared-close-script-natural.md) / [VO](part5-shared-close-voiceover-natural.md). Technical compare: [Part 3](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). FR/NFR map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**. Do not invent the Hiren B vs C pick.
 
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
 1. Team + ID verification — ~30s — shared
 2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations — pack: [Meghna demo](meghna-cafe-demo.md)
-3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude or Hiren** — [Part 3 script](part3-variant-b-script.md)
-4. Coding rationale (**Variant C**) — ~3 min — **Claude or Hiren** — [Part 4 script](part4-variant-c-script.md)
-5. Shared close — shared — [Part 5 script](part5-shared-close-script.md)
+3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude or Hiren** — **camera** [natural script](part3-variant-b-script-natural.md)
+4. Coding rationale (**Variant C**) — ~3 min — **Claude or Hiren** — **camera** [natural script](part4-variant-c-script-natural.md)
+5. Shared close — shared — **camera** [natural script](part5-shared-close-script-natural.md)
 
 Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown** / to-be-filled. Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](meghna-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
@@ -53,10 +53,10 @@ Sister talk-track pages (stay complete):
 - [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE** clip.
 - [Meghna demo](meghna-cafe-demo.md) — 3-min live walk (spoken = plain English).
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO. [VO notes](parts-345-vo-notes.md). Recorded teammate VO **Unknown**.
-- [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
-- [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
-- [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. [VO notes](parts-345-vo-notes.md). Recorded teammate VO **Unknown**.
+- [Handoff mapping](parts-345-handoff-mapping.md) — FR/NFR / probe IDs — **not spoken on camera**
+- **Camera (natural):** [Part 3 script](part3-variant-b-script-natural.md) · [Part 3 VO](part3-variant-b-voiceover-natural.md) · [Part 4 script](part4-variant-c-script-natural.md) · [Part 4 VO](part4-variant-c-voiceover-natural.md) · [Part 5 script](part5-shared-close-script-natural.md) · [Part 5 VO](part5-shared-close-voiceover-natural.md)
+- **Compare (technical):** [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md) · [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md) · [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
 - [Talk cuts](presentation.md) — Variant B and Variant C as 3-min sources; Variant A remains a draft. Shared open / close stay here.
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut. Friday deck, not a second talk track.
 - [Video script](video-script.md) — timed beats + scenario menu A–F. Zoom dry-run v2 on that page is **PROTOTYPE**.
