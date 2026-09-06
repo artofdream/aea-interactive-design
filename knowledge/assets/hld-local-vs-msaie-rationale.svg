@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" role="img" aria-labelledby="t1 d1">
+  <title id="t1">Why local and MSAIE staging</title>
+  <desc id="d1">Same architecture, two deploy targets. Local (dev): Vite + Flask + local Postgres. MSAIE staging at cafe.artof.link tip 73d202d: Caddy TLS to Flask to on-box Postgres. Temporary staging — not production forever. Newsletter store-only until SES.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1410"/>
+      <stop offset="100%" stop-color="#0d0a08"/>
+    </linearGradient>
+    <filter id="soft" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#bg)"/>
+  <text x="1280" y="110" text-anchor="middle" fill="#c4a574" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="4">SAME ARCHITECTURE · TWO DEPLOY TARGETS</text>
+  <text x="1280" y="175" text-anchor="middle" fill="#f5efe6" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">Why local and MSAIE staging</text>
+  <text x="1280" y="235" text-anchor="middle" fill="#b8a99a" font-family="Helvetica, Arial, sans-serif" font-size="28">React + JSX → Flask → PostgreSQL · fail-closed without DB</text>
+
+  <rect x="120" y="300" width="1080" height="980" rx="28" fill="#221c17" stroke="#c4a574" stroke-width="2.5" opacity="0.95" filter="url(#soft)"/>
+  <text x="660" y="390" text-anchor="middle" fill="#c4a574" font-family="Georgia, serif" font-size="36">Local (dev)</text>
+  <text x="660" y="450" text-anchor="middle" fill="#f5efe6" font-family="Helvetica, Arial, sans-serif" font-size="26">Local (dev) · Vite + Flask + local Postgres</text>
+
+  <text x="180" y="540" fill="#c4a574" font-family="Georgia, serif" font-size="26">What for</text>
+  <text x="180" y="590" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Fast coding &amp; iteration without touching the shared demo</text>
+
+  <text x="180" y="680" fill="#c4a574" font-family="Georgia, serif" font-size="26">Why it exists</text>
+  <text x="180" y="730" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Short feedback loop on the developer machine</text>
+
+  <text x="180" y="820" fill="#c4a574" font-family="Georgia, serif" font-size="26">How it runs</text>
+  <text x="180" y="870" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Vite hot reload → Flask API → local Postgres</text>
+
+  <text x="180" y="960" fill="#c4a574" font-family="Georgia, serif" font-size="26">Honesty</text>
+  <text x="180" y="1010" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Not the public demo URL graders open</text>
+
+  <text x="180" y="1120" fill="#8a7d70" font-family="Helvetica, Arial, sans-serif" font-size="22">Newsletter: store-only until SES · same product rules</text>
+
+  <rect x="1360" y="300" width="1080" height="980" rx="28" fill="#221c17" stroke="#c4a574" stroke-width="2.5" opacity="0.95" filter="url(#soft)"/>
+  <text x="1900" y="390" text-anchor="middle" fill="#c4a574" font-family="Georgia, serif" font-size="36">MSAIE staging</text>
+  <text x="1900" y="450" text-anchor="middle" fill="#f5efe6" font-family="Helvetica, Arial, sans-serif" font-size="26">cafe.artof.link · tip 73d202d</text>
+
+  <text x="1420" y="540" fill="#c4a574" font-family="Georgia, serif" font-size="26">What for</text>
+  <text x="1420" y="590" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Shared HTTPS host for graders &amp; the team (one URL)</text>
+
+  <text x="1420" y="680" fill="#c4a574" font-family="Georgia, serif" font-size="26">Why it exists</text>
+  <text x="1420" y="730" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Prove the same stack on a public HTTPS surface</text>
+
+  <text x="1420" y="820" fill="#c4a574" font-family="Georgia, serif" font-size="26">How it runs</text>
+  <text x="1420" y="870" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Caddy (TLS) → Flask → on-box Postgres (not shared RDS)</text>
+
+  <text x="1420" y="960" fill="#c4a574" font-family="Georgia, serif" font-size="26">Honesty</text>
+  <text x="1420" y="1010" fill="#e8dfd4" font-family="Helvetica, Arial, sans-serif" font-size="24">Temporary MSAIE staging — not production forever</text>
+
+  <text x="1420" y="1120" fill="#8a7d70" font-family="Helvetica, Arial, sans-serif" font-size="22">Newsletter: store-only until SES · same product rules</text>
+
+  <circle cx="1280" cy="790" r="48" fill="#1a1410" stroke="#c4a574" stroke-width="2"/>
+  <text x="1280" y="800" text-anchor="middle" fill="#c4a574" font-family="Georgia, serif" font-size="22">same</text>
+</svg>
