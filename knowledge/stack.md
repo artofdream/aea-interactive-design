@@ -39,6 +39,21 @@ Allowlisted markdown under `knowledge/` is built to static HTML (`knowledge/buil
 - **Hosting of `cafe.artof.link`:** Lightsail `cafe-fausse-staging` this weekend ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)): Route53 A, Caddy + Let’s Encrypt, Flask + built SPA, PostgreSQL **on the instance**. AEA RDS untouched. Not a permanent claim. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AWS is not in the restaurant MVP PR.
 - Extra features after the SRS belong in [Future](future.md). AWS RDS column dump vs local schema: [map + rationale](future/aws-schema-map.md) (no cts-ai required).
 
+## Local (dev) vs AWS MSAIE staging
+
+**On camera:** say **cafe.artof.link** is the **staging environment for the MSAIE project** (temporary — not production forever). Full architect table + why/how questions: [Local vs AWS](part3-local-vs-aws.md). Lightsail / Caddy / Route53 names stay on this page — not in NATURAL spoken lines.
+
+Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-closed without a database. Newsletter is **store-only** (do not claim outbound SES).
+
+| | **Local (dev)** | **AWS MSAIE staging** |
+|---|---|---|
+| **What was used** | Clone on **cts-ai** at `C:\projects\code\aea-interactive-design` | Deployed staging at **cafe.artof.link** — MSAIE project staging |
+| **Explanation** | Coding, iteration, and CI-adjacent work without touching the shared demo | Shared public HTTPS host graders (and the team) can open; same product surface Meghna walks |
+| **Rationale** | Fast local iterate | Prove the **same stack** on a public HTTPS host; one URL for the talk |
+| **Implementation** | Vite + Flask + **local Postgres** | **Caddy (TLS)** → Flask → **on-box Postgres** (host tip `73d202d`; **not AEA RDS**) |
+
+Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md).
+
 ## AWS staging facts (this weekend)
 
 Owner-probed implementation, not a second product. This session this agent also GET **200** on `https://cafe.artof.link/` (~0.04s), `/operator` **200**, `/api/health` **200** `{"ok":true}`; DNS A `54.165.102.60`; TLS CN/SAN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`.

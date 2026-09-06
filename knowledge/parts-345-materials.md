@@ -2,6 +2,8 @@
 
 Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
 
+**Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.
+
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
 | ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | **Camera:** [natural script](part3-variant-b-script-natural.md) + [natural VO](part3-variant-b-voiceover-natural.md) + [natural TTS](clips/part3-variant-b-prototype-vo-natural.mp4) · **Compare:** [technical script](part3-variant-b-script.md) + [technical VO](part3-variant-b-voiceover.md) + silent + [technical TTS](clips/part3-variant-b-prototype-vo.mp4) |
@@ -11,6 +13,8 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 **Prefer natural for camera.** Keep technical silent + technical VO for post-mortem compare.  
 **Label:** silent videos are **PROTOTYPE** / samples / rehearsal. VO-integrated clips are **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate VO · **not** Quantic submit. Natural VO = **PROTOTYPE TTS** natural.  
 **Owner rule:** camera spoken lines stay plain (no FR/NFR on camera). Technical spoken scripts **may use FR/NFR IDs** for compare. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.  
+**Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project** (temporary — not production forever). Avoid “weekend Lightsail staging” on camera.  
+**Architect deploy table (off-camera ops OK):** [Local vs AWS MSAIE staging](part3-local-vs-aws.md) — same React+JSX→Flask→Postgres; Vite/local Postgres vs Caddy→on-box Postgres (tip `73d202d`, not AEA RDS); newsletter store-only. Also folded into [Stack](stack.md).  
 **Hiren B vs C pick:** **Unknown** — do not invent it.
 
 ---
@@ -22,9 +26,10 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 | **NFR-1** | **met** | A36 Brave broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123) / [PR #124](https://github.com/artofdream/aea-interactive-design/pull/124)) |
 | **NFR-2** | **met** | Reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125) / [PR #126](https://github.com/artofdream/aea-interactive-design/pull/126)) |
 | **NFR-7** | **Partial** | Do **not** claim four browsers |
-| Host | Lightsail staging **#57** | `https://cafe.artof.link/` — **not forever** |
+| Host | MSAIE staging at `cafe.artof.link` | Temporary — **not forever**. Tracker [#57](https://github.com/artofdream/aea-interactive-design/issues/57) is off-camera. |
 | FR-19 | **None** | `/operator` is a read-only helper |
 | Future #22 / #34–#38 | **Parked** | Not grade gaps |
+| Newsletter | Store-only | Do **not** claim Coverage SES outbound send |
 | Recorded teammate VO | **Unknown** | Until Claude / Hiren / shared records |
 
 Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
@@ -37,16 +42,17 @@ Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
 
 | File | What |
 | --- | --- |
-| [Part 3 — natural script](part3-variant-b-script-natural.md) | Timed ~3 min Architecture — camera spoken (plain) |
-| [Part 4 — natural script](part4-variant-c-script-natural.md) | Timed ~3 min Coding — camera spoken (plain) |
+| [Part 3 — natural script](part3-variant-b-script-natural.md) | Timed ~3 min Architecture why/how — camera spoken (plain) |
+| [Part 4 — natural script](part4-variant-c-script-natural.md) | Timed ~3 min Coding why/how — camera spoken (plain) |
 | [Part 5 — natural script](part5-shared-close-script-natural.md) | Timed ~30–60s close — camera spoken (plain + updated honesty) |
 | [Part 3 — technical script](part3-variant-b-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
 | [Part 4 — technical script](part4-variant-c-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
 | [Part 5 — technical script](part5-shared-close-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
 | [Handoff mapping](parts-345-handoff-mapping.md) | FR/NFR / probe map — **not spoken on camera** |
-| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Meghna materials](meghna-materials.md) (Part 2) |
+| [Local vs AWS](part3-local-vs-aws.md) | Architect deploy table (what used · explanation · rationale · implementation) |
+| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Stack](stack.md) · [Meghna materials](meghna-materials.md) (Part 2 UX/business) |
 
-Live site to rehearse after the cafe demo: **https://cafe.artof.link/**
+Live site to rehearse after the cafe demo: **https://cafe.artof.link/** (MSAIE staging — temporary, not forever)
 
 ---
 
@@ -72,7 +78,7 @@ Prefer **live diagrams / Coverage** for the real recording; use the silent proto
 
 ---
 
-## 2b. Prototype videos (VO-integrated — PROTOTYPE TTS)
+## 2b. Prototype videos (technical VO — PROTOTYPE TTS)
 
 **Label:** **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate recorded VO · **not** Quantic submit.
 
@@ -104,8 +110,8 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 
 | Asset | Path / URL | Note |
 | --- | --- | --- |
-| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4) (~180s) | Natural timed lines + silence pad. **PROTOTYPE TTS** natural. |
-| **Part 4 Coding** | [`clips/part4-variant-c-prototype-vo-natural.mp4`](clips/part4-variant-c-prototype-vo-natural.mp4) (~180s) | Natural timed lines + silence pad. **PROTOTYPE TTS** natural. |
+| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4) (~180s) | Architect why/how timed lines + silence pad. **PROTOTYPE TTS** natural. |
+| **Part 4 Coding** | [`clips/part4-variant-c-prototype-vo-natural.mp4`](clips/part4-variant-c-prototype-vo-natural.mp4) (~180s) | Coding why/how timed lines + silence pad. **PROTOTYPE TTS** natural. |
 | **Part 5 Shared close** | [`clips/part5-shared-close-prototype-vo-natural.mp4`](clips/part5-shared-close-prototype-vo-natural.mp4) (~60s) | Natural close + pad. **PROTOTYPE TTS** natural. |
 
 > **PROTOTYPE TTS** natural — machine voice `en-US-GuyNeural`. Not teammate VO. Not the Quantic submission. Does not replace technical silent or technical VO.
@@ -124,8 +130,8 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 
 | Asset | Path | Status |
 | --- | --- | --- |
-| Part 3 natural VO (camera) | [Part 3 Variant B VO natural](part3-variant-b-voiceover-natural.md) | Ready to record — no FR/NFR on camera |
-| Part 4 natural VO (camera) | [Part 4 Variant C VO natural](part4-variant-c-voiceover-natural.md) | Ready to record — no FR/NFR on camera |
+| Part 3 natural VO (camera) | [Part 3 Variant B VO natural](part3-variant-b-voiceover-natural.md) | Ready to record — architecture why/how, no FR/NFR on camera |
+| Part 4 natural VO (camera) | [Part 4 Variant C VO natural](part4-variant-c-voiceover-natural.md) | Ready to record — coding why/how, no FR/NFR on camera |
 | Part 5 natural VO (camera) | [Part 5 Shared close VO natural](part5-shared-close-voiceover-natural.md) | Ready to record — updated honesty, plain |
 | Part 3 technical VO (compare) | [Part 3 Variant B VO](part3-variant-b-voiceover.md) | Post-mortem (technical + plain twin) |
 | Part 4 technical VO (compare) | [Part 4 Variant C VO](part4-variant-c-voiceover.md) | Post-mortem (technical + plain twin) |
@@ -141,8 +147,9 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 | Coverage (grade map) | https://knowledge.cafe.artof.link/coverage.html · [Coverage](coverage.md) |
 | Talk cuts (Architecture after Meghna handoff) | https://knowledge.cafe.artof.link/presentation.html · [Talk cuts](presentation.md) |
 | Stack / HLD | https://knowledge.cafe.artof.link/stack.html · [Stack](stack.md) |
+| Local vs AWS (architect deploy table) | [Local vs AWS MSAIE staging](part3-local-vs-aws.md) |
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
-| Meghna materials (Part 2) | [Meghna materials](meghna-materials.md) |
+| Meghna materials (Part 2 UX/business) | [Meghna materials](meghna-materials.md) |
 | Handoff mapping (FR/NFR — **not spoken on camera**) | [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) |
 | Build notes (secondary) | [Parts 3–5 notes](parts-345-notes.md) |
 | VO mux notes (**PROTOTYPE TTS** technical) | [Parts 3–5 VO notes](parts-345-vo-notes.md) |
@@ -151,11 +158,12 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 
 ## 5. App / staging
 
-- Host: https://cafe.artof.link/ (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever)
+- Host: https://cafe.artof.link/ — **staging environment for the MSAIE project** (temporary — not forever)
 - Health: https://cafe.artof.link/api/health
 - Operator (optional after a live book only): https://cafe.artof.link/operator — read-only helper, not an admin console, **not FR-19**
 - Backup: https://54-165-102-60.sslip.io/
 - Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22)
+- Off-camera ops tracker: Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57)
 
 ---
 
@@ -168,4 +176,4 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE / samples / rehearsal only.*
+*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE / samples / rehearsal only · NATURAL architect/coding why-how beside technical originals.*

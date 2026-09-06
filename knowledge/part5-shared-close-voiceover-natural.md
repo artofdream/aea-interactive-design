@@ -1,16 +1,14 @@
-> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 5 — Shared close voice-over (natural)
+# Part 5 — Shared close voice-over (ready to record)
 
 **Length:** ~45–60 seconds (tight cut ~30s)  
-**Picture:** silent [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4)  
-**Spoken:** natural demo language — **no FR/NFR IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only — **not spoken on camera**  
-**Status:** draft — **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
-**Honesty:** UPDATED 2026-09-06 — load/submit **met**; browser support **Partial**.  
-**Sister pages:** [natural script](part5-shared-close-script-natural.md) · [technical VO](part5-shared-close-voiceover.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
-
-Natural **PROTOTYPE TTS** clip: [`clips/part5-shared-close-prototype-vo-natural.mp4`](clips/part5-shared-close-prototype-vo-natural.mp4).
+**Picture:** silent `part5-shared-close-prototype-silent.mp4`  
+**Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
+**Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project** (temporary — not forever)  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
+**Status:** draft — **PROTOTYPE**, not Quantic submit.  
+**Honesty:** UPDATED 2026-09-06 — load/submit **met**; browser support **Partial**.
 
 ---
 
@@ -22,7 +20,7 @@ Natural **PROTOTYPE TTS** clip: [`clips/part5-shared-close-prototype-vo-natural.
 
 ### Honesty (0:15–0:40) — do not skip
 
-“Honesty: page-load timing is met — about four hundred sixty-six milliseconds on a phone broadband cold Home probe. Reservation submit is met — about two hundred thirty-three milliseconds. Browser support is still partial — we are not claiming all four browsers. cafe.artof.link is weekend staging — not production forever. Future items stay parked; they are not missing grade rows. The operator view is a read-only helper, not an admin console.”
+“Honesty: page-load timing is met — about four hundred sixty-six milliseconds on a phone broadband cold Home probe. Reservation submit is met — about two hundred thirty-three milliseconds. Browser support is still partial — we are not claiming all four browsers. cafe.artof.link is the staging environment for the MSAIE project — temporary, not production forever. Future items stay parked; they are not missing grade rows. The operator view is a read-only helper, not an admin console.”
 
 ### Journeys / demo (0:40–0:50)
 
@@ -36,8 +34,8 @@ Natural **PROTOTYPE TTS** clip: [`clips/part5-shared-close-prototype-vo-natural.
 
 ## Tight 30s cut
 
-“Shipped on main: React, Flask, and Postgres against the official requirements, with Knowledge and Coverage live. Page load met at about four sixty-six milliseconds on phone broadband; submit met at about two thirty-three. Browser support still partial — not four browsers. Staging is not forever; future items parked; operator is read-only. Thank you.”
+“Shipped on main: React, Flask, and Postgres against the official requirements, with Knowledge and Coverage live. Page load met at about four sixty-six milliseconds on phone broadband; submit met at about two thirty-three. Browser support still partial — not four browsers. cafe.artof.link is temporary MSAIE staging — not forever; future items parked; operator is read-only. Thank you.”
 
 ---
 
-*End VO draft · say the updated load/submit met lines — never the old Unknown wording · PROTOTYPE TTS natural uses Timed lines above.*
+*End VO draft · say the updated load/submit met lines — never the old Unknown wording · PROTOTYPE TTS uses Timed lines above · MSAIE staging wording lock.*

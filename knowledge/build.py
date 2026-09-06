@@ -45,6 +45,7 @@ DELIVERY_ONLY_HREFS = (
     "parts-345-notes.html",
     "parts-345-vo-notes.html",
     "parts-345-handoff-mapping.html",
+    "part3-local-vs-aws.html",
     "part3-variant-b-script.html",
     "part3-variant-b-voiceover.html",
     "part3-variant-b-script-natural.html",
@@ -82,6 +83,7 @@ PAGE_ICONS = {
     "parts-345-notes.html": "brief",
     "parts-345-vo-notes.html": "brief",
     "parts-345-handoff-mapping.html": "coverage",
+    "part3-local-vs-aws.html": "stack",
     "part3-variant-b-script.html": "talk",
     "part3-variant-b-voiceover.html": "talk",
     "part3-variant-b-script-natural.html": "talk",
@@ -201,6 +203,7 @@ WIDE_PAGES = {
     "must-film-shots.html",
     "glossary.html",
     "parts-345-handoff-mapping.html",
+    "part3-local-vs-aws.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1175,6 +1178,7 @@ def assert_ux_wiring() -> None:
         "part5-shared-close-script-natural.md",
         "part5-shared-close-voiceover-natural.md",
         "parts-345-handoff-mapping.md",
+        "part3-local-vs-aws.md",
         "quantic.md",
         "presentation.md",
         "quantic-handoff.md",
@@ -1184,6 +1188,8 @@ def assert_ux_wiring() -> None:
             fail(f"{name} must use site-relative paths (no /workspace/)")
         if "PARTS-345-HANDOFF-MAPPING.md" in text:
             fail(f"{name} must link parts-345-handoff-mapping.md (site-relative)")
+        if "PART3-LOCAL-VS-AWS.md" in text:
+            fail(f"{name} must link part3-local-vs-aws.md (site-relative)")
     presentation_md = (ROOT / "presentation.md").read_text(encoding="utf-8")
     quantic_md = (ROOT / "quantic.md").read_text(encoding="utf-8")
     handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
@@ -1196,6 +1202,52 @@ def assert_ux_wiring() -> None:
             fail(f"{label} must point speakers to the natural Part 3 script")
     if "parts-345-handoff-mapping.md" not in handoff_md:
         fail("quantic-handoff.md must link the Parts 3–5 handoff mapping")
+    # Ratchet #141: MSAIE staging + architect deploy table on Stack; Pages-ready materials.
+    local_vs_aws = (ROOT / "part3-local-vs-aws.md").read_text(encoding="utf-8")
+    if "What was used" not in stack_md or "Explanation" not in stack_md:
+        fail("stack.md must fold the local vs AWS table (what was used · explanation)")
+    if "Rationale" not in stack_md or "Implementation" not in stack_md:
+        fail("stack.md must fold the local vs AWS table (rationale · implementation)")
+    if "73d202d" not in stack_md or "not AEA RDS" not in stack_md:
+        fail("stack.md must keep the honest staging cut (on-box PG tip 73d202d, not AEA RDS)")
+    if "part3-local-vs-aws.md" not in stack_md:
+        fail("stack.md must link part3-local-vs-aws.md")
+    if "store-only" not in stack_md and "Store-only" not in stack_md:
+        fail("stack.md must keep newsletter store-only on the dual-env table")
+    if "part3-local-vs-aws.md" not in materials_345:
+        fail("parts-345-materials.md must link part3-local-vs-aws.md")
+    if "MSAIE" not in materials_345 or "cafe.artof.link" not in materials_345:
+        fail("parts-345-materials.md must keep MSAIE staging / cafe.artof.link wording")
+    if "architecture why/how" not in materials_345.lower() and "Architecture why/how" not in materials_345:
+        fail("parts-345-materials.md must keep the talk spine (architecture why/how)")
+    if "UX/business" not in materials_345:
+        fail("parts-345-materials.md must keep Part 2 UX/business on the talk spine")
+    if "UX/business" not in quantic_md:
+        fail("quantic.md must cue Part 2 as UX/business why+how")
+    if "part3-local-vs-aws.md" not in presentation_md:
+        fail("presentation.md must point to part3-local-vs-aws.md")
+    if "part3-local-vs-aws.md" not in handoff_md:
+        fail("quantic-handoff.md must point to part3-local-vs-aws.md")
+    if "MSAIE" not in local_vs_aws or "73d202d" not in local_vs_aws:
+        fail("part3-local-vs-aws.md lost MSAIE staging or host tip 73d202d")
+    spoken_re = re.compile(r"“[^”]+”")
+    for name in (
+        "part3-variant-b-script-natural.md",
+        "part3-variant-b-voiceover-natural.md",
+        "part4-variant-c-script-natural.md",
+        "part4-variant-c-voiceover-natural.md",
+        "part5-shared-close-script-natural.md",
+        "part5-shared-close-voiceover-natural.md",
+    ):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        for match in spoken_re.finditer(text):
+            line_start = text.rfind("\n", 0, match.start()) + 1
+            line_end = text.find("\n", match.end())
+            line = text[line_start : line_end if line_end != -1 else None]
+            if "avoid" in line.lower():
+                continue
+            if "weekend Lightsail" in match.group(0):
+                fail(f"{name} spoken lines must not say weekend Lightsail on camera")
     # Ratchet #136: Future lists SES newsletter outbound #135; Coverage must not claim send.
     future_md = (ROOT / "future.md").read_text(encoding="utf-8")
     to_be_md = (ROOT / "to-be.md").read_text(encoding="utf-8")
