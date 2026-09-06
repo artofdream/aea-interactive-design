@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import re
+import struct
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -233,6 +234,16 @@ DIAGRAM_WRAP_RE = re.compile(r'(<div class="diagram-wrap"[^>]*>.*?</div>)', re.S
 def fail(message: str) -> None:
     print(f"fail-closed: {message}", file=sys.stderr)
     raise SystemExit(1)
+
+
+def png_ihdr_size(path: Path) -> tuple[int, int]:
+    data = path.read_bytes()
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        fail(f"{path.relative_to(REPO)} is not a PNG")
+    if data[12:16] != b"IHDR":
+        fail(f"{path.relative_to(REPO)} missing PNG IHDR")
+    width, height = struct.unpack(">II", data[16:24])
+    return width, height
 
 
 _LIST_ITEM_RE = re.compile(r"^([ \t]*)([-*]|\d+\.)[ \t]+(.*)$")
@@ -1515,6 +1526,53 @@ def assert_ux_wiring() -> None:
         fail("parts-345-materials.md must link developer-system-map.md")
     if "developer-system-map.md" not in handoff_md:
         fail("quantic-handoff.md must link developer-system-map.md")
+    # Ratchet #165: Part 3 present uses SVG for architect diagrams; PNG-only beats stay >=1800px.
+    present_md = (ROOT / "part3-present.md").read_text(encoding="utf-8")
+    present_html = (OUT / "part3-present.html").read_text(encoding="utf-8")
+    for svg in (
+        "assets/flow-meghna-fe-be.svg",
+        "assets/hld-local.svg",
+        "assets/hld-aws-msaie.svg",
+    ):
+        if svg not in present_md:
+            fail(f"part3-present.md must use {svg} (not the -720.png raster)")
+        if svg not in present_html:
+            fail(f"part3-present.html must reference {svg}")
+    for raster in (
+        "flow-meghna-fe-be-720.png",
+        "hld-local-720.png",
+        "hld-aws-msaie-720.png",
+    ):
+        if raster in present_md or raster in present_html:
+            fail(f"part3-present must not use {raster}; use the matching .svg")
+    if "still-reservation-720.png" in present_md or "still-reservation-720.png" in present_html:
+        fail("part3-present must use still-reservation.png (2k), not still-reservation-720.png")
+    for name in (
+        "still-reservation.png",
+        "fit-02-stack.png",
+        "card-p3-boxes.png",
+        "card-p3-sensors.png",
+        "card-p3-staging.png",
+        "card-p3-handoff.png",
+    ):
+        path = ROOT / "assets" / name
+        if not path.is_file():
+            fail(f"missing knowledge/assets/{name}")
+        width, _height = png_ihdr_size(path)
+        if width < 1800:
+            fail(f"knowledge/assets/{name} must be >=1800px wide for 250% zoom (got {width})")
+        copied = OUT / "assets" / name
+        if not copied.is_file():
+            fail(f"built site missing assets/{name}")
+    msaie_svg = (ROOT / "assets" / "hld-aws-msaie.svg").read_text(encoding="utf-8")
+    if "Out of cut" in msaie_svg or "Out of this cut" in msaie_svg:
+        fail("hld-aws-msaie.svg must not show an Out of cut panel")
+    if "AEA RDS" in msaie_svg or "aea-pilot-postgres" in msaie_svg:
+        fail("hld-aws-msaie.svg must not name AEA RDS")
+    if "on-box Postgres" not in msaie_svg:
+        fail("hld-aws-msaie.svg must keep on-box Postgres")
+    if "cafe.artof.link" not in msaie_svg:
+        fail("hld-aws-msaie.svg must keep cafe.artof.link")
 
 
 def assert_svg_well_formed() -> None:
