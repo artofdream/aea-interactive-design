@@ -65,6 +65,7 @@ DELIVERY_ONLY_HREFS = (
     "part4-present.html",
     "part5-present.html",
     "developer-system-map.html",
+    "teammate-hld.html",
     "to-be.html",
 )
 
@@ -109,6 +110,7 @@ PAGE_ICONS = {
     "part4-present.html": "slides",
     "part5-present.html": "slides",
     "developer-system-map.html": "stack",
+    "teammate-hld.html": "stack",
     "to-be.html": "future",
 }
 
@@ -223,6 +225,7 @@ WIDE_PAGES = {
     "part4-present.html",
     "part5-present.html",
     "developer-system-map.html",
+    "teammate-hld.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1106,6 +1109,7 @@ def assert_ux_wiring() -> None:
         'href="honesty.html"',
         'href="glossary.html"',
         'href="stack.html"',
+        'href="teammate-hld.html"',
         'href="future.html"',
         'href="index.html"',
         'href="journal.html"',
@@ -1641,6 +1645,32 @@ def assert_ux_wiring() -> None:
         fail("slide-p3-07-teammate.svg must keep cafe.artof.link")
     if "MSAIE staging" not in teammate:
         fail("slide-p3-07-teammate.svg must keep MSAIE staging")
+    # Ratchet #169: teammate HLD side page — labeled teammate, never folded into MSAIE as ours.
+    teammate_hld = (ROOT / "teammate-hld.md").read_text(encoding="utf-8")
+    if "/workspace/" in teammate_hld:
+        fail("teammate-hld.md must use site-relative paths (no /workspace/)")
+    if "teammate architecture" not in teammate_hld:
+        fail("teammate-hld.md must stay labeled teammate architecture")
+    if "not** our MSAIE" not in teammate_hld and "not our MSAIE" not in teammate_hld.lower():
+        fail("teammate-hld.md must say it is not our MSAIE staging map")
+    if "Aurora" not in teammate_hld or "CDK" not in teammate_hld:
+        fail("teammate-hld.md must name Hiren's Aurora/CDK cut")
+    if "cafe.artof.link" not in teammate_hld:
+        fail("teammate-hld.md must keep cafe.artof.link as ours")
+    if "vadaliah/Quantic_Cafe_Fausse_Application" not in teammate_hld:
+        fail("teammate-hld.md must cite Hiren's public repo")
+    if "Flask Blueprints" not in teammate_hld:
+        fail("teammate-hld.md must name Hiren's Flask Blueprints")
+    if "PENDING" not in teammate_hld or "ASSIGNED" not in teammate_hld:
+        fail("teammate-hld.md must name Hiren's PENDING → ASSIGNED lifecycle")
+    if "Unknown" not in teammate_hld:
+        fail("teammate-hld.md must keep Unknown if his remote drifts")
+    if "teammate-hld.md" not in quantic_md:
+        fail("quantic.md must link teammate-hld.md (Quantic delivery, labeled teammate)")
+    if "teammate-hld.md" not in present_md:
+        fail("part3-present.md must link teammate-hld.md from the honesty / slide-p3-07 beat")
+    if "Aurora Postgres Serverless" in stack_md:
+        fail("stack.md must not fold Hiren's Aurora cut into our MSAIE map")
 
 
 def assert_svg_well_formed() -> None:
