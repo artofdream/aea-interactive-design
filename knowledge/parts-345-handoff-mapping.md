@@ -5,7 +5,7 @@
 **Purpose:** Keep freeze / FR / NFR / probe IDs accurate for the deliverable pack while spoken scripts stay natural demo language.  
 **Rule:** Do **not** read this file on camera. Spoken lines live only in the natural [script](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) Timed lines (and the Part 4 / Part 5 twins). Technical scripts stay for post-mortem compare.  
 **Label:** PROTOTYPE · talk #97 · packed 2026-09-06 Europe/Berlin  
-**Index:** [Parts 3–5 materials](parts-345-materials.md) · [Coverage](coverage.md) · [Talk cuts](presentation.md) · [Quantic handoff](quantic-handoff.md)
+**Index:** [Parts 3–5 materials](parts-345-materials.md) · [Coverage](coverage.md) · [Talk cuts](presentation.md) · [Quantic handoff](quantic-handoff.md) · [Developer system map](developer-system-map.md)
 
 ---
 

@@ -21,7 +21,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English. **Part 2 = UX/business why+how** (Meghna).
 - [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture why/how · Coding why/how · honesty close. Silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. Rehearsal — not Quantic submit. Not teammate VO. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md) · [handoff mapping](parts-345-handoff-mapping.md) (**not spoken on camera**) · [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)) · [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [coding overview](part4-coding-overview.md).
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture why/how · Coding why/how · honesty close. Silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. Rehearsal — not Quantic submit. Not teammate VO. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md) · [handoff mapping](parts-345-handoff-mapping.md) (**not spoken on camera**) · [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)) · [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [coding overview](part4-coding-overview.md) · [developer system map](developer-system-map.md).
 - **Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C).
 - **Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 - **Camera (natural):** [Part 3 script](part3-variant-b-script-natural.md) · [Part 3 VO](part3-variant-b-voiceover-natural.md) · [Part 4 script](part4-variant-c-script-natural.md) · [Part 4 VO](part4-variant-c-voiceover-natural.md) · [Part 5 script](part5-shared-close-script-natural.md) · [Part 5 VO](part5-shared-close-voiceover-natural.md)
@@ -47,6 +47,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 > **Not the Quantic pack.** These pages stay the restaurant / harness map. Stack HLD, Future notes, and the formula home are not relocated onto this hub.
 
 - [Stack](stack.md)
+- [Developer system map](developer-system-map.md) — stack, API, schema, FE/BE (tip `73d202d`)
 - [Future / not-MVP](future.md)
 - [Knowledge home](index.md)
 

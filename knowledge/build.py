@@ -63,6 +63,7 @@ DELIVERY_ONLY_HREFS = (
     "part3-present.html",
     "part4-present.html",
     "part5-present.html",
+    "developer-system-map.html",
     "to-be.html",
 )
 
@@ -106,6 +107,7 @@ PAGE_ICONS = {
     "part3-present.html": "slides",
     "part4-present.html": "slides",
     "part5-present.html": "slides",
+    "developer-system-map.html": "stack",
     "to-be.html": "future",
 }
 
@@ -219,6 +221,7 @@ WIDE_PAGES = {
     "part3-present.html",
     "part4-present.html",
     "part5-present.html",
+    "developer-system-map.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1196,6 +1199,7 @@ def assert_ux_wiring() -> None:
         "part3-local-vs-aws.md",
         "part3-hld-flow-notes.md",
         "part4-coding-overview.md",
+        "developer-system-map.md",
         "quantic.md",
         "presentation.md",
         "quantic-handoff.md",
@@ -1386,6 +1390,7 @@ def assert_ux_wiring() -> None:
         "part3-variant-b-script.md",
         "part3-variant-b-voiceover.md",
         "part4-coding-overview.md",
+        "developer-system-map.md",
         "parts-345-materials.md",
         "parts-345-handoff-mapping.md",
         "presentation.md",
@@ -1443,6 +1448,46 @@ def assert_ux_wiring() -> None:
         fail("to-be.md must keep the #135 SES Future pointer")
     if "Amazon SES" in coverage_md or re.search(r"#135\b", coverage_md):
         fail("coverage.md must not claim SES newsletter outbound (#135 is Future only)")
+    # Ratchet #159: developer system map on Knowledge (stack, API, schema, FE/BE).
+    map_md = (ROOT / "developer-system-map.md").read_text(encoding="utf-8")
+    if "/workspace/" in map_md:
+        fail("developer-system-map.md must use site-relative paths (no /workspace/)")
+    if "73d202d" not in map_md:
+        fail("developer-system-map.md must keep New Bot inventory tip 73d202d")
+    if "Local (dev)" not in map_md or "Docker" not in map_md:
+        fail("developer-system-map.md must name Local (dev) + Docker")
+    if "cts-ai" in map_md:
+        fail("developer-system-map.md must not name cts-ai as the product")
+    if "on-box Postgres" not in map_md:
+        fail("developer-system-map.md must keep on-box Postgres")
+    if "not a shared RDS" not in map_md:
+        fail("developer-system-map.md must say staging is not a shared RDS")
+    if "AEA RDS" in map_md or "aea-pilot-postgres" in map_md:
+        fail("developer-system-map.md must not name AEA RDS / aea-pilot-postgres")
+    if "florist" in map_md.lower() and "no AEA RDS / florist" not in map_md:
+        fail("developer-system-map.md must not introduce florist stack")
+    if "/api/gallery" not in map_md:
+        fail("developer-system-map.md must name /api/gallery as missing")
+    if "Does not exist" not in map_md and "does not exist" not in map_md:
+        fail("developer-system-map.md must say /api/gallery does not exist")
+    if "store-only" not in map_md:
+        fail("developer-system-map.md must keep newsletter store-only")
+    if "fail-closed" not in map_md.lower() and "Fail-closed" not in map_md:
+        fail("developer-system-map.md must keep fail-closed")
+    if "MSAIE" not in map_md:
+        fail("developer-system-map.md must keep MSAIE staging camera wording")
+    if "event bus" not in map_md.lower() and "HTTP only" not in map_md:
+        fail("developer-system-map.md must say HTTP only / no event bus")
+    if "/api/slots" not in map_md or "/api/reservations" not in map_md:
+        fail("developer-system-map.md must name GET /api/slots + POST /api/reservations")
+    if "developer-system-map.md" not in stack_md:
+        fail("stack.md must link developer-system-map.md")
+    if "developer-system-map.md" not in quantic_md:
+        fail("quantic.md must link developer-system-map.md")
+    if "developer-system-map.md" not in materials_345:
+        fail("parts-345-materials.md must link developer-system-map.md")
+    if "developer-system-map.md" not in handoff_md:
+        fail("quantic-handoff.md must link developer-system-map.md")
 
 
 def assert_svg_well_formed() -> None:

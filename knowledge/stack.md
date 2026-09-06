@@ -52,7 +52,7 @@ Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-
 | **Rationale** | Fast local iterate | Prove the **same stack** on a public HTTPS host; one URL for the talk |
 | **Implementation** | Vite + Flask + **local Postgres** | **Caddy (TLS)** → Flask → **on-box Postgres (MSAIE staging)** (host tip `73d202d`; **not a shared RDS**) |
 
-Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md).
+Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md). Developer inventory (API / schema / FE/BE): [Developer system map](developer-system-map.md).
 
 **Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 
