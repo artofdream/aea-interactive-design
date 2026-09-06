@@ -1645,6 +1645,23 @@ def assert_ux_wiring() -> None:
         fail("slide-p3-07-teammate.svg must keep cafe.artof.link")
     if "MSAIE staging" not in teammate:
         fail("slide-p3-07-teammate.svg must keep MSAIE staging")
+    # Ratchet #171: clean titles — no PART/BEAT/HONESTY corner labels, no footer stamp.
+    stamp_needles = (
+        "PART 3",
+        "BEAT 1",
+        "BEAT 2",
+        "BEAT 3",
+        "BEAT 4",
+        "BEAT 5",
+        "BEAT 6",
+        ">HONESTY<",
+        "Café Fausse · Part 3 Architecture · MSAIE",
+    )
+    for name in slides:
+        slide_text = (ROOT / "assets" / name).read_text(encoding="utf-8")
+        for needle in stamp_needles:
+            if needle in slide_text:
+                fail(f"{name} must not keep corner/footer stamp {needle!r}")
     # Ratchet #169: teammate HLD side page — labeled teammate, never folded into MSAIE as ours.
     teammate_hld = (ROOT / "teammate-hld.md").read_text(encoding="utf-8")
     if "/workspace/" in teammate_hld:
