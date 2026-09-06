@@ -1270,6 +1270,40 @@ def assert_ux_wiring() -> None:
             fail(f"{label} must not keep Claude or Hiren as an open speaker pick after #145")
         if "Hiren B vs C pick" in text or "Hiren B-vs-C lock" in text:
             fail(f"{label} must not keep the old Hiren B vs C Unknown after #145")
+    # Ratchet #148: stamp Claude/Hiren Who on Part 3/4 NATURAL scripts (gap after #146).
+    # Do not rewrite the #145 casting line. Do not reopen #145/#147.
+    part3_natural = (ROOT / "part3-variant-b-script-natural.md").read_text(encoding="utf-8")
+    part4_natural = (ROOT / "part4-variant-c-script-natural.md").read_text(encoding="utf-8")
+    part3_vo_natural = (ROOT / "part3-variant-b-voiceover-natural.md").read_text(encoding="utf-8")
+    part4_vo_natural = (ROOT / "part4-variant-c-voiceover-natural.md").read_text(encoding="utf-8")
+    part3_tech = (ROOT / "part3-variant-b-script.md").read_text(encoding="utf-8")
+    part4_tech = (ROOT / "part4-variant-c-script.md").read_text(encoding="utf-8")
+    if "**Who:** **Claude** (owner lock 2026-09-06) — Architecture Part 3." not in part3_natural:
+        fail("part3-variant-b-script-natural.md must lock Who to Claude")
+    if "**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4." not in part4_natural:
+        fail("part4-variant-c-script-natural.md must lock Who to Hiren")
+    if "**Who:** **Claude** (owner lock 2026-09-06) — Architecture Part 3." not in part3_vo_natural:
+        fail("part3-variant-b-voiceover-natural.md must lock Who to Claude")
+    if "**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4." not in part4_vo_natural:
+        fail("part4-variant-c-voiceover-natural.md must lock Who to Hiren")
+    if "**Who:** **Claude** (owner lock 2026-09-06) — Architecture Part 3." not in part3_tech:
+        fail("part3-variant-b-script.md must lock Who to Claude")
+    if "**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4." not in part4_tech:
+        fail("part4-variant-c-script.md must lock Who to Hiren")
+    for label, text in (
+        ("part3-variant-b-script-natural.md", part3_natural),
+        ("part4-variant-c-script-natural.md", part4_natural),
+        ("part3-variant-b-voiceover-natural.md", part3_vo_natural),
+        ("part4-variant-c-voiceover-natural.md", part4_vo_natural),
+        ("part3-variant-b-script.md", part3_tech),
+        ("part4-variant-c-script.md", part4_tech),
+    ):
+        if "Claude or Hiren" in text:
+            fail(f"{label} must not keep Claude or Hiren as an open speaker pick after #148")
+        if "the one not doing Architecture" in text:
+            fail(f"{label} must not keep the open B-vs-C Who after #148")
+        if "Hiren picks B vs C" in text:
+            fail(f"{label} must not keep the Hiren B vs C pick after #148")
     if "MSAIE" not in local_vs_aws or "73d202d" not in local_vs_aws:
         fail("part3-local-vs-aws.md lost MSAIE staging or host tip 73d202d")
     # Ratchet #143: four Part 3/4 diagrams on Stack; notes site-relative; old HLDs stay archive.

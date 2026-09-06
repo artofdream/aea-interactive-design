@@ -6,8 +6,9 @@
 **Picture:** silent `part4-variant-c-prototype-silent.mp4`  
 **Spoken:** natural demo language — lead with **why**, then **how** — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
 **Talk spine:** Part 2 UX/business · Part 3 architecture why/how · **Part 4 coding why/how** · Part 5 honesty/close  
+**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4.  
 **IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
-**Status:** draft — **PROTOTYPE**, not Quantic submit.
+**Status:** draft for Hiren — **PROTOTYPE**, not Quantic submit.
 
 ---
 
