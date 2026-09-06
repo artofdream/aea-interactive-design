@@ -1728,6 +1728,24 @@ def assert_ux_wiring() -> None:
         fail("part3-present.html must place slide-p3-03-deploys.svg before the rationale SVG")
     if present_html.find(needle) > present_html.find("assets/hld-local.svg"):
         fail("part3-present.html must place the rationale SVG before hld-local.svg")
+    # Ratchet #177: hld-local.svg camera-clean Local (dev); no cts-ai.
+    local_hld = (ROOT / "assets" / "hld-local.svg").read_text(encoding="utf-8")
+    if "cts-ai" in local_hld:
+        fail("hld-local.svg must not name cts-ai")
+    if "Local (dev)" not in local_hld:
+        fail("hld-local.svg must use Local (dev)")
+    if "Vite" not in local_hld or "React" not in local_hld:
+        fail("hld-local.svg must keep Vite + React")
+    if "Flask" not in local_hld:
+        fail("hld-local.svg must keep Flask API")
+    if "PostgreSQL" not in local_hld:
+        fail("hld-local.svg must keep local PostgreSQL")
+    if "Fail-closed without DB" not in local_hld:
+        fail("hld-local.svg must keep fail-closed without DB")
+    if "coding" not in local_hld.lower() or "iteration" not in local_hld.lower():
+        fail("hld-local.svg must keep coding & iteration")
+    if "not the shared demo URL" not in local_hld:
+        fail("hld-local.svg must keep not the shared demo URL")
 
 
 def assert_svg_well_formed() -> None:
