@@ -14,7 +14,7 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 
 **Hiren** chooses B vs C; **Claude** takes the other — **Unknown** until the owner decides. **Voice-over TBD.** Variant A below stays a draft / rehearsal pack. It is **not** the locked Saturday cut. Zoom dry-run on the [video script](video-script.md) is **PROTOTYPE** (Variant A).
 
-Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (**PROTOTYPE** — not Quantic submit).
+Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (silent **PROTOTYPE** + **PROTOTYPE TTS** VO — not teammate VO · not Quantic submit).
 
 **Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent FR-19 / NFR-10. Freeze prices, address, hours, owners, awards, and reviews stay as written.
 
@@ -70,7 +70,7 @@ flowchart TB
 
 ## Variant B — Architecture + diagrams (~10 min)
 
-Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** on [Parts 3–5 materials](parts-345-materials.md). Prefer live diagrams for the real recording.
+Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md). Prefer live diagrams for the real recording.
 
 | Clock | Beat | Say / show |
 |---|---|---|
@@ -103,7 +103,7 @@ flowchart TB
 
 ## Variant C — Coding rationale (~10 min)
 
-Same open. Why these implementations — not a code walk of every file. Locked 3-min cut: [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md) · silent **PROTOTYPE** on [Parts 3–5 materials](parts-345-materials.md).
+Same open. Why these implementations — not a code walk of every file. Locked 3-min cut: [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
 
 | Clock | Beat | Why this, not that | Freeze IDs |
 |---|---|---|---|
@@ -119,7 +119,7 @@ Same open. Why these implementations — not a code walk of every file. Locked 3
 
 One picture. Use it at 8:30–10:00 (cut A) or 9:00–10:00 (cuts B and C).
 
-Locked 30–60s cut: [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md) · silent **PROTOTYPE** on [Parts 3–5 materials](parts-345-materials.md).
+Locked 30–60s cut: [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
 
 **What we shipped (plain language):** restaurant MVP **on `main`** (code + CI). Knowledge map **live** HTTPS. Evidence on [Coverage](coverage.md) — including **NFR-7 Partial** and parked Futures.
 
@@ -169,7 +169,7 @@ If time is tight, one starter + one main is enough. Read the price from the page
 - [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE**. Spoken / VO = plain English.
 - [Meghna demo](meghna-cafe-demo.md) — part 2 (~3 min) on `https://cafe.artof.link/`.
 - [Meghna VO draft](meghna-voiceover.md) — recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs**. Not Quantic submit. Recorded VO **Unknown**.
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO. Not Quantic submit. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md).
 - [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
 - [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
 - [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
