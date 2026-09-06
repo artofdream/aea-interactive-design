@@ -27,7 +27,7 @@ Spoken pack: [natural script](part3-variant-b-script-natural.md) · [natural VO]
 | Beat | Spoken intent | Freeze / evidence IDs |
 | --- | --- | --- |
 | Takeover / hostnames | Knowledge = Pages; App = weekend Lightsail share; not one shop; not forever | Hosting honesty **#57**; Knowledge ≠ App |
-| HLD staging | Route53 A → Lightsail `cafe-fausse-staging` → Caddy + LE → Flask + SPA → Postgres on instance; AEA RDS untouched; `*.artof.link` ELB wildcard ≠ Café Fausse; longer-term hosting parked | Staging **#57**; Future **#22** parked |
+| HLD staging | Route53 A → Lightsail `cafe-fausse-staging` → Caddy + LE → Flask + SPA → on-box Postgres (MSAIE staging); not a shared RDS; `*.artof.link` ELB wildcard ≠ Café Fausse; longer-term hosting parked | Staging **#57**; Future **#22** parked |
 | As-is picture | Markdown → Pages; `main` = React + Flask + Postgres; `cafe.artof.link` GET 200 weekend window / owner tear-down | Staging **#57** |
 | Coverage boxes | Front-end pages → public site UX; API → booking + newsletter; DB → customers + reservations + unique slot/table; grade floor = official SRS only; `/operator` = read-only helper | React: **FR-1..5, FR-10..14**, **NFR-3, NFR-4, NFR-8**. Flask: **FR-6..9, FR-15..18**, **NFR-5, NFR-6**. Data: **FR-17**, **NFR-5** unique `(time_slot, table_number)`. Grade floor: **FR-1..18 / NFR-1..9**. **No FR-19** |
 | Sensors / CI | Actions require freeze file + PDF fingerprint; tests lock freeze copy + fail-closed (missing DB, 31st table); author does not merge | CI harness only — not grade rows; `test_freeze.py`; `test_fail_closed.py`; PDF SHA256 |
