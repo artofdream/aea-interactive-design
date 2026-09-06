@@ -1573,6 +1573,52 @@ def assert_ux_wiring() -> None:
         fail("hld-aws-msaie.svg must keep on-box Postgres")
     if "cafe.artof.link" not in msaie_svg:
         fail("hld-aws-msaie.svg must keep cafe.artof.link")
+    # Ratchet #167: Part 3 present transition stills before each beat (recording splits).
+    slides = (
+        "slide-p3-00-title.svg",
+        "slide-p3-01-boundaries.svg",
+        "slide-p3-02-flow.svg",
+        "slide-p3-03-deploys.svg",
+        "slide-p3-04-quality.svg",
+        "slide-p3-05-tradeoffs.svg",
+        "slide-p3-06-handoff.svg",
+        "slide-p3-07-teammate.svg",
+    )
+    last = -1
+    for name in slides:
+        path = ROOT / "assets" / name
+        if not path.is_file():
+            fail(f"missing knowledge/assets/{name}")
+        copied = OUT / "assets" / name
+        if not copied.is_file():
+            fail(f"built site missing assets/{name}")
+        needle = f"assets/{name}"
+        if needle not in present_md:
+            fail(f"part3-present.md must embed {needle}")
+        pos = present_html.find(needle)
+        if pos == -1:
+            fail(f"part3-present.html must reference {needle}")
+        if pos < last:
+            fail(f"part3-present.html must keep transition stills in order (bad order at {name})")
+        last = pos
+    for before, after in (
+        ("slide-p3-01-boundaries.svg", "still-reservation.png"),
+        ("slide-p3-02-flow.svg", "flow-meghna-fe-be.svg"),
+        ("slide-p3-03-deploys.svg", "hld-local.svg"),
+        ("slide-p3-04-quality.svg", "card-p3-boxes.png"),
+        ("slide-p3-05-tradeoffs.svg", "card-p3-staging.png"),
+        ("slide-p3-06-handoff.svg", "card-p3-handoff.png"),
+        ("slide-p3-06-handoff.svg", "slide-p3-07-teammate.svg"),
+    ):
+        if present_html.find(f"assets/{before}") > present_html.find(f"assets/{after}"):
+            fail(f"part3-present.html must place {before} before {after}")
+    teammate = (ROOT / "assets" / "slide-p3-07-teammate.svg").read_text(encoding="utf-8")
+    if "teammate architecture" not in teammate:
+        fail("slide-p3-07-teammate.svg must keep Hiren as teammate architecture")
+    if "cafe.artof.link" not in teammate:
+        fail("slide-p3-07-teammate.svg must keep cafe.artof.link")
+    if "MSAIE staging" not in teammate:
+        fail("slide-p3-07-teammate.svg must keep MSAIE staging")
 
 
 def assert_svg_well_formed() -> None:
