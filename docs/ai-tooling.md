@@ -12,6 +12,7 @@ Required for the Quantic assignment. Record of tools used for the Café Fausse r
 | Vite / React 18 (JSX) | Front-end build |
 | Flask + psycopg2 | REST API and PostgreSQL access |
 | PostgreSQL 16 | Customers + Reservations (FR-17) |
+| boto3 / Amazon SES v2 | Future #135 optional confirmation after newsletter store. Not a new FR. |
 
 ## Prompts / instructions used
 
@@ -21,6 +22,7 @@ Required for the Quantic assignment. Record of tools used for the Café Fausse r
 - Constraint: MVP is FR-1..FR-18 and NFR-1..NFR-9 only; extra ideas stay in `knowledge/future.md`
 - Constraint: official images are the four webps in `assets/images/` only; Menu may serve an allowlisted subset of student-recovered extras as labeled presentation aids (not Quantic-official)
 - Constraint: author does not merge their own PR
+- Future #135: optional SES send after FR-15/16 store; fail soft if unset; not FR-19
 
 ## Usage notes
 

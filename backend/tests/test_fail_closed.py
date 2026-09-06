@@ -42,6 +42,16 @@ def test_newsletter_without_database_is_honest_no(no_db_client):
     assert "not saved" in body["error"].lower() or "not configured" in body["error"].lower()
 
 
+def test_unsubscribe_without_database_is_honest_no(no_db_client):
+    response = no_db_client.get(
+        "/api/newsletter/unsubscribe",
+        query_string={"email": "news@example.com"},
+    )
+    body = response.get_json()
+    assert response.status_code == 503
+    assert body["ok"] is False
+
+
 def test_unreachable_postgres_is_honest_no(monkeypatch):
     monkeypatch.setenv("DATABASE_URL", "postgresql://cafe:cafe@127.0.0.1:1/cafe_fausse")
     monkeypatch.setenv("DB_CONNECT_TIMEOUT", "1")
