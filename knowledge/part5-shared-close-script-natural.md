@@ -1,13 +1,15 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 5 — Shared close (~30–60s)
+# Part 5 — Shared close (~30–60s) — natural
 
 **Who:** Shared (any speaker).  
 **Job:** One shipped picture + **updated honesty** — then stop.  
-**Label:** **PROTOTYPE** — not Quantic submit.  
+**Label:** **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **9:30–10:00** (pad to ~60s if needed).
 
-**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Probe / freeze IDs: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR/NFR IDs, issue numbers, SHA, or CI job names on camera.** Probe / freeze IDs: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
+
+**Sister pages:** [natural VO](part5-shared-close-voiceover-natural.md) · [technical script](part5-shared-close-script.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md). Silent rehearsal clip: [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4). Natural **PROTOTYPE TTS**: [`clips/part5-shared-close-prototype-vo-natural.mp4`](clips/part5-shared-close-prototype-vo-natural.mp4).
 
 **Honesty (speakable, mandatory):**
 
@@ -46,7 +48,7 @@ Do **not** use the old “speed budgets unknown / not claimed met” line.
 - [ ] Futures parked / not grade gaps  
 - [ ] Operator = read-only helper  
 
-*(Numeric probe IDs stay in the handoff mapping — not required on camera.)*
+*(Numeric probe IDs stay in the [handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.)*
 
 ---
 
@@ -58,8 +60,8 @@ Official SRS → main (React + Flask + Postgres + CI)
   → Demo surface (cafe.artof.link after healthy GET · or clips)
 ```
 
-Off-camera ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+Off-camera ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · PROTOTYPE sample · talk #97 · natural spoken rewrite · honesty update applied.*
+*Packed 2026-09-06 Europe/Berlin · PROTOTYPE TTS natural · talk #97 · not teammate VO · not Quantic submit · honesty update applied.*

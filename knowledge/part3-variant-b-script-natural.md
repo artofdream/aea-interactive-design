@@ -1,14 +1,16 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 3 — Architecture / Variant B (~3 min)
+# Part 3 — Architecture / Variant B (~3 min) — natural
 
 **Who:** Claude or Hiren (Hiren picks B vs C; Claude takes the other).  
 **Job:** Take over from Meghna’s reservation screen → diagrams → Coverage boxes → sensors → hand off to Coding.  
 **Picture:** live Reservations (or clip/still) → Stack + AWS staging SVG → coverage cards → CI sensors.  
-**Label:** **PROTOTYPE** — not Quantic submit.  
+**Label:** **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
 **Talk lock:** #97 five-part VIDEO. Room clock ≈ **3:30–6:30**.
 
-**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** ID / freeze / probe mapping lives in [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) (appendix below points there).
+**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR/NFR IDs, issue numbers, SHA, or CI job names on camera.** Mapping lives on [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
+
+**Sister pages:** [natural VO](part3-variant-b-voiceover-natural.md) · [technical script](part3-variant-b-script.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md). Silent rehearsal clip: [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4). Natural **PROTOTYPE TTS**: [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4).
 
 ---
 
@@ -36,13 +38,13 @@
 | Boxes card | Three coverage clusters | “Coverage is the grade map — not a second product.” |
 | Sensors card | freeze / fail-closed / no self-merge | “Harness proves the freeze; not new grade rows.” |
 
-Static assets in this pack: `hld-aws-staging-720.png`, `hld-as-is-720.png`, `fit-02-stack.png`, cards under `card-p3-*.png`.
+Live visuals: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [Stack](stack.md), [Coverage](coverage.md).
 
 ---
 
 ## 3. Supporting ID map (off-camera)
 
-See **[`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md)** — Part 3 table. Do not read IDs on camera.
+See [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — Part 3 table. **Not spoken on camera.** Do not read IDs aloud.
 
 ---
 
@@ -61,4 +63,4 @@ See **[`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md)** — Part 
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · PROTOTYPE sample · talk #97 · natural spoken rewrite.*
+*Packed 2026-09-06 Europe/Berlin · PROTOTYPE TTS natural · talk #97 · not teammate VO · not Quantic submit.*

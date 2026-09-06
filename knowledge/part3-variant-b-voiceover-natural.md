@@ -1,18 +1,21 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 3 — Variant B voice-over (ready to record)
+# Part 3 — Variant B voice-over (natural)
 
 **Length:** ~3 minutes  
-**Picture:** silent `part3-variant-b-prototype-silent.mp4` or live diagrams  
-**Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
-**Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.
+**Picture:** silent [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) or live diagrams  
+**Spoken:** natural demo language — **no FR/NFR IDs, issue numbers, SHA, or CI job names**  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only — **not spoken on camera**  
+**Status:** draft for Claude/Hiren — **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
+**Sister pages:** [natural script](part3-variant-b-script-natural.md) · [technical VO](part3-variant-b-voiceover.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
+
+Natural **PROTOTYPE TTS** clip: [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4).
 
 ---
 
 ## How to use
 
-1. Open the silent prototype (or Stack + staging SVG tabs).
+1. Open the silent prototype on [Parts 3–5 materials](parts-345-materials.md) (or Stack + staging SVG tabs).
 2. Read timed lines; ~1s breath between beats.
 3. Stop at the Coding handoff — do not start Variant C.
 
@@ -48,4 +51,4 @@
 
 ---
 
-*End VO draft · PROTOTYPE TTS uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records.*
+*End VO draft · PROTOTYPE TTS natural uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records.*

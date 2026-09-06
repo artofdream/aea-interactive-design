@@ -8,13 +8,13 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 |---|---|---|---|
 | 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below |
 | 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | [Meghna demo](meghna-cafe-demo.md); must-film on [Must-film shots](must-film-shots.md) |
-| 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude or Hiren** | [Part 3 script](part3-variant-b-script.md) · [VO](part3-variant-b-voiceover.md) · Variant B section below |
-| 6:30–9:30 | Coding rationale (**Variant C**) | **Claude or Hiren** | [Part 4 script](part4-variant-c-script.md) · [VO](part4-variant-c-voiceover.md) · Variant C section below |
-| 9:30–10:00 | Shared close | Shared | [Part 5 script](part5-shared-close-script.md) · [VO](part5-shared-close-voiceover.md) · Shared close section below |
+| 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude or Hiren** | **Camera:** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **Compare:** [technical](part3-variant-b-script.md) · Variant B section below |
+| 6:30–9:30 | Coding rationale (**Variant C**) | **Claude or Hiren** | **Camera:** [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md) · **Compare:** [technical](part4-variant-c-script.md) · Variant C section below |
+| 9:30–10:00 | Shared close | Shared | **Camera:** [natural script](part5-shared-close-script-natural.md) · [natural VO](part5-shared-close-voiceover-natural.md) · **Compare:** [technical](part5-shared-close-script.md) · Shared close section below |
 
 **Hiren** chooses B vs C; **Claude** takes the other — **Unknown** until the owner decides. **Voice-over TBD.** Variant A below stays a draft / rehearsal pack. It is **not** the locked Saturday cut. Zoom dry-run on the [video script](video-script.md) is **PROTOTYPE** (Variant A).
 
-Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (silent **PROTOTYPE** + **PROTOTYPE TTS** VO — not teammate VO · not Quantic submit).
+Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (silent **PROTOTYPE** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural — not teammate VO · not Quantic submit). **Prefer natural for camera.** FR/NFR map: [handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
 
 **Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent FR-19 / NFR-10. Freeze prices, address, hours, owners, awards, and reviews stay as written.
 
@@ -70,7 +70,7 @@ flowchart TB
 
 ## Variant B — Architecture + diagrams (~10 min)
 
-Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md). Prefer live diagrams for the real recording.
+Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: **camera** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **compare** [technical script](part3-variant-b-script.md) · [technical VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** + technical / natural **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md). Prefer live diagrams for the real recording.
 
 | Clock | Beat | Say / show |
 |---|---|---|
@@ -103,7 +103,7 @@ flowchart TB
 
 ## Variant C — Coding rationale (~10 min)
 
-Same open. Why these implementations — not a code walk of every file. Locked 3-min cut: [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
+Same open. Why these implementations — not a code walk of every file. Locked 3-min cut: **camera** [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md) · **compare** [technical script](part4-variant-c-script.md) · [technical VO](part4-variant-c-voiceover.md) · silent **PROTOTYPE** + technical / natural **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
 
 | Clock | Beat | Why this, not that | Freeze IDs |
 |---|---|---|---|
@@ -119,7 +119,7 @@ Same open. Why these implementations — not a code walk of every file. Locked 3
 
 One picture. Use it at 8:30–10:00 (cut A) or 9:00–10:00 (cuts B and C).
 
-Locked 30–60s cut: [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md) · silent **PROTOTYPE** + **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
+Locked 30–60s cut: **camera** [natural script](part5-shared-close-script-natural.md) · [natural VO](part5-shared-close-voiceover-natural.md) · **compare** [technical script](part5-shared-close-script.md) · [technical VO](part5-shared-close-voiceover.md) · silent **PROTOTYPE** + technical / natural **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md).
 
 **What we shipped (plain language):** restaurant MVP **on `main`** (code + CI). Knowledge map **live** HTTPS. Evidence on [Coverage](coverage.md) — including **NFR-7 Partial** and parked Futures.
 
@@ -169,10 +169,9 @@ If time is tight, one starter + one main is enough. Read the price from the page
 - [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE**. Spoken / VO = plain English.
 - [Meghna demo](meghna-cafe-demo.md) — part 2 (~3 min) on `https://cafe.artof.link/`.
 - [Meghna VO draft](meghna-voiceover.md) — recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO. Not Quantic submit. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md).
-- [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
-- [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
-- [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. Not Quantic submit. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md) · [handoff mapping](parts-345-handoff-mapping.md) (**not spoken on camera**).
+- **Camera (natural):** [Part 3 script](part3-variant-b-script-natural.md) · [Part 3 VO](part3-variant-b-voiceover-natural.md) · [Part 4 script](part4-variant-c-script-natural.md) · [Part 4 VO](part4-variant-c-voiceover-natural.md) · [Part 5 script](part5-shared-close-script-natural.md) · [Part 5 VO](part5-shared-close-voiceover-natural.md)
+- **Compare (technical):** [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md) · [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md) · [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
 - [Slide outline](presentation-sample.md) — 12-slide outline + 8-slide cut (keep that file).
 - [Video script](video-script.md) — Friday ~10 min beats + scenarios A–F. Dry-run stays **PROTOTYPE**.
 - [Coverage](coverage.md) — every freeze ID.

@@ -1,14 +1,17 @@
-# Parts 3–5 — deliverable handoff mapping (NOT spoken on camera)
+# Parts 3–5 — deliverable handoff mapping
+
+**Not spoken on camera.**
 
 **Purpose:** Keep freeze / FR / NFR / probe IDs accurate for the deliverable pack while spoken scripts stay natural demo language.  
-**Rule:** Do **not** read this file on camera. Spoken VO lives in the `*-SCRIPT.md` / `*-VOICEOVER.md` Timed lines only.  
-**Label:** PROTOTYPE · talk #97 · packed 2026-09-06 Europe/Berlin (UTC+2)
+**Rule:** Do **not** read this file on camera. Spoken lines live only in the natural [script](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) Timed lines (and the Part 4 / Part 5 twins). Technical scripts stay for post-mortem compare.  
+**Label:** PROTOTYPE · talk #97 · packed 2026-09-06 Europe/Berlin  
+**Index:** [Parts 3–5 materials](parts-345-materials.md) · [Coverage](coverage.md) · [Talk cuts](presentation.md) · [Quantic handoff](quantic-handoff.md)
 
 ---
 
 ## Speaking rule (reminder)
 
-| On camera (spoken) | Off camera (this file / appendix) |
+| On camera (spoken) | Off camera (this file — **not spoken on camera**) |
 | --- | --- |
 | Plain product language | FR- / NFR- IDs |
 | “weekend staging”, timings in ms | Issue #57, #124, #126, Future #22 / #34–#38 |
@@ -18,6 +21,8 @@
 ---
 
 ## Part 3 — Architecture (Variant B)
+
+Spoken pack: [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md). Technical compare: [script](part3-variant-b-script.md) · [VO](part3-variant-b-voiceover.md).
 
 | Beat | Spoken intent | Freeze / evidence IDs |
 | --- | --- | --- |
@@ -32,6 +37,8 @@
 
 ## Part 4 — Coding rationale (Variant C)
 
+Spoken pack: [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md). Technical compare: [script](part4-variant-c-script.md) · [VO](part4-variant-c-voiceover.md).
+
 | Beat | Spoken intent | Freeze / evidence IDs |
 | --- | --- | --- |
 | Freeze + CI | Menu, address, hours, awards, reviews in one freeze file; pages + menu API display it; tests fail on drift; do not “improve” prices | `shared/freeze.json`; locks **FR-2, FR-5, FR-10, FR-11, FR-14**; `test_freeze.py` |
@@ -42,6 +49,8 @@
 ---
 
 ## Part 5 — Shared close
+
+Spoken pack: [natural script](part5-shared-close-script-natural.md) · [natural VO](part5-shared-close-voiceover-natural.md). Technical compare: [script](part5-shared-close-script.md) · [VO](part5-shared-close-voiceover.md).
 
 | Claim | Spoken line (plain) | Evidence IDs |
 | --- | --- | --- |
@@ -66,8 +75,8 @@
 - [x] Staging #57 not forever — speakable as “weekend staging, not forever”
 - [x] Futures parked — speakable as “future items parked”
 - [x] No FR-19 — speakable as “operator is a read-only helper”
-- [x] SES outbound / verbatim email case = Future — **not** in spoken grade story unless optional
+- [x] SES outbound / verbatim email case = Future — **not** in spoken grade story unless optional. Do **not** claim Coverage SES outbound send.
 
 ---
 
-*End handoff mapping · keep IDs here · keep spoken lines natural.*
+*End handoff mapping · **not spoken on camera** · keep IDs here · keep spoken lines natural.*

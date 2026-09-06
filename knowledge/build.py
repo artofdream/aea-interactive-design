@@ -44,12 +44,19 @@ DELIVERY_ONLY_HREFS = (
     "parts-345-materials.html",
     "parts-345-notes.html",
     "parts-345-vo-notes.html",
+    "parts-345-handoff-mapping.html",
     "part3-variant-b-script.html",
     "part3-variant-b-voiceover.html",
+    "part3-variant-b-script-natural.html",
+    "part3-variant-b-voiceover-natural.html",
     "part4-variant-c-script.html",
     "part4-variant-c-voiceover.html",
+    "part4-variant-c-script-natural.html",
+    "part4-variant-c-voiceover-natural.html",
     "part5-shared-close-script.html",
     "part5-shared-close-voiceover.html",
+    "part5-shared-close-script-natural.html",
+    "part5-shared-close-voiceover-natural.html",
     "to-be.html",
 )
 
@@ -74,12 +81,19 @@ PAGE_ICONS = {
     "parts-345-materials.html": "video",
     "parts-345-notes.html": "brief",
     "parts-345-vo-notes.html": "brief",
+    "parts-345-handoff-mapping.html": "coverage",
     "part3-variant-b-script.html": "talk",
     "part3-variant-b-voiceover.html": "talk",
+    "part3-variant-b-script-natural.html": "talk",
+    "part3-variant-b-voiceover-natural.html": "talk",
     "part4-variant-c-script.html": "talk",
     "part4-variant-c-voiceover.html": "talk",
+    "part4-variant-c-script-natural.html": "talk",
+    "part4-variant-c-voiceover-natural.html": "talk",
     "part5-shared-close-script.html": "talk",
     "part5-shared-close-voiceover.html": "talk",
+    "part5-shared-close-script-natural.html": "talk",
+    "part5-shared-close-voiceover-natural.html": "talk",
     "to-be.html": "future",
 }
 
@@ -186,6 +200,7 @@ WIDE_PAGES = {
     "video-script.html",
     "must-film-shots.html",
     "glossary.html",
+    "parts-345-handoff-mapping.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1132,6 +1147,55 @@ def assert_ux_wiring() -> None:
         fail("parts-345-vo-notes.md must stay labeled PROTOTYPE TTS (en-US-GuyNeural)")
     if "Recorded teammate VO" not in vo_notes:
         fail("parts-345-vo-notes.md must keep recorded teammate VO Unknown")
+    # Ratchet #139: natural spoken pack sits beside technical; mapping not spoken on camera.
+    mapping_345 = (ROOT / "parts-345-handoff-mapping.md").read_text(encoding="utf-8")
+    for clip in (
+        "clips/part3-variant-b-prototype-vo-natural.mp4",
+        "clips/part4-variant-c-prototype-vo-natural.mp4",
+        "clips/part5-shared-close-prototype-vo-natural.mp4",
+    ):
+        if clip not in materials_345:
+            fail(f"parts-345-materials.md lost natural clip {clip}")
+        clip_path = ROOT / clip
+        if not clip_path.is_file():
+            fail(f"missing {clip} (do not delete natural VO clips)")
+    if "Prefer natural" not in materials_345 and "prefer natural" not in materials_345:
+        fail("parts-345-materials.md must prefer natural for camera")
+    if "parts-345-handoff-mapping.md" not in materials_345:
+        fail("parts-345-materials.md must link parts-345-handoff-mapping.md")
+    if "PROTOTYPE TTS" not in materials_345 or "natural" not in materials_345:
+        fail("parts-345-materials.md must label the natural pack as PROTOTYPE TTS natural")
+    if "not spoken on camera" not in mapping_345.lower():
+        fail("parts-345-handoff-mapping.md must say not spoken on camera")
+    for name in (
+        "part3-variant-b-script-natural.md",
+        "part3-variant-b-voiceover-natural.md",
+        "part4-variant-c-script-natural.md",
+        "part4-variant-c-voiceover-natural.md",
+        "part5-shared-close-script-natural.md",
+        "part5-shared-close-voiceover-natural.md",
+        "parts-345-handoff-mapping.md",
+        "quantic.md",
+        "presentation.md",
+        "quantic-handoff.md",
+    ):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        if "/workspace/" in text:
+            fail(f"{name} must use site-relative paths (no /workspace/)")
+        if "PARTS-345-HANDOFF-MAPPING.md" in text:
+            fail(f"{name} must link parts-345-handoff-mapping.md (site-relative)")
+    presentation_md = (ROOT / "presentation.md").read_text(encoding="utf-8")
+    quantic_md = (ROOT / "quantic.md").read_text(encoding="utf-8")
+    handoff_md = (ROOT / "quantic-handoff.md").read_text(encoding="utf-8")
+    for hub, label in (
+        (presentation_md, "presentation.md"),
+        (quantic_md, "quantic.md"),
+        (handoff_md, "quantic-handoff.md"),
+    ):
+        if "part3-variant-b-script-natural.md" not in hub:
+            fail(f"{label} must point speakers to the natural Part 3 script")
+    if "parts-345-handoff-mapping.md" not in handoff_md:
+        fail("quantic-handoff.md must link the Parts 3–5 handoff mapping")
     # Ratchet #136: Future lists SES newsletter outbound #135; Coverage must not claim send.
     future_md = (ROOT / "future.md").read_text(encoding="utf-8")
     to_be_md = (ROOT / "to-be.md").read_text(encoding="utf-8")

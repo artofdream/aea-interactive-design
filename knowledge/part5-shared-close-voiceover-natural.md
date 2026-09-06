@@ -1,13 +1,16 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 5 — Shared close voice-over (ready to record)
+# Part 5 — Shared close voice-over (natural)
 
 **Length:** ~45–60 seconds (tight cut ~30s)  
-**Picture:** silent `part5-shared-close-prototype-silent.mp4`  
-**Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
-**Status:** draft — **PROTOTYPE**, not Quantic submit.  
-**Honesty:** UPDATED 2026-09-06 — load/submit **met**; browser support **Partial**.
+**Picture:** silent [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4)  
+**Spoken:** natural demo language — **no FR/NFR IDs, issue numbers, SHA, or CI job names**  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only — **not spoken on camera**  
+**Status:** draft — **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
+**Honesty:** UPDATED 2026-09-06 — load/submit **met**; browser support **Partial**.  
+**Sister pages:** [natural script](part5-shared-close-script-natural.md) · [technical VO](part5-shared-close-voiceover.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
+
+Natural **PROTOTYPE TTS** clip: [`clips/part5-shared-close-prototype-vo-natural.mp4`](clips/part5-shared-close-prototype-vo-natural.mp4).
 
 ---
 
@@ -37,4 +40,4 @@
 
 ---
 
-*End VO draft · say the updated load/submit met lines — never the old Unknown wording · PROTOTYPE TTS uses Timed lines above.*
+*End VO draft · say the updated load/submit met lines — never the old Unknown wording · PROTOTYPE TTS natural uses Timed lines above.*

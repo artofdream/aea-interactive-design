@@ -1,12 +1,15 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
-# Part 4 — Variant C voice-over (ready to record)
+# Part 4 — Variant C voice-over (natural)
 
 **Length:** ~3 minutes  
-**Picture:** silent `part4-variant-c-prototype-silent.mp4`  
-**Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
-**Status:** draft — **PROTOTYPE**, not Quantic submit.
+**Picture:** silent [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4)  
+**Spoken:** natural demo language — **no FR/NFR IDs, issue numbers, SHA, or CI job names**  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only — **not spoken on camera**  
+**Status:** draft — **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
+**Sister pages:** [natural script](part4-variant-c-script-natural.md) · [technical VO](part4-variant-c-voiceover.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
+
+Natural **PROTOTYPE TTS** clip: [`clips/part4-variant-c-prototype-vo-natural.mp4`](clips/part4-variant-c-prototype-vo-natural.mp4).
 
 ---
 
@@ -40,4 +43,4 @@
 
 ---
 
-*End VO draft · PROTOTYPE TTS uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records.*
+*End VO draft · PROTOTYPE TTS natural uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records.*
