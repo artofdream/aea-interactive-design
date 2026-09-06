@@ -41,6 +41,8 @@ Same design · local vs MSAIE staging · on-box Postgres on staging.
 
 ![Why two deploy targets](assets/slide-p3-03-deploys.svg "fit")
 
+![Local vs MSAIE staging rationale](assets/hld-local-vs-msaie-rationale.svg "fit")
+
 ![Local HLD](assets/hld-local.svg)
 
 ![MSAIE staging HLD](assets/hld-aws-msaie.svg)

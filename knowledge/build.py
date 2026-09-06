@@ -1688,6 +1688,46 @@ def assert_ux_wiring() -> None:
         fail("part3-present.md must link teammate-hld.md from the honesty / slide-p3-07 beat")
     if "Aurora Postgres Serverless" in stack_md:
         fail("stack.md must not fold Hiren's Aurora cut into our MSAIE map")
+    # Ratchet #173: camera-ready Local (dev) vs MSAIE staging rationale SVG.
+    rationale = "hld-local-vs-msaie-rationale.svg"
+    rationale_path = ROOT / "assets" / rationale
+    if not rationale_path.is_file():
+        fail(f"missing knowledge/assets/{rationale}")
+    copied = OUT / "assets" / rationale
+    if not copied.is_file():
+        fail(f"built site missing assets/{rationale}")
+    rationale_svg = rationale_path.read_text(encoding="utf-8")
+    if "Local (dev) · Vite + Flask + local Postgres" not in rationale_svg:
+        fail(f"{rationale} must use Local (dev) · Vite + Flask + local Postgres (not cts-ai clone)")
+    if "cts-ai" in rationale_svg:
+        fail(f"{rationale} must not name cts-ai")
+    if "MSAIE staging" not in rationale_svg:
+        fail(f"{rationale} must keep MSAIE staging")
+    if "on-box Postgres" not in rationale_svg:
+        fail(f"{rationale} must keep on-box Postgres")
+    if "cafe.artof.link" not in rationale_svg or "73d202d" not in rationale_svg:
+        fail(f"{rationale} must keep cafe.artof.link tip 73d202d")
+    if "Lightsail" in rationale_svg:
+        fail(f"{rationale} must not use Lightsail jargon")
+    if "AEA RDS" in rationale_svg or "aea-pilot-postgres" in rationale_svg:
+        fail(f"{rationale} must not name AEA RDS")
+    if re.search(r"\bPART\b|\bBEAT\b", rationale_svg):
+        fail(f"{rationale} must not use PART/BEAT labels")
+    if rationale not in local_vs_aws:
+        fail("part3-local-vs-aws.md must link hld-local-vs-msaie-rationale.svg")
+    needle = f"assets/{rationale}"
+    if needle not in present_md:
+        fail("part3-present.md Beat 3 must embed hld-local-vs-msaie-rationale.svg")
+    if f'{needle} "fit"' not in present_md:
+        fail("part3-present.md must mark hld-local-vs-msaie-rationale.svg as fit (2560 camera card)")
+    if f'<img src="{needle}"' not in present_html:
+        fail("part3-present.html must emit the rationale SVG as a column-fit img")
+    if f'<img class="diagram-img" src="{needle}"' in present_html:
+        fail("part3-present.html must not wrap the 2560 rationale SVG in diagram-wrap")
+    if present_html.find("assets/slide-p3-03-deploys.svg") > present_html.find(needle):
+        fail("part3-present.html must place slide-p3-03-deploys.svg before the rationale SVG")
+    if present_html.find(needle) > present_html.find("assets/hld-local.svg"):
+        fail("part3-present.html must place the rationale SVG before hld-local.svg")
 
 
 def assert_svg_well_formed() -> None:

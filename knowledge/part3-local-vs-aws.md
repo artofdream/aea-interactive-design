@@ -12,6 +12,8 @@
 
 **React + JSX frontend → Flask API → PostgreSQL** (FR/NFR MVP). **Fail-closed without DB.**
 
+![Why local and MSAIE staging — same architecture, two deploy targets](assets/hld-local-vs-msaie-rationale.svg "fit")
+
 | | **Local (dev)** | **AWS MSAIE staging** |
 | --- | --- | --- |
 | **What was used** | Clone on **cts-ai** at `C:\projects\code\aea-interactive-design` | Deployed staging at **cafe.artof.link** — MSAIE project staging on **Lightsail** |
@@ -53,6 +55,7 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 
 | Asset | Role |
 | --- | --- |
+| [Local vs MSAIE rationale](assets/hld-local-vs-msaie-rationale.svg) | **Camera card** — same architecture, two deploy targets (Local (dev) vs MSAIE staging) |
 | [Local HLD](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Architect cut** — Vite / Flask / local PG on cts-ai |
 | [MSAIE staging HLD](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **Architect cut** — `cafe.artof.link` · on-box Postgres (MSAIE staging) |
 | [Meghna FE↔BE](assets/flow-meghna-fe-be.svg) | Click path vs Flask (freeze vs `GET /api/slots` + `POST /api/reservations`) |
