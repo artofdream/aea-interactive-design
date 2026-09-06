@@ -36,7 +36,7 @@ Allowlisted markdown under `knowledge/` is built to static HTML (`knowledge/buil
 - **Runtime in-repo on `main` (PRs #9 + timezone #12):** React + JSX (`frontend/`), Flask (`backend/cafe_fausse/`), PostgreSQL (`backend/schema.sql`).
 - **MVP:** official SRS only (`docs/srs.md`, FR-1..FR-18, NFR-1..NFR-9; PDF SoT).
 - **Local path (cts-ai; this VM did not reach it):** Vite `http://127.0.0.1:5173`, Flask `:5000`, Docker `cafe-pg`. App this session: Journey **J1–J8 PASS** (DB up); **J9 PASS** (Vite-only viewports + theme; not Flask+Postgres). After the J1–J8 handoff, App reported `cafe-pg` unreachable. See [Coverage](coverage.md).
-- **Hosting of `cafe.artof.link`:** Lightsail `cafe-fausse-staging` this weekend ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)): Route53 A, Caddy + Let’s Encrypt, Flask + built SPA, PostgreSQL **on the instance**. AEA RDS untouched. Not a permanent claim. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AWS is not in the restaurant MVP PR.
+- **Hosting of `cafe.artof.link`:** Lightsail `cafe-fausse-staging` this weekend ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)): Route53 A, Caddy + Let’s Encrypt, Flask + built SPA, **on-box Postgres (MSAIE staging)** — not a shared RDS. Not a permanent claim. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AWS is not in the restaurant MVP PR.
 - Extra features after the SRS belong in [Future](future.md). AWS RDS column dump vs local schema: [map + rationale](future/aws-schema-map.md) (no cts-ai required).
 
 ## Local (dev) vs AWS MSAIE staging
@@ -50,7 +50,7 @@ Same design, two deploy targets. **React + JSX → Flask → PostgreSQL.** Fail-
 | **What was used** | Clone on **cts-ai** at `C:\projects\code\aea-interactive-design` | Deployed staging at **cafe.artof.link** — MSAIE project staging |
 | **Explanation** | Coding, iteration, and CI-adjacent work without touching the shared demo | Shared public HTTPS host graders (and the team) can open; same product surface Meghna walks |
 | **Rationale** | Fast local iterate | Prove the **same stack** on a public HTTPS host; one URL for the talk |
-| **Implementation** | Vite + Flask + **local Postgres** | **Caddy (TLS)** → Flask → **on-box Postgres** (host tip `73d202d`; **not AEA RDS**) |
+| **Implementation** | Vite + Flask + **local Postgres** | **Caddy (TLS)** → Flask → **on-box Postgres (MSAIE staging)** (host tip `73d202d`; **not a shared RDS**) |
 
 Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. See [Parts 3–5 materials](parts-345-materials.md). Architect visuals: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md).
 
@@ -68,9 +68,9 @@ Talk spine pointer: Part 2 UX/business · Part 3 architecture why/how · Part 4 
 
 Fallback raster: [hld-local-720.png](assets/hld-local-720.png).
 
-**MSAIE staging** — browser → DNS/TLS → Flask + built SPA → **on-box Postgres (not AEA RDS)**. Knowledge Pages is a separate hostname. Newsletter **store-only**.
+**MSAIE staging** — browser → DNS/TLS → Flask + built SPA → **on-box Postgres (MSAIE staging)** — not a shared RDS. Knowledge Pages is a separate hostname. Newsletter **store-only**.
 
-![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. AEA RDS and ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
+![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
 
 Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
 
@@ -100,7 +100,7 @@ Owner-probed implementation, not a second product. This session this agent also 
 | DNS | Route53 `cafe.artof.link` **A** → that IP, TTL 60. Overrides the `*.artof.link` ELB wildcard. That wildcard is **not** Café Fausse. |
 | Edge | Caddy + Let’s Encrypt HTTPS |
 | App | Flask + built React SPA on the instance |
-| Database | PostgreSQL **on the Lightsail instance**. AEA RDS `aea-pilot-postgres` **untouched**. |
+| Database | **On-box Postgres (MSAIE staging)** on the Lightsail instance — **not a shared RDS**. |
 | Prefer share | `https://cafe.artof.link/` (+ `/operator`, `/api/health`) |
 | Interim backup | `https://54-165-102-60.sslip.io/` (same IP; not the primary paste) |
 | Stale tunnels | `shaky-deer-drive.loca.lt`, `happy-glasses-film`, `real-goats-shop` |
@@ -112,7 +112,7 @@ Owner-probed implementation, not a second product. This session this agent also 
 
 **History / probe archive** (prefer [hld-aws-msaie](assets/hld-aws-msaie.svg) for the architect cut): [AWS staging SVG](assets/hld-aws-staging.svg).
 
-![Café Fausse AWS staging (history / probe archive): Knowledge Pages, Route53 A to Lightsail, Caddy, Flask+SPA, on-box Postgres; AEA RDS and ELB wildcard out of cut](assets/hld-aws-staging.svg)
+![Café Fausse AWS staging (history / probe archive): Knowledge Pages, Route53 A to Lightsail, Caddy, Flask+SPA, on-box Postgres; ELB wildcard out of cut](assets/hld-aws-staging.svg)
 
 ## As-is HLD (history / probe archive)
 
@@ -177,7 +177,7 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 ## Honesty
 
 - `knowledge.cafe.artof.link` was HTTPS GET 200 this session. HTTP GET returned 301 to HTTPS. Pages `https_enforced=true`.
-- Prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57). Route53 A overrides the `*.artof.link` ELB wildcard; that wildcard is **not** Café Fausse. Postgres is on the instance. AEA RDS untouched. Not production forever. Longer-term hosting stays #22.
+- Prefer `https://cafe.artof.link/` as the weekend Lightsail staging share (#57). Route53 A overrides the `*.artof.link` ELB wildcard; that wildcard is **not** Café Fausse. Staging database is **on-box Postgres (MSAIE staging)** — not a shared RDS. Not production forever. Longer-term hosting stays #22.
 - Journey **J1–J8 PASS** (cts-ai, DB up); **J9 PASS** (Vite-only viewports + theme). This VM did not reach Vite.
 - **NFR-1** / **NFR-2** local Vite notes (56 ms / 32 ms) are **not** an SRS-budget “met.” **NFR-7** is **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown).
 - Mentioned tunnel `https://nine-teams-try.loca.lt/` — GET **timed out** this session.

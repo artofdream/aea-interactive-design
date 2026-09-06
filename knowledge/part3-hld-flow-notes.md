@@ -16,7 +16,7 @@ Folded into [Stack](stack.md). Deploy table: [Local vs AWS](part3-local-vs-aws.m
 - **Home / Gallery / Menu** read the **freeze** at build (`@shared/freeze.json`). They do **not** call `GET /api/menu` from the frontend.
 - **Booking** = `GET /api/slots?date=` then `POST /api/reservations`. Full book → 409. Fail-closed without Postgres.
 - **Newsletter** = `POST /api/newsletter` **store-only** (do not claim outbound SES).
-- Staging database is **on-box Postgres**, not AEA RDS.
+- Staging database is **on-box Postgres (MSAIE staging)** — not a shared RDS.
 - These SVGs are **PROTOTYPE** visuals — not the Quantic submit film.
 
 ---
@@ -44,9 +44,9 @@ Fallback raster: [hld-local-720.png](assets/hld-local-720.png).
 
 ## 2. MSAIE staging (`hld-aws-msaie`)
 
-Speakable title: **MSAIE staging** at `cafe.artof.link`. Browser → DNS/TLS → Flask + built SPA → **on-box Postgres (not AEA RDS)**. Knowledge Pages (`knowledge.cafe.artof.link`) is a separate column — two hostnames, two jobs. Same key API routes as local. Newsletter **store-only**. Dashed / out of cut: AEA RDS · ELB wildcard · permanent hosting (Future). Off-camera ops line: tip `73d202d`.
+Speakable title: **MSAIE staging** at `cafe.artof.link`. Browser → DNS/TLS → Flask + built SPA → **on-box Postgres (MSAIE staging)** — not a shared RDS. Knowledge Pages (`knowledge.cafe.artof.link`) is a separate column — two hostnames, two jobs. Same key API routes as local. Newsletter **store-only**. Dashed / out of cut: ELB wildcard · permanent hosting (Future). Off-camera ops line: tip `73d202d`.
 
-![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. AEA RDS and ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
+![MSAIE staging at cafe.artof.link: Knowledge Pages separate; browser to DNS/TLS to Flask+SPA to on-box Postgres. ELB wildcard out of cut. Newsletter store-only.](assets/hld-aws-msaie.svg)
 
 Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
 

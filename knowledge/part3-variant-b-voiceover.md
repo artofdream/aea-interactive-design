@@ -25,7 +25,7 @@
 
 ### HLD staging (0:20–1:00)
 
-“As-is path: Route fifty-three A to Lightsail cafe-fausse-staging, Caddy and Let’s Encrypt, Flask plus the built SPA, Postgres on the instance. AEA RDS stays untouched. The star-dot-artof-dot-link ELB wildcard is not Café Fausse. Longer-term hosting remains Future twenty-two.”
+“As-is path: Route fifty-three A to Lightsail cafe-fausse-staging, Caddy and Let’s Encrypt, Flask plus the built SPA, on-box Postgres on the instance — not a shared RDS. The star-dot-artof-dot-link ELB wildcard is not Café Fausse. Longer-term hosting remains Future twenty-two.”
 
 ### As-is picture (1:00–1:50)
 

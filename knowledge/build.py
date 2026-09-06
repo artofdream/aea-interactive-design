@@ -1216,8 +1216,10 @@ def assert_ux_wiring() -> None:
         fail("stack.md must fold the local vs AWS table (what was used · explanation)")
     if "Rationale" not in stack_md or "Implementation" not in stack_md:
         fail("stack.md must fold the local vs AWS table (rationale · implementation)")
-    if "73d202d" not in stack_md or "not AEA RDS" not in stack_md:
-        fail("stack.md must keep the honest staging cut (on-box PG tip 73d202d, not AEA RDS)")
+    if "73d202d" not in stack_md or "on-box Postgres" not in stack_md:
+        fail("stack.md must keep the honest staging cut (on-box PG tip 73d202d)")
+    if "not a shared RDS" not in stack_md:
+        fail("stack.md must say MSAIE staging is not a shared RDS")
     if "part3-local-vs-aws.md" not in stack_md:
         fail("stack.md must link part3-local-vs-aws.md")
     if "store-only" not in stack_md and "Store-only" not in stack_md:
@@ -1363,8 +1365,29 @@ def assert_ux_wiring() -> None:
             fail(f"{label} must name GET /api/slots + POST /api/reservations for booking")
     if "MSAIE" not in hld_notes or "cafe.artof.link" not in hld_notes:
         fail("part3-hld-flow-notes.md must keep MSAIE staging / cafe.artof.link on camera")
-    if "not AEA RDS" not in hld_notes and "not AEA RDS" not in stack_md:
-        fail("Part 3 HLD notes or Stack must keep on-box PG (not AEA RDS)")
+    if "on-box Postgres" not in hld_notes and "on-box Postgres" not in stack_md:
+        fail("Part 3 HLD notes or Stack must keep on-box Postgres")
+    if "not a shared RDS" not in hld_notes and "not a shared RDS" not in stack_md:
+        fail("Part 3 HLD notes or Stack must say not a shared RDS")
+    # Ratchet #150: drop AEA RDS / aea-pilot-postgres from MSAIE-facing Knowledge pages.
+    for name in (
+        "stack.md",
+        "part3-local-vs-aws.md",
+        "part3-hld-flow-notes.md",
+        "part3-variant-b-script.md",
+        "part3-variant-b-voiceover.md",
+        "part4-coding-overview.md",
+        "parts-345-materials.md",
+        "parts-345-handoff-mapping.md",
+        "presentation.md",
+        "honesty.md",
+        "friday-plan.md",
+        "future.md",
+        "future/aws-schema-map.md",
+    ):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        if "AEA RDS" in text or "aea-pilot-postgres" in text:
+            fail(f"{name} must not name AEA RDS / aea-pilot-postgres (use on-box Postgres / not a shared RDS)")
     if "PROTOTYPE" not in hld_notes or "PROTOTYPE" not in coding_notes:
         fail("Part 3/4 diagram notes must stay labeled PROTOTYPE")
     if "freeze" not in hld_notes.lower():

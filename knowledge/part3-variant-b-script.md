@@ -15,7 +15,7 @@ Spoken scripts for this technical part **may use FR/NFR IDs**. A plain-English V
 | Clock | Dur | Beat | Show | Say |
 | ---: | ---: | --- | --- | --- |
 | **0:00–0:20** | 20s | Takeover | Reservations still / live form on `cafe.artof.link` | “Taking Architecture from Reservations. Two hostnames: Knowledge on GitHub Pages, App on Lightsail staging #57 — not one shop, not production forever.” |
-| **0:20–1:00** | 40s | HLD staging | `hld-aws-staging` SVG (+ Stack slide) | “As-is: Route53 A to Lightsail `cafe-fausse-staging`, Caddy + Let’s Encrypt, Flask + built SPA, Postgres on the instance. AEA RDS untouched. The `*.artof.link` ELB wildcard is not Café Fausse. Longer-term hosting stays Future #22.” |
+| **0:20–1:00** | 40s | HLD staging | `hld-aws-staging` SVG (+ Stack slide) | “As-is: Route53 A to Lightsail `cafe-fausse-staging`, Caddy + Let’s Encrypt, Flask + built SPA, on-box Postgres on the instance — not a shared RDS. The `*.artof.link` ELB wildcard is not Café Fausse. Longer-term hosting stays Future #22.” |
 | **1:00–1:50** | 50s | As-is picture | `hld-as-is` SVG | “Knowledge markdown builds to Pages. App code on `main` is React + Flask + Postgres. This weekend’s share is `cafe.artof.link` GET 200 — weekend window, owner tear-down, not forever.” |
 | **1:50–2:40** | 50s | Boxes → IDs | Coverage / boxes card | “React pages map to FR-1..FR-5 and FR-10..FR-14, plus NFR-3, NFR-4, NFR-8. Flask APIs: FR-6..FR-9 and FR-15..FR-18 with NFR-5 and NFR-6. Postgres is FR-17 — unique `(time_slot, table_number)`. Grade floor only: FR-1..18 / NFR-1..9. `/operator` is a read-only helper — not FR-19.” |
 | **2:40–3:00** | 20s | Sensors + handoff | Sensors / CI card | “Outer harness: Actions require freeze file + PDF SHA256; `test_freeze.py` locks copy; `test_fail_closed.py` locks missing-DB and the 31st table. Author does not merge. Over to Coding — why freeze, tables, timezone.” |
@@ -29,7 +29,7 @@ Spoken scripts for this technical part **may use FR/NFR IDs**. A plain-English V
 | Visual | Point at | One line |
 | --- | --- | --- |
 | Reservations start | Form fields / Reserve | “Product surface we just walked — now the boxes behind it.” |
-| AWS staging SVG | Route53 → Lightsail → Caddy → Flask/SPA → PG | “Weekend #57 path; AEA RDS untouched.” |
+| AWS staging SVG | Route53 → Lightsail → Caddy → Flask/SPA → on-box PG | “Weekend #57 path; on-box Postgres, not a shared RDS.” |
 | As-is SVG | Knowledge Pages vs App staging vs local MVP | “Two hostnames, two jobs.” |
 | Boxes card | Three FR/NFR clusters | “Coverage is the grade map — not a second product.” |
 | Sensors card | freeze / fail-closed / no self-merge | “Harness proves the freeze; not new FR rows.” |

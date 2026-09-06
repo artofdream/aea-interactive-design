@@ -34,7 +34,7 @@ Fallback raster: [flow-coding-overview-720.png](assets/flow-coding-overview-720.
 | **Backend modules** | `reservations.py` · `newsletter.py` · `content`/`slots` · `db.py` · `validate.py` | functions behind routes |
 | **DB** | `customers` · `reservations` | unique slot+table · fail-closed without DB · full book → 409 |
 
-**On camera:** **cafe.artof.link** = **MSAIE staging** (temporary). Staging Postgres is **on-box**, not AEA RDS. Newsletter is **store-only**.
+**On camera:** **cafe.artof.link** = **MSAIE staging** (temporary). Staging database is **on-box Postgres (MSAIE staging)** — not a shared RDS. Newsletter is **store-only**.
 
 ---
 

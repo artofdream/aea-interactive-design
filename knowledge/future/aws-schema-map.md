@@ -130,6 +130,6 @@ Do **not** put these into `backend/schema.sql` for the score-5 cut.
 
 - IAM token + `run-sql.sh` + port `15433` stay on the AWS/infra tree.
 - Do not add a permanent DB password.
-- Do not point `cafe.artof.link` at AEA RDS from this cut. Weekend staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) uses Postgres **on the Lightsail instance**. Last restaurant probe this session (2026-09-05): `https://cafe.artof.link/` HTTPS **GET 200**. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). AEA RDS liveness stays **Unknown** (no `psql` / IAM token this session).
+- Do not point `cafe.artof.link` at a shared RDS from this cut. Weekend staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) uses **on-box Postgres (MSAIE staging)** on the Lightsail instance. Last restaurant probe this session (2026-09-05): `https://cafe.artof.link/` HTTPS **GET 200**. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Shared RDS liveness stays **Unknown** (no `psql` / IAM token this session).
 - This page is readable without cts-ai.
 - Do not invent FR-19 / NFR-10.

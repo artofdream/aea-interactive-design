@@ -17,11 +17,11 @@
 | **What was used** | Clone on **cts-ai** at `C:\projects\code\aea-interactive-design` | Deployed staging at **cafe.artof.link** — MSAIE project staging on **Lightsail** |
 | **Explanation — what it is for** | Coding, iteration, and CI-adjacent work without touching the shared demo | Shared public HTTPS host graders (and the team) can open; same product surface Meghna walks |
 | **Rationale — why both** | Fast local iterate | Prove the **same stack** on a public HTTPS host; one URL for the talk |
-| **Implementation — how stood up** | Flask + **local Postgres**; Vite/dev frontend | **Caddy (TLS)** → Flask container → **on-box Postgres** (not AEA RDS) |
+| **Implementation — how stood up** | Flask + **local Postgres**; Vite/dev frontend | **Caddy (TLS)** → Flask container → **on-box Postgres (MSAIE staging)** — not a shared RDS |
 | **Stack** | React+JSX → Flask → PostgreSQL; fail-closed without DB | Same design: React+JSX → Flask → on-box PostgreSQL; fail-closed without DB |
 | **Host tip (current)** | Developer box (cts-ai) | Lightsail instance tip **`73d202d`** (presentation host) |
 | **Newsletter** | Store-only until SES env wired | Store-only until SES env wired (do not claim outbound SES) |
-| **Honesty** | Not the public demo URL | Temporary MSAIE staging — **not production forever**; not AEA RDS |
+| **Honesty** | Not the public demo URL | Temporary MSAIE staging — **not production forever**; not a shared RDS |
 
 ---
 
@@ -45,7 +45,7 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 | **What does Coding own next (why/how)?** | Freeze file / CI, table assignment, timezone — implementation rationale. |
 
 **On camera avoid:** “weekend Lightsail staging”, heavy Lightsail / Route53 / Caddy ops jargon.  
-**Off camera / this table OK:** Lightsail, Caddy (TLS), on-box Postgres (not AEA RDS), host tip `73d202d`.
+**Off camera / this table OK:** Lightsail, Caddy (TLS), on-box Postgres (MSAIE staging), not a shared RDS, host tip `73d202d`.
 
 ---
 
@@ -54,7 +54,7 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 | Asset | Role |
 | --- | --- |
 | [Local HLD](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Architect cut** — Vite / Flask / local PG on cts-ai |
-| [MSAIE staging HLD](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **Architect cut** — `cafe.artof.link` · on-box PG (not AEA RDS) |
+| [MSAIE staging HLD](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **Architect cut** — `cafe.artof.link` · on-box Postgres (MSAIE staging) |
 | [Meghna FE↔BE](assets/flow-meghna-fe-be.svg) | Click path vs Flask (freeze vs `GET /api/slots` + `POST /api/reservations`) |
 | [Part 3 notes](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md) | Site pages for the four diagrams |
 | `hld-as-is` / `hld-aws-staging` | **History / probe archive** (keep; do not prefer for the architect cut) |

@@ -16,7 +16,7 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 **Label:** silent videos are **PROTOTYPE** / samples / rehearsal. VO-integrated clips are **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate VO · **not** Quantic submit. Natural VO = **PROTOTYPE TTS** natural.  
 **Owner rule:** camera spoken lines stay plain (no FR/NFR on camera). Technical spoken scripts **may use FR/NFR IDs** for compare. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.  
 **Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project** (temporary — not production forever). Avoid “weekend Lightsail staging” on camera.  
-**Architect deploy table (off-camera ops OK):** [Local vs AWS MSAIE staging](part3-local-vs-aws.md) — same React+JSX→Flask→Postgres; Vite/local Postgres vs Caddy→on-box Postgres (tip `73d202d`, not AEA RDS); newsletter store-only. Also folded into [Stack](stack.md).  
+**Architect deploy table (off-camera ops OK):** [Local vs AWS MSAIE staging](part3-local-vs-aws.md) — same React+JSX→Flask→Postgres; Vite/local Postgres vs Caddy→on-box Postgres (MSAIE staging, tip `73d202d`, not a shared RDS); newsletter store-only. Also folded into [Stack](stack.md).  
 **Architect visuals (PROTOTYPE):** [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md) — prefer **hld-local** + **hld-aws-msaie**; freeze for static pages; booking `GET /api/slots` + `POST /api/reservations`; newsletter `POST /api/newsletter` store-only. Older `hld-as-is` / `hld-aws-staging` stay as history.
 
 ---

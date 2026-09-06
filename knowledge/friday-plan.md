@@ -88,7 +88,7 @@ flowchart TB
 ```
 
 - **Live Knowledge** is this site over HTTPS (primary Friday share).
-- **App** is the in-repo restaurant. Prefer `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` (#57): Route53 A, Caddy + LE, Postgres **on the instance**. AEA RDS untouched. Weekend recording window — not production forever. Interim backup `https://54-165-102-60.sslip.io/`. HLD: [Stack](stack.md). Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**.
+- **App** is the in-repo restaurant. Prefer `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`). Lightsail `cafe-fausse-staging` (#57): Route53 A, Caddy + LE, **on-box Postgres (MSAIE staging)** — not a shared RDS. Weekend recording window — not production forever. Interim backup `https://54-165-102-60.sslip.io/`. HLD: [Stack](stack.md). Clips (`clips/01-home-menu.mp4`, `clips/02-happy-book.mp4`) are the fallback look. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**.
 - **Future #22** is the longer-term hosting story. #57 staging does not close it.
 
 Same picture in words: [Honesty](honesty.md). Stack diagrams: [Stack](stack.md).
