@@ -6,6 +6,8 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 **Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.  
 **Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 
+**Present decks (diagrams only):** [Part 3](part3-present.md) · [Part 4](part4-present.md) · [Part 5](part5-present.md) — fullscreen click-through for recording.
+
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
 | ~3:30–6:30 | **3 Architecture** (Variant B) | Claude Part 3 | **Camera:** [natural script](part3-variant-b-script-natural.md) + [natural VO](part3-variant-b-voiceover-natural.md) + [natural TTS](clips/part3-variant-b-prototype-vo-natural.mp4) · **Compare:** [technical script](part3-variant-b-script.md) + [technical VO](part3-variant-b-voiceover.md) + silent + [technical TTS](clips/part3-variant-b-prototype-vo.mp4) |
