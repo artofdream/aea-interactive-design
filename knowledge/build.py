@@ -1464,8 +1464,10 @@ def assert_ux_wiring() -> None:
         fail("developer-system-map.md must say staging is not a shared RDS")
     if "AEA RDS" in map_md or "aea-pilot-postgres" in map_md:
         fail("developer-system-map.md must not name AEA RDS / aea-pilot-postgres")
-    if "florist" in map_md.lower() and "no AEA RDS / florist" not in map_md:
-        fail("developer-system-map.md must not introduce florist stack")
+    if "florist Path B" not in map_md:
+        fail("developer-system-map.md must keep the no-florist-Path-B lock")
+    if "Lily" in map_md:
+        fail("developer-system-map.md must not name Lily's Florist")
     if "/api/gallery" not in map_md:
         fail("developer-system-map.md must name /api/gallery as missing")
     if "Does not exist" not in map_md and "does not exist" not in map_md:

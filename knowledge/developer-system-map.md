@@ -5,7 +5,7 @@ Plain-English map of the restaurant app a software developer needs to orient fas
 
 **Related:** [Stack](stack.md) · [Local vs AWS](part3-local-vs-aws.md) · [Part 4 coding overview](part4-coding-overview.md) · [Quantic](quantic.md) · [Honesty](honesty.md) · [SRS freeze](srs.md)
 
-**Honesty locks:** **Local (dev)** + **Docker** `cafe-pg` (`postgres:16`) · **on-box Postgres** on MSAIE staging (not a shared RDS; no AEA RDS / florist) · no `/api/gallery` · newsletter **store-only** unless SES env is set · **fail-closed** if DB is down · on camera say **MSAIE staging** · **HTTP only** (no event bus).
+**Honesty locks:** **Local (dev)** + **Docker** `cafe-pg` (`postgres:16`) · **on-box Postgres** on MSAIE staging (not a shared RDS; no florist Path B) · no `/api/gallery` · newsletter **store-only** unless SES env is set · **fail-closed** if DB is down · on camera say **MSAIE staging** · **HTTP only** (no event bus).
 
 ---
 
@@ -91,7 +91,7 @@ Gallery = FE page + static `/images/…` — **not** an API resource. **`/api/ga
 - `time_slot` TIMESTAMPTZ, `table_number` 1–30, `guest_count` 1–20, `created_at`
 - **UNIQUE** `(time_slot, table_number)` — one table per slot (capacity honesty)
 
-No AEA RDS schema. No florist tables. Staging DB is **on-box Postgres (MSAIE staging)** — not a shared RDS.
+No florist Path B tables. Staging DB is **on-box Postgres (MSAIE staging)** — not a shared RDS.
 
 ---
 
@@ -130,7 +130,7 @@ Not every helper — the map:
 
 ## 7. Local (dev) + Docker vs MSAIE staging (same design)
 
-Do **not** call the product “cts-ai”. That name is a developer box, not the stack.
+Do **not** name a developer workstation as the product. Local (dev) is Vite + Flask + Postgres on a clone.
 
 | | **Local (dev)** | **Docker (local Postgres)** | **MSAIE staging** |
 | --- | --- | --- | --- |
@@ -148,7 +148,7 @@ Same design on both deploy targets: **React + JSX → Flask → PostgreSQL**. Fa
 
 1. **No `/api/gallery`** — gallery is SPA + `/images/…`.
 2. **Newsletter grade floor = store-only** until SES env is set (`email_delivery.status=skipped` when unset). Not a Coverage send claim.
-3. **On-box Postgres only** on staging — not a shared RDS; no AEA RDS / florist.
+3. **On-box Postgres only** on staging — not a shared RDS; no florist Path B.
 4. **Fail-closed** if DB missing/unreachable (no pretend writes). Full slot (30 tables) → honest error (**FR-9**).
 5. **No event bus** — HTTP only.
 6. `/api/operator` is a demo/recording helper, **not FR-19**.
