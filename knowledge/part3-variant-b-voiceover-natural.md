@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — architecture rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md). Comparison table: [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md).
+> **NATURAL spoken track** — architecture rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md). Comparison table: [Local vs AWS](part3-local-vs-aws.md).
 
 # Part 3 — Variant B voice-over (ready to record) — architecture rationale
 
@@ -8,7 +8,7 @@
 **Lens:** architecture rationale — why this design / how it hangs together — not a feature tour, not an ops dump  
 **Talk spine:** Part 2 UX/business · **Part 3 architecture why/how** · Part 4 coding why/how · Part 5 honesty/close  
 **Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project**; **Local vs AWS MSAIE staging** as deploy decision  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
 **Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.
 
 ---

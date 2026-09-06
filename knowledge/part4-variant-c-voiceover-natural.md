@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — coding rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — coding rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 # Part 4 — Variant C voice-over (ready to record) — coding rationale
 
@@ -6,7 +6,7 @@
 **Picture:** silent `part4-variant-c-prototype-silent.mp4`  
 **Spoken:** natural demo language — lead with **why**, then **how** — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
 **Talk spine:** Part 2 UX/business · Part 3 architecture why/how · **Part 4 coding why/how** · Part 5 honesty/close  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
 **Status:** draft — **PROTOTYPE**, not Quantic submit.
 
 ---

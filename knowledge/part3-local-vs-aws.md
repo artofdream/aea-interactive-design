@@ -1,7 +1,7 @@
 # Local (dev) vs AWS MSAIE staging — architecture comparison
 
 **Audience:** Architecture talk (Part 3 NATURAL) + Knowledge Stack/HLD fold-in.  
-**On camera:** use the natural spoken beats in `PART3-VARIANT-B-SCRIPT-NATURAL.md` / `PART3-VARIANT-B-VOICEOVER-NATURAL.md` (**architect lens**). Prefer **MSAIE staging** / **cafe.artof.link** language. Frame local vs AWS as an architect **deploy decision**, not an ops tour.  
+**On camera:** use the natural spoken beats in [Part 3 natural script](part3-variant-b-script-natural.md) / [Part 3 natural VO](part3-variant-b-voiceover-natural.md) (**architect lens**). Prefer **MSAIE staging** / **cafe.artof.link** language. Frame local vs AWS as an architect **deploy decision**, not an ops tour. Also folded into [Stack](stack.md).  
 **Off camera / Knowledge / deliverable handoff:** this table — may name Lightsail, Caddy, on-box Postgres, host tip. No FR/NFR IDs required here.
 
 **Demo focus:** [cafe.artof.link](https://cafe.artof.link/) = **staging environment for the MSAIE project** (temporary — not production forever). Presentation host.
@@ -55,7 +55,7 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 | --- | --- |
 | `hld-as-is` SVG / `hld-as-is-720.png` | Local MVP vs app staging vs Knowledge Pages |
 | `hld-aws-staging` SVG / `hld-aws-staging-720.png` | AWS MSAIE staging path (speak MSAIE / cafe.artof.link; put Lightsail/Caddy/on-box PG in this table) |
-| Stack page | https://knowledge.cafe.artof.link/stack.html |
+| [Stack](stack.md) | Dual-env table + HLD (same four headings) |
 | Live staging | https://cafe.artof.link/ |
 
 ---

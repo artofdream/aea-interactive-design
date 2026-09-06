@@ -14,11 +14,11 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 
 **Hiren** chooses B vs C; **Claude** takes the other — **Unknown** until the owner decides. **Voice-over TBD.** Variant A below stays a draft / rehearsal pack. It is **not** the locked Saturday cut. Zoom dry-run on the [video script](video-script.md) is **PROTOTYPE** (Variant A).
 
-Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (silent **PROTOTYPE** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural — not teammate VO · not Quantic submit). **Prefer natural for camera.** FR/NFR map: [handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
+Spoken timing for the standalone drafts still lives here; the [8/12-slide outline](presentation-sample.md) stays the Friday slide deck. Scenario menu A–F and clips live on the [video script](video-script.md). Every freeze ID is on [Coverage](coverage.md). Friday room notes: [Friday plan](friday-plan.md), [Brief](brief.md). Meghna pack: [materials](meghna-materials.md). Parts 3–5 rehearsal pack: [Parts 3–5 materials](parts-345-materials.md) (silent **PROTOTYPE** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural — not teammate VO · not Quantic submit). **Prefer natural for camera.** Talk spine: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. Architect deploy table: [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)). FR/NFR map: [handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
 
 **Grade floor:** official SRS only — **FR-1..FR-18**, **NFR-1..NFR-9**. Do not invent FR-19 / NFR-10. Freeze prices, address, hours, owners, awards, and reviews stay as written.
 
-**Honesty (do not skip, 2026-09-06 update):** **NFR-1** is **met** — A36 Brave broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123) / [PR #124](https://github.com/artofdream/aea-interactive-design/pull/124)). **NFR-2** is **met** — reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125) / [PR #126](https://github.com/artofdream/aea-interactive-design/pull/126)). That is not a four-browser claim. **NFR-7** stays **Partial**. Journey **J1–J8 PASS** (cts-ai, DB up). **J9 PASS** is Vite-only. Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are parked, not grade gaps. Prefer `https://cafe.artof.link/` as the weekend staging share ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) — do not call it production forever. Do **not** invent **FR-19**.
+**Honesty (do not skip, 2026-09-06 update):** **NFR-1** is **met** — A36 Brave broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123) / [PR #124](https://github.com/artofdream/aea-interactive-design/pull/124)). **NFR-2** is **met** — reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125) / [PR #126](https://github.com/artofdream/aea-interactive-design/pull/126)). That is not a four-browser claim. **NFR-7** stays **Partial**. Journey **J1–J8 PASS** (cts-ai, DB up). **J9 PASS** is Vite-only. Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are parked, not grade gaps. Prefer `https://cafe.artof.link/` as the **staging environment for the MSAIE project** (temporary — not production forever; tracker [#57](https://github.com/artofdream/aea-interactive-design/issues/57) is off-camera). Do **not** invent **FR-19**.
 
 **Demo this session (2026-09-05 Europe/Berlin):** Knowledge HTTPS `https://knowledge.cafe.artof.link/` GET **200**. Prefer live share `https://cafe.artof.link/` GET **200** (SPA + `/operator` + `/api/health`). Knowledge GET: root **200** (~0.5s); `/operator` **200** (~0.6s); `/api/operator` **200** (~0.5s); `/api/health` **200** `{"ok":true}` (~0.6s). TLS CN/SAN `cafe.artof.link`, Let’s Encrypt, `notAfter=2026-12-04`. Lightsail staging (#57) — weekend recording window, not permanent. Fast this session; still staging. Clips stay fallback. **Interim backup:** `https://54-165-102-60.sslip.io/`. Old `https://shaky-deer-drive.loca.lt/`, `https://happy-glasses-film.loca.lt/`, and `https://real-goats-shop.loca.lt/` are **stale**. Do not claim writes from the health GET.
 
@@ -70,7 +70,7 @@ flowchart TB
 
 ## Variant B — Architecture + diagrams (~10 min)
 
-Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: **camera** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **compare** [technical script](part3-variant-b-script.md) · [technical VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** + technical / natural **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md). Prefer live diagrams for the real recording.
+Same open. Walk the as-is picture, then map boxes to IDs. Static copies of the HLD: [AWS staging SVG](assets/hld-aws-staging.svg), [as-is SVG](assets/hld-as-is.svg), [to-be SVG](assets/hld-to-be.svg). Same story in words on [Stack](stack.md). Locked 3-min cut: **camera** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **compare** [technical script](part3-variant-b-script.md) · [technical VO](part3-variant-b-voiceover.md) · silent **PROTOTYPE** + technical / natural **PROTOTYPE TTS** on [Parts 3–5 materials](parts-345-materials.md). Architect deploy table: [Local vs AWS](part3-local-vs-aws.md). Prefer live diagrams for the real recording. On camera: **cafe.artof.link** = MSAIE staging (not “weekend Lightsail”).
 
 | Clock | Beat | Say / show |
 |---|---|---|
@@ -137,7 +137,7 @@ Say out loud before you stop:
 - **NFR-7** — **Partial** (do **not** claim four browsers).
 - **J1–J8 PASS** with DB up; **J9 PASS** Vite-only.
 - Future #22 / #34–#38 are not missing grade rows.
-- `cafe.artof.link` is Lightsail staging this weekend (#57) — not production forever.
+- `cafe.artof.link` is the **staging environment for the MSAIE project** — temporary, not production forever.
 - No **FR-19**. `/operator` is a read-only helper.
 
 ---
@@ -159,7 +159,7 @@ If time is tight, one starter + one main is enough. Read the price from the page
 
 - “Four browsers” or **NFR-7** complete. **NFR-7** stays **Partial**.
 - **NFR-1** / **NFR-2** **met** from a fast GET, local Vite, or the ROG Wi‑Fi note. The recorded **met** is A36 Brave broadband: cold Home **466 ms** ([#124](https://github.com/artofdream/aea-interactive-design/pull/124)), reservation submit **233 ms** ([#126](https://github.com/artofdream/aea-interactive-design/pull/126)).
-- “Production-forever restaurant at `cafe.artof.link`.” Prefer the hostname as the weekend staging share (#57). Longer-term hosting stays #22.
+- “Production-forever restaurant at `cafe.artof.link`.” On camera: **staging environment for the MSAIE project** (temporary). Longer-term hosting stays #22.
 - “`/operator` is FR-19” or “admin console” (it is a read-only recording helper; no CRUD / cancel).
 - Future #22 / #34–#38 as missing official requirements.
 - A fifth team, GitLab, AWS in the MVP cut, or invented IDs.

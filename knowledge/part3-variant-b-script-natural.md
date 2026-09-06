@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — architecture rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md). Local vs AWS table: [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md).
+> **NATURAL spoken track** — architecture rationale (why/how) · no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md). Local vs AWS table: [Local vs AWS](part3-local-vs-aws.md).
 
 # Part 3 — Architecture rationale / Variant B (~3 min)
 
@@ -9,7 +9,7 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97 five-part VIDEO. Room clock ≈ **3:30–6:30**.
 
-**Speaking rule:** Spoken / VO = clear, natural architect language — lead with **why**, then **how**. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Focus **cafe.artof.link** = **staging environment for the MSAIE project**. Cover **Local (dev) vs AWS MSAIE staging** as an architect **deploy decision** (what / explanation / rationale / implementation — see [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md)). Avoid on camera: “weekend Lightsail staging” and heavy Lightsail / Route53 / Caddy ops jargon. Temporary staging / not production forever is fine in plain words. ID mapping: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+**Speaking rule:** Spoken / VO = clear, natural architect language — lead with **why**, then **how**. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Focus **cafe.artof.link** = **staging environment for the MSAIE project**. Cover **Local (dev) vs AWS MSAIE staging** as an architect **deploy decision** (what / explanation / rationale / implementation — see [Local vs AWS](part3-local-vs-aws.md)). Avoid on camera: “weekend Lightsail staging” and heavy Lightsail / Route53 / Caddy ops jargon. Temporary staging / not production forever is fine in plain words. ID mapping: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 ---
 
@@ -39,20 +39,20 @@
 | Boxes / sensors cards | Fail-closed · unique slot+table · freeze/CI | “How quality is encoded — not a feature tour.” |
 | Handoff card | Coding owns freeze / table / timezone | “Architecture why/how → Coding why/how.” |
 
-Static assets in this pack: `hld-aws-staging-720.png`, `hld-as-is-720.png`, `fit-02-stack.png`, cards under `card-p3-*.png`. Full deploy comparison: [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md).
+Static assets in this pack: `hld-aws-staging-720.png`, `hld-as-is-720.png`, `fit-02-stack.png`, cards under `card-p3-*.png`. Full deploy comparison: [Local vs AWS](part3-local-vs-aws.md).
 
 ---
 
 ## 3. Supporting ID map (off-camera)
 
-See **[`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md)** — Part 3 table. Do not read IDs on camera.
+See **[Parts 3–5 handoff mapping](parts-345-handoff-mapping.md)** — Part 3 table. Do not read IDs on camera.
 
 ---
 
 ## 4. Honesty (Architecture segment)
 
 - Prefer `https://cafe.artof.link/` as the **staging environment for the MSAIE project** — temporary staging, not production forever.
-- **Local vs staging:** same React + Flask + PostgreSQL; local Vite + Flask + Postgres for coding speed; AWS MSAIE staging at cafe.artof.link for shared HTTPS demo — **same design, two deploy targets** (architect deploy decision). Ops detail — Lightsail/Caddy/on-box PG — off-camera in PART3-LOCAL-VS-AWS.md.
+- **Local vs staging:** same React + Flask + PostgreSQL; local Vite + Flask + Postgres for coding speed; AWS MSAIE staging at cafe.artof.link for shared HTTPS demo — **same design, two deploy targets** (architect deploy decision). Ops detail — Lightsail/Caddy/on-box PG — off-camera in [Local vs AWS](part3-local-vs-aws.md).
 - Knowledge ≠ App (no shared LB).
 - Grade floor = official SRS only; do **not** invent an admin / graded operator feature (`/operator` is read-only helper).
 - SES outbound parked (store-only newsletter).
