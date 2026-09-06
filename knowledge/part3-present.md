@@ -15,7 +15,7 @@ Use this page while speaking — one beat per section. No FR/NFR IDs on camera. 
 
 Product surface: Reservations on MSAIE staging (or still).
 
-![Reservations still](assets/still-reservation-720.png)
+![Reservations still](assets/still-reservation.png)
 
 ---
 
@@ -23,7 +23,7 @@ Product surface: Reservations on MSAIE staging (or still).
 
 React → Flask → Postgres (what Meghna clicks vs what hits the API).
 
-![FE ↔ BE flow](assets/flow-meghna-fe-be-720.png)
+![FE ↔ BE flow](assets/flow-meghna-fe-be.svg)
 
 ![Stack](assets/fit-02-stack.png)
 
@@ -33,9 +33,9 @@ React → Flask → Postgres (what Meghna clicks vs what hits the API).
 
 Same design · local vs MSAIE staging · on-box Postgres on staging.
 
-![Local HLD](assets/hld-local-720.png)
+![Local HLD](assets/hld-local.svg)
 
-![MSAIE staging HLD](assets/hld-aws-msaie-720.png)
+![MSAIE staging HLD](assets/hld-aws-msaie.svg)
 
 ---
 
