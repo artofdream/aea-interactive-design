@@ -1,5 +1,6 @@
 # Part 4 — Coding overview diagram
 
+**Who:** Hiren Part 4.  
 **Visual:** [SVG](assets/flow-coding-overview.svg) · [720 PNG](assets/flow-coding-overview-720.png)  
 **Job:** On-camera map of **forms · functions · frontend · backend · API · DB** — coding why/how that maps to the Part 3 architecture flow.  
 **Label:** **PROTOTYPE** visual · not Quantic submit. No FR/NFR IDs on the diagram.  

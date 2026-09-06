@@ -1256,6 +1256,20 @@ def assert_ux_wiring() -> None:
         fail("presentation.md must point to part3-local-vs-aws.md")
     if "part3-local-vs-aws.md" not in handoff_md:
         fail("quantic-handoff.md must point to part3-local-vs-aws.md")
+    # Ratchet #145: owner casting lock on Quantic / Parts 3–5 / talk pages.
+    casting = "Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C)"
+    for label, text in (
+        ("parts-345-materials.md", materials_345),
+        ("quantic.md", quantic_md),
+        ("presentation.md", presentation_md),
+        ("quantic-handoff.md", handoff_md),
+    ):
+        if casting not in text:
+            fail(f"{label} must stamp the owner casting lock")
+        if "Claude or Hiren" in text:
+            fail(f"{label} must not keep Claude or Hiren as an open speaker pick after #145")
+        if "Hiren B vs C pick" in text or "Hiren B-vs-C lock" in text:
+            fail(f"{label} must not keep the old Hiren B vs C Unknown after #145")
     if "MSAIE" not in local_vs_aws or "73d202d" not in local_vs_aws:
         fail("part3-local-vs-aws.md lost MSAIE staging or host tip 73d202d")
     # Ratchet #143: four Part 3/4 diagrams on Stack; notes site-relative; old HLDs stay archive.

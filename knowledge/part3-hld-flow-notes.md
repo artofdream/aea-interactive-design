@@ -1,5 +1,6 @@
 # Part 3 — HLD + Meghna FE/BE flow (architect cut)
 
+**Who:** Claude Part 3.  
 **Audience:** Architecture talk (Part 3 NATURAL) · on-camera slides.  
 **Label:** **PROTOTYPE** visuals · not Quantic submit. No FR/NFR IDs on the diagrams.  
 **On camera:** **cafe.artof.link** = **MSAIE staging** (temporary — not production forever). Avoid “weekend Lightsail.”  
