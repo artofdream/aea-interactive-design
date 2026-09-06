@@ -4,7 +4,7 @@
 
 Grade floor = official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). Do not invent **FR-19**. **NFR-1** / **NFR-2** are **met** on the A36 Brave broadband probes (**466 ms** / **233 ms**, [#124](https://github.com/artofdream/aea-interactive-design/pull/124) / [#126](https://github.com/artofdream/aea-interactive-design/pull/126)). **NFR-7** stays **Partial**. Do not claim four browsers.
 
-Every section below is filled with what is known **now**. Rows that are not done yet stay **Unknown** / to-be-filled. Do not invent a submit video, a Hiren B-vs-C lock, a voice-over, or an outbound mailer.
+Every section below is filled with what is known **now**. Rows that are not done yet stay **Unknown** / to-be-filled. Do not invent a submit video, a voice-over, or an outbound mailer.
 
 ## 1. Links (known now)
 
@@ -36,17 +36,17 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
-**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural). Talk spine: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. **Prefer natural for camera:** [Part 3 natural](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) · [Part 4 natural](part4-variant-c-script-natural.md) / [VO](part4-variant-c-voiceover-natural.md) · [Part 5 natural](part5-shared-close-script-natural.md) / [VO](part5-shared-close-voiceover-natural.md). Technical compare: [Part 3](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Architect deploy table: [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)). Architect visuals: [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md). FR/NFR map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**. Do not invent the Hiren B vs C pick.
+**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural). Talk spine: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. **Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C). **Prefer natural for camera:** [Part 3 natural](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) · [Part 4 natural](part4-variant-c-script-natural.md) / [VO](part4-variant-c-voiceover-natural.md) · [Part 5 natural](part5-shared-close-script-natural.md) / [VO](part5-shared-close-voiceover-natural.md). Technical compare: [Part 3](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Architect deploy table: [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)). Architect visuals: [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md). FR/NFR map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**.
 
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
 1. Team + ID verification — ~30s — shared
 2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations — pack: [Meghna demo](meghna-cafe-demo.md)
-3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude or Hiren** — **camera** [natural script](part3-variant-b-script-natural.md)
-4. Coding rationale (**Variant C**) — ~3 min — **Claude or Hiren** — **camera** [natural script](part4-variant-c-script-natural.md)
+3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude Part 3** — **camera** [natural script](part3-variant-b-script-natural.md)
+4. Coding rationale (**Variant C**) — ~3 min — **Hiren Part 4** — **camera** [natural script](part4-variant-c-script-natural.md)
 5. Shared close — shared — **camera** [natural script](part5-shared-close-script-natural.md)
 
-Hiren chooses B vs C; Claude takes the other. That **speaker** lock is **Unknown** / to-be-filled. Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](meghna-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
+**Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C). Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](meghna-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
 Sister talk-track pages (stay complete):
 
@@ -67,7 +67,7 @@ The Zoom dry-run is **not** the Quantic submission. Do not submit it until a **l
 | Track | Job (known) | Not (honest) |
 |---|---|---|
 | [Coverage](coverage.md) | FR/NFR evidence map (grade floor) | A claim that every NFR is met |
-| Talk / video / must-film | Locked five-part structure; must-film page exists; dry-run is **PROTOTYPE** | A finished Quantic upload; a Hiren B-vs-C lock; a voice-over |
+| Talk / video / must-film | Locked five-part structure; Meghna P2 / Claude P3 / Hiren P4; must-film page exists; dry-run is **PROTOTYPE** | A finished Quantic upload; a voice-over |
 
 ## 4. Honesty (known now — say out loud)
 
@@ -86,7 +86,6 @@ Do not invent these. The section exists so a grader sees the gap instead of a gu
 | Item | Status now |
 |---|---|
 | Final Quantic submission video (live must-film + voice) | **Unknown** / to-be-filled. Dry-run on the [Video script](video-script.md) is **PROTOTYPE** only. |
-| Hiren: Variant B vs Variant C (Claude takes the other) | **Unknown** / to-be-filled. Structure is locked; **speaker** names for B/C are not. |
 | Voice-over (teammate recorded) | **TBD** on every part. **PROTOTYPE TTS** on [materials](parts-345-materials.md) is not that. |
 | Optional Claude advance recording for eval | **Unknown** until a file exists. Not the submit video. |
 | Sunday meeting **start** clock | **Unknown** / to-be-filled. Known job: ends with a recording; docs target **9:00 America/New_York** on 2026-09-06. Page: [Sunday](meeting-sunday.md). |
