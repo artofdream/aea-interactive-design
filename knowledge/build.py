@@ -46,6 +46,8 @@ DELIVERY_ONLY_HREFS = (
     "parts-345-vo-notes.html",
     "parts-345-handoff-mapping.html",
     "part3-local-vs-aws.html",
+    "part3-hld-flow-notes.html",
+    "part4-coding-overview.html",
     "part3-variant-b-script.html",
     "part3-variant-b-voiceover.html",
     "part3-variant-b-script-natural.html",
@@ -84,6 +86,8 @@ PAGE_ICONS = {
     "parts-345-vo-notes.html": "brief",
     "parts-345-handoff-mapping.html": "coverage",
     "part3-local-vs-aws.html": "stack",
+    "part3-hld-flow-notes.html": "stack",
+    "part4-coding-overview.html": "stack",
     "part3-variant-b-script.html": "talk",
     "part3-variant-b-voiceover.html": "talk",
     "part3-variant-b-script-natural.html": "talk",
@@ -204,6 +208,8 @@ WIDE_PAGES = {
     "glossary.html",
     "parts-345-handoff-mapping.html",
     "part3-local-vs-aws.html",
+    "part3-hld-flow-notes.html",
+    "part4-coding-overview.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1179,6 +1185,8 @@ def assert_ux_wiring() -> None:
         "part5-shared-close-voiceover-natural.md",
         "parts-345-handoff-mapping.md",
         "part3-local-vs-aws.md",
+        "part3-hld-flow-notes.md",
+        "part4-coding-overview.md",
         "quantic.md",
         "presentation.md",
         "quantic-handoff.md",
@@ -1222,6 +1230,26 @@ def assert_ux_wiring() -> None:
         fail("parts-345-materials.md must keep the talk spine (architecture why/how)")
     if "UX/business" not in materials_345:
         fail("parts-345-materials.md must keep Part 2 UX/business on the talk spine")
+    # Owner lock #143: same usecase, three depths (confirmed spine wording).
+    for label, text in (
+        ("stack.md", stack_md),
+        ("parts-345-materials.md", materials_345),
+        ("quantic.md", quantic_md),
+    ):
+        if "Same usecase, three depths" not in text:
+            fail(f"{label} must keep the owner-locked Part 2→3→4 depth ladder")
+        if "what Meghna shows" not in text:
+            fail(f"{label} must say Part 2 UX = frontend view (what Meghna shows)")
+        if "view behind it" not in text or "FE/BE flow" not in text:
+            fail(f"{label} must say Part 3 Architecture = view behind it (HLDs + FE/BE flow)")
+        if "how it is actually implemented" not in text:
+            fail(f"{label} must say Part 4 Coding = how it is actually implemented")
+        if "forms/functions/FE/BE/API/DB" not in text:
+            fail(f"{label} must keep Part 4 as forms/functions/FE/BE/API/DB")
+    if "behind the UX" not in stack_md:
+        fail("stack.md must title Part 3 diagrams as behind the UX")
+    if "implementation of that flow" not in stack_md:
+        fail("stack.md must title Part 4 as implementation of that flow")
     if "UX/business" not in quantic_md:
         fail("quantic.md must cue Part 2 as UX/business why+how")
     if "part3-local-vs-aws.md" not in presentation_md:
@@ -1230,6 +1258,80 @@ def assert_ux_wiring() -> None:
         fail("quantic-handoff.md must point to part3-local-vs-aws.md")
     if "MSAIE" not in local_vs_aws or "73d202d" not in local_vs_aws:
         fail("part3-local-vs-aws.md lost MSAIE staging or host tip 73d202d")
+    # Ratchet #143: four Part 3/4 diagrams on Stack; notes site-relative; old HLDs stay archive.
+    hld_notes = (ROOT / "part3-hld-flow-notes.md").read_text(encoding="utf-8")
+    coding_notes = (ROOT / "part4-coding-overview.md").read_text(encoding="utf-8")
+    for asset in (
+        "hld-local.svg",
+        "hld-local-720.png",
+        "hld-aws-msaie.svg",
+        "hld-aws-msaie-720.png",
+        "flow-meghna-fe-be.svg",
+        "flow-meghna-fe-be-720.png",
+        "flow-coding-overview.svg",
+        "flow-coding-overview-720.png",
+    ):
+        path = ROOT / "assets" / asset
+        if not path.is_file():
+            fail(f"missing knowledge/assets/{asset} (Part 3/4 diagram pack)")
+        copied = OUT / "assets" / asset
+        if not copied.is_file():
+            fail(f"built site missing assets/{asset}")
+    for label, text in (
+        ("stack.md", stack_md),
+        ("part3-hld-flow-notes.md", hld_notes),
+    ):
+        for needle in (
+            "hld-local.svg",
+            "hld-aws-msaie.svg",
+            "flow-meghna-fe-be.svg",
+        ):
+            if needle not in text:
+                fail(f"{label} must embed {needle}")
+    if "flow-coding-overview.svg" not in stack_md:
+        fail("stack.md must embed flow-coding-overview.svg")
+    if "flow-coding-overview.svg" not in coding_notes:
+        fail("part4-coding-overview.md must embed flow-coding-overview.svg")
+    if "history / probe archive" not in stack_md:
+        fail("stack.md must label older hld-as-is / hld-aws-staging as history / probe archive")
+    if "hld-as-is.svg" not in stack_md:
+        fail("stack.md must keep hld-as-is.svg as history (do not delete the archive HLD)")
+    if "part3-hld-flow-notes.md" not in stack_md:
+        fail("stack.md must link part3-hld-flow-notes.md")
+    if "part4-coding-overview.md" not in stack_md:
+        fail("stack.md must link part4-coding-overview.md")
+    for label, text in (
+        ("part3-hld-flow-notes.md", hld_notes),
+        ("part4-coding-overview.md", coding_notes),
+        ("stack.md", stack_md),
+    ):
+        if "/workspace/" in text:
+            fail(f"{label} must use site-relative paths (no /workspace/)")
+        if "PART3-HLD-FLOW-NOTES.md" in text or "PART4-CODING-OVERVIEW.md" in text:
+            fail(f"{label} must use site-relative .md links (not ALL-CAPS pack names)")
+        if "store-only" not in text and "Store-only" not in text:
+            fail(f"{label} must keep newsletter store-only")
+        if "/api/slots" not in text or "/api/reservations" not in text:
+            fail(f"{label} must name GET /api/slots + POST /api/reservations for booking")
+    if "MSAIE" not in hld_notes or "cafe.artof.link" not in hld_notes:
+        fail("part3-hld-flow-notes.md must keep MSAIE staging / cafe.artof.link on camera")
+    if "not AEA RDS" not in hld_notes and "not AEA RDS" not in stack_md:
+        fail("Part 3 HLD notes or Stack must keep on-box PG (not AEA RDS)")
+    if "PROTOTYPE" not in hld_notes or "PROTOTYPE" not in coding_notes:
+        fail("Part 3/4 diagram notes must stay labeled PROTOTYPE")
+    if "freeze" not in hld_notes.lower():
+        fail("part3-hld-flow-notes.md must say static pages read the freeze")
+    for hub, label in (
+        (materials_345, "parts-345-materials.md"),
+        (presentation_md, "presentation.md"),
+        (quantic_md, "quantic.md"),
+        (handoff_md, "quantic-handoff.md"),
+        (local_vs_aws, "part3-local-vs-aws.md"),
+    ):
+        if "part3-hld-flow-notes.md" not in hub:
+            fail(f"{label} must link part3-hld-flow-notes.md")
+        if "part4-coding-overview.md" not in hub:
+            fail(f"{label} must link part4-coding-overview.md")
     spoken_re = re.compile(r"“[^”]+”")
     for name in (
         "part3-variant-b-script-natural.md",

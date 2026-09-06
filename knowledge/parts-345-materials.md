@@ -2,7 +2,8 @@
 
 Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
 
-**Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.
+**Talk spine:** Part 2 UX/business (Meghna) · **Part 3 architecture why/how** · **Part 4 coding why/how** · **Part 5 honesty/close**.  
+**Same usecase, three depths:** Part 2 UX = frontend view (what Meghna shows) · Part 3 Architecture = view behind it (HLDs + FE/BE flow) · Part 4 Coding = how it is actually implemented (forms/functions/FE/BE/API/DB).
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
@@ -15,6 +16,7 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 **Owner rule:** camera spoken lines stay plain (no FR/NFR on camera). Technical spoken scripts **may use FR/NFR IDs** for compare. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.  
 **Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project** (temporary — not production forever). Avoid “weekend Lightsail staging” on camera.  
 **Architect deploy table (off-camera ops OK):** [Local vs AWS MSAIE staging](part3-local-vs-aws.md) — same React+JSX→Flask→Postgres; Vite/local Postgres vs Caddy→on-box Postgres (tip `73d202d`, not AEA RDS); newsletter store-only. Also folded into [Stack](stack.md).  
+**Architect visuals (PROTOTYPE):** [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md) — prefer **hld-local** + **hld-aws-msaie**; freeze for static pages; booking `GET /api/slots` + `POST /api/reservations`; newsletter `POST /api/newsletter` store-only. Older `hld-as-is` / `hld-aws-staging` stay as history.  
 **Hiren B vs C pick:** **Unknown** — do not invent it.
 
 ---
@@ -50,6 +52,8 @@ Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
 | [Part 5 — technical script](part5-shared-close-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
 | [Handoff mapping](parts-345-handoff-mapping.md) | FR/NFR / probe map — **not spoken on camera** |
 | [Local vs AWS](part3-local-vs-aws.md) | Architect deploy table (what used · explanation · rationale · implementation) |
+| [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) | Local + MSAIE staging HLDs + Meghna FE↔BE flow (**PROTOTYPE**) |
+| [Part 4 coding overview](part4-coding-overview.md) | Forms → API → modules → Postgres (**PROTOTYPE**) |
 | Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Stack](stack.md) · [Meghna materials](meghna-materials.md) (Part 2 UX/business) |
 
 Live site to rehearse after the cafe demo: **https://cafe.artof.link/** (MSAIE staging — temporary, not forever)
@@ -148,6 +152,8 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 | Talk cuts (Architecture after Meghna handoff) | https://knowledge.cafe.artof.link/presentation.html · [Talk cuts](presentation.md) |
 | Stack / HLD | https://knowledge.cafe.artof.link/stack.html · [Stack](stack.md) |
 | Local vs AWS (architect deploy table) | [Local vs AWS MSAIE staging](part3-local-vs-aws.md) |
+| Part 3 HLD + Meghna FE/BE (**PROTOTYPE**) | [Part 3 HLD + flow](part3-hld-flow-notes.md) · also on [Stack](stack.md) |
+| Part 4 coding overview (**PROTOTYPE**) | [Part 4 coding overview](part4-coding-overview.md) · also on [Stack](stack.md) |
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
 | Meghna materials (Part 2 UX/business) | [Meghna materials](meghna-materials.md) |
 | Handoff mapping (FR/NFR — **not spoken on camera**) | [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) |
