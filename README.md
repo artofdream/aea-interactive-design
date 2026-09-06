@@ -7,7 +7,7 @@ Quantic MSAIE **Café Fausse** project, and a transfer of the AEA outer harness 
 
 The restaurant app lives in this repo (`frontend/` React + JSX, `backend/` Flask, PostgreSQL). AWS is **not** in the restaurant MVP code cut (no AWS in the first app PR). Weekend staging is a separate infra issue ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)), not forever production. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22).
 
-**Probe 2026-09-05 Europe/Berlin (this session):** `GET https://cafe.artof.link/` **200** (title Café Fausse; remote IP `54.165.102.60`); `/api/health` **200** `{"ok":true}`; `/operator` **200**; `/api/operator` **200**. TLS VERIFY_OK, CN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`. DNS **A** `54.165.102.60` (Route53 TTL 60; Lightsail `cafe-fausse-staging` us-east-1; Caddy LE). HTTP → **308** HTTPS. Interim backup: `GET https://54-165-102-60.sslip.io/` **200**; `/api/health` **200** `{"ok":true}`. Knowledge: `GET https://knowledge.cafe.artof.link/` **200** (GitHub Pages; CNAME `artofdream.github.io`); HTTP → **301** HTTPS; TLS CN/SAN match, Let’s Encrypt `notAfter=2026-11-30`. Tunnel `https://shaky-deer-drive.loca.lt/` **timeout** (curl 28, 15s) — demoted; not live share. AEA RDS untouched. Newsletter = store only (**FR-15** / **FR-16**); no outbound mailer. Staging stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is an evaluate-only checkpoint (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence.
+**Probe 2026-09-05 Europe/Berlin (this session):** `GET https://cafe.artof.link/` **200** (title Café Fausse; remote IP `54.165.102.60`); `/api/health` **200** `{"ok":true}`; `/operator` **200**; `/api/operator` **200**. TLS VERIFY_OK, CN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`. DNS **A** `54.165.102.60` (Route53 TTL 60; Lightsail `cafe-fausse-staging` us-east-1; Caddy LE). HTTP → **308** HTTPS. Interim backup: `GET https://54-165-102-60.sslip.io/` **200**; `/api/health` **200** `{"ok":true}`. Knowledge: `GET https://knowledge.cafe.artof.link/` **200** (GitHub Pages; CNAME `artofdream.github.io`); HTTP → **301** HTTPS; TLS CN/SAN match, Let’s Encrypt `notAfter=2026-11-30`. Tunnel `https://shaky-deer-drive.loca.lt/` **timeout** (curl 28, 15s) — demoted; not live share. AEA RDS untouched. Newsletter grade floor = store only (**FR-15** / **FR-16**). Optional SES confirmation after store is Future [#135](https://github.com/artofdream/aea-interactive-design/issues/135) when env is set — not a live broadcast list; delivery stays **Unknown** until a this-session send probe. Staging stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is an evaluate-only checkpoint (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence.
 
 ## Teams and two public surfaces
 
@@ -39,6 +39,16 @@ DATABASE_URL=postgresql://cafe:cafe@127.0.0.1:5432/cafe_fausse
 DB_CONNECT_TIMEOUT=2
 DB_STATEMENT_TIMEOUT_MS=2000
 ```
+
+Optional Future [#135](https://github.com/artofdream/aea-interactive-design/issues/135) SES confirmation (not a new FR). Leave unset for store-only — signup still **201** and `email_delivery.status` is `skipped` / `email not configured`:
+
+```text
+SES_REGION=us-east-1
+SES_FROM_EMAIL=newsletter@cafe.artof.link
+PUBLIC_BASE_URL=https://cafe.artof.link
+```
+
+Do not put AWS keys in git. On Lightsail (#57) prefer an instance IAM role that can `ses:SendEmail` / `sesv2:SendEmail`. Access keys are a fallback (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`). Sandbox can send only to verified identities; production access is an ops step. This is a transactional confirmation / demo send after store, not a broadcast list. Unsubscribe link is in the email body (`/unsubscribe?email=`); RFC 8058 one-click `List-Unsubscribe` is a later follow-up.
 
 ### 2. PostgreSQL
 
@@ -124,7 +134,7 @@ CI **fails closed** if `docs/srs.md` is missing or if the official PDF/zip SHA25
 ## Scope (Café Fausse App)
 
 - Home, Menu, Reservations, About Us, Gallery (FR-1..FR-14).
-- Newsletter signup stored in PostgreSQL (FR-15, FR-16).
+- Newsletter signup stored in PostgreSQL (FR-15, FR-16). Optional SES confirmation after store is Future #135 (fail soft if unset).
 - Random table from 30; fully booked slot returns an error, not a table (FR-6..FR-9, FR-18).
 - Freeze data (menu prices, address, hours, owners, awards, reviews) from `docs/srs.md` / `shared/freeze.json`. Do not invent FR-19 / NFR-10.
 

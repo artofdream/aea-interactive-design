@@ -34,7 +34,13 @@ export default function NewsletterForm() {
         method: "POST",
         body: JSON.stringify({ email }),
       });
-      setStatus({ ok: true, message: data.message });
+      const sent = data.email_delivery && data.email_delivery.status === "sent";
+      setStatus({
+        ok: true,
+        message: sent
+          ? `${data.message} A confirmation email was sent (demo, not a broadcast).`
+          : data.message,
+      });
       setEmail("");
     } catch (err) {
       setStatus({ ok: false, message: err.message || "Signup failed. Nothing was saved." });

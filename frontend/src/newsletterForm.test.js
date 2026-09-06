@@ -17,6 +17,12 @@ describe("NewsletterForm status (issue #85)", () => {
     assert.match(src, /setStatus\(null\)/);
   });
 
+  it("mentions demo confirmation only when SES reports sent (Future #135)", () => {
+    assert.match(src, /email_delivery/);
+    assert.match(src, /demo, not a broadcast/);
+    assert.match(src, /status === "sent"/);
+  });
+
   it("auto-dismisses the banner after a short timeout (4–6s polish)", () => {
     const match = src.match(/NEWSLETTER_STATUS_DISMISS_MS = (\d+)/);
     assert.ok(match, "dismiss timeout constant is defined");

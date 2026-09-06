@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+import html
 import os
 from pathlib import Path
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, make_response, request, send_from_directory
 from flask_cors import CORS
 
 from cafe_fausse.content import (
@@ -16,6 +17,7 @@ from cafe_fausse.content import (
 )
 from cafe_fausse.db import DatabaseUnavailable, ping
 from cafe_fausse.newsletter import subscribe as subscribe_newsletter
+from cafe_fausse.newsletter import unsubscribe as unsubscribe_newsletter
 from cafe_fausse.operator import list_operator_snapshot
 from cafe_fausse.reservations import (
     ReservationError,
@@ -27,6 +29,21 @@ from cafe_fausse.slots import list_slots_for_date, parse_time_slot
 DIST_DIR = REPO_ROOT / "frontend" / "dist"
 IMAGE_DIR = REPO_ROOT / "assets" / "images"
 SUPPLEMENTAL_IMAGE_DIR = IMAGE_DIR / "supplemental-not-official"
+
+
+def _unsubscribe_page(title: str, message: str, status: int = 200):
+    safe_title = html.escape(title)
+    safe_message = html.escape(message)
+    body = (
+        "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">"
+        f"<title>{safe_title}</title></head><body>"
+        f"<h1>{safe_title}</h1><p>{safe_message}</p>"
+        "<p>Future #135 — not a new FR. This is not a live broadcast list.</p>"
+        "</body></html>"
+    )
+    response = make_response(body, status)
+    response.mimetype = "text/html"
+    return response
 
 
 def create_app() -> Flask:
@@ -120,6 +137,32 @@ def create_app() -> Flask:
         except ReservationError as exc:
             return jsonify({"ok": False, "error": str(exc), "code": exc.code}), exc.status
         return jsonify({"ok": True, **result}), 201
+
+    @app.route("/api/newsletter/unsubscribe", methods=["GET", "POST"])
+    def newsletter_unsubscribe():
+        # Future #135 minimal unsubscribe. Not a new FR. Fail closed if DB is down.
+        raw = (request.args.get("email") or "").strip()
+        if request.method == "POST":
+            payload = request.get_json(silent=True) or {}
+            if isinstance(payload, dict) and payload.get("email"):
+                raw = str(payload.get("email") or "").strip()
+        try:
+            result = unsubscribe_newsletter(raw)
+        except ReservationError as exc:
+            return jsonify({"ok": False, "error": str(exc), "code": exc.code}), exc.status
+        return jsonify({"ok": True, **result})
+
+    @app.get("/unsubscribe")
+    def newsletter_unsubscribe_page():
+        # Browser target for the confirmation-email link (Future #135).
+        raw = (request.args.get("email") or "").strip()
+        try:
+            result = unsubscribe_newsletter(raw)
+        except ReservationError as exc:
+            return _unsubscribe_page("Unsubscribe", str(exc), exc.status)
+        except DatabaseUnavailable as exc:
+            return _unsubscribe_page("Unsubscribe", str(exc), 503)
+        return _unsubscribe_page("Unsubscribe", result["message"], 200)
 
     @app.get("/api/operator")
     def operator_snapshot():
