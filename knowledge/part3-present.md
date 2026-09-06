@@ -75,6 +75,6 @@ Two targets · Knowledge ≠ App · newsletter store-only · staging temporary.
 
 ![Handoff](assets/card-p3-handoff.png)
 
-Hiren’s cut is teammate architecture — not ours. Ours is cafe.artof.link at MSAIE staging.
+Hiren’s cut is teammate architecture — not ours. Ours is cafe.artof.link at MSAIE staging. Side page: [Teammate HLD (Hiren)](teammate-hld.md) — labeled teammate, never our MSAIE map.
 
 ![Teammate HLD next](assets/slide-p3-07-teammate.svg "fit")
