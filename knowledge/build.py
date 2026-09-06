@@ -1482,6 +1482,10 @@ def assert_ux_wiring() -> None:
         fail("developer-system-map.md must say HTTP only / no event bus")
     if "/api/slots" not in map_md or "/api/reservations" not in map_md:
         fail("developer-system-map.md must name GET /api/slots + POST /api/reservations")
+    if "@app.get" not in map_md or "@app.post" not in map_md:
+        fail("developer-system-map.md must say routes are @app.get / @app.post")
+    if "not Flask Blueprints" not in map_md and "not Flask Blueprint" not in map_md:
+        fail("developer-system-map.md must say routes are not Flask Blueprints")
     if "developer-system-map.md" not in stack_md:
         fail("stack.md must link developer-system-map.md")
     if "developer-system-map.md" not in quantic_md:
