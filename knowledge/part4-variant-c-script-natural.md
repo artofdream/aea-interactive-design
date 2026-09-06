@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 # Part 4 — Coding rationale / Variant C (~3 min)
 
@@ -8,7 +8,7 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **6:30–9:30**.
 
-**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Demo focus: **cafe.artof.link** as MSAIE staging (temporary — not production forever). Mapping: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Demo focus: **cafe.artof.link** as MSAIE staging (temporary — not production forever). Mapping: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 ---
 
@@ -39,7 +39,7 @@
 
 ## 3. Supporting ID map (off-camera)
 
-See **[`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md)** — Part 4 table. Do not read IDs on camera.
+See **[Parts 3–5 handoff mapping](parts-345-handoff-mapping.md)** — Part 4 table. Do not read IDs on camera.
 
 ---
 

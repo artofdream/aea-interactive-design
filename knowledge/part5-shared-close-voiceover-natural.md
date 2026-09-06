@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 # Part 5 — Shared close voice-over (ready to record)
 
@@ -6,7 +6,7 @@
 **Picture:** silent `part5-shared-close-prototype-silent.mp4`  
 **Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
 **Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project** (temporary — not forever)  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
 **Status:** draft — **PROTOTYPE**, not Quantic submit.  
 **Honesty:** UPDATED 2026-09-06 — load/submit **met**; browser support **Partial**.
 

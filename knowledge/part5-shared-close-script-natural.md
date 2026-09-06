@@ -1,4 +1,4 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 # Part 5 — Shared close (~30–60s)
 
@@ -7,7 +7,7 @@
 **Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **9:30–10:00** (pad to ~60s if needed).
 
-**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Focus demo honesty on **cafe.artof.link** as the **staging environment for the MSAIE project** — temporary, not production forever. Avoid “weekend Lightsail staging” / heavy ops jargon on camera. Probe / freeze IDs: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Focus demo honesty on **cafe.artof.link** as the **staging environment for the MSAIE project** — temporary, not production forever. Avoid “weekend Lightsail staging” / heavy ops jargon on camera. Probe / freeze IDs: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 **Honesty (speakable, mandatory):**
 
@@ -58,7 +58,7 @@ Official SRS → main (React + Flask + Postgres + CI)
   → Demo surface (cafe.artof.link MSAIE staging after healthy GET · or clips)
 ```
 
-Off-camera ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+Off-camera ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 ---
 

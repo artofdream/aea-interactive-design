@@ -1,11 +1,11 @@
-> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
 
 # Part 4 — Variant C voice-over (ready to record)
 
 **Length:** ~3 minutes  
 **Picture:** silent `part4-variant-c-prototype-silent.mp4`  
 **Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
+**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only  
 **Status:** draft — **PROTOTYPE**, not Quantic submit.
 
 ---
