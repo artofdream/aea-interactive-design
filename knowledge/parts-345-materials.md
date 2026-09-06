@@ -56,6 +56,7 @@ Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
 | [Local vs AWS](part3-local-vs-aws.md) | Architect deploy table (what used · explanation · rationale · implementation) |
 | [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) | Local + MSAIE staging HLDs + Meghna FE↔BE flow (**PROTOTYPE**) |
 | [Part 4 coding overview](part4-coding-overview.md) | Forms → API → modules → Postgres (**PROTOTYPE**) |
+| [Developer system map](developer-system-map.md) | Stack, API, schema, FE/BE (tip `73d202d`) |
 | Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Stack](stack.md) · [Meghna materials](meghna-materials.md) (Part 2 UX/business) |
 
 Live site to rehearse after the cafe demo: **https://cafe.artof.link/** (MSAIE staging — temporary, not forever)
@@ -156,6 +157,7 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 | Local vs AWS (architect deploy table) | [Local vs AWS MSAIE staging](part3-local-vs-aws.md) |
 | Part 3 HLD + Meghna FE/BE (**PROTOTYPE**) | [Part 3 HLD + flow](part3-hld-flow-notes.md) · also on [Stack](stack.md) |
 | Part 4 coding overview (**PROTOTYPE**) | [Part 4 coding overview](part4-coding-overview.md) · also on [Stack](stack.md) |
+| Developer system map | [Developer system map](developer-system-map.md) — stack, API, schema, FE/BE |
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
 | Meghna materials (Part 2 UX/business) | [Meghna materials](meghna-materials.md) |
 | Handoff mapping (FR/NFR — **not spoken on camera**) | [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) |
