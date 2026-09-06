@@ -1000,6 +1000,27 @@ def assert_ux_wiring() -> None:
         fail("glossary mermaid must use <br> so the status-word diamond wraps on phone")
     if "{&quot;Checked this" not in glossary and '{"Checked this' not in glossary:
         fail("glossary mermaid must keep the status-word diamond")
+    # Ratchet #162: freeze.json why / how / scope on the glossary (not a DB menu).
+    glossary_md = (ROOT / "glossary.md").read_text(encoding="utf-8")
+    if "## freeze.json" not in glossary_md:
+        fail("glossary.md must have a freeze.json section")
+    for needle in (
+        "**Purpose:**",
+        "**How:**",
+        "**Scope:**",
+        "**Why not DB:**",
+        "shared/freeze.json",
+        "/api/menu",
+        "/api/site",
+        "/images/",
+        "**not** in Postgres",
+    ):
+        if needle not in glossary_md:
+            fail(f"glossary.md freeze.json entry must keep {needle}")
+    if "reservations" not in glossary_md.lower() or "newsletter" not in glossary_md.lower():
+        fail("glossary.md freeze.json entry must say Postgres holds reservations and newsletter")
+    if "Aurora" in glossary_md:
+        fail("glossary.md must not name another student's Aurora menu as ours")
     if 'class="diagram-wrap diagram-fit"' not in index:
         fail("index.html home mermaid must use diagram-fit")
     honesty_html = (OUT / "honesty.html").read_text(encoding="utf-8")

@@ -27,6 +27,7 @@ flowchart TD
 | **The restaurant / App** | The Café Fausse website (`cafe.artof.link`). React + JSX, Flask, PostgreSQL. Weekend staging is not forever production. |
 | **MVP** | The first restaurant cut: only the official assignment list ([SRS freeze](srs.md), **FR-1..FR-18**, **NFR-1..NFR-9**). Extra ideas go to [Future](future.md). |
 | **Freeze** | Do not invent or rename requirement IDs. The official PDF is the source of truth; `docs/srs.md` is the working copy. |
+| **`freeze.json`** | Official restaurant *copy* (menu, hours, awards, reviews, site text) in `shared/freeze.json`. Not the ID freeze. Not a Postgres menu. Why / how / scope below. |
 | **FR / NFR** | Functional / non-functional requirement IDs from the official SRS. Do not invent **FR-19** or **NFR-10**. |
 | **Probe** | A check **this session**: a command, an HTTP GET, a CI log, or a **committed** file that exists now. |
 | **Unknown** | Honest status when no probe has been run this session. Prefer this over a guessed yes. |
@@ -52,6 +53,20 @@ flowchart TD
 - **SoT** — source of truth. For requirements, that is the official PDF.
 - **Journal** — process index: principles, lessons, meeting MoM overview ([#100](https://github.com/artofdream/aea-interactive-design/issues/100)).
 
+## freeze.json
+
+**In plain English:** Official restaurant *copy* lives in one file so the frontend and the API do not tell two stories. This is not a database-hosted menu.
+
+**Purpose:** one official source of truth for restaurant copy the SRS cares about — menu, hours, awards, reviews, site text — so FE and API do not drift into two stories.
+
+**How:** `shared/freeze.json`. React pages (Home / Menu / Gallery / About) import that file at build. They do **not** call `GET /api/menu` for those surfaces. Flask still serves the same official copy via `GET /api/menu` and `GET /api/site`. CI freeze lock (`test_freeze.py`) fail-closes if the file is missing or drifts from the official SRS.
+
+**Scope:** display and content only. Not bookings. Not customers. Not gallery binaries — those are `GET /images/…`, not an API of pictures. The menu is **not** in Postgres.
+
+**Why not DB:** graded / official copy stays immutable in the freeze. Mutable data (reservations, newsletter signups) stays in Postgres.
+
+The **Freeze** row above is the ID freeze (do not invent **FR-19**). `freeze.json` is the copy file that holds that official text. Do not “improve” prices, address, hours, owners, awards, or reviews in the MVP.
+
 ## Sources and links
 
 These are the sources this repo actually uses. Do not invent a second official SRS.
@@ -60,7 +75,7 @@ These are the sources this repo actually uses. Do not invent a second official S
 |---|---|---|
 | Official SRS PDF | Assignment source of truth (7 pages). Local copy `docs/official/MSEE_Web_Application_and_Interface_Design_Cafe_Fausse_SRS.pdf`. | [Provenance](https://github.com/artofdream/aea-interactive-design/blob/main/docs/official/PROVENANCE.md) |
 | Working freeze | ID freeze of that PDF. Cite **FR-1..FR-18** / **NFR-1..NFR-9** from here. | [SRS freeze](srs.md), full copy [srs-full](../docs/srs.md) |
-| Menu / site freeze data | Prices, hours, owners — do not “improve” in the MVP. | `shared/freeze.json` in the repo |
+| Menu / site freeze data | Prices, hours, owners — do not “improve” in the MVP. Official copy, not a DB menu. | `shared/freeze.json` — why / how / scope in the freeze.json section |
 | Official image pack | Four webps only. Extras are student-recovered, not Quantic-official. | `docs/official/` zip + [Stack](stack.md) notes |
 | This GitHub repo | Issues, PRs, Actions. GitHub only. | [artofdream/aea-interactive-design](https://github.com/artofdream/aea-interactive-design) |
 | Knowledge host | This map. GitHub Actions → GitHub Pages. | [https://knowledge.cafe.artof.link/](https://knowledge.cafe.artof.link/) |
@@ -76,7 +91,7 @@ These are the sources this repo actually uses. Do not invent a second official S
 | Session SOP | Teams, ID freeze, fail closed, PR loop. | `AGENTS.md` |
 | Slack | Teammate / owner feedback. Claude opens GitHub issues. | Slack workspace (no public URL claimed here) |
 
-This-session GETs: Knowledge `/` **200**; restaurant `/` **200**; `/api/health` **200**. Live `/glossary.html` stays **Unknown** until this PR merges and Pages deploys.
+This-session GETs (2026-09-06): Knowledge `/` **200**; `/glossary.html` **200**; restaurant `/` **200**; `/api/health` **200** `{"ok":true}`; `/operator` **200**. The new `freeze.json` section is on this branch until Pages deploys.
 
 ## What this glossary is not
 

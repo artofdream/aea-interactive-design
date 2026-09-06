@@ -84,7 +84,7 @@ Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
 
 ## Part 4 coding overview (implementation of that flow)
 
-Forms · functions · frontend · backend · API · DB. Static pages import `freeze.json`; booking goes through slots + reservations; newsletter is store-only. Notes: [Part 4 coding overview](part4-coding-overview.md).
+Forms · functions · frontend · backend · API · DB. Static pages import `freeze.json`; booking goes through slots + reservations; newsletter is store-only. Notes: [Part 4 coding overview](part4-coding-overview.md). Plain English: [freeze.json](glossary.md) (why / how / scope).
 
 ![Part 4 coding overview: Home Menu Gallery About import freeze.json (not /api/menu). Reservations form GET /api/slots then POST /api/reservations to Postgres. NewsletterForm POST /api/newsletter store-only. Backend modules under Flask. Fail-closed without DB.](assets/flow-coding-overview.svg)
 
