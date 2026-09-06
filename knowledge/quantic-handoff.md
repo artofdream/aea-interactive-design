@@ -36,7 +36,7 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
-**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs**) · [Part 3 script](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4 script](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5 script](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Technical scripts may use FR/NFR IDs. Silent mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. Recorded VO **Unknown**. Do not invent the Hiren B vs C pick.
+**Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO) · [VO notes](parts-345-vo-notes.md) · [Part 3 script](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4 script](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5 script](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Technical scripts may use FR/NFR IDs. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**. Do not invent the Hiren B vs C pick.
 
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
@@ -53,7 +53,7 @@ Sister talk-track pages (stay complete):
 - [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE** clip.
 - [Meghna demo](meghna-cafe-demo.md) — 3-min live walk (spoken = plain English).
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs**.
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO. [VO notes](parts-345-vo-notes.md). Recorded teammate VO **Unknown**.
 - [Part 3 script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
 - [Part 4 script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
 - [Part 5 script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
@@ -87,7 +87,7 @@ Do not invent these. The section exists so a grader sees the gap instead of a gu
 |---|---|
 | Final Quantic submission video (live must-film + voice) | **Unknown** / to-be-filled. Dry-run on the [Video script](video-script.md) is **PROTOTYPE** only. |
 | Hiren: Variant B vs Variant C (Claude takes the other) | **Unknown** / to-be-filled. Structure is locked; **speaker** names for B/C are not. |
-| Voice-over | **TBD** on every part. |
+| Voice-over (teammate recorded) | **TBD** on every part. **PROTOTYPE TTS** on [materials](parts-345-materials.md) is not that. |
 | Optional Claude advance recording for eval | **Unknown** until a file exists. Not the submit video. |
 | Sunday meeting **start** clock | **Unknown** / to-be-filled. Known job: ends with a recording; docs target **9:00 America/New_York** on 2026-09-06. Page: [Sunday](meeting-sunday.md). |
 | Outbound newsletter mail | **Not in the SRS MVP.** Do not claim a mailer. |

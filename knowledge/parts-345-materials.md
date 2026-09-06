@@ -4,11 +4,11 @@ Everything for the locked five-part talk ([#97](https://github.com/artofdream/ae
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
-| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | [script](part3-variant-b-script.md) + [VO](part3-variant-b-voiceover.md) + silent ~180s |
-| ~6:30–9:30 | **4 Coding** (Variant C) | the other | [script](part4-variant-c-script.md) + [VO](part4-variant-c-voiceover.md) + silent ~180s |
-| ~9:30–10:00 | **5 Shared close** | Shared | [script](part5-shared-close-script.md) + [VO](part5-shared-close-voiceover.md) + silent ~60s |
+| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | [script](part3-variant-b-script.md) + [VO](part3-variant-b-voiceover.md) + silent ~180s + [PROTOTYPE TTS](clips/part3-variant-b-prototype-vo.mp4) |
+| ~6:30–9:30 | **4 Coding** (Variant C) | the other | [script](part4-variant-c-script.md) + [VO](part4-variant-c-voiceover.md) + silent ~180s + [PROTOTYPE TTS](clips/part4-variant-c-prototype-vo.mp4) |
+| ~9:30–10:00 | **5 Shared close** | Shared | [script](part5-shared-close-script.md) + [VO](part5-shared-close-voiceover.md) + silent ~60s + [PROTOTYPE TTS](clips/part5-shared-close-prototype-vo.mp4) |
 
-**Label:** all videos are **PROTOTYPE** / samples / rehearsal — **not** Quantic submission.  
+**Label:** silent videos are **PROTOTYPE** / samples / rehearsal. VO-integrated clips are **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate VO · **not** Quantic submission.  
 **Owner rule:** technical spoken scripts **may use FR/NFR IDs**; plain-English VO twins included.  
 **Hiren B vs C pick:** **Unknown** — do not invent it.
 
@@ -65,6 +65,30 @@ Prefer **live diagrams / Coverage** for the real recording; use the silent proto
 
 ---
 
+## 2b. Prototype videos (VO-integrated — PROTOTYPE TTS)
+
+**Label:** **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate recorded VO · **not** Quantic submit.
+
+Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-silent.mp4` files stay in §2 and were **not** overwritten.
+
+| Asset | Path / URL | Note |
+| --- | --- | --- |
+| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-vo.mp4`](clips/part3-variant-b-prototype-vo.mp4) (~180s) | Technical timed lines + silence pad to the silent cut. **PROTOTYPE TTS**. |
+| **Part 4 Coding** | [`clips/part4-variant-c-prototype-vo.mp4`](clips/part4-variant-c-prototype-vo.mp4) (~180s) | Technical timed lines + silence pad. **PROTOTYPE TTS**. |
+| **Part 5 Shared close** | [`clips/part5-shared-close-prototype-vo.mp4`](clips/part5-shared-close-prototype-vo.mp4) (~64.5s) | Technical close + last-frame pad to match VO. **PROTOTYPE TTS**. |
+
+> **PROTOTYPE TTS** — machine voice `en-US-GuyNeural`. Not teammate VO. Not the Quantic submission.
+
+<video controls src="clips/part3-variant-b-prototype-vo.mp4"></video>
+
+<video controls src="clips/part4-variant-c-prototype-vo.mp4"></video>
+
+<video controls src="clips/part5-shared-close-prototype-vo.mp4"></video>
+
+**Recorded teammate VO:** **Unknown** until Claude, Hiren, or a shared speaker records. These TTS clips do not change that.
+
+---
+
 ## 3. Voice-over
 
 | Asset | Path | Status |
@@ -86,6 +110,7 @@ Prefer **live diagrams / Coverage** for the real recording; use the silent proto
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
 | Meghna materials (Part 2) | [Meghna materials](meghna-materials.md) |
 | Build notes (secondary) | [Parts 3–5 notes](parts-345-notes.md) |
+| VO mux notes (**PROTOTYPE TTS**) | [Parts 3–5 VO notes](parts-345-vo-notes.md) |
 
 ---
 
@@ -102,8 +127,8 @@ Prefer **live diagrams / Coverage** for the real recording; use the silent proto
 ## 6. Still open (not pack-blocking)
 
 - Hiren Architecture vs Coding pick (B vs C) — **Unknown**; do not invent it
-- Final Quantic submit video = live must-film + voice (dry-run / silent prototype ≠ submit)
-- Recorded VO takes stay **Unknown**
+- Final Quantic submit video = live must-film + voice (dry-run / silent prototype / **PROTOTYPE TTS** ≠ submit)
+- Recorded teammate VO takes stay **Unknown** (**PROTOTYPE TTS** is not that)
 - Live Pages GET of these Parts 3–5 URLs stays **Unknown** until merge + Pages deploy
 
 ---

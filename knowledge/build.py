@@ -43,6 +43,7 @@ DELIVERY_ONLY_HREFS = (
     "meghna-voiceover.html",
     "parts-345-materials.html",
     "parts-345-notes.html",
+    "parts-345-vo-notes.html",
     "part3-variant-b-script.html",
     "part3-variant-b-voiceover.html",
     "part4-variant-c-script.html",
@@ -72,6 +73,7 @@ PAGE_ICONS = {
     "meghna-voiceover.html": "talk",
     "parts-345-materials.html": "video",
     "parts-345-notes.html": "brief",
+    "parts-345-vo-notes.html": "brief",
     "part3-variant-b-script.html": "talk",
     "part3-variant-b-voiceover.html": "talk",
     "part4-variant-c-script.html": "talk",
@@ -1100,6 +1102,36 @@ def assert_ux_wiring() -> None:
         fail("presentation.md lost the NFR-1 466 ms cite")
     if "233 ms" not in presentation_md:
         fail("presentation.md lost the NFR-2 233 ms cite")
+    # Ratchet #133: Parts 3–5 keep silent + PROTOTYPE TTS; vo-notes stay site-relative.
+    materials_345 = (ROOT / "parts-345-materials.md").read_text(encoding="utf-8")
+    vo_notes = (ROOT / "parts-345-vo-notes.md").read_text(encoding="utf-8")
+    for clip in (
+        "clips/part3-variant-b-prototype-silent.mp4",
+        "clips/part4-variant-c-prototype-silent.mp4",
+        "clips/part5-shared-close-prototype-silent.mp4",
+        "clips/part3-variant-b-prototype-vo.mp4",
+        "clips/part4-variant-c-prototype-vo.mp4",
+        "clips/part5-shared-close-prototype-vo.mp4",
+    ):
+        if clip not in materials_345:
+            fail(f"parts-345-materials.md lost {clip}")
+        clip_path = ROOT / clip
+        if not clip_path.is_file():
+            fail(f"missing {clip} (do not delete silent or VO clips)")
+    if "PROTOTYPE TTS" not in materials_345 or "en-US-GuyNeural" not in materials_345:
+        fail("parts-345-materials.md must label VO clips as PROTOTYPE TTS (en-US-GuyNeural)")
+    if "not teammate" not in materials_345.lower() and "**not** teammate" not in materials_345:
+        fail("parts-345-materials.md must say PROTOTYPE TTS is not teammate VO")
+    if "Recorded teammate VO" not in materials_345 or "**Unknown**" not in materials_345:
+        fail("parts-345-materials.md must keep recorded teammate VO Unknown")
+    if "parts-345-vo-notes.md" not in materials_345:
+        fail("parts-345-materials.md must link parts-345-vo-notes.md")
+    if "/workspace/" in materials_345 or "/workspace/" in vo_notes:
+        fail("Parts 3–5 materials/vo-notes must use site-relative paths (no /workspace/)")
+    if "PROTOTYPE TTS" not in vo_notes or "en-US-GuyNeural" not in vo_notes:
+        fail("parts-345-vo-notes.md must stay labeled PROTOTYPE TTS (en-US-GuyNeural)")
+    if "Recorded teammate VO" not in vo_notes:
+        fail("parts-345-vo-notes.md must keep recorded teammate VO Unknown")
 
 
 def assert_svg_well_formed() -> None:

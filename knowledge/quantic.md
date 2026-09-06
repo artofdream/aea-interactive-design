@@ -21,7 +21,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English.
 - [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
 - [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
-- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs**. **PROTOTYPE** / rehearsal — not Quantic submit. Recorded VO **Unknown**.
+- [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + **PROTOTYPE TTS** VO (`en-US-GuyNeural`). Rehearsal — not Quantic submit. Not teammate VO. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md).
 - [Part 3 — Variant B script](part3-variant-b-script.md) · [Part 3 VO](part3-variant-b-voiceover.md)
 - [Part 4 — Variant C script](part4-variant-c-script.md) · [Part 4 VO](part4-variant-c-voiceover.md)
 - [Part 5 — Shared close script](part5-shared-close-script.md) · [Part 5 VO](part5-shared-close-voiceover.md)
