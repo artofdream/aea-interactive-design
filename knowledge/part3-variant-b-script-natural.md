@@ -3,7 +3,7 @@
 # Part 3 — Architecture rationale / Variant B (~3 min)
 
 **Talk spine:** Part 2 = UX/business rationale (Meghna) · **Part 3 = architecture why/how** · Part 4 = coding why/how · Part 5 = honesty/close.  
-**Who:** Claude or Hiren (Hiren picks B vs C; Claude takes the other).  
+**Who:** **Claude** (owner lock 2026-09-06) — Architecture Part 3.  
 **Job:** Answer what a **software architect** wants — why this design / how it hangs together (boundaries, flow, deploy targets, quality attributes, tradeoffs) — then hand off to Coding. **Not a feature tour. Not an ops dump.**  
 **Picture:** live Reservations (or clip/still) → Stack + AWS staging SVG → as-is / boxes → sensors → handoff.  
 **Label:** **PROTOTYPE** — not Quantic submit.  
