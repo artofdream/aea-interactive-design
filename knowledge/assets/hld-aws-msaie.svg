@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-labelledby="t2 d2">
   <title id="t2">MSAIE staging — HLD (cafe.artof.link)</title>
-  <desc id="d2">MSAIE staging at cafe.artof.link. DNS to TLS to Flask plus built SPA to on-box Postgres. Key Flask routes labeled. Knowledge Pages separate. Out of cut: AEA RDS, ELB wildcard, permanent hosting. Newsletter store-only. Tip 73d202d.</desc>
+  <desc id="d2">MSAIE staging at cafe.artof.link. DNS to TLS to Flask plus built SPA to on-box Postgres (MSAIE staging). Key Flask routes labeled. Knowledge Pages separate. Out of cut: ELB wildcard, permanent hosting. Newsletter store-only. Tip 73d202d. Not a shared RDS.</desc>
   <rect width="1100" height="620" fill="#f6f1e8"/>
   <text x="24" y="34" font-family="Georgia, serif" font-size="20" fill="#1c1915">MSAIE staging — HLD</text>
   <text x="24" y="56" font-family="ui-monospace, monospace" font-size="13" fill="#7a2e1f">cafe.artof.link</text>
@@ -63,11 +63,12 @@
   <polygon points="590,320 578,314 578,326" fill="#7a2e1f"/>
 
   <rect x="594" y="252" width="172" height="150" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
-  <text x="680" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">On-box Postgres</text>
-  <text x="680" y="308" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not AEA RDS</text>
-  <text x="680" y="336" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">customers</text>
-  <text x="680" y="354" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">reservations</text>
-  <text x="680" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">fail-closed · 409</text>
+  <text x="680" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">On-box Postgres</text>
+  <text x="680" y="296" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">(MSAIE staging)</text>
+  <text x="680" y="316" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not a shared RDS</text>
+  <text x="680" y="344" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">customers</text>
+  <text x="680" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">reservations</text>
+  <text x="680" y="384" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">fail-closed · 409</text>
 
   <rect x="294" y="420" width="472" height="76" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="308" y="442" font-family="Georgia, serif" font-size="12" fill="#1c1915">Newsletter: store-only · tip 73d202d</text>
@@ -79,20 +80,16 @@
   <text x="945" y="106" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#5e574d">Out of cut</text>
 
   <rect x="830" y="128" width="230" height="64" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="945" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1915">AEA RDS</text>
-  <text x="945" y="174" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">untouched</text>
+  <text x="945" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1915">ELB wildcard</text>
+  <text x="945" y="174" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not Café Fausse</text>
 
   <rect x="830" y="212" width="230" height="64" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="945" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1915">ELB wildcard</text>
-  <text x="945" y="258" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not Café Fausse</text>
+  <text x="945" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1915">Permanent hosting</text>
+  <text x="945" y="258" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">still Future</text>
 
-  <rect x="830" y="296" width="230" height="64" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="945" y="322" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1915">Permanent hosting</text>
-  <text x="945" y="342" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">still Future</text>
-
-  <text x="830" y="400" font-family="Georgia, serif" font-size="11" fill="#5e574d">Dashed = not this cut.</text>
-  <text x="830" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">Same routes as local —</text>
-  <text x="830" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">public HTTPS proof.</text>
+  <text x="830" y="304" font-family="Georgia, serif" font-size="11" fill="#5e574d">Dashed = not this cut.</text>
+  <text x="830" y="324" font-family="Georgia, serif" font-size="11" fill="#5e574d">Same routes as local —</text>
+  <text x="830" y="342" font-family="Georgia, serif" font-size="11" fill="#5e574d">public HTTPS proof.</text>
 
   <text x="24" y="556" font-family="Georgia, serif" font-size="12" fill="#5e574d">Two hostnames, two jobs · Knowledge ≠ App · same React → Flask → Postgres design as local</text>
   <text x="24" y="580" font-family="Georgia, serif" font-size="11" fill="#5e574d">Speak: MSAIE staging · cafe.artof.link · Ops detail stays off-camera</text>

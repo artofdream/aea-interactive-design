@@ -34,7 +34,7 @@
   <text x="490" y="281" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Postgres on the instance</text>
   <text x="360" y="324" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Kept until owner decision.</text>
   <text x="360" y="342" font-family="Georgia, serif" font-size="12" fill="#7a2e1f">Mon 2026-09-08 16:00 CET evaluate-only.</text>
-  <text x="360" y="370" font-family="Georgia, serif" font-size="11" fill="#5e574d">Caddy + Let's Encrypt. AEA RDS out.</text>
+  <text x="360" y="370" font-family="Georgia, serif" font-size="11" fill="#5e574d">Caddy + Let's Encrypt. Not a shared RDS.</text>
   <text x="360" y="388" font-family="Georgia, serif" font-size="11" fill="#5e574d">sslip.io is interim backup only.</text>
   <text x="360" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">MVP = official SRS only.</text>
   <text x="360" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">FR-1..FR-18, NFR-1..NFR-9.</text>
