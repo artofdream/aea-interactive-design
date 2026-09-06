@@ -1013,7 +1013,7 @@ def assert_ux_wiring() -> None:
         "/api/menu",
         "/api/site",
         "/images/",
-        "not in Postgres",
+        "**not** in Postgres",
     ):
         if needle not in glossary_md:
             fail(f"glossary.md freeze.json entry must keep {needle}")
