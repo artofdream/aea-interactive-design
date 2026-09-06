@@ -11,9 +11,13 @@ Use this page while speaking — one beat per section. No FR/NFR IDs on camera. 
 
 ---
 
+![Part 3 title](assets/slide-p3-00-title.svg "fit")
+
 ## Beat 1 — Why these boundaries (~0:00–0:25)
 
 Product surface: Reservations on MSAIE staging (or still).
+
+![Why these boundaries](assets/slide-p3-01-boundaries.svg "fit")
 
 ![Reservations still](assets/still-reservation.png)
 
@@ -22,6 +26,8 @@ Product surface: Reservations on MSAIE staging (or still).
 ## Beat 2 — How the request flows (~0:25–0:55)
 
 React → Flask → Postgres (what Meghna clicks vs what hits the API).
+
+![How the request flows](assets/slide-p3-02-flow.svg "fit")
 
 ![FE ↔ BE flow](assets/flow-meghna-fe-be.svg)
 
@@ -33,6 +39,8 @@ React → Flask → Postgres (what Meghna clicks vs what hits the API).
 
 Same design · local vs MSAIE staging · on-box Postgres on staging.
 
+![Why two deploy targets](assets/slide-p3-03-deploys.svg "fit")
+
 ![Local HLD](assets/hld-local.svg)
 
 ![MSAIE staging HLD](assets/hld-aws-msaie.svg)
@@ -42,6 +50,8 @@ Same design · local vs MSAIE staging · on-box Postgres on staging.
 ## Beat 4 — How quality is encoded (~1:35–2:10)
 
 Fail-closed · unique slot+table · freeze/CI.
+
+![How quality is encoded](assets/slide-p3-04-quality.svg "fit")
 
 ![Boxes](assets/card-p3-boxes.png)
 
@@ -53,10 +63,18 @@ Fail-closed · unique slot+table · freeze/CI.
 
 Two targets · Knowledge ≠ App · newsletter store-only · staging temporary.
 
+![Why these tradeoffs](assets/slide-p3-05-tradeoffs.svg "fit")
+
 ![Staging card](assets/card-p3-staging.png)
 
 ---
 
 ## Beat 6 — Handoff → Coding (~2:45–3:00)
 
+![Handoff → Coding](assets/slide-p3-06-handoff.svg "fit")
+
 ![Handoff](assets/card-p3-handoff.png)
+
+Hiren’s cut is teammate architecture — not ours. Ours is cafe.artof.link at MSAIE staging.
+
+![Teammate HLD next](assets/slide-p3-07-teammate.svg "fit")
