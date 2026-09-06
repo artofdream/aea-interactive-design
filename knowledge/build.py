@@ -1132,6 +1132,19 @@ def assert_ux_wiring() -> None:
         fail("parts-345-vo-notes.md must stay labeled PROTOTYPE TTS (en-US-GuyNeural)")
     if "Recorded teammate VO" not in vo_notes:
         fail("parts-345-vo-notes.md must keep recorded teammate VO Unknown")
+    # Ratchet #136: Future lists SES newsletter outbound #135; Coverage must not claim send.
+    future_md = (ROOT / "future.md").read_text(encoding="utf-8")
+    to_be_md = (ROOT / "to-be.md").read_text(encoding="utf-8")
+    if "#135" not in future_md or "Amazon SES" not in future_md:
+        fail("future.md must list Amazon SES newsletter outbound #135")
+    if "store-only" not in future_md:
+        fail("future.md must keep the SES grade floor as store-only")
+    if "FR-19" not in future_md:
+        fail("future.md must say SES outbound is not FR-19")
+    if "#135" not in to_be_md:
+        fail("to-be.md must keep the #135 SES Future pointer")
+    if "Amazon SES" in coverage_md or re.search(r"#135\b", coverage_md):
+        fail("coverage.md must not claim SES newsletter outbound (#135 is Future only)")
 
 
 def assert_svg_well_formed() -> None:
