@@ -1,122 +1,79 @@
 # Parts 3–5 — materials pack (Quantic VIDEO Architecture / Coding / Close)
 
-Everything for the locked five-part talk ([#97](https://github.com/artofdream/aea-interactive-design/issues/97)) after Meghna’s cafe demo.
+Everything for the locked five-part talk (#97) after Meghna’s cafe demo:
 
 | Clock (room) | Part | Who | This pack |
 | --- | --- | --- | --- |
-| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | **Camera:** [natural script](part3-variant-b-script-natural.md) + [natural VO](part3-variant-b-voiceover-natural.md) + [natural TTS](clips/part3-variant-b-prototype-vo-natural.mp4) · **Compare:** [technical script](part3-variant-b-script.md) + [technical VO](part3-variant-b-voiceover.md) + silent + [technical TTS](clips/part3-variant-b-prototype-vo.mp4) |
-| ~6:30–9:30 | **4 Coding** (Variant C) | the other | **Camera:** [natural script](part4-variant-c-script-natural.md) + [natural VO](part4-variant-c-voiceover-natural.md) + [natural TTS](clips/part4-variant-c-prototype-vo-natural.mp4) · **Compare:** [technical script](part4-variant-c-script.md) + [technical VO](part4-variant-c-voiceover.md) + silent + [technical TTS](clips/part4-variant-c-prototype-vo.mp4) |
-| ~9:30–10:00 | **5 Shared close** | Shared | **Camera:** [natural script](part5-shared-close-script-natural.md) + [natural VO](part5-shared-close-voiceover-natural.md) + [natural TTS](clips/part5-shared-close-prototype-vo-natural.mp4) · **Compare:** [technical script](part5-shared-close-script.md) + [technical VO](part5-shared-close-voiceover.md) + silent + [technical TTS](clips/part5-shared-close-prototype-vo.mp4) |
+| ~3:30–6:30 | **3 Architecture** (Variant B) | Claude or Hiren | scripts + silent ~180s + tech TTS + **NATURAL TTS** |
+| ~6:30–9:30 | **4 Coding** (Variant C) | the other | scripts + silent ~180s + tech TTS + **NATURAL TTS** |
+| ~9:30–10:00 | **5 Shared close** | Shared | scripts + silent ~60s + tech TTS + **NATURAL TTS** |
 
-**Prefer natural for camera.** Keep technical silent + technical VO for post-mortem compare.  
-**Label:** silent videos are **PROTOTYPE** / samples / rehearsal. VO-integrated clips are **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate VO · **not** Quantic submit. Natural VO = **PROTOTYPE TTS** natural.  
-**Owner rule:** camera spoken lines stay plain (no FR/NFR on camera). Technical spoken scripts **may use FR/NFR IDs** for compare. ID map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.  
-**Hiren B vs C pick:** **Unknown** — do not invent it.
+**Label:** all videos are **PROTOTYPE** — not Quantic submission.
 
----
+### Speaking rule (owner)
 
-## Honesty (must match [Coverage](coverage.md))
+- **On camera / preferred VO:** clear, accurate, **natural demo language** (`*-NATURAL.md`, `*-vo-natural.mp4`).
+- **Demo focus:** **cafe.artof.link** — prefer **staging environment for the MSAIE project** (or “MSAIE staging environment”).
+- **Architecture comparison (Part 3):** **Local (dev) vs AWS MSAIE staging** — see [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md) (honest cut: same React+JSX→Flask→Postgres both sides; local cts-ai; staging Lightsail/Caddy/on-box PG not AEA RDS; newsletter store-only until SES). Spoken beats stay MSAIE / cafe.artof.link; ops names in the markdown table only.
+- **Avoid on camera:** FR/NFR IDs, issue numbers, SHA, CI job names, “weekend Lightsail staging”, and heavy Lightsail / Route53 / Caddy ops jargon.
+- **ID / freeze / probe mapping** lives in [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) — not in natural Timed lines.
+- **Technical scripts + technical VO mp4s** kept for post-mortem / ID-ok rehearsal (`PART*-SCRIPT.md`, `*-prototype-vo.mp4`) — **unchanged**.
+- Still accurate: no invented requirements; no claiming four-browser complete; `cafe.artof.link` is temporary MSAIE staging not forever; operator is read-only helper not admin; SES outbound is Future (not in spoken grade story unless optional).
+- Speakable honesty: load/submit timings **met** on phone broadband probe; browser support still **partial**; Future items **parked**.
 
-| Item | Status | Probe / cite |
-| --- | --- | --- |
-| **NFR-1** | **met** | A36 Brave broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123) / [PR #124](https://github.com/artofdream/aea-interactive-design/pull/124)) |
-| **NFR-2** | **met** | Reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125) / [PR #126](https://github.com/artofdream/aea-interactive-design/pull/126)) |
-| **NFR-7** | **Partial** | Do **not** claim four browsers |
-| Host | Lightsail staging **#57** | `https://cafe.artof.link/` — **not forever** |
-| FR-19 | **None** | `/operator` is a read-only helper |
-| Future #22 / #34–#38 | **Parked** | Not grade gaps |
-| Recorded teammate VO | **Unknown** | Until Claude / Hiren / shared records |
+**Honesty UPDATE (2026-09-06):** NFR-1/2 **met** (probes in handoff); NFR-7 **Partial**; staging #57 not forever; no FR-19; Futures parked.  
+**Wording lock UPDATE (2026-09-06):** MSAIE staging phrase + Local vs AWS MSAIE staging on NATURAL track; no “weekend Lightsail” on camera. **Honest cut UPDATE:** PART3-LOCAL-VS-AWS.md encodes cts-ai local + Lightsail/Caddy/on-box Postgres (host tip `73d202d`); NATURAL VO lightly fixed (no Docker-style local claim).
 
-Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
 
 ---
 
-## 1. Script + talking points
-
-**Prefer natural for camera.** Technical scripts stay for post-mortem compare.
+## 1. Scripts + talking points
 
 | File | What |
 | --- | --- |
-| [Part 3 — natural script](part3-variant-b-script-natural.md) | Timed ~3 min Architecture — camera spoken (plain) |
-| [Part 4 — natural script](part4-variant-c-script-natural.md) | Timed ~3 min Coding — camera spoken (plain) |
-| [Part 5 — natural script](part5-shared-close-script-natural.md) | Timed ~30–60s close — camera spoken (plain + updated honesty) |
-| [Part 3 — technical script](part3-variant-b-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
-| [Part 4 — technical script](part4-variant-c-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
-| [Part 5 — technical script](part5-shared-close-script.md) | Compare / post-mortem (FR/NFR IDs OK) |
-| [Handoff mapping](parts-345-handoff-mapping.md) | FR/NFR / probe map — **not spoken on camera** |
-| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Meghna materials](meghna-materials.md) (Part 2) |
+| [`PART3-VARIANT-B-SCRIPT-NATURAL.md`](PART3-VARIANT-B-SCRIPT-NATURAL.md) | **Preferred spoken** ~3 min Architecture (natural) |
+| [`PART4-VARIANT-C-SCRIPT-NATURAL.md`](PART4-VARIANT-C-SCRIPT-NATURAL.md) | **Preferred spoken** ~3 min Coding (natural) |
+| [`PART5-SHARED-CLOSE-SCRIPT-NATURAL.md`](PART5-SHARED-CLOSE-SCRIPT-NATURAL.md) | **Preferred spoken** ~30–60s close (natural) |
+| [`PART3-VARIANT-B-SCRIPT.md`](PART3-VARIANT-B-SCRIPT.md) | Technical / ID-ok Architecture (post-mortem) |
+| [`PART4-VARIANT-C-SCRIPT.md`](PART4-VARIANT-C-SCRIPT.md) | Technical / ID-ok Coding (post-mortem) |
+| [`PART5-SHARED-CLOSE-SCRIPT.md`](PART5-SHARED-CLOSE-SCRIPT.md) | Technical / ID-ok close (post-mortem) |
+| [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) | **Off-camera** FR/NFR / freeze / probe ID map |
+| [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md) | Local (cts-ai Flask/Vite/Postgres) vs AWS MSAIE staging (Lightsail/Caddy/on-box PG — off-camera); what / why / how |
 
-Live site to rehearse after the cafe demo: **https://cafe.artof.link/**
+Knowledge talk cuts: https://knowledge.cafe.artof.link/presentation.html  
+Stack / HLD: https://knowledge.cafe.artof.link/stack.html
 
 ---
 
 ## 2. Prototype videos (silent)
 
-| Asset | Path / URL | Note |
+| Asset | Path | Duration |
 | --- | --- | --- |
-| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) (~180s) | Silent Variant B rehearsal. Reservations → staging HLD → Coverage boxes → sensors. **PROTOTYPE**, not Quantic submit. |
-| **Part 4 Coding** | [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4) (~180s) | Silent Variant C rehearsal. Freeze/CI → table/fail-closed → timezone/modules. **PROTOTYPE**. |
-| **Part 5 Shared close** | [`clips/part5-shared-close-prototype-silent.mp4`](clips/part5-shared-close-prototype-silent.mp4) (~60s) | Silent shared-close rehearsal with updated honesty card. **PROTOTYPE**. |
+| Part 3 Architecture | `/workspace/cafe-fausse-prototype/parts-345/part3-variant-b-prototype-silent.mp4` | ~180s |
+| Part 4 Coding | `/workspace/cafe-fausse-prototype/parts-345/part4-variant-c-prototype-silent.mp4` | ~180s |
+| Part 5 Shared close | `/workspace/cafe-fausse-prototype/parts-345/part5-shared-close-prototype-silent.mp4` | ~60s |
 
-Prefer **live diagrams / Coverage** for the real recording; use the silent prototypes only for rehearsal / VO timing.
+Format: 1280×720 H.264 + silent AAC.
 
-> **PROTOTYPE** — silent Parts 3–5 samples. Not the Quantic submission. Voice-over recorded take **Unknown**.
+### 2b. NATURAL VO-integrated (preferred PROTOTYPE TTS)
 
-<video controls src="clips/part3-variant-b-prototype-silent.mp4"></video>
-
-<video controls src="clips/part4-variant-c-prototype-silent.mp4"></video>
-
-<video controls src="clips/part5-shared-close-prototype-silent.mp4"></video>
-
-**Recorded teammate VO:** **Unknown** until Claude, Hiren, or a shared speaker records.
-
----
-
-## 2b. Prototype videos (VO-integrated — PROTOTYPE TTS)
-
-**Label:** **PROTOTYPE TTS** (`en-US-GuyNeural`) — **not** teammate recorded VO · **not** Quantic submit.
-
-Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-silent.mp4` files stay in §2 and were **not** overwritten.
-
-| Asset | Path / URL | Note |
+| Asset | Path | Duration |
 | --- | --- | --- |
-| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-vo.mp4`](clips/part3-variant-b-prototype-vo.mp4) (~180s) | Technical timed lines + silence pad to the silent cut. **PROTOTYPE TTS**. |
-| **Part 4 Coding** | [`clips/part4-variant-c-prototype-vo.mp4`](clips/part4-variant-c-prototype-vo.mp4) (~180s) | Technical timed lines + silence pad. **PROTOTYPE TTS**. |
-| **Part 5 Shared close** | [`clips/part5-shared-close-prototype-vo.mp4`](clips/part5-shared-close-prototype-vo.mp4) (~64.5s) | Technical close + last-frame pad to match VO. **PROTOTYPE TTS**. |
+| Part 3 + natural TTS | `/workspace/cafe-fausse-prototype/parts-345/part3-variant-b-prototype-vo-natural.mp4` | ~180s |
+| Part 4 + natural TTS | `/workspace/cafe-fausse-prototype/parts-345/part4-variant-c-prototype-vo-natural.mp4` | ~180s |
+| Part 5 + natural TTS | `/workspace/cafe-fausse-prototype/parts-345/part5-shared-close-prototype-vo-natural.mp4` | ~60s |
 
-> **PROTOTYPE TTS** — machine voice `en-US-GuyNeural`. Not teammate VO. Not the Quantic submission.
+**Label:** **PROTOTYPE TTS** (`en-US-GuyNeural`) — natural-language Timed lines · IDs in handoff only · not teammate VO · not Quantic submit.
 
-<video controls src="clips/part3-variant-b-prototype-vo.mp4"></video>
+### 2c. Technical VO-integrated (post-mortem; IDs OK — unchanged)
 
-<video controls src="clips/part4-variant-c-prototype-vo.mp4"></video>
-
-<video controls src="clips/part5-shared-close-prototype-vo.mp4"></video>
-
-**Recorded teammate VO:** **Unknown** until Claude, Hiren, or a shared speaker records. These TTS clips do not change that.
-
----
-
-## 2c. Prototype videos (natural VO — PROTOTYPE TTS natural)
-
-**Prefer this pack for camera.** Technical silent (§2) and technical VO (§2b) stay beside it for post-mortem compare.
-
-**Label:** **PROTOTYPE TTS** natural (`en-US-GuyNeural`) — **not** teammate VO · **not** Quantic submit.
-
-| Asset | Path / URL | Note |
+| Asset | Path | Duration |
 | --- | --- | --- |
-| **Part 3 Architecture** | [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4) (~180s) | Natural timed lines + silence pad. **PROTOTYPE TTS** natural. |
-| **Part 4 Coding** | [`clips/part4-variant-c-prototype-vo-natural.mp4`](clips/part4-variant-c-prototype-vo-natural.mp4) (~180s) | Natural timed lines + silence pad. **PROTOTYPE TTS** natural. |
-| **Part 5 Shared close** | [`clips/part5-shared-close-prototype-vo-natural.mp4`](clips/part5-shared-close-prototype-vo-natural.mp4) (~60s) | Natural close + pad. **PROTOTYPE TTS** natural. |
+| Part 3 + tech TTS | `/workspace/cafe-fausse-prototype/parts-345/part3-variant-b-prototype-vo.mp4` | ~180s |
+| Part 4 + tech TTS | `/workspace/cafe-fausse-prototype/parts-345/part4-variant-c-prototype-vo.mp4` | ~180s |
+| Part 5 + tech TTS | `/workspace/cafe-fausse-prototype/parts-345/part5-shared-close-prototype-vo.mp4` | ~64.5s |
 
-> **PROTOTYPE TTS** natural — machine voice `en-US-GuyNeural`. Not teammate VO. Not the Quantic submission. Does not replace technical silent or technical VO.
-
-<video controls src="clips/part3-variant-b-prototype-vo-natural.mp4"></video>
-
-<video controls src="clips/part4-variant-c-prototype-vo-natural.mp4"></video>
-
-<video controls src="clips/part5-shared-close-prototype-vo-natural.mp4"></video>
-
-**Recorded teammate VO:** **Unknown** until Claude, Hiren, or a shared speaker records. These TTS clips do not change that.
+See [`PARTS-345-VO-NOTES.md`](PARTS-345-VO-NOTES.md).
 
 ---
 
@@ -124,48 +81,54 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 
 | Asset | Path | Status |
 | --- | --- | --- |
-| Part 3 natural VO (camera) | [Part 3 Variant B VO natural](part3-variant-b-voiceover-natural.md) | Ready to record — no FR/NFR on camera |
-| Part 4 natural VO (camera) | [Part 4 Variant C VO natural](part4-variant-c-voiceover-natural.md) | Ready to record — no FR/NFR on camera |
-| Part 5 natural VO (camera) | [Part 5 Shared close VO natural](part5-shared-close-voiceover-natural.md) | Ready to record — updated honesty, plain |
-| Part 3 technical VO (compare) | [Part 3 Variant B VO](part3-variant-b-voiceover.md) | Post-mortem (technical + plain twin) |
-| Part 4 technical VO (compare) | [Part 4 Variant C VO](part4-variant-c-voiceover.md) | Post-mortem (technical + plain twin) |
-| Part 5 technical VO (compare) | [Part 5 Shared close VO](part5-shared-close-voiceover.md) | Post-mortem (updated honesty) |
-| Recorded teammate VO | — | **Unknown** until Claude / Hiren / shared records |
+| Part 3 NATURAL VO | [`PART3-VARIANT-B-VOICEOVER-NATURAL.md`](PART3-VARIANT-B-VOICEOVER-NATURAL.md) | Preferred Timed lines |
+| Part 4 NATURAL VO | [`PART4-VARIANT-C-VOICEOVER-NATURAL.md`](PART4-VARIANT-C-VOICEOVER-NATURAL.md) | Preferred Timed lines |
+| Part 5 NATURAL VO | [`PART5-SHARED-CLOSE-VOICEOVER-NATURAL.md`](PART5-SHARED-CLOSE-VOICEOVER-NATURAL.md) | Preferred Timed lines |
+| Part 3 tech VO | [`PART3-VARIANT-B-VOICEOVER.md`](PART3-VARIANT-B-VOICEOVER.md) | Technical + plain twin (post-mortem) |
+| Part 4 tech VO | [`PART4-VARIANT-C-VOICEOVER.md`](PART4-VARIANT-C-VOICEOVER.md) | Technical + plain twin (post-mortem) |
+| Part 5 tech VO | [`PART5-SHARED-CLOSE-VOICEOVER.md`](PART5-SHARED-CLOSE-VOICEOVER.md) | Technical + updated honesty (post-mortem) |
+| Narration NATURAL | `vo/*-vo-natural.{txt,wav,mp3}` | Built for natural TTS mux |
+| Narration technical | `vo/*-vo.{txt,wav,mp3}` | Technical / extracted from tech mp4 |
+| Handoff ID map | [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) | Off-camera only |
+| VO build notes | [`PARTS-345-VO-NOTES.md`](PARTS-345-VO-NOTES.md) | Natural + technical tracks |
+| Recorded teammate VO | — | **Unknown** until Claude/Hiren/shared records |
 
 ---
 
-## 4. Supporting docs (IDs OK here)
+## 4. Supporting visuals in this folder
 
-| What | Link |
+| What | Files |
 | --- | --- |
-| Coverage (grade map) | https://knowledge.cafe.artof.link/coverage.html · [Coverage](coverage.md) |
-| Talk cuts (Architecture after Meghna handoff) | https://knowledge.cafe.artof.link/presentation.html · [Talk cuts](presentation.md) |
-| Stack / HLD | https://knowledge.cafe.artof.link/stack.html · [Stack](stack.md) |
-| Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
-| Meghna materials (Part 2) | [Meghna materials](meghna-materials.md) |
-| Handoff mapping (FR/NFR — **not spoken on camera**) | [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) |
-| Build notes (secondary) | [Parts 3–5 notes](parts-345-notes.md) |
-| VO mux notes (**PROTOTYPE TTS** technical) | [Parts 3–5 VO notes](parts-345-vo-notes.md) |
+| HLD PNGs (from GitHub SVGs) | `hld-aws-staging-720.png`, `hld-as-is-720.png`, `hld-to-be-720.png` (+ raw `.svg`) |
+| Cards | `card-p3-*.png`, `card-p4-*.png`, `card-p5-*.png` |
+| Reservation look | `still-reservation-720.png` (from `assets/02-happy-book.mp4`) |
+| Reused slides (fitted) | `fit-02-stack.png`, `fit-08-forms.png`, `fit-11-nfr56.png`, `fit-13-index.png`, `fit-15-layers.png`, `fit-17-future.png` |
 
 ---
 
-## 5. App / staging
+## 5. Sister packs / docs
 
-- Host: https://cafe.artof.link/ (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever)
-- Health: https://cafe.artof.link/api/health
-- Operator (optional after a live book only): https://cafe.artof.link/operator — read-only helper, not an admin console, **not FR-19**
-- Backup: https://54-165-102-60.sslip.io/
-- Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22)
+| What | Link / path |
+| --- | --- |
+| Meghna materials (Part 2) | `/workspace/cafe-fausse-prototype/MEGHNA-MATERIALS.md` |
+| Coverage | https://knowledge.cafe.artof.link/coverage.html |
+| Presentation | https://knowledge.cafe.artof.link/presentation.html |
+| Stack | https://knowledge.cafe.artof.link/stack.html |
+| Live staging | https://cafe.artof.link/ (MSAIE staging environment — temporary, not forever) |
+| Local vs AWS (Knowledge / handoff) | [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md) — Lightsail/Caddy/on-box PG OK here |
+| Build notes | [`PARTS-345-NOTES.md`](PARTS-345-NOTES.md) |
+| Handoff ID map | [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) |
 
 ---
 
 ## 6. Still open (not pack-blocking)
 
-- Hiren Architecture vs Coding pick (B vs C) — **Unknown**; do not invent it
-- Final Quantic submit video = live must-film + voice (dry-run / silent prototype / **PROTOTYPE TTS** ≠ submit)
-- Recorded teammate VO takes stay **Unknown** (**PROTOTYPE TTS** is not that)
-- Live Pages GET of these Parts 3–5 URLs stays **Unknown** until merge + Pages deploy
+- Hiren Architecture vs Coding pick (B vs C)
+- Final Quantic submit = live must-film + recorded voice (this silent pack ≠ submit)
+- Recorded VO takes
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE / samples / rehearsal only.*
+*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE only · NATURAL spoken track beside technical originals.*
+
+*Packed 2026-09-06 Europe/Berlin · talk #97 · PROTOTYPE only · NATURAL spoken track · MSAIE staging + Local vs AWS wording lock.*
