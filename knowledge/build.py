@@ -60,6 +60,9 @@ DELIVERY_ONLY_HREFS = (
     "part5-shared-close-voiceover.html",
     "part5-shared-close-script-natural.html",
     "part5-shared-close-voiceover-natural.html",
+    "part3-present.html",
+    "part4-present.html",
+    "part5-present.html",
     "to-be.html",
 )
 
@@ -100,6 +103,9 @@ PAGE_ICONS = {
     "part5-shared-close-voiceover.html": "talk",
     "part5-shared-close-script-natural.html": "talk",
     "part5-shared-close-voiceover-natural.html": "talk",
+    "part3-present.html": "slides",
+    "part4-present.html": "slides",
+    "part5-present.html": "slides",
     "to-be.html": "future",
 }
 
@@ -210,6 +216,9 @@ WIDE_PAGES = {
     "part3-local-vs-aws.html",
     "part3-hld-flow-notes.html",
     "part4-coding-overview.html",
+    "part3-present.html",
+    "part4-present.html",
+    "part5-present.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
