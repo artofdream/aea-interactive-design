@@ -635,12 +635,19 @@ def inline(text: str) -> str:
         return f"\x00{len(placeholders) - 1}\x00"
 
     def images(match: re.Match[str]) -> str:
-        alt, href = match.group(1), match.group(2)
+        alt, raw_href = match.group(1), match.group(2).strip()
+        title = ""
+        titled = re.match(r'^(\S+)\s+"([^"]*)"$', raw_href)
+        if titled:
+            href, title = titled.group(1), titled.group(2)
+        else:
+            href = raw_href
         href = rewrite_href(href)
         path_only = href.split("?", 1)[0].split("#", 1)[0]
+        fit = title.lower() == "fit"
         if path_only.lower().endswith(".mp4"):
             return hold(_video_html(href, wrap=False))
-        if path_only.lower().endswith(".svg"):
+        if path_only.lower().endswith(".svg") and not fit:
             return hold(
                 '<div class="diagram-wrap" tabindex="0" role="region" '
                 'aria-label="Diagram">'
@@ -1595,12 +1602,27 @@ def assert_ux_wiring() -> None:
         needle = f"assets/{name}"
         if needle not in present_md:
             fail(f"part3-present.md must embed {needle}")
+        if f'{needle} "fit"' not in present_md:
+            fail(f"part3-present.md must mark {needle} as fit (scale like PNG cards, not HLD swipe)")
         pos = present_html.find(needle)
         if pos == -1:
             fail(f"part3-present.html must reference {needle}")
         if pos < last:
             fail(f"part3-present.html must keep transition stills in order (bad order at {name})")
         last = pos
+        img_plain = f'<img src="{needle}"'
+        img_hld = f'<img class="diagram-img" src="{needle}"'
+        if img_plain not in present_html:
+            fail(f"part3-present.html must emit {name} as a column-fit img (like 2560 PNG cards)")
+        if img_hld in present_html:
+            fail(f"part3-present.html must not wrap {name} in diagram-wrap (2560 title cards clip)")
+    for hld in (
+        "assets/flow-meghna-fe-be.svg",
+        "assets/hld-local.svg",
+        "assets/hld-aws-msaie.svg",
+    ):
+        if f'<img class="diagram-img" src="{hld}"' not in present_html:
+            fail(f"part3-present.html must keep {hld} as swipeable HLD (diagram-img)")
     for before, after in (
         ("slide-p3-01-boundaries.svg", "still-reservation.png"),
         ("slide-p3-02-flow.svg", "flow-meghna-fe-be.svg"),
