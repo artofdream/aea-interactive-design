@@ -1,21 +1,19 @@
-> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md). Comparison table: [`PART3-LOCAL-VS-AWS.md`](PART3-LOCAL-VS-AWS.md).
 
-# Part 3 — Variant B voice-over (natural)
+# Part 3 — Variant B voice-over (ready to record)
 
 **Length:** ~3 minutes  
-**Picture:** silent [`clips/part3-variant-b-prototype-silent.mp4`](clips/part3-variant-b-prototype-silent.mp4) or live diagrams  
-**Spoken:** natural demo language — **no FR/NFR IDs, issue numbers, SHA, or CI job names**  
-**IDs:** [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) only — **not spoken on camera**  
-**Status:** draft for Claude/Hiren — **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
-**Sister pages:** [natural script](part3-variant-b-script-natural.md) · [technical VO](part3-variant-b-voiceover.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md)
-
-Natural **PROTOTYPE TTS** clip: [`clips/part3-variant-b-prototype-vo-natural.mp4`](clips/part3-variant-b-prototype-vo-natural.mp4).
+**Picture:** silent `part3-variant-b-prototype-silent.mp4` or live diagrams  
+**Spoken:** natural demo language — **no FR-/NFR- IDs, issue numbers, SHA, or CI job names**  
+**Demo focus:** **cafe.artof.link** = **staging environment for the MSAIE project**; **Local (dev) vs AWS MSAIE staging** (what / why / how)  
+**IDs:** [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md) only  
+**Status:** draft for Claude/Hiren — **PROTOTYPE**, not Quantic submit.
 
 ---
 
 ## How to use
 
-1. Open the silent prototype on [Parts 3–5 materials](parts-345-materials.md) (or Stack + staging SVG tabs).
+1. Open the silent prototype (or Stack + staging SVG tabs).
 2. Read timed lines; ~1s breath between beats.
 3. Stop at the Coding handoff — do not start Variant C.
 
@@ -25,15 +23,15 @@ Natural **PROTOTYPE TTS** clip: [`clips/part3-variant-b-prototype-vo-natural.mp4
 
 ### Takeover (0:00–0:20)
 
-“Taking Architecture from the booking screen. Two sites, two jobs: the knowledge map on GitHub Pages, and the restaurant app on weekend Lightsail staging — not one shared shop, and not production forever.”
+“Taking Architecture from the booking screen. Two sites, two jobs: the knowledge map on GitHub Pages, and the restaurant app at cafe.artof.link — our staging environment for the MSAIE project — not one shared shop, and not production forever.”
 
-### HLD staging (0:20–1:00)
+### What + how — AWS staging (0:20–1:00)
 
-“Here’s the as-is path: DNS points at a small Lightsail box with HTTPS, the Flask API, the built React app, and Postgres on that same box. Our shared company database is left alone. The wildcard load balancer on artof.link is not Café Fausse. Longer-term hosting stays a future item — parked for now.”
+“What we used on the shared side: AWS MSAIE staging at cafe.artof.link. Same app stack as local — React, Flask, and PostgreSQL — stood up as a deployed HTTPS host so everyone hits one demo URL. Our shared company database is left alone. The wildcard load balancer on artof.link is not Café Fausse. Longer-term hosting stays a future item — parked for now.”
 
-### As-is picture (1:00–1:50)
+### Local vs staging — explanation + rationale (1:00–1:50)
 
-“Knowledge markdown builds to Pages. The app on main is React, Flask, and Postgres. This weekend’s share is cafe.artof.link — healthy and reachable — until the owner tears it down. Temporary demo window, not forever hosting.”
+“Same design, two deploy targets — here is the comparison. Local is the developer machine: Flask, local Postgres, and a Vite frontend for coding and iteration — fast feedback without touching the shared demo. Staging is the deployed AWS environment for the MSAIE project at cafe.artof.link — HTTPS, our shared demo target. We keep both so we can move fast locally and still prove the high-level design holds across environments. Knowledge markdown builds to Pages. Temporary staging — not forever hosting.”
 
 ### Boxes (1:50–2:40)
 
@@ -47,8 +45,8 @@ Natural **PROTOTYPE TTS** clip: [`clips/part3-variant-b-prototype-vo-natural.mp4
 
 ## Tight cut (if late)
 
-“Architecture from the booking screen. Knowledge on Pages; restaurant on weekend staging — not forever. Lightsail box runs HTTPS, Flask, React, and Postgres; company database untouched. Front-end covers the public site; API covers booking; database enforces one table per slot. Operator is read-only. CI locks the freeze and fail-closed. Coding next.”
+“Architecture from the booking screen. Knowledge on Pages. What we used: local Flask, Postgres, and Vite for coding; cafe.artof.link for AWS MSAIE staging — same stack, deployed HTTPS demo. Why both: speed locally, shared proof the HLD holds; staging not forever. Front-end covers the public site; API covers booking; database enforces one table per slot. Operator is read-only. CI locks the freeze and fail-closed. Coding next.”
 
 ---
 
-*End VO draft · PROTOTYPE TTS natural uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records.*
+*End VO draft · PROTOTYPE TTS uses Timed lines above · recorded teammate audio: Unknown until Claude/Hiren records. · MSAIE staging wording lock · Local vs AWS what/why/how.*
