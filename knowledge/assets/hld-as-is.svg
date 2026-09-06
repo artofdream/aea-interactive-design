@@ -4,7 +4,7 @@
   <desc id="d1">Knowledge site is live on GitHub Pages. cafe.artof.link is weekend Lightsail staging this session, not production forever. Local MVP remains Vite, Flask, and Postgres on main.</desc>
   <rect width="980" height="560" fill="#f6f1e8"/>
   <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse as-is — probed 2026-09-05 Europe/Berlin</text>
-  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Two hostnames, two jobs. Staging share is weekend #57 — not production forever. No florist Path B / Kafka / 14 hats.</text>
+  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Two hostnames, two jobs. Staging share is weekend #57 — not production forever. MSAIE cut only.</text>
 
   <rect x="20" y="72" width="300" height="460" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
   <text x="36" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">Knowledge — live this session</text>
@@ -46,7 +46,7 @@
   <text x="360" y="376" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Staging kept until owner decision.</text>
   <text x="360" y="394" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Mon 2026-09-08 16:00 CET evaluate-only. Not auto tear-down.</text>
   <text x="360" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">Interim: 54-165-102-60.sslip.io</text>
-  <text x="360" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">AEA RDS untouched. ELB wildcard is not us.</text>
+  <text x="360" y="438" font-family="Georgia, serif" font-size="11" fill="#5e574d">On-box Postgres — not a shared RDS. ELB wildcard is not us.</text>
   <text x="360" y="464" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator = recording helper, not FR-19.</text>
   <text x="360" y="490" font-family="Georgia, serif" font-size="11" fill="#5e574d">Longer-term hosting stays Future #22.</text>
 

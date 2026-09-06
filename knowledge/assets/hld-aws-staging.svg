@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 640" role="img" aria-labelledby="t3 d3">
   <title id="t3">Cafe Fausse AWS staging high-level design</title>
-  <desc id="d3">Weekend Lightsail staging. Route53 A cafe.artof.link to 54.165.102.60 TTL 60. Caddy and Let's Encrypt in front of Flask plus built React SPA and PostgreSQL on the instance. Knowledge stays on GitHub Pages. AEA RDS and the artof.link ELB wildcard are out of cut. Staging stays up until the owner explicitly requests tear-down. Monday 2026-09-08 16:00 Europe/Berlin is evaluate-only.</desc>
+  <desc id="d3">Weekend Lightsail staging. Route53 A cafe.artof.link to 54.165.102.60 TTL 60. Caddy and Let's Encrypt in front of Flask plus built React SPA and on-box Postgres (MSAIE staging). Knowledge stays on GitHub Pages. Not a shared RDS. The artof.link ELB wildcard is out of cut. Staging stays up until the owner explicitly requests tear-down. Monday 2026-09-08 16:00 Europe/Berlin is evaluate-only.</desc>
   <rect width="1180" height="640" fill="#f6f1e8"/>
   <text x="24" y="32" font-family="Georgia, serif" font-size="18" fill="#1c1915">Cafe Fausse AWS staging - probed 2026-09-05 Europe/Berlin</text>
-  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Weekend recording window (#57). Prefer https://cafe.artof.link/. Not production forever. AEA RDS untouched. No florist / 3DX / GitLab.</text>
+  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Weekend recording window (#57). Prefer https://cafe.artof.link/. Not production forever. On-box Postgres — not a shared RDS.</text>
 
   <rect x="20" y="72" width="280" height="540" rx="8" fill="#fffdf8" stroke="#7a2e1f" stroke-width="2"/>
   <text x="36" y="98" font-family="Georgia, serif" font-size="14" fill="#7a2e1f">Knowledge - live this session</text>
@@ -50,8 +50,8 @@
   <text x="451" y="353" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">in-repo MVP on the instance</text>
   <line x1="566" y1="340" x2="590" y2="340" stroke="#7a2e1f"/>
   <rect x="590" y="316" width="230" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
-  <text x="705" y="337" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">PostgreSQL on the box</text>
-  <text x="705" y="353" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">not AEA RDS</text>
+  <text x="705" y="337" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">On-box Postgres</text>
+  <text x="705" y="353" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">MSAIE staging · not a shared RDS</text>
   <rect x="336" y="380" width="484" height="88" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
   <text x="352" y="402" font-family="Georgia, serif" font-size="12" fill="#1c1915">Interim backup (same IP, not the primary paste)</text>
   <text x="352" y="422" font-family="ui-monospace, monospace" font-size="11" fill="#5e574d">https://54-165-102-60.sslip.io/</text>
@@ -67,23 +67,19 @@
   <rect x="860" y="72" width="300" height="540" rx="8" fill="#fffdf8" stroke="#5e574d" stroke-width="2" stroke-dasharray="7 5"/>
   <text x="876" y="98" font-family="Georgia, serif" font-size="14" fill="#5e574d">Out of this cut</text>
   <rect x="876" y="120" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="1010" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">AEA RDS</text>
-  <text x="1010" y="166" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#5e574d">aea-pilot-postgres</text>
-  <text x="1010" y="182" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">untouched</text>
+  <text x="1010" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">*.artof.link ELB wildcard</text>
+  <text x="1010" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">eu-north-1 leftover</text>
+  <text x="1010" y="182" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not Cafe Fausse</text>
   <rect x="876" y="208" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="1010" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">*.artof.link ELB wildcard</text>
-  <text x="1010" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">eu-north-1 leftover</text>
-  <text x="1010" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">not Cafe Fausse</text>
-  <rect x="876" y="296" width="268" height="72" rx="4" fill="#efeae1" stroke="#5e574d" stroke-dasharray="5 4"/>
-  <text x="1010" y="324" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Permanent hosting #22</text>
-  <text x="1010" y="342" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">still Future</text>
-  <text x="1010" y="358" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">#57 does not close it</text>
-  <text x="876" y="400" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not apply teammate RDS</text>
-  <text x="876" y="416" font-family="Georgia, serif" font-size="11" fill="#5e574d">DDL to local schema.sql.</text>
-  <text x="876" y="444" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not invent FR-19 for</text>
-  <text x="876" y="460" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator.</text>
-  <text x="876" y="488" font-family="Georgia, serif" font-size="11" fill="#5e574d">No outbound newsletter</text>
-  <text x="876" y="504" font-family="Georgia, serif" font-size="11" fill="#5e574d">mailer in the SRS MVP.</text>
-  <text x="876" y="532" font-family="Georgia, serif" font-size="11" fill="#5e574d">This PR does not touch AWS</text>
-  <text x="876" y="548" font-family="Georgia, serif" font-size="11" fill="#5e574d">infra. Knowledge + 2nd brain only.</text>
+  <text x="1010" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#1c1915">Permanent hosting #22</text>
+  <text x="1010" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">still Future</text>
+  <text x="1010" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">#57 does not close it</text>
+  <text x="876" y="312" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not apply teammate</text>
+  <text x="876" y="328" font-family="Georgia, serif" font-size="11" fill="#5e574d">DDL to local schema.sql.</text>
+  <text x="876" y="360" font-family="Georgia, serif" font-size="11" fill="#5e574d">Do not invent FR-19 for</text>
+  <text x="876" y="376" font-family="Georgia, serif" font-size="11" fill="#5e574d">/operator.</text>
+  <text x="876" y="404" font-family="Georgia, serif" font-size="11" fill="#5e574d">No outbound newsletter</text>
+  <text x="876" y="420" font-family="Georgia, serif" font-size="11" fill="#5e574d">mailer in the SRS MVP.</text>
+  <text x="876" y="448" font-family="Georgia, serif" font-size="11" fill="#5e574d">This PR does not touch AWS</text>
+  <text x="876" y="464" font-family="Georgia, serif" font-size="11" fill="#5e574d">infra. Knowledge + 2nd brain only.</text>
 </svg>
