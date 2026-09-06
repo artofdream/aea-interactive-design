@@ -4,14 +4,14 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 
 **Locked cut (owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97)):** one ~10 minute VIDEO. **Not** “pick Variant A or B or C.”
 
-**Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C).
+**Casting lock (2026-09-06 owner):** Meghna = Part 2 UX · **Claude = Part 3 Architecture** · **Hiren = Part 4 Coding** · Shared close Part 5 TBD.
 
 | Clock | Part | Who | Source on this page |
 |---|---|---|---|
 | 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below |
 | 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | [Meghna demo](meghna-cafe-demo.md); must-film on [Must-film shots](must-film-shots.md) |
-| 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude Part 3** | **Camera:** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **Compare:** [technical](part3-variant-b-script.md) · Variant B section below |
-| 6:30–9:30 | Coding rationale (**Variant C**) | **Hiren Part 4** | **Camera:** [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md) · **Compare:** [technical](part4-variant-c-script.md) · Variant C section below |
+| 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude** | **Camera:** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **Compare:** [technical](part3-variant-b-script.md) · Variant B section below |
+| 6:30–9:30 | Coding rationale (**Variant C**) | **Hiren** | **Camera:** [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md) · **Compare:** [technical](part4-variant-c-script.md) · Variant C section below |
 | 9:30–10:00 | Shared close | Shared | **Camera:** [natural script](part5-shared-close-script-natural.md) · [natural VO](part5-shared-close-voiceover-natural.md) · **Compare:** [technical](part5-shared-close-script.md) · Shared close section below |
 
 **Voice-over TBD.** Variant A below stays a draft / rehearsal pack. It is **not** the locked Saturday cut. Zoom dry-run on the [video script](video-script.md) is **PROTOTYPE** (Variant A).

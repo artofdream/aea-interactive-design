@@ -1257,7 +1257,10 @@ def assert_ux_wiring() -> None:
     if "part3-local-vs-aws.md" not in handoff_md:
         fail("quantic-handoff.md must point to part3-local-vs-aws.md")
     # Ratchet #145: owner casting lock on Quantic / Parts 3–5 / talk pages.
-    casting = "Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C)"
+    casting = (
+        "Casting lock (2026-09-06 owner):** Meghna = Part 2 UX · **Claude = Part 3 Architecture** "
+        "· **Hiren = Part 4 Coding** · Shared close Part 5 TBD"
+    )
     for label, text in (
         ("parts-345-materials.md", materials_345),
         ("quantic.md", quantic_md),
@@ -1270,6 +1273,25 @@ def assert_ux_wiring() -> None:
             fail(f"{label} must not keep Claude or Hiren as an open speaker pick after #145")
         if "Hiren B vs C pick" in text or "Hiren B-vs-C lock" in text:
             fail(f"{label} must not keep the old Hiren B vs C Unknown after #145")
+        if "the one not doing Architecture" in text:
+            fail(f"{label} must not keep the open B-vs-C Who after #145")
+    part3_natural = (ROOT / "part3-variant-b-script-natural.md").read_text(encoding="utf-8")
+    part4_natural = (ROOT / "part4-variant-c-script-natural.md").read_text(encoding="utf-8")
+    if "**Who:** **Claude** (owner lock 2026-09-06) — Architecture Part 3." not in part3_natural:
+        fail("part3-variant-b-script-natural.md must lock Who to Claude")
+    if "**Who:** **Hiren** (owner lock 2026-09-06) — Coding Part 4." not in part4_natural:
+        fail("part4-variant-c-script-natural.md must lock Who to Hiren")
+    if "Claude or Hiren" in part3_natural or "Claude or Hiren" in part4_natural:
+        fail("NATURAL Part 3/4 scripts must not keep Claude or Hiren as an open pick")
+    if "the one not doing Architecture" in part4_natural:
+        fail("part4-variant-c-script-natural.md must not keep the open B-vs-C Who")
+    clock_who = materials_345.split("Clock (room)", 1)[-1].split("Prefer natural", 1)[0]
+    if "**Claude**" not in clock_who:
+        fail("parts-345-materials.md clock table Who must be Claude for Part 3")
+    if "**Hiren**" not in clock_who:
+        fail("parts-345-materials.md clock table Who must be Hiren for Part 4")
+    if "the other" in clock_who:
+        fail("parts-345-materials.md clock table must not say the other for Part 4")
     if "MSAIE" not in local_vs_aws or "73d202d" not in local_vs_aws:
         fail("part3-local-vs-aws.md lost MSAIE staging or host tip 73d202d")
     # Ratchet #143: four Part 3/4 diagrams on Stack; notes site-relative; old HLDs stay archive.

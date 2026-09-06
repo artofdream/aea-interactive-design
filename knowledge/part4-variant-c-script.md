@@ -1,6 +1,6 @@
 # Part 4 — Coding rationale / Variant C (~3 min)
 
-**Who:** Claude or Hiren (the one not doing Architecture).  
+**Who:** **Hiren** (owner lock 2026-09-06 — historical update on this technical compare) — Coding Part 4.  
 **Job:** Why these implementations — freeze + CI, table/fail-closed, timezone/modules/tooling — then hand to Shared close.  
 **Picture:** freeze/CI cards → table/index/fail-closed → timezone/NFR-9/tooling → close handoff.  
 **Label:** **PROTOTYPE** — not Quantic submit.  
