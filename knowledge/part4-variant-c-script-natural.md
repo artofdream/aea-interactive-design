@@ -1,16 +1,14 @@
-> **NATURAL spoken track** — no FR/NFR IDs on camera. Technical originals stay for post-mortem compare. ID map (not spoken): [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md).
+> **NATURAL spoken track** — no FR-/NFR- IDs on camera. Technical originals kept for post-mortem. ID map: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
 
-# Part 4 — Coding rationale / Variant C (~3 min) — natural
+# Part 4 — Coding rationale / Variant C (~3 min)
 
 **Who:** Claude or Hiren (the one not doing Architecture).  
 **Job:** Why these implementations — freeze + CI, table/fail-closed, timezone/modules/tooling — then hand to Shared close.  
 **Picture:** freeze/CI cards → table/index/fail-closed → timezone/modules/tooling → close handoff.  
-**Label:** **PROTOTYPE TTS** natural — **not** teammate VO · **not** Quantic submit.  
+**Label:** **PROTOTYPE** — not Quantic submit.  
 **Talk lock:** #97. Room clock ≈ **6:30–9:30**.
 
-**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR/NFR IDs, issue numbers, SHA, or CI job names on camera.** Mapping: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**.
-
-**Sister pages:** [natural VO](part4-variant-c-voiceover-natural.md) · [technical script](part4-variant-c-script.md) (compare) · [Parts 3–5 materials](parts-345-materials.md) · [Talk cuts](presentation.md). Silent rehearsal clip: [`clips/part4-variant-c-prototype-silent.mp4`](clips/part4-variant-c-prototype-silent.mp4). Natural **PROTOTYPE TTS**: [`clips/part4-variant-c-prototype-vo-natural.mp4`](clips/part4-variant-c-prototype-vo-natural.mp4).
+**Speaking rule:** Spoken / VO = clear, natural demo language. **No FR-/NFR- IDs, issue numbers, SHA, or CI job names on camera.** Demo focus: **cafe.artof.link** as MSAIE staging (temporary — not production forever). Mapping: [`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md).
 
 ---
 
@@ -41,7 +39,7 @@
 
 ## 3. Supporting ID map (off-camera)
 
-See [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — Part 4 table. **Not spoken on camera.** Do not read IDs aloud.
+See **[`PARTS-345-HANDOFF-MAPPING.md`](PARTS-345-HANDOFF-MAPPING.md)** — Part 4 table. Do not read IDs on camera.
 
 ---
 
@@ -49,7 +47,7 @@ See [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — Part 4 table
 
 - Do not claim four-browser support complete.
 - Do not call `/operator` an admin console or a graded admin feature.
-- Do not call `cafe.artof.link` production forever.
+- Do not call `cafe.artof.link` production forever — it is the **staging environment for the MSAIE project** (temporary).
 - Do not treat parked Future items as missing grade rows.
 - Leave the full probe numbers for Shared close (or one short pointer, as in the handoff line).
 - Do not put SES outbound in the spoken grade story (Future / optional only).
@@ -58,8 +56,8 @@ See [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — Part 4 table
 
 ## 5. Handoff line (Shared close)
 
-> “Coding rationale done. Shared close: what we shipped, and honesty — load and submit timings met on the recorded probes, browser support still partial, staging not forever.”
+> “Coding rationale done. Shared close: what we shipped, and honesty — load and submit timings met on the recorded probes, browser support still partial, cafe.artof.link MSAIE staging not forever.”
 
 ---
 
-*Packed 2026-09-06 Europe/Berlin · PROTOTYPE TTS natural · talk #97 · not teammate VO · not Quantic submit.*
+*Packed 2026-09-06 Europe/Berlin · PROTOTYPE sample · talk #97 · natural spoken rewrite · MSAIE staging wording lock.*
