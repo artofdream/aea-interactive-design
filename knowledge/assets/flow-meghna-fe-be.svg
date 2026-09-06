@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 640" role="img" aria-labelledby="t3 d3">
+  <title id="t3">Meghna demo path — frontend / backend</title>
+  <desc id="d3">Meghna path Home Gallery Menu Reservations. Static pages use freeze.json at build time — not /api/menu. Reservations: GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter. Flask API legend includes unused-by-FE routes. Handoff to Architecture Part 3.</desc>
+  <rect width="1120" height="640" fill="#f6f1e8"/>
+  <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1915">Meghna demo path — frontend / backend</text>
+  <text x="24" y="52" font-family="Georgia, serif" font-size="12" fill="#5e574d">Home → Gallery → Menu → Reservations · static pages ← freeze · booking ← API</text>
+
+  <!-- Column headers -->
+  <rect x="20" y="68" width="300" height="36" rx="6" fill="#7a2e1f"/>
+  <text x="170" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#f6f1e8">Frontend · React</text>
+
+  <rect x="340" y="68" width="340" height="36" rx="6" fill="#7a2e1f"/>
+  <text x="510" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#f6f1e8">Backend · Flask</text>
+
+  <rect x="700" y="68" width="400" height="36" rx="6" fill="#7a2e1f"/>
+  <text x="900" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#f6f1e8">Data / config</text>
+
+  <rect x="20" y="112" width="300" height="360" rx="8" fill="#fffdf8" stroke="#d4cbb8"/>
+  <rect x="340" y="112" width="340" height="360" rx="8" fill="#fffdf8" stroke="#d4cbb8"/>
+  <rect x="700" y="112" width="400" height="360" rx="8" fill="#fffdf8" stroke="#d4cbb8"/>
+
+  <!-- 1 Home — freeze, no API -->
+  <rect x="36" y="128" width="268" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="170" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">1 · Home</text>
+  <text x="170" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">name · hours · nav</text>
+
+  <rect x="356" y="128" width="308" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="510" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">no API call</text>
+  <text x="510" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">freeze at build</text>
+
+  <rect x="716" y="128" width="368" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="900" y="150" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#1c1915">freeze.json</text>
+  <text x="900" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">@shared import</text>
+
+  <!-- dashed FE→Data for freeze pages -->
+  <line x1="304" y1="152" x2="716" y2="152" stroke="#7a2e1f" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- 2 Gallery -->
+  <rect x="36" y="188" width="268" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="170" y="208" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">2 · Gallery</text>
+  <text x="170" y="226" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">photos · lightbox</text>
+
+  <rect x="356" y="188" width="308" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="510" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">GET /images/…</text>
+  <text x="510" y="226" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">assets · freeze text</text>
+
+  <rect x="716" y="188" width="368" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="900" y="210" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#1c1915">freeze.json + images</text>
+  <text x="900" y="226" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">official assets</text>
+
+  <line x1="304" y1="212" x2="356" y2="212" stroke="#7a2e1f" stroke-width="1.5"/>
+  <polygon points="356,212 348,207 348,217" fill="#7a2e1f"/>
+  <line x1="664" y1="212" x2="716" y2="212" stroke="#7a2e1f" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- 3 Menu — freeze import, NOT /api/menu -->
+  <rect x="36" y="248" width="268" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="170" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">3 · Menu</text>
+  <text x="170" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">categories · prices</text>
+
+  <rect x="356" y="248" width="308" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="510" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">no /api/menu from FE</text>
+  <text x="510" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">freeze + presentation JSON</text>
+
+  <rect x="716" y="248" width="368" height="48" rx="4" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="900" y="270" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#1c1915">freeze.json</text>
+  <text x="900" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">menu-presentation.json</text>
+
+  <line x1="304" y1="272" x2="716" y2="272" stroke="#7a2e1f" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- 4 Reservations — real API -->
+  <rect x="36" y="316" width="268" height="72" rx="4" fill="#efeae1" stroke="#7a2e1f" stroke-width="1.5"/>
+  <text x="170" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">4 · Reservations</text>
+  <text x="170" y="356" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1c1915">booking form</text>
+  <text x="170" y="374" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">date → slots → Reserve</text>
+
+  <rect x="356" y="316" width="308" height="72" rx="4" fill="#efeae1" stroke="#7a2e1f" stroke-width="1.5"/>
+  <text x="510" y="340" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#1c1915">GET  /api/slots?date=</text>
+  <text x="510" y="360" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#1c1915">POST /api/reservations</text>
+  <text x="510" y="378" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7a2e1f">full book → 409 · fail-closed</text>
+
+  <rect x="716" y="316" width="368" height="72" rx="4" fill="#efeae1" stroke="#7a2e1f" stroke-width="1.5"/>
+  <text x="900" y="344" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#1c1915">PostgreSQL</text>
+  <text x="900" y="366" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">customers · reservations</text>
+
+  <line x1="304" y1="352" x2="356" y2="352" stroke="#7a2e1f" stroke-width="2"/>
+  <polygon points="356,352 346,346 346,358" fill="#7a2e1f"/>
+  <text x="330" y="344" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#7a2e1f">API</text>
+  <line x1="664" y1="352" x2="716" y2="352" stroke="#7a2e1f" stroke-width="2"/>
+  <polygon points="716,352 706,346 706,358" fill="#7a2e1f"/>
+
+  <!-- Newsletter optional -->
+  <rect x="36" y="404" width="268" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="170" y="424" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5e574d">Newsletter (optional)</text>
+  <text x="170" y="442" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">footer form</text>
+
+  <rect x="356" y="404" width="308" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="510" y="424" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#5e574d">POST /api/newsletter</text>
+  <text x="510" y="442" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">store-only until SES</text>
+
+  <rect x="716" y="404" width="368" height="48" rx="4" fill="#fffdf8" stroke="#d4cbb8" stroke-dasharray="4 3"/>
+  <text x="900" y="424" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#5e574d">PostgreSQL · customers</text>
+  <text x="900" y="442" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5e574d">newsletter_signup · no mailer</text>
+
+  <line x1="304" y1="428" x2="356" y2="428" stroke="#5e574d" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="664" y1="428" x2="716" y2="428" stroke="#5e574d" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- API legend (Flask exposes; FE may not call all) -->
+  <rect x="20" y="484" width="680" height="70" rx="6" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="36" y="504" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Flask API legend (exposed · not all used by Meghna FE)</text>
+  <text x="36" y="522" font-family="ui-monospace, monospace" font-size="9" fill="#1c1915">GET /api/health · /api/menu · /api/site · /api/slots · /api/availability</text>
+  <text x="36" y="538" font-family="ui-monospace, monospace" font-size="9" fill="#1c1915">POST /api/reservations · /api/newsletter · GET /api/operator · GET /images/… · SPA /</text>
+
+  <rect x="720" y="484" width="380" height="70" rx="6" fill="#efeae1" stroke="#d4cbb8"/>
+  <text x="736" y="504" font-family="Georgia, serif" font-size="11" fill="#7a2e1f">Meghna FE honesty</text>
+  <text x="736" y="522" font-family="Georgia, serif" font-size="10" fill="#1c1915">Home/Gallery/Menu ← freeze (build)</text>
+  <text x="736" y="538" font-family="Georgia, serif" font-size="10" fill="#1c1915">Booking ← slots + reservations API</text>
+
+  <!-- Handoff -->
+  <rect x="20" y="568" width="1080" height="52" rx="8" fill="#7a2e1f"/>
+  <text x="560" y="592" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#f6f1e8">Handoff → Architecture (Part 3)</text>
+  <text x="560" y="610" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe4c8">why this design · how booking hits Flask · local vs MSAIE staging</text>
+</svg>
