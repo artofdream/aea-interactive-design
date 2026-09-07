@@ -8,7 +8,7 @@ Working talk tracks for Saturday **2026-09-05 ~13:00 America/New_York** (19:00 E
 
 | Clock | Part | Who | Source on this page |
 |---|---|---|---|
-| 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below |
+| 0:00–0:30 | Team + ID verification | Shared | First 30s of the shared open below · still [Welcome / Team+ID](assets/card-p1-welcome.png) |
 | 0:30–3:30 | Website demo `https://cafe.artof.link/` — Home, Gallery, Menu, Reservations | **Meghna** | [Meghna demo](meghna-cafe-demo.md); must-film on [Must-film shots](must-film-shots.md) |
 | 3:30–6:30 | Architecture + Diagram (**Variant B**) | **Claude Part 3** | **Camera:** [natural script](part3-variant-b-script-natural.md) · [natural VO](part3-variant-b-voiceover-natural.md) · **Compare:** [technical](part3-variant-b-script.md) · Variant B section below |
 | 6:30–9:30 | Coding rationale (**Variant C**) | **Hiren Part 4** | **Camera:** [natural script](part4-variant-c-script-natural.md) · [natural VO](part4-variant-c-voiceover-natural.md) · **Compare:** [technical](part4-variant-c-script.md) · Variant C section below |

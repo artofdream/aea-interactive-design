@@ -1797,6 +1797,57 @@ def assert_ux_wiring() -> None:
     part5_present_html = (OUT / "part5-present.html").read_text(encoding="utf-8")
     if "assets/card-p5-end.png" not in part5_present_html:
         fail("part5-present.html must reference card-p5-end.png")
+    # Ratchet #183: Part 1 welcome / Team+ID still — title line, cast, no PROTOTYPE.
+    welcome_svg_name = "card-p1-welcome.svg"
+    welcome_png_name = "card-p1-welcome.png"
+    welcome_svg = ROOT / "assets" / welcome_svg_name
+    welcome_png = ROOT / "assets" / welcome_png_name
+    if not welcome_svg.is_file():
+        fail(f"missing knowledge/assets/{welcome_svg_name}")
+    if not welcome_png.is_file():
+        fail(f"missing knowledge/assets/{welcome_png_name}")
+    copied_welcome_svg = OUT / "assets" / welcome_svg_name
+    copied_welcome_png = OUT / "assets" / welcome_png_name
+    if not copied_welcome_svg.is_file():
+        fail(f"built site missing assets/{welcome_svg_name}")
+    if not copied_welcome_png.is_file():
+        fail(f"built site missing assets/{welcome_png_name}")
+    welcome_w, welcome_h = png_ihdr_size(welcome_png)
+    if welcome_w != 1280 or welcome_h != 720:
+        fail(f"knowledge/assets/{welcome_png_name} must be 1280×720 (got {welcome_w}×{welcome_h})")
+    welcome_svg_text = welcome_svg.read_text(encoding="utf-8")
+    for needle in (
+        "Welcome",
+        "Presentation from",
+        "Café Fausse · Quantic MSAIE",
+        "Quantic · Interactive Design presentation",
+        "Meghna Desai",
+        "Part 2 · UX",
+        "Claude Tsarafidy",
+        "Part 3 · Architecture",
+        "Hiren Vadalia",
+        "Part 4 · Coding",
+        "Live app: cafe.artof.link",
+        "Knowledge: knowledge.cafe.artof.link",
+        "Locked ~10 min VIDEO · MSAIE staging",
+        "Team + ID · then UX → Architecture → Coding → close",
+    ):
+        if needle not in welcome_svg_text:
+            fail(f"{welcome_svg_name} must keep {needle!r}")
+    if "PROTOTYPE" in welcome_svg_text:
+        fail(f"{welcome_svg_name} must not keep a PROTOTYPE badge or banner")
+    if "@" in welcome_svg_text:
+        fail(f"{welcome_svg_name} must not show an email")
+    if "Lightsail" in welcome_svg_text:
+        fail(f"{welcome_svg_name} must not name Lightsail")
+    if "cts-ai" in welcome_svg_text:
+        fail(f"{welcome_svg_name} must not name cts-ai")
+    presentation_md = (ROOT / "presentation.md").read_text(encoding="utf-8")
+    if "assets/card-p1-welcome.png" not in presentation_md:
+        fail("presentation.md must keep the card-p1-welcome.png pointer")
+    presentation_html = (OUT / "presentation.html").read_text(encoding="utf-8")
+    if "assets/card-p1-welcome.png" not in presentation_html:
+        fail("presentation.html must reference card-p1-welcome.png")
 
 
 def assert_svg_well_formed() -> None:
