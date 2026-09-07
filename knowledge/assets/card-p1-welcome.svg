@@ -3,25 +3,25 @@
   <text x="72" y="118" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="700">Welcome</text>
   <line x1="72" y1="138" x2="360" y2="138" stroke="#c4a574" stroke-width="3"/>
   <text x="72" y="186" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700">Presentation from</text>
-  <text x="72" y="226" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700">Café Fausse · Quantic MSAIE</text>
-  <text x="72" y="264" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="22">Quantic · Interactive Design presentation</text>
+  <text x="72" y="226" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700">CafÃ© Fausse Â· Quantic MSAIE</text>
+  <text x="72" y="264" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="22">Quantic Â· Interactive Design presentation</text>
   <circle cx="104" cy="332" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
   <text x="104" y="340" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">MD</text>
   <text x="148" y="326" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Meghna Desai</text>
-  <text x="148" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 2 · UX</text>
+  <text x="148" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 2 Â· UX</text>
   <circle cx="468" cy="332" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
   <text x="468" y="340" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">CT</text>
   <text x="512" y="326" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Claude Tsarafidy</text>
-  <text x="512" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 3 · Architecture</text>
+  <text x="512" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 3 Â· Architecture</text>
   <circle cx="868" cy="332" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
   <text x="868" y="340" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">HV</text>
   <text x="912" y="326" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Hiren Vadalia</text>
-  <text x="912" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 4 · Coding</text>
+  <text x="912" y="352" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 4 Â· Coding</text>
   <circle cx="84" cy="422" r="5" fill="#c4a574"/>
   <text x="100" y="430" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Live app: cafe.artof.link</text>
   <circle cx="84" cy="466" r="5" fill="#c4a574"/>
   <text x="100" y="474" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Knowledge: knowledge.cafe.artof.link</text>
   <circle cx="84" cy="510" r="5" fill="#c4a574"/>
-  <text x="100" y="518" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Locked ~10 min VIDEO · MSAIE staging</text>
-  <text x="72" y="676" fill="#788090" font-family="Helvetica, Arial, sans-serif" font-size="18">Team + ID · then UX ’ Architecture ’ Coding ’ close</text>
+  <text x="100" y="518" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Locked ~10 min VIDEO Â· MSAIE staging</text>
+  <text x="72" y="676" fill="#788090" font-family="Helvetica, Arial, sans-serif" font-size="18">Team + ID Â· then UX â†’ Architecture â†’ Coding â†’ close</text>
 </svg>
