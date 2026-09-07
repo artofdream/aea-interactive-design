@@ -140,9 +140,12 @@ CI **fails closed** if `docs/srs.md` is missing or if the official PDF/zip SHA25
 
 Course images: Quantic-official pack is **four** webps only (`assets/images/`, zip SHA256 in `docs/official/PROVENANCE.md`). Seventeen student-recovered files are in `assets/images/supplemental-not-official/` and are **not** official. Flask `/images/` serves the official four plus an allowlisted subset mapped for Menu presentation (`shared/menu-presentation.json`). Unused supplemental files stay unserved. Student application code was not copied.
 
-## Required assignment file
+## Quantic / submit
 
-- `docs/ai-tooling.md` — tools used for this implementation.
+Official presentation PDF expects these files at the **repo root** (plus this README):
+
+- [`ai-tooling.md`](ai-tooling.md) — AI tooling log (Quantic-required root file). Same record as [`docs/ai-tooling.md`](docs/ai-tooling.md); keep both in sync.
+- [`staging.md`](staging.md) — temporary MSAIE staging URL (`https://cafe.artof.link/`), health link, and local-run pointer. Not production forever.
 
 ## Collaborator
 

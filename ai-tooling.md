@@ -1,6 +1,6 @@
 # AI tooling log
 
-Required for the Quantic assignment. Same record as the Quantic-required root `ai-tooling.md` — keep both in sync. Tools used for the Café Fausse restaurant MVP (issue #7). Do not invent FR/NFR IDs in this log.
+Required for the Quantic assignment (root `ai-tooling.md`). Same record as `docs/ai-tooling.md`. Tools used for the Café Fausse restaurant MVP (issue #7). Do not invent FR/NFR IDs in this log.
 
 ## Tools
 
