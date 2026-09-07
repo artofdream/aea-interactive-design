@@ -1746,7 +1746,7 @@ def assert_ux_wiring() -> None:
         fail("hld-local.svg must keep coding & iteration")
     if "not the shared demo URL" not in local_hld:
         fail("hld-local.svg must keep not the shared demo URL")
-    # Ratchet #179 / #181: Part 5 end card — both GitHubs, no #57, no PROTOTYPE.
+    # Ratchet #179 / #181 / #187: Part 5 end card — Group/Staging + Hiren Vadalia, no #57, no PROTOTYPE.
     end_svg_name = "card-p5-end.svg"
     end_png_name = "card-p5-end.png"
     end_svg = ROOT / "assets" / end_svg_name
@@ -1776,8 +1776,8 @@ def assert_ux_wiring() -> None:
         "Part 4 · Coding",
         "Knowledge: knowledge.cafe.artof.link",
         "App staging: cafe.artof.link",
-        "GitHub (MSAIE / this app): github.com/artofdream/aea-interactive-design",
-        "GitHub (Hiren teammate HLD): github.com/vadaliah/Quantic_Cafe_Fausse_Application",
+        "GitHub (Group / Staging): github.com/artofdream/aea-interactive-design",
+        "GitHub (Hiren Vadalia): github.com/vadaliah/Quantic_Cafe_Fausse_Application",
         "Questions welcome — supplemental docs may already address many",
         "End of locked ~10 min VIDEO",
     ):
@@ -1789,8 +1789,18 @@ def assert_ux_wiring() -> None:
         fail(f"{end_svg_name} must not keep a PROTOTYPE badge or banner")
     if "@" in end_svg_text:
         fail(f"{end_svg_name} must not show an email")
-    if "GitHub (Hiren" in end_svg_text and "GitHub (Hiren teammate HLD)" not in end_svg_text:
-        fail(f"{end_svg_name} must label Hiren's repo teammate HLD, not MSAIE")
+    if "MSAIE / this app" in end_svg_text:
+        fail(f"{end_svg_name} must use GitHub (Group / Staging), not MSAIE / this app")
+    if "Hiren teammate HLD" in end_svg_text:
+        fail(f"{end_svg_name} must use GitHub (Hiren Vadalia), not Hiren teammate HLD")
+    if "GitHub (Hiren Vadalia)" not in end_svg_text:
+        fail(f"{end_svg_name} must label Hiren's repo GitHub (Hiren Vadalia)")
+    if "GitHub (Group / Staging)" not in end_svg_text:
+        fail(f"{end_svg_name} must label this app repo GitHub (Group / Staging)")
+    if "GitHub (Hiren Vadalia): github.com/artofdream/" in end_svg_text:
+        fail(f"{end_svg_name} honesty: Hiren Vadalia is not Group / Staging")
+    if "GitHub (Group / Staging): github.com/vadaliah/" in end_svg_text:
+        fail(f"{end_svg_name} honesty: Group / Staging is not Hiren Vadalia")
     part5_present_md = (ROOT / "part5-present.md").read_text(encoding="utf-8")
     if "assets/card-p5-end.png" not in part5_present_md:
         fail("part5-present.md must keep the card-p5-end.png pointer")
