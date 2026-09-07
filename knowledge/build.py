@@ -1746,6 +1746,53 @@ def assert_ux_wiring() -> None:
         fail("hld-local.svg must keep coding & iteration")
     if "not the shared demo URL" not in local_hld:
         fail("hld-local.svg must keep not the shared demo URL")
+    # Ratchet #179: Part 5 end card — no #57, no PROTOTYPE, longer questions line.
+    end_svg_name = "card-p5-end.svg"
+    end_png_name = "card-p5-end.png"
+    end_svg = ROOT / "assets" / end_svg_name
+    end_png = ROOT / "assets" / end_png_name
+    if not end_svg.is_file():
+        fail(f"missing knowledge/assets/{end_svg_name}")
+    if not end_png.is_file():
+        fail(f"missing knowledge/assets/{end_png_name}")
+    copied_end_svg = OUT / "assets" / end_svg_name
+    copied_end_png = OUT / "assets" / end_png_name
+    if not copied_end_svg.is_file():
+        fail(f"built site missing assets/{end_svg_name}")
+    if not copied_end_png.is_file():
+        fail(f"built site missing assets/{end_png_name}")
+    end_w, end_h = png_ihdr_size(end_png)
+    if end_w != 1280 or end_h != 720:
+        fail(f"knowledge/assets/{end_png_name} must be 1280×720 (got {end_w}×{end_h})")
+    end_svg_text = end_svg.read_text(encoding="utf-8")
+    for needle in (
+        "Thank you",
+        "Café Fausse · Quantic MSAIE",
+        "Meghna Desai",
+        "Part 2 · UX",
+        "Claude Tsarafidy",
+        "Part 3 · Architecture",
+        "Hiren Vadalia",
+        "Part 4 · Coding",
+        "Knowledge: knowledge.cafe.artof.link",
+        "App staging: cafe.artof.link",
+        "Questions welcome — supplemental docs may already address many",
+        "End of locked ~10 min VIDEO",
+    ):
+        if needle not in end_svg_text:
+            fail(f"{end_svg_name} must keep {needle!r}")
+    if "(#57)" in end_svg_text:
+        fail(f"{end_svg_name} must not keep (#57) on App staging")
+    if "PROTOTYPE" in end_svg_text:
+        fail(f"{end_svg_name} must not keep a PROTOTYPE badge or banner")
+    if "@" in end_svg_text:
+        fail(f"{end_svg_name} must not show an email")
+    part5_present_md = (ROOT / "part5-present.md").read_text(encoding="utf-8")
+    if "assets/card-p5-end.png" not in part5_present_md:
+        fail("part5-present.md must keep the card-p5-end.png pointer")
+    part5_present_html = (OUT / "part5-present.html").read_text(encoding="utf-8")
+    if "assets/card-p5-end.png" not in part5_present_html:
+        fail("part5-present.html must reference card-p5-end.png")
 
 
 def assert_svg_well_formed() -> None:

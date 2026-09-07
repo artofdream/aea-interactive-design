@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#121c30"/>
+  <text x="72" y="118" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="700">Thank you</text>
+  <line x1="72" y1="138" x2="268" y2="138" stroke="#c4a574" stroke-width="3"/>
+  <text x="72" y="186" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700">Café Fausse · Quantic MSAIE</text>
+  <circle cx="104" cy="262" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
+  <text x="104" y="270" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">MD</text>
+  <text x="148" y="256" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Meghna Desai</text>
+  <text x="148" y="282" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 2 · UX</text>
+  <circle cx="468" cy="262" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
+  <text x="468" y="270" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">CT</text>
+  <text x="512" y="256" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Claude Tsarafidy</text>
+  <text x="512" y="282" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 3 · Architecture</text>
+  <circle cx="868" cy="262" r="32" fill="#1a2740" stroke="#c4a574" stroke-width="2"/>
+  <text x="868" y="270" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">HV</text>
+  <text x="912" y="256" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Hiren Vadalia</text>
+  <text x="912" y="282" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 4 · Coding</text>
+  <circle cx="84" cy="368" r="5" fill="#c4a574"/>
+  <text x="100" y="376" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">Knowledge: knowledge.cafe.artof.link</text>
+  <circle cx="84" cy="416" r="5" fill="#c4a574"/>
+  <text x="100" y="424" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">App staging: cafe.artof.link</text>
+  <circle cx="84" cy="464" r="5" fill="#c4a574"/>
+  <text x="100" y="472" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">Questions welcome — supplemental docs may already address many</text>
+  <text x="72" y="676" fill="#788090" font-family="Helvetica, Arial, sans-serif" font-size="18">End of locked ~10 min VIDEO</text>
+</svg>
