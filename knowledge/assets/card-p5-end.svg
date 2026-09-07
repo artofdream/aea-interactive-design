@@ -15,11 +15,15 @@
   <text x="868" y="270" text-anchor="middle" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">HV</text>
   <text x="912" y="256" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Hiren Vadalia</text>
   <text x="912" y="282" fill="#c4a574" font-family="Helvetica, Arial, sans-serif" font-size="16">Part 4 · Coding</text>
-  <circle cx="84" cy="368" r="5" fill="#c4a574"/>
-  <text x="100" y="376" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">Knowledge: knowledge.cafe.artof.link</text>
-  <circle cx="84" cy="416" r="5" fill="#c4a574"/>
-  <text x="100" y="424" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">App staging: cafe.artof.link</text>
-  <circle cx="84" cy="464" r="5" fill="#c4a574"/>
-  <text x="100" y="472" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="26">Questions welcome — supplemental docs may already address many</text>
+  <circle cx="84" cy="352" r="5" fill="#c4a574"/>
+  <text x="100" y="360" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Knowledge: knowledge.cafe.artof.link</text>
+  <circle cx="84" cy="396" r="5" fill="#c4a574"/>
+  <text x="100" y="404" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">App staging: cafe.artof.link</text>
+  <circle cx="84" cy="440" r="5" fill="#c4a574"/>
+  <text x="100" y="448" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">GitHub (MSAIE / this app): github.com/artofdream/aea-interactive-design</text>
+  <circle cx="84" cy="484" r="5" fill="#c4a574"/>
+  <text x="100" y="492" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">GitHub (Hiren teammate HLD): github.com/vadaliah/Quantic_Cafe_Fausse_Application</text>
+  <circle cx="84" cy="528" r="5" fill="#c4a574"/>
+  <text x="100" y="536" fill="#f5f5f8" font-family="Helvetica, Arial, sans-serif" font-size="24">Questions welcome — supplemental docs may already address many</text>
   <text x="72" y="676" fill="#788090" font-family="Helvetica, Arial, sans-serif" font-size="18">End of locked ~10 min VIDEO</text>
 </svg>
