@@ -71,7 +71,7 @@ The Zoom dry-run is **not** the Quantic submission. Do not submit it until a **l
 
 ## 4. Honesty (known now — say out loud)
 
-- **`cafe.artof.link` is the staging environment for the MSAIE project** (temporary — not production forever). Off-camera tracker [#57](https://github.com/artofdream/aea-interactive-design/issues/57). Staging stays up until the owner asks to tear it down. Monday **2026-09-08 16:00 Europe/Berlin** is evaluate-only (not auto tear-down).
+- **`cafe.artof.link` is the staging environment for the MSAIE project** (temporary — not production forever). Off-camera tracker [#57](https://github.com/artofdream/aea-interactive-design/issues/57). Staging stays **up until Quantic scoring is done**, or the owner overrides tear-down (owner lock 2026-09-09). Knowledge Pages stay up the same window.
 - **NFR-1** is **met** — A36 Brave broadband cold Home **466 ms** ([#124](https://github.com/artofdream/aea-interactive-design/pull/124)). **NFR-2** is **met** — reservation submit **233 ms** ([#126](https://github.com/artofdream/aea-interactive-design/pull/126)). Local Vite notes (56 ms / 32 ms) and the ROG Wi‑Fi note are **not** those **met** cites.
 - **NFR-7** is **Partial**. Not a four-browser pass. Full matrix on [Coverage](coverage.md) / [Honesty](honesty.md).
 - **`/operator` is not FR-19.** Read-only recording helper (PR #58 / issue #54). Prefer `https://cafe.artof.link/operator`. Not an admin console.
