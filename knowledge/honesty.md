@@ -1,8 +1,6 @@
 # Honesty
 
-**In plain English:** A status word is a claim. If we have not just checked it, we write **Unknown**. A green light from last week does not count today.
-
-A **probe** is a command, an HTTP GET, a CI log, or a **committed** file that exists **now**, **this session**. Remembering a previous session, uncommitted files, publishing a hostname, or closing a pull request is not a probe.
+**In plain English:** This page is the honesty companion for probes and **Unknown**. A status word is a claim: if we have not just checked it this session, we write **Unknown**. A **probe** is a command, an HTTP GET, a CI log, or a **committed** file that exists now — a previous session, an uncommitted file, a published hostname, or a closed pull request is not a probe. Where a row cites a freeze ID, this companion uses official **FR-1..FR-18** and **NFR-1..NFR-9** only; the official SRS PDF is the source of truth and `docs/srs.md` is the working freeze. It does not invent **FR-19** or **NFR-10**. If this page and the freeze disagree, the freeze wins.
 
 ```mermaid fit
 flowchart TD
