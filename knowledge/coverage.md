@@ -1,8 +1,20 @@
 # FR / NFR coverage map
 
-Presentation map for the Quantic course. Every freeze ID from `docs/srs.md` (official PDF SoT). **FR-1..FR-18** and **NFR-1..NFR-9** only. Do not invent FR-19 / NFR-10.
+**In plain English:** This companion page maps each official **FR-1..FR-18** and **NFR-1..NFR-9** ID to where it shows up in the repo and what evidence class we have. The official SRS PDF is the source of truth; `docs/srs.md` is the working freeze. This page **cites** those IDs. It does not invent **FR-19** or **NFR-10**. If this map and the freeze disagree, the freeze wins.
 
 This page is not the restaurant. Paths are the in-repo Café Fausse App on `main` (PRs #9 + timezone #12) plus knowledge/CI where that is the evidence.
+
+```mermaid fit
+flowchart TB
+  J["Journey 1–9"]
+  pages["J1–J4 pages<br/>FR-1..FR-5 · FR-10..FR-14"]
+  writes["J5–J8 book / newsletter / fail-closed<br/>FR-6..FR-9 · FR-15..FR-18 · NFR-5 NFR-6"]
+  resp["J9 responsive<br/>NFR-8"]
+  J --> pages
+  J --> writes
+  J --> resp
+```
+
 
 **Evidence classes:** `code` = committed file this session; `CI` = GitHub Actions job in `.github/workflows/`; `local GET / UX (cts-ai, 2026-09-02)` = Café Fausse App probe (J1–J8: Vite + Flask + `cafe-pg` while the DB was up; J9 / NFR-7 Vite slice: **Vite-only** `:5173`); `owner/sponsor mobile UX this session (2026-09-05)` = owner report of Safari on iPhone 16 plus A36 mobile fit on the public hosts; `App public-host Chrome/Firefox this session (2026-09-05)` = Café Fausse App handoff: Chrome **152.0.7977.83** + Firefox **155.0.1** on cts-ai desktop; five SRS routes **PASS** on `https://cafe.artof.link/`; `App A36 Brave broadband cold Home (2026-09-06)` = Café Fausse App handoff: Samsung A36, **Brave (not Chrome)**, owner-claimed broadband (Wi‑Fi+5G icons visible); method `from_recording`, png_burst ~200ms, Phone Link on cts-ai; cold Home **466 ms** on `cafe.artof.link`; `App A36 Brave broadband reservation submit (2026-09-06)` = Café Fausse App handoff: Samsung A36, **Brave (not Chrome)**, owner-claimed broadband; method `from_recording`, png_burst; reservation submit **233 ms** on `cafe.artof.link/reservations`; `Unknown` = no probe this session, or a measured number that is **not** an SRS-budget claim.
 
