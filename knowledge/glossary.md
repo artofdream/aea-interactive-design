@@ -23,6 +23,7 @@ flowchart TD
 
 | Term | In plain English |
 |---|---|
+| **Companion layer** | This map: plain English + diagrams that **cite** official **FR-1..FR-18** / **NFR-1..NFR-9** IDs. Not a second spec. If this page and the [SRS freeze](srs.md) disagree, the official PDF / `docs/srs.md` wins (**SoT**). Do not invent **FR-19** or **NFR-10**. |
 | **This knowledge map** | The GitHub Pages site you are on (`knowledge.cafe.artof.link`). Explains the project. Does not take reservations. |
 | **The restaurant / App** | The Café Fausse website (`cafe.artof.link`). React + JSX, Flask, PostgreSQL. Weekend staging is not forever production. |
 | **MVP** | The first restaurant cut: only the official assignment list ([SRS freeze](srs.md), **FR-1..FR-18**, **NFR-1..NFR-9**). Extra ideas go to [Future](future.md). |
@@ -50,7 +51,7 @@ flowchart TD
 - **Outer harness** — the checks around the freeze: guides, CI sensors, one-issue-one-PR loop, daily briefs, permissions, and honesty. Not a 14-hat library.
 - **MRC COMMENT** — the role-approve signal on a pull request until a non-author can `APPROVE`. The author does not merge their own PR.
 - **Delivery-only page** — Brief, Friday plan, video script, must-film shots, talk, slides. Linked from the Quantic hub, not from the global top nav ([#79](https://github.com/artofdream/aea-interactive-design/issues/79)).
-- **SoT** — source of truth. For requirements, that is the official PDF.
+- **SoT** — source of truth. For requirements, that is the official PDF (working copy `docs/srs.md` / [SRS freeze](srs.md)). The **Companion layer** cites those IDs; it is not SoT.
 - **Journal** — process index: principles, lessons, meeting MoM overview ([#100](https://github.com/artofdream/aea-interactive-design/issues/100)).
 
 ## freeze.json

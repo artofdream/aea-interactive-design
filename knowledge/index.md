@@ -4,11 +4,32 @@ This GitHub repo is the student Café Fausse project for Quantic **MSAIE**. It h
 
 ## Executive summary
 
-Two public surfaces. This site (`knowledge.cafe.artof.link`) explains the work. The restaurant (`cafe.artof.link`) is the product: React + JSX, Flask, PostgreSQL.
+Two public surfaces. This site (`knowledge.cafe.artof.link`) is the **companion layer**: plain English and diagrams that **cite** official **FR/NFR** IDs. The restaurant (`cafe.artof.link`) is the product: React + JSX, Flask, PostgreSQL.
 
 **Grade floor** = official SRS only (**FR-1..FR-18**, **NFR-1..NFR-9**). Extra ideas are [Future](future.md), not missing grade rows.
 
 This session: Knowledge home HTTPS **GET 200**. Restaurant root and `/api/health` HTTPS **GET 200** on weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)) — not production forever. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). **NFR-1** is honest **met** / **PASS** on the A36 Brave owner-claimed-broadband cold Home **466 ms** ([#123](https://github.com/artofdream/aea-interactive-design/issues/123)). **NFR-2** is honest **met** / **PASS** on the A36 Brave owner-claimed-broadband reservation submit **233 ms** ([#125](https://github.com/artofdream/aea-interactive-design/issues/125)). That is not a four-browser claim. `/operator` is a recording helper — **not FR-19**.
+
+## Companion layer
+
+This map is not the restaurant and not a second spec. It is a **companion layer**.
+
+1. **Plain English that cites the freeze.** Explanations and diagrams name official **FR-1..FR-18** / **NFR-1..NFR-9** IDs. They do not replace those IDs. See [SRS](srs.md), [Coverage](coverage.md), and [Glossary](glossary.md).
+2. **Official SRS wins if anything disagrees.** Source of truth is the official PDF. The working freeze is `docs/srs.md` / [SRS](srs.md). If this map and the freeze disagree, the freeze wins.
+3. **Do not invent deferred rules or new IDs.** No **FR-19**, no **NFR-10**. Extra ideas stay on [Future](future.md) issues only. Architecture pictures live on [Stack](stack.md).
+
+```mermaid fit
+flowchart TB
+  companion[Companion map<br/>cites freeze IDs]
+  freeze[Official SRS freeze<br/>FR-1..FR-18 / NFR-1..NFR-9]
+  restaurant[Restaurant App<br/>implements freeze]
+  later[Future extras<br/>outside grade floor]
+  companion -->|cites| freeze
+  restaurant -->|implements| freeze
+  later -.->|not a grade row| freeze
+```
+
+HLD pictures stay on [Stack](stack.md): [as-is](assets/hld-as-is.svg), [local](assets/hld-local.svg), [MSAIE staging](assets/hld-aws-msaie.svg), [to-be](assets/hld-to-be.svg). This page does not copy Part 3 decks.
 
 ## Mission
 
