@@ -9,7 +9,7 @@ This page is a **documentation matrix** of Grok Bot skill ids used on Café Faus
 
 Delivery-only ([#205](https://github.com/artofdream/aea-interactive-design/issues/205)): linked from [Quantic / MSAIE](quantic.md) and [Honesty](honesty.md). Not in the global top nav.
 
-Sibling issues [#206](https://github.com/artofdream/aea-interactive-design/issues/206)–[#212](https://github.com/artofdream/aea-interactive-design/issues/212) stay open; this page is the matrix only.
+Sibling issues [#206](https://github.com/artofdream/aea-interactive-design/issues/206)–[#212](https://github.com/artofdream/aea-interactive-design/issues/212) and [#214](https://github.com/artofdream/aea-interactive-design/issues/214) stay open; this page is the matrix only.
 
 ## Shared Grok skills (adopt / link)
 
@@ -37,8 +37,10 @@ Document only. Recipes live in Grok Bot.
 
 ## Keep learning and apply (AEA principle)
 
-When a build gap appears: **open a finding issue**, **create or adopt a skill**, and **apply it on the next cut**. That loop is the address for historical gaps. It is not a new FR or NFR.
+Source: [GitLab work item 434 — Keep Learning and Apply](https://gitlab.com/artof-group/adaptive-experience-architecture/-/work_items/434). That is an AEA source cite. This repo’s tracker and CI stay GitHub only.
 
-Café Fausse App ran that loop on **2026-09-12**: sibling issues [#206](https://github.com/artofdream/aea-interactive-design/issues/206)–[#212](https://github.com/artofdream/aea-interactive-design/issues/212) plus the Grok skills in the tables above; this PR is the Knowledge matrix ([#205](https://github.com/artofdream/aea-interactive-design/issues/205)).
+When a build gap appears: **open a finding issue**, **create or adopt a skill**, and **apply it on the next cut**. That loop is the address for historical gaps. It is not a new FR or NFR. Do not claim this repo or the AEA harness is antifragile.
 
-The live Pages URL for this page stays **Documented until probed** after merge — a this-session HTTPS GET on the deployed host, not this commit.
+Café Fausse App ran that loop on **2026-09-12**: sibling issues [#206](https://github.com/artofdream/aea-interactive-design/issues/206)–[#212](https://github.com/artofdream/aea-interactive-design/issues/212) plus the Grok skills in the tables above; this PR is the Knowledge matrix ([#205](https://github.com/artofdream/aea-interactive-design/issues/205)). Sibling [#214](https://github.com/artofdream/aea-interactive-design/issues/214) (Keep learning skill, Grok id `keep-learning-and-apply`) is documented here and stays open.
+
+Principle **Documented until probed** (this-session Pages GET after merge).
