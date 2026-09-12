@@ -35,6 +35,23 @@ Short labels: [Glossary](glossary.md). Do not say NFR-1 / NFR-2 **met** from a f
 | Operator view `/operator` | Read-only recording helper: customers + reservations so you can see the DB after a booking. **Not** an admin console (no CRUD / cancel). **Not FR-19.** Prefer `https://cafe.artof.link/operator` — Knowledge GET **200** (~0.6s). Interim backup: `https://54-165-102-60.sslip.io/operator`. Landed on `main` via [PR #58](https://github.com/artofdream/aea-interactive-design/pull/58) / [issue 54](https://github.com/artofdream/aea-interactive-design/issues/54). |
 | System is antifragile | **Do not claim this.** Use ratchet: failures add guides/sensors. |
 
+## Skills / process (Grok + Café)
+
+This table is process memory for the Knowledge lane. A listed skill does **not** prove Live, **met**, or a freeze ID. Status words still need a probe **this session** or stay **Unknown**. The table cites official **FR-1..FR-18** / **NFR-1..NFR-9** only when a row points at promotions — it does not invent **FR-19** or **NFR-10**. Keep-until-scoring language on the claim rows above is unchanged.
+
+**Keep learning and apply** ([AEA #434](https://gitlab.com/artof-group/adaptive-experience-architecture/-/work_items/434); Café adopt tracker [#213](https://github.com/artofdream/aea-interactive-design/issues/213)): learn from Café/AEA history → encode into skills/matrix → the next PR **applies** it. Why/What: when the build teaches something, write it into the harness before the next loop. Shared Grok skills on this table (`pr-train-rebase`, `honesty-ledger-gate`, `companion-plain-docs`, `persona-journey-validation`) plus `knowledge-pages-ratchet` (tracker [#204](https://github.com/artofdream/aea-interactive-design/issues/204)) are the apply/publish loop — a this-session Pages probe closes the claim. Status is **Documented** until that probe shows this matrix live. Do not claim **Probed** / **Live** from this markdown alone. GitHub remains the Café tracker; the GitLab URL is the AEA principle cite only.
+
+| Skill | Scope | Status | Notes |
+|---|---|---|---|
+| Keep learning and apply ([AEA #434](https://gitlab.com/artof-group/adaptive-experience-architecture/-/work_items/434)) | Knowledge process | **Documented** | Why/What: when the build teaches something, write it into the harness before the next loop. Learn from Café/AEA history → encode into skills/matrix → next PR **applies** it. Apply/publish loop: shared Grok skills + `knowledge-pages-ratchet`. Café [#213](https://github.com/artofdream/aea-interactive-design/issues/213). Not **Probed** / **Live** from docs alone. |
+| PR train rebase (`pr-train-rebase`) | Parallel PRs on this repo | Shared Grok skill — adopt | Historical: [#108](https://github.com/artofdream/aea-interactive-design/issues/108)→[#116](https://github.com/artofdream/aea-interactive-design/issues/116); [#201](https://github.com/artofdream/aea-interactive-design/pull/201) after [#202](https://github.com/artofdream/aea-interactive-design/pull/202) |
+| Honesty ledger gate (`honesty-ledger-gate`) | FR/NFR / Coverage / Honesty promotions | Shared Grok skill — adopt | **Unknown** until probe; SES store-only [#198](https://github.com/artofdream/aea-interactive-design/issues/198) |
+| Companion plain docs (`companion-plain-docs`) | knowledge.cafe.artof.link companion + mobile | Shared Grok skill — adopt | Companion pass [#191](https://github.com/artofdream/aea-interactive-design/issues/191)–[#199](https://github.com/artofdream/aea-interactive-design/issues/199); mobile probe 2026-09-12 **PASS** (sponsor / [#203](https://github.com/artofdream/aea-interactive-design/issues/203) cite — not a new device probe from this matrix PR) |
+| Persona journey validation (`persona-journey-validation`) | Live UX audit → issues | Shared Grok skill — adopt | Complements J1–J8; named personas optional |
+| Knowledge Pages ratchet (`knowledge-pages-ratchet`) | Knowledge publish claims | Created (Grok skill) | Freeze-first; one finding→PR; MRC COMMENT; Pages probe before claim (apply/publish loop). Complements `.cursor/skills/knowledge-guardian`. Tracker [#204](https://github.com/artofdream/aea-interactive-design/issues/204) |
+
+This page documents the matrix only. It does **not** close [#204](https://github.com/artofdream/aea-interactive-design/issues/204) (Pages ratchet skill body).
+
 ## Live vs local vs Future
 
 Three labels. Mixing them is a false claim.
