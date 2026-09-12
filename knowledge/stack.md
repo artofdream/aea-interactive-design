@@ -1,6 +1,6 @@
 # Stack
 
-**In plain English:** There are two public websites with two jobs. This page is the picture of how they are built and hosted. It is not a florist architecture essay, not Path B, not 14 hats, not Kafka/BFF, and not 3DX Lab.
+**In plain English:** This page is the architecture companion for the two public hostnames: the Knowledge map at `knowledge.cafe.artof.link` (GitHub Pages) and the restaurant app at `cafe.artof.link` (React + JSX, Flask, PostgreSQL). Pictures here show the same design on two deploy targets — local (dev) and MSAIE staging — not a florist essay, Path B, 14 hats, Kafka/BFF, or 3DX Lab. Grade floor stays official **FR-1..FR-18** / **NFR-1..NFR-9**; this companion **cites** those IDs only when a row links the freeze. The official SRS PDF is the source of truth; `docs/srs.md` is the working freeze. It does not invent **FR-19** or **NFR-10**. If this page and the freeze disagree, the freeze wins.
 
 1. **This knowledge map** at `knowledge.cafe.artof.link` — GitHub Pages. Explains the project. Does not take reservations.
 2. **The restaurant app** at `cafe.artof.link` — React + Flask + PostgreSQL. Weekend Lightsail staging ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)), not forever production. Permanent hosting is still [Future #22](https://github.com/artofdream/aea-interactive-design/issues/22).
@@ -15,6 +15,8 @@ flowchart TB
   Map --> App
   App -.-> Later
 ```
+
+Two hostnames, two jobs. This map does not take reservations.
 
 **Probe date:** 2026-09-05 Europe/Berlin (this session) for hostname rows. Journey / NFR evidence stays the 2026-09-02 records on [Coverage](coverage.md).
 
