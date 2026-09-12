@@ -67,6 +67,7 @@ DELIVERY_ONLY_HREFS = (
     "developer-system-map.html",
     "teammate-hld.html",
     "to-be.html",
+    "skills-matrix.html",
 )
 
 # Stroke icons for in-page links and the page brand when the href is off NAV.
@@ -112,6 +113,7 @@ PAGE_ICONS = {
     "developer-system-map.html": "stack",
     "teammate-hld.html": "stack",
     "to-be.html": "future",
+    "skills-matrix.html": "honesty",
 }
 
 # Stroke icons (viewBox 0 0 24 24). Labels stay the source of meaning.
@@ -226,6 +228,7 @@ WIDE_PAGES = {
     "part5-present.html",
     "developer-system-map.html",
     "teammate-hld.html",
+    "skills-matrix.html",
 }
 SAFE_CLIP_RE = re.compile(r"^clips/[A-Za-z0-9][A-Za-z0-9._-]*\.mp4$")
 VIDEO_OPEN_RE = re.compile(r"<video\b([^>]*)>", re.IGNORECASE)
@@ -1107,6 +1110,7 @@ def assert_ux_wiring() -> None:
         'href="must-film-shots.html"',
         'href="friday-plan.html"',
         'href="honesty.html"',
+        'href="skills-matrix.html"',
         'href="glossary.html"',
         'href="stack.html"',
         'href="teammate-hld.html"',
