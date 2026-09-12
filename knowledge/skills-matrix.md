@@ -34,3 +34,11 @@ Document only. Recipes live in Grok Bot.
 | Optional mail after store (`optional-mail-after-store`) | Future SES after **FR-15** / **FR-16** | [#135](https://github.com/artofdream/aea-interactive-design/issues/135) / [#138](https://github.com/artofdream/aea-interactive-design/issues/138) | Store first; fail soft; not a new FR |
 | Official image allowlist (`official-image-allowlist`) | Gallery / menu images | Official 4 webps vs supplemental | Basename allowlist only |
 | Staging keep/tear honesty (`staging-keep-tear-honesty`) | `cafe.artof.link` temporary staging | Keep-until-scoring / [#190](https://github.com/artofdream/aea-interactive-design/issues/190) | Lock keep/tear the day decided; no auto-tear |
+
+## Keep learning and apply (AEA principle)
+
+When a build gap appears: **open a finding issue**, **create or adopt a skill**, and **apply it on the next cut**. That loop is the address for historical gaps. It is not a new FR or NFR.
+
+Café Fausse App ran that loop on **2026-09-12**: sibling issues [#206](https://github.com/artofdream/aea-interactive-design/issues/206)–[#212](https://github.com/artofdream/aea-interactive-design/issues/212) plus the Grok skills in the tables above; this PR is the Knowledge matrix ([#205](https://github.com/artofdream/aea-interactive-design/issues/205)).
+
+The live Pages URL for this page stays **Documented until probed** after merge — a this-session HTTPS GET on the deployed host, not this commit.
