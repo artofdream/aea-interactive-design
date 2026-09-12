@@ -1502,6 +1502,35 @@ def assert_ux_wiring() -> None:
         fail("coverage.md must keep email_delivery skipped / email not configured")
     if "email not configured" not in honesty_md:
         fail("honesty.md must keep the 2026-09-12 store probe (skipped delivery)")
+    # Ratchet #203 / #213: Honesty skills / process matrix + AEA keep-learning cite.
+    if "Skills / process (Grok + Café)" not in honesty_md:
+        fail("honesty.md must keep the Skills / process (Grok + Café) matrix")
+    for needle in (
+        "PR train rebase",
+        "Honesty ledger gate",
+        "Companion plain docs",
+        "Persona journey validation",
+        "knowledge-pages-ratchet",
+        "#204",
+        "Keep learning and apply",
+        "AEA #434",
+        "work_items/434",
+        "#213",
+        "when the build teaches something, write it into the harness before the next loop",
+        "**Documented** / **Planned**",
+    ):
+        if needle not in honesty_md:
+            fail(f"honesty.md skills matrix missing {needle}")
+    if "Closes #204" in honesty_md:
+        fail("honesty.md must not close #204 (Pages ratchet skill body)")
+    for name in ("docs/ai-tooling.md", "ai-tooling.md"):
+        tooling = (REPO / name).read_text(encoding="utf-8")
+        if "#203" not in tooling or "Skills / process" not in tooling:
+            fail(f"{name} must point at Honesty skills / process (#203)")
+        if "AEA #434" not in tooling or "#213" not in tooling:
+            fail(f"{name} must cite AEA #434 and Café adopt tracker #213")
+        if "does not close [#204]" not in tooling and "does not close #204" not in tooling:
+            fail(f"{name} must say the #203 pointer does not close #204")
     if "2026-09-12" not in future_md:
         fail("future.md must cite the 2026-09-12 store-only confirmation")
     # Ratchet #159: developer system map on Knowledge (stack, API, schema, FE/BE).
