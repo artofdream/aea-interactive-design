@@ -1491,6 +1491,15 @@ def assert_ux_wiring() -> None:
         fail("to-be.md must keep the #135 SES Future pointer")
     if "Amazon SES" in coverage_md or re.search(r"#135\b", coverage_md):
         fail("coverage.md must not claim SES newsletter outbound (#135 is Future only)")
+    # Ratchet #198: App public-host newsletter is store-only (2026-09-12); no send claim.
+    if "ses-probe-20260912@artof.link" not in coverage_md:
+        fail("coverage.md must keep the 2026-09-12 public-host newsletter store probe")
+    if "email not configured" not in coverage_md:
+        fail("coverage.md must keep email_delivery skipped / email not configured")
+    if "email not configured" not in honesty_md:
+        fail("honesty.md must keep the 2026-09-12 store probe (skipped delivery)")
+    if "2026-09-12" not in future_md:
+        fail("future.md must cite the 2026-09-12 store-only confirmation")
     # Ratchet #159: developer system map on Knowledge (stack, API, schema, FE/BE).
     map_md = (ROOT / "developer-system-map.md").read_text(encoding="utf-8")
     if "/workspace/" in map_md:
