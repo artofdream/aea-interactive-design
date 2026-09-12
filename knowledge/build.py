@@ -1517,7 +1517,12 @@ def assert_ux_wiring() -> None:
         "work_items/434",
         "#213",
         "when the build teaches something, write it into the harness before the next loop",
-        "**Documented** / **Planned**",
+        "pr-train-rebase",
+        "honesty-ledger-gate",
+        "companion-plain-docs",
+        "persona-journey-validation",
+        "next PR **applies**",
+        "**Documented**",
     ):
         if needle not in honesty_md:
             fail(f"honesty.md skills matrix missing {needle}")
