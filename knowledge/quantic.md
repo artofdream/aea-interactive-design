@@ -39,6 +39,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - Zoom dry-run v2 (**PROTOTYPE**, not the Quantic submission): on the [Video script](video-script.md)
 - [Friday plan](friday-plan.md)
 - [Honesty](honesty.md)
+- [Agent skills matrix](skills-matrix.md) — Grok Bot skill ids (shared + Café App). Recipes not on Pages.
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
 - [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
 - Clips stay on the [Brief](brief.md), [Video script](video-script.md), [Meghna materials](meghna-materials.md), and [Parts 3–5 materials](parts-345-materials.md) (not moved onto this hub)
