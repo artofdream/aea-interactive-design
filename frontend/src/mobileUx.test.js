@@ -28,6 +28,11 @@ describe("mobile UX contract (issue #91)", () => {
     assert.match(operator, /label="Email"/);
   });
 
+  it("keeps operator desktop headers from mid-word wrap (overflow-wrap on td only)", () => {
+    assert.match(css, /\.data-table td\s*\{[^}]*overflow-wrap:\s*anywhere/s);
+    assert.match(css, /\.data-table th\s*\{[^}]*white-space:\s*nowrap/s);
+  });
+
   it("keeps tap targets at least 44px for nav, forms, gallery, footer, and home actions", () => {
     for (const needle of [
       ".nav-toggle",
