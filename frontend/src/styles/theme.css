@@ -503,12 +503,17 @@ blockquote {
   text-align: left;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--cream-dark);
+}
+
+.data-table td {
   overflow-wrap: anywhere;
 }
 
 .data-table th {
   color: var(--burgundy);
   font-weight: 600;
+  white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 @media (max-width: 800px) {
