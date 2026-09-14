@@ -269,7 +269,8 @@ pre.mermaid,
   margin: 0;
   border: 0;
   background: transparent;
-  max-width: none;
+  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -440,7 +441,6 @@ footer code { font-size: 0.85em; }
     overflow-wrap: anywhere;
   }
 
-  .diagram-wrap:has(.diagram-img)::after,
   .diagram-wrap:not(.diagram-fit):has(.mermaid)::after {
     content: "Swipe sideways for the full diagram";
     display: block;
@@ -451,8 +451,14 @@ footer code { font-size: 0.85em; }
     padding: 0.35rem 0.65rem 0.55rem;
   }
 
-  .diagram-wrap .diagram-img {
-    min-width: 36rem;
+  /* #217 DSO: Stack HLD/flow diagram imgs fit phone width (no forced ~576px H-pan).
+     Wide mermaid without .diagram-fit stays swipeable below. */
+  .diagram-wrap .diagram-img,
+  .diagram-wrap img {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 
   .diagram-wrap:not(.diagram-fit) .mermaid,
