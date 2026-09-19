@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Caf\u00e9 Knowledge \u2014 Pages ratchet (Documented aid)",
+    "output": "cafe-knowledge-workflow.architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "happy-path",
+        "label": "Happy path",
+        "focus": [
+          "freeze",
+          "issue",
+          "author",
+          "pr",
+          "mrc",
+          "mergebot",
+          "build",
+          "pages",
+          "probe"
+        ],
+        "note": "Freeze-first \u2192 issue \u2192 PR \u2192 MRC COMMENT \u2192 New Bot \u2192 Pages \u2192 this-session probe."
+      },
+      {
+        "id": "hosts",
+        "label": "Two hosts",
+        "focus": [
+          "local",
+          "cafe",
+          "knowledge",
+          "pages"
+        ],
+        "note": "Local(dev) + cafe.artof.link + knowledge.cafe.artof.link. Separate origins."
+      },
+      {
+        "id": "honesty",
+        "label": "Honesty boundary",
+        "focus": [
+          "honesty",
+          "probe",
+          "archify",
+          "knowledge"
+        ],
+        "note": "Documented aid \u2014 not Live. SRS MVP FR-1..18 / NFR-1..9 only."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "freeze",
+      "type": "security",
+      "label": "SRS freeze",
+      "sublabel": "FR-1..18 \u00b7 NFR-1..9",
+      "pos": [
+        40,
+        50
+      ],
+      "size": [
+        140,
+        52
+      ],
+      "tag": "MVP"
+    },
+    {
+      "id": "issue",
+      "type": "external",
+      "label": "GitHub issue",
+      "sublabel": "one finding",
+      "pos": [
+        220,
+        50
+      ],
+      "size": [
+        120,
+        52
+      ]
+    },
+    {
+      "id": "author",
+      "type": "backend",
+      "label": "Author agent",
+      "sublabel": "branch + PR",
+      "pos": [
+        380,
+        50
+      ],
+      "size": [
+        120,
+        52
+      ],
+      "tag": "no merge"
+    },
+    {
+      "id": "pr",
+      "type": "cloud",
+      "label": "Pull request",
+      "sublabel": "vs main",
+      "pos": [
+        540,
+        50
+      ],
+      "size": [
+        120,
+        52
+      ]
+    },
+    {
+      "id": "mrc",
+      "type": "security",
+      "label": "MRC COMMENT",
+      "sublabel": "role-approve",
+      "pos": [
+        700,
+        50
+      ],
+      "size": [
+        130,
+        52
+      ],
+      "tag": "gate"
+    },
+    {
+      "id": "mergebot",
+      "type": "backend",
+      "label": "New Bot",
+      "sublabel": "merge when green",
+      "pos": [
+        880,
+        50
+      ],
+      "size": [
+        130,
+        52
+      ]
+    },
+    {
+      "id": "local",
+      "type": "backend",
+      "label": "Local (dev)",
+      "sublabel": "Vite \u00b7 Flask \u00b7 cafe-pg",
+      "pos": [
+        40,
+        220
+      ],
+      "size": [
+        140,
+        52
+      ]
+    },
+    {
+      "id": "cafe",
+      "type": "cloud",
+      "label": "Restaurant host",
+      "sublabel": "cafe.artof.link",
+      "pos": [
+        40,
+        380
+      ],
+      "size": [
+        140,
+        52
+      ],
+      "tag": "#57 staging"
+    },
+    {
+      "id": "archify",
+      "type": "messagebus",
+      "label": "/archify/",
+      "sublabel": "same-origin HTML",
+      "pos": [
+        260,
+        220
+      ],
+      "size": [
+        130,
+        52
+      ],
+      "tag": "Documented"
+    },
+    {
+      "id": "knowledge",
+      "type": "cloud",
+      "label": "Knowledge host",
+      "sublabel": "knowledge.cafe.artof.link",
+      "pos": [
+        440,
+        220
+      ],
+      "size": [
+        170,
+        52
+      ],
+      "tag": "map"
+    },
+    {
+      "id": "pages",
+      "type": "cloud",
+      "label": "GitHub Pages",
+      "sublabel": "from main",
+      "pos": [
+        670,
+        220
+      ],
+      "size": [
+        130,
+        52
+      ]
+    },
+    {
+      "id": "build",
+      "type": "backend",
+      "label": "build.py",
+      "sublabel": "md \u2192 _site",
+      "pos": [
+        880,
+        220
+      ],
+      "size": [
+        130,
+        52
+      ]
+    },
+    {
+      "id": "honesty",
+      "type": "security",
+      "label": "Honesty ledger",
+      "sublabel": "Documented \u2260 Live",
+      "pos": [
+        440,
+        380
+      ],
+      "size": [
+        150,
+        52
+      ]
+    },
+    {
+      "id": "probe",
+      "type": "external",
+      "label": "Session probe",
+      "sublabel": "HTTPS GET",
+      "pos": [
+        670,
+        380
+      ],
+      "size": [
+        130,
+        52
+      ],
+      "tag": "before claim"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Knowledge Pages ratchet",
+      "wraps": [
+        "freeze",
+        "issue",
+        "author",
+        "pr",
+        "mrc",
+        "mergebot",
+        "build",
+        "pages",
+        "knowledge",
+        "archify",
+        "probe",
+        "honesty"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "Restaurant (separate)",
+      "wraps": [
+        "local",
+        "cafe"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "Documented aid only",
+      "wraps": [
+        "honesty",
+        "probe",
+        "archify"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "c1",
+      "from": "freeze",
+      "to": "issue",
+      "label": "finding",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c2",
+      "from": "issue",
+      "to": "author"
+    },
+    {
+      "id": "c3",
+      "from": "author",
+      "to": "pr",
+      "label": "open"
+    },
+    {
+      "id": "c4",
+      "from": "pr",
+      "to": "mrc"
+    },
+    {
+      "id": "c5",
+      "from": "mrc",
+      "to": "mergebot",
+      "label": "COMMENT",
+      "variant": "security"
+    },
+    {
+      "id": "c6",
+      "from": "mergebot",
+      "to": "build",
+      "label": "main",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 55
+    },
+    {
+      "id": "c7",
+      "from": "build",
+      "to": "pages",
+      "label": "deploy"
+    },
+    {
+      "id": "c8",
+      "from": "pages",
+      "to": "knowledge"
+    },
+    {
+      "id": "c9",
+      "from": "knowledge",
+      "to": "archify",
+      "label": "serve",
+      "variant": "dashed"
+    },
+    {
+      "id": "c10",
+      "from": "pages",
+      "to": "probe",
+      "label": "GET",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 55
+    },
+    {
+      "id": "c11",
+      "from": "probe",
+      "to": "honesty",
+      "label": "record",
+      "variant": "dashed"
+    },
+    {
+      "id": "c13",
+      "from": "local",
+      "to": "cafe",
+      "label": "same stack",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 55
+    },
+    {
+      "id": "c14",
+      "from": "archify",
+      "to": "honesty",
+      "label": "cite",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 55
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Documented aid \u2014 not Live",
+      "items": [
+        "/archify/ HTML is a readable map, not a production status claim",
+        "Stays Documented until a this-session Pages probe records GET 200",
+        "No FR-19 / NFR-10; official SRS PDF + docs/srs.md win"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Ratchet path",
+      "items": [
+        "Freeze-first \u2192 one issue \u2192 one PR",
+        "Author never merges; MRC COMMENT then New Bot",
+        "build.py copies knowledge/archify/ \u2192 _site/archify/"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Out of scope here",
+      "items": [
+        "Not Lily's Florist / Path B / 14 hats / 3DX Lab",
+        "Not ctos QEMU content",
+        "Restaurant staging (#57) \u2260 Knowledge Pages"
+      ]
+    }
+  ]
+}
