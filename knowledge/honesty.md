@@ -68,6 +68,17 @@ Picture: [Friday plan](friday-plan.md) mermaid. Same rule on the [Brief](brief.m
 
 Missing PostgreSQL / no connection / timeout → honest **no** on reservation and newsletter writes, and on the operator read (`GET /api/operator` → 503 / `ok: false`). Time slot at 30 tables → **FR-9**; no table assigned. Red CI, missing checks, or checks not probed this session → do not merge. Unreviewed PR (no MRC **COMMENT** role-approve, and no non-author merge path) → do not merge. Author does not merge.
 
+## Archify diagrams (Documented aid)
+
+Thin same-origin architecture map for the Knowledge Pages ratchet (freeze → issue → PR → MRC COMMENT → New Bot → Pages → probe). **Documented** documentation aid — **not Live.**
+
+- Index (after Pages deploy): [`/archify/`](https://knowledge.cafe.artof.link/archify/) · [local source index](archify/index.html)
+- Diagram: [`cafe-knowledge-workflow.architecture.html`](archify/cafe-knowledge-workflow.architecture.html) · [IR JSON](archify/cafe-knowledge-workflow.architecture.json) · [README](archify/README.md)
+- Generated with [artofdream/archify](https://github.com/artofdream/archify). Hosted under Knowledge Pages `/archify/` (not a GitHub blob-only link).
+- Do not claim Live until a this-session HTTPS GET on the Pages URL. Freeze-first / SRS MVP only (FR-1..18 / NFR-1..9).
+
+Also listed on [Stack](stack.md).
+
 ## What this site is not
 
 Florist Path B, Lily’s Florist, 14 hats, Kafka, BFF, 3DX Lab, GitLab Pages/CI. Public repo. GitHub only.

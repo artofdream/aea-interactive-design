@@ -176,6 +176,10 @@ Static copy: [to-be SVG](assets/hld-to-be.svg).
 - Public repository. Assignment collaborator `quantic-grader` is required; **the owner must add that person** — agents must not.
 - **Author does not merge their own PR.** MRC **COMMENT** is the role-approve signal (see PR #14 / issue #13). For `artofdream`-authored PRs, `cursor[bot]` may merge after this-run green checks and Bugbot resolve-or-decline.
 
+## Archify (Documented)
+
+Same-origin Archify HTML under [`/archify/`](https://knowledge.cafe.artof.link/archify/) after Pages deploy. **Documented** aid — **not Live.** Thin Knowledge Pages ratchet map (freeze → PR → MRC COMMENT → New Bot → probe). Source: [`knowledge/archify/`](archify/README.md). Companion wording on [Honesty](honesty.md).
+
 ## Honesty
 
 - `knowledge.cafe.artof.link` was HTTPS GET 200 this session. HTTP GET returned 301 to HTTPS. Pages `https_enforced=true`.

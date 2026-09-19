@@ -748,6 +748,7 @@ def copy_static_dir(name: str) -> None:
 def copy_static_assets() -> None:
     copy_static_dir("assets")
     copy_static_dir("clips")
+    copy_static_dir("archify")
 
 
 def copy_favicons() -> None:
