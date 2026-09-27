@@ -18,9 +18,9 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Sunday meeting](meeting-sunday.md) — 2026-09-06; ends with a recording; docs target **9:00 America/New_York**; remaining gaps **Unknown**
 
 - [Quantic deliverable handoff](quantic-handoff.md) — repo / App / Knowledge links, locked five-part VIDEO, Coverage vs talk track, honesty. Final submit video still **Unknown**.
-- [Meghna materials](meghna-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English. **Part 2 = UX/business why+how** (Meghna).
-- [Meghna — 3-minute cafe demo](meghna-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
-- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
+- [Meghna materials](part2-materials.md) — **first for teammates:** index + silent **PROTOTYPE**. Spoken / VO = plain English. **Part 2 = UX/business why+how** (Meghna).
+- [Meghna — 3-minute cafe demo](part2-cafe-demo.md) — Home → Gallery → Menu → Reservations on `https://cafe.artof.link/`. FR/NFR map is supporting notes only.
+- [Meghna VO draft](part2-voiceover.md) — plain-English voice-over script. Recorded take **Unknown**.
 - [Parts 3–5 materials](parts-345-materials.md) — Architecture why/how · Coding why/how · honesty close. Silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. Rehearsal — not Quantic submit. Not teammate VO. Recorded teammate VO **Unknown**. [VO notes](parts-345-vo-notes.md) · [handoff mapping](parts-345-handoff-mapping.md) (**not spoken on camera**) · [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)) · [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [coding overview](part4-coding-overview.md) · [developer system map](developer-system-map.md).
 - [Teammate HLD (Hiren)](teammate-hld.md) — **teammate** architecture / code sample (Aurora/CDK + multi-state bookings). **Not** our MSAIE staging map. Do not present as `cafe.artof.link`.
 - **Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C).
@@ -42,7 +42,7 @@ Team-meeting packs (delivery-only — not in the global top nav):
 - [Agent skills matrix](skills-matrix.md) — Grok Bot skill ids (shared + Café App). Recipes not on Pages.
 - [Glossary](glossary.md) — terms plus sources / links used in this repo
 - [Journal](journal.md) — principles, lessons, meeting MoM overview (detail stays on meeting / Brief / Friday pages)
-- Clips stay on the [Brief](brief.md), [Video script](video-script.md), [Meghna materials](meghna-materials.md), and [Parts 3–5 materials](parts-345-materials.md) (not moved onto this hub)
+- Clips stay on the [Brief](brief.md), [Video script](video-script.md), [Meghna materials](part2-materials.md), and [Parts 3–5 materials](parts-345-materials.md) (not moved onto this hub)
 
 ## Implementation (not the Quantic pack)
 

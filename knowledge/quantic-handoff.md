@@ -16,7 +16,7 @@ Every section below is filled with what is known **now**. Rows that are not done
 | Quantic hub | [https://knowledge.cafe.artof.link/quantic.html](https://knowledge.cafe.artof.link/quantic.html) | Delivery / MSAIE navigation only (#74 / #79). |
 | To-be (beyond MVP) | [To-be](to-be.md) | **Not the grade floor.** Parked Future [#22](https://github.com/artofdream/aea-interactive-design/issues/22) / [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38). Sister page [Future](future.md) stays complete. |
 
-Interim App backup (same host, not the primary paste): `https://54-165-102-60.sslip.io/`. Old tunnels (`shaky-deer-drive`, `happy-glasses-film`, `real-goats-shop`) are **stale**.
+Interim App backup (same host, not the primary paste): `https://<STAGING_IP_DASHED>.sslip.io/`. Old tunnels (`shaky-deer-drive`, `happy-glasses-film`, `real-goats-shop`) are **stale**.
 
 Live Pages URLs for pages that land only after this PR merges (`/glossary.html`, `/meeting-*.html`, `/quantic-handoff.html`) stay **Unknown** until a GET after deploy.
 
@@ -34,25 +34,25 @@ Live Pages URLs for pages that land only after this PR merges (`/glossary.html`,
 
 **Coverage** is the grade-floor map. Open it when a grader asks “where is FR-9?” or “is NFR-6 tested?” It is not a slide deck.
 
-**Meghna first:** [Meghna materials](meghna-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](meghna-cafe-demo.md) · [Meghna VO draft](meghna-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
+**Meghna first:** [Meghna materials](part2-materials.md) (index + silent **PROTOTYPE**) · [Meghna cafe demo](part2-cafe-demo.md) · [Meghna VO draft](part2-voiceover.md). Spoken / VO = **plain English only**. FR/NFR IDs stay in supporting notes (and Coverage). Recorded teammate VO is **Unknown**. Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
 **Parts 3–5 rehearsal (after Meghna):** [Parts 3–5 materials](parts-345-materials.md) (index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural). Talk spine: Part 2 UX/business · Part 3 architecture why/how · Part 4 coding why/how · Part 5 honesty. **Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C). **Prefer natural for camera:** [Part 3 natural](part3-variant-b-script-natural.md) / [VO](part3-variant-b-voiceover-natural.md) · [Part 4 natural](part4-variant-c-script-natural.md) / [VO](part4-variant-c-voiceover-natural.md) · [Part 5 natural](part5-shared-close-script-natural.md) / [VO](part5-shared-close-voiceover-natural.md). Technical compare: [Part 3](part3-variant-b-script.md) / [VO](part3-variant-b-voiceover.md) · [Part 4](part4-variant-c-script.md) / [VO](part4-variant-c-voiceover.md) · [Part 5](part5-shared-close-script.md) / [VO](part5-shared-close-voiceover.md). Architect deploy table: [Local vs AWS](part3-local-vs-aws.md) (also on [Stack](stack.md)). Architect visuals: [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md). FR/NFR map: [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**. Silent and TTS mp4s are **PROTOTYPE** / rehearsal — not Quantic submit. **PROTOTYPE TTS** is machine voice (`en-US-GuyNeural`), not teammate VO. Recorded teammate VO **Unknown**.
 
 **Locked Saturday VIDEO (~10 min)** — owner notes 2026-09-05 / [#97](https://github.com/artofdream/aea-interactive-design/issues/97). Not “pick one of A / B / C.”
 
 1. Team + ID verification — ~30s — shared
-2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations — pack: [Meghna demo](meghna-cafe-demo.md)
+2. Website demo `https://cafe.artof.link/` — ~3 min — **Meghna** — Home, Gallery, Menu, Reservations — pack: [Meghna demo](part2-cafe-demo.md)
 3. Architecture + Diagram (**Variant B**) — ~3 min — **Claude Part 3** — **camera** [natural script](part3-variant-b-script-natural.md)
 4. Coding rationale (**Variant C**) — ~3 min — **Hiren Part 4** — **camera** [natural script](part4-variant-c-script-natural.md)
 5. Shared close — shared — **camera** [natural script](part5-shared-close-script-natural.md)
 
-**Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C). Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](meghna-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
+**Casting:** Meghna Part 2 UX · Claude Part 3 Architecture (Variant B) · Hiren Part 4 Coding (Variant C). Voice-over is **TBD**. Meghna’s 3-minute pack: [Meghna demo](part2-cafe-demo.md). Per-part pack (script + prototype video + VO TBD) lives on [Saturday](meeting-saturday.md). Supporting docs target **9:00 America/New_York** on 2026-09-06.
 
 Sister talk-track pages (stay complete):
 
-- [Meghna materials](meghna-materials.md) — index + silent **PROTOTYPE** clip.
-- [Meghna demo](meghna-cafe-demo.md) — 3-min live walk (spoken = plain English).
-- [Meghna VO draft](meghna-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
+- [Meghna materials](part2-materials.md) — index + silent **PROTOTYPE** clip.
+- [Meghna demo](part2-cafe-demo.md) — 3-min live walk (spoken = plain English).
+- [Meghna VO draft](part2-voiceover.md) — plain-English voice-over. Recorded take **Unknown**.
 - [Parts 3–5 materials](parts-345-materials.md) — Architecture / Coding / shared-close index + silent **PROTOTYPEs** + technical **PROTOTYPE TTS** + **PROTOTYPE TTS** natural. Prefer natural for camera. [VO notes](parts-345-vo-notes.md). [HLD + Meghna FE/BE](part3-hld-flow-notes.md) · [coding overview](part4-coding-overview.md) · [developer system map](developer-system-map.md). Recorded teammate VO **Unknown**.
 - [Handoff mapping](parts-345-handoff-mapping.md) — FR/NFR / probe IDs — **not spoken on camera**
 - **Camera (natural):** [Part 3 script](part3-variant-b-script-natural.md) · [Part 3 VO](part3-variant-b-voiceover-natural.md) · [Part 4 script](part4-variant-c-script-natural.md) · [Part 4 VO](part4-variant-c-voiceover-natural.md) · [Part 5 script](part5-shared-close-script-natural.md) · [Part 5 VO](part5-shared-close-voiceover-natural.md)

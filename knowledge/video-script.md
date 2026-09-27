@@ -6,7 +6,7 @@ Play or talk over the committed clips when staging drops. The clips are a **look
 
 > **Must-film camera list:** App filming shots 1–3 on `https://cafe.artof.link/`; shot 4 is Coverage/CI. Exact click paths live on [Must-film shots](must-film-shots.md). The Zoom dry-run video below remains **PROTOTYPE** only — not the Quantic submission.
 
-> **Saturday lock (#97):** the live submit cut is the five-part VIDEO (team IDs → **Meghna** demo → Variant B → Variant C → close) on [Talk cuts](presentation.md) and [Meghna materials](meghna-materials.md). This page’s Zoom dry-run is still **PROTOTYPE** (Variant A). Voice-over is **TBD**. Final Quantic submit video is **Unknown** until live must-film **plus** voice.
+> **Saturday lock (#97):** the live submit cut is the five-part VIDEO (team IDs → **Meghna** demo → Variant B → Variant C → close) on [Talk cuts](presentation.md) and [Meghna materials](part2-materials.md). This page’s Zoom dry-run is still **PROTOTYPE** (Variant A). Voice-over is **TBD**. Final Quantic submit video is **Unknown** until live must-film **plus** voice.
 
 ## Zoom dry-run v2 — **PROTOTYPE**
 
@@ -26,7 +26,7 @@ Play or talk over the committed clips when staging drops. The clips are a **look
 
 <video controls src="clips/02-happy-book.mp4"></video>
 
-Lock scenarios with the menu at the bottom (A–F). Saturday **locked** cut (Meghna demo + Variant B + Variant C): [Talk cuts](presentation.md) / [Meghna materials](meghna-materials.md). Standalone A/B/C drafts remain on Presentation. Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
+Lock scenarios with the menu at the bottom (A–F). Saturday **locked** cut (Meghna demo + Variant B + Variant C): [Talk cuts](presentation.md) / [Meghna materials](part2-materials.md). Standalone A/B/C drafts remain on Presentation. Coverage / [#40](https://github.com/artofdream/aea-interactive-design/issues/40) / [#44](https://github.com/artofdream/aea-interactive-design/issues/44): J1–J8 **PASS** (cts-ai, DB up); J9 **PASS** (Vite-only viewports + theme). Do not film **NFR-1** / **NFR-2** as met, or **NFR-7** as a four-browser pass.
 
 ## Timed beats
 
@@ -37,7 +37,7 @@ Lock scenarios with the menu at the bottom (A–F). Saturday **locked** cut (Meg
 | 1:30–2:45 | **Architecture** | Three boxes from the [Friday plan](friday-plan.md) diagram: **Live Knowledge HTTPS** (this site, GET 200 this session). **App staging share** — prefer `https://cafe.artof.link/` (Lightsail #57, GET 200 this session; not production forever). **Future** longer-term hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 | 2:45–5:00 | **FR coverage + clips** | Open [Coverage](coverage.md). Walk Home / Menu / nav (**FR-1..FR-5**). Play **clip 01** (Home → Menu). Point at About / Gallery rows (**FR-10..FR-14**) on the table if time is tight. |
 | 5:00–6:30 | **Reservations + newsletter** | Form fields **FR-6**; slot check **FR-7**; random table 1–30 **FR-8**; success or full-book **FR-9**. Flask + Customers / Reservations **FR-17..FR-18**. Newsletter **FR-15..FR-16**. Play **clip 02** (happy book). Say: missing database → honest no, not a fake yes. |
-| 6:30–7:30 | **Live or fallback** | **Live:** Knowledge HTTPS. **Prefer App share:** `https://cafe.artof.link/` (Lightsail #57). **Backup:** `https://54-165-102-60.sslip.io/`. **Fallback:** these two clips. Do not call the hostname production forever. |
+| 6:30–7:30 | **Live or fallback** | **Live:** Knowledge HTTPS. **Prefer App share:** `https://cafe.artof.link/` (Lightsail #57). **Backup:** `https://<STAGING_IP_DASHED>.sslip.io/`. **Fallback:** these two clips. Do not call the hostname production forever. |
 | 7:30–8:30 | **NFR honesty** | **NFR-5** / **NFR-6**: unique slot+table index, 30-table cap, fail-closed tests — **code + CI**; local J6/J8 PASS. **NFR-3** / **NFR-8**: J1–J8 local UX PASS + J9 **PASS** Vite-only viewports/theme. **NFR-7** **partial** (Edge all routes + Firefox home; Chrome/Safari Unknown). **NFR-1** / **NFR-2**: **Unknown** as SRS-budget claims (local Vite 56 ms / 32 ms are notes only). Do not say they are met. |
 | 8:30–9:15 | **AI tooling** | Point at `docs/ai-tooling.md`: Cursor cloud agent, GitHub issues/PRs/Actions, pytest, Vite/React JSX, Flask, PostgreSQL. AI drafted from the freeze. Student app repos were not copied. Author does not merge their own PR. |
 | 9:15–10:00 | **Future close** | [#22](https://github.com/artofdream/aea-interactive-design/issues/22) and [#34](https://github.com/artofdream/aea-interactive-design/issues/34)–[#38](https://github.com/artofdream/aea-interactive-design/issues/38) are **Future**, not missing grade rows. Friday locked tech access + this script. Questions. |

@@ -46,5 +46,5 @@ Use with [Coverage](coverage.md) (every freeze ID) and the [Friday plan](friday-
 ## Speaker props
 
 - Browser tab: `https://knowledge.cafe.artof.link/` (this map).
-- Browser tab: prefer `https://cafe.artof.link/` (GET **200** this session). Backup `https://54-165-102-60.sslip.io/`. Clips if staging drops.
+- Browser tab: prefer `https://cafe.artof.link/` (GET **200** this session). Backup `https://<STAGING_IP_DASHED>.sslip.io/`. Clips if staging drops.
 - This page + [video script](video-script.md) scenario A–F.

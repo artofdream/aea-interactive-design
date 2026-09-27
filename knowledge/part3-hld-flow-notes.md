@@ -27,7 +27,7 @@ Folded into [Stack](stack.md). Deploy table: [Local vs AWS](part3-local-vs-aws.m
 | ---: | --- | --- | --- |
 | 1 | [SVG](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Local setup (dev) — HLD** | “Local on the developer machine — Vite, Flask, Postgres — iterate without touching the shared demo.” |
 | 2 | [SVG](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **MSAIE staging — HLD** (`cafe.artof.link`) | “MSAIE staging at cafe.artof.link — same design, shared HTTPS proof. Knowledge is a separate hostname.” |
-| 3 | [SVG](assets/flow-meghna-fe-be.svg) · [720 PNG](assets/flow-meghna-fe-be-720.png) | **Meghna demo path — frontend / backend** | “What Meghna clicks vs what hits Flask — static pages from freeze; booking through slots and reservations.” |
+| 3 | [SVG](assets/flow-part2-fe-be.svg) · [720 PNG](assets/flow-part2-fe-be-720.png) | **Meghna demo path — frontend / backend** | “What Meghna clicks vs what hits Flask — static pages from freeze; booking through slots and reservations.” |
 | 4 | [SVG](assets/flow-coding-overview.svg) · [720 PNG](assets/flow-coding-overview-720.png) | **Coding overview** (Part 4) | “Forms → API → modules → Postgres. Freeze for static pages; booking through slots + reservations.” |
 
 ---
@@ -52,13 +52,13 @@ Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
 
 ---
 
-## 3. Meghna FE / BE (`flow-meghna-fe-be`)
+## 3. Meghna FE / BE (`flow-part2-fe-be`)
 
 **Click path:** Home → Gallery → Menu → Reservations (+ newsletter optional). Ends with a handoff to Architecture (Part 3).
 
-![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-meghna-fe-be.svg)
+![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-part2-fe-be.svg)
 
-Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
+Fallback raster: [flow-part2-fe-be-720.png](assets/flow-part2-fe-be-720.png).
 
 | Step | Frontend | Hits Flask? | Data |
 | --- | --- | --- | --- |

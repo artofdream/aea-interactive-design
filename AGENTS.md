@@ -11,7 +11,7 @@ Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *c
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
 | Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05). Re-probe next session or write **Unknown**. |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `54.165.102.60`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Staging kept until owner decision. Monday **2026-09-08 16:00 Europe/Berlin** evaluate-only (not auto tear-down). Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `<STAGING_IP>`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Staging kept until owner decision. Monday **2026-09-08 16:00 Europe/Berlin** evaluate-only (not auto tear-down). Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 Do not invent other domains. Do not configure DNS from an agent.
 
