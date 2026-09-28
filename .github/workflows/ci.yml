@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   pull_request:
+    # `edited` re-runs the one-issue-closer gate when the PR body changes.
+    # Keep the other jobs on `edited` too: a job skipped by `if:` reports
+    # success and could replace an earlier failed required check on the
+    # same head SHA, which would fail open.
     types: [opened, synchronize, reopened, edited]
 
 permissions:
@@ -86,7 +90,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fail if PR body closes more than one issue
+      - name: Fail unless PR body closes exactly one issue
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
