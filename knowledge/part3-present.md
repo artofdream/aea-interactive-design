@@ -29,7 +29,7 @@ React → Flask → Postgres (what Meghna clicks vs what hits the API).
 
 ![How the request flows](assets/slide-p3-02-flow.svg "fit")
 
-![FE ↔ BE flow](assets/flow-meghna-fe-be.svg)
+![FE ↔ BE flow](assets/flow-part2-fe-be.svg)
 
 ![Stack](assets/fit-02-stack.png)
 

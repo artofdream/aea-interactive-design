@@ -60,7 +60,7 @@ Talk spine: Part 2 UX/business · **Part 3 architecture why/how** · Part 4 codi
 | [Local vs MSAIE rationale](assets/hld-local-vs-msaie-rationale.svg) | **Camera card** — same architecture, two deploy targets (Local (dev) vs MSAIE staging) |
 | [Local HLD](assets/hld-local.svg) · [720 PNG](assets/hld-local-720.png) | **Architect cut** — Vite / Flask / local Postgres (Local (dev)) |
 | [MSAIE staging HLD](assets/hld-aws-msaie.svg) · [720 PNG](assets/hld-aws-msaie-720.png) | **Architect cut** — `cafe.artof.link` · on-box Postgres (MSAIE staging) |
-| [Meghna FE↔BE](assets/flow-meghna-fe-be.svg) | Click path vs Flask (freeze vs `GET /api/slots` + `POST /api/reservations`) |
+| [Meghna FE↔BE](assets/flow-part2-fe-be.svg) | Click path vs Flask (freeze vs `GET /api/slots` + `POST /api/reservations`) |
 | [Part 3 notes](part3-hld-flow-notes.md) · [Part 4 coding overview](part4-coding-overview.md) | Site pages for the four diagrams |
 | `hld-as-is` / `hld-aws-staging` | **History / probe archive** (keep; do not prefer for the architect cut) |
 | [Stack](stack.md) | Dual-env table + four new diagrams + archive HLDs |

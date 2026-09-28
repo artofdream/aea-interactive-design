@@ -39,9 +39,9 @@ DELIVERY_ONLY_HREFS = (
     "meeting-saturday.html",
     "meeting-sunday.html",
     "quantic-handoff.html",
-    "meghna-cafe-demo.html",
-    "meghna-materials.html",
-    "meghna-voiceover.html",
+    "part2-cafe-demo.html",
+    "part2-materials.html",
+    "part2-voiceover.html",
     "parts-345-materials.html",
     "parts-345-notes.html",
     "parts-345-vo-notes.html",
@@ -85,9 +85,9 @@ PAGE_ICONS = {
     "meeting-saturday.html": "talk",
     "meeting-sunday.html": "slides",
     "quantic-handoff.html": "quantic",
-    "meghna-cafe-demo.html": "video",
-    "meghna-materials.html": "video",
-    "meghna-voiceover.html": "talk",
+    "part2-cafe-demo.html": "video",
+    "part2-materials.html": "video",
+    "part2-voiceover.html": "talk",
     "parts-345-materials.html": "video",
     "parts-345-notes.html": "brief",
     "parts-345-vo-notes.html": "brief",
@@ -903,7 +903,7 @@ def page_shell_for(out_file: Path, title: str, body: str, current: str, extra_cl
     (2026-09-05 Europe/Berlin); HTTP 301 to HTTPS.</p>
     <p>Prefer live share <code>https://cafe.artof.link/</code> (HTTPS GET 200 this session;
     Lightsail staging #57 — weekend recording window, not production forever).
-    Interim backup <code>https://54-165-102-60.sslip.io/</code>. Local MVP is in-repo.
+    Interim backup <code>https://&lt;STAGING_IP_DASHED&gt;.sslip.io/</code>. Local MVP is in-repo.
     GitHub Actions → GitHub Pages. No GitLab.</p>
   </footer>{mermaid_script}
 </body>
@@ -1171,11 +1171,11 @@ def assert_ux_wiring() -> None:
         fail("must-film-shots.md must not embed clips (video-script keeps them)")
     if "hld-aws-staging.svg" not in stack_md:
         fail("stack.md must keep AWS staging HLD (hub is nav-only; do not hollow source pages)")
-    meghna_md = (ROOT / "meghna-cafe-demo.md").read_text(encoding="utf-8")
+    meghna_md = (ROOT / "part2-cafe-demo.md").read_text(encoding="utf-8")
     if "≥90s left" not in meghna_md:
-        fail("meghna-cafe-demo.md happy-book extra must gate on ≥90s (do not start on 45s)")
+        fail("part2-cafe-demo.md happy-book extra must gate on ≥90s (do not start on 45s)")
     if "≥60s left" not in meghna_md:
-        fail("meghna-cafe-demo.md newsletter extra must gate on ≥60s")
+        fail("part2-cafe-demo.md newsletter extra must gate on ≥60s")
     # Ratchet #129: Talk cuts must not keep NFR-1 / NFR-2 Unknown after Coverage mets.
     presentation_md = (ROOT / "presentation.md").read_text(encoding="utf-8")
     if "NFR-1** / **NFR-2** stay **Unknown**" in presentation_md:
@@ -1377,8 +1377,8 @@ def assert_ux_wiring() -> None:
         "hld-local-720.png",
         "hld-aws-msaie.svg",
         "hld-aws-msaie-720.png",
-        "flow-meghna-fe-be.svg",
-        "flow-meghna-fe-be-720.png",
+        "flow-part2-fe-be.svg",
+        "flow-part2-fe-be-720.png",
         "flow-coding-overview.svg",
         "flow-coding-overview-720.png",
     ):
@@ -1395,7 +1395,7 @@ def assert_ux_wiring() -> None:
         for needle in (
             "hld-local.svg",
             "hld-aws-msaie.svg",
-            "flow-meghna-fe-be.svg",
+            "flow-part2-fe-be.svg",
         ):
             if needle not in text:
                 fail(f"{label} must embed {needle}")
@@ -1497,7 +1497,7 @@ def assert_ux_wiring() -> None:
     if "Amazon SES" in coverage_md or re.search(r"#135\b", coverage_md):
         fail("coverage.md must not claim SES newsletter outbound (#135 is Future only)")
     # Ratchet #198: App public-host newsletter is store-only (2026-09-12); no send claim.
-    if "ses-probe-20260912@artof.link" not in coverage_md:
+    if "<probe-inbox>" not in coverage_md:
         fail("coverage.md must keep the 2026-09-12 public-host newsletter store probe")
     if "email not configured" not in coverage_md:
         fail("coverage.md must keep email_delivery skipped / email not configured")
@@ -1589,7 +1589,7 @@ def assert_ux_wiring() -> None:
     present_md = (ROOT / "part3-present.md").read_text(encoding="utf-8")
     present_html = (OUT / "part3-present.html").read_text(encoding="utf-8")
     for svg in (
-        "assets/flow-meghna-fe-be.svg",
+        "assets/flow-part2-fe-be.svg",
         "assets/hld-local.svg",
         "assets/hld-aws-msaie.svg",
     ):
@@ -1598,7 +1598,7 @@ def assert_ux_wiring() -> None:
         if svg not in present_html:
             fail(f"part3-present.html must reference {svg}")
     for raster in (
-        "flow-meghna-fe-be-720.png",
+        "flow-part2-fe-be-720.png",
         "hld-local-720.png",
         "hld-aws-msaie-720.png",
     ):
@@ -1669,7 +1669,7 @@ def assert_ux_wiring() -> None:
         if img_hld in present_html:
             fail(f"part3-present.html must not wrap {name} in diagram-wrap (2560 title cards clip)")
     for hld in (
-        "assets/flow-meghna-fe-be.svg",
+        "assets/flow-part2-fe-be.svg",
         "assets/hld-local.svg",
         "assets/hld-aws-msaie.svg",
     ):
@@ -1677,7 +1677,7 @@ def assert_ux_wiring() -> None:
             fail(f"part3-present.html must keep {hld} as swipeable HLD (diagram-img)")
     for before, after in (
         ("slide-p3-01-boundaries.svg", "still-reservation.png"),
-        ("slide-p3-02-flow.svg", "flow-meghna-fe-be.svg"),
+        ("slide-p3-02-flow.svg", "flow-part2-fe-be.svg"),
         ("slide-p3-03-deploys.svg", "hld-local.svg"),
         ("slide-p3-04-quality.svg", "card-p3-boxes.png"),
         ("slide-p3-05-tradeoffs.svg", "card-p3-staging.png"),

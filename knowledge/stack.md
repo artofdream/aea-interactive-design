@@ -25,7 +25,7 @@ Two hostnames, two jobs. This map does not take reservations.
 | Hostname | Job | This session |
 |---|---|---|
 | `knowledge.cafe.artof.link` | This knowledge map | HTTPS GET **200**. HTTP **301** to HTTPS. TLS VERIFY_OK. CN/SAN match. Let’s Encrypt, expires 2026-11-30. Pages `cname` matches. **`https_enforced=true`**. Cert **approved**. |
-| `cafe.artof.link` | Prefer live share this session (Lightsail staging) | HTTPS GET **200** (SPA + `/operator` + `/api/health`). TLS CN/SAN `cafe.artof.link`. DNS A `54.165.102.60`. [#57](https://github.com/artofdream/aea-interactive-design/issues/57) weekend window — **not** production forever. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| `cafe.artof.link` | Prefer live share this session (Lightsail staging) | HTTPS GET **200** (SPA + `/operator` + `/api/health`). TLS CN/SAN `cafe.artof.link`. DNS A `<STAGING_IP>`. [#57](https://github.com/artofdream/aea-interactive-design/issues/57) weekend window — **not** production forever. Longer-term hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 They do not share a load balancer. This site is not the shop.
 
@@ -80,9 +80,9 @@ Fallback raster: [hld-aws-msaie-720.png](assets/hld-aws-msaie-720.png).
 
 What Meghna clicks vs what hits Flask. **Home / Gallery / Menu** read the **freeze** at build — not `GET /api/menu`. **Booking** = `GET /api/slots?date=` then `POST /api/reservations`. Newsletter optional `POST /api/newsletter` **store-only**. Notes: [Part 3 HLD + flow](part3-hld-flow-notes.md).
 
-![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-meghna-fe-be.svg)
+![Meghna demo path: Home Gallery Menu from freeze at build (no /api/menu). Reservations GET /api/slots then POST /api/reservations. Newsletter optional POST /api/newsletter store-only.](assets/flow-part2-fe-be.svg)
 
-Fallback raster: [flow-meghna-fe-be-720.png](assets/flow-meghna-fe-be-720.png).
+Fallback raster: [flow-part2-fe-be-720.png](assets/flow-part2-fe-be-720.png).
 
 ## Part 4 coding overview (implementation of that flow)
 
@@ -94,19 +94,19 @@ Fallback raster: [flow-coding-overview-720.png](assets/flow-coding-overview-720.
 
 ## AWS staging facts (this weekend)
 
-Owner-probed implementation, not a second product. This session this agent also GET **200** on `https://cafe.artof.link/` (~0.04s), `/operator` **200**, `/api/health` **200** `{"ok":true}`; DNS A `54.165.102.60`; TLS CN/SAN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`.
+Owner-probed implementation, not a second product. This session this agent also GET **200** on `https://cafe.artof.link/` (~0.04s), `/operator` **200**, `/api/health` **200** `{"ok":true}`; DNS A `<STAGING_IP>`; TLS CN/SAN `cafe.artof.link`, Let’s Encrypt `notAfter=2026-12-04`.
 
 | Fact | Status |
 |---|---|
-| Lightsail | `cafe-fausse-staging`, us-east-1, `small_3_0` (~$12/mo), IP `54.165.102.60` |
+| Lightsail | `cafe-fausse-staging`, us-east-1, `small_3_0` (~$12/mo), IP `<STAGING_IP>` |
 | DNS | Route53 `cafe.artof.link` **A** → that IP, TTL 60. Overrides the `*.artof.link` ELB wildcard. That wildcard is **not** Café Fausse. |
 | Edge | Caddy + Let’s Encrypt HTTPS |
 | App | Flask + built React SPA on the instance |
 | Database | **On-box Postgres (MSAIE staging)** on the Lightsail instance — **not a shared RDS**. |
 | Prefer share | `https://cafe.artof.link/` (+ `/operator`, `/api/health`) |
-| Interim backup | `https://54-165-102-60.sslip.io/` (same IP; not the primary paste) |
+| Interim backup | `https://<STAGING_IP_DASHED>.sslip.io/` (same IP; not the primary paste) |
 | Stale tunnels | `shaky-deer-drive.loca.lt`, `happy-glasses-film`, `real-goats-shop` |
-| IAM | `cts` account `737290977112` |
+| IAM | `cts` account `<AWS_ACCOUNT_ID>` |
 | Window | Staging stays **up until Quantic scoring is done**, or the owner overrides tear-down (owner lock 2026-09-09). Knowledge Pages stay up the same window. Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence ([#57](https://github.com/artofdream/aea-interactive-design/issues/57)). |
 | `/operator` | Read-only recording helper. **Not FR-19.** Not an admin console. |
 | Newsletter | Store/register **FR-15** / **FR-16** only. No outbound mailer in the SRS MVP. |
@@ -129,7 +129,7 @@ flowchart TB
   end
   KH -.-> P["HTTPS GET 200 · HTTP 301 to HTTPS"]
   subgraph N["Staging share this session — not production forever"]
-    CAFE["cafe.artof.link"] --> R53["Route53 A TTL 60 → 54.165.102.60"]
+    CAFE["cafe.artof.link"] --> R53["Route53 A TTL 60 → STAGING_IP"]
     R53 --> CADDY["Caddy + Let's Encrypt"]
     CADDY --> APP["Flask + built React SPA"]
     APP --> BOXPG["PostgreSQL on the instance"]
