@@ -10,8 +10,8 @@ Everything for the **3-minute cafe demo** (Home → Gallery → Menu → Reserva
 
 | File | What |
 | --- | --- |
-| [Meghna 3-min cafe demo](meghna-cafe-demo.md) | Full pack: timed beats, click path, supporting ID map, handoff |
-| Knowledge (this site) | [Meghna cafe demo](meghna-cafe-demo.md) · [VO draft](meghna-voiceover.md) · linked from [Quantic](quantic.md) / [Talk cuts](presentation.md) |
+| [Meghna 3-min cafe demo](part2-cafe-demo.md) | Full pack: timed beats, click path, supporting ID map, handoff |
+| Knowledge (this site) | [Meghna cafe demo](part2-cafe-demo.md) · [VO draft](part2-voiceover.md) · linked from [Quantic](quantic.md) / [Talk cuts](presentation.md) |
 
 Live site to rehearse: **https://cafe.artof.link/**
 
@@ -21,7 +21,7 @@ Live site to rehearse: **https://cafe.artof.link/**
 
 | Asset | Path / URL | Note |
 | --- | --- | --- |
-| **Meghna path prototype** | [`clips/meghna-3min-prototype-silent.mp4`](clips/meghna-3min-prototype-silent.mp4) (~162s) | Silent. Open → Home → Gallery → Menu → Reservations → Architecture handoff card. Built from live staging captures. **PROTOTYPE**, not Quantic submit. |
+| **Meghna path prototype** | [`clips/part2-3min-prototype-silent.mp4`](clips/part2-3min-prototype-silent.mp4) (~162s) | Silent. Open → Home → Gallery → Menu → Reservations → Architecture handoff card. Built from live staging captures. **PROTOTYPE**, not Quantic submit. |
 | Team Zoom dry-run v2 | [Video script](video-script.md) · `clips/03-zoom-dryrun-v2.mp4` | Full ~10 min Variant A dry-run — timing/honesty reference; path order differs from Meghna’s lock. **PROTOTYPE**. |
 | Happy-book clip (optional) | [Video script](video-script.md) · `clips/02-happy-book.mp4` | Fallback look if she extends past nav. |
 
@@ -29,7 +29,7 @@ Prefer **live share** for the real recording; use the silent prototype only for 
 
 > **PROTOTYPE** — silent Meghna path. Not the Quantic submission. Voice-over recorded take **Unknown**.
 
-<video controls src="clips/meghna-3min-prototype-silent.mp4"></video>
+<video controls src="clips/part2-3min-prototype-silent.mp4"></video>
 
 **Recorded teammate VO:** **Unknown** until Meghna or Claude records.
 
@@ -39,7 +39,7 @@ Prefer **live share** for the real recording; use the silent prototype only for 
 
 | Asset | Path | Status |
 | --- | --- | --- |
-| Draft VO script | [Meghna VO draft](meghna-voiceover.md) | Ready to record |
+| Draft VO script | [Meghna VO draft](part2-voiceover.md) | Ready to record |
 | Recorded teammate VO | — | **Unknown** until Meghna (or Claude optional advance take) records |
 
 ---
@@ -61,7 +61,7 @@ Prefer **live share** for the real recording; use the silent prototype only for 
 - Host: https://cafe.artof.link/ (Lightsail staging — not forever)
 - Health: https://cafe.artof.link/api/health
 - Operator (optional after a live book only): https://cafe.artof.link/operator — read-only helper, not an admin console
-- Backup: https://54-165-102-60.sslip.io/
+- Backup: `https://<STAGING_IP_DASHED>.sslip.io/`
 
 ---
 

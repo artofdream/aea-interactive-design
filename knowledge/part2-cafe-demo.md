@@ -9,13 +9,13 @@
 - **Spoken script / what Meghna says on camera:** plain English only — **no FR / NFR jargon**.  
 - **Supporting notes** (this doc’s mapping tables, Coverage, slides): FR/NFR IDs are fine.
 
-Materials index: [Meghna materials](meghna-materials.md). Draft VO (plain English): [Meghna VO](meghna-voiceover.md). Recorded teammate take is **Unknown**.
+Materials index: [Meghna materials](part2-materials.md). Draft VO (plain English): [Meghna VO](part2-voiceover.md). Recorded teammate take is **Unknown**.
 
 ## Prototype video (silent)
 
 > **PROTOTYPE** — silent Home → Gallery → Menu → Reservations walk. This is **not** the Quantic submission. Prefer live `https://cafe.artof.link/` for the real recording.
 
-<video controls src="clips/meghna-3min-prototype-silent.mp4"></video>
+<video controls src="clips/part2-3min-prototype-silent.mp4"></video>
 
 ---
 
@@ -152,7 +152,7 @@ Then stop talking. Let Architecture take the screen.
 | **Presentation (Architecture)** | https://knowledge.cafe.artof.link/presentation.html | After your handoff. |
 | **Health (mute pre-flight)** | https://cafe.artof.link/api/health | Expect `{"ok":true}` before you go live. |
 
-Backup host (if needed): `https://54-165-102-60.sslip.io/` — same honesty (staging, not forever).
+Backup host (if needed): `https://<STAGING_IP_DASHED>.sslip.io/` — same honesty (staging, not forever).
 
 ---
 

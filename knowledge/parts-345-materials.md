@@ -57,7 +57,7 @@ Do **not** use the old “NFR-1 / NFR-2 Unknown / not claimed met” line.
 | [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md) | Local + MSAIE staging HLDs + Meghna FE↔BE flow (**PROTOTYPE**) |
 | [Part 4 coding overview](part4-coding-overview.md) | Forms → API → modules → Postgres (**PROTOTYPE**) |
 | [Developer system map](developer-system-map.md) | Stack, API, schema, FE/BE (tip `73d202d`) |
-| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Stack](stack.md) · [Meghna materials](meghna-materials.md) (Part 2 UX/business) |
+| Knowledge (this site) | [Talk cuts](presentation.md) · [Quantic hub](quantic.md) · [Stack](stack.md) · [Meghna materials](part2-materials.md) (Part 2 UX/business) |
 
 Live site to rehearse after the cafe demo: **https://cafe.artof.link/** (MSAIE staging — temporary, not forever)
 
@@ -159,7 +159,7 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 | Part 4 coding overview (**PROTOTYPE**) | [Part 4 coding overview](part4-coding-overview.md) · also on [Stack](stack.md) |
 | Developer system map | [Developer system map](developer-system-map.md) — stack, API, schema, FE/BE |
 | Quantic hub | https://knowledge.cafe.artof.link/quantic.html · [Quantic](quantic.md) |
-| Meghna materials (Part 2 UX/business) | [Meghna materials](meghna-materials.md) |
+| Meghna materials (Part 2 UX/business) | [Meghna materials](part2-materials.md) |
 | Handoff mapping (FR/NFR — **not spoken on camera**) | [Parts 3–5 handoff mapping](parts-345-handoff-mapping.md) |
 | Build notes (secondary) | [Parts 3–5 notes](parts-345-notes.md) |
 | VO mux notes (**PROTOTYPE TTS** technical) | [Parts 3–5 VO notes](parts-345-vo-notes.md) |
@@ -171,7 +171,7 @@ Mux / duration notes: [Parts 3–5 VO notes](parts-345-vo-notes.md). Silent `*-s
 - Host: https://cafe.artof.link/ — **staging environment for the MSAIE project** (temporary — not forever)
 - Health: https://cafe.artof.link/api/health
 - Operator (optional after a live book only): https://cafe.artof.link/operator — read-only helper, not an admin console, **not FR-19**
-- Backup: https://54-165-102-60.sslip.io/
+- Backup: `https://<STAGING_IP_DASHED>.sslip.io/`
 - Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22)
 - Off-camera ops tracker: Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57)
 

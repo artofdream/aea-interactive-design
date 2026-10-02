@@ -42,7 +42,7 @@ Fallback raster: [flow-coding-overview-720.png](assets/flow-coding-overview-720.
 
 - Architecture trio: [Part 3 HLD + Meghna FE/BE](part3-hld-flow-notes.md)
 - Part 4 NATURAL callouts: [Part 4 natural script](part4-variant-c-script-natural.md)
-- Meghna FE/BE: [flow-meghna-fe-be.svg](assets/flow-meghna-fe-be.svg)
+- Meghna FE/BE: [flow-part2-fe-be.svg](assets/flow-part2-fe-be.svg)
 - [Stack](stack.md) · [Parts 3–5 materials](parts-345-materials.md) · [Local vs AWS](part3-local-vs-aws.md)
 - ID map: [Handoff mapping](parts-345-handoff-mapping.md) — **not spoken on camera**
 
