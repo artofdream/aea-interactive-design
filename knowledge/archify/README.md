@@ -20,6 +20,10 @@ Cite freeze-first / SRS MVP only (`docs/srs.md`, FR-1..18 / NFR-1..9). Do not in
   - `https://knowledge.cafe.artof.link/archify/cafe-knowledge-workflow.architecture.json`
 - Do not claim Live / production status from this folder alone. A this-session HTTPS GET after merge closes the Pages probe.
 
+### Honesty guard (CI)
+
+CI job `archify-honesty` runs `scripts/check-archify-honesty.py`. It fails if an Archify IR still has `meta.views` (ignored by Archify 3.x) or if an honesty label or phrase (list in `scripts/archify-honesty.config.json`) appears in a retired chapter note but not in the components or cards. It warns, without failing, when the committed HTML generator string is not `archify 3.2.0`. Self-test: `python3 scripts/test_check_archify_honesty.py`.
+
 ### Open locally
 
 ```bash
