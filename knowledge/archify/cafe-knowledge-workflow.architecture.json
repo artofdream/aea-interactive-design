@@ -4,47 +4,7 @@
   "meta": {
     "title": "Caf\u00e9 Knowledge \u2014 Pages ratchet (Documented aid)",
     "output": "cafe-knowledge-workflow.architecture.html",
-    "quality_profile": "showcase",
-    "views": [
-      {
-        "id": "happy-path",
-        "label": "Happy path",
-        "focus": [
-          "freeze",
-          "issue",
-          "author",
-          "pr",
-          "mrc",
-          "mergebot",
-          "build",
-          "pages",
-          "probe"
-        ],
-        "note": "Freeze-first \u2192 issue \u2192 PR \u2192 MRC COMMENT \u2192 New Bot \u2192 Pages \u2192 this-session probe."
-      },
-      {
-        "id": "hosts",
-        "label": "Two hosts",
-        "focus": [
-          "local",
-          "cafe",
-          "knowledge",
-          "pages"
-        ],
-        "note": "Local(dev) + cafe.artof.link + knowledge.cafe.artof.link. Separate origins."
-      },
-      {
-        "id": "honesty",
-        "label": "Honesty boundary",
-        "focus": [
-          "honesty",
-          "probe",
-          "archify",
-          "knowledge"
-        ],
-        "note": "Documented aid \u2014 not Live. SRS MVP FR-1..18 / NFR-1..9 only."
-      }
-    ]
+    "quality_profile": "showcase"
   },
   "components": [
     {
@@ -141,7 +101,7 @@
       "sublabel": "Vite \u00b7 Flask \u00b7 cafe-pg",
       "pos": [
         40,
-        220
+        510
       ],
       "size": [
         140,
@@ -154,8 +114,8 @@
       "label": "Restaurant host",
       "sublabel": "cafe.artof.link",
       "pos": [
-        40,
-        380
+        280,
+        510
       ],
       "size": [
         140,
@@ -170,7 +130,7 @@
       "sublabel": "same-origin HTML",
       "pos": [
         260,
-        220
+        380
       ],
       "size": [
         130,
@@ -368,20 +328,14 @@
       "from": "local",
       "to": "cafe",
       "label": "same stack",
-      "variant": "dashed",
-      "fromSide": "bottom",
-      "toSide": "top",
-      "labelDy": 55
+      "variant": "dashed"
     },
     {
       "id": "c14",
       "from": "archify",
       "to": "honesty",
       "label": "cite",
-      "variant": "dashed",
-      "fromSide": "bottom",
-      "toSide": "top",
-      "labelDy": 55
+      "variant": "dashed"
     }
   ],
   "cards": [
@@ -410,6 +364,30 @@
         "Not Lily's Florist / Path B / 14 hats / 3DX Lab",
         "Not ctos QEMU content",
         "Restaurant staging (#57) \u2260 Knowledge Pages"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Happy path",
+      "items": [
+        "Freeze-first \u2192 issue \u2192 PR \u2192 MRC COMMENT \u2192 New Bot \u2192 Pages \u2192 this-session probe.",
+        "Focus (former guided chapter): SRS freeze \u00b7 GitHub issue \u00b7 Author agent \u00b7 Pull request \u00b7 MRC COMMENT \u00b7 New Bot \u00b7 build.py \u00b7 GitHub Pages \u00b7 Session probe"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Two hosts",
+      "items": [
+        "Local(dev) + cafe.artof.link + knowledge.cafe.artof.link. Separate origins.",
+        "Focus (former guided chapter): Local (dev) \u00b7 Restaurant host \u00b7 Knowledge host \u00b7 GitHub Pages"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Honesty boundary",
+      "items": [
+        "Documented aid \u2014 not Live. SRS MVP FR-1..18 / NFR-1..9 only.",
+        "Focus (former guided chapter): Honesty ledger \u00b7 Session probe \u00b7 /archify/ \u00b7 Knowledge host"
       ]
     }
   ]
