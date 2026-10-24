@@ -10,3 +10,7 @@ frontend/dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Archify receipts / sidecars (local paths; never published under /archify/)
+*.delivery.json
+*.browser-check.json
