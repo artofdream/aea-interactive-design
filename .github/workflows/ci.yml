@@ -111,6 +111,18 @@ jobs:
           python3 scripts/ci/check_one_issue_closer.py --self-test
           python3 scripts/ci/check_one_issue_closer.py
 
+  adr-related-requirements:
+    name: ADR related requirements exist in SRS (fail-closed)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fail if an ADR cites an ID not defined in docs/srs.md
+        run: |
+          set -euo pipefail
+          python3 scripts/ci/check_adr_requirements.py --self-test
+          python3 scripts/ci/check_adr_requirements.py
+
   restaurant-api:
     name: Restaurant API tests (FR-6..FR-9, FR-15..FR-18)
     runs-on: ubuntu-latest
