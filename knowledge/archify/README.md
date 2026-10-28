@@ -20,6 +20,10 @@ Cite freeze-first / SRS MVP only (`docs/srs.md`, FR-1..18 / NFR-1..9). Do not in
   - `https://knowledge.cafe.artof.link/archify/cafe-knowledge-workflow.architecture.json`
 - Do not claim Live / production status from this folder alone. A this-session HTTPS GET after merge closes the Pages probe.
 
+### Honesty guard (CI)
+
+CI job `archify-honesty` runs `scripts/check-archify-honesty.py`. It fails if an Archify IR still has `meta.views` (ignored by Archify 3.x) or if an honesty label or phrase (list in `scripts/archify-honesty.config.json`) appears in a retired chapter note but not in the components or cards. It warns, without failing, when the committed HTML generator string is not `archify 3.2.0`. Self-test: `python3 scripts/test_check_archify_honesty.py`.
+
 ### Open locally
 
 ```bash
@@ -29,11 +33,20 @@ xdg-open knowledge/archify/cafe-knowledge-workflow.architecture.html
 
 ### Regenerate
 
+Generated with Archify **v3.2.0** (`archify/package.json` version 3.2.0). Render in a scratch directory, validate, then copy **only** the `.json` and `.html` back into this folder:
+
 ```bash
-node /path/to/archify/bin/archify.mjs deliver architecture \
-  knowledge/archify/cafe-knowledge-workflow.architecture.json \
-  knowledge/archify/cafe-knowledge-workflow.architecture.html \
+export ARCHIFY_UPDATE_CHECK_DISABLED=1
+node /path/to/archify/archify/bin/archify.mjs validate architecture cafe-knowledge-workflow.architecture.json
+node /path/to/archify/archify/bin/archify.mjs deliver architecture \
+  cafe-knowledge-workflow.architecture.json \
+  cafe-knowledge-workflow.architecture.html \
   --quality showcase
+node /path/to/archify/archify/bin/archify.mjs browser-check cafe-knowledge-workflow.architecture.html --summary --out-dir ./receipts
 ```
+
+- Do **not** commit `*.delivery.json` or `*.browser-check.json` receipts: they hold local absolute paths and `knowledge/build.py` would publish them under `/archify/` (the root `.gitignore` ignores them).
+- Archify 3.x has **no guided views / "Play story" / press-`P` chapters**: `meta.views` is retired and ignored. Former chapter notes live in the diagram's **cards**; use the viewer's **Route** and **Lens** controls for paths and roles.
+- Boundary rule (3.x): a boundary's `wraps` list must match the components its frame encloses. Keep non-members outside the frame (see the Restaurant region below the pipeline).
 
 `knowledge/build.py` copies this directory to `_site/archify/` so GitHub Pages serves `/archify/`.
