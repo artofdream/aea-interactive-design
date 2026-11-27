@@ -4,14 +4,14 @@ This is a student / GitHub E2E repo for **Café Fausse** (Quantic MSAIE) and a t
 
 **MVP = official SRS freeze** (`docs/srs.md`, FR-1..FR-18 and NFR-1..NFR-9; SoT = official PDF in `docs/official/`). Everything else is future or refined — not a second product on the knowledge site.
 
-Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *code* PR. Knowledge site = GitHub Pages. Weekend Lightsail staging of `cafe.artof.link` is issue [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — staging stays **up** until the owner explicitly requests tear-down. Monday **2026-09-08 16:00 Europe/Berlin** is evaluate-only (not automatic tear-down). Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Future is not “AWS does not exist.”
+Do not claim this system is antifragile. AWS is **not** in the restaurant MVP *code* PR. Knowledge site = GitHub Pages. Weekend Lightsail staging of `cafe.artof.link` is tracked in issue [#57](https://github.com/artofdream/aea-interactive-design/issues/57). **Historical (not this-session status):** a 2026-09-05 session recorded the knowledge and app hosts as HTTPS GET 200, and Monday **2026-09-08 16:00 Europe/Berlin** was evaluate-only (not automatic tear-down). That evaluate-only date has passed. The September plan was that staging stays up until the owner explicitly requests tear-down; do not treat that as a current up/down claim. For live staging or tear-down status, probe this session or read [#57](https://github.com/artofdream/aea-interactive-design/issues/57) and today's `research/daily-briefs/YYYY-MM-DD.md`; otherwise write **Unknown**. Whether Quantic graders need the host up for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting stays [#22](https://github.com/artofdream/aea-interactive-design/issues/22). Future is not “AWS does not exist.”
 
 ## Teams and two public surfaces
 
 | Team | Owns | Intended hostname | Live URL |
 |---|---|---|---|
-| Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05). Re-probe next session or write **Unknown**. |
-| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | HTTPS **GET 200** this session (2026-09-05): `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP `<STAGING_IP>`. Weekend staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. Staging kept until owner decision. Monday **2026-09-08 16:00 Europe/Berlin** evaluate-only (not auto tear-down). Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
+| Café Fausse Knowledge | Knowledge site (thin map, GitHub Pages) | `knowledge.cafe.artof.link` | **Historical probe (2026-09-05):** HTTPS **GET 200**. Not this-session status. Re-probe this session, or read today's `research/daily-briefs/YYYY-MM-DD.md`; otherwise write **Unknown**. |
+| Café Fausse App | Restaurant MVP (React + JSX, Flask, PostgreSQL) | `cafe.artof.link` | **Historical probe (2026-09-05):** HTTPS **GET 200** on `/`, `/api/health` `{"ok":true}`, `/operator`. Lightsail `cafe-fausse-staging` us-east-1 IP was recorded as `<STAGING_IP>` (placeholder in this file). Weekend staging is tracked in [#57](https://github.com/artofdream/aea-interactive-design/issues/57) — not forever production. **Historical plan:** Monday **2026-09-08 16:00 Europe/Berlin** was evaluate-only (not auto tear-down); that date has passed. Do not treat the September “kept until owner decision” wording as a current up/down claim. Re-probe this session, or read [#57](https://github.com/artofdream/aea-interactive-design/issues/57) and today's `research/daily-briefs/YYYY-MM-DD.md`; otherwise write **Unknown**. Whether graders need the host for video evaluation remains **Unknown** until the owner shares correspondence. Permanent hosting [#22](https://github.com/artofdream/aea-interactive-design/issues/22). |
 
 Do not invent other domains. Do not configure DNS from an agent.
 
@@ -36,8 +36,8 @@ Not a probe: hoping, a previous session, uncommitted working tree, “should be 
 
 Examples that need a this-session probe (else **Unknown**):
 
-- GitHub Pages URL for `knowledge.cafe.artof.link` — last probe this session (2026-09-05): HTTPS **GET 200**
-- Restaurant at `cafe.artof.link` — last probe this session (2026-09-05): HTTPS **GET 200** (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57); not forever production)
+- GitHub Pages URL for `knowledge.cafe.artof.link` — **historical** last recorded probe (2026-09-05): HTTPS **GET 200**. Not a this-session probe; re-probe or write **Unknown**. Live handoff: today's `research/daily-briefs/YYYY-MM-DD.md`.
+- Restaurant at `cafe.artof.link` — **historical** last recorded probe (2026-09-05): HTTPS **GET 200** (Lightsail staging [#57](https://github.com/artofdream/aea-interactive-design/issues/57); not forever production). Live status: probe this session or read [#57](https://github.com/artofdream/aea-interactive-design/issues/57) and today's daily brief; otherwise write **Unknown**.
 - “Reservations work” on a public host (a health GET is not a write probe)
 - “CI is green on main” without a run this session
 
@@ -122,6 +122,6 @@ For this repo **now**:
 
 - Permanent `cafe.artof.link` hosting / always-on productization ([#22](https://github.com/artofdream/aea-interactive-design/issues/22)). Weekend Lightsail staging is [#57](https://github.com/artofdream/aea-interactive-design/issues/57), not that Future cut.
 - Florist Path B, 14 hats, GitLab Pages, Kafka/BFF, 3DX Lab, Grafana.
-- Declaring Pages or `cafe.artof.link` live without a GET **this session**. Last probe 2026-09-05: both HTTPS **GET 200**. Do not claim forever production.
+- Declaring Pages or `cafe.artof.link` live without a GET **this session**. **Historical** last recorded probe (2026-09-05): both HTTPS **GET 200**. That is not this-session status. Live sources: this-session probe, [#57](https://github.com/artofdream/aea-interactive-design/issues/57), and today's daily brief. Do not claim forever production.
 - A 14-hat skill library. Hats stay at four; `pr-coordinator` is procedure memory only.
 - Knowledge-site depth beyond the thin map; GitHub E2E beyond the assignment floor.
